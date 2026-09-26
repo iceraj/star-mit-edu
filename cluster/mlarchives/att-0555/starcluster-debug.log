@@ -1,0 +1,20 @@
+config.py:281 - DEBUG - Loading config
+config.py:99 - DEBUG - Loading file: /home/sgriffin/.starcluster/config
+config.py:210 - DEBUG - partition setting not specified. Defaulting to 1
+config.py:219 - DEBUG - test extends smallcluster
+awsutils.py:47 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'path': '/', 'region': None, 'port': None, 'is_secure': True}
+awsutils.py:47 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'path': '/', 'region': None, 'port': None, 'is_secure': True}
+awsutils.py:47 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'path': '/', 'region': None, 'port': None, 'is_secure': True}
+cli.py:1098 - DEBUG - Traceback (most recent call last):
+  File "/usr/local/lib/python2.6/dist-packages/StarCluster-0.91.2-py2.6.egg/starcluster/cli.py", line 1075, in main
+    sc.execute(args)
+  File "/usr/local/lib/python2.6/dist-packages/StarCluster-0.91.2-py2.6.egg/starcluster/cli.py", line 432, in execute
+    cluster.list_clusters(cfg)
+  File "/usr/local/lib/python2.6/dist-packages/StarCluster-0.91.2-py2.6.egg/starcluster/cluster.py", line 148, in list_clusters
+    print 'Launch time: %s' % master.launch_time
+AttributeError: 'NoneType' object has no attribute 'launch_time'
+
+cli.py:1100 - ERROR - Oops! Looks like you've found a bug in StarCluster
+cli.py:1101 - ERROR - Debug file written to: /tmp/starcluster-debug.log
+cli.py:1102 - ERROR - Please submit this file, minus any private information,
+cli.py:1103 - ERROR - to starcluster@mit.edu

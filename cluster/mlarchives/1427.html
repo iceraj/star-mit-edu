@@ -1,0 +1,423 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Gavin W. Burris ((no email))" />
+<meta name="Subject" content="Re:  Starcluster SGE usage" />
+<title>starcluster.mbox.out: Re:  Starcluster SGE usage</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Re:  Starcluster SGE usage</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Re:  Starcluster SGE usage</h1>
+<!-- received="Wed Oct 17 11:16:28 2012" -->
+<!-- isoreceived="20121017151628" -->
+<!-- sent="Wed, 17 Oct 2012 11:16:15 -0400" -->
+<!-- isosent="20121017151615" -->
+<!-- name="Gavin W. Burris" -->
+<!-- email="(no email)" -->
+<!-- subject="Re:  Starcluster SGE usage" -->
+<!-- id="507ECBBF.1040309_at_sas.upenn.edu" -->
+<!-- charset="ISO-8859-1" -->
+<!-- inreplyto="2C85BAA0-1A89-45A0-A6F1-5079B9AFE5F7_at_gmail.com" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1427.html#start1427" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1427.html#options2">top</a>, <a href="1427.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1428.html" accesskey="d" title="Jean-Pierre Adam: &quot;Re:  exclude the master node&quot;">Next message</a> ]
+[ <a href="1426.html" title="Ed Morris: &quot;Re:  exclude the master node&quot;">Previous message</a> ]
+[ <a href="1424.html" title="John St. John: &quot;Re:  Starcluster SGE usage&quot;">In reply to</a> ]
+<!-- unextthread="start" -->
+[ <a href="1443.html" accesskey="t" title="John St. John: &quot;Re:  Starcluster SGE usage&quot;">Next in thread</a> ]
+ [ <a href="1427.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1427" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1427" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1427" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1427" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Gavin W. Burris &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Wed, 17 Oct 2012 11:16:15 -0400</span><br />
+</address>
+<br />
+Hi John,
+<br />
+<br />The default configuration will distribute jobs based on load, meaning
+<br />
+new jobs land on the least loaded node.  If you want to fill nodes, you
+<br />
+can change the load formula on the scheduler config:
+<br />
+# qconf -msconf
+<br />
+load_formula    slots
+<br />
+<br />If you are using a parallel environment, the default can be changed to
+<br />
+fill a node, as well:
+<br />
+# qconf -mp orte
+<br />
+allocation_rule    $fill_up
+<br />
+<br />You may want to consider making memory consumable to prevent
+<br />
+over-subscription.  An easy option may be to make an arbitrary
+<br />
+consumable complex resource, say john_jobs, and set it to the max number
+<br />
+you want running at one time:
+<br />
+# qconf -mc
+<br />
+john_jobs jj INT &lt;= YES YES 0 0
+<br />
+# qconf -me global
+<br />
+complex_values john_jobs=10
+<br />
+<br />Then, when you submit a job, specify the resource:
+<br />
+$ qsub -l jj=1 ajob.sh
+<br />
+<br />Each job submitted in this way will consume one count of john_jobs,
+<br />
+effectively limiting you to ten.
+<br />
+<br />Cheers.
+<br />
+<br /><br />On 10/16/2012 06:32 PM, John St. John wrote:
+<br />
+<em class="quotelev1">&gt; Thanks Jesse! 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; This does seem to work. I don't need to define -pe in this case b/c the
+</em><br />
+<em class="quotelev1">&gt; slots are actually limited per node.
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; My only problem with this solution is that all jobs are now limited to
+</em><br />
+<em class="quotelev1">&gt; this hard coded number of slots, and also when nodes are added to the
+</em><br />
+<em class="quotelev1">&gt; cluster while it is running the file is modified and the line would need
+</em><br />
+<em class="quotelev1">&gt; to be edited again. On other systems I have seen the ability to specify
+</em><br />
+<em class="quotelev1">&gt; that a job will use a specific number of CPU's without being in a
+</em><br />
+<em class="quotelev1">&gt; special parallel environment I have seen the &quot;-l ncpus=X&quot; option
+</em><br />
+<em class="quotelev1">&gt; working, but it does't seem to with the default starcluster setup. Also
+</em><br />
+<em class="quotelev1">&gt; it looks like the &quot;orte&quot; parallel environment has some stuff very
+</em><br />
+<em class="quotelev1">&gt; specific to MPI, and doesn't have a problem splitting the requested
+</em><br />
+<em class="quotelev1">&gt; number of slots between multiple nodes, which I definitely don't want. I
+</em><br />
+<em class="quotelev1">&gt; just want to limit the number of jobs per node, but be able to specify
+</em><br />
+<em class="quotelev1">&gt; that at runtime.  
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; It looks like the grid engine is somehow aware of the number of CPU's
+</em><br />
+<em class="quotelev1">&gt; available on each node. I get this with by running `qhost`:
+</em><br />
+<em class="quotelev1">&gt; HOSTNAME                ARCH         NCPU  LOAD  MEMTOT  MEMUSE  SWAPTO
+</em><br />
+<em class="quotelev1">&gt;  SWAPUS
+</em><br />
+<em class="quotelev1">&gt; -------------------------------------------------------------------------------
+</em><br />
+<em class="quotelev1">&gt; global                  -               -     -       -       -       -
+</em><br />
+<em class="quotelev1">&gt;       -
+</em><br />
+<em class="quotelev1">&gt; master                  linux-x64       8  0.88   67.1G    1.5G     0.0
+</em><br />
+<em class="quotelev1">&gt;     0.0
+</em><br />
+<em class="quotelev1">&gt; node001                 linux-x64       8  0.36   67.1G  917.3M     0.0
+</em><br />
+<em class="quotelev1">&gt;     0.0
+</em><br />
+<em class="quotelev1">&gt; node002                 linux-x64       8  0.04   67.1G  920.4M     0.0
+</em><br />
+<em class="quotelev1">&gt;     0.0
+</em><br />
+<em class="quotelev1">&gt; node003                 linux-x64       8  0.04   67.1G  887.3M     0.0
+</em><br />
+<em class="quotelev1">&gt;     0.0
+</em><br />
+<em class="quotelev1">&gt; node004                 linux-x64       8  0.06   67.1G  911.4M     0.0
+</em><br />
+<em class="quotelev1">&gt;     0.0
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; So it seems like there should be a way to tell qsub that job X is using
+</em><br />
+<em class="quotelev1">&gt; some subset of the available CPU, or RAM, so that it doesn't
+</em><br />
+<em class="quotelev1">&gt; oversubscribe the node.
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Thanks for your time!
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Best,
+</em><br />
+<em class="quotelev1">&gt; John
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; On Oct 16, 2012, at 2:12 PM, Jesse Lu &lt;jesselu_at_stanford.edu
+</em><br />
+<em class="quotelev1">&gt; &lt;mailto:jesselu_at_stanford.edu&gt;&gt; wrote:
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; You can modify the all.q queue to assign a fixed number of slots to
+</em><br />
+<em class="quotelev2">&gt;&gt; each node.
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;   * If I remember correctly, &quot;$ qconf -mq all.q&quot; will bring up the
+</em><br />
+<em class="quotelev2">&gt;&gt;     configuration of the all.q queue in an editor. 
+</em><br />
+<em class="quotelev2">&gt;&gt;   * Under the &quot;slots&quot; attribute should be a semilengthly string such
+</em><br />
+<em class="quotelev2">&gt;&gt;     as &quot;[node001=16],[node002=16],...&quot;
+</em><br />
+<em class="quotelev2">&gt;&gt;   * Try replacing the entire string with a single number such as &quot;2&quot;.
+</em><br />
+<em class="quotelev2">&gt;&gt;     This should assign each host to have only two slots.
+</em><br />
+<em class="quotelev2">&gt;&gt;   * Save the configuration and try a simple submission with the 'orte'
+</em><br />
+<em class="quotelev2">&gt;&gt;     parallel environment and let me know if it works.
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; Jesse
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; On Tue, Oct 16, 2012 at 1:37 PM, John St. John
+</em><br />
+<em class="quotelev2">&gt;&gt; &lt;johnthesaintjohn_at_gmail.com &lt;mailto:johnthesaintjohn_at_gmail&#46;<!--nospam-->com&gt;&gt; wrote:
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;     Hello,
+</em><br />
+<em class="quotelev2">&gt;&gt;     I am having issues telling qsub to limit the number of jobs ran at
+</em><br />
+<em class="quotelev2">&gt;&gt;     any one time on each node of the cluster. There are sometimes ways
+</em><br />
+<em class="quotelev2">&gt;&gt;     to do this with things like &quot;qsub -l node=1:ppn=1&quot; or &quot;qsub -l
+</em><br />
+<em class="quotelev2">&gt;&gt;     procs=2&quot; or something. I even tried &quot;qsub -l slots=2&quot; but that
+</em><br />
+<em class="quotelev2">&gt;&gt;     gave me an error and told me to use the parallel environment. When
+</em><br />
+<em class="quotelev2">&gt;&gt;     I tried to use the &quot;orte&quot; parallel environment like &quot;-pe orte 2&quot; I
+</em><br />
+<em class="quotelev2">&gt;&gt;     see &quot;slots=2&quot; in my qstat list, but everything gets executed on
+</em><br />
+<em class="quotelev2">&gt;&gt;     one node at the same parallelization as before. How do I limit the
+</em><br />
+<em class="quotelev2">&gt;&gt;     number of jobs per node? I am running a process that consumes a
+</em><br />
+<em class="quotelev2">&gt;&gt;     very large amount of ram.
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;     Thanks,
+</em><br />
+<em class="quotelev2">&gt;&gt;     John
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;     _______________________________________________
+</em><br />
+<em class="quotelev2">&gt;&gt;     StarCluster mailing list
+</em><br />
+<em class="quotelev2">&gt;&gt;     StarCluster_at_mit.edu &lt;mailto:StarCluster_at_mit&#46;<!--nospam-->edu&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;     <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; _______________________________________________
+</em><br />
+<em class="quotelev1">&gt; StarCluster mailing list
+</em><br />
+<em class="quotelev1">&gt; StarCluster_at_mit.edu
+</em><br />
+<em class="quotelev1">&gt; <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<br /><pre>
+-- 
+Gavin W. Burris
+Senior Systems Programmer
+Information Security and Unix Systems
+School of Arts and Sciences
+University of Pennsylvania
+</pre>
+<span id="received"><dfn>Received on</dfn> Wed Oct 17 2012 - 11:16:28 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1427.html#start1427">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1428.html" title="Next message in the list">Jean-Pierre Adam: "Re:  exclude the master node"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1426.html" title="Previous message in the list">Ed Morris: "Re:  exclude the master node"</a></li>
+<li><dfn>In reply to</dfn>: <a href="1424.html" title="Message to which this message replies">John St. John: "Re:  Starcluster SGE usage"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1443.html" title="Next message in this discussion thread">John St. John: "Re:  Starcluster SGE usage"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1443.html" title="Message sent in reply to this message">John St. John: "Re:  Starcluster SGE usage"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1427" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1427" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1427" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1427" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

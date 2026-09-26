@@ -1,0 +1,816 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Ryan Golhar ((no email))" />
+<meta name="Subject" content="Re:  loadbalance" />
+<title>starcluster.mbox.out: Re:  loadbalance</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Re:  loadbalance</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Re:  loadbalance</h1>
+<!-- received="Thu Sep 19 01:51:46 2013" -->
+<!-- isoreceived="20130919055146" -->
+<!-- sent="Thu, 19 Sep 2013 01:51:42 -0400" -->
+<!-- isosent="20130919055142" -->
+<!-- name="Ryan Golhar" -->
+<!-- email="(no email)" -->
+<!-- subject="Re:  loadbalance" -->
+<!-- id="CAFbjoch6y4-U-KW-yQhOUJno_UYrJmnjvX5tMh8gEXUXonaFLA_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- inreplyto="CAAEsPue5uzzZsNPG4vkeC=m5ijzQoYcUUfAD_nQNqxbFLxW0kA_at_mail.gmail.com" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1883.html#start1883" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1883.html#options2">top</a>, <a href="1883.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1884.html" accesskey="d" title="Ryan Golhar: &quot;Trying to remove nodes gives an error&quot;">Next message</a> ]
+[ <a href="1882.html" title="Rajat Banerjee: &quot;Re:  loadbalance&quot;">Previous message</a> ]
+[ <a href="1882.html" title="Rajat Banerjee: &quot;Re:  loadbalance&quot;">In reply to</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1883" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1883" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1883" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1883" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Ryan Golhar &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 19 Sep 2013 01:51:42 -0400</span><br />
+</address>
+<br />
+Its happening again.
+<br />
+<br />output from qstat (truncated):
+<br />
+<br />job-ID  prior   name       user         state submit/start at     queue
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;slots ja-task-ID
+<br />
+-----------------------------------------------------------------------------------------------------------------
+<br />
+&nbsp;&nbsp;&nbsp;1211 0.55500 j1-00596-0 ec2-user     r     09/19/2013 05:27:35
+<br />
+all.q_at_node003                      8
+<br />
+&nbsp;&nbsp;&nbsp;1212 0.55500 j1-00604-0 ec2-user     r     09/19/2013 05:27:35
+<br />
+all.q_at_node005                      8
+<br />
+&nbsp;&nbsp;&nbsp;1214 0.55500 j1-00650-0 ec2-user     r     09/19/2013 05:27:35
+<br />
+all.q_at_node002                      8
+<br />
+&nbsp;&nbsp;&nbsp;1215 0.55500 j1-00984-0 ec2-user     r     09/19/2013 05:27:35
+<br />
+all.q_at_node009                      8
+<br />
+&nbsp;&nbsp;&nbsp;1216 0.55500 j1-01025-0 ec2-user     r     09/19/2013 05:27:35
+<br />
+all.q_at_node017                      8
+<br />
+&nbsp;&nbsp;&nbsp;1217 0.55500 j1-01026-0 ec2-user     r     09/19/2013 05:27:35
+<br />
+all.q_at_node010                      8
+<br />
+&nbsp;&nbsp;&nbsp;1218 0.55500 j1-01026   ec2-user     r     09/19/2013 05:27:35
+<br />
+all.q_at_node006                      8
+<br />
+&nbsp;&nbsp;&nbsp;1219 0.55500 j1-01053   ec2-user     r     09/19/2013 05:27:35
+<br />
+all.q_at_node007                      8
+<br />
+&nbsp;&nbsp;&nbsp;1220 0.55500 j1-01106-0 ec2-user     r     09/19/2013 05:27:35
+<br />
+all.q_at_node012                      8
+<br />
+&nbsp;&nbsp;&nbsp;1221 0.55500 j1-01119-0 ec2-user     r     09/19/2013 05:27:35
+<br />
+all.q_at_node016                      8
+<br />
+&nbsp;&nbsp;&nbsp;1222 0.55500 j1-01175   ec2-user     r     09/19/2013 05:27:35
+<br />
+all.q_at_node020                      8
+<br />
+&nbsp;&nbsp;&nbsp;1223 0.55500 j1-01178   ec2-user     r     09/19/2013 05:27:35
+<br />
+all.q_at_node018                      8
+<br />
+&nbsp;&nbsp;&nbsp;1224 0.55500 j1-01184-0 ec2-user     r     09/19/2013 05:27:35
+<br />
+all.q_at_node019                      8
+<br />
+&nbsp;&nbsp;&nbsp;1225 0.55500 j1-01184-0 ec2-user     r     09/19/2013 05:27:35
+<br />
+all.q_at_node015                      8
+<br />
+&nbsp;&nbsp;&nbsp;1226 0.55500 j1-01184   ec2-user     r     09/19/2013 05:27:35
+<br />
+all.q_at_node014                      8
+<br />
+&nbsp;&nbsp;&nbsp;1227 0.55500 j1-01190-0 ec2-user     r     09/19/2013 05:27:35
+<br />
+all.q_at_node011                      8
+<br />
+&nbsp;&nbsp;&nbsp;1228 0.55500 j1-01190-0 ec2-user     r     09/19/2013 05:27:35
+<br />
+all.q_at_master                       8
+<br />
+&nbsp;&nbsp;&nbsp;1229 0.55500 j1-01190   ec2-user     r     09/19/2013 05:27:35
+<br />
+all.q_at_node013                      8
+<br />
+&nbsp;&nbsp;&nbsp;1230 0.55500 j1-01244-0 ec2-user     r     09/19/2013 05:27:35
+<br />
+all.q_at_node008                      8
+<br />
+&nbsp;&nbsp;&nbsp;1231 0.55500 j1-01244-0 ec2-user     r     09/19/2013 05:27:35
+<br />
+all.q_at_node001                      8
+<br />
+&nbsp;&nbsp;&nbsp;1232 0.55500 j1-01244   ec2-user     r     09/19/2013 05:45:05
+<br />
+all.q_at_node004                      8
+<br />
+&nbsp;&nbsp;&nbsp;1233 0.55500 j1-01260-0 ec2-user     qw    09/19/2013 05:27:28
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8
+<br />
+&nbsp;&nbsp;&nbsp;1234 0.55500 j1-01260-0 ec2-user     qw    09/19/2013 05:27:28
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8
+<br />
+&nbsp;&nbsp;&nbsp;1235 0.55500 j1-01260   ec2-user     qw    09/19/2013 05:27:28
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8
+<br />
+&nbsp;&nbsp;&nbsp;1236 0.55500 j1-01265-0 ec2-user     qw    09/19/2013 05:27:28
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8
+<br />
+&nbsp;&nbsp;&nbsp;1237 0.55500 j1-01265-0 ec2-user     qw    09/19/2013 05:27:28
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8
+<br />
+&nbsp;&nbsp;&nbsp;1238 0.55500 j1-01265   ec2-user     qw    09/19/2013 05:27:28
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8
+<br />
+&nbsp;&nbsp;&nbsp;1239 0.55500 j1-01272-0 ec2-user     qw    09/19/2013 05:27:28
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8
+<br />
+<br />qacct:
+<br />
+Total System Usage
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;WALLCLOCK         UTIME         STIME           CPU             MEMORY
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IO                IOW
+<br />
+================================================================================================================
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20647     12987.584      6567.578     25492.947          35430.706
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1771.872              0.000
+<br />
+<br />qhost:
+<br />
+HOSTNAME                ARCH         NCPU  LOAD  MEMTOT  MEMUSE  SWAPTO
+<br />
+&nbsp;SWAPUS
+<br />
+-------------------------------------------------------------------------------
+<br />
+global                  -               -     -       -       -       -
+<br />
+&nbsp;&nbsp;-
+<br />
+master                  linux-x64       8 10.76    6.8G    3.8G     0.0
+<br />
+0.0
+<br />
+node001                 linux-x64       8  0.03    6.8G  537.4M     0.0
+<br />
+0.0
+<br />
+node002                 linux-x64       8  0.07    6.8G  539.7M     0.0
+<br />
+0.0
+<br />
+node003                 linux-x64       8  4.27    6.8G    3.7G     0.0
+<br />
+0.0
+<br />
+node004                 linux-x64       8  3.52    6.8G  283.0M     0.0
+<br />
+0.0
+<br />
+node005                 linux-x64       8  4.36    6.8G    3.7G     0.0
+<br />
+0.0
+<br />
+node006                 linux-x64       8  0.04    6.8G  642.3M     0.0
+<br />
+0.0
+<br />
+node007                 linux-x64       8  0.12    6.8G  468.3M     0.0
+<br />
+0.0
+<br />
+node008                 linux-x64       8  4.70    6.8G    3.8G     0.0
+<br />
+0.0
+<br />
+node009                 linux-x64       8  0.04    6.8G  607.2M     0.0
+<br />
+0.0
+<br />
+node010                 linux-x64       8  4.31    6.8G    3.7G     0.0
+<br />
+0.0
+<br />
+node011                 linux-x64       8  3.96    6.8G    3.6G     0.0
+<br />
+0.0
+<br />
+node012                 linux-x64       8  1.61    6.8G  280.4M     0.0
+<br />
+0.0
+<br />
+node013                 linux-x64       8  1.31    6.8G  582.7M     0.0
+<br />
+0.0
+<br />
+node014                 linux-x64       8  1.27    6.8G  375.2M     0.0
+<br />
+0.0
+<br />
+node015                 linux-x64       8  1.19    6.8G  996.4M     0.0
+<br />
+0.0
+<br />
+node016                 linux-x64       8  1.43    6.8G  349.8M     0.0
+<br />
+0.0
+<br />
+node017                 linux-x64       8  1.40    6.8G  567.0M     0.0
+<br />
+0.0
+<br />
+node018                 linux-x64       8  1.36    6.8G  262.4M     0.0
+<br />
+0.0
+<br />
+node019                 linux-x64       8  1.43    6.8G  278.5M     0.0
+<br />
+0.0
+<br />
+node020                 linux-x64       8  1.36    6.8G  402.6M     0.0
+<br />
+0.0
+<br />
+<br /><br /><br />On Wed, Sep 18, 2013 at 3:01 PM, Rajat Banerjee &lt;rajatb_at_post.harvard.edu&gt;wrote:
+<br />
+<br /><em class="quotelev1">&gt; That looks normal. Can you please send qstat, qacct, and qhost output from
+</em><br />
+<em class="quotelev1">&gt; when you're seeing the problem? Thanks.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; On Wed, Sep 18, 2013 at 2:47 PM, Ryan Golhar &lt;ngsbioinformatics_at_gmail.com&gt;wrote:
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; I've since terminated the cluster and an experimenting with different set
+</em><br />
+<em class="quotelev2">&gt;&gt; up, but here's the output from qstat and qhost;
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; ec2-user_at_master:~$ qstat
+</em><br />
+<em class="quotelev2">&gt;&gt; job-ID  prior   name       user         state submit/start at     queue
+</em><br />
+<em class="quotelev2">&gt;&gt;                        slots ja-task-ID
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; -----------------------------------------------------------------------------------------------------------------
+</em><br />
+<em class="quotelev2">&gt;&gt;       4 0.55500 j1-00493-0 ec2-user     r     09/18/2013 17:38:44
+</em><br />
+<em class="quotelev2">&gt;&gt; all.q_at_node001                      8
+</em><br />
+<em class="quotelev2">&gt;&gt;       6 0.55500 j1-00508-0 ec2-user     r     09/18/2013 17:45:44
+</em><br />
+<em class="quotelev2">&gt;&gt; all.q_at_node002                      8
+</em><br />
+<em class="quotelev2">&gt;&gt;       7 0.55500 j1-00525-0 ec2-user     r     09/18/2013 17:46:29
+</em><br />
+<em class="quotelev2">&gt;&gt; all.q_at_node003                      8
+</em><br />
+<em class="quotelev2">&gt;&gt;       8 0.55500 j1-00541-0 ec2-user     r     09/18/2013 17:54:59
+</em><br />
+<em class="quotelev2">&gt;&gt; all.q_at_node004                      8
+</em><br />
+<em class="quotelev2">&gt;&gt;       9 0.55500 j1-00565-0 ec2-user     r     09/18/2013 17:55:44
+</em><br />
+<em class="quotelev2">&gt;&gt; all.q_at_node005                      8
+</em><br />
+<em class="quotelev2">&gt;&gt;      10 0.55500 j1-00596-0 ec2-user     r     09/18/2013 17:58:59
+</em><br />
+<em class="quotelev2">&gt;&gt; all.q_at_node006                      8
+</em><br />
+<em class="quotelev2">&gt;&gt;      11 0.55500 j1-00604-0 ec2-user     r     09/18/2013 18:05:14
+</em><br />
+<em class="quotelev2">&gt;&gt; all.q_at_node007                      8
+</em><br />
+<em class="quotelev2">&gt;&gt;      12 0.55500 j1-00625-0 ec2-user     r     09/18/2013 18:05:14
+</em><br />
+<em class="quotelev2">&gt;&gt; all.q_at_node008                      8
+</em><br />
+<em class="quotelev2">&gt;&gt;      13 0.55500 j1-00650-0 ec2-user     r     09/18/2013 18:05:14
+</em><br />
+<em class="quotelev2">&gt;&gt; all.q_at_node009                      8
+</em><br />
+<em class="quotelev2">&gt;&gt;      18 0.55500 j1-00734-0 ec2-user     r     09/18/2013 18:07:29
+</em><br />
+<em class="quotelev2">&gt;&gt; all.q_at_node010                      8
+</em><br />
+<em class="quotelev2">&gt;&gt;      19 0.55500 j1-00738-0 ec2-user     r     09/18/2013 18:16:59
+</em><br />
+<em class="quotelev2">&gt;&gt; all.q_at_node011                      8
+</em><br />
+<em class="quotelev2">&gt;&gt;      20 0.55500 j1-00739-0 ec2-user     r     09/18/2013 18:16:59
+</em><br />
+<em class="quotelev2">&gt;&gt; all.q_at_node012                      8
+</em><br />
+<em class="quotelev2">&gt;&gt;      21 0.55500 j1-00770   ec2-user     r     09/18/2013 18:16:59
+</em><br />
+<em class="quotelev2">&gt;&gt; all.q_at_node013                      8
+</em><br />
+<em class="quotelev2">&gt;&gt;      22 0.55500 j1-00806-0 ec2-user     r     09/18/2013 18:16:59
+</em><br />
+<em class="quotelev2">&gt;&gt; all.q_at_node014                      8
+</em><br />
+<em class="quotelev2">&gt;&gt;      23 0.55500 j1-00825-0 ec2-user     r     09/18/2013 18:16:59
+</em><br />
+<em class="quotelev2">&gt;&gt; all.q_at_node015                      8
+</em><br />
+<em class="quotelev2">&gt;&gt;      24 0.55500 j1-00826-0 ec2-user     r     09/18/2013 18:16:59
+</em><br />
+<em class="quotelev2">&gt;&gt; all.q_at_node016                      8
+</em><br />
+<em class="quotelev2">&gt;&gt;      25 0.55500 j1-00846-0 ec2-user     r     09/18/2013 18:16:59
+</em><br />
+<em class="quotelev2">&gt;&gt; all.q_at_node017                      8
+</em><br />
+<em class="quotelev2">&gt;&gt;      26 0.55500 j1-00847-0 ec2-user     r     09/18/2013 18:16:59
+</em><br />
+<em class="quotelev2">&gt;&gt; all.q_at_node018                      8
+</em><br />
+<em class="quotelev2">&gt;&gt;      27 0.55500 j1-00913   ec2-user     r     09/18/2013 18:16:59
+</em><br />
+<em class="quotelev2">&gt;&gt; all.q_at_node019                      8
+</em><br />
+<em class="quotelev2">&gt;&gt;      28 0.55500 j1-00914-0 ec2-user     r     09/18/2013 18:16:59
+</em><br />
+<em class="quotelev2">&gt;&gt; all.q_at_node020                      8
+</em><br />
+<em class="quotelev2">&gt;&gt;      29 0.55500 j1-00914   ec2-user     r     09/18/2013 18:26:29
+</em><br />
+<em class="quotelev2">&gt;&gt; all.q_at_node021                      8
+</em><br />
+<em class="quotelev2">&gt;&gt;      30 0.55500 j1-00922   ec2-user     r     09/18/2013 18:26:29
+</em><br />
+<em class="quotelev2">&gt;&gt; all.q_at_node022                      8
+</em><br />
+<em class="quotelev2">&gt;&gt;      31 0.55500 j1-00977   ec2-user     r     09/18/2013 18:26:29
+</em><br />
+<em class="quotelev2">&gt;&gt; all.q_at_node023                      8
+</em><br />
+<em class="quotelev2">&gt;&gt;      32 0.55500 j1-00984-0 ec2-user     r     09/18/2013 18:26:29
+</em><br />
+<em class="quotelev2">&gt;&gt; all.q_at_node024                      8
+</em><br />
+<em class="quotelev2">&gt;&gt;      33 0.55500 j1-00984   ec2-user     r     09/18/2013 18:26:29
+</em><br />
+<em class="quotelev2">&gt;&gt; all.q_at_node025                      8
+</em><br />
+<em class="quotelev2">&gt;&gt;      34 0.55500 j1-00998-0 ec2-user     r     09/18/2013 18:26:29
+</em><br />
+<em class="quotelev2">&gt;&gt; all.q_at_node026                      8
+</em><br />
+<em class="quotelev2">&gt;&gt;      35 0.55500 j1-01010-0 ec2-user     r     09/18/2013 18:26:29
+</em><br />
+<em class="quotelev2">&gt;&gt; all.q_at_node027                      8
+</em><br />
+<em class="quotelev2">&gt;&gt;      36 0.55500 j1-01019-0 ec2-user     r     09/18/2013 18:26:29
+</em><br />
+<em class="quotelev2">&gt;&gt; all.q_at_node028                      8
+</em><br />
+<em class="quotelev2">&gt;&gt;      37 0.55500 j1-01025-0 ec2-user     r     09/18/2013 18:26:29
+</em><br />
+<em class="quotelev2">&gt;&gt; all.q_at_node029                      8
+</em><br />
+<em class="quotelev2">&gt;&gt;      38 0.55500 j1-01026-0 ec2-user     r     09/18/2013 18:26:29
+</em><br />
+<em class="quotelev2">&gt;&gt; all.q_at_node030                      8
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; ec2-user_at_master:~$ qhost
+</em><br />
+<em class="quotelev2">&gt;&gt; HOSTNAME                ARCH         NCPU  LOAD  MEMTOT  MEMUSE  SWAPTO
+</em><br />
+<em class="quotelev2">&gt;&gt;  SWAPUS
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; -------------------------------------------------------------------------------
+</em><br />
+<em class="quotelev2">&gt;&gt; global                  -               -     -       -       -       -
+</em><br />
+<em class="quotelev2">&gt;&gt;     -
+</em><br />
+<em class="quotelev2">&gt;&gt; node001                 linux-x64       8  7.74    6.8G    3.8G     0.0
+</em><br />
+<em class="quotelev2">&gt;&gt;   0.0
+</em><br />
+<em class="quotelev2">&gt;&gt; node002                 linux-x64       8  7.93    6.8G    3.7G     0.0
+</em><br />
+<em class="quotelev2">&gt;&gt;   0.0
+</em><br />
+<em class="quotelev2">&gt;&gt; node003                 linux-x64       8  7.68    6.8G    3.7G     0.0
+</em><br />
+<em class="quotelev2">&gt;&gt;   0.0
+</em><br />
+<em class="quotelev2">&gt;&gt; node004                 linux-x64       8  7.86    6.8G    3.8G     0.0
+</em><br />
+<em class="quotelev2">&gt;&gt;   0.0
+</em><br />
+<em class="quotelev2">&gt;&gt; node005                 linux-x64       8  7.87    6.8G    3.7G     0.0
+</em><br />
+<em class="quotelev2">&gt;&gt;   0.0
+</em><br />
+<em class="quotelev2">&gt;&gt; node006                 linux-x64       8  7.66    6.8G    3.7G     0.0
+</em><br />
+<em class="quotelev2">&gt;&gt;   0.0
+</em><br />
+<em class="quotelev2">&gt;&gt; node007                 linux-x64       8  0.01    6.8G  564.8M     0.0
+</em><br />
+<em class="quotelev2">&gt;&gt;   0.0
+</em><br />
+<em class="quotelev2">&gt;&gt; node008                 linux-x64       8  0.01    6.8G  493.6M     0.0
+</em><br />
+<em class="quotelev2">&gt;&gt;   0.0
+</em><br />
+<em class="quotelev2">&gt;&gt; node009                 linux-x64       8  0.02    6.8G  564.4M     0.0
+</em><br />
+<em class="quotelev2">&gt;&gt;   0.0
+</em><br />
+<em class="quotelev2">&gt;&gt; node010                 linux-x64       8  7.85    6.8G    3.7G     0.0
+</em><br />
+<em class="quotelev2">&gt;&gt;   0.0
+</em><br />
+<em class="quotelev2">&gt;&gt; node011                 linux-x64       8  7.53    6.8G    3.7G     0.0
+</em><br />
+<em class="quotelev2">&gt;&gt;   0.0
+</em><br />
+<em class="quotelev2">&gt;&gt; node012                 linux-x64       8  7.57    6.8G    3.6G     0.0
+</em><br />
+<em class="quotelev2">&gt;&gt;   0.0
+</em><br />
+<em class="quotelev2">&gt;&gt; node013                 linux-x64       8  7.71    6.8G    3.7G     0.0
+</em><br />
+<em class="quotelev2">&gt;&gt;   0.0
+</em><br />
+<em class="quotelev2">&gt;&gt; node014                 linux-x64       8  7.49    6.8G    3.7G     0.0
+</em><br />
+<em class="quotelev2">&gt;&gt;   0.0
+</em><br />
+<em class="quotelev2">&gt;&gt; node015                 linux-x64       8  7.51    6.8G    3.7G     0.0
+</em><br />
+<em class="quotelev2">&gt;&gt;   0.0
+</em><br />
+<em class="quotelev2">&gt;&gt; node016                 linux-x64       8  7.50    6.8G    3.6G     0.0
+</em><br />
+<em class="quotelev2">&gt;&gt;   0.0
+</em><br />
+<em class="quotelev2">&gt;&gt; node017                 linux-x64       8  7.89    6.8G    3.7G     0.0
+</em><br />
+<em class="quotelev2">&gt;&gt;   0.0
+</em><br />
+<em class="quotelev2">&gt;&gt; node018                 linux-x64       8  7.50    6.8G    3.7G     0.0
+</em><br />
+<em class="quotelev2">&gt;&gt;   0.0
+</em><br />
+<em class="quotelev2">&gt;&gt; node019                 linux-x64       8  7.52    6.8G    3.7G     0.0
+</em><br />
+<em class="quotelev2">&gt;&gt;   0.0
+</em><br />
+<em class="quotelev2">&gt;&gt; node020                 linux-x64       8  7.68    6.8G    3.6G     0.0
+</em><br />
+<em class="quotelev2">&gt;&gt;   0.0
+</em><br />
+<em class="quotelev2">&gt;&gt; node021                 linux-x64       8  7.16    6.8G    3.6G     0.0
+</em><br />
+<em class="quotelev2">&gt;&gt;   0.0
+</em><br />
+<em class="quotelev2">&gt;&gt; node022                 linux-x64       8  6.99    6.8G    3.6G     0.0
+</em><br />
+<em class="quotelev2">&gt;&gt;   0.0
+</em><br />
+<em class="quotelev2">&gt;&gt; node023                 linux-x64       8  6.80    6.8G    3.6G     0.0
+</em><br />
+<em class="quotelev2">&gt;&gt;   0.0
+</em><br />
+<em class="quotelev2">&gt;&gt; node024                 linux-x64       8  7.20    6.8G    3.6G     0.0
+</em><br />
+<em class="quotelev2">&gt;&gt;   0.0
+</em><br />
+<em class="quotelev2">&gt;&gt; node025                 linux-x64       8  6.86    6.8G    3.6G     0.0
+</em><br />
+<em class="quotelev2">&gt;&gt;   0.0
+</em><br />
+<em class="quotelev2">&gt;&gt; node026                 linux-x64       8  7.24    6.8G    3.6G     0.0
+</em><br />
+<em class="quotelev2">&gt;&gt;   0.0
+</em><br />
+<em class="quotelev2">&gt;&gt; node027                 linux-x64       8  6.88    6.8G    3.7G     0.0
+</em><br />
+<em class="quotelev2">&gt;&gt;   0.0
+</em><br />
+<em class="quotelev2">&gt;&gt; node028                 linux-x64       8  6.28    6.8G    3.6G     0.0
+</em><br />
+<em class="quotelev2">&gt;&gt;   0.0
+</em><br />
+<em class="quotelev2">&gt;&gt; node029                 linux-x64       8  7.42    6.8G    3.6G     0.0
+</em><br />
+<em class="quotelev2">&gt;&gt;   0.0
+</em><br />
+<em class="quotelev2">&gt;&gt; node030                 linux-x64       8  0.10    6.8G  390.4M     0.0
+</em><br />
+<em class="quotelev2">&gt;&gt;   0.0
+</em><br />
+<em class="quotelev2">&gt;&gt; node031                 linux-x64       8  0.06    6.8G  135.0M     0.0
+</em><br />
+<em class="quotelev2">&gt;&gt;   0.0
+</em><br />
+<em class="quotelev2">&gt;&gt; node032                 linux-x64       8  0.04    6.8G  135.3M     0.0
+</em><br />
+<em class="quotelev2">&gt;&gt;   0.0
+</em><br />
+<em class="quotelev2">&gt;&gt; node033                 linux-x64       8  0.07    6.8G  135.6M     0.0
+</em><br />
+<em class="quotelev2">&gt;&gt;   0.0
+</em><br />
+<em class="quotelev2">&gt;&gt; node034                 linux-x64       8  0.10    6.8G  134.9M     0.0
+</em><br />
+<em class="quotelev2">&gt;&gt;   0.0
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; I never saw anything unusual
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; On Wed, Sep 18, 2013 at 10:40 AM, Rajat Banerjee &lt;rajatb_at_post.harvard.edu
+</em><br />
+<em class="quotelev3">&gt;&gt; &gt; wrote:
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Ryan,
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Could you put the output of qhost and qstat into a text file and send it
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; back to the list? That's what feeds the load balancer those stats.
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Thanks,
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Rajat
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; On Tue, Sep 17, 2013 at 11:47 PM, Ryan Golhar &lt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; ngsbioinformatics_at_gmail.com&gt; wrote:
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; I'm running a cluster with over 800 jobs queued....and I'm running
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; loadbalance.  Every other query by loadbalance shows Avg job duration and
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; wait time of 0 secs.  Why is this?  It hasn't yet caused a problem, but
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; seems odd....
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;&gt; &gt;&gt;&gt; Loading full job history
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; Execution hosts: 19
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; Queued jobs: 791
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; Oldest queued job: 2013-09-17 22:19:23
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; Avg job duration: 3559 secs
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; Avg job wait time: 12389 secs
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; Last cluster modification time: 2013-09-18 00:11:31
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;&gt; &gt;&gt;&gt; Not adding nodes: already at or above maximum (1)
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;&gt; &gt;&gt;&gt; Sleeping...(looping again in 60 secs)
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; Execution hosts: 19
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; Queued jobs: 791
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; Oldest queued job: 2013-09-17 22:19:23
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; Avg job duration: 0 secs
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; Avg job wait time: 0 secs
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; Last cluster modification time: 2013-09-18 00:11:31
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;&gt; &gt;&gt;&gt; Not adding nodes: already at or above maximum (1)
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;&gt; &gt;&gt;&gt; Sleeping...(looping again in 60 secs)
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; _______________________________________________
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; StarCluster mailing list
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; StarCluster_at_mit.edu
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; _______________________________________________
+</em><br />
+<em class="quotelev2">&gt;&gt; StarCluster mailing list
+</em><br />
+<em class="quotelev2">&gt;&gt; StarCluster_at_mit.edu
+</em><br />
+<em class="quotelev2">&gt;&gt; <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<span id="received"><dfn>Received on</dfn> Thu Sep 19 2013 - 01:51:46 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1883.html#start1883">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1884.html" title="Next message in the list">Ryan Golhar: "Trying to remove nodes gives an error"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1882.html" title="Previous message in the list">Rajat Banerjee: "Re:  loadbalance"</a></li>
+<li><dfn>In reply to</dfn>: <a href="1882.html" title="Message to which this message replies">Rajat Banerjee: "Re:  loadbalance"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1883" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1883" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1883" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1883" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+liulei@liulei-Latitude-3440:~$ starcluster start newcluster
+StarCluster - (http://star.mit.edu/cluster) (v. 0.95.6)
+Software Tools for Academics and Researchers (STAR)
+Please submit bug reports to starcluster@mit.edu
+
+>>> Using default cluster template: smallcluster
+>>> Validating cluster template settings...
+*** WARNING - PUBLIC IPS HAVE BEEN DISABLED!!!
+
+This means StarCluster must be executed from a machine within the cluster's VPC
+(vpc-2ff7e54d) otherwise it will hang forever trying to connect to the instances.
+
+>>> Cluster template settings are valid
+>>> Starting cluster...
+>>> Launching a 2-node VPC cluster...
+>>> Creating security group @sc-newcluster...
+Reservation:r-e9b96fd1
+>>> Waiting for instances to propagate...
+2/2 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%  
+>>> Waiting for cluster to come up... (updating every 30s)
+2/2 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%  
+!!! ERROR - UnsupportedOperation: The functionality you requested is not available in this region.
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.95.6-py2.7.egg/starcluster/cli.py", line 274, in main
+    sc.execute(args)
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.95.6-py2.7.egg/starcluster/commands/start.py", line 244, in execute
+    validate_running=validate_running)
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.95.6-py2.7.egg/starcluster/cluster.py", line 1628, in start
+    return self._start(create=create, create_only=create_only)
+  File "<string>", line 2, in _start
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.95.6-py2.7.egg/starcluster/utils.py", line 112, in wrap_f
+    res = func(*arg, **kargs)
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.95.6-py2.7.egg/starcluster/cluster.py", line 1651, in _start
+    self.setup_cluster()
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.95.6-py2.7.egg/starcluster/cluster.py", line 1659, in setup_cluster
+    self.wait_for_cluster()
+  File "<string>", line 2, in wait_for_cluster
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.95.6-py2.7.egg/starcluster/utils.py", line 112, in wrap_f
+    res = func(*arg, **kargs)
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.95.6-py2.7.egg/starcluster/cluster.py", line 1444, in wait_for_cluster
+    self.wait_for_active_spots()
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.95.6-py2.7.egg/starcluster/cluster.py", line 1375, in wait_for_active_spots
+    spots = spots or self.spot_requests
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.95.6-py2.7.egg/starcluster/cluster.py", line 881, in spot_requests
+    return self.ec2.get_all_spot_requests(filters=filters)
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.95.6-py2.7.egg/starcluster/awsutils.py", line 776, in get_all_spot_requests
+    filters=filters)
+  File "/usr/local/lib/python2.7/dist-packages/boto-2.38.0-py2.7.egg/boto/ec2/connection.py", line 1340, in get_all_spot_instance_requests
+    [('item', SpotInstanceRequest)], verb='POST')
+  File "/usr/local/lib/python2.7/dist-packages/boto-2.38.0-py2.7.egg/boto/connection.py", line 1186, in get_list
+    raise self.ResponseError(response.status, response.reason, body)
+EC2ResponseError: EC2ResponseError: 400 Bad Request
+<?xml version="1.0" encoding="UTF-8"?>
+<Response><Errors><Error><Code>UnsupportedOperation</Code><Message>The functionality you requested is not available in this region.</Message></Error></Errors><RequestID>1a793657-d330-416c-b4ae-96eb65cd7623</RequestID></Response>
+

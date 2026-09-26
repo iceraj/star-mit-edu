@@ -1,0 +1,50 @@
+####################################
+## StarCluster Configuration File ##
+####################################
+[global]
+# Configure the default cluster template to use when starting a cluster
+# defaults to 'smallcluster' defined below. This template should be usable
+# out-of-the-box provided you've configured your keypair correctly
+DEFAULT_TEMPLATE=gibbons
+
+
+#################################
+## Defining Access Credentials ##
+#################################
+[aws info]
+AWS_ACCESS_KEY_ID = XXXX
+AWS_SECRET_ACCESS_KEY = XXXX
+AWS_USER_ID = XXXX
+AWS_REGION_NAME = us-east-1b
+AWS_REGION_HOST = ec2.us-east-1b.amazonaws.com
+
+
+###########################
+## Defining EC2 Keypairs ##
+###########################
+[key sg_cluster]
+KEY_LOCATION=~/.ssh/sg_cluster.rsa
+
+
+################################
+## Defining Cluster Templates ##
+################################
+[cluster gibbons]
+MASTER_IMAGE_ID = ami-9bc9a7f2
+NODE_IMAGE_ID = ami-9bc9a7f2
+CLUSTER_USER = ubuntu
+KEYNAME = sg_cluster
+CLUSTER_SIZE = 1
+MASTER_INSTANCE_TYPE = t1.micro
+NODE_INSTANCE_TYPE = m3.2xlarge
+PLUGINS = sge
+DISABLE_QUEUE = True
+AVAILABILITY_ZONE = us-east-1b
+
+
+#####################################
+## Configuring StarCluster Plugins ##
+#####################################
+[plugin sge]
+setup_class = starcluster.plugins.sge.SGEPlugin
+master_is_exec_host = False

@@ -1,0 +1,319 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Create Users Plugin &mdash; StarCluster 0.95 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/pylons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.95',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="StarCluster 0.95 documentation" href="../index.html" />
+    <link rel="up" title="Plugin Documentation" href="index.html" />
+    <link rel="next" title="IPython Cluster Plugin" href="ipython.html" />
+    <link rel="prev" title="Sun Grid Engine Plugin" href="sge.html" />
+<link rel="stylesheet" href="../_static/nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="../_static/neuton.css" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="../_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+<link rel="shortcut icon" href="../_static/starcluster.ico"/>
+
+  </head>
+  <body>
+<div class="header-small">
+	
+	<div class="logo-small">
+		<a href="../index.html">
+      		<img class="logo" src="../_static/logo-small.png" alt="Logo"/>
+		</a>
+  	</div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="ipython.html" title="IPython Cluster Plugin"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="sge.html" title="Sun Grid Engine Plugin"
+             accesskey="P">previous</a> |</li>
+    	<li><a href="../index.html">Home</a> &raquo;</li>
+          <li><a href="../contents.html" >Master Table of Contents</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Plugin Documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="create-users-plugin">
+<span id="users-plugin"></span><h1>Create Users Plugin<a class="headerlink" href="users.html#create-users-plugin" title="Permalink to this headline">¶</a></h1>
+<p>This plugin creates one or more cluster users and configures passwordless SSH
+access between cluster nodes for each user.</p>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="users.html#configuration" title="Permalink to this headline">¶</a></h2>
+<p>To use the <tt class="docutils literal"><span class="pre">users</span></tt> plugin add a <strong>[plugin]</strong> section to your starcluster config
+file:</p>
+<div class="highlight-ini"><div class="highlight"><pre><span class="k">[plugin createusers]</span>
+<span class="na">setup_class</span> <span class="o">=</span> <span class="s">starcluster.plugins.users.CreateUsers</span>
+<span class="na">num_users</span> <span class="o">=</span> <span class="s">30</span>
+</pre></div>
+</div>
+<p>The above config will create and configure 30 cluster users along with
+passwordless SSH access on the cluster for each user. In this case usernames
+are auto-generated to be user001, user002, etc. If you&#8217;d prefer to provide the
+usernames instead of auto-generating them use the following config instead:</p>
+<div class="highlight-ini"><div class="highlight"><pre><span class="k">[plugin createusers]</span>
+<span class="na">setup_class</span> <span class="o">=</span> <span class="s">starcluster.plugins.users.CreateUsers</span>
+<span class="na">usernames</span> <span class="o">=</span> <span class="s">linus, tux, larry</span>
+</pre></div>
+</div>
+<p>Next update the <tt class="docutils literal"><span class="pre">PLUGINS</span></tt> setting of one or more of your cluster templates to
+include the <tt class="docutils literal"><span class="pre">createusers</span></tt> plugin:</p>
+<div class="highlight-ini"><div class="highlight"><pre><span class="k">[cluster mycluster]</span>
+<span class="na">plugins</span> <span class="o">=</span> <span class="s">createusers</span>
+</pre></div>
+</div>
+<p>The next time you start a cluster using the <tt class="docutils literal"><span class="pre">mycluster</span></tt> template the plugin
+will automatically be executed and users will be created. If you need to
+download the SSH keys for each cluster user in order to distribute them to
+users that do not have access to your AWS account please read the next
+subsection.</p>
+<div class="section" id="downloading-user-ssh-keys">
+<h3>Downloading User SSH Keys<a class="headerlink" href="users.html#downloading-user-ssh-keys" title="Permalink to this headline">¶</a></h3>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">These settings will download the SSH keys for each user to your local
+computer. Please be aware that these keys allow remote access to your
+cluster(s). Please use caution when storing and distributing these keys.</p>
+</div>
+<p>If you&#8217;d prefer the plugin to automatically archive and download the SSH keys
+for each cluster user add the following to your <strong>[plugin]</strong> section:</p>
+<div class="highlight-ini"><div class="highlight"><pre><span class="k">[plugin createusers]</span>
+<span class="na">setup_class</span> <span class="o">=</span> <span class="s">starcluster.plugins.users.CreateUsers</span>
+<span class="na">num_users</span> <span class="o">=</span> <span class="s">30</span>
+<span class="na">download_keys</span> <span class="o">=</span> <span class="s">True</span>
+</pre></div>
+</div>
+<p>By default this will create and download an archive containing all users&#8217; SSH
+keys to <tt class="docutils literal"><span class="pre">$HOME/.starcluster/user_keys/&lt;cluster&gt;-&lt;region&gt;.tar.gz</span></tt>. If you&#8217;d
+prefer to store the archive in an alternate location specify the
+<tt class="docutils literal"><span class="pre">download_keys_dir</span></tt> setting:</p>
+<div class="highlight-ini"><div class="highlight"><pre><span class="k">[plugin createusers]</span>
+<span class="na">setup_class</span> <span class="o">=</span> <span class="s">starcluster.plugins.users.CreateUsers</span>
+<span class="na">num_users</span> <span class="o">=</span> <span class="s">30</span>
+<span class="na">download_keys</span> <span class="o">=</span> <span class="s">True</span>
+<span class="na">download_keys_dir</span> <span class="o">=</span> <span class="s">/path/to/keys/dir/</span>
+</pre></div>
+</div>
+<p>The above example will download the SSH keys archive to
+<tt class="docutils literal"><span class="pre">/path/to/keys/dir/&lt;cluster&gt;-&lt;region&gt;.tar.gz</span></tt>.</p>
+</div>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="users.html#usage" title="Permalink to this headline">¶</a></h2>
+<p>Once the plugin has been configured it will automatically run the next time you
+start a new cluster using the appropriate cluster template. If you already have
+a cluster running that didn&#8217;t originally have the plugin in its plugin list at
+creation time you will need to manually run the plugin:</p>
+<div class="highlight-python"><pre>% starcluster runplugin createusers mycluster
+StarCluster - (/cluster)
+Software Tools for Academics and Researchers (STAR)
+Please submit bug reports to starcluster@mit.edu
+
+&gt;&gt;&gt; Running plugin createusers
+&gt;&gt;&gt; Creating 30 cluster users
+3/3 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%
+&gt;&gt;&gt; Configuring passwordless ssh for 30 cluster users
+50/50 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%
+&gt;&gt;&gt; Configuring scratch space for user(s): user001, user002,
+&gt;&gt;&gt; user003, user004, user005, user006, user007, user008,
+&gt;&gt;&gt; user009, user010, user011, user012, user013, user014,
+&gt;&gt;&gt; user015, user016, user017, user018, user019, user020,
+&gt;&gt;&gt; user021, user022, user023, user024, user025, user026,
+&gt;&gt;&gt; user027, user028, user029, user030
+3/3 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%</pre>
+</div>
+<p>After the plugin has finished executing you can easily login to the cluster as
+any one of these users on any node in the cluster:</p>
+<div class="highlight-python"><pre>% starcluster sshmaster -u user007 mycluster
+% starcluster sshnode -u user007 mycluster node007</pre>
+</div>
+<div class="section" id="using-the-ssh-keys-archive">
+<h3>Using the SSH Keys Archive<a class="headerlink" href="users.html#using-the-ssh-keys-archive" title="Permalink to this headline">¶</a></h3>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Please use caution when storing and distributing these keys - they allow
+remote access to your cluster.</p>
+</div>
+<p>If you specified <tt class="docutils literal"><span class="pre">download_keys</span> <span class="pre">=</span> <span class="pre">True</span></tt> in your config then the plugin will
+create and download a gzipped tar archive containing the RSA SSH keys for each
+user to your local computer:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">Tarring</span> <span class="nb">all</span> <span class="n">SSH</span> <span class="n">keys</span> <span class="k">for</span> <span class="n">cluster</span> <span class="n">users</span><span class="o">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Copying</span> <span class="n">cluster</span> <span class="n">users</span> <span class="n">SSH</span> <span class="n">keys</span> <span class="n">to</span><span class="p">:</span> <span class="n">mycluster</span><span class="o">-</span><span class="n">us</span><span class="o">-</span><span class="n">east</span><span class="o">-</span><span class="mf">1.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
+<span class="go">mycluster-us-east-1.tar.gz 100% ||||||||||||||||||| Time: 00:00:00 963.07 K/s</span>
+</pre></div>
+</div>
+<p>If you did not specify <tt class="docutils literal"><span class="pre">download_keys_dir</span></tt> in your config then the tar
+archive will be saved to <tt class="docutils literal"><span class="pre">$HOME/.starcluster/user_keys/&lt;cluster&gt;-&lt;region&gt;.tar.gz</span></tt>
+by default. The archive contains all of the RSA SSH keys for each cluster user
+it created:</p>
+<div class="highlight-python"><pre>% cd $HOME/.starcluster/user_keys
+% tar -tf mycluster-us-east-1.tar.gz
+./user001.rsa
+./user002.rsa
+./user003.rsa
+./user004.rsa
+./user005.rsa
+./user006.rsa
+./user007.rsa
+./user008.rsa
+./user009.rsa
+./user010.rsa
+./user011.rsa
+./user012.rsa
+./user013.rsa
+./user014.rsa
+./user015.rsa
+...</pre>
+</div>
+<p>These keys can be distributed to non-AWS users to allow remote cluster access
+<em>without AWS credentials</em>. You will also need to pick a cluster node for users
+to login to and then distribute that node&#8217;s public DNS name to your non-AWS
+users. You can use the <strong>listclusters</strong> command to list the public DNS names
+of all nodes in your cluster:</p>
+<div class="highlight-python"><pre>$ starcluster listclusters mycluster
+StarCluster - (/cluster)
+Software Tools for Academics and Researchers (STAR)
+Please submit bug reports to starcluster@mit.edu
+
+---------------------------------------------------
+mycluster (security group: @sc-mycluster)
+---------------------------------------------------
+Launch time: 2010-02-19T20:55:20.000Z
+Uptime: 00:29:42
+Zone: us-east-1c
+Keypair: mykeypair
+Cluster nodes:
+     master running i-99999999 ec2-123-123-123-121.compute-1.amazonaws.com
+    node001 running i-88888888 ec2-123-123-123-122.compute-1.amazonaws.com
+Total nodes: 2</pre>
+</div>
+<p>As an example, let&#8217;s choose the <tt class="docutils literal"><span class="pre">master</span></tt> node in the above output to be the
+&#8216;login&#8217; node. Now suppose we distribute user007&#8217;s username and SSH key to a
+non-AWS user and also give them the public DNS name of the login node. In this
+case the non-AWS user can connect to the cluster&#8217;s master node as user007
+using:</p>
+<div class="highlight-python"><pre>% ssh -i /path/to/user007.rsa user007@ec2-123-123-123-121.compute-1.amazonaws.com</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="users.html">Create Users Plugin</a><ul>
+<li><a class="reference internal" href="users.html#configuration">Configuration</a><ul>
+<li><a class="reference internal" href="users.html#downloading-user-ssh-keys">Downloading User SSH Keys</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="users.html#usage">Usage</a><ul>
+<li><a class="reference internal" href="users.html#using-the-ssh-keys-archive">Using the SSH Keys Archive</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="sge.html"
+                        title="previous chapter">Sun Grid Engine Plugin</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="ipython.html"
+                        title="next chapter">IPython Cluster Plugin</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="ipython.html" title="IPython Cluster Plugin"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="sge.html" title="Sun Grid Engine Plugin"
+             >previous</a> |</li>
+    	<li><a href="../index.html">Home</a> &raquo;</li>
+          <li><a href="../contents.html" >Master Table of Contents</a> &raquo;</li>
+          <li><a href="index.html" >Plugin Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+
+
+    <div class="footer">
+        &copy; Copyright 2011, Software Tools for Academics and Researchers.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b3.
+    </div>
+
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+    </script>
+
+  </body>
+</html>

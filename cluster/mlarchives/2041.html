@@ -1,0 +1,290 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Lyn Gerner ((no email))" />
+<meta name="Subject" content="Unable to launch cluster: SGE master install failures" />
+<title>starcluster.mbox.out: Unable to launch cluster: SGE master install failures</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Unable to launch cluster: SGE master install failures</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Unable to launch cluster: SGE master install failures</h1>
+<!-- received="Wed Jan 22 17:10:02 2014" -->
+<!-- isoreceived="20140122221002" -->
+<!-- sent="Wed, 22 Jan 2014 12:10:00 -1000" -->
+<!-- isosent="20140122221000" -->
+<!-- name="Lyn Gerner" -->
+<!-- email="(no email)" -->
+<!-- subject="Unable to launch cluster: SGE master install failures" -->
+<!-- id="CAD3e3FZ9=E8XQWq9ahoK-6BUNFj4cOiZwcXt-=8vRk2c4PGVeg_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2041.html#start2041" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2041.html#options2">top</a>, <a href="2041.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2042.html" accesskey="d" title="Rayson Ho: &quot;Re:  Unable to launch cluster: SGE master install failures&quot;">Next message</a> ]
+[ <a href="2040.html" title="Signell, Richard: &quot;Re:  &#0034;connection closed&#0034; when running &#0034;starcluster ssmaster&#0034;&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="2042.html" accesskey="t" title="Rayson Ho: &quot;Re:  Unable to launch cluster: SGE master install failures&quot;">Next in thread</a> ]
+ [ <a href="2041.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2041" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2041" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2041" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2041" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Lyn Gerner &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Wed, 22 Jan 2014 12:10:00 -1000</span><br />
+</address>
+<br />
+Hi All,
+<br />
+<br />I am trying to launch a 3-node cluster (using 0.94.3), and keep getting an
+<br />
+error during SGE install on the master, which blows the install of it and
+<br />
+the remaining nodes out of the water.
+<br />
+<br />My starcluster config file specifies disable_queue = true and then invokes
+<br />
+the sge plugin with MASTER_IS_EXEC_HOST = False, so all it needs to do is
+<br />
+install and bring up qmaster.
+<br />
+<br />The qmaster does come up, however, the cluster start keeps timing out with
+<br />
+the following:
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Installing Sun Grid Engine...
+</em><br />
+!!! ERROR - Error occured while running plugin 'sge':
+<br />
+!!! ERROR - remote command 'source /etc/profile &amp;&amp; cd /opt/sge6 &amp;&amp;
+<br />
+!!! ERROR - TERM=rxvt ./inst_sge -m -noremote -auto ./ec2_sge.conf'
+<br />
+!!! ERROR - failed with status 1:
+<br />
+!!! ERROR - Reading configuration from file ./ec2_sge.conf
+<br />
+!!! ERROR - [H[2JInstall log can be found in: /opt/sge6/default/common/i
+<br />
+!!! ERROR - nstall_logs/qmaster_install_master_2014-01-22_21:55:08.log
+<br />
+<br />In the install log, it's waiting for the SGE qmaster pid file to show up,
+<br />
+times out after 5mins, and tells me to check my autoinstall config file.
+<br />
+<br />Here are the ps output, and the installation log.
+<br />
+<br />root_at_AWS-VTMXmaster-w2b /opt/sge6/default/common/install_logs
+<br />
+# ps -ef|grep master
+<br />
+avahi     1038     1  0 20:42 ?        00:00:00 avahi-daemon: running
+<br />
+[master.local]
+<br />
+root      1442     1  0 20:43 ?        00:00:00 /usr/libexec/postfix/master
+<br />
+sgeadmin  1629     1  0 20:43 ?        00:00:00
+<br />
+/opt/sge6/bin/linux-x64/sge_qmaster
+<br />
+root     18277  4408  0 21:30 pts/0    00:00:00 /bin/grep --color=auto
+<br />
+master
+<br />
+<br />root_at_AWS-VTMXmaster-w2b /opt/sge6/default/common/install_logs
+<br />
+# cat qmaster_install_master_2014-01-22_21:22:55.log
+<br />
+Starting qmaster installation!
+<br />
+<br />Installing Grid Engine as admin user &gt;sgeadmin&lt;
+<br />
+<br /><br /><br />Your $SGE_ROOT directory: /opt/sge6
+<br />
+<br />Using SGE_QMASTER_PORT &gt;63231&lt;.
+<br />
+<br />Using SGE_EXECD_PORT &gt;63232&lt;.
+<br />
+<br />Using &gt;default&lt; as CELL_NAME.
+<br />
+<br /><br />Your $SGE_CLUSTER_NAME: starcluster
+<br />
+<br />Using &gt;/opt/sge6/default/spool/qmaster&lt; as QMASTER_SPOOL_DIR.
+<br />
+<br /><br /><br /><br /><br />Obviously this is not a complete Grid Engine distribution or this
+<br />
+is not your $SGE_ROOT directory.
+<br />
+<br />Missing file or directory: start_gui_installer
+<br />
+<br />Your file permissions will not be set. Exit.
+<br />
+<br /><br />Using &gt;true&lt; as IGNORE_FQDN_DEFAULT.
+<br />
+If it's &gt;true&lt;, the domain name will be ignored.
+<br />
+<br /><br />Making directories
+<br />
+<br />Setting spooling method to dynamic
+<br />
+Dumping bootstrapping information
+<br />
+Initializing spooling database
+<br />
+<br /><br />Using &gt;20000-20100&lt; as gid range.
+<br />
+Using &gt;/opt/sge6/default/spool&lt; as EXECD_SPOOL_DIR.
+<br />
+Using &gt;none_at_none.edu&lt; as ADMIN_MAIL.
+<br />
+Adding default parallel environments (PE)
+<br />
+<br /><br /><br />&nbsp;&nbsp;&nbsp;starting sge_qmaster
+<br />
+Reached 5min timeout, while waiting for qmaster PID file.
+<br />
+sge_qmaster daemon didn't start. Please check your
+<br />
+autoinstall configuration file! Installation failed!
+<br />
+&quot;
+<br />
+<br />It's this same error on every attempt, and I am using an unmodified
+<br />
+ec2_sge.conf file.
+<br />
+<br />Appreciate any suggestions for how to get over this.
+<br />
+<br />Thanks much,
+<br />
+Lyn
+<br />
+<span id="received"><dfn>Received on</dfn> Wed Jan 22 2014 - 17:10:02 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2041.html#start2041">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2042.html" title="Next message in the list">Rayson Ho: "Re:  Unable to launch cluster: SGE master install failures"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2040.html" title="Previous message in the list">Signell, Richard: "Re:  &#0034;connection closed&#0034; when running &#0034;starcluster ssmaster&#0034;"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="2042.html" title="Next message in this discussion thread">Rayson Ho: "Re:  Unable to launch cluster: SGE master install failures"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="2042.html" title="Message sent in reply to this message">Rayson Ho: "Re:  Unable to launch cluster: SGE master install failures"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2041" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2041" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2041" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2041" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

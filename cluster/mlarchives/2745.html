@@ -1,0 +1,310 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="(no email) ((no email))" />
+<meta name="Subject" content="R3 SSD not mounted xvdaa" />
+<title>starcluster.mbox.out: R3 SSD not mounted xvdaa</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">R3 SSD not mounted xvdaa</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>R3 SSD not mounted xvdaa</h1>
+<!-- received="Fri Dec  4 15:32:41 2015" -->
+<!-- isoreceived="20151204203241" -->
+<!-- sent="Fri, 4 Dec 2015 20:32:38 +0000" -->
+<!-- isosent="20151204203238" -->
+<!-- name="(no email)" -->
+<!-- email="(no email)" -->
+<!-- subject="R3 SSD not mounted xvdaa" -->
+<!-- id="BC8E6D890DD0DB45B4EDD397ED64D03D921C98E8_at_DVMSMBS05.Spectrum-Health.org" -->
+<!-- charset="koi8-r" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2745.html#start2745" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2745.html#options2">top</a>, <a href="2745.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2746.html" accesskey="d" title="Rayson Ho: &quot;Re:  R3 SSD not mounted xvdaa&quot;">Next message</a> ]
+[ <a href="2744.html" title="MacMullan, Hugh: &quot;Re:  permit ssh to two ip address ranges&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="2746.html" accesskey="t" title="Rayson Ho: &quot;Re:  R3 SSD not mounted xvdaa&quot;">Next in thread</a> ]
+ [ <a href="2745.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2745" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2745" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2745" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2745" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: &lt;<a href="mailto:(no?Subject=Re%3A%20R3%20SSD%20not%20mounted%20xvdaa">(no</a>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Fri, 4 Dec 2015 20:32:38 +0000</span><br />
+</address>
+<br />
+I started a simple 2 node with  r3.xlarge 4cpu &amp;  80G SSD.  I assumed part or all of that ssd would be used in the nfs share.  
+<br />
+Fstab says  /dev/xvdaa     /mnt but that's not what I got.  Did I miss a config entry for the ssd storage?
+<br />
+<br />What I got was:
+<br />
+<br />root_at_master:~# mount
+<br />
+/dev/sda1 on / type ext4 (rw)
+<br />
+proc on /proc type proc (rw,noexec,nosuid,nodev)
+<br />
+sysfs on /sys type sysfs (rw,noexec,nosuid,nodev)
+<br />
+none on /sys/fs/fuse/connections type fusectl (rw)
+<br />
+none on /sys/kernel/debug type debugfs (rw)
+<br />
+none on /sys/kernel/security type securityfs (rw)
+<br />
+udev on /dev type devtmpfs (rw,mode=0755)
+<br />
+devpts on /dev/pts type devpts (rw,noexec,nosuid,gid=5,mode=0620)
+<br />
+tmpfs on /run type tmpfs (rw,noexec,nosuid,size=10%,mode=0755)
+<br />
+none on /run/lock type tmpfs (rw,noexec,nosuid,nodev,size=5242880)
+<br />
+none on /run/shm type tmpfs (rw,nosuid,nodev)
+<br />
+binfmt_misc on /proc/sys/fs/binfmt_misc type binfmt_misc (rw,noexec,nosuid,nodev)
+<br />
+rpc_pipefs on /run/rpc_pipefs type rpc_pipefs (rw)
+<br />
+nfsd on /proc/fs/nfsd type nfsd (rw)
+<br />
+<br />root_at_master:~# df -h
+<br />
+Filesystem      Size  Used Avail Use% Mounted on
+<br />
+/dev/sda1       7.9G  5.4G  2.2G  72% /
+<br />
+udev             15G   12K   15G   1% /dev
+<br />
+tmpfs           6.0G  216K  6.0G   1% /run
+<br />
+none            5.0M     0  5.0M   0% /run/lock
+<br />
+none             15G     0   15G   0% /run/shm
+<br />
+root_at_master:~#
+<br />
+root_at_master:~# lsblk
+<br />
+NAME   MAJ:MIN  RM SIZE RO TYPE MOUNTPOINT
+<br />
+xvdaa  202:6656  0  75G  0 disk
+<br />
+sda      8:0     0   8G  0 disk
+<br />
+„€sda1   8:1     0   8G  0 part /
+<br />
+<br />/etc/fstab is
+<br />
+<br />LABEL=cloudimg-rootfs   /        ext4   defaults        0 0
+<br />
+/dev/xvdaa      /mnt    auto    defaults,nobootwait,comment=cloudconfig 0       2
+<br />
+<br />root_at_master:/mnt# ll
+<br />
+total 12
+<br />
+drwxr-xr-x  3 root     root     4096 Dec  4 19:41 ./
+<br />
+drwxr-xr-x 25 root     root     4096 Dec  4 20:02 ../
+<br />
+drwxr-xr-x  2 sgeadmin sgeadmin 4096 Dec  4 19:41 sgeadmin/
+<br />
+<br /><br />node001 is:
+<br />
+<br />root_at_node001:~# mount
+<br />
+/dev/sda1 on / type ext4 (rw)
+<br />
+proc on /proc type proc (rw,noexec,nosuid,nodev)
+<br />
+sysfs on /sys type sysfs (rw,noexec,nosuid,nodev)
+<br />
+none on /sys/fs/fuse/connections type fusectl (rw)
+<br />
+none on /sys/kernel/debug type debugfs (rw)
+<br />
+none on /sys/kernel/security type securityfs (rw)
+<br />
+udev on /dev type devtmpfs (rw,mode=0755)
+<br />
+devpts on /dev/pts type devpts (rw,noexec,nosuid,gid=5,mode=0620)
+<br />
+tmpfs on /run type tmpfs (rw,noexec,nosuid,size=10%,mode=0755)
+<br />
+none on /run/lock type tmpfs (rw,noexec,nosuid,nodev,size=5242880)
+<br />
+none on /run/shm type tmpfs (rw,nosuid,nodev)
+<br />
+binfmt_misc on /proc/sys/fs/binfmt_misc type binfmt_misc (rw,noexec,nosuid,nodev)
+<br />
+rpc_pipefs on /run/rpc_pipefs type rpc_pipefs (rw)
+<br />
+master:/home on /home type nfs (rw,vers=4,addr=172.31.32.194,clientaddr=172.31.32.195)
+<br />
+master:/opt/sge6 on /opt/sge6 type nfs (rw,vers=4,addr=172.31.32.194,clientaddr=172.31.32.195)
+<br />
+root_at_node001:~# df -h
+<br />
+Filesystem        Size  Used Avail Use% Mounted on
+<br />
+/dev/sda1         7.9G  5.7G  1.8G  77% /
+<br />
+udev               15G   12K   15G   1% /dev
+<br />
+tmpfs             6.0G  216K  6.0G   1% /run
+<br />
+none              5.0M     0  5.0M   0% /run/lock
+<br />
+none               15G     0   15G   0% /run/shm
+<br />
+master:/home      7.9G  5.8G  1.7G  78% /home
+<br />
+master:/opt/sge6  7.9G  5.8G  1.7G  78% /opt/sge6
+<br />
+root_at_node001:~# lsblk
+<br />
+NAME   MAJ:MIN  RM SIZE RO TYPE MOUNTPOINT
+<br />
+xvdaa  202:6656  0  75G  0 disk
+<br />
+sda      8:0     0   8G  0 disk
+<br />
+„€sda1   8:1     0   8G  0 part /
+<br />
+root_at_node001:~#
+<br />
+<br /><br /><br /><br />Kind Regards, 
+<br />
+<br />Paul Van Allsburg
+<br />
+<span id="received"><dfn>Received on</dfn> Fri Dec 04 2015 - 15:32:41 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2745.html#start2745">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2746.html" title="Next message in the list">Rayson Ho: "Re:  R3 SSD not mounted xvdaa"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2744.html" title="Previous message in the list">MacMullan, Hugh: "Re:  permit ssh to two ip address ranges"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="2746.html" title="Next message in this discussion thread">Rayson Ho: "Re:  R3 SSD not mounted xvdaa"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="2746.html" title="Message sent in reply to this message">Rayson Ho: "Re:  R3 SSD not mounted xvdaa"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2745" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2745" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2745" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2745" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

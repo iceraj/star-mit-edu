@@ -1,0 +1,27 @@
+<jnlp spec="1.0+" codebase="http://star.mit.edu/media/uploads/star/jar/genetics3" href="http://star.mit.edu/media/uploads/star/jnlp/genetics/StarGenetics3.jnlp">
+  <information>
+    <title>StarGenetics</title>
+    <vendor>STAR Project</vendor>
+    <homepage href="http://star.mit.edu/genetics"/>
+    <description>StarGenetics provides a set of tools for analyzing genetic traits. This software simulates mating experiments between organisms that are genetically different across a range of traits and allows students to analyze the nature of the traits in question.</description>
+    <description kind="short">StarGenetics  simulates mating experiments</description>
+    <icon href="/media/uploads/project_logos/genetics_fly_logo.png"/>
+    <offline-allowed/>
+<!--    <association mime-type="application-x/stargenetics" extensions="sg1"/> -->
+  </information>
+  <security>
+    <all-permissions/>
+  </security>
+  <resources>
+    <j2se initial-heap-size="256m" max-heap-size="768m" version="1.7+ 1.6+ 1.5+" java-vm-args="" />
+    <jar href="StarGenetics3.jar" download="eager" main="true"/>
+    <jar href="poi-3.2-FINAL-20081019.jar" download="eager" main="false"/>
+    <jar href="miglayout15-swing.jar" download="eager" main="false"/>
+    <jar href="cos.jar" download="eager" main="false"/>
+    <jar href="jetty-all-7.6.12.v20130726.jar" main="false"/>
+    <jar href="servlet-api-2.5.jar" main="false"/>
+    <jar href="json.jar" main="false"/>
+<!--    <property name="com.apple.macos.useScreenMenuBar" value="false"/> -->
+  </resources>
+  <application-desc main-class="star.genetics.Main" name="StarGenetics" width="1024" height="768"/>
+</jnlp>

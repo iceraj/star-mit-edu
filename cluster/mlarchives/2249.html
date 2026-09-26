@@ -1,0 +1,228 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Cedar McKay ((no email))" />
+<meta name="Subject" content="poor behavior from addnode" />
+<title>starcluster.mbox.out: poor behavior from addnode</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">poor behavior from addnode</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>poor behavior from addnode</h1>
+<!-- received="Fri Jun  6 00:10:22 2014" -->
+<!-- isoreceived="20140606041022" -->
+<!-- sent="Thu, 5 Jun 2014 21:10:19 -0700" -->
+<!-- isosent="20140606041019" -->
+<!-- name="Cedar McKay" -->
+<!-- email="(no email)" -->
+<!-- subject="poor behavior from addnode" -->
+<!-- id="C2FC6730-1488-4C2E-B5E8-41A0486243E6_at_uw.edu" -->
+<!-- charset="us-ascii" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2249.html#start2249" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2249.html#options2">top</a>, <a href="2249.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2250.html" accesskey="d" title="Jacob Barhak: &quot;Re:  poor behavior from addnode&quot;">Next message</a> ]
+[ <a href="2248.html" title="Cedar McKay: &quot;add non-spot instances to spot cluster&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="2250.html" accesskey="t" title="Jacob Barhak: &quot;Re:  poor behavior from addnode&quot;">Next in thread</a> ]
+ [ <a href="2249.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2249" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2249" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2249" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2249" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Cedar McKay &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 5 Jun 2014 21:10:19 -0700</span><br />
+</address>
+<br />
+If I try to use addnode to add multiple clusters (see below), and one fails to launch because I've already exceeded my max  instance number, the script will crash, yet some of the nodes will boot up. But it will boot without being integrated into the cluster. 
+<br />
+<br />Also, is this even the proper venue for reports like this? Do the creators even read this list? Or should I be submitting bug reports?
+<br />
+<br />Thanks!
+<br />
+Cedar
+<br />
+<br /><br />rocaplab:~ cedar$ sc an -n 2 -I r3.8xlarge -b 0.40 v17b
+<br />
+StarCluster - (<a href="/cluster/">/cluster</a>) (v. 0.95.5)
+<br />
+Software Tools for Academics and Researchers (STAR)
+<br />
+Please submit bug reports to starcluster_at_mit.edu
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Launching node(s): v17b-node005, v17b-node006
+</em><br />
+!!! ERROR - MaxSpotInstanceCountExceeded: Max spot instance count exceeded
+<br />
+Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File &quot;/Library/Python/2.7/site-packages/StarCluster-0.95.5-py2.7.egg/starcluster/cli.py&quot;, line 274, in main
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;sc.execute(args)
+<br />
+&nbsp;&nbsp;File &quot;/Library/Python/2.7/site-packages/StarCluster-0.95.5-py2.7.egg/starcluster/commands/addnode.py&quot;, line 128, in execute
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;no_create=self.opts.no_create)
+<br />
+&nbsp;&nbsp;File &quot;/Library/Python/2.7/site-packages/StarCluster-0.95.5-py2.7.egg/starcluster/cluster.py&quot;, line 189, in add_nodes
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;no_create=no_create)
+<br />
+&nbsp;&nbsp;File &quot;/Library/Python/2.7/site-packages/StarCluster-0.95.5-py2.7.egg/starcluster/cluster.py&quot;, line 1033, in add_nodes
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;spot_bid=spot_bid)
+<br />
+&nbsp;&nbsp;File &quot;/Library/Python/2.7/site-packages/StarCluster-0.95.5-py2.7.egg/starcluster/cluster.py&quot;, line 964, in create_nodes
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;resvs.extend(self.ec2.request_instances(image_id, **kwargs))
+<br />
+&nbsp;&nbsp;File &quot;/Library/Python/2.7/site-packages/StarCluster-0.95.5-py2.7.egg/starcluster/awsutils.py&quot;, line 517, in request_instances
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;**shared_kwargs)
+<br />
+&nbsp;&nbsp;File &quot;/Library/Python/2.7/site-packages/StarCluster-0.95.5-py2.7.egg/starcluster/awsutils.py&quot;, line 534, in request_spot_instances
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;return self.conn.request_spot_instances(**kwargs)
+<br />
+&nbsp;&nbsp;File &quot;/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/boto-2.27.0-py2.7.egg/boto/ec2/connection.py&quot;, line 1597, in request_spot_instances
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;verb='POST')
+<br />
+&nbsp;&nbsp;File &quot;/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/boto-2.27.0-py2.7.egg/boto/connection.py&quot;, line 1157, in get_list
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;raise self.ResponseError(response.status, response.reason, body)
+<br />
+EC2ResponseError: EC2ResponseError: 400 Bad Request
+<br />
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+<br />
+&lt;Response&gt;&lt;Errors&gt;&lt;Error&gt;&lt;Code&gt;MaxSpotInstanceCountExceeded&lt;/Code&gt;&lt;Message&gt;Max spot instance count exceeded&lt;/Message&gt;&lt;/Error&gt;&lt;/Errors&gt;&lt;RequestID&gt;98a71653-d53d-46d4-9f07-987103dfe74d&lt;/RequestID&gt;&lt;/Response&gt;
+<br />
+<span id="received"><dfn>Received on</dfn> Fri Jun 06 2014 - 00:10:22 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2249.html#start2249">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2250.html" title="Next message in the list">Jacob Barhak: "Re:  poor behavior from addnode"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2248.html" title="Previous message in the list">Cedar McKay: "add non-spot instances to spot cluster"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="2250.html" title="Next message in this discussion thread">Jacob Barhak: "Re:  poor behavior from addnode"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="2250.html" title="Message sent in reply to this message">Jacob Barhak: "Re:  poor behavior from addnode"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2249" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2249" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2249" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2249" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

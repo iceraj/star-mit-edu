@@ -1,0 +1,262 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Vaughan, Garrison ((no email))" />
+<meta name="Subject" content="Using StarCluster with Hudson Continuous Integration" />
+<title>starcluster.mbox.out: Using StarCluster with Hudson Continuous Integration</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Using StarCluster with Hudson Continuous Integration</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Using StarCluster with Hudson Continuous Integration</h1>
+<!-- received="Thu Jun 14 17:11:58 2012" -->
+<!-- isoreceived="20120614211158" -->
+<!-- sent="Thu, 14 Jun 2012 21:11:50 +0000" -->
+<!-- isosent="20120614211150" -->
+<!-- name="Vaughan, Garrison" -->
+<!-- email="(no email)" -->
+<!-- subject="Using StarCluster with Hudson Continuous Integration" -->
+<!-- id="6500A07E7381B74FB98B148D9B1ABDC50A9308F7_at_CH1PRD0202MB169.namprd02.prod.outlook.com" -->
+<!-- charset="iso-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1284.html#start1284" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1284.html#options2">top</a>, <a href="1284.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1285.html" accesskey="d" title="(no email): &quot;RuntimeError: autoconf error on install&quot;">Next message</a> ]
+[ <a href="1283.html" title="Sergio Mafra: &quot;MPICH2&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="1345.html" accesskey="t" title="Justin Riley: &quot;Re:  Using StarCluster with Hudson Continuous Integration&quot;">Next in thread</a> ]
+ [ <a href="1284.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1284" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1284" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1284" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1284" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Vaughan, Garrison &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 14 Jun 2012 21:11:50 +0000</span><br />
+</address>
+<br />
+Hello,
+<br />
+<br />I'm currently working as an intern with NASA at the Goddard Space Flight Center. We have decided to move
+<br />
+some regression tests we run on our own high performance computer system into the cloud.
+<br />
+I have been assigned the task of setting up a continuous integration server and setting up the scripts which will
+<br />
+instantiate clusters that will be used for the builds/regression test. I was shown StarCluster by a system architect here
+<br />
+and needless to say, it's an extremely impressive tool!
+<br />
+<br />I am currently using a CI server called Hudson which is running smoothly on a micro AMI instance which mimics the OS image we run on our cluster.
+<br />
+The Hudson Server runs under a user (user Hudson) on the instance and can run scripts as that user on the system when triggered.
+<br />
+The point is to, when triggered, create a cluster (using StarCluster) that will mimic the cluster we run here,
+<br />
+and use that cluster to build and do a regression test against a clients code repository, and subsequently tear the
+<br />
+cluster down upon completion.
+<br />
+<br />I have StarCluster installed under user Hudson, and when I shell into user Hudson, StarCluster works without a hitch.
+<br />
+My problem occurs when I try to run any StarCluster command through the Hudson Web Servlet. I have a job going on Hudson
+<br />
+which, when triggered, will execute a shell command (currently &quot;starcluster help&quot;) under user Hudson. After setting up the $PATH to StarCluster
+<br />
+through the Hudson UI, the starcluster command is recognized.
+<br />
+<br />But for some reason, which I've been struggling with all day, I get this error as output when I run any starcluster command:
+<br />
+<br /><br />#######Hudson Console Output#######
+<br />
+<br />Started by user admin
+<br />
+[workspace] $ /bin/bash -xe /tmp/hudson6888230102812979297.sh ## [workspace] is a directory under user Hudson. When the same command
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;## which is in the /tmp/hudsonxxxx.sh script (currently &quot;starcluster help&quot;) is
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;## run from this directory through ssh, it runs just fine.
+<br />
+<br />+ starcluster help                                                                                             ##This is the command in /tmp/hudsonxxxxx.sh. A whoami shows this command running under user Hudson.
+<br />
+!!! ERROR - /root/.starcluster *must* be a directory                              ##This is what has me baffled, why does anything in /root need to be referenced/exist?
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;##Again, this isn't the case when this command is run directly under user Hudson (through ssh).
+<br />
+&nbsp;!!! ERROR - /root/.starcluster *must* be a directory
+<br />
+Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/bin/starcluster&quot;, line 9, in &lt;module&gt;
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;load_entry_point('StarCluster==0.93.3', 'console_scripts', 'starcluster')()
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib64/python2.6/site-packages/StarCluster-0.93.3-py2.6.egg/starcluster/cli.py&quot;, line 310, in main
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;logger.configure_sc_logging()
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib64/python2.6/site-packages/StarCluster-0.93.3-py2.6.egg/starcluster/logger.py&quot;, line 129, in configure_sc_logging
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;backupCount=2)
+<br />
+&nbsp;&nbsp;File &quot;/usr/lib64/python2.6/logging/handlers.py&quot;, line 112, in __init__
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;BaseRotatingHandler.__init__(self, filename, mode, encoding, delay)
+<br />
+&nbsp;&nbsp;File &quot;/usr/lib64/python2.6/logging/handlers.py&quot;, line 64, in __init__
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;logging.FileHandler.__init__(self, filename, mode, encoding, delay)
+<br />
+&nbsp;&nbsp;File &quot;/usr/lib64/python2.6/logging/__init__.py&quot;, line 827, in __init__
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;StreamHandler.__init__(self, self._open())
+<br />
+&nbsp;&nbsp;File &quot;/usr/lib64/python2.6/logging/__init__.py&quot;, line 846, in _open
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;stream = open(self.baseFilename, self.mode)
+<br />
+IOError: [Errno 13] Permission denied: '/root/.starcluster/logs/debug.log'
+<br />
+[DEBUG] Skipping watched dependency update for build: Test Build #30 due to result: FAILURE
+<br />
+Finished: FAILURE
+<br />
+<br />.starcluster exists at /var/lib/hudson/.starcluster and is shown as the default path to the config file when &quot;starcluster help&quot; is run on user Hudson (through ssh).
+<br />
+I have passed that directory as a  (starcluster -c &quot;path_to_config&quot;) argument in the Hudson script, and still get the same error.
+<br />
+Permissions for /var/lib/hudson/.starcluster are rwxr-xr-x.
+<br />
+<br />Any help would be greatly appreciated!
+<br />
+<br />Thanks for the great work,
+<br />
+Garrison
+<br />
+<span id="received"><dfn>Received on</dfn> Thu Jun 14 2012 - 17:11:58 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1284.html#start1284">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1285.html" title="Next message in the list">(no email): "RuntimeError: autoconf error on install"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1283.html" title="Previous message in the list">Sergio Mafra: "MPICH2"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1345.html" title="Next message in this discussion thread">Justin Riley: "Re:  Using StarCluster with Hudson Continuous Integration"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1345.html" title="Message sent in reply to this message">Justin Riley: "Re:  Using StarCluster with Hudson Continuous Integration"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1284" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1284" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1284" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1284" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Jin Yu ((no email))" />
+<meta name="Subject" content="[Star Cluster] NoneType user errors when removing nodes" />
+<title>starcluster.mbox.out: [Star Cluster] NoneType user errors when removing nodes</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">[Star Cluster] NoneType user errors when removing nodes</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>[Star Cluster] NoneType user errors when removing nodes</h1>
+<!-- received="Sun Jul 20 16:08:23 2014" -->
+<!-- isoreceived="20140720200823" -->
+<!-- sent="Sun, 20 Jul 2014 15:08:22 -0500" -->
+<!-- isosent="20140720200822" -->
+<!-- name="Jin Yu" -->
+<!-- email="(no email)" -->
+<!-- subject="[Star Cluster] NoneType user errors when removing nodes" -->
+<!-- id="CAEBYWs9q8uyFHVJexcYjubMP9aCJxuM=PcERDonxnSvio6RX1w_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2305.html#start2305" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2305.html#options2">top</a>, <a href="2305.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2306.html" accesskey="d" title="ronen artzi: &quot;Starcluster - refresh to spot market price&quot;">Next message</a> ]
+[ <a href="2304.html" title="Jin Yu: &quot;[Star cluster] error tolerance design when adding nodes&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2305" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2305" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2305" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2305" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Jin Yu &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Sun, 20 Jul 2014 15:08:22 -0500</span><br />
+</address>
+<br />
+Hello,
+<br />
+<br />I encountered continuing errors when trying to remove nodes using
+<br />
+loadbalancer.
+<br />
+<br /><em class="quotelev1">&gt;From error messages (which is appended below), I got an error regarding the
+</em><br />
+user object.I am just using the default user &quot;sgeadmin&quot;.
+<br />
+<br />I log in the &quot;tried to remove&quot; node and can verify that following steps
+<br />
+have been done:
+<br />
+<br />1. the node has been removed from SGE
+<br />
+2. NFS has been unmounted
+<br />
+3. sgeadmin user has been deleted
+<br />
+4. the hosts file has no ip of any other nodes or masters instance
+<br />
+<br />But this node is not terminated and still show up when I &quot;starcluster lc&quot;.
+<br />
+<br /><br />Thanks!
+<br />
+Jin
+<br />
+<br /><br /><br /><em class="quotelev3">&gt;&gt;&gt; Running plugin starcluster.plugins.sge.SGEPlugin
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Removing node037 from SGE
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Updating SGE parallel environment 'orte'
+</em><br />
+50/50 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Adding parallel environment 'orte' to queue 'all.q'
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Running plugin starcluster.clustersetup.DefaultClusterSetup
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Removing node node037 (i-1f013c34)...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Removing node037 from known_hosts files
+</em><br />
+!!! ERROR - Error occured while running plugin
+<br />
+'starcluster.clustersetup.DefaultClusterSetup':
+<br />
+!!! ERROR - Failed to remove node node037
+<br />
+Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.95.5-py2.7.egg/starcluster/balancers/sge/__init__.py&quot;,
+<br />
+line 754, in _eval_remove_node
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self._cluster.remove_node(node)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.95.5-py2.7.egg/starcluster/cluster.py&quot;,
+<br />
+line 1050, in remove_node
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;force=force)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.95.5-py2.7.egg/starcluster/cluster.py&quot;,
+<br />
+line 1076, in remove_nodes
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;reverse=True)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.95.5-py2.7.egg/starcluster/cluster.py&quot;,
+<br />
+line 1690, in run_plugins
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self.run_plugin(plug, method_name=method_name, node=node)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.95.5-py2.7.egg/starcluster/cluster.py&quot;,
+<br />
+line 1715, in run_plugin
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;func(*args)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.95.5-py2.7.egg/starcluster/clustersetup.py&quot;,
+<br />
+line 407, in on_remove_node
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self._remove_from_known_hosts(node)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.95.5-py2.7.egg/starcluster/clustersetup.py&quot;,
+<br />
+line 397, in _remove_from_known_hosts
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;n.remove_from_known_hosts(self._user, [node])
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.95.5-py2.7.egg/starcluster/node.py&quot;,
+<br />
+line 588, in remove_from_known_hosts
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;known_hosts_file = posixpath.join(user.pw_dir, '.ssh', 'known_hosts')
+<br />
+AttributeError: 'NoneType' object has no attribute 'pw_dir'
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Sleeping...(looping again in 60 secs)
+</em><br />
+<span id="received"><dfn>Received on</dfn> Sun Jul 20 2014 - 16:08:23 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2305.html#start2305">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2306.html" title="Next message in the list">ronen artzi: "Starcluster - refresh to spot market price"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2304.html" title="Previous message in the list">Jin Yu: "[Star cluster] error tolerance design when adding nodes"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2305" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2305" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2305" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2305" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

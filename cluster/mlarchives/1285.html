@@ -1,0 +1,462 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="(no email) ((no email))" />
+<meta name="Subject" content="RuntimeError: autoconf error on install" />
+<title>starcluster.mbox.out: RuntimeError: autoconf error on install</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">RuntimeError: autoconf error on install</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>RuntimeError: autoconf error on install</h1>
+<!-- received="Sat Jun 16 09:28:51 2012" -->
+<!-- isoreceived="20120616132851" -->
+<!-- sent="Sat, 16 Jun 2012 14:32:29 +0100" -->
+<!-- isosent="20120616133229" -->
+<!-- name="(no email)" -->
+<!-- email="(no email)" -->
+<!-- subject="RuntimeError: autoconf error on install" -->
+<!-- id="20120616143229.0gkfj7g7dss0swo0_at_www.dcs.bbk.ac.uk" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1285.html#start1285" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1285.html#options2">top</a>, <a href="1285.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1286.html" accesskey="d" title="Vaughan, Garrison: &quot;Re:  RuntimeError: autoconf error on install&quot;">Next message</a> ]
+[ <a href="1284.html" title="Vaughan, Garrison: &quot;Using StarCluster with Hudson Continuous Integration&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="1286.html" accesskey="t" title="Vaughan, Garrison: &quot;Re:  RuntimeError: autoconf error on install&quot;">Next in thread</a> ]
+ [ <a href="1285.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1285" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1285" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1285" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1285" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: &lt;<a href="mailto:(no?Subject=Re%3A%20RuntimeError%3A%20autoconf%20error%20on%20install">(no</a>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Sat, 16 Jun 2012 14:32:29 +0100</span><br />
+</address>
+<br />
+Hello all, I am very new to python, EC2, MPI and Linux (so..  
+<br />
+everything then!).
+<br />
+<br />I'm trying to install StarCluster on a t1.micro EC2 instance booted  
+<br />
+with the standard Amazon Linux AMI (64-bit). I execute the  
+<br />
+easy_install utility, but installation fails, the full error message  
+<br />
+is below.
+<br />
+<br />Would anyone know where I'm going wrong? Could this be because I have  
+<br />
+not setup the EC2 instance correctly? I think this is going to be  
+<br />
+something really fundamental that I just haven't grasped about EC2.
+<br />
+<br />kind regards,
+<br />
+adam
+<br />
+<br />error messages:
+<br />
+[ec2-user_at_ip-10-244-30-27 StarCluster-0.93.3]$ sudo easy_install StarCluster
+<br />
+Searching for StarCluster
+<br />
+Best match: StarCluster 0.93.3
+<br />
+Processing StarCluster-0.93.3-py2.6.egg
+<br />
+StarCluster 0.93.3 is already the active version in easy-install.pth
+<br />
+Installing starcluster script to /usr/bin
+<br />
+Installing starcluster script to /usr/bin
+<br />
+<br />Using /usr/lib/python2.6/site-packages/StarCluster-0.93.3-py2.6.egg
+<br />
+Processing dependencies for StarCluster
+<br />
+Searching for pycrypto&gt;=2.1,!=2.4
+<br />
+Reading <a href="http://pypi.python.org/simple/pycrypto/">http://pypi.python.org/simple/pycrypto/</a>
+<br />
+Reading <a href="http://pycrypto.sourceforge.net">http://pycrypto.sourceforge.net</a>
+<br />
+Reading <a href="http://www.amk.ca/python/code/crypto">http://www.amk.ca/python/code/crypto</a>
+<br />
+Reading <a href="http://www.pycrypto.org/">http://www.pycrypto.org/</a>
+<br />
+Best match: pycrypto 2.6
+<br />
+Downloading <a href="http://ftp.dlitz.net/pub/dlitz/crypto/pycrypto/pycrypto-2.6.tar.gz">http://ftp.dlitz.net/pub/dlitz/crypto/pycrypto/pycrypto-2.6.tar.gz</a>
+<br />
+Processing pycrypto-2.6.tar.gz
+<br />
+Running pycrypto-2.6/setup.py -q bdist_egg --dist-dir  
+<br />
+/tmp/easy_install-ODZRs7/pycrypto-2.6/egg-dist-tmp-XfuN77
+<br />
+configure: error: in `/tmp/easy_install-ODZRs7/pycrypto-2.6':
+<br />
+configure: error: no acceptable C compiler found in $PATH
+<br />
+See `config.log' for more details
+<br />
+Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;&nbsp;File &quot;/usr/bin/easy_install&quot;, line 9, in &lt;module&gt;
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;load_entry_point('distribute==0.6.10', 'console_scripts',  
+<br />
+'easy_install')()
+<br />
+&nbsp;&nbsp;&nbsp;File  
+<br />
+&quot;/usr/lib/python2.6/site-packages/setuptools/command/easy_install.py&quot;,  
+<br />
+line 1715, in main
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;with_ei_usage(lambda:
+<br />
+&nbsp;&nbsp;&nbsp;File  
+<br />
+&quot;/usr/lib/python2.6/site-packages/setuptools/command/easy_install.py&quot;,  
+<br />
+line 1696, in with_ei_usage
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return f()
+<br />
+&nbsp;&nbsp;&nbsp;File  
+<br />
+&quot;/usr/lib/python2.6/site-packages/setuptools/command/easy_install.py&quot;,  
+<br />
+line 1719, in &lt;lambda&gt;
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;distclass=DistributionWithoutHelpCommands, **kw
+<br />
+&nbsp;&nbsp;&nbsp;File &quot;/usr/lib64/python2.6/distutils/core.py&quot;, line 152, in setup
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dist.run_commands()
+<br />
+&nbsp;&nbsp;&nbsp;File &quot;/usr/lib64/python2.6/distutils/dist.py&quot;, line 975, in run_commands
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.run_command(cmd)
+<br />
+&nbsp;&nbsp;&nbsp;File &quot;/usr/lib64/python2.6/distutils/dist.py&quot;, line 995, in run_command
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cmd_obj.run()
+<br />
+&nbsp;&nbsp;&nbsp;File  
+<br />
+&quot;/usr/lib/python2.6/site-packages/setuptools/command/easy_install.py&quot;,  
+<br />
+line 236, in run
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.easy_install(spec, not self.no_deps)
+<br />
+&nbsp;&nbsp;&nbsp;File  
+<br />
+&quot;/usr/lib/python2.6/site-packages/setuptools/command/easy_install.py&quot;,  
+<br />
+line 472, in easy_install
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return self.install_item(spec, dist.location, tmpdir, deps)
+<br />
+&nbsp;&nbsp;&nbsp;File  
+<br />
+&quot;/usr/lib/python2.6/site-packages/setuptools/command/easy_install.py&quot;,  
+<br />
+line 507, in install_item
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.process_distribution(spec, dists[0], deps, &quot;Using&quot;)
+<br />
+&nbsp;&nbsp;&nbsp;File  
+<br />
+&quot;/usr/lib/python2.6/site-packages/setuptools/command/easy_install.py&quot;,  
+<br />
+line 545, in process_distribution
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[requirement], self.local_index, self.easy_install
+<br />
+&nbsp;&nbsp;&nbsp;File &quot;/usr/lib/python2.6/site-packages/pkg_resources.py&quot;, line 538,  
+<br />
+in resolve
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dist = best[req.key] = env.best_match(req, self, installer)
+<br />
+&nbsp;&nbsp;&nbsp;File &quot;/usr/lib/python2.6/site-packages/pkg_resources.py&quot;, line 780,  
+<br />
+in best_match
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return self.obtain(req, installer) # try and download/install
+<br />
+&nbsp;&nbsp;&nbsp;File &quot;/usr/lib/python2.6/site-packages/pkg_resources.py&quot;, line 792,  
+<br />
+in obtain
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return installer(requirement)
+<br />
+&nbsp;&nbsp;&nbsp;File  
+<br />
+&quot;/usr/lib/python2.6/site-packages/setuptools/command/easy_install.py&quot;,  
+<br />
+line 472, in easy_install
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return self.install_item(spec, dist.location, tmpdir, deps)
+<br />
+&nbsp;&nbsp;&nbsp;File  
+<br />
+&quot;/usr/lib/python2.6/site-packages/setuptools/command/easy_install.py&quot;,  
+<br />
+line 502, in install_item
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dists = self.install_eggs(spec, download, tmpdir)
+<br />
+&nbsp;&nbsp;&nbsp;File  
+<br />
+&quot;/usr/lib/python2.6/site-packages/setuptools/command/easy_install.py&quot;,  
+<br />
+line 681, in install_eggs
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return self.build_and_install(setup_script, setup_base)
+<br />
+&nbsp;&nbsp;&nbsp;File  
+<br />
+&quot;/usr/lib/python2.6/site-packages/setuptools/command/easy_install.py&quot;,  
+<br />
+line 958, in build_and_install
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.run_setup(setup_script, setup_base, args)
+<br />
+&nbsp;&nbsp;&nbsp;File  
+<br />
+&quot;/usr/lib/python2.6/site-packages/setuptools/command/easy_install.py&quot;,  
+<br />
+line 947, in run_setup
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;run_setup(setup_script, args)
+<br />
+&nbsp;&nbsp;&nbsp;File &quot;/usr/lib/python2.6/site-packages/setuptools/sandbox.py&quot;, line  
+<br />
+29, in run_setup
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lambda: execfile(
+<br />
+&nbsp;&nbsp;&nbsp;File &quot;/usr/lib/python2.6/site-packages/setuptools/sandbox.py&quot;, line  
+<br />
+70, in run
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return func()
+<br />
+&nbsp;&nbsp;&nbsp;File &quot;/usr/lib/python2.6/site-packages/setuptools/sandbox.py&quot;, line  
+<br />
+31, in &lt;lambda&gt;
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{'__file__':setup_script, '__name__':'__main__'}
+<br />
+&nbsp;&nbsp;&nbsp;File &quot;setup.py&quot;, line 456, in &lt;module&gt;
+<br />
+<br />&nbsp;&nbsp;&nbsp;File &quot;/usr/lib64/python2.6/distutils/core.py&quot;, line 152, in setup
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dist.run_commands()
+<br />
+&nbsp;&nbsp;&nbsp;File &quot;/usr/lib64/python2.6/distutils/dist.py&quot;, line 975, in run_commands
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.run_command(cmd)
+<br />
+&nbsp;&nbsp;&nbsp;File &quot;/usr/lib64/python2.6/distutils/dist.py&quot;, line 995, in run_command
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cmd_obj.run()
+<br />
+&nbsp;&nbsp;&nbsp;File  
+<br />
+&quot;/usr/lib/python2.6/site-packages/setuptools/command/bdist_egg.py&quot;,  
+<br />
+line 174, in run
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cmd = self.call_command('install_lib', warn_dir=0)
+<br />
+&nbsp;&nbsp;&nbsp;File  
+<br />
+&quot;/usr/lib/python2.6/site-packages/setuptools/command/bdist_egg.py&quot;,  
+<br />
+line 161, in call_command
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.run_command(cmdname)
+<br />
+&nbsp;&nbsp;&nbsp;File &quot;/usr/lib64/python2.6/distutils/cmd.py&quot;, line 333, in run_command
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.distribution.run_command(command)
+<br />
+&nbsp;&nbsp;&nbsp;File &quot;/usr/lib64/python2.6/distutils/dist.py&quot;, line 995, in run_command
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cmd_obj.run()
+<br />
+&nbsp;&nbsp;&nbsp;File  
+<br />
+&quot;/usr/lib/python2.6/site-packages/setuptools/command/install_lib.py&quot;,  
+<br />
+line 20, in run
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.build()
+<br />
+&nbsp;&nbsp;&nbsp;File &quot;/usr/lib64/python2.6/distutils/command/install_lib.py&quot;, line  
+<br />
+119, in build
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.run_command('build_ext')
+<br />
+&nbsp;&nbsp;&nbsp;File &quot;/usr/lib64/python2.6/distutils/cmd.py&quot;, line 333, in run_command
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.distribution.run_command(command)
+<br />
+&nbsp;&nbsp;&nbsp;File &quot;/usr/lib64/python2.6/distutils/dist.py&quot;, line 995, in run_command
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cmd_obj.run()
+<br />
+&nbsp;&nbsp;&nbsp;File &quot;setup.py&quot;, line 251, in run
+<br />
+<br />&nbsp;&nbsp;&nbsp;File &quot;/usr/lib64/python2.6/distutils/cmd.py&quot;, line 333, in run_command
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.distribution.run_command(command)
+<br />
+&nbsp;&nbsp;&nbsp;File &quot;/usr/lib64/python2.6/distutils/dist.py&quot;, line 995, in run_command
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cmd_obj.run()
+<br />
+&nbsp;&nbsp;&nbsp;File &quot;setup.py&quot;, line 278, in run
+<br />
+<br />RuntimeError: autoconf error
+<br />
+<br /><br />----------------------------------------------------------------
+<br />
+This message was sent using IMP, the Internet Messaging Program.
+<br />
+<span id="received"><dfn>Received on</dfn> Sat Jun 16 2012 - 09:28:51 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1285.html#start1285">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1286.html" title="Next message in the list">Vaughan, Garrison: "Re:  RuntimeError: autoconf error on install"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1284.html" title="Previous message in the list">Vaughan, Garrison: "Using StarCluster with Hudson Continuous Integration"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1286.html" title="Next message in this discussion thread">Vaughan, Garrison: "Re:  RuntimeError: autoconf error on install"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1286.html" title="Message sent in reply to this message">Vaughan, Garrison: "Re:  RuntimeError: autoconf error on install"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1285" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1285" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1285" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1285" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

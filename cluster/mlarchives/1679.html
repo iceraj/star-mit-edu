@@ -1,0 +1,323 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Lyn Gerner ((no email))" />
+<meta name="Subject" content="StarCluster Digest, Vol 42, Issue 24" />
+<title>starcluster.mbox.out: StarCluster Digest, Vol 42, Issue 24</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">StarCluster Digest, Vol 42, Issue 24</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>StarCluster Digest, Vol 42, Issue 24</h1>
+<!-- received="Tue Feb 26 13:32:33 2013" -->
+<!-- isoreceived="20130226183233" -->
+<!-- sent="Tue, 26 Feb 2013 10:32:31 -0800" -->
+<!-- isosent="20130226183231" -->
+<!-- name="Lyn Gerner" -->
+<!-- email="(no email)" -->
+<!-- subject="StarCluster Digest, Vol 42, Issue 24" -->
+<!-- id="CAD3e3FaTCd-cbsbztFdEaOpAeb3tP0SbrnGtzwootr6ZkqjonA_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- inreplyto="mailman.1004.1361901089.3826.starcluster_at_mit.edu" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1679.html#start1679" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1679.html#options2">top</a>, <a href="1679.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1680.html" accesskey="d" title="Kai Li: &quot;Re:  error of loadbalance ( can not list current job )&quot;">Next message</a> ]
+[ <a href="1678.html" title="Butson, Christopher: &quot;Cluster size&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="1685.html" accesskey="t" title="Butson, Christopher: &quot;!!! ERROR - placement group does not exist&quot;">Next in thread</a> ]
+ [ <a href="1679.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1679" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1679" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1679" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1679" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Lyn Gerner &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Tue, 26 Feb 2013 10:32:31 -0800</span><br />
+</address>
+<br />
+Hi Chris,
+<br />
+<br />Re  DEFAULT_TEMPLATE=smallcluster: Assuming you've generated the
+<br />
+.starcluster/config file using the procedure defined in the online docs,
+<br />
+then [cluster smallcluster] will be a stanza in that file, whose details
+<br />
+you'll edit for your application or use case.
+<br />
+<br />NODE_INSTANCE_TYPE is one of the variables you can set within each cluster
+<br />
+definition, as the default value for that particular cluster type, to
+<br />
+whatever EC2 instance type works for your app.  If you use the &quot;extends =
+<br />
+smallcluster&quot; within a mediumcluster definition, you could set a new node
+<br />
+instance type for that kind of cluster.  So, something like:
+<br />
+<br />[cluster smallcluster]
+<br />
+NODE_INSTANCE_TYPE=m1.small
+<br />
+CLUSTER_SIZE=8
+<br />
+&lt; ... lots more details for smallcluster defaults&gt;
+<br />
+<br />[cluster mediumcluster]
+<br />
+extends = smallcluster
+<br />
+NODE_INSTANCE_TYPE=m1.medium
+<br />
+CLUSTER_SIZE=16
+<br />
+<br />Then if you start a smallcluster and initiate load balancing against it,
+<br />
+it'll add m1.small nodes by default, whereas load balancing a cluster
+<br />
+that's based on mediumcluster would add m1.medium nodes.
+<br />
+<br />For load balancing, the value of max nodes, -m, would be set less than or
+<br />
+equal to the CLUSTER_SIZE limit you have set up in your cluster definition
+<br />
+(assuming you didn't override that value on the command line when you
+<br />
+launched that particular cluster).
+<br />
+<br />Cheers,
+<br />
+Lyn
+<br />
+<br />---------- Forwarded message ----------
+<br />
+From: &lt;starcluster-request_at_mit.edu&gt;
+<br />
+Date: Tue, Feb 26, 2013 at 9:51 AM
+<br />
+Subject: StarCluster Digest, Vol 42, Issue 24
+<br />
+To: starcluster_at_mit.edu
+<br />
+<br /><br />Send StarCluster mailing list submissions to
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;starcluster_at_mit.edu
+<br />
+<br />To subscribe or unsubscribe via the World Wide Web, visit
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+<br />
+or, via email, send a message with subject or body 'help' to
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;starcluster-request_at_mit.edu
+<br />
+<br />You can reach the person managing the list at
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;starcluster-owner_at_mit.edu
+<br />
+<br />When replying, please edit your Subject line so it is more specific
+<br />
+than &quot;Re: Contents of StarCluster digest...&quot;
+<br />
+<br />Today's Topics:
+<br />
+<br />&nbsp;&nbsp;&nbsp;1. Cluster size (Butson, Christopher)
+<br />
+<br /><br />---------- Forwarded message ----------
+<br />
+From: &quot;Butson, Christopher&quot; &lt;cbutson_at_mcw.edu&gt;
+<br />
+To: &quot;starcluster_at_mit.edu&quot; &lt;starcluster_at_mit.edu&gt;
+<br />
+Cc:
+<br />
+Date: Tue, 26 Feb 2013 16:27:25 +0000
+<br />
+Subject: [StarCluster] Cluster size
+<br />
+I'm looking at StarCluster for use in simulations using PBS or SGE. This
+<br />
+seems like a great tool that could save a lot of development time! The goal
+<br />
+is to setup a cluster that can allocate hundreds of nodes (I think these
+<br />
+are elastic compute units (ECU) in the Amazon nomenclature), up to a
+<br />
+maximum of around 1000. I've read the documentation and have successfully
+<br />
+run a small test cluster but I'm still having trouble understanding the
+<br />
+relationship between the following:
+<br />
+<br />&nbsp;&nbsp;1.  NODE_INSTANCE_TYPE: I understand that this is the Amazon instance
+<br />
+type, but I don't see how this interacts with load balancing or the default
+<br />
+template.
+<br />
+&nbsp;&nbsp;2.  DEFAULT_TEMPLATE=smallcluster: Where is this template defined? I note
+<br />
+that another is largecluster, but I'm not sure the difference between the
+<br />
+two.
+<br />
+<br />&nbsp;&nbsp;3.  Elastic load balancing: This feature makes sense, but is the maximum
+<br />
+number of nodes a function of selections I make for the default template or
+<br />
+instance type?
+<br />
+<br />Thanks for any insights on how to configure the cluster,
+<br />
+Chris
+<br />
+<br />Christopher R. Butson, Ph.D.
+<br />
+Associate Professor
+<br />
+Biotechnology &amp; Bioengineering Center
+<br />
+Departments of Neurology &amp; Neurosurgery
+<br />
+Medical College of Wisconsin
+<br />
+(414) 955-2678
+<br />
+cbutson_at_mcw.edu
+<br />
+<br /><br /><br /><br />_______________________________________________
+<br />
+StarCluster mailing list
+<br />
+StarCluster_at_mit.edu
+<br />
+<a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+<br />
+<span id="received"><dfn>Received on</dfn> Tue Feb 26 2013 - 13:32:33 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1679.html#start1679">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1680.html" title="Next message in the list">Kai Li: "Re:  error of loadbalance ( can not list current job )"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1678.html" title="Previous message in the list">Butson, Christopher: "Cluster size"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1685.html" title="Next message in this discussion thread">Butson, Christopher: "!!! ERROR - placement group does not exist"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1685.html" title="Message sent in reply to this message">Butson, Christopher: "!!! ERROR - placement group does not exist"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1679" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1679" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1679" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1679" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

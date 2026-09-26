@@ -1,0 +1,384 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Avner May ((no email))" />
+<meta name="Subject" content="Re:  Question about star cluster AMIs" />
+<title>starcluster.mbox.out: Re:  Question about star cluster AMIs</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Re:  Question about star cluster AMIs</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Re:  Question about star cluster AMIs</h1>
+<!-- received="Thu Jan 22 14:39:36 2015" -->
+<!-- isoreceived="20150122193936" -->
+<!-- sent="Thu, 22 Jan 2015 14:39:13 -0500" -->
+<!-- isosent="20150122193913" -->
+<!-- name="Avner May" -->
+<!-- email="(no email)" -->
+<!-- subject="Re:  Question about star cluster AMIs" -->
+<!-- id="CALkg49wVZU4SBNqOZZNDGo8yNYh8_pPFu8e=iqOwV9qA7UKFag_at_mail.gmail.com" -->
+<!-- charset="UTF-8" -->
+<!-- inreplyto="CAM_y+3R22VVb4pWxyOFeU48vaf+cyw7KcJnLJkdSE2kapGDL+A_at_mail.gmail.com" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2532.html#start2532" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2532.html#options2">top</a>, <a href="2532.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2533.html" accesskey="d" title="Chris Diehl: &quot;rmate on StarCluster EC2 instance&quot;">Next message</a> ]
+[ <a href="2531.html" title="Avner May: &quot;Question about star cluster AMIs&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2532" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2532" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2532" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2532" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Avner May &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 22 Jan 2015 14:39:13 -0500</span><br />
+</address>
+<br />
+Thanks so much Jacob.
+<br />
+<br />I am considering the following options:
+<br />
+Option 1:
+<br />
+1) Launching an &quot;imagehost&quot; with an AWS AMI that already has CUDA on it (
+<br />
+<a href="https://aws.amazon.com/marketplace/pp/B00FYCDDTE">https://aws.amazon.com/marketplace/pp/B00FYCDDTE</a>)
+<br />
+2) Installing star cluster on it (
+<br />
+<a href="../docs/latest/installation.html">/cluster/docs/latest/installation.html</a>)
+<br />
+3) Create an EBS-backed AMI from this:
+<br />
+<a href="../docs/latest/manual/create_new_ami.html">/cluster/docs/latest/manual/create_new_ami.html</a>
+<br />
+<br />Option 2:
+<br />
+1) Launching an &quot;imagehost&quot; with one of the public starcluster AMIs (eg, [11]
+<br />
+ami-12b6477b us-east-1 starcluster-base-centos-5.4-x86_64-ebs-hvm-gpu-rc2)
+<br />
+2) Updating its cuda version (
+<br />
+<a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html#install-nvidia-driver">http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html#install-nvidia-driver</a>
+<br />
+)
+<br />
+3) Create an EBS-backed AMI from this:
+<br />
+<a href="../docs/latest/manual/create_new_ami.html">/cluster/docs/latest/manual/create_new_ami.html</a>
+<br />
+<br />Would both of these methods work? Is one preferable to the other?  Is
+<br />
+option #1, step 2, the correct way of installing star cluster on an AMI for
+<br />
+it to work correctly with star cluster?
+<br />
+<br />Thanks,
+<br />
+Avner
+<br />
+<br />On Thu, Jan 22, 2015 at 1:32 PM, Jacob Barhak &lt;jacob.barhak_at_gmail.com&gt;
+<br />
+wrote:
+<br />
+<br /><em class="quotelev1">&gt; Hi Avner,
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; This is a quick answer, until one of the specialist returns with a better
+</em><br />
+<em class="quotelev1">&gt; one.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; First, you have to make sure that the instance you are renting from Amazon
+</em><br />
+<em class="quotelev1">&gt; will be compatible and have the GPU hardware you need.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Then, the safest thing is to run the AMI on your selected instance and see
+</em><br />
+<em class="quotelev1">&gt; if your software runs outside StarCluster using the Amazon interfaces. If
+</em><br />
+<em class="quotelev1">&gt; you see you have all the software and hardware you need, move to configure
+</em><br />
+<em class="quotelev1">&gt; StarCluster to create a cluster with your AMI.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Each AMI has many software tools on it, so chances are that unless
+</em><br />
+<em class="quotelev1">&gt; specific software is advertised you need to check if it exists by running
+</em><br />
+<em class="quotelev1">&gt; it. Yet note that AMI and instance are separate definitions.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; I hope this gives you something to work with.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;                   Jacob
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; On Thu, Jan 22, 2015 at 12:04 PM, Avner May &lt;avnermay_at_cs.columbia.edu&gt;
+</em><br />
+<em class="quotelev1">&gt; wrote:
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; Hi all,
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; I'm a new star cluster user, and a new member to this list.  Not sure
+</em><br />
+<em class="quotelev2">&gt;&gt; what the etiquette is for emailing the list.
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; I have the following question:  When I perform &quot;starcluster listpublic&quot;,
+</em><br />
+<em class="quotelev2">&gt;&gt; I see a list of AMI's (see command output below).  However, I have no idea
+</em><br />
+<em class="quotelev2">&gt;&gt; how each of these AMIs is configured.  For example, I need GPU support for
+</em><br />
+<em class="quotelev2">&gt;&gt; my work, so I would like my AMI to have CUDA pre-installed, and for it to
+</em><br />
+<em class="quotelev2">&gt;&gt; support being launched with the AWS GPU instances (eg, &quot;g2.2xlarge&quot;).
+</em><br />
+<em class="quotelev2">&gt;&gt; Where can I get detailed information about each of these AMI's??
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; Thanks so much,
+</em><br />
+<em class="quotelev2">&gt;&gt; Avner
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; =============================
+</em><br />
+<em class="quotelev2">&gt;&gt; C:\Windows\system32&gt;starcluster listpublic
+</em><br />
+<em class="quotelev2">&gt;&gt; StarCluster - (<a href="/cluster/">/cluster</a>) (v. 0.95.6)
+</em><br />
+<em class="quotelev2">&gt;&gt; Software Tools for Academics and Researchers (STAR)
+</em><br />
+<em class="quotelev2">&gt;&gt; Please submit bug reports to starcluster_at_mit.edu
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt;&gt; &gt;&gt;&gt; Listing all public StarCluster images...
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; 32bit Images:
+</em><br />
+<em class="quotelev2">&gt;&gt; -------------
+</em><br />
+<em class="quotelev2">&gt;&gt; [0] ami-9bf9c9f2 us-east-1 starcluster-base-ubuntu-13.04-x86 (EBS)
+</em><br />
+<em class="quotelev2">&gt;&gt; [1] ami-7c5c3915 us-east-1 starcluster-base-ubuntu-12.04-x86 (EBS)
+</em><br />
+<em class="quotelev2">&gt;&gt; [2] ami-899d49e0 us-east-1 starcluster-base-ubuntu-11.10-x86 (EBS)
+</em><br />
+<em class="quotelev2">&gt;&gt; [3] ami-8cf913e5 us-east-1 starcluster-base-ubuntu-10.04-x86-rc3
+</em><br />
+<em class="quotelev2">&gt;&gt; [4] ami-d1c42db8 us-east-1 starcluster-base-ubuntu-9.10-x86-rc8
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; 64bit Images:
+</em><br />
+<em class="quotelev2">&gt;&gt; --------------
+</em><br />
+<em class="quotelev2">&gt;&gt; [0] ami-3393a45a us-east-1 starcluster-base-ubuntu-13.04-x86_64 (EBS)
+</em><br />
+<em class="quotelev2">&gt;&gt; [1] ami-6b211202 us-east-1 starcluster-base-ubuntu-13.04-x86_64-hvm
+</em><br />
+<em class="quotelev2">&gt;&gt; (HVM-EBS)
+</em><br />
+<em class="quotelev2">&gt;&gt; [2] ami-52a0c53b us-east-1 starcluster-base-ubuntu-12.04-x86_64-hvm
+</em><br />
+<em class="quotelev2">&gt;&gt; (HVM-EBS)
+</em><br />
+<em class="quotelev2">&gt;&gt; [3] ami-765b3e1f us-east-1 starcluster-base-ubuntu-12.04-x86_64 (EBS)
+</em><br />
+<em class="quotelev2">&gt;&gt; [4] ami-4583572c us-east-1 starcluster-base-ubuntu-11.10-x86_64-hvm
+</em><br />
+<em class="quotelev2">&gt;&gt; (HVM-EBS)
+</em><br />
+<em class="quotelev2">&gt;&gt; [5] ami-999d49f0 us-east-1 starcluster-base-ubuntu-11.10-x86_64 (EBS)
+</em><br />
+<em class="quotelev2">&gt;&gt; [6] ami-0af31963 us-east-1 starcluster-base-ubuntu-10.04-x86_64-rc1
+</em><br />
+<em class="quotelev2">&gt;&gt; [7] ami-2faa7346 us-east-1
+</em><br />
+<em class="quotelev2">&gt;&gt; starcluster-base-ubuntu-10.04-x86_64-qiime-1.4.0 (EBS)
+</em><br />
+<em class="quotelev2">&gt;&gt; [8] ami-8852a0e1 us-east-1 starcluster-base-ubuntu-10.04-x86_64-hadoop
+</em><br />
+<em class="quotelev2">&gt;&gt; [9] ami-a5c42dcc us-east-1 starcluster-base-ubuntu-9.10-x86_64-rc4
+</em><br />
+<em class="quotelev2">&gt;&gt; [10] ami-06a75a6f us-east-1
+</em><br />
+<em class="quotelev2">&gt;&gt; starcluster-base-centos-5.4-x86_64-ebs-hvm-gpu-hadoop-rc2 (HVM-EBS)
+</em><br />
+<em class="quotelev2">&gt;&gt; [11] ami-12b6477b us-east-1
+</em><br />
+<em class="quotelev2">&gt;&gt; starcluster-base-centos-5.4-x86_64-ebs-hvm-gpu-rc2 (HVM-EBS)
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; total images: 17
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; _______________________________________________
+</em><br />
+<em class="quotelev2">&gt;&gt; StarCluster mailing list
+</em><br />
+<em class="quotelev2">&gt;&gt; StarCluster_at_mit.edu
+</em><br />
+<em class="quotelev2">&gt;&gt; <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<span id="received"><dfn>Received on</dfn> Thu Jan 22 2015 - 14:39:36 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2532.html#start2532">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2533.html" title="Next message in the list">Chris Diehl: "rmate on StarCluster EC2 instance"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2531.html" title="Previous message in the list">Avner May: "Question about star cluster AMIs"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2532" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2532" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2532" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2532" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

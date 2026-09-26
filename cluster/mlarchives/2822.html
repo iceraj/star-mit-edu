@@ -1,0 +1,322 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Marc Crepeau ((no email))" />
+<meta name="Subject" content="sge job array stalling" />
+<title>starcluster.mbox.out: sge job array stalling</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">sge job array stalling</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>sge job array stalling</h1>
+<!-- received="Thu Jul 14 18:05:13 2016" -->
+<!-- isoreceived="20160714220513" -->
+<!-- sent="Thu, 14 Jul 2016 22:04:09 +0000" -->
+<!-- isosent="20160714220409" -->
+<!-- name="Marc Crepeau" -->
+<!-- email="(no email)" -->
+<!-- subject="sge job array stalling" -->
+<!-- id="88A00022-3FAC-4061-A94E-D90AA502382F_at_ucdavis.edu" -->
+<!-- charset="utf-8" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2822.html#start2822" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2822.html#options2">top</a>, <a href="2822.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2823.html" accesskey="d" title="Shlomit Afgin: &quot;Run script automatic after the cluster is up&quot;">Next message</a> ]
+[ <a href="2821.html" title="Marc Crepeau: &quot;sge job array stalling&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2822" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2822" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2822" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2822" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Marc Crepeau &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 14 Jul 2016 22:04:09 +0000</span><br />
+</address>
+<br />
+Well, I did a little investigation and learned a bit more about what’s going on.  First, I learned that it’s necessary to tell SGE how much memory each node has, and to make memory a “consumable resource”.
+<br />
+
+<br />
+I did this using these commands:
+<br />
+
+<br />
+qconf -rattr exechost complex_values slots=16,num_proc=16,h_vmem=31497297920 master
+<br />
+qconf -rattr exechost complex_values slots=16,num_proc=16,h_vmem=31497297920 node001
+<br />
+qconf -rattr exechost complex_values slots=16,num_proc=16,h_vmem=31497297920 node002
+<br />
+qconf -rattr exechost complex_values slots=16,num_proc=16,h_vmem=31497297920 node003
+<br />
+qconf -rattr exechost complex_values slots=16,num_proc=16,h_vmem=31497297920 node004
+<br />
+qconf -rattr exechost complex_values slots=16,num_proc=16,h_vmem=31497297920 node005
+<br />
+qconf -rattr exechost complex_values slots=16,num_proc=16,h_vmem=31497297920 node006
+<br />
+qconf -rattr exechost complex_values slots=16,num_proc=16,h_vmem=31497297920 node007
+<br />
+
+<br />
+and by using the qconf -mc command to add the 2nd “YES” in the following line in the configurations:
+<br />
+
+<br />
+h_vmem              h_vmem     MEMORY      &lt;=    YES         YES        2g       0
+<br />
+
+<br />
+After that, sge and the kernel stopped killing my processes, so that was good.  I was able to run processes on all the slave nodes plus the master.
+<br />
+
+<br />
+But then the job array stalled out again.  I used qstat -j and qacct -j to investigate why.  I turns out that the disk space was full.  That was a surprise to be because the c3.4xlarge instances are supposed to have 160Gb storage, which should me more than enough.  It turns out they do have 160Gb, but in a different partition than the one my job array was using.  This is what I got with a df -h command:
+<br />
+
+<br />
+Filesystem      Size  Used Avail Use% Mounted on
+<br />
+/dev/xvda1      9.9G  9.4G   12M 100% /
+<br />
+udev             15G  8.0K   15G   1% /dev
+<br />
+tmpfs           5.9G  176K  5.9G   1% /run
+<br />
+none            5.0M     0  5.0M   0% /run/lock
+<br />
+none             15G     0   15G   0% /run/shm
+<br />
+/dev/xvdaa      151G  188M  143G   1% /mnt
+<br />
+
+<br />
+When I run my program from /home/sgeadmin/ it seems to use the small partition (root /).  I tried to get it to use the larger /mnt partition by running the program from /mnt/sgeadmin but the job array didn’t work.  The qsub command was issued but all the jobs went to qw state and stayed there.  This is what qstat -j reported at that point:
+<br />
+
+<br />
+job-array tasks:            1-6979:1
+<br />
+scheduling info:            queue instance &quot;all.q_at_node003&quot; dropped because it is temporarily not available
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;queue instance &quot;all.q_at_node007&quot; dropped because it is temporarily not available
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;queue instance &quot;all.q_at_node001&quot; dropped because it is temporarily not available
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;queue instance &quot;all.q_at_node005&quot; dropped because it is temporarily not available
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;queue instance &quot;all.q_at_node002&quot; dropped because it is temporarily not available
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;queue instance &quot;all.q_at_node006&quot; dropped because it is temporarily not available
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;queue instance &quot;all.q_at_master&quot; dropped because it is temporarily not available
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;queue instance &quot;all.q_at_node004&quot; dropped because it is temporarily not available
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All queues dropped because of overload or full
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;not all array task may be started due to 'max_aj_instances'
+<br />
+
+<br />
+
+<br />
+How can I get the program to use the larger partition so that it doesn’t run out of disk space?
+<br />
+
+<br />
+Below is my original message for context:
+<br />
+
+<br />
+********************************************************************************************************************************************************************************************************************************************
+<br />
+
+<br />
+I tried to run an SGE job array using Starcluster on a cluster of 8 c3.4xlarge instances.  The program I was trying to run is a perl program called fragScaff.pl.  You start it once and it creates a job array batch script which it then submits with a qsub command.  The original process runs in the background, continuously monitoring the spawned processes for completion.  The job array batch script (run_array.csh) looks like this:
+<br />
+
+<br />
+#/bin/bash
+<br />
+#$ -S /bin/bash
+<br />
+#$ -cwd
+<br />
+#$ -V
+<br />
+COMMAND=$(head -n $SGE_TASK_ID ./join_default_params.r1.fragScaff/job_array.txt | tail -n 1)
+<br />
+$COMMAND
+<br />
+
+<br />
+and the job_array.txt file looks like this:
+<br />
+
+<br />
+perl fragScaff.pl -Q ./join_default_params.r1.fragScaff,697848,0,99 -r 1 -M 200
+<br />
+perl fragScaff.pl -Q ./join_default_params.r1.fragScaff,697848,100,199 -r 1 -M 200
+<br />
+perl fragScaff.pl -Q ./join_default_params.r1.fragScaff,697848,200,299 -r 1 -M 200
+<br />
+perl fragScaff.pl -Q ./join_default_params.r1.fragScaff,697848,300,399 -r 1 -M 200
+<br />
+.
+<br />
+.
+<br />
+.
+<br />
+perl fragScaff.pl -Q ./join_default_params.r1.fragScaff,697848,697800,697848 -r 1 -M 200
+<br />
+
+<br />
+The qsub command looks like this:
+<br />
+
+<br />
+qsub -t 1-6780 -N FSCF_nnnnnnnn -b y -l h_vmem=20G,virtual_free=20G ./join_default_params.r1.fragScaff/run_array.csh
+<br />
+
+<br />
+The first problem I had was that once the job array threads started spawning the original thread, running on the master node, would be killed, apparently by the kernel.  I figured maybe there was some memory resource constraint, so I edited the Starcluster config file so that the master node would not be an execution host, following the instructions here:
+<br />
+
+<br />
+<a href="../docs/0.93.3/plugins/sge.html">/cluster/docs/0.93.3/plugins/sge.html
+</a>
+<br />
+
+<br />
+Then I re-launched the cluster and tried again.  This time no job array jobs ran on the master node, and the original process was not killed.  However after a fraction of the subprocesses (maybe several hundred) had spawned and completed the job array stalled out.  All remaining jobs ended up in qw state, and a qhost command showed all the nodes idle.
+<br />
+
+<br />
+Any ideas what might have happened and/or how I might diagnose the problem further?
+<br />
+<span id="received"><dfn>Received on</dfn> Thu Jul 14 2016 - 18:05:13 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2822.html#start2822">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2823.html" title="Next message in the list">Shlomit Afgin: "Run script automatic after the cluster is up"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2821.html" title="Previous message in the list">Marc Crepeau: "sge job array stalling"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2822" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2822" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2822" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2822" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+---------- SYSTEM INFO ----------
+StarCluster: 0.9999
+Python: 2.7.3 (default, Aug  1 2012, 05:14:39)  [GCC 4.6.3]
+Platform: Linux-3.2.0-37-generic-x86_64-with-Ubuntu-12.04-precise
+boto: 2.7.0
+paramiko: 1.9.0
+Crypto: 2.4.1
+
+---------- CRASH DETAILS ----------
+Command: starcluster resizevolume vol-a2f2d8dc 30
+
+2013-02-07 14:42:24,178 PID: 14953 config.py:548 - DEBUG - Loading config
+2013-02-07 14:42:24,178 PID: 14953 config.py:119 - DEBUG - Loading file: /home/kli/.starcluster/config
+2013-02-07 14:42:24,180 PID: 14953 config.py:119 - DEBUG - Loading file: /home/kli/.starcluster/config
+2013-02-07 14:42:24,180 PID: 14953 config.py:119 - DEBUG - Loading file: /home/kli/.starcluster/awscreds
+2013-02-07 14:42:24,184 PID: 14953 awsutils.py:55 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'proxy_user': None, 'proxy_pass': None, 'proxy_port': 3128, 'proxy': 'wwwcache.univ-lr.fr', 'is_secure': True, 'path': '/', 'region': None, 'port': None}
+2013-02-07 14:42:24,659 PID: 14953 createvolume.py:74 - INFO - No keypair specified, picking one from config...
+2013-02-07 14:42:24,803 PID: 14953 createvolume.py:80 - INFO - Using keypair: kli_rsa
+2013-02-07 14:42:24,963 PID: 14953 cluster.py:687 - DEBUG - existing nodes: {}
+2013-02-07 14:42:24,963 PID: 14953 cluster.py:703 - DEBUG - returning self._nodes = []
+2013-02-07 14:42:25,305 PID: 14953 awsutils.py:164 - INFO - Creating security group @sc-volumecreator...
+2013-02-07 14:42:27,409 PID: 14953 volume.py:77 - INFO - No instance in group @sc-volumecreator for zone us-east-1c, launching one now.
+2013-02-07 14:42:27,414 PID: 14953 cluster.py:777 - DEBUG - Userdata size in KB: 0.46
+2013-02-07 14:42:27,982 PID: 14953 cluster.py:815 - INFO - Reservation:r-92cfe7e9
+2013-02-07 14:42:27,982 PID: 14953 cluster.py:1267 - INFO - Waiting for volume host to come up... (updating every 30s)
+2013-02-07 14:42:28,401 PID: 14953 cluster.py:687 - DEBUG - existing nodes: {}
+2013-02-07 14:42:28,402 PID: 14953 cluster.py:695 - DEBUG - adding node i-d59bd5a5 to self._nodes list
+2013-02-07 14:42:29,038 PID: 14953 cluster.py:703 - DEBUG - returning self._nodes = [<Node: volhost-us-east-1c (i-d59bd5a5)>]
+2013-02-07 14:42:29,038 PID: 14953 cluster.py:1235 - INFO - Waiting for all nodes to be in a 'running' state...
+2013-02-07 14:42:29,199 PID: 14953 cluster.py:687 - DEBUG - existing nodes: {u'i-d59bd5a5': <Node: volhost-us-east-1c (i-d59bd5a5)>}
+2013-02-07 14:42:29,199 PID: 14953 cluster.py:690 - DEBUG - updating existing node i-d59bd5a5 in self._nodes
+2013-02-07 14:42:29,199 PID: 14953 cluster.py:703 - DEBUG - returning self._nodes = [<Node: volhost-us-east-1c (i-d59bd5a5)>]
+2013-02-07 14:42:59,392 PID: 14953 cluster.py:687 - DEBUG - existing nodes: {u'i-d59bd5a5': <Node: volhost-us-east-1c (i-d59bd5a5)>}
+2013-02-07 14:42:59,392 PID: 14953 cluster.py:690 - DEBUG - updating existing node i-d59bd5a5 in self._nodes
+2013-02-07 14:42:59,392 PID: 14953 cluster.py:703 - DEBUG - returning self._nodes = [<Node: volhost-us-east-1c (i-d59bd5a5)>]
+2013-02-07 14:43:29,581 PID: 14953 cluster.py:687 - DEBUG - existing nodes: {u'i-d59bd5a5': <Node: volhost-us-east-1c (i-d59bd5a5)>}
+2013-02-07 14:43:29,581 PID: 14953 cluster.py:690 - DEBUG - updating existing node i-d59bd5a5 in self._nodes
+2013-02-07 14:43:29,581 PID: 14953 cluster.py:703 - DEBUG - returning self._nodes = [<Node: volhost-us-east-1c (i-d59bd5a5)>]
+2013-02-07 14:43:29,581 PID: 14953 cluster.py:1253 - INFO - Waiting for SSH to come up on all nodes...
+2013-02-07 14:43:29,749 PID: 14953 cluster.py:687 - DEBUG - existing nodes: {u'i-d59bd5a5': <Node: volhost-us-east-1c (i-d59bd5a5)>}
+2013-02-07 14:43:29,749 PID: 14953 cluster.py:690 - DEBUG - updating existing node i-d59bd5a5 in self._nodes
+2013-02-07 14:43:29,749 PID: 14953 cluster.py:703 - DEBUG - returning self._nodes = [<Node: volhost-us-east-1c (i-d59bd5a5)>]
+2013-02-07 14:43:29,753 PID: 14953 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-07 14:43:30,263 PID: 14953 __init__.py:69 - DEBUG - loading private key /home/kli/Dropbox/info/key/kli_rsa
+2013-02-07 14:43:30,263 PID: 14953 __init__.py:161 - DEBUG - Using private key /home/kli/Dropbox/info/key/kli_rsa (rsa)
+2013-02-07 14:43:30,263 PID: 14953 __init__.py:91 - DEBUG - connecting to host ec2-174-129-108-175.compute-1.amazonaws.com on port 22 as user root
+2013-02-07 14:43:30,754 PID: 14953 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-07 14:43:31,755 PID: 14953 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-07 14:43:32,756 PID: 14953 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-07 14:43:33,758 PID: 14953 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-07 14:43:34,759 PID: 14953 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-07 14:43:35,760 PID: 14953 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-07 14:43:36,762 PID: 14953 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-07 14:43:37,763 PID: 14953 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-07 14:43:38,765 PID: 14953 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-07 14:43:39,766 PID: 14953 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-07 14:43:40,767 PID: 14953 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-07 14:43:41,769 PID: 14953 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-07 14:43:42,770 PID: 14953 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-07 14:43:43,771 PID: 14953 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-07 14:43:44,773 PID: 14953 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-07 14:43:45,774 PID: 14953 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-07 14:43:46,776 PID: 14953 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-07 14:43:47,777 PID: 14953 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-07 14:43:48,778 PID: 14953 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-07 14:43:49,780 PID: 14953 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-07 14:43:50,781 PID: 14953 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-07 14:43:51,782 PID: 14953 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-07 14:43:52,784 PID: 14953 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-07 14:43:53,785 PID: 14953 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-07 14:43:54,787 PID: 14953 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-07 14:43:55,788 PID: 14953 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-07 14:43:56,789 PID: 14953 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-07 14:43:57,791 PID: 14953 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-07 14:43:58,792 PID: 14953 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-07 14:43:59,794 PID: 14953 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-07 14:44:00,641 PID: 14953 __init__.py:91 - DEBUG - connecting to host ec2-174-129-108-175.compute-1.amazonaws.com on port 22 as user root
+2013-02-07 14:44:00,795 PID: 14953 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-07 14:44:01,796 PID: 14953 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-07 14:44:01,820 PID: 14953 __init__.py:180 - DEBUG - creating sftp connection
+2013-02-07 14:44:02,797 PID: 14953 utils.py:98 - INFO - Waiting for cluster to come up took 1.580 mins
+2013-02-07 14:44:02,958 PID: 14953 cluster.py:687 - DEBUG - existing nodes: {u'i-d59bd5a5': <Node: volhost-us-east-1c (i-d59bd5a5)>}
+2013-02-07 14:44:02,958 PID: 14953 cluster.py:690 - DEBUG - updating existing node i-d59bd5a5 in self._nodes
+2013-02-07 14:44:02,958 PID: 14953 cluster.py:703 - DEBUG - returning self._nodes = [<Node: volhost-us-east-1c (i-d59bd5a5)>]
+2013-02-07 14:44:02,958 PID: 14953 volume.py:180 - INFO - Checking for required remote commands...
+2013-02-07 14:44:03,059 PID: 14953 __init__.py:521 - DEBUG - executing remote command: source /etc/profile && which resize2fs
+2013-02-07 14:44:03,165 PID: 14953 __init__.py:545 - DEBUG - output of 'source /etc/profile && which resize2fs':
+/sbin/resize2fs
+2013-02-07 14:44:03,397 PID: 14953 __init__.py:521 - DEBUG - executing remote command: source /etc/profile && which e2fsck
+2013-02-07 14:44:03,501 PID: 14953 __init__.py:545 - DEBUG - output of 'source /etc/profile && which e2fsck':
+/sbin/e2fsck
+2013-02-07 14:44:03,501 PID: 14953 awsutils.py:1058 - INFO - Creating snapshot of volume: vol-a2f2d8dc
+2013-02-07 14:44:04,328 PID: 14953 awsutils.py:1038 - INFO - Waiting for snapshot to complete: snap-4d4acf0d
+2013-02-07 15:06:22,566 PID: 14953 volume.py:100 - INFO - New snapshot id: snap-4d4acf0d
+2013-02-07 15:06:22,566 PID: 14953 awsutils.py:683 - INFO - Creating 30GB volume in zone us-east-1c from snapshot snap-4d4acf0d
+2013-02-07 15:06:23,339 PID: 14953 volume.py:94 - INFO - New volume id: vol-556fd424
+2013-02-07 15:06:23,339 PID: 14953 awsutils.py:1018 - INFO - Waiting for vol-556fd424 to become 'available'...
+2013-02-07 15:06:24,508 PID: 14953 volume.py:126 - INFO - Attaching volume vol-556fd424 to instance i-d59bd5a5...
+2013-02-07 15:06:24,780 PID: 14953 awsutils.py:1026 - INFO - Waiting for vol-556fd424 to transition to: attached... 
+2013-02-07 15:06:37,415 PID: 14953 volume.py:332 - INFO - No partitions found, resizing entire device
+2013-02-07 15:06:37,415 PID: 14953 volume.py:342 - INFO - Running e2fsck on new volume
+2013-02-07 15:06:37,516 PID: 14953 __init__.py:521 - DEBUG - executing remote command: source /etc/profile && e2fsck -y -f /dev/xvdz
+2013-02-07 15:17:29,940 PID: 14953 volume.py:349 - ERROR - Failed to resize volume vol-a2f2d8dc
+2013-02-07 15:17:29,940 PID: 14953 volume.py:256 - ERROR - Detaching and deleting *new* volume: vol-556fd424
+2013-02-07 15:17:30,779 PID: 14953 awsutils.py:1018 - INFO - Waiting for vol-556fd424 to become 'available'...
+2013-02-07 15:17:48,370 PID: 14953 cli.py:288 - ERROR - Unhandled exception occured
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.9999-py2.7.egg/starcluster/cli.py", line 257, in main
+    sc.execute(args)
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.9999-py2.7.egg/starcluster/commands/resizevolume.py", line 86, in execute
+    new_volid = vc.resize(vol, size, dest_zone=self.opts.dest_zone)
+  File "<string>", line 2, in resize
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.9999-py2.7.egg/starcluster/utils.py", line 92, in wrap_f
+    res = func(*arg, **kargs)
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.9999-py2.7.egg/starcluster/volume.py", line 355, in resize
+    log_func = log.info if self._volume else log.error
+AttributeError: 'VolumeCreator' object has no attribute '_volume'

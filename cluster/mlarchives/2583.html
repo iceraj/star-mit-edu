@@ -1,0 +1,382 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Nick Stong ((no email))" />
+<meta name="Subject" content="Re:  disable head node for qsubbed jobs" />
+<title>starcluster.mbox.out: Re:  disable head node for qsubbed jobs</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Re:  disable head node for qsubbed jobs</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Re:  disable head node for qsubbed jobs</h1>
+<!-- received="Mon Mar 16 14:14:21 2015" -->
+<!-- isoreceived="20150316181421" -->
+<!-- sent="Mon, 16 Mar 2015 14:14:18 -0400" -->
+<!-- isosent="20150316181418" -->
+<!-- name="Nick Stong" -->
+<!-- email="(no email)" -->
+<!-- subject="Re:  disable head node for qsubbed jobs" -->
+<!-- id="CACQkDozZavqU+=QtTrX0JoX8WEh4wc52NUogi8ZUy9E4Av_mvw_at_mail.gmail.com" -->
+<!-- charset="UTF-8" -->
+<!-- inreplyto="71B853F298E040CEA6F2E0455B6EBF83_at_gmail.com" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2583.html#start2583" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2583.html#options2">top</a>, <a href="2583.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2584.html" accesskey="d" title="Rajat Banerjee: &quot;Re:  How does StarCluster track the clusters it&#0039;s managing?&quot;">Next message</a> ]
+[ <a href="2582.html" title="Vasisht Reddy T.: &quot;Re:  disable head node for qsubbed jobs&quot;">Previous message</a> ]
+[ <a href="2582.html" title="Vasisht Reddy T.: &quot;Re:  disable head node for qsubbed jobs&quot;">In reply to</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2583" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2583" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2583" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2583" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Nick Stong &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Mon, 16 Mar 2015 14:14:18 -0400</span><br />
+</address>
+<br />
+You also have to set DISABLE_QUEUE=True when using the sge plugin
+<br />
+<br />On Mon, Mar 16, 2015 at 1:51 PM, Vasisht Reddy T. &lt;vasishtreddy_at_gmail.com&gt;
+<br />
+wrote:
+<br />
+<br /><em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;  setting MASTER_IS_EXEC_HOST = False within the sge plugin configuration
+</em><br />
+<em class="quotelev1">&gt; will disable job execution on the master node
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; [plugin sge]
+</em><br />
+<em class="quotelev1">&gt; SETUP_CLASS = starcluster.plugins.sge.SGEPlugin
+</em><br />
+<em class="quotelev1">&gt; MASTER_IS_EXEC_HOST = False
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; On Monday, March 16, 2015 at 1:01 PM, Damian Kao wrote:
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; _at_Pablo. Thanks for the link. I should have read the advanced guide more
+</em><br />
+<em class="quotelev1">&gt; closely.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; _at_Cedar. I am running a cluster right now and there are jobs running on the
+</em><br />
+<em class="quotelev1">&gt; head node. I don't think I've specifically set the head node to also run
+</em><br />
+<em class="quotelev1">&gt; jobs. Here is my config:
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; [global]
+</em><br />
+<em class="quotelev1">&gt; DEFAULT_TEMPLATE=general
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; [aws info]
+</em><br />
+<em class="quotelev1">&gt; PRIVATE INFO
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; [key dk]
+</em><br />
+<em class="quotelev1">&gt; KEY_LOCATION=~/.ssh/dk.pem
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; [cluster general]
+</em><br />
+<em class="quotelev1">&gt; KEYNAME = dk
+</em><br />
+<em class="quotelev1">&gt; CLUSTER_SIZE = 20
+</em><br />
+<em class="quotelev1">&gt; CLUSTER_USER = sgeadmin
+</em><br />
+<em class="quotelev1">&gt; CLUSTER_SHELL = bash
+</em><br />
+<em class="quotelev1">&gt; NODE_IMAGE_ID = ami-ca4abfbd
+</em><br />
+<em class="quotelev1">&gt; NODE_INSTANCE_TYPE = c3.8xlarge
+</em><br />
+<em class="quotelev1">&gt; MASTER_INSTANCE_TYPE = m3.xlarge
+</em><br />
+<em class="quotelev1">&gt; MASTER_IMAGE_ID = ami-ca4abfbd
+</em><br />
+<em class="quotelev1">&gt; AVAILABILITY_ZONE = eu-west-1a
+</em><br />
+<em class="quotelev1">&gt; VOLUMES = data
+</em><br />
+<em class="quotelev1">&gt; SPOT_BID = 3.0
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; [volume data]
+</em><br />
+<em class="quotelev1">&gt; VOLUME_ID = ID
+</em><br />
+<em class="quotelev1">&gt; MOUNT_PATH = /working
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; On Mon, Mar 16, 2015 at 4:54 PM, Cedar McKay &lt;cmckay_at_uw.edu&gt; wrote:
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; By default the head node does not run jobs. You have to specifically
+</em><br />
+<em class="quotelev1">&gt; configure it if you want the headnode to also be a worker node.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Cedar
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; On Mar 16, 2015, at 9:46 AM, Damian Kao &lt;damian.kao_at_gmail.com&gt; wrote:
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; I am running a cluster with a small instance as a head node. When I qsub
+</em><br />
+<em class="quotelev1">&gt; my jobs, I do not want the head node to run anything. Is there a way to
+</em><br />
+<em class="quotelev1">&gt; disable usage of head node for running jobs? Thanks.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; --
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; ________________________________
+</em><br />
+<em class="quotelev1">&gt; Damian Kao
+</em><br />
+<em class="quotelev1">&gt; Bioinformatician
+</em><br />
+<em class="quotelev1">&gt; Department of Zoology
+</em><br />
+<em class="quotelev1">&gt; South Parks Road
+</em><br />
+<em class="quotelev1">&gt; University of Oxford, OX13PS
+</em><br />
+<em class="quotelev1">&gt; e-mail: damian.kao_at_gmail.com
+</em><br />
+<em class="quotelev1">&gt; website: www.nextgenetics.net
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; _______________________________________________
+</em><br />
+<em class="quotelev1">&gt; StarCluster mailing list
+</em><br />
+<em class="quotelev1">&gt; StarCluster_at_mit.edu
+</em><br />
+<em class="quotelev1">&gt; <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; --
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; ________________________________
+</em><br />
+<em class="quotelev1">&gt; Damian Kao
+</em><br />
+<em class="quotelev1">&gt; Bioinformatician
+</em><br />
+<em class="quotelev1">&gt; Department of Zoology
+</em><br />
+<em class="quotelev1">&gt; South Parks Road
+</em><br />
+<em class="quotelev1">&gt; University of Oxford, OX13PS
+</em><br />
+<em class="quotelev1">&gt; e-mail: damian.kao_at_gmail.com
+</em><br />
+<em class="quotelev1">&gt; website: www.nextgenetics.net
+</em><br />
+<em class="quotelev1">&gt;  _______________________________________________
+</em><br />
+<em class="quotelev1">&gt; StarCluster mailing list
+</em><br />
+<em class="quotelev1">&gt; StarCluster_at_mit.edu
+</em><br />
+<em class="quotelev1">&gt; <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; _______________________________________________
+</em><br />
+<em class="quotelev1">&gt; StarCluster mailing list
+</em><br />
+<em class="quotelev1">&gt; StarCluster_at_mit.edu
+</em><br />
+<em class="quotelev1">&gt; <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<br /><br /><pre>
+-- 
+Nick Stong, PhD
+Bioinformatics Scientist
+Celmatix Inc.
+54 W. 40th
+New York, NY 10018
+262-994-4152
+www.celmatix.com
+This email message and any attachments being sent by Celmatix Inc., are
+confidential, and may be privileged. If you are not the intended recipient,
+please notify us immediately—by replying to this message—and destroy all
+copies of this message and any attachments. Thank you.
+</pre>
+<span id="received"><dfn>Received on</dfn> Mon Mar 16 2015 - 14:14:21 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2583.html#start2583">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2584.html" title="Next message in the list">Rajat Banerjee: "Re:  How does StarCluster track the clusters it&#0039;s managing?"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2582.html" title="Previous message in the list">Vasisht Reddy T.: "Re:  disable head node for qsubbed jobs"</a></li>
+<li><dfn>In reply to</dfn>: <a href="2582.html" title="Message to which this message replies">Vasisht Reddy T.: "Re:  disable head node for qsubbed jobs"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2583" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2583" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2583" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2583" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

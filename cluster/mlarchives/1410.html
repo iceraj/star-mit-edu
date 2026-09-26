@@ -1,0 +1,228 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Matthew Johnson ((no email))" />
+<meta name="Subject" content="crash report: in client.py, cfg['url'] -&gt; KeyError" />
+<title>starcluster.mbox.out: crash report: in client.py, cfg['url'] -&gt; KeyError</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">crash report: in client.py, cfg['url'] -&gt; KeyError</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>crash report: in client.py, cfg['url'] -&gt; KeyError</h1>
+<!-- received="Tue Sep 18 10:37:50 2012" -->
+<!-- isoreceived="20120918143750" -->
+<!-- sent="Tue, 18 Sep 2012 10:37:42 -0400" -->
+<!-- isosent="20120918143742" -->
+<!-- name="Matthew Johnson" -->
+<!-- email="(no email)" -->
+<!-- subject="crash report: in client.py, cfg['url'] -&gt; KeyError" -->
+<!-- id="6B3431D3-5AF5-4E3F-A95C-64D7D7234C4A_at_mit.edu" -->
+<!-- charset="us-ascii" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1410.html#start1410" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1410.html#options2">top</a>, <a href="1410.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1411.html" accesskey="d" title="Jesse Lu: &quot;Problem adding spot request nodes when using load balancer&quot;">Next message</a> ]
+[ <a href="1409.html" title="Sergio Mafra: &quot;Attaching an EBS volume&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="1434.html" accesskey="t" title="Justin Riley: &quot;Re:  crash report: in client.py, cfg[&#0039;url&#0039;] -&#0062; KeyError&quot;">Next in thread</a> ]
+ [ <a href="1410.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1410" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1410" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1410" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1410" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Matthew Johnson &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Tue, 18 Sep 2012 10:37:42 -0400</span><br />
+</address>
+<br />
+---------- CRASH DETAILS ----------
+<br />
+COMMAND: starcluster shell --ipcluster=mycluster
+<br />
+2012-09-18 10:32:28,039 PID: 2977 config.py:551 - DEBUG - Loading config
+<br />
+2012-09-18 10:32:28,039 PID: 2977 config.py:118 - DEBUG - Loading file: /home/mattjj/.starcluster/config
+<br />
+2012-09-18 10:32:28,041 PID: 2977 shell.py:89 - INFO - Loading parallel IPython library
+<br />
+2012-09-18 10:32:28,042 PID: 2977 awsutils.py:54 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'proxy_user': None, 'proxy_pass': None, 'proxy_port': None, 'proxy': None, 'is_secure': True, 'path': '/', 'region': None, 'port': None}
+<br />
+2012-09-18 10:32:28,345 PID: 2977 utils.py:464 - DEBUG - nargs = 2 
+<br />
+2012-09-18 10:32:28,345 PID: 2977 utils.py:465 - DEBUG - ndefaults = 2 
+<br />
+2012-09-18 10:32:28,346 PID: 2977 utils.py:466 - DEBUG - nrequired = 0 
+<br />
+2012-09-18 10:32:28,346 PID: 2977 utils.py:467 - DEBUG - args = []
+<br />
+2012-09-18 10:32:28,346 PID: 2977 utils.py:468 - DEBUG - kwargs = ['enable_notebook', 'notebook_passwd']
+<br />
+2012-09-18 10:32:28,346 PID: 2977 utils.py:469 - DEBUG - defaults = (False, None)
+<br />
+2012-09-18 10:32:28,346 PID: 2977 cluster.py:504 - DEBUG - config_args = []
+<br />
+2012-09-18 10:32:28,347 PID: 2977 cluster.py:513 - DEBUG - config_kwargs = {}
+<br />
+2012-09-18 10:32:28,556 PID: 2977 cluster.py:646 - DEBUG - existing nodes: {}
+<br />
+2012-09-18 10:32:28,556 PID: 2977 cluster.py:654 - DEBUG - adding node i-d2517ba8 to self._nodes list
+<br />
+2012-09-18 10:32:28,556 PID: 2977 cluster.py:654 - DEBUG - adding node i-d0517baa to self._nodes list
+<br />
+2012-09-18 10:32:28,557 PID: 2977 cluster.py:662 - DEBUG - returning self._nodes = [&lt;Node: master (i-d2517ba8)&gt;, &lt;Node: node001 (i-d0517baa)&gt;]
+<br />
+2012-09-18 10:32:28,557 PID: 2977 shell.py:62 - INFO - Configuring local known_hosts file
+<br />
+2012-09-18 10:32:28,557 PID: 2977 shell.py:121 - INFO - Loading parallel IPython client and view
+<br />
+2012-09-18 10:32:28,559 PID: 2977 cli.py:286 - ERROR - Unhandled exception occured
+<br />
+Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File &quot;/usr/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/cli.py&quot;, line 255, in main
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;sc.execute(args)
+<br />
+&nbsp;&nbsp;File &quot;/usr/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/commands/shell.py&quot;, line 122, in execute 
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;rc = Client(local_json, sshkey=key_location, packer='pickle')
+<br />
+&nbsp;&nbsp;File &quot;/usr/lib/python2.7/site-packages/IPython/parallel/client/client.py&quot;, line 424, in __init__
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;cfg['url'] = util.disambiguate_url(cfg['url'], location)
+<br />
+KeyError: 'url'
+<br />
+---------- SYSTEM INFO ----------
+<br />
+StarCluster: 0.9999
+<br />
+Python: 2.7.3 (default, Apr 24 2012, 00:00:54)  [GCC 4.7.0 20120414 (prerelease)]Platform: Linux-3.4.7-1-ARCH-x86_64-with-glibc2.2.5boto: 2.5.2ssh: 1.7.14Crypto: 2.6 jinja2: 2.6 decorator: 3.3.3
+<br />
+<span id="received"><dfn>Received on</dfn> Tue Sep 18 2012 - 10:37:50 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1410.html#start1410">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1411.html" title="Next message in the list">Jesse Lu: "Problem adding spot request nodes when using load balancer"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1409.html" title="Previous message in the list">Sergio Mafra: "Attaching an EBS volume"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1434.html" title="Next message in this discussion thread">Justin Riley: "Re:  crash report: in client.py, cfg[&#0039;url&#0039;] -&#0062; KeyError"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1434.html" title="Message sent in reply to this message">Justin Riley: "Re:  crash report: in client.py, cfg[&#0039;url&#0039;] -&#0062; KeyError"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1410" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1410" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1410" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1410" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

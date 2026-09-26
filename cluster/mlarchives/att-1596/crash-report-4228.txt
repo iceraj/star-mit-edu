@@ -1,0 +1,68 @@
+---------- SYSTEM INFO ----------
+StarCluster: 0.9999
+Python: 2.7.3 (default, Aug  1 2012, 05:14:39)  [GCC 4.6.3]
+Platform: Linux-3.2.0-35-generic-x86_64-with-Ubuntu-12.04-precise
+boto: 2.6.0
+paramiko: 1.9.0
+Crypto: 2.4.1
+
+---------- CRASH DETAILS ----------
+Command: starcluster ebsimage i-f5153084 starcluster-modelling-ubuntu-12.04-x86 (EBS)
+
+2013-01-16 23:02:49,520 PID: 4228 config.py:548 - DEBUG - Loading config
+2013-01-16 23:02:49,520 PID: 4228 config.py:119 - DEBUG - Loading file: /home/kli/.starcluster/config
+2013-01-16 23:02:49,524 PID: 4228 awsutils.py:55 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'proxy_user': None, 'proxy_pass': None, 'proxy_port': None, 'proxy': None, 'is_secure': True, 'path': '/', 'region': RegionInfo:us-east-1, 'port': None}
+2013-01-16 23:02:50,643 PID: 4228 __init__.py:67 - DEBUG - loading private key /home/kli/.ssh/mykey.rsa
+2013-01-16 23:02:50,645 PID: 4228 __init__.py:159 - DEBUG - Using private key /home/kli/.ssh/mykey.rsa (rsa)
+2013-01-16 23:02:50,646 PID: 4228 image.py:40 - INFO - Removing private data...
+2013-01-16 23:02:50,647 PID: 4228 __init__.py:89 - DEBUG - connecting to host ec2-50-16-63-209.compute-1.amazonaws.com on port 22 as user root
+2013-01-16 23:02:51,965 PID: 4228 __init__.py:178 - DEBUG - creating sftp connection
+2013-01-16 23:02:52,766 PID: 4228 __init__.py:519 - DEBUG - executing remote command: source /etc/profile && find /home -maxdepth 1 -type d -exec rm -rf {}/.ssh \;
+2013-01-16 23:02:52,973 PID: 4228 __init__.py:543 - DEBUG - output of 'source /etc/profile && find /home -maxdepth 1 -type d -exec rm -rf {}/.ssh \;':
+
+2013-01-16 23:02:53,139 PID: 4228 __init__.py:519 - DEBUG - executing remote command: source /etc/profile && rm -f /etc/ssh/ssh_host*key*
+2013-01-16 23:02:53,507 PID: 4228 __init__.py:543 - DEBUG - output of 'source /etc/profile && rm -f /etc/ssh/ssh_host*key*':
+
+2013-01-16 23:02:53,841 PID: 4228 __init__.py:519 - DEBUG - executing remote command: source /etc/profile && rm -f /var/log/secure
+2013-01-16 23:02:54,000 PID: 4228 __init__.py:543 - DEBUG - output of 'source /etc/profile && rm -f /var/log/secure':
+
+2013-01-16 23:02:54,334 PID: 4228 __init__.py:519 - DEBUG - executing remote command: source /etc/profile && rm -f /var/log/lastlog
+2013-01-16 23:02:54,509 PID: 4228 __init__.py:543 - DEBUG - output of 'source /etc/profile && rm -f /var/log/lastlog':
+
+2013-01-16 23:02:54,844 PID: 4228 __init__.py:519 - DEBUG - executing remote command: source /etc/profile && rm -rf /root/*
+2013-01-16 23:02:55,002 PID: 4228 __init__.py:543 - DEBUG - output of 'source /etc/profile && rm -rf /root/*':
+
+2013-01-16 23:02:55,337 PID: 4228 __init__.py:519 - DEBUG - executing remote command: source /etc/profile && rm -f ~/.bash_history
+2013-01-16 23:02:55,496 PID: 4228 __init__.py:543 - DEBUG - output of 'source /etc/profile && rm -f ~/.bash_history':
+
+2013-01-16 23:02:55,831 PID: 4228 __init__.py:519 - DEBUG - executing remote command: source /etc/profile && rm -rf /tmp/*
+2013-01-16 23:02:55,991 PID: 4228 __init__.py:543 - DEBUG - output of 'source /etc/profile && rm -rf /tmp/*':
+
+2013-01-16 23:02:56,326 PID: 4228 __init__.py:519 - DEBUG - executing remote command: source /etc/profile && rm -rf /root/*.hist*
+2013-01-16 23:02:56,487 PID: 4228 __init__.py:543 - DEBUG - output of 'source /etc/profile && rm -rf /root/*.hist*':
+
+2013-01-16 23:02:56,652 PID: 4228 __init__.py:519 - DEBUG - executing remote command: source /etc/profile && rm -rf /var/log/*.gz
+2013-01-16 23:02:56,977 PID: 4228 __init__.py:543 - DEBUG - output of 'source /etc/profile && rm -rf /var/log/*.gz':
+
+2013-01-16 23:02:56,977 PID: 4228 image.py:225 - INFO - Creating new EBS AMI...
+2013-01-16 23:02:57,699 PID: 4228 image.py:229 - INFO - New EBS AMI created: ami-8949c2e0
+2013-01-16 23:02:57,700 PID: 4228 image.py:231 - INFO - Fetching block device mapping for ami-8949c2e0
+2013-01-16 23:03:19,808 PID: 4228 image.py:214 - ERROR - Error occurred while creating image
+2013-01-16 23:03:19,808 PID: 4228 cli.py:288 - ERROR - Unhandled exception occured
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.9999-py2.7.egg/starcluster/cli.py", line 257, in main
+    sc.execute(args)
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.9999-py2.7.egg/starcluster/commands/ebsimage.py", line 61, in execute
+    **self.specified_options_dict)
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.9999-py2.7.egg/starcluster/awsutils.py", line 773, in create_ebs_image
+    return icreator.create_image(size=root_vol_size)
+  File "<string>", line 2, in create_image
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.9999-py2.7.egg/starcluster/utils.py", line 91, in wrap_f
+    res = func(*arg, **kargs)
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.9999-py2.7.egg/starcluster/image.py", line 211, in create_image
+    return self._create_image_from_ebs(size)
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.9999-py2.7.egg/starcluster/image.py", line 241, in _create_image_from_ebs
+    self.ec2.wait_for_snapshot(snap)
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.9999-py2.7.egg/starcluster/awsutils.py", line 1032, in wait_for_snapshot
+    log.info("Waiting for snapshot to complete: %s" % snap.id)
+AttributeError: 'unicode' object has no attribute 'id'

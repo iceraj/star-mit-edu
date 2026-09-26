@@ -1,0 +1,213 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Christopher Clearfield ((no email))" />
+<meta name="Subject" content="Moving to ubuntu 14.04 Trusty" />
+<title>starcluster.mbox.out: Moving to ubuntu 14.04 Trusty</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Moving to ubuntu 14.04 Trusty</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Moving to ubuntu 14.04 Trusty</h1>
+<!-- received="Sat Jul 25 02:43:22 2015" -->
+<!-- isoreceived="20150725064322" -->
+<!-- sent="Fri, 24 Jul 2015 23:43:01 -0700" -->
+<!-- isosent="20150725064301" -->
+<!-- name="Christopher Clearfield" -->
+<!-- email="(no email)" -->
+<!-- subject="Moving to ubuntu 14.04 Trusty" -->
+<!-- id="CAJxeiwUfbe4U=cVR4D17G+k2RZdoU52RDFLkWED2==HJzCkwTg_at_mail.gmail.com" -->
+<!-- charset="UTF-8" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2690.html#start2690" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2690.html#options2">top</a>, <a href="2690.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2691.html" accesskey="d" title="Reza Ghotbi: &quot;Keypair Problem&quot;">Next message</a> ]
+[ <a href="2689.html" title="Cedar McKay: &quot;when spot instances die&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2690" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2690" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2690" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2690" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Christopher Clearfield &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Fri, 24 Jul 2015 23:43:01 -0700</span><br />
+</address>
+<br />
+Hi All,
+<br />
+I've been poking around with Starcluster and think it's a fantastic tool.
+<br />
+Really nice work. It's very clean and understandable, and takes something
+<br />
+that's extremely complicated and makes it work. Kudos.
+<br />
+<br />I'm trying to write some code in a local ipython notebook and run it on an
+<br />
+ec2 cluster The ipython plugin works great, I can connect and use basic
+<br />
+functionality just fine. However, I'm having some problems with version
+<br />
+mismatches, mostly with ipython, pandas, tables etc. being too old.
+<br />
+<br />As you probably know, Ubuntu 13.04 is End of Life (EOL), which means that
+<br />
+even security updates aren't being propagated anymore. This also means that
+<br />
+it's difficult to install new versions through native package management
+<br />
+tools (though, of course, one can use pip for some of these things.)
+<br />
+<br />What would be required to update to a more current version of ubuntu 14.04
+<br />
+(which will be supported until 2019), and perhaps update some software to
+<br />
+newer versions? Is this a huge undertaking? Is there something I could do
+<br />
+to help.
+<br />
+<br />Also, where does the &quot;soul&quot; of starcluster live on the AMIs? I took a first
+<br />
+(very ugly) stab of rolling my own AMI built on  amazon's ubuntu 14.04
+<br />
+instances, mostly by using apt-get to install a list of packages I dumped
+<br />
+from ami-3393a45a (starcluster-base-ubuntu-13.04-x86_64). But obviously
+<br />
+this drops all optimization in how utilities like openblas were compiled
+<br />
+and configuration for things like condor.
+<br />
+<br />Is there a straightforward way to proceed on this?
+<br />
+<br />Thanks,
+<br />
+Chris Clearfield
+<br />
+Principal, System Logic &lt;<a href="http://www.system-logic.com/">http://www.system-logic.com/</a>&gt;
+<br />
+(646) 543-4250
+<br />
+<span id="received"><dfn>Received on</dfn> Sat Jul 25 2015 - 02:43:22 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2690.html#start2690">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2691.html" title="Next message in the list">Reza Ghotbi: "Keypair Problem"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2689.html" title="Previous message in the list">Cedar McKay: "when spot instances die"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2690" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2690" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2690" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2690" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

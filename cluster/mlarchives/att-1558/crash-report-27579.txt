@@ -1,0 +1,118 @@
+---------- SYSTEM INFO ----------
+StarCluster: 0.9999
+Python: 2.6.8 (unknown, Sep 17 2012, 03:13:50)  [GCC 4.6.2 20111027 (Red Hat 4.6.2-1)]
+Platform: Linux-3.2.21-1.32.6.amzn1.x86_64-x86_64-with-glibc2.2.5
+boto: 2.6.0
+paramiko: 1.9.0
+Crypto: 2.6
+
+---------- CRASH DETAILS ----------
+Command: starcluster removenode myCluster node003
+
+2012-11-28 08:08:30,876 PID: 27579 config.py:551 - DEBUG - Loading config
+2012-11-28 08:08:30,876 PID: 27579 config.py:120 - DEBUG - Loading file: /home/ec2-user/.starcluster/config
+2012-11-28 08:08:30,879 PID: 27579 awsutils.py:55 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'proxy_user': None, 'proxy_pass': None, 'proxy_port': None, 'proxy': None, 'is_secure': True, 'path': '/', 'region': None, 'port': None}
+2012-11-28 08:08:31,464 PID: 27579 cluster.py:638 - DEBUG - existing nodes: {}
+2012-11-28 08:08:31,464 PID: 27579 cluster.py:646 - DEBUG - adding node i-0d104c72 to self._nodes list
+2012-11-28 08:08:31,464 PID: 27579 cluster.py:646 - DEBUG - adding node i-0b104c74 to self._nodes list
+2012-11-28 08:08:31,464 PID: 27579 cluster.py:646 - DEBUG - adding node i-09104c76 to self._nodes list
+2012-11-28 08:08:31,465 PID: 27579 cluster.py:646 - DEBUG - adding node i-e7775698 to self._nodes list
+2012-11-28 08:08:31,465 PID: 27579 cluster.py:654 - DEBUG - returning self._nodes = [<Node: master (i-0d104c72)>, <Node: node001 (i-0b104c74)>, <Node: node002 (i-09104c76)>, <Node: node003 (i-e7775698)>]
+2012-11-28 08:08:31,775 PID: 27579 cluster.py:638 - DEBUG - existing nodes: {u'i-e7775698': <Node: node003 (i-e7775698)>, u'i-0d104c72': <Node: master (i-0d104c72)>, u'i-0b104c74': <Node: node001 (i-0b104c74)>, u'i-09104c76': <Node: node002 (i-09104c76)>}
+2012-11-28 08:08:31,775 PID: 27579 cluster.py:641 - DEBUG - updating existing node i-0d104c72 in self._nodes
+2012-11-28 08:08:31,775 PID: 27579 cluster.py:641 - DEBUG - updating existing node i-0b104c74 in self._nodes
+2012-11-28 08:08:31,775 PID: 27579 cluster.py:641 - DEBUG - updating existing node i-09104c76 in self._nodes
+2012-11-28 08:08:31,776 PID: 27579 cluster.py:641 - DEBUG - updating existing node i-e7775698 in self._nodes
+2012-11-28 08:08:31,776 PID: 27579 cluster.py:654 - DEBUG - returning self._nodes = [<Node: master (i-0d104c72)>, <Node: node001 (i-0b104c74)>, <Node: node002 (i-09104c76)>, <Node: node003 (i-e7775698)>]
+2012-11-28 08:08:31,851 PID: 27579 cluster.py:638 - DEBUG - existing nodes: {u'i-e7775698': <Node: node003 (i-e7775698)>, u'i-0d104c72': <Node: master (i-0d104c72)>, u'i-0b104c74': <Node: node001 (i-0b104c74)>, u'i-09104c76': <Node: node002 (i-09104c76)>}
+2012-11-28 08:08:31,852 PID: 27579 cluster.py:641 - DEBUG - updating existing node i-0d104c72 in self._nodes
+2012-11-28 08:08:31,852 PID: 27579 cluster.py:641 - DEBUG - updating existing node i-0b104c74 in self._nodes
+2012-11-28 08:08:31,852 PID: 27579 cluster.py:641 - DEBUG - updating existing node i-09104c76 in self._nodes
+2012-11-28 08:08:31,852 PID: 27579 cluster.py:641 - DEBUG - updating existing node i-e7775698 in self._nodes
+2012-11-28 08:08:31,852 PID: 27579 cluster.py:654 - DEBUG - returning self._nodes = [<Node: master (i-0d104c72)>, <Node: node001 (i-0b104c74)>, <Node: node002 (i-09104c76)>, <Node: node003 (i-e7775698)>]
+2012-11-28 08:08:31,853 PID: 27579 sge.py:158 - INFO - Removing node003 from SGE
+2012-11-28 08:08:31,853 PID: 27579 __init__.py:67 - DEBUG - loading private key /home/ec2-user/.ssh/rsa-11702
+2012-11-28 08:08:31,854 PID: 27579 __init__.py:159 - DEBUG - Using private key /home/ec2-user/.ssh/rsa-11702 (rsa)
+2012-11-28 08:08:31,854 PID: 27579 __init__.py:89 - DEBUG - connecting to host ec2-23-20-175-162.compute-1.amazonaws.com on port 22 as user root
+2012-11-28 08:08:33,390 PID: 27579 __init__.py:178 - DEBUG - creating sftp connection
+2012-11-28 08:08:33,456 PID: 27579 __init__.py:519 - DEBUG - executing remote command: source /etc/profile && qconf -dattr hostgroup hostlist node003 @allhosts
+2012-11-28 08:08:33,553 PID: 27579 __init__.py:543 - DEBUG - output of 'source /etc/profile && qconf -dattr hostgroup hostlist node003 @allhosts':
+root@master modified "@allhosts" in host group list
+2012-11-28 08:08:33,557 PID: 27579 __init__.py:519 - DEBUG - executing remote command: source /etc/profile && qconf -purge queue slots all.q@node003
+2012-11-28 08:08:33,693 PID: 27579 __init__.py:543 - DEBUG - output of 'source /etc/profile && qconf -purge queue slots all.q@node003':
+root@master modified "all.q" in cluster queue list
+2012-11-28 08:08:33,697 PID: 27579 __init__.py:519 - DEBUG - executing remote command: source /etc/profile && qconf -dconf node003
+2012-11-28 08:08:33,832 PID: 27579 __init__.py:543 - DEBUG - output of 'source /etc/profile && qconf -dconf node003':
+root@master removed "node003" from configuration list
+2012-11-28 08:08:33,836 PID: 27579 __init__.py:519 - DEBUG - executing remote command: source /etc/profile && qconf -de node003
+2012-11-28 08:08:33,972 PID: 27579 __init__.py:543 - DEBUG - output of 'source /etc/profile && qconf -de node003':
+root@master removed "node003" from execution host list
+2012-11-28 08:08:33,972 PID: 27579 __init__.py:67 - DEBUG - loading private key /home/ec2-user/.ssh/rsa-11702
+2012-11-28 08:08:33,973 PID: 27579 __init__.py:159 - DEBUG - Using private key /home/ec2-user/.ssh/rsa-11702 (rsa)
+2012-11-28 08:08:33,974 PID: 27579 __init__.py:89 - DEBUG - connecting to host ec2-23-22-251-5.compute-1.amazonaws.com on port 22 as user root
+2012-11-28 08:08:35,439 PID: 27579 __init__.py:178 - DEBUG - creating sftp connection
+2012-11-28 08:08:35,467 PID: 27579 __init__.py:519 - DEBUG - executing remote command: source /etc/profile && pkill -9 sge_execd
+2012-11-28 08:08:35,515 PID: 27579 __init__.py:543 - DEBUG - output of 'source /etc/profile && pkill -9 sge_execd':
+
+2012-11-28 08:08:35,616 PID: 27579 sge.py:47 - INFO - Updating SGE parallel environment 'orte'
+2012-11-28 08:08:35,621 PID: 27579 threadpool.py:135 - DEBUG - unfinished_tasks = 3
+2012-11-28 08:08:35,622 PID: 27579 __init__.py:67 - DEBUG - loading private key /home/ec2-user/.ssh/rsa-11702
+2012-11-28 08:08:35,623 PID: 27579 __init__.py:159 - DEBUG - Using private key /home/ec2-user/.ssh/rsa-11702 (rsa)
+2012-11-28 08:08:35,623 PID: 27579 __init__.py:67 - DEBUG - loading private key /home/ec2-user/.ssh/rsa-11702
+2012-11-28 08:08:35,624 PID: 27579 __init__.py:159 - DEBUG - Using private key /home/ec2-user/.ssh/rsa-11702 (rsa)
+2012-11-28 08:08:35,624 PID: 27579 __init__.py:89 - DEBUG - connecting to host ec2-174-129-89-14.compute-1.amazonaws.com on port 22 as user root
+2012-11-28 08:08:35,623 PID: 27579 __init__.py:89 - DEBUG - connecting to host ec2-50-16-162-207.compute-1.amazonaws.com on port 22 as user root
+2012-11-28 08:08:35,796 PID: 27579 __init__.py:519 - DEBUG - executing remote command: source /etc/profile && cat /proc/cpuinfo | grep processor | wc -l
+2012-11-28 08:08:36,039 PID: 27579 __init__.py:543 - DEBUG - output of 'source /etc/profile && cat /proc/cpuinfo | grep processor | wc -l':
+32
+2012-11-28 08:08:38,109 PID: 27579 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-11-28 08:08:38,538 PID: 27579 __init__.py:178 - DEBUG - creating sftp connection
+2012-11-28 08:08:38,538 PID: 27579 __init__.py:178 - DEBUG - creating sftp connection
+2012-11-28 08:08:39,111 PID: 27579 cli.py:266 - ERROR - error occurred in job (id=140001614481152): EOF during negotiation
+Traceback (most recent call last):
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/threadpool.py", line 31, in run
+    job.run()
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/threadpool.py", line 58, in run
+    r = self.method(*self.args, **self.kwargs)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/plugins/sge.py", line 50, in <lambda>
+    num_processors = sum(self.pool.map(lambda n: n.num_processors, nodes))
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/node.py", line 178, in num_processors
+    'cat /proc/cpuinfo | grep processor | wc -l')[0])
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/sshutils/__init__.py", line 508, in execute
+    channel = self.transport.open_session()
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/sshutils/__init__.py", line 128, in transport
+    port=self._port, timeout=self._timeout)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/sshutils/__init__.py", line 113, in connect
+    assert self.sftp is not None
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/sshutils/__init__.py", line 179, in sftp
+    self._sftp = paramiko.SFTPClient.from_transport(self.transport)
+  File "/usr/lib/python2.6/site-packages/paramiko-1.9.0-py2.6.egg/paramiko/sftp_client.py", line 106, in from_transport
+    return cls(chan)
+  File "/usr/lib/python2.6/site-packages/paramiko-1.9.0-py2.6.egg/paramiko/sftp_client.py", line 89, in __init__
+    raise SSHException('EOF during negotiation')
+SSHException: EOF during negotiation
+
+error occurred in job (id=140001622873856): EOF during negotiation
+Traceback (most recent call last):
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/threadpool.py", line 31, in run
+    job.run()
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/threadpool.py", line 58, in run
+    r = self.method(*self.args, **self.kwargs)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/plugins/sge.py", line 50, in <lambda>
+    num_processors = sum(self.pool.map(lambda n: n.num_processors, nodes))
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/node.py", line 178, in num_processors
+    'cat /proc/cpuinfo | grep processor | wc -l')[0])
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/sshutils/__init__.py", line 508, in execute
+    channel = self.transport.open_session()
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/sshutils/__init__.py", line 128, in transport
+    port=self._port, timeout=self._timeout)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/sshutils/__init__.py", line 113, in connect
+    assert self.sftp is not None
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/sshutils/__init__.py", line 179, in sftp
+    self._sftp = paramiko.SFTPClient.from_transport(self.transport)
+  File "/usr/lib/python2.6/site-packages/paramiko-1.9.0-py2.6.egg/paramiko/sftp_client.py", line 106, in from_transport
+    return cls(chan)
+  File "/usr/lib/python2.6/site-packages/paramiko-1.9.0-py2.6.egg/paramiko/sftp_client.py", line 89, in __init__
+    raise SSHException('EOF during negotiation')
+SSHException: EOF during negotiation
+

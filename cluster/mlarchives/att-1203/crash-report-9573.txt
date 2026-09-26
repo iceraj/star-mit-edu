@@ -1,0 +1,46 @@
+---------- CRASH DETAILS ----------
+COMMAND: starcluster get B5 /home/sgeadmin/ /Users/sean.murphy/Downloads/BLOCK_EC2/P2_iMinDEE_B5/out
+2012-05-19 08:58:34,375 PID: 9573 config.py:551 - DEBUG - Loading config
+2012-05-19 08:58:34,376 PID: 9573 config.py:118 - DEBUG - Loading file: /Users/sean.murphy/.starcluster/config
+2012-05-19 08:58:34,382 PID: 9573 awsutils.py:54 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'proxy_user': None, 'proxy_pass': None, 'proxy_port': None, 'proxy': None, 'is_secure': True, 'path': '/', 'region': None, 'port': None}
+2012-05-19 08:58:35,490 PID: 9573 utils.py:464 - DEBUG - nargs = 2
+2012-05-19 08:58:35,490 PID: 9573 utils.py:465 - DEBUG - ndefaults = 2
+2012-05-19 08:58:35,490 PID: 9573 utils.py:466 - DEBUG - nrequired = 0
+2012-05-19 08:58:35,490 PID: 9573 utils.py:467 - DEBUG - args = []
+2012-05-19 08:58:35,490 PID: 9573 utils.py:468 - DEBUG - kwargs = ['disable_threads', 'num_threads']
+2012-05-19 08:58:35,490 PID: 9573 utils.py:469 - DEBUG - defaults = (False, 20)
+2012-05-19 08:58:35,491 PID: 9573 cluster.py:500 - DEBUG - config_args = []
+2012-05-19 08:58:35,491 PID: 9573 cluster.py:509 - DEBUG - config_kwargs = {}
+2012-05-19 08:58:35,752 PID: 9573 cluster.py:664 - DEBUG - existing nodes: {}
+2012-05-19 08:58:35,753 PID: 9573 cluster.py:672 - DEBUG - adding node i-ddcab4bb to self._nodes list
+2012-05-19 08:58:35,753 PID: 9573 cluster.py:680 - DEBUG - returning self._nodes = [<Node: master (i-ddcab4bb)>]
+2012-05-19 08:58:35,753 PID: 9573 __init__.py:75 - DEBUG - loading private key /Users/sean.murphy/.ssh/mykey.rsa
+2012-05-19 08:58:35,754 PID: 9573 __init__.py:167 - DEBUG - Using private key /Users/sean.murphy/.ssh/mykey.rsa (rsa)
+2012-05-19 08:58:35,754 PID: 9573 __init__.py:186 - DEBUG - creating sftp connection
+2012-05-19 08:58:35,754 PID: 9573 __init__.py:97 - DEBUG - connecting to host ec2-204-236-202-222.compute-1.amazonaws.com on port 22 as user root
+2012-05-19 08:58:36,107 PID: 9573 __init__.py:186 - DEBUG - creating sftp connection
+2012-05-19 08:58:36,547 PID: 9573 __init__.py:194 - DEBUG - creating scp connection
+2012-05-19 08:58:37,443 PID: 9573 cli.py:287 - DEBUG - Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/StarCluster-0.93.3-py2.7.egg/starcluster/cli.py", line 255, in main
+    sc.execute(args)
+  File "/Library/Python/2.7/site-packages/StarCluster-0.93.3-py2.7.egg/starcluster/commands/get.py", line 51, in execute
+    node.ssh.get(rpaths, lpath)
+  File "/Library/Python/2.7/site-packages/StarCluster-0.93.3-py2.7.egg/starcluster/sshutils/__init__.py", line 431, in get
+    self.scp.get(remotepaths, localpath, recursive=recursive)
+  File "/Library/Python/2.7/site-packages/StarCluster-0.93.3-py2.7.egg/starcluster/sshutils/scp.py", line 141, in get
+    self._recv_all()
+  File "/Library/Python/2.7/site-packages/StarCluster-0.93.3-py2.7.egg/starcluster/sshutils/scp.py", line 247, in _recv_all
+    command[code](msg[1:])
+  File "/Library/Python/2.7/site-packages/StarCluster-0.93.3-py2.7.egg/starcluster/sshutils/scp.py", line 338, in _recv_pushd
+    self.channel.send('\x01' + e[0])
+TypeError: cannot concatenate 'str' and 'int' objects
+
+---------- SYSTEM INFO ----------
+StarCluster: 0.93.3
+Python: 2.7.1 (r271:86832, Jul 31 2011, 19:30:53)  [GCC 4.2.1 (Based on Apple Inc. build 5658) (LLVM build 2335.15.00)]
+Platform: Darwin-11.4.0-x86_64-i386-64bit
+boto: 2.3.0
+ssh: 1.7.13
+Crypto: 2.5
+jinja2: 2.6
+decorator: 3.3.1

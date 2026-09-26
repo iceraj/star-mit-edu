@@ -1,0 +1,208 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Ryan Golhar ((no email))" />
+<meta name="Subject" content="failed to add/remove additional nodes" />
+<title>starcluster.mbox.out: failed to add/remove additional nodes</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">failed to add/remove additional nodes</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>failed to add/remove additional nodes</h1>
+<!-- received="Thu Apr  3 14:32:47 2014" -->
+<!-- isoreceived="20140403183247" -->
+<!-- sent="Thu, 3 Apr 2014 14:32:45 -0400" -->
+<!-- isosent="20140403183245" -->
+<!-- name="Ryan Golhar" -->
+<!-- email="(no email)" -->
+<!-- subject="failed to add/remove additional nodes" -->
+<!-- id="CAFbjocgR44rZ=Yxg97robp5ScEa5gxCq3C6FbO1zfVEJvWd-9A_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2142.html#start2142" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2142.html#options2">top</a>, <a href="2142.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2143.html" accesskey="d" title="Ryan Golhar: &quot;Re:  failed to add/remove additional nodes&quot;">Next message</a> ]
+[ <a href="2141.html" title="Sergio Mafra: &quot;Science VM&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="2143.html" accesskey="t" title="Ryan Golhar: &quot;Re:  failed to add/remove additional nodes&quot;">Next in thread</a> ]
+ [ <a href="2142.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2142" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2142" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2142" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2142" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Ryan Golhar &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 3 Apr 2014 14:32:45 -0400</span><br />
+</address>
+<br />
+Hi all - I have a 50 node spot cluster running.  I tried to add 10
+<br />
+additional nodes and at some point along the way it failed.  Only 2 nodes
+<br />
+were added to the cluster, but they aren't getting SGE jobs.  I tried
+<br />
+re-adding the nodes using '-x -a' but it fails.  So I then tried to remove
+<br />
+the nodes, and that is failing as well.  How do I fix this?  Here's the
+<br />
+output:
+<br />
+<br />[ec2-user_at_awsmicro plugins]$ starcluster removenode ngscluster node060
+<br />
+<br />StarCluster - (<a href="/cluster/">/cluster</a>) (v. 0.9999)
+<br />
+<br />Software Tools for Academics and Researchers (STAR)
+<br />
+<br />Please submit bug reports to starcluster_at_mit.edu
+<br />
+<br /><br /><em class="quotelev3">&gt;&gt;&gt; Running plugin tagger.TaggerPlugin
+</em><br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Running plugin setupuserenv.SetupUserEnvironment
+</em><br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Running plugin starcluster.plugins.users.CreateUsers
+</em><br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Running plugin starcluster.plugins.sge.SGEPlugin
+</em><br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Removing node060 from SGE
+</em><br />
+<br />!!! ERROR - Error occured while running plugin
+<br />
+'starcluster.plugins.sge.SGEPlugin':
+<br />
+<br />!!! ERROR - remote command 'source /etc/profile &amp;&amp; qconf -dattr
+<br />
+<br />!!! ERROR - hostgroup hostlist node060 _at_allhosts' failed with status 1:
+<br />
+<br />!!! ERROR - error writing object &quot;_at_allhosts&quot; to spooling database
+<br />
+<br /><br />At this point, I have to go into the AWS web console and remove the nodes
+<br />
+myself as starcluster isn't able to.
+<br />
+<span id="received"><dfn>Received on</dfn> Thu Apr 03 2014 - 14:32:47 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2142.html#start2142">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2143.html" title="Next message in the list">Ryan Golhar: "Re:  failed to add/remove additional nodes"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2141.html" title="Previous message in the list">Sergio Mafra: "Science VM"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="2143.html" title="Next message in this discussion thread">Ryan Golhar: "Re:  failed to add/remove additional nodes"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="2143.html" title="Message sent in reply to this message">Ryan Golhar: "Re:  failed to add/remove additional nodes"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2142" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2142" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2142" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2142" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

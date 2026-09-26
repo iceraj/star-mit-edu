@@ -1,0 +1,443 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Justin Riley ((no email))" />
+<meta name="Subject" content="Re: [Starcluster] can't start cluster" />
+<title>starcluster.mbox.out: Re: [Starcluster] can't start cluster</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Re: [Starcluster] can't start cluster</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Re: [Starcluster] can't start cluster</h1>
+<!-- received="Thu Jun 17 11:53:29 2010" -->
+<!-- isoreceived="20100617155329" -->
+<!-- sent="Thu, 17 Jun 2010 11:53:26 -0400" -->
+<!-- isosent="20100617155326" -->
+<!-- name="Justin Riley" -->
+<!-- email="(no email)" -->
+<!-- subject="Re: [Starcluster] can't start cluster" -->
+<!-- id="4C1A44F6.3030500_at_mit.edu" -->
+<!-- charset="ISO-8859-1" -->
+<!-- inreplyto="20100617152356.884595696_at_smtp.johnshopkins.edu" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="0260.html#start260" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="0260.html#options2">top</a>, <a href="0260.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="0261.html" accesskey="d" title="Dean Snyder: &quot;[Starcluster] can&#0039;t start cluster&quot;">Next message</a> ]
+[ <a href="0259.html" title="Elaine Angelino: &quot;[Starcluster] starcluster on twitter!&quot;">Previous message</a> ]
+[ <a href="0261.html" title="Dean Snyder: &quot;[Starcluster] can&#0039;t start cluster&quot;">In reply to</a> ]
+<!-- unextthread="start" -->
+[ <a href="0262.html" accesskey="t" title="Dean Snyder: &quot;Re: [Starcluster] can&#0039;t start cluster&quot;">Next in thread</a> ]
+ [ <a href="0260.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg260" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg260" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg260" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg260" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Justin Riley &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 17 Jun 2010 11:53:26 -0400</span><br />
+</address>
+<br />
+-----BEGIN PGP SIGNED MESSAGE-----
+<br />
+Hash: SHA1
+<br />
+<br />Hi Dean,
+<br />
+<br />Would you mind joining the list? Thanks.
+<br />
+<br /><em class="quotelev1">&gt; I assume this is an Amazon resources problem.
+</em><br />
+<br />Yes, unfortunately it is. I've fixed the github code to display these
+<br />
+messages in a friendlier way.
+<br />
+<br /><em class="quotelev1">&gt; Even when I do not specify an AVAILABILITY_ZONE in the StarCluster
+</em><br />
+<em class="quotelev1">&gt; config file the fact that my EBS volume is in us-east-1a is forcing
+</em><br />
+<em class="quotelev1">&gt; EC2 to try to start the cluster in the over-subscribed us-east-1a
+</em><br />
+<em class="quotelev1">&gt; zone.
+</em><br />
+<br />This is intended. Otherwise, you would not be able to attach your volume
+<br />
+to the cluster when starting. Using an EBS volume in general determines
+<br />
+the location where instances *have* to be started:
+<br />
+<br />Any instance you wish to attach an EBS volume to must be in the same
+<br />
+zone as the volume.
+<br />
+<br />For StarCluster this is the master node. Technically it could be
+<br />
+possible to only have this zone restriction on the master and launch the
+<br />
+nodes &quot;wherever&quot; but this will likely make the network latency between
+<br />
+nodes even worse than it already is given that the EBS volume would then
+<br />
+be NFS-shared across availability zones.
+<br />
+<br />If you do not specify any volumes in a cluster template, StarCluster
+<br />
+will let amazon decide where to put the instances. You can always force
+<br />
+which zone to use via the AVAILABILITY_ZONE setting in your cluster
+<br />
+template but if a volume has been specified in your template that does
+<br />
+not live in that AVAILABILITY_ZONE setting, you will get an error from
+<br />
+StarCluster.
+<br />
+<br />You have a couple of options here:
+<br />
+<br />1. Comment-out your volume section completely from the cluster template
+<br />
+and thus don't use the volume(s). This will allow Amazon to put you
+<br />
+where there's capacity but you will not have your data.
+<br />
+<br />2. Make a clone of your volume(s) in another zone using EBS snapshots
+<br />
+(ElasticFox is nice for this) and change your volume settings to point
+<br />
+to this new volume. StarCluster will then launch instances in the new
+<br />
+volume's zone.
+<br />
+<br />Personally, if you cant start a cluster consistently I would consider
+<br />
+option 2.
+<br />
+<br /><em class="quotelev1">&gt; For you information, when I ran &quot;starcluster listclusters&quot; command
+</em><br />
+<em class="quotelev1">&gt; right after receiving the &quot;InsufficientInstanceCapacity&quot; error I got
+</em><br />
+<em class="quotelev1">&gt; the following error message:
+</em><br />
+<br />This is fixed in the github code.
+<br />
+<br />Hope that helps,
+<br />
+<br />~Justin
+<br />
+<br />On 06/17/2010 11:23 AM, Dean Snyder wrote:
+<br />
+<em class="quotelev1">&gt; I am unable to start up an 8-node m1.large cluster this morning due
+</em><br />
+<em class="quotelev1">&gt; to an &quot;InsufficientInstanceCapacity&quot; error. (See appended log.)
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; I assume this is an Amazon resources problem. Even when I do not
+</em><br />
+<em class="quotelev1">&gt; specify an AVAILABILITY_ZONE in the StarCluster config file the fact
+</em><br />
+<em class="quotelev1">&gt; that my EBS volume is in us-east-1a is forcing EC2 to try to start
+</em><br />
+<em class="quotelev1">&gt; the cluster in the over-subscribed us-east-1a zone.
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; For you information, when I ran &quot;starcluster listclusters&quot; command
+</em><br />
+<em class="quotelev1">&gt; right after receiving the &quot;InsufficientInstanceCapacity&quot; error I got
+</em><br />
+<em class="quotelev1">&gt; the following error message:
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; dean 11:13:37 ~ : starcluster listclusters StarCluster -
+</em><br />
+<em class="quotelev1">&gt; (<a href="http://web.mit.edu/starcluster">http://web.mit.edu/starcluster</a>) Software Tools for Academics and
+</em><br />
+<em class="quotelev1">&gt; Researchers (STAR) Please submit bug reports to starcluster_at_mit.edu 
+</em><br />
+<em class="quotelev1">&gt; --------------------------------------------- cidrcluster (security
+</em><br />
+<em class="quotelev1">&gt; group: _at_sc-cidrcluster) 
+</em><br />
+<em class="quotelev1">&gt; --------------------------------------------- Traceback (most recent
+</em><br />
+<em class="quotelev1">&gt; call last): File
+</em><br />
+<em class="quotelev1">&gt; &quot;build/bdist.macosx-10.6-universal/egg/starcluster/cli.py&quot;, line 
+</em><br />
+<em class="quotelev1">&gt; 1075, in main sc.execute(args) File
+</em><br />
+<em class="quotelev1">&gt; &quot;build/bdist.macosx-10.6-universal/egg/starcluster/cli.py&quot;, line 432,
+</em><br />
+<em class="quotelev1">&gt; in execute cluster.list_clusters(cfg) File
+</em><br />
+<em class="quotelev1">&gt; &quot;build/bdist.macosx-10.6-universal/egg/starcluster/cluster.py&quot;, line
+</em><br />
+<em class="quotelev1">&gt; 148, in list_clusters print 'Launch time: %s' % master.launch_time 
+</em><br />
+<em class="quotelev1">&gt; AttributeError: 'NoneType' object has no attribute 'launch_time'
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; **********************************************************
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; dean 11:10:44 ~ : starcluster start cidrcluster StarCluster -
+</em><br />
+<em class="quotelev1">&gt; (<a href="http://web.mit.edu/starcluster">http://web.mit.edu/starcluster</a>) Software Tools for Academics and
+</em><br />
+<em class="quotelev1">&gt; Researchers (STAR) Please submit bug reports to starcluster_at_mit.edu
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; Using default cluster template: largecluster Validating cluster
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; template settings... Cluster template settings are valid 
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; Starting cluster... Launching a 8-node cluster... Launching
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; master node... Master AMI: ami-88967ee1 Creating security group
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; _at_sc-cidrcluster...
+</em><br />
+<em class="quotelev1">&gt; Traceback (most recent call last): File
+</em><br />
+<em class="quotelev1">&gt; &quot;build/bdist.macosx-10.6-universal/egg/starcluster/cli.py&quot;, line 
+</em><br />
+<em class="quotelev1">&gt; 1075, in main sc.execute(args) File
+</em><br />
+<em class="quotelev1">&gt; &quot;build/bdist.macosx-10.6-universal/egg/starcluster/cli.py&quot;, line 239,
+</em><br />
+<em class="quotelev1">&gt; in execute scluster.start(create=not self.opts.no_create) File
+</em><br />
+<em class="quotelev1">&gt; &quot;build/bdist.macosx-10.6-universal/egg/starcluster/utils.py&quot;, line
+</em><br />
+<em class="quotelev1">&gt; 27, in wrapper res = func(*arg, **kargs) File
+</em><br />
+<em class="quotelev1">&gt; &quot;build/bdist.macosx-10.6-universal/egg/starcluster/cluster.py&quot;, line
+</em><br />
+<em class="quotelev1">&gt; 679, in start self.create_cluster() File
+</em><br />
+<em class="quotelev1">&gt; &quot;build/bdist.macosx-10.6-universal/egg/starcluster/cluster.py&quot;, line
+</em><br />
+<em class="quotelev1">&gt; 596, in create_cluster placement=zone) File
+</em><br />
+<em class="quotelev1">&gt; &quot;build/bdist.macosx-10.6-universal/egg/starcluster/cluster.py&quot;, line
+</em><br />
+<em class="quotelev1">&gt; 575, in run_instances placement=placement) File
+</em><br />
+<em class="quotelev1">&gt; &quot;build/bdist.macosx-10.6-universal/egg/starcluster/awsutils.py&quot;, line
+</em><br />
+<em class="quotelev1">&gt; 161, in run_instances placement=placement) File
+</em><br />
+<em class="quotelev1">&gt; &quot;/Library/Python/2.6/site-packages/boto-1.9b-py2.6.egg/boto/ec2/ 
+</em><br />
+<em class="quotelev1">&gt; connection.py&quot;, line 463, in run_instances return
+</em><br />
+<em class="quotelev1">&gt; self.get_object('RunInstances', params, Reservation, verb='POST') 
+</em><br />
+<em class="quotelev1">&gt; File &quot;/Library/Python/2.6/site-packages/boto-1.9b-py2.6.egg/boto/ 
+</em><br />
+<em class="quotelev1">&gt; connection.py&quot;, line 620, in get_object response =
+</em><br />
+<em class="quotelev1">&gt; self.make_request(action, params, path, verb) File
+</em><br />
+<em class="quotelev1">&gt; &quot;/Library/Python/2.6/site-packages/boto-1.9b-py2.6.egg/boto/ 
+</em><br />
+<em class="quotelev1">&gt; connection.py&quot;, line 591, in make_request headers=headers) File
+</em><br />
+<em class="quotelev1">&gt; &quot;/Library/Python/2.6/site-packages/boto-1.9b-py2.6.egg/boto/ 
+</em><br />
+<em class="quotelev1">&gt; connection.py&quot;, line 459, in make_request return self._mexe(method,
+</em><br />
+<em class="quotelev1">&gt; path, data, headers, host, sender) File
+</em><br />
+<em class="quotelev1">&gt; &quot;/Library/Python/2.6/site-packages/boto-1.9b-py2.6.egg/boto/ 
+</em><br />
+<em class="quotelev1">&gt; connection.py&quot;, line 435, in _mexe raise
+</em><br />
+<em class="quotelev1">&gt; BotoServerError(response.status, response.reason, body) 
+</em><br />
+<em class="quotelev1">&gt; BotoServerError: BotoServerError: 500 Internal Server Error &lt;?xml
+</em><br />
+<em class="quotelev1">&gt; version=&quot;1.0&quot;?&gt; 
+</em><br />
+<em class="quotelev1">&gt; &lt;Response&gt;&lt;Errors&gt;&lt;Error&gt;&lt;Code&gt;InsufficientInstanceCapacity&lt;/ 
+</em><br />
+<em class="quotelev1">&gt; Code&gt;&lt;Message&gt;We currently do not have sufficient m1.large capacity
+</em><br />
+<em class="quotelev1">&gt; in the Availability Zone you requested (us-east-1a). Our system will
+</em><br />
+<em class="quotelev1">&gt; be working on provisioning additional capacity. You can currently
+</em><br />
+<em class="quotelev1">&gt; get m1.large capacity by not specifying an Availability Zone in your
+</em><br />
+<em class="quotelev1">&gt; request or choosing us-east-1d.&lt;/Message&gt;&lt;/Error&gt;&lt;/ 
+</em><br />
+<em class="quotelev1">&gt; Errors&gt;&lt;RequestID&gt;48be0131-84aa-40c7-a054-fb227c6fa183&lt;/RequestID&gt;&lt;/Response&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;  Thanks,
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Dean A. Snyder Senior Programmer/Analyst Center for Inherited Disease
+</em><br />
+<em class="quotelev1">&gt; Research (CIDR) Johns Hopkins School of Medicine Bayview Research
+</em><br />
+<em class="quotelev1">&gt; Campus 333 Cassell Dr, Triad Bldg, Suite 2000 Baltimore, MD 21224 
+</em><br />
+<em class="quotelev1">&gt; cell:717 668-3048 office:410-550-4629 www.cidr.jhmi.edu
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<br />-----BEGIN PGP SIGNATURE-----
+<br />
+Version: GnuPG v2.0.15 (GNU/Linux)
+<br />
+Comment: Using GnuPG with Mozilla - <a href="http://enigmail.mozdev.org/">http://enigmail.mozdev.org/</a>
+<br />
+<br />iEYEARECAAYFAkwaRPYACgkQ4llAkMfDcrlGIACZAaK5IQsAdAnG8Wp9k//QDFR4
+<br />
+UnwAoIQKXvvMQFX0EDKn95EnJX6y8LHg
+<br />
+=Zquq
+<br />
+-----END PGP SIGNATURE-----
+<br />
+<span id="received"><dfn>Received on</dfn> Thu Jun 17 2010 - 11:53:29 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="0260.html#start260">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="0261.html" title="Next message in the list">Dean Snyder: "[Starcluster] can&#0039;t start cluster"</a></li>
+<li><dfn>Previous message</dfn>: <a href="0259.html" title="Previous message in the list">Elaine Angelino: "[Starcluster] starcluster on twitter!"</a></li>
+<li><dfn>In reply to</dfn>: <a href="0261.html" title="Message to which this message replies">Dean Snyder: "[Starcluster] can&#0039;t start cluster"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="0262.html" title="Next message in this discussion thread">Dean Snyder: "Re: [Starcluster] can&#0039;t start cluster"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="0262.html" title="Message sent in reply to this message">Dean Snyder: "Re: [Starcluster] can&#0039;t start cluster"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg260" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg260" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg260" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg260" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

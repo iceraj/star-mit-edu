@@ -1,0 +1,477 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Justin Riley ((no email))" />
+<meta name="Subject" content="Re:  stalled install 0.92rc1" />
+<title>starcluster.mbox.out: Re:  stalled install 0.92rc1</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Re:  stalled install 0.92rc1</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Re:  stalled install 0.92rc1</h1>
+<!-- received="Mon Jun 27 11:57:55 2011" -->
+<!-- isoreceived="20110627155755" -->
+<!-- sent="Mon, 27 Jun 2011 11:57:51 -0400" -->
+<!-- isosent="20110627155751" -->
+<!-- name="Justin Riley" -->
+<!-- email="(no email)" -->
+<!-- subject="Re:  stalled install 0.92rc1" -->
+<!-- id="4E08A87F.1030207_at_mit.edu" -->
+<!-- charset="ISO-8859-1" -->
+<!-- inreplyto="593DB7B8-ECDF-4C96-A966-5F6E9B0CDABD_at_udel.edu" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="0737.html#start737" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="0737.html#options2">top</a>, <a href="0737.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="0738.html" accesskey="d" title="Justin Riley: &quot;Re:  stalled install 0.92rc1&quot;">Next message</a> ]
+[ <a href="0736.html" title="Adam Marsh: &quot;stalled install 0.92rc1&quot;">Previous message</a> ]
+[ <a href="0736.html" title="Adam Marsh: &quot;stalled install 0.92rc1&quot;">In reply to</a> ]
+<!-- unextthread="start" -->
+[ <a href="0738.html" accesskey="t" title="Justin Riley: &quot;Re:  stalled install 0.92rc1&quot;">Next in thread</a> ]
+ [ <a href="0737.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg737" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg737" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg737" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg737" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Justin Riley &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Mon, 27 Jun 2011 11:57:51 -0400</span><br />
+</address>
+<br />
+-----BEGIN PGP SIGNED MESSAGE-----
+<br />
+Hash: SHA1
+<br />
+<br />Hi Adam,
+<br />
+<br />This is happening because I was trying to be clever in setup.py and
+<br />
+import the version number from the source package so that I have a
+<br />
+central place to update the version number when it comes time to
+<br />
+release. This works for distribute/pip but breaks
+<br />
+setuptools/easy_install. Fortunately I think this is easy to fix. I'm
+<br />
+working on a hotfix now:
+<br />
+<br /><a href="https://github.com/jtriley/StarCluster/tree/hotfix-0.92rc2">https://github.com/jtriley/StarCluster/tree/hotfix-0.92rc2</a>
+<br />
+<br />If things go well I will release and announce 0.92rc2 today.
+<br />
+<br />~Justin
+<br />
+<br /><br />On 06/25/2011 01:14 PM, Adam Marsh wrote:
+<br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; When I run the install routine for the 0.92rc1 version of SC, it aborts
+</em><br />
+<em class="quotelev1">&gt; with the following error message:
+</em><br />
+<em class="quotelev1">&gt; ImportError: No module named starcluster
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; I'm using the following AMI for a single server, from which I would then
+</em><br />
+<em class="quotelev1">&gt; launch a cluster:  
+</em><br />
+<em class="quotelev1">&gt; ami-0af31963
+</em><br />
+<em class="quotelev1">&gt; starcluster/starcluster-base-ubuntu-10.04-x86_64-rc1.manifest.xml
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Full output from the command &quot;sudo easy_install StarCluster&quot; from this
+</em><br />
+<em class="quotelev1">&gt; cloud server is appended below.
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; I've been using SC for the last year and have my setup and run scripts
+</em><br />
+<em class="quotelev1">&gt; finely tuned for initiating and managing specific cluster
+</em><br />
+<em class="quotelev1">&gt; configurations. Between May 15 and June 15 I ran three separate clusters
+</em><br />
+<em class="quotelev1">&gt; (from 48 to 96 cores) with no problems whatsoever. 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Here are the first several upstream script commands
+</em><br />
+<em class="quotelev1">&gt; (fn=mastersetup.sh) I run to setup a new cloud server:
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; #!/bin/bash
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; apt-get -y update
+</em><br />
+<em class="quotelev1">&gt; apt-get -y install libx11-dev
+</em><br />
+<em class="quotelev1">&gt; apt-get -y install xvfb
+</em><br />
+<em class="quotelev1">&gt; apt-get -y install python-setuptools
+</em><br />
+<em class="quotelev1">&gt; #--- For StarCluster ----------------------
+</em><br />
+<em class="quotelev1">&gt; apt-get -y install python-crypto
+</em><br />
+<em class="quotelev1">&gt; apt-get -y install python-paramiko
+</em><br />
+<em class="quotelev1">&gt; #--- For running python analysis/plotting scripts ---------- 
+</em><br />
+<em class="quotelev1">&gt; # apt-get -y install gfortran
+</em><br />
+<em class="quotelev1">&gt; # apt-get -y install python-numpy
+</em><br />
+<em class="quotelev1">&gt; # apt-get -y install python-matplotlib
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; easy_install StarCluster 
+</em><br />
+<em class="quotelev1">&gt; . . . . . . 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; This script file is called by the command &quot;sudo bash mastersetup.sh&quot;
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Error output message from 'easy_install StarCluster' is the same whether
+</em><br />
+<em class="quotelev1">&gt; it is invoked within this script or directly called from the command
+</em><br />
+<em class="quotelev1">&gt; line as: 'sudo easy_install StarCluster'
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Thanks for any light you may be able to shed on this issue,
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Adam
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; ---------------------------------------------------
+</em><br />
+<em class="quotelev1">&gt; Adam G. Marsh, Ph.D.
+</em><br />
+<em class="quotelev1">&gt; Associate Professor
+</em><br />
+<em class="quotelev1">&gt; Marine Biological Sciences
+</em><br />
+<em class="quotelev1">&gt; University of Delaware
+</em><br />
+<em class="quotelev1">&gt; 302.645.4367
+</em><br />
+<em class="quotelev1">&gt; ------------------------------------------------
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; prompt&gt; sudo easy_install StarCluster
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Searching for StarCluster
+</em><br />
+<em class="quotelev1">&gt; Reading <a href="http://pypi.python.org/simple/StarCluster/">http://pypi.python.org/simple/StarCluster/</a>
+</em><br />
+<em class="quotelev1">&gt; Reading <a href="http://web.mit.edu/starcluster">http://web.mit.edu/starcluster</a>
+</em><br />
+<em class="quotelev1">&gt; Best match: StarCluster 0.92rc1
+</em><br />
+<em class="quotelev1">&gt; Downloading
+</em><br />
+<em class="quotelev1">&gt; <a href="http://pypi.python.org/packages/source/S/StarCluster/StarCluster-0.92rc1.tar.gz#md5=0e2fadfa011de41bf6a6868bc37c61ed">http://pypi.python.org/packages/source/S/StarCluster/StarCluster-0.92rc1.tar.gz#md5=0e2fadfa011de41bf6a6868bc37c61ed</a>
+</em><br />
+<em class="quotelev1">&gt; Processing StarCluster-0.92rc1.tar.gz
+</em><br />
+<em class="quotelev1">&gt; Running StarCluster-0.92rc1/setup.py -q bdist_egg --dist-dir
+</em><br />
+<em class="quotelev1">&gt; /tmp/easy_install-_L48LL/StarCluster-0.92rc1/egg-dist-tmp-ZZxqNG
+</em><br />
+<em class="quotelev1">&gt; Traceback (most recent call last):
+</em><br />
+<em class="quotelev1">&gt;   File &quot;/usr/bin/easy_install&quot;, line 9, in &lt;module&gt;
+</em><br />
+<em class="quotelev1">&gt;     load_entry_point('distribute==0.6.10', 'console_scripts',
+</em><br />
+<em class="quotelev1">&gt; 'easy_install')()
+</em><br />
+<em class="quotelev1">&gt;   File
+</em><br />
+<em class="quotelev1">&gt; &quot;/usr/lib/python2.6/dist-packages/setuptools/command/easy_install.py&quot;,
+</em><br />
+<em class="quotelev1">&gt; line 1760, in main
+</em><br />
+<em class="quotelev1">&gt;     with_ei_usage(lambda:
+</em><br />
+<em class="quotelev1">&gt;   File
+</em><br />
+<em class="quotelev1">&gt; &quot;/usr/lib/python2.6/dist-packages/setuptools/command/easy_install.py&quot;,
+</em><br />
+<em class="quotelev1">&gt; line 1741, in with_ei_usage
+</em><br />
+<em class="quotelev1">&gt;     return f()
+</em><br />
+<em class="quotelev1">&gt;   File
+</em><br />
+<em class="quotelev1">&gt; &quot;/usr/lib/python2.6/dist-packages/setuptools/command/easy_install.py&quot;,
+</em><br />
+<em class="quotelev1">&gt; line 1764, in &lt;lambda&gt;
+</em><br />
+<em class="quotelev1">&gt;     distclass=DistributionWithoutHelpCommands, **kw
+</em><br />
+<em class="quotelev1">&gt;   File &quot;/usr/lib/python2.6/distutils/core.py&quot;, line 152, in setup
+</em><br />
+<em class="quotelev1">&gt;     dist.run_commands()
+</em><br />
+<em class="quotelev1">&gt;   File &quot;/usr/lib/python2.6/distutils/dist.py&quot;, line 975, in run_commands
+</em><br />
+<em class="quotelev1">&gt;     self.run_command(cmd)
+</em><br />
+<em class="quotelev1">&gt;   File &quot;/usr/lib/python2.6/distutils/dist.py&quot;, line 995, in run_command
+</em><br />
+<em class="quotelev1">&gt;     cmd_obj.run()
+</em><br />
+<em class="quotelev1">&gt;   File
+</em><br />
+<em class="quotelev1">&gt; &quot;/usr/lib/python2.6/dist-packages/setuptools/command/easy_install.py&quot;,
+</em><br />
+<em class="quotelev1">&gt; line 254, in run
+</em><br />
+<em class="quotelev1">&gt;     self.easy_install(spec, not self.no_deps)
+</em><br />
+<em class="quotelev1">&gt;   File
+</em><br />
+<em class="quotelev1">&gt; &quot;/usr/lib/python2.6/dist-packages/setuptools/command/easy_install.py&quot;,
+</em><br />
+<em class="quotelev1">&gt; line 489, in easy_install
+</em><br />
+<em class="quotelev1">&gt;     return self.install_item(spec, dist.location, tmpdir, deps)
+</em><br />
+<em class="quotelev1">&gt;   File
+</em><br />
+<em class="quotelev1">&gt; &quot;/usr/lib/python2.6/dist-packages/setuptools/command/easy_install.py&quot;,
+</em><br />
+<em class="quotelev1">&gt; line 519, in install_item
+</em><br />
+<em class="quotelev1">&gt;     dists = self.install_eggs(spec, download, tmpdir)
+</em><br />
+<em class="quotelev1">&gt;   File
+</em><br />
+<em class="quotelev1">&gt; &quot;/usr/lib/python2.6/dist-packages/setuptools/command/easy_install.py&quot;,
+</em><br />
+<em class="quotelev1">&gt; line 698, in install_eggs
+</em><br />
+<em class="quotelev1">&gt;     return self.build_and_install(setup_script, setup_base)
+</em><br />
+<em class="quotelev1">&gt;   File
+</em><br />
+<em class="quotelev1">&gt; &quot;/usr/lib/python2.6/dist-packages/setuptools/command/easy_install.py&quot;,
+</em><br />
+<em class="quotelev1">&gt; line 975, in build_and_install
+</em><br />
+<em class="quotelev1">&gt;     self.run_setup(setup_script, setup_base, args)
+</em><br />
+<em class="quotelev1">&gt;   File
+</em><br />
+<em class="quotelev1">&gt; &quot;/usr/lib/python2.6/dist-packages/setuptools/command/easy_install.py&quot;,
+</em><br />
+<em class="quotelev1">&gt; line 964, in run_setup
+</em><br />
+<em class="quotelev1">&gt;     run_setup(setup_script, args)
+</em><br />
+<em class="quotelev1">&gt;   File &quot;/usr/lib/python2.6/dist-packages/setuptools/sandbox.py&quot;, line
+</em><br />
+<em class="quotelev1">&gt; 29, in run_setup
+</em><br />
+<em class="quotelev1">&gt;     lambda: execfile(
+</em><br />
+<em class="quotelev1">&gt;   File &quot;/usr/lib/python2.6/dist-packages/setuptools/sandbox.py&quot;, line
+</em><br />
+<em class="quotelev1">&gt; 70, in run
+</em><br />
+<em class="quotelev1">&gt;     return func()
+</em><br />
+<em class="quotelev1">&gt;   File &quot;/usr/lib/python2.6/dist-packages/setuptools/sandbox.py&quot;, line
+</em><br />
+<em class="quotelev1">&gt; 31, in &lt;lambda&gt;
+</em><br />
+<em class="quotelev1">&gt;     {'__file__':setup_script, '__name__':'__main__'}
+</em><br />
+<em class="quotelev1">&gt;   File &quot;setup.py&quot;, line 5, in &lt;module&gt;
+</em><br />
+<em class="quotelev1">&gt; ImportError: No module named starcluster
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<br />-----BEGIN PGP SIGNATURE-----
+<br />
+Version: GnuPG v2.0.17 (GNU/Linux)
+<br />
+Comment: Using GnuPG with Mozilla - <a href="http://enigmail.mozdev.org/">http://enigmail.mozdev.org/</a>
+<br />
+<br />iEYEARECAAYFAk4IqH8ACgkQ4llAkMfDcrlFMQCbB/E7LcSmkqB+MVElXXrKNUdL
+<br />
+ScsAnj90KYbRbkSdWaenJ2JxC6SfT8jm
+<br />
+=KmZw
+<br />
+-----END PGP SIGNATURE-----
+<br />
+<span id="received"><dfn>Received on</dfn> Mon Jun 27 2011 - 11:57:55 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="0737.html#start737">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="0738.html" title="Next message in the list">Justin Riley: "Re:  stalled install 0.92rc1"</a></li>
+<li><dfn>Previous message</dfn>: <a href="0736.html" title="Previous message in the list">Adam Marsh: "stalled install 0.92rc1"</a></li>
+<li><dfn>In reply to</dfn>: <a href="0736.html" title="Message to which this message replies">Adam Marsh: "stalled install 0.92rc1"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="0738.html" title="Next message in this discussion thread">Justin Riley: "Re:  stalled install 0.92rc1"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="0738.html" title="Message sent in reply to this message">Justin Riley: "Re:  stalled install 0.92rc1"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg737" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg737" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg737" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg737" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

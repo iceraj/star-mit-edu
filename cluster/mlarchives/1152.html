@@ -1,0 +1,629 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Subbarao Kota ((no email))" />
+<meta name="Subject" content="Re:  Error when running mpich2 plugin using Starcluster" />
+<title>starcluster.mbox.out: Re:  Error when running mpich2 plugin using Starcluster</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Re:  Error when running mpich2 plugin using Starcluster</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Re:  Error when running mpich2 plugin using Starcluster</h1>
+<!-- received="Mon Apr 23 20:12:18 2012" -->
+<!-- isoreceived="20120424001218" -->
+<!-- sent="Mon, 23 Apr 2012 20:12:24 -0400" -->
+<!-- isosent="20120424001224" -->
+<!-- name="Subbarao Kota" -->
+<!-- email="(no email)" -->
+<!-- subject="Re:  Error when running mpich2 plugin using Starcluster" -->
+<!-- id="04714729-6575-4A2D-8022-2C502721C356_at_gmail.com" -->
+<!-- charset="iso-8859-1" -->
+<!-- inreplyto="4F451DD8.6090904_at_mit.edu" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1152.html#start1152" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1152.html#options2">top</a>, <a href="1152.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1153.html" accesskey="d" title="Rayson Ho: &quot;Re:  Error when running mpich2 plugin using Starcluster&quot;">Next message</a> ]
+[ <a href="1151.html" title="Erik Gafni: &quot;Re:  R on StarCluster&quot;">Previous message</a> ]
+[ <a href="1037.html" title="Justin Riley: &quot;Re:  Error when running mpich2 plugin using Starcluster&quot;">In reply to</a> ]
+<!-- unextthread="start" -->
+[ <a href="1153.html" accesskey="t" title="Rayson Ho: &quot;Re:  Error when running mpich2 plugin using Starcluster&quot;">Next in thread</a> ]
+ [ <a href="1152.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1152" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1152" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1152" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1152" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Subbarao Kota &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Mon, 23 Apr 2012 20:12:24 -0400</span><br />
+</address>
+<br />
+Hi Justin, Thanks so much. 
+<br />
+<br />I was able to use one of the 32-bit public AMIs. MPICH2 plugin appeared to have worked. And also the passwordless login into the nodes. I was also able to execute the benchmarks in the head node. But I couldn't confirm if the benchmark was executed in the cluster or just the head-node. Attached is an example of the log when attempted for STREAM benchmark. It was run as root from master node. I passed only master, node001 in the arguments for mpirun command but number of nodes (processes) -np as 4 just to check. 
+<br />
+<br />The result indicates the benchmark ran on 4 nodes. But I only have master node and 1 worker node in the cluster. How can I confirm if the benchmark really ran on all the nodes?
+<br />
+<br />Please advise,
+<br />
+Subbarao Kota.
+<br />
+<br /><br /><br /><br />
+SS-MBP:~ sinsub$ vim /.starcluster/config
+<br />
+SS-MBP:~ sinsub$ starcluster start t1-micro-AMI-cluster
+<br />
+StarCluster - (<a href="http://web.mit.edu/starcluster">http://web.mit.edu/starcluster</a>) (v. 0.93.1)
+<br />
+Software Tools for Academics and Researchers (STAR)
+<br />
+Please submit bug reports to starcluster_at_mit.edu
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Using default cluster template: t1-micro-trial-cluster
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Validating cluster template settings...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Cluster template settings are valid
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Starting cluster...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Launching a 2-node cluster...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Creating security group _at_sc-t1-micro-AMI-cluster...Reservation:r-d7f0c3b7
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for cluster to come up... (updating every 30s)
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for all nodes to be in a 'running' state...
+</em><br />
+2/2 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%  
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for SSH to come up on all nodes...
+</em><br />
+2/2 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%  
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for cluster to come up took 1.167 mins
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; The master node is ec2-107-20-59-39.compute-1.amazonaws.com
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Setting up the cluster...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring hostnames...
+</em><br />
+2/2 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%  
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Creating cluster user: ec2-user (uid: 1001, gid: 1001)
+</em><br />
+2/2 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%  
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring scratch space for user: ec2-user
+</em><br />
+2/2 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%  
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring /etc/hosts on each node
+</em><br />
+2/2 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%  
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring NFS...
+</em><br />
+1/1 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%  
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Setting up NFS took 0.610 mins
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring passwordless ssh for root
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring passwordless ssh for ec2-user
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Installing Sun Grid Engine...
+</em><br />
+1/1 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%  
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Creating SGE parallel environment 'orte'
+</em><br />
+2/2 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%  
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Adding parallel environment 'orte' to queue 'all.q'
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Shutting down threads...
+</em><br />
+20/20 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%  
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Running plugin mpich2
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Creating MPICH2 hosts file
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring MPICH2 profile
+</em><br />
+2/2 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%  
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Setting MPICH2 as default MPI on all nodes
+</em><br />
+2/2 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%  
+<br />
+<em class="quotelev3">&gt;&gt;&gt; MPICH2 is now ready to use
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Use mpicc, mpif90, mpirun, etc. to compile and run your MPI apps
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring cluster took 1.256 mins
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Starting cluster took 2.448 mins
+</em><br />
+<br />The cluster is now ready to use. To login to the master node
+<br />
+as root, run:
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;$ starcluster sshmaster t1-micro-AMI-cluster
+<br />
+<br />When you are finished using the cluster and wish to
+<br />
+terminate it and stop paying for service:
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;$ starcluster terminate t1-micro-AMI-cluster
+<br />
+<br />NOTE: Terminating an EBS cluster will destroy all EBS
+<br />
+volumes backing the nodes.
+<br />
+<br />Alternatively, if the cluster uses EBS instances, you can
+<br />
+use the 'stop' command to put all nodes into a 'stopped'
+<br />
+state:
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;$ starcluster stop t1-micro-AMI-cluster
+<br />
+<br />NOTE: Any data stored in ephemeral storage (usually /mnt)
+<br />
+will be lost!
+<br />
+<br />This will shutdown all nodes in the cluster and put them in
+<br />
+a 'stopped' state that preserves the EBS volumes backing the
+<br />
+nodes. A 'stopped' cluster may then be restarted at a later
+<br />
+time, without losing data on the local disks, by passing the
+<br />
+-x option to the 'start' command:
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;$ starcluster start -x t1-micro-AMI-cluster
+<br />
+<br />This will start all 'stopped' EBS instances and reconfigure
+<br />
+the cluster.
+<br />
+<br />SS-MBP:~ sinsub$ 
+<br />
+SS-MBP:~ sinsub$ 
+<br />
+SS-MBP:~ sinsub$ starcluster sshmaster t1-micro-AMI-cluster
+<br />
+StarCluster - (<a href="http://web.mit.edu/starcluster">http://web.mit.edu/starcluster</a>) (v. 0.93.1)
+<br />
+Software Tools for Academics and Researchers (STAR)
+<br />
+Please submit bug reports to starcluster_at_mit.edu
+<br />
+<br />The authenticity of host 'ec2-107-20-59-39.compute-1.amazonaws.com (107.20.59.39)' can't be established.
+<br />
+RSA key fingerprint is 1a:40:4d:db:b9:f8:25:0d:3c:e7:05:8d:a4:66:c4:c3.
+<br />
+Are you sure you want to continue connecting (yes/no)? yes
+<br />
+Warning: Permanently added 'ec2-107-20-59-39.compute-1.amazonaws.com,107.20.59.39' (RSA) to the list of known hosts.
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_                 _           _
+<br />
+__/\_____| |_ __ _ _ __ ___| |_   _ ___| |_ ___ _ __
+<br />
+\    / __| __/ _` | '__/ __| | | | / __| __/ _ \ '__|
+<br />
+/_  _\__ \ || (_| | | | (__| | |_| \__ \ ||  __/ |
+<br />
+&nbsp;&nbsp;\/ |___/\__\__,_|_|  \___|_|\__,_|___/\__\___|_|
+<br />
+<br />StarCluster Ubuntu 11.10 AMI
+<br />
+Software Tools for Academics and Researchers (STAR)
+<br />
+Homepage: <a href="http://web.mit.edu/starcluster">http://web.mit.edu/starcluster</a>
+<br />
+Documentation: <a href="http://web.mit.edu/starcluster/docs/latest">http://web.mit.edu/starcluster/docs/latest</a>
+<br />
+Code: <a href="https://github.com/jtriley/StarCluster">https://github.com/jtriley/StarCluster</a>
+<br />
+Mailing list: starcluster_at_mit.edu
+<br />
+<br />This AMI Contains:
+<br />
+<br />&nbsp;&nbsp;* Custom-Compiled Atlas, Numpy, Scipy, etc
+<br />
+&nbsp;&nbsp;* Open Grid Scheduler (OGS) queuing system
+<br />
+&nbsp;&nbsp;* Condor workload management system
+<br />
+&nbsp;&nbsp;* OpenMPI compiled with Open Grid Scheduler support
+<br />
+&nbsp;&nbsp;* IPython 0.12 with parallel support
+<br />
+&nbsp;&nbsp;* and more! (use 'dpkg -l' to show all installed packages)
+<br />
+<br />Open Grid Scheduler/Condor cheat sheet:
+<br />
+<br />&nbsp;&nbsp;* qstat/condor_q - show status of batch jobs
+<br />
+&nbsp;&nbsp;* qhost/condor_status- show status of hosts, queues, and jobs
+<br />
+&nbsp;&nbsp;* qsub/condor_submit - submit batch jobs (e.g. qsub -cwd ./jobscript.sh)
+<br />
+&nbsp;&nbsp;* qdel/condor_rm - delete batch jobs (e.g. qdel 7)
+<br />
+&nbsp;&nbsp;* qconf - configure Open Grid Scheduler system
+<br />
+<br />Current System Stats:
+<br />
+<br />&nbsp;&nbsp;System load:  0.06              Processes:           72
+<br />
+&nbsp;&nbsp;Usage of /:   30.3% of 9.84GB   Users logged in:     0
+<br />
+&nbsp;&nbsp;Memory usage: 9%                IP address for eth0: 10.211.33.29
+<br />
+&nbsp;&nbsp;Swap usage:   0%
+<br />
+<br />root_at_master:~# cat /etc/hosts
+<br />
+127.0.0.1 ubuntu
+<br />
+<br /># The following lines are desirable for IPv6 capable hosts
+<br />
+::1 ip6-localhost ip6-loopback
+<br />
+fe00::0 ip6-localnet
+<br />
+ff00::0 ip6-mcastprefix
+<br />
+ff02::1 ip6-allnodes
+<br />
+ff02::2 ip6-allrouters
+<br />
+ff02::3 ip6-allhosts
+<br />
+# Added by cloud-init
+<br />
+127.0.1.1	domU-12-31-39-0A-22-D3.compute-1.internal domU-12-31-39-0A-22-D3
+<br />
+10.211.33.29 master
+<br />
+10.211.7.62 node001
+<br />
+<br /><br />root_at_master:/home/ec2-user# mpirun -np 4 -host master,node001 ./stream_exe
+<br />
+-------------------------------------------------------------
+<br />
+STREAM version $Revision: 5.8 $
+<br />
+-------------------------------------------------------------
+<br />
+This system uses 8 bytes per DOUBLE PRECISION word.
+<br />
+-------------------------------------------------------------
+<br />
+Array size = 2000000, Offset = 0
+<br />
+Total memory required = 45.8 MB.
+<br />
+Each test is run 10 times, but only
+<br />
+the *best* time for each is used.
+<br />
+-------------------------------------------------------------
+<br />
+Printing one line per active thread....
+<br />
+-------------------------------------------------------------
+<br />
+Your clock granularity/precision appears to be be 1 microseconds.
+<br />
+Each test below will take on the order of 16160 microseconds.
+<br />
+&nbsp;&nbsp;&nbsp;(= 16160 clock ticks)
+<br />
+Increase the size of the arrays if this shows that
+<br />
+you are not getting at least 20 clock ticks per test.
+<br />
+-------------------------------------------------------------
+<br />
+WARNING -- The above is only a rough guideline.
+<br />
+For best results, please be sure you know the
+<br />
+precision of your system timer.
+<br />
+-------------------------------------------------------------
+<br />
+Function      Rate (MB/s)   Avg time     Min time     Max time
+<br />
+Copy:        1393.6590       0.0247       0.0230       0.0297
+<br />
+Scale:       1661.8098       0.0236       0.0193       0.0255
+<br />
+Add:         1504.8405       0.0340       0.0319       0.0399
+<br />
+Triad:       1526.1842       0.0335       0.0315       0.0377
+<br />
+-------------------------------------------------------------
+<br />
+Solution Validates
+<br />
+-------------------------------------------------------------
+<br />
+No. of nodes 4; nodes with errors: 0
+<br />
+Minimum Copy MB/s 1393.66
+<br />
+Average Copy MB/s 1651.20
+<br />
+Maximum Copy MB/s 1740.92
+<br />
+Minimum Scale MB/s 1661.81
+<br />
+Average Scale MB/s 1685.83
+<br />
+Maximum Scale MB/s 1702.75
+<br />
+Minimum Add MB/s 1504.84
+<br />
+Average Add MB/s 1520.84
+<br />
+Maximum Add MB/s 1549.79
+<br />
+Minimum Triad MB/s 1517.50
+<br />
+Average Triad MB/s 1598.18
+<br />
+Maximum Triad MB/s 1776.34
+<br />
+<br />root_at_master:/home/ec2-user# 
+<br />
+<br /><br /><br />
+<br /><br />Subbarao Kota.On Feb 22, 2012, at 11:54 AM, Justin Riley wrote:
+<br />
+<br /><em class="quotelev1">&gt; -----BEGIN PGP SIGNED MESSAGE-----
+</em><br />
+<em class="quotelev1">&gt; Hash: SHA1
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Also, use the 'listpublic' command to get a list of StarCluster
+</em><br />
+<em class="quotelev1">&gt; supported AMIs which you can use in the node_image_id setting. Keep in
+</em><br />
+<em class="quotelev1">&gt; mind that 32bit AMIs can only be used with 32bit-compatible instance
+</em><br />
+<em class="quotelev1">&gt; types and similarly for 64bit AMIs. StarCluster will let you know when
+</em><br />
+<em class="quotelev1">&gt; you've specified an incompatible AMI/instance type combo.
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; ~Justin
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; On 02/22/2012 11:52 AM, Justin Riley wrote:
+</em><br />
+<em class="quotelev2">&gt;&gt; Subbarao,
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; You're missing a required option in the config file. Open your 
+</em><br />
+<em class="quotelev2">&gt;&gt; StarCluster config ($HOME/.starcluster/config) and search for 
+</em><br />
+<em class="quotelev2">&gt;&gt; &quot;t1-micro-trial-cluster&quot;. In that [cluster] section you are
+</em><br />
+<em class="quotelev2">&gt;&gt; missing 'node_image_id' setting. This setting specifies the AMI id
+</em><br />
+<em class="quotelev2">&gt;&gt; to use for all worker nodes (also applies for master node if
+</em><br />
+<em class="quotelev2">&gt;&gt; master_image_id is not set).
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; HTH,
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; ~Justin
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; On 02/20/2012 03:18 PM, Subbarao Kota wrote:
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Hello star cluster:
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Can you please help me fix this error? Where should set the
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; option node_image_id in the config file?
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; $ starcluster runplugin mpich2 t1-micro-trial-cluster StarCluster
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; - (<a href="http://web.mit.edu/starcluster">http://web.mit.edu/starcluster</a>) (v. 0.93.1) Software Tools
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; for Academics and Researchers (STAR) Please submit bug reports
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; to starcluster_at_mit.edu
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; !!! ERROR - missing required option node_image_id in section 
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; &quot;cluster t1-micro-trial-cluster&quot;
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Thanks. _______________________________________________
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; StarCluster mailing list StarCluster_at_mit.edu 
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; _______________________________________________ StarCluster mailing
+</em><br />
+<em class="quotelev2">&gt;&gt; list StarCluster_at_mit.edu 
+</em><br />
+<em class="quotelev2">&gt;&gt; <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; -----BEGIN PGP SIGNATURE-----
+</em><br />
+<em class="quotelev1">&gt; Version: GnuPG v2.0.17 (GNU/Linux)
+</em><br />
+<em class="quotelev1">&gt; Comment: Using GnuPG with Mozilla - <a href="http://enigmail.mozdev.org/">http://enigmail.mozdev.org/</a>
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; iEYEARECAAYFAk9FHdgACgkQ4llAkMfDcrljbgCeJJ2kaukbngu24yxm9JvCt2Pv
+</em><br />
+<em class="quotelev1">&gt; YocAoIVsyjI6dN/Bw7UHg3yABR0GGIVB
+</em><br />
+<em class="quotelev1">&gt; =HZfv
+</em><br />
+<em class="quotelev1">&gt; -----END PGP SIGNATURE-----
+</em><br />
+<span id="received"><dfn>Received on</dfn> Mon Apr 23 2012 - 20:12:18 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1152.html#start1152">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1153.html" title="Next message in the list">Rayson Ho: "Re:  Error when running mpich2 plugin using Starcluster"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1151.html" title="Previous message in the list">Erik Gafni: "Re:  R on StarCluster"</a></li>
+<li><dfn>In reply to</dfn>: <a href="1037.html" title="Message to which this message replies">Justin Riley: "Re:  Error when running mpich2 plugin using Starcluster"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1153.html" title="Next message in this discussion thread">Rayson Ho: "Re:  Error when running mpich2 plugin using Starcluster"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1153.html" title="Message sent in reply to this message">Rayson Ho: "Re:  Error when running mpich2 plugin using Starcluster"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1152" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1152" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1152" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1152" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

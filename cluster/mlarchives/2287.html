@@ -1,0 +1,255 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Rayson Ho ((no email))" />
+<meta name="Subject" content="Re:  Can job terminate its cluster?" />
+<title>starcluster.mbox.out: Re:  Can job terminate its cluster?</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Re:  Can job terminate its cluster?</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Re:  Can job terminate its cluster?</h1>
+<!-- received="Mon Jul  7 19:59:26 2014" -->
+<!-- isoreceived="20140707235926" -->
+<!-- sent="Mon, 7 Jul 2014 19:59:24 -0400" -->
+<!-- isosent="20140707235924" -->
+<!-- name="Rayson Ho" -->
+<!-- email="(no email)" -->
+<!-- subject="Re:  Can job terminate its cluster?" -->
+<!-- id="CAHwLALP7=oEDcj715rn+HrR7MsmsXERLu6-zmiewB5wu+bqRGg_at_mail.gmail.com" -->
+<!-- charset="UTF-8" -->
+<!-- inreplyto="op.xindysfw75arni_at_t61" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2287.html#start2287" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2287.html#options2">top</a>, <a href="2287.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2288.html" accesskey="d" title="Rajat Banerjee: &quot;Re:  Can job terminate its cluster?&quot;">Next message</a> ]
+[ <a href="2286.html" title="James: &quot;Can job terminate its cluster?&quot;">Previous message</a> ]
+[ <a href="2286.html" title="James: &quot;Can job terminate its cluster?&quot;">In reply to</a> ]
+<!-- unextthread="start" -->
+[ <a href="2288.html" accesskey="t" title="Rajat Banerjee: &quot;Re:  Can job terminate its cluster?&quot;">Next in thread</a> ]
+ [ <a href="2287.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2287" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2287" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2287" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2287" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Rayson Ho &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Mon, 7 Jul 2014 19:59:24 -0400</span><br />
+</address>
+<br />
+You can get most of the functionality from the Elastic Load Balancer:
+<br />
+<br /><a href="../docs/latest/manual/load_balancer.html">/cluster/docs/latest/manual/load_balancer.html</a>
+<br />
+<br />As for emailing the user when all jobs are done, you can either write a
+<br />
+small script that does the actually emailing when the jobs are done... or
+<br />
+you can submit a job that waits for all other jobs, and then ask Grid
+<br />
+Engine to send you an email (qsub -M) when that last job is done:
+<br />
+<br /><a href="http://gridscheduler.sourceforge.net/htmlman/htmlman1/qsub.html">http://gridscheduler.sourceforge.net/htmlman/htmlman1/qsub.html</a>
+<br />
+<br />Rayson
+<br />
+<br />==================================================
+<br />
+Open Grid Scheduler - The Official Open Source Grid Engine
+<br />
+<a href="http://gridscheduler.sourceforge.net/">http://gridscheduler.sourceforge.net/</a>
+<br />
+<a href="http://gridscheduler.sourceforge.net/GridEngine/GridEngineCloud.html">http://gridscheduler.sourceforge.net/GridEngine/GridEngineCloud.html</a>
+<br />
+<br /><br />On Mon, Jul 7, 2014 at 5:58 PM, James &lt;jamesqf_at_charter.net&gt; wrote:
+<br />
+<br /><em class="quotelev1">&gt; Hi,
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; I have a question which doesn't seem to be addressed in the
+</em><br />
+<em class="quotelev1">&gt; documentation, or on this list.  It seems that from the
+</em><br />
+<em class="quotelev1">&gt; examples, Starcluster expects a bunch of human interaction,
+</em><br />
+<em class="quotelev1">&gt; manually creating a cluster, submitting jobs, then terminating
+</em><br />
+<em class="quotelev1">&gt; the cluster.  I need an essentially batch system: the user starts
+</em><br />
+<em class="quotelev1">&gt; a job which creates a cluster (internal info determines how large
+</em><br />
+<em class="quotelev1">&gt; a cluster is needed); it runs unattended for hours/days (periodically
+</em><br />
+<em class="quotelev1">&gt; checkpointing itself); then when it finishes it copies results to
+</em><br />
+<em class="quotelev1">&gt; an EBS volume, sends an email message to the user, and terminates
+</em><br />
+<em class="quotelev1">&gt; the cluster.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; 1) Will Starcluster allow me to do this easily?  If so, a pointer
+</em><br />
+<em class="quotelev1">&gt; to docs/examples would be appreciated!
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; 2) If not, is there some other application that will do this, so I
+</em><br />
+<em class="quotelev1">&gt; don't have to re-invent the wheel?
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; 3) Or do I have to build my own wheel from scratch?
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Thanks,
+</em><br />
+<em class="quotelev1">&gt; James
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; _______________________________________________
+</em><br />
+<em class="quotelev1">&gt; StarCluster mailing list
+</em><br />
+<em class="quotelev1">&gt; StarCluster_at_mit.edu
+</em><br />
+<em class="quotelev1">&gt; <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<span id="received"><dfn>Received on</dfn> Mon Jul 07 2014 - 19:59:26 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2287.html#start2287">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2288.html" title="Next message in the list">Rajat Banerjee: "Re:  Can job terminate its cluster?"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2286.html" title="Previous message in the list">James: "Can job terminate its cluster?"</a></li>
+<li><dfn>In reply to</dfn>: <a href="2286.html" title="Message to which this message replies">James: "Can job terminate its cluster?"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="2288.html" title="Next message in this discussion thread">Rajat Banerjee: "Re:  Can job terminate its cluster?"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="2288.html" title="Message sent in reply to this message">Rajat Banerjee: "Re:  Can job terminate its cluster?"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2287" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2287" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2287" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2287" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Jonathan Goodson ((no email))" />
+<meta name="Subject" content="Starcluster start cluster stuck at Configuring passwordless ssh for root" />
+<title>starcluster.mbox.out: Starcluster start cluster stuck at Configuring passwordless ssh for root</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Starcluster start cluster stuck at Configuring passwordless ssh for root</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Starcluster start cluster stuck at Configuring passwordless ssh for root</h1>
+<!-- received="Fri Mar 30 16:19:03 2012" -->
+<!-- isoreceived="20120330201903" -->
+<!-- sent="Fri, 30 Mar 2012 16:19:01 -0400" -->
+<!-- isosent="20120330201901" -->
+<!-- name="Jonathan Goodson" -->
+<!-- email="(no email)" -->
+<!-- subject="Starcluster start cluster stuck at Configuring passwordless ssh for root" -->
+<!-- id="6F7EDD22-4507-49E4-A82C-793020164D69_at_umd.edu" -->
+<!-- charset="us-ascii" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1128.html#start1128" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1128.html#options2">top</a>, <a href="1128.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1129.html" accesskey="d" title="Justin Riley: &quot;Re:  Starcluster start cluster stuck at Configuring passwordless ssh for root&quot;">Next message</a> ]
+[ <a href="1127.html" title="Justin Riley: &quot;Re:  No panic, but Disco is now available with starcluster&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="1129.html" accesskey="t" title="Justin Riley: &quot;Re:  Starcluster start cluster stuck at Configuring passwordless ssh for root&quot;">Next in thread</a> ]
+ [ <a href="1128.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1128" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1128" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1128" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1128" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Jonathan Goodson &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Fri, 30 Mar 2012 16:19:01 -0400</span><br />
+</address>
+<br />
+I followed the Quick-Start instructions at <a href="http://web.mit.edu/star/cluster/docs/latest/quickstart.html">http://web.mit.edu/star/cluster/docs/latest/quickstart.html</a> almost exactly, only changing a couple names. When I try to start the cluster everything works fine, it starts up two m1.small instances in my EC2 account, and successfully goes through the whole startup, until it gets to Configuring passwordless ssh for root, and then stops, and stays there indefinitely (I stopped it after 45 minutes and terminated the cluster) 
+<br />
+<br />I don't even know where to start to try to figure out what is going on since it doesn't give me any error and I am not sure how to debug the script.
+<br />
+<br /><br />computer:~ jonathan$ starcluster start myfirstcluster
+<br />
+StarCluster - (<a href="http://web.mit.edu/starcluster">http://web.mit.edu/starcluster</a>) (v. 0.93.3)
+<br />
+Software Tools for Academics and Researchers (STAR)
+<br />
+Please submit bug reports to starcluster_at_mit.edu
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Using default cluster template: smallcluster
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Validating cluster template settings...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Cluster template settings are valid
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Starting cluster...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Launching a 2-node cluster...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Creating security group _at_sc-myfirstcluster...
+</em><br />
+Reservation:r-a95adbca
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for cluster to come up... (updating every 30s)
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for all nodes to be in a 'running' state...
+</em><br />
+2/2 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%  
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for SSH to come up on all nodes...
+</em><br />
+2/2 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%  
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for cluster to come up took 1.284 mins
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; The master node is ec2-50-16-158-217.compute-1.amazonaws.com
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Setting up the cluster...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring hostnames...
+</em><br />
+2/2 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%  
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Creating cluster user: None (uid: 1001, gid: 1001)
+</em><br />
+2/2 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%  
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring scratch space for user(s): sgeadmin
+</em><br />
+2/2 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%  
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring /etc/hosts on each node
+</em><br />
+2/2 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%  
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Starting NFS server on master
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring NFS exports path(s):
+</em><br />
+/home
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Mounting all NFS export path(s) on 1 worker node(s)
+</em><br />
+1/1 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%  
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Setting up NFS took 0.078 mins
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring passwordless ssh for root
+</em><br />
+<span id="received"><dfn>Received on</dfn> Fri Mar 30 2012 - 16:19:03 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1128.html#start1128">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1129.html" title="Next message in the list">Justin Riley: "Re:  Starcluster start cluster stuck at Configuring passwordless ssh for root"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1127.html" title="Previous message in the list">Justin Riley: "Re:  No panic, but Disco is now available with starcluster"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1129.html" title="Next message in this discussion thread">Justin Riley: "Re:  Starcluster start cluster stuck at Configuring passwordless ssh for root"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1129.html" title="Message sent in reply to this message">Justin Riley: "Re:  Starcluster start cluster stuck at Configuring passwordless ssh for root"</a></li>
+<li><dfn>Reply</dfn>: <a href="1133.html" title="Message sent in reply to this message">Justin Riley: "Re:  Starcluster start cluster stuck at Configuring passwordless ssh for root"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1128" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1128" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1128" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1128" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

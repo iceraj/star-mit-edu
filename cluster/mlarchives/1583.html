@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Oppe, Thomas C ERDC-RDE-ITL-MS Contractor ((no email))" />
+<meta name="Subject" content="Using a hi-I/O instance as the master node in a StarCluster Cluster" />
+<title>starcluster.mbox.out: Using a hi-I/O instance as the master node in a StarCluster Cluster</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Using a hi-I/O instance as the master node in a StarCluster Cluster</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Using a hi-I/O instance as the master node in a StarCluster Cluster</h1>
+<!-- received="Fri Jan  4 11:06:45 2013" -->
+<!-- isoreceived="20130104160645" -->
+<!-- sent="Fri, 4 Jan 2013 16:06:42 +0000" -->
+<!-- isosent="20130104160642" -->
+<!-- name="Oppe, Thomas C ERDC-RDE-ITL-MS Contractor" -->
+<!-- email="(no email)" -->
+<!-- subject="Using a hi-I/O instance as the master node in a StarCluster Cluster" -->
+<!-- id="1B6259370D5EFF488340E9D87BD0580AE7D2B0_at_MS-EX2VKS.erdc.dren.mil" -->
+<!-- charset="iso-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1583.html#start1583" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1583.html#options2">top</a>, <a href="1583.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1584.html" accesskey="d" title="Dustin Machi: &quot;Re:  Using a hi-I/O instance as the master node in a StarCluster Cluster&quot;">Next message</a> ]
+[ <a href="1582.html" title="RT Brown: &quot;Excluded Node&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="1584.html" accesskey="t" title="Dustin Machi: &quot;Re:  Using a hi-I/O instance as the master node in a StarCluster Cluster&quot;">Next in thread</a> ]
+ [ <a href="1583.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1583" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1583" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1583" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1583" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Oppe, Thomas C ERDC-RDE-ITL-MS Contractor &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Fri, 4 Jan 2013 16:06:42 +0000</span><br />
+</address>
+<br />
+Dear Sir:
+<br />
+<br /><br /><br />I was wondering if anyone has tried using a high-performance I/O instance (e.g., &quot;hi1.4xlarge&quot;) as the master node in a StarCluster cluster, with the other nodes being Sandy Bridge &quot;cc2.8xlarge&quot; instances.  When I bring up a single &quot;hi1.4xlarge&quot; instance outside of StarCluster, there is an option to attach one or two 1-TB SSD disks, but when I bring up a cluster with &quot;hi1.4xlarge&quot; as the master node, the SSD disks are nowhere to be found.  Is a plug-in necessary to ask for the SSD disks to be available?  I have a code that needs the fastest I/O available for writes with a combined size of 100GB during the run.  I have tried single Standard and Provisioned IOPS EBS volumes, but the I/O performance to these volumes is poor, even with &quot;pre-warming&quot;.  Has anyone written a plug-in for using striped volumes in StarCluster?  I would appreciate any comments or pointers to information.
+<br />
+<br /><br /><br />Tom Oppe
+<br />
+<span id="received"><dfn>Received on</dfn> Fri Jan 04 2013 - 11:06:45 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1583.html#start1583">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1584.html" title="Next message in the list">Dustin Machi: "Re:  Using a hi-I/O instance as the master node in a StarCluster Cluster"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1582.html" title="Previous message in the list">RT Brown: "Excluded Node"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1584.html" title="Next message in this discussion thread">Dustin Machi: "Re:  Using a hi-I/O instance as the master node in a StarCluster Cluster"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1584.html" title="Message sent in reply to this message">Dustin Machi: "Re:  Using a hi-I/O instance as the master node in a StarCluster Cluster"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1583" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1583" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1583" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1583" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

@@ -1,0 +1,423 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Alessandro Gagliardi ((no email))" />
+<meta name="Subject" content="IOError: [Errno 13] Permission denied" />
+<title>starcluster.mbox.out: IOError: [Errno 13] Permission denied</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">IOError: [Errno 13] Permission denied</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>IOError: [Errno 13] Permission denied</h1>
+<!-- received="Wed May 15 16:16:48 2013" -->
+<!-- isoreceived="20130515201648" -->
+<!-- sent="Wed, 15 May 2013 13:16:02 -0700" -->
+<!-- isosent="20130515201602" -->
+<!-- name="Alessandro Gagliardi" -->
+<!-- email="(no email)" -->
+<!-- subject="IOError: [Errno 13] Permission denied" -->
+<!-- id="CAAB3BB+O-iZptcWP8BFLLoQrFgC_S1ahaXEYt1V0NjKULc_gRQ_at_mail.gmail.com" -->
+<!-- charset="US-ASCII" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1725.html#start1725" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1725.html#options2">top</a>, <a href="1725.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1726.html" accesskey="d" title="Peng Zhang: &quot;change nfs code&quot;">Next message</a> ]
+[ <a href="1724.html" title="Alessandro Gagliardi: &quot;Re:  !!! ERROR - command &#0039;DEBIAN_FRONTEND=&#0039;noninteractive&#0039; apt-get -o Dpkg::Options::=&#0039;--force-confnew&#0039; . . . failed with status 100&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1725" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1725" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1725" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1725" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Alessandro Gagliardi &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Wed, 15 May 2013 13:16:02 -0700</span><br />
+</address>
+<br />
+I tried starting over (incase something got fubared in my previous config)
+<br />
+and this time installed the development version from git. When I tried
+<br />
+starting a cluster in us-west-2, I got the following error:
+<br />
+<br />!!! ERROR - Error occured while running plugin 'ipcluster':
+<br />
+!!! ERROR - Unhandled exception occured
+<br />
+Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Users/alessandro/.envs/starcluster/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/cli.py&quot;,
+<br />
+line 257, in main
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;sc.execute(args)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Users/alessandro/.envs/starcluster/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/commands/start.py&quot;,
+<br />
+line 197, in execute
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;validate_running=validate_running)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Users/alessandro/.envs/starcluster/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/cluster.py&quot;,
+<br />
+line 1460, in start
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;return self._start(create=create, create_only=create_only)
+<br />
+&nbsp;&nbsp;File &quot;&lt;string&gt;&quot;, line 2, in _start
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Users/alessandro/.envs/starcluster/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/utils.py&quot;,
+<br />
+line 92, in wrap_f
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;res = func(*arg, **kargs)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Users/alessandro/.envs/starcluster/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/cluster.py&quot;,
+<br />
+line 1483, in _start
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self.setup_cluster()
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Users/alessandro/.envs/starcluster/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/cluster.py&quot;,
+<br />
+line 1492, in setup_cluster
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self._setup_cluster()
+<br />
+&nbsp;&nbsp;File &quot;&lt;string&gt;&quot;, line 2, in _setup_cluster
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Users/alessandro/.envs/starcluster/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/utils.py&quot;,
+<br />
+line 92, in wrap_f
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;res = func(*arg, **kargs)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Users/alessandro/.envs/starcluster/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/cluster.py&quot;,
+<br />
+line 1504, in _setup_cluster
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self.run_plugins()
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Users/alessandro/.envs/starcluster/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/cluster.py&quot;,
+<br />
+line 1522, in run_plugins
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self.run_plugin(plug, method_name=method_name, node=node)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Users/alessandro/.envs/starcluster/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/cluster.py&quot;,
+<br />
+line 1547, in run_plugin
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;func(*args)
+<br />
+&nbsp;&nbsp;File &quot;&lt;string&gt;&quot;, line 2, in run
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Users/alessandro/.envs/starcluster/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/utils.py&quot;,
+<br />
+line 92, in wrap_f
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;res = func(*arg, **kargs)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Users/alessandro/.envs/starcluster/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/plugins/ipcluster.py&quot;,
+<br />
+line 283, in run
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self._start_notebook(master, user, profile_dir)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Users/alessandro/.envs/starcluster/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/plugins/ipcluster.py&quot;,
+<br />
+line 232, in _start_notebook
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;master.ssh.makedirs(self.notebook_directory)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Users/alessandro/.envs/starcluster/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/sshutils/__init__.py&quot;,
+<br />
+line 221, in makedirs
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self.makedirs(head, mode)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Users/alessandro/.envs/starcluster/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/sshutils/__init__.py&quot;,
+<br />
+line 221, in makedirs
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self.makedirs(head, mode)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Users/alessandro/.envs/starcluster/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/sshutils/__init__.py&quot;,
+<br />
+line 221, in makedirs
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self.makedirs(head, mode)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Users/alessandro/.envs/starcluster/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/sshutils/__init__.py&quot;,
+<br />
+line 229, in makedirs
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self.mkdir(path, mode)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Users/alessandro/.envs/starcluster/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/sshutils/__init__.py&quot;,
+<br />
+line 240, in mkdir
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;return self.sftp.mkdir(path, mode)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Users/alessandro/.envs/starcluster/lib/python2.7/site-packages/paramiko-1.10.1-py2.7.egg/paramiko/sftp_client.py&quot;,
+<br />
+line 303, in mkdir
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self._request(CMD_MKDIR, path, attr)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Users/alessandro/.envs/starcluster/lib/python2.7/site-packages/paramiko-1.10.1-py2.7.egg/paramiko/sftp_client.py&quot;,
+<br />
+line 689, in _request
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;return self._read_response(num)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Users/alessandro/.envs/starcluster/lib/python2.7/site-packages/paramiko-1.10.1-py2.7.egg/paramiko/sftp_client.py&quot;,
+<br />
+line 736, in _read_response
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self._convert_status(msg)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Users/alessandro/.envs/starcluster/lib/python2.7/site-packages/paramiko-1.10.1-py2.7.egg/paramiko/sftp_client.py&quot;,
+<br />
+line 764, in _convert_status
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;raise IOError(errno.EACCES, text)
+<br />
+IOError: [Errno 13] Permission denied
+<br />
+<br />---------- Forwarded message ----------
+<br />
+From: Alessandro Gagliardi &lt;alessandro_at_path.com&gt;
+<br />
+Date: Wed, May 15, 2013 at 10:04 AM
+<br />
+Subject: !!! ERROR - command 'DEBIAN_FRONTEND='noninteractive' apt-get -o
+<br />
+Dpkg::Options::='--force-confnew' . . . failed with status 100
+<br />
+To: &quot;starcluster_at_mit.edu&quot; &lt;starcluster_at_mit.edu&gt;
+<br />
+<br /><br />Hello all,
+<br />
+<br />I've been having trouble with the pkginstaller plugin recently. I get the
+<br />
+following error when it tries to install packages:
+<br />
+<br /><em class="quotelev1">&gt; !!! ERROR - command 'DEBIAN_FRONTEND='noninteractive' apt-get -o
+</em><br />
+<em class="quotelev1">&gt; Dpkg::Options::='--force-confnew' -y --force-yes install g++ gfortran
+</em><br />
+<em class="quotelev1">&gt; git-core subversion python-all-dev python-virtualenv mongodb libblas-dev
+</em><br />
+<em class="quotelev1">&gt; liblapack-dev libatlas-dev r-base-core cython python-dateutil
+</em><br />
+<em class="quotelev1">&gt; python-requests python-pymongo python-rpy2 python-nltk r-base-core
+</em><br />
+<em class="quotelev1">&gt; mysql-client build-essential python-setuptools python-dev python-numpy
+</em><br />
+<em class="quotelev1">&gt; python-matplotlib prover9 python-scipy python-tz python-pandas
+</em><br />
+<em class="quotelev1">&gt; python-mysqldb libsnappy-dev python-xlwt msgpack-python lzop libpq-dev
+</em><br />
+<em class="quotelev1">&gt; python-psycopg2' failed with status 100
+</em><br />
+<br />I thought the problem might be because I was trying to start an Anaconda
+<br />
+cluster using <a href="https://github.com/ContinuumIO/anaconda-ec2">https://github.com/ContinuumIO/anaconda-ec2</a> but I tried
+<br />
+spinning up a vanilla StarCluster just now and had the same problem. I also
+<br />
+thought that it might be one of the packages causing a problem, but even
+<br />
+when I reduced it to just g++ I got the same error. Any thoughts on how to
+<br />
+fix would be greatly appreciated.
+<br />
+<br /><pre>
+-- 
+Alessandro Gagliardi
+Data Scientist / Analytics Engineer
+Path, Inc.
+alessandro_at_path.com
+-- 
+Alessandro Gagliardi
+Data Scientist / Analytics Engineer
+Path, Inc.
+alessandro_at_path.com
+
+</pre>
+<br />
+<br /><div>
+<ul>
+<li>text/plain attachment: <a href="att-1725/crash-report-2740.txt">crash-report-2740.txt</a></li>
+</ul>
+<!-- attachment="crash-report-2740.txt" -->
+</div>
+<span id="received"><dfn>Received on</dfn> Wed May 15 2013 - 16:16:48 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1725.html#start1725">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1726.html" title="Next message in the list">Peng Zhang: "change nfs code"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1724.html" title="Previous message in the list">Alessandro Gagliardi: "Re:  !!! ERROR - command &#0039;DEBIAN_FRONTEND=&#0039;noninteractive&#0039; apt-get -o Dpkg::Options::=&#0039;--force-confnew&#0039; . . . failed with status 100"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1725" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1725" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1725" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1725" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

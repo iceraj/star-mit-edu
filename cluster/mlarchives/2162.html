@@ -1,0 +1,344 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Christian Zielinski ((no email))" />
+<meta name="Subject" content="Re:  SSH doesn't come up on c3.8xlarge instances" />
+<title>starcluster.mbox.out: Re:  SSH doesn't come up on c3.8xlarge instances</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Re:  SSH doesn't come up on c3.8xlarge instances</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Re:  SSH doesn't come up on c3.8xlarge instances</h1>
+<!-- received="Wed Apr 23 01:26:37 2014" -->
+<!-- isoreceived="20140423052637" -->
+<!-- sent="Wed, 23 Apr 2014 13:26:33 +0800" -->
+<!-- isosent="20140423052633" -->
+<!-- name="Christian Zielinski" -->
+<!-- email="(no email)" -->
+<!-- subject="Re:  SSH doesn't come up on c3.8xlarge instances" -->
+<!-- id="53574F09.6000102_at_czielinski.de" -->
+<!-- charset="UTF-8" -->
+<!-- inreplyto="CAD3e3FYqSALRN49aymuxw8KpGcSCTPAL3yJq19UN6jJhbqtvOw_at_mail.gmail.com" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2162.html#start2162" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2162.html#options2">top</a>, <a href="2162.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2163.html" accesskey="d" title="Gary Waters: &quot;New Plugin&quot;">Next message</a> ]
+[ <a href="2161.html" title="Christian Zielinski: &quot;SSH doesn&#0039;t come up on c3.8xlarge instances&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2162" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2162" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2162" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2162" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Christian Zielinski &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Wed, 23 Apr 2014 13:26:33 +0800</span><br />
+</address>
+<br />
+Hello Lyn and Niklas,
+<br />
+<br />I start the cluster with the following command:
+<br />
+<br />&nbsp;&nbsp;starcluster start -c c3_8xlarge cluster
+<br />
+<br />The template is based on:
+<br />
+<br />[cluster defcluster]
+<br />
+KEYNAME = thekey
+<br />
+CLUSTER_USER = sgeadmin
+<br />
+CLUSTER_SHELL = bash
+<br />
+DISABLE_QUEUE = True
+<br />
+# ami-6b211202 us-east-1 starcluster-base-ubuntu-13.04-x86_64-hvm
+<br />
+NODE_IMAGE_ID = ami-6b211202
+<br />
+NODE_INSTANCE_TYPE = m3.medium
+<br />
+CLUSTER_SIZE = 1
+<br />
+VOLUMES = latvol
+<br />
+<br />[cluster c3_8xlarge]
+<br />
+EXTENDS = defcluster
+<br />
+NODE_INSTANCE_TYPE = c3.8xlarge
+<br />
+<br />I also tried restarting the instance and interestingly it doesn't work.
+<br />
+it just doesn't reboot. I then stopped and started the instance again,
+<br />
+but nothing changed. I tried it both yesterday and today, so I don't
+<br />
+think its a temporary issue.
+<br />
+<br />Thanks!
+<br />
+Christian
+<br />
+<br /><br />On 23/04/2014 13:01, Lyn Gerner wrote:
+<br />
+<em class="quotelev1">&gt; Hi Christian,
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Could you please advise, what is the exact command you're using to
+</em><br />
+<em class="quotelev1">&gt; launch this cluster?
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Thanks, Lyn
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; On Tue, Apr 22, 2014 at 5:30 PM, Christian Zielinski
+</em><br />
+<em class="quotelev1">&gt; &lt;email_at_czielinski.de &lt;mailto:email_at_czielinski&#46;<!--nospam-->de&gt;&gt; wrote:
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Dear all,
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; StarCluster proved to be an extremely useful tool in my research
+</em><br />
+<em class="quotelev1">&gt; (thanks for everybody being involved!), but currently I'm
+</em><br />
+<em class="quotelev1">&gt; experiencing some strange behavior. I run all my instances in the
+</em><br />
+<em class="quotelev1">&gt; us-east-1 region with the AMI:
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; ami-6b211202 us-east-1 starcluster-base-ubuntu-13.04-x86_64-hvm
+</em><br />
+<em class="quotelev1">&gt; (HVM-EBS)
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; That works very well for c3.{large, xlarge, 2xlarge, 4xlarge}
+</em><br />
+<em class="quotelev1">&gt; instances. However, when I start a c3.8xlarge instance with the same
+</em><br />
+<em class="quotelev1">&gt; AMI SSH doesn't get up.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Specifically, after starting a c3.8xlarge instance StarCluster is
+</em><br />
+<em class="quotelev1">&gt; hanging at this point:
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; Waiting for SSH to come up on all nodes...
+</em><br />
+<em class="quotelev1">&gt; 0/1 |                                           |   0%
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; In the AWS web console I can find the following message under
+</em><br />
+<em class="quotelev1">&gt; &quot;Instance Status Checks&quot; (the system status check is fine):
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; &quot;Instance reachability check failed at April 23, 2014 11:08:00 AM
+</em><br />
+<em class="quotelev1">&gt; UTC+8 (7 minutes ago)&quot;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; What really confuses me is that everything works fine on all the
+</em><br />
+<em class="quotelev1">&gt; other instance types and only c3.8xlarge seems to be affected. Could
+</em><br />
+<em class="quotelev1">&gt; it be potentially some compatibility issue of the AMI? Interestingly
+</em><br />
+<em class="quotelev1">&gt; with the AMI
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; ami-52a0c53b us-east-1 starcluster-base-ubuntu-12.04-x86_64-hvm
+</em><br />
+<em class="quotelev1">&gt; (HVM-EBS)
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; everything works fine. However, I would like to use the newer AMI
+</em><br />
+<em class="quotelev1">&gt; (among the reasons is enhanced networking and being a HVM image).
+</em><br />
+<em class="quotelev1">&gt; Does anybody experience similar problems?
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Thank you and regards Christian Zielinski
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; P.S.: The system logs are ending with the following messages:
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; [...] [    0.802898]  #30cpu 31 spinlock event irq 281 [    0.818286]
+</em><br />
+<em class="quotelev1">&gt; installing Xen timer for CPU 31 [    0.820037]  #31 [    0.835184]
+</em><br />
+<em class="quotelev1">&gt; Brought up 32 CPUs [    0.836006] smpboot: Total of 32 processors
+</em><br />
+<em class="quotelev1">&gt; activated (180284.38 BogoMIPS)
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; -- <a href="http://www.czielinski.de/">http://www.czielinski.de/</a>
+</em><br />
+<em class="quotelev1">&gt; _______________________________________________ StarCluster mailing
+</em><br />
+<em class="quotelev1">&gt; list StarCluster_at_mit.edu &lt;mailto:StarCluster_at_mit&#46;<!--nospam-->edu&gt;
+</em><br />
+<em class="quotelev1">&gt; <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<br /><pre>
+-- 
+<a href="http://www.czielinski.de/">http://www.czielinski.de/</a>
+</pre>
+<span id="received"><dfn>Received on</dfn> Wed Apr 23 2014 - 01:26:37 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2162.html#start2162">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2163.html" title="Next message in the list">Gary Waters: "New Plugin"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2161.html" title="Previous message in the list">Christian Zielinski: "SSH doesn&#0039;t come up on c3.8xlarge instances"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2162" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2162" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2162" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2162" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

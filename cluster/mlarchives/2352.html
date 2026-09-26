@@ -1,0 +1,259 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Pierre Mariani ((no email))" />
+<meta name="Subject" content="Re:  Creating a StarCluster AMI" />
+<title>starcluster.mbox.out: Re:  Creating a StarCluster AMI</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Re:  Creating a StarCluster AMI</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Re:  Creating a StarCluster AMI</h1>
+<!-- received="Wed Sep 17 13:47:19 2014" -->
+<!-- isoreceived="20140917174719" -->
+<!-- sent="Wed, 17 Sep 2014 10:47:18 -0700" -->
+<!-- isosent="20140917174718" -->
+<!-- name="Pierre Mariani" -->
+<!-- email="(no email)" -->
+<!-- subject="Re:  Creating a StarCluster AMI" -->
+<!-- id="CANE4hzjfFB8R_8B+LZ+udv5Q4pyAg6dMqtUwU-M_XmRE0_PGoQ_at_mail.gmail.com" -->
+<!-- charset="UTF-8" -->
+<!-- inreplyto=" Creating a StarCluster AMI" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2352.html#start2352" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2352.html#options2">top</a>, <a href="2352.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2353.html" accesskey="d" title="MacMullan, Hugh: &quot;Re:  Creating a StarCluster AMI&quot;">Next message</a> ]
+[ <a href="2351.html" title="ronen artzi: &quot;Creating a StarCluster AMI&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="2353.html" accesskey="t" title="MacMullan, Hugh: &quot;Re:  Creating a StarCluster AMI&quot;">Next in thread</a> ]
+ [ <a href="2352.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2352" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2352" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2352" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2352" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Pierre Mariani &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Wed, 17 Sep 2014 10:47:18 -0700</span><br />
+</address>
+<br />
+<em class="quotelev1">&gt; Hi All,
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; I need to generate an ami that comply with the company golden image and
+</em><br />
+<em class="quotelev1">&gt; would like it to be used in a star cluster , SGE environment.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Are there any instructions as for how to bake a starcluster ami rather than
+</em><br />
+<em class="quotelev1">&gt; using those that are there ?
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; What is the minimum packages and configuration that is required to be
+</em><br />
+<em class="quotelev1">&gt; installed on an image so it can be used as a Starcluster node ?
+</em><br />
+<br />Disclosure: I am a recent user of StarCluster and may be missing
+<br />
+something important.
+<br />
+<br />I went through the same issue very recently, and this is what I found out:
+<br />
+<br />The most relevant documentation I was able to find is
+<br />
+<a href="../docs/0.95.5/manual/create_new_ami.html">/cluster/docs/0.95.5/manual/create_new_ami.html</a>. It
+<br />
+is helpful for some aspects, but unfortunately it doesn't go into
+<br />
+details of what should be installed on the AMI.
+<br />
+<br />So I ended up reading StarCluster code at
+<br />
+<a href="https://github.com/jtriley/StarCluster/blob/0.95.5/starcluster/">https://github.com/jtriley/StarCluster/blob/0.95.5/starcluster/</a>. This
+<br />
+is helpful for getting an idea of which packages the framework is
+<br />
+expecting to find on the AMI, although an actual list would be nicer
+<br />
+to work with.
+<br />
+<br />But, a more serious issue is that the code is making some low level
+<br />
+assumptions about these packages.
+<br />
+<br />Let's take the example of NFS. The code is assuming that NFS is being
+<br />
+started with /etc/init.d/nfs start, and /etc/init.d/portmap start.
+<br />
+In the case of Ubuntu, it was correct up to 13.04. But in 14.04, it's
+<br />
+different. These files don't exist anymore. There are new files that
+<br />
+seem to replace them, but I don't know if there are more fundamental
+<br />
+changes beside just the file name.
+<br />
+<br />I tried to work around this particular NFS issue by customizing the
+<br />
+AMI and symlinking the actual NFS files to what StarCluster was
+<br />
+expecting, but I bumped into another issue right after that.
+<br />
+<br />At that point I felt I was on a wild goose chase and decided to fork,
+<br />
+update and maintain my own version of the Ubuntu 12.04 AMI and work
+<br />
+with that. (13.04 has reached EOL, 14.04 isn't officially supported
+<br />
+yet, so 12.04 is best choice available).
+<br />
+<br />I don't know what StarCluster contributors' opinions are on this.
+<br />
+Personally, I think that it is unmaintainable to manually handle the
+<br />
+many different ways to interface with NFS, package managers and other
+<br />
+required packages across multiple distributions and multiple versions
+<br />
+of each distribution. Ideally StarCluster could leverage a 3rd party
+<br />
+library that did that, but I don't know if such a library exists.
+<br />
+<br />I would be very interested in reading the experiences and opinions of
+<br />
+other members of the community on this.
+<br />
+<br />Thank you.
+<br />
+Pierre
+<br />
+<span id="received"><dfn>Received on</dfn> Wed Sep 17 2014 - 13:47:19 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2352.html#start2352">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2353.html" title="Next message in the list">MacMullan, Hugh: "Re:  Creating a StarCluster AMI"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2351.html" title="Previous message in the list">ronen artzi: "Creating a StarCluster AMI"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="2353.html" title="Next message in this discussion thread">MacMullan, Hugh: "Re:  Creating a StarCluster AMI"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="2353.html" title="Message sent in reply to this message">MacMullan, Hugh: "Re:  Creating a StarCluster AMI"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2352" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2352" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2352" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2352" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

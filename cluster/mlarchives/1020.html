@@ -1,0 +1,252 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Josh Moore ((no email))" />
+<meta name="Subject" content="Eqw errors in SGE with default starcluster configuration" />
+<title>starcluster.mbox.out: Eqw errors in SGE with default starcluster configuration</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Eqw errors in SGE with default starcluster configuration</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Eqw errors in SGE with default starcluster configuration</h1>
+<!-- received="Tue Feb  7 02:30:17 2012" -->
+<!-- isoreceived="20120207073017" -->
+<!-- sent="Tue, 7 Feb 2012 02:30:15 -0500" -->
+<!-- isosent="20120207073015" -->
+<!-- name="Josh Moore" -->
+<!-- email="(no email)" -->
+<!-- subject="Eqw errors in SGE with default starcluster configuration" -->
+<!-- id="CAMxG0YbR413HBPdDW6Z7WQk+WaivOdBsoN_abetArvtD9BvOjQ_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1020.html#start1020" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1020.html#options2">top</a>, <a href="1020.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1021.html" accesskey="d" title="Dustin Machi: &quot;Re:  Eqw errors in SGE with default starcluster configuration&quot;">Next message</a> ]
+[ <a href="1019.html" title="Gilles RASIGADE: &quot;Re:  starCluster - Bug report&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="1021.html" accesskey="t" title="Dustin Machi: &quot;Re:  Eqw errors in SGE with default starcluster configuration&quot;">Next in thread</a> ]
+ [ <a href="1020.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1020" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1020" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1020" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1020" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Josh Moore &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Tue, 7 Feb 2012 02:30:15 -0500</span><br />
+</address>
+<br />
+I tried submitting a bunch of jobs using qsub with a script that works fine
+<br />
+on another (non-Amazon) cluster's configuration of SGE. But on a cluster
+<br />
+configured with StarCluster, only the first 8 (on a cluster of c1.xlarge
+<br />
+nodes, so 8 cores each) enter the queue without error (all of those are
+<br />
+immediately executed on the master node). Even if I delete one of the jobs
+<br />
+on the master node, another one never takes its place. I have a cluster of
+<br />
+8 c1.xlarge nodes. Here is the output of qconf -ssconf:
+<br />
+<br />algorithm                         default
+<br />
+schedule_interval                 0:0:15
+<br />
+maxujobs                          0
+<br />
+queue_sort_method                 load
+<br />
+job_load_adjustments              np_load_avg=0.50
+<br />
+load_adjustment_decay_time        0:7:30
+<br />
+load_formula                      np_load_avg
+<br />
+schedd_job_info                   false
+<br />
+flush_submit_sec                  0
+<br />
+flush_finish_sec                  0
+<br />
+params                            none
+<br />
+reprioritize_interval             0:0:0
+<br />
+halftime                          168
+<br />
+usage_weight_list                 cpu=1.000000,mem=0.000000,io=0.000000
+<br />
+compensation_factor               5.000000
+<br />
+weight_user                       0.250000
+<br />
+weight_project                    0.250000
+<br />
+weight_department                 0.250000
+<br />
+weight_job                        0.250000
+<br />
+weight_tickets_functional         0
+<br />
+weight_tickets_share              0
+<br />
+share_override_tickets            TRUE
+<br />
+share_functional_shares           TRUE
+<br />
+max_functional_jobs_to_schedule   200
+<br />
+report_pjob_tickets               TRUE
+<br />
+max_pending_tasks_per_job         50
+<br />
+halflife_decay_list               none
+<br />
+policy_hierarchy                  OFS
+<br />
+weight_ticket                     0.010000
+<br />
+weight_waiting_time               0.000000
+<br />
+weight_deadline                   3600000.000000
+<br />
+weight_urgency                    0.100000
+<br />
+weight_priority                   1.000000
+<br />
+max_reservation                   0
+<br />
+default_duration                  INFINITY
+<br />
+<br />I can't figure out how to change schedd_job_info to true to find out more
+<br />
+about the error message...
+<br />
+<span id="received"><dfn>Received on</dfn> Tue Feb 07 2012 - 02:30:17 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1020.html#start1020">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1021.html" title="Next message in the list">Dustin Machi: "Re:  Eqw errors in SGE with default starcluster configuration"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1019.html" title="Previous message in the list">Gilles RASIGADE: "Re:  starCluster - Bug report"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1021.html" title="Next message in this discussion thread">Dustin Machi: "Re:  Eqw errors in SGE with default starcluster configuration"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1021.html" title="Message sent in reply to this message">Dustin Machi: "Re:  Eqw errors in SGE with default starcluster configuration"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1020" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1020" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1020" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1020" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

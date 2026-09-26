@@ -1,0 +1,242 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Boris Fain ((no email))" />
+<meta name="Subject" content="Re:  note for usage" />
+<title>starcluster.mbox.out: Re:  note for usage</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Re:  note for usage</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Re:  note for usage</h1>
+<!-- received="Tue Dec  7 14:19:13 2010" -->
+<!-- isoreceived="20101207191913" -->
+<!-- sent="Tue, 7 Dec 2010 11:19:12 -0800" -->
+<!-- isosent="20101207191912" -->
+<!-- name="Boris Fain" -->
+<!-- email="(no email)" -->
+<!-- subject="Re:  note for usage" -->
+<!-- id="AANLkTikhF1uRocy-D9HhqgB6etVwNP2tZXj2cL7uq5S3_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- inreplyto="AANLkTikMmGcZzgDSYKD6r-SYHoGTXAkaEhksqXjnDPBh_at_mail.gmail.com" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="0558.html#start558" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="0558.html#options2">top</a>, <a href="0558.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="0559.html" accesskey="d" title="Igor Tatarinov: &quot;accessing &#0039;default&#0039; group from a cluster&quot;">Next message</a> ]
+[ <a href="0557.html" title="Igor Tatarinov: &quot;accessing cluster object from a plugin&quot;">Previous message</a> ]
+[ <a href="0556.html" title="Igor Tatarinov: &quot;Re:  note for usage&quot;">In reply to</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg558" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg558" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg558" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg558" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Boris Fain &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Tue, 7 Dec 2010 11:19:12 -0800</span><br />
+</address>
+<br />
+Hi Igor -
+<br />
+<br />You know what, you're absolutely correct. It must be the head-node
+<br />
+bandwidth. As we keep working I'll try to update.
+<br />
+<br />As for compression, well, it's on the wish list :-).
+<br />
+<br /><br />On Tue, Dec 7, 2010 at 10:24 AM, Igor Tatarinov &lt;igor_at_priceyeti.com&gt; wrote:
+<br />
+<br /><em class="quotelev1">&gt; Boris,
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; What kind of write throughput are you able to get? I would expect the
+</em><br />
+<em class="quotelev1">&gt; network bandwidth at the NFS server node to be the bottleneck rather than
+</em><br />
+<em class="quotelev1">&gt; the CPUs on that box.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; An obvious question: are you compressing the data before you write it to
+</em><br />
+<em class="quotelev1">&gt; NFS?
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Thanks,
+</em><br />
+<em class="quotelev1">&gt; igor
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; On Mon, Dec 6, 2010 at 4:36 PM, Boris Fain &lt;boris_at_freecurve.com&gt; wrote:
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; This may be useful to everyone. When launching a cluster on Amazon, if you
+</em><br />
+<em class="quotelev2">&gt;&gt; have a lot of processes writing to a shared EBS volume
+</em><br />
+<em class="quotelev2">&gt;&gt; NFS does become a bottleneck. Everyone's output is different, so everyone
+</em><br />
+<em class="quotelev2">&gt;&gt; will have to figure out their own limits. In our case we had to
+</em><br />
+<em class="quotelev2">&gt;&gt; limit the head node compute load to 2/8 - it simply could not handle more.
+</em><br />
+<em class="quotelev2">&gt;&gt; We have 12 8-core (xlarge high-cpu) instances, and there's quite
+</em><br />
+<em class="quotelev2">&gt;&gt; a bit of writing from each MPI thread.
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; --
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; b.
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; _______________________________________________
+</em><br />
+<em class="quotelev2">&gt;&gt; StarCluster mailing list
+</em><br />
+<em class="quotelev2">&gt;&gt; StarCluster_at_mit.edu
+</em><br />
+<em class="quotelev2">&gt;&gt; <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<br /><br /><pre>
+-- 
+b.
+</pre>
+<span id="received"><dfn>Received on</dfn> Tue Dec 07 2010 - 14:19:13 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="0558.html#start558">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="0559.html" title="Next message in the list">Igor Tatarinov: "accessing &#0039;default&#0039; group from a cluster"</a></li>
+<li><dfn>Previous message</dfn>: <a href="0557.html" title="Previous message in the list">Igor Tatarinov: "accessing cluster object from a plugin"</a></li>
+<li><dfn>In reply to</dfn>: <a href="0556.html" title="Message to which this message replies">Igor Tatarinov: "Re:  note for usage"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg558" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg558" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg558" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg558" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

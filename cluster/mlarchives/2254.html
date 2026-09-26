@@ -1,0 +1,210 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Stephen How ((no email))" />
+<meta name="Subject" content="apt-get 403 error" />
+<title>starcluster.mbox.out: apt-get 403 error</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">apt-get 403 error</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>apt-get 403 error</h1>
+<!-- received="Mon Jun  9 16:37:34 2014" -->
+<!-- isoreceived="20140609203734" -->
+<!-- sent="Mon, 09 Jun 2014 13:37:05 -0700" -->
+<!-- isosent="20140609203705" -->
+<!-- name="Stephen How" -->
+<!-- email="(no email)" -->
+<!-- subject="apt-get 403 error" -->
+<!-- id="FF9FFC12-8EBC-4A36-B7C3-20D1C7752228_at_me.com" -->
+<!-- charset="US-ASCII" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2254.html#start2254" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2254.html#options2">top</a>, <a href="2254.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2255.html" accesskey="d" title="Cedar McKay: &quot;Re:  apt-get 403 error&quot;">Next message</a> ]
+[ <a href="2253.html" title="Stephen How: &quot;Re:  installing 0.95.5 on Mac OS X&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="2255.html" accesskey="t" title="Cedar McKay: &quot;Re:  apt-get 403 error&quot;">Next in thread</a> ]
+ [ <a href="2254.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2254" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2254" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2254" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2254" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Stephen How &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Mon, 09 Jun 2014 13:37:05 -0700</span><br />
+</address>
+<br />
+Hello,
+<br />
+<br />Today I'm having trouble with apt-get install on the ami-56172513 image [us-west-1 starcluster-base-ubuntu-13.04-x86_64 (EBS)].
+<br />
+<br />Usually, I apt-get install packages on this AMI without any problems.  Today it looks like something changed.
+<br />
+<br />apt-get update didn't help
+<br />
+<br />Failed to fetch <a href="http://us-west-1.ec2.archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.7.15.2-1ubuntu1_amd64.deb">http://us-west-1.ec2.archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.7.15.2-1ubuntu1_amd64.deb</a>  403  Forbidden
+<br />
+<br />Is this an ubuntu.com http archive issue?  Can I point to some other package source?
+<br />
+<br />Thanks,
+<br />
+Steve
+<br />
+<br />root_at_master:~# apt-get install sqlite3
+<br />
+Reading package lists... Done
+<br />
+Building dependency tree
+<br />
+Reading state information... Done
+<br />
+Suggested packages:
+<br />
+&nbsp;&nbsp;sqlite3-doc
+<br />
+The following NEW packages will be installed:
+<br />
+&nbsp;&nbsp;sqlite3
+<br />
+0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
+<br />
+Need to get 29.2 kB of archives.
+<br />
+After this operation, 187 kB of additional disk space will be used.
+<br />
+Err <a href="http://us-west-1.ec2.archive.ubuntu.com/ubuntu/">http://us-west-1.ec2.archive.ubuntu.com/ubuntu/</a> raring/main sqlite3 amd64 3.7.15.2-1ubuntu1
+<br />
+&nbsp;&nbsp;403  Forbidden
+<br />
+Failed to fetch <a href="http://us-west-1.ec2.archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.7.15.2-1ubuntu1_amd64.deb">http://us-west-1.ec2.archive.ubuntu.com/ubuntu/pool/main/s/sqlite3/sqlite3_3.7.15.2-1ubuntu1_amd64.deb</a>  403  Forbidden
+<br />
+E: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?
+<br />
+<span id="received"><dfn>Received on</dfn> Mon Jun 09 2014 - 16:37:34 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2254.html#start2254">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2255.html" title="Next message in the list">Cedar McKay: "Re:  apt-get 403 error"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2253.html" title="Previous message in the list">Stephen How: "Re:  installing 0.95.5 on Mac OS X"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="2255.html" title="Next message in this discussion thread">Cedar McKay: "Re:  apt-get 403 error"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="2255.html" title="Message sent in reply to this message">Cedar McKay: "Re:  apt-get 403 error"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2254" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2254" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2254" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2254" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

@@ -1,0 +1,428 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Justin Riley ((no email))" />
+<meta name="Subject" content="Re:  starcluster plugin status code 127" />
+<title>starcluster.mbox.out: Re:  starcluster plugin status code 127</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Re:  starcluster plugin status code 127</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Re:  starcluster plugin status code 127</h1>
+<!-- received="Wed Dec 21 11:55:22 2011" -->
+<!-- isoreceived="20111221165522" -->
+<!-- sent="Wed, 21 Dec 2011 11:55:17 -0500" -->
+<!-- isosent="20111221165517" -->
+<!-- name="Justin Riley" -->
+<!-- email="(no email)" -->
+<!-- subject="Re:  starcluster plugin status code 127" -->
+<!-- id="4EF20F75.9030900_at_mit.edu" -->
+<!-- charset="ISO-8859-1" -->
+<!-- inreplyto="CALbUUf3Qun+Qx4F8OJBdKt2kNaAxGPTeK3-nwzUQV8jYXrG66w_at_mail.gmail.com" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="0936.html#start936" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="0936.html#options2">top</a>, <a href="0936.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="0937.html" accesskey="d" title="Rajat Banerjee: &quot;Large Cluster Suggestion&quot;">Next message</a> ]
+[ <a href="0935.html" title="Paolo Di Tommaso: &quot;Re:  Starcluster debug file&quot;">Previous message</a> ]
+[ <a href="0932.html" title="Wei Tao: &quot;Re:  starcluster plugin status code 127&quot;">In reply to</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg936" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg936" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg936" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg936" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Justin Riley &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Wed, 21 Dec 2011 11:55:17 -0500</span><br />
+</address>
+<br />
+-----BEGIN PGP SIGNED MESSAGE-----
+<br />
+Hash: SHA1
+<br />
+<br />Hi Wei,
+<br />
+<br />The problem is qconf is not in your default path when running execute.
+<br />
+This is because SGE is installed in /opt/sge6 and relies on
+<br />
+/etc/profile.d to setup the paths correctly. Unfortunately these configs
+<br />
+aren't automatically loaded when executing commands over SSH. For now
+<br />
+you can fix this using:
+<br />
+<br />node.ssh.execute('source /etc/profile &amp;&amp; qconf -mattr queue
+<br />
+load_thresholds np_load_avg=1.5 all.q')
+<br />
+<br />In the upcoming version you can pass source_profile=True as a parameter
+<br />
+to execute which will do this for you.
+<br />
+<br />With that said I'm working on making an SGE (now OGS) plugin which will
+<br />
+allow you to add custom SGE settings like the one you're applying
+<br />
+above.  For those interested in contributing you can see the latest
+<br />
+progress in the 'sge-plugin' branch on github:
+<br />
+<br /><a href="https://github.com/jtriley/StarCluster/blob/sge-plugin/starcluster/plugins/sge.py">https://github.com/jtriley/StarCluster/blob/sge-plugin/starcluster/plugins/sge.py</a>
+<br />
+<br />This will allow you to do what your plugin is doing now:
+<br />
+<br />[plugin sge]
+<br />
+setup_class = starcluster.plugins.sge.SGEPlugin
+<br />
+load_avg = 1.5
+<br />
+create_queues = myqueue, gpu
+<br />
+scheduling_interval = 5
+<br />
+....
+<br />
+<br />If anyone's interested in contributing patches that implement such
+<br />
+options please fork the project on GitHUB, checkout the sge-plugin
+<br />
+branch, make the changes to SGEPlugin, and submit a pull request.
+<br />
+<br />~Justin
+<br />
+<br />On 12/21/11 3:33 AM, Wei Tao wrote:
+<br />
+<em class="quotelev1">&gt; Hi Don,
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; The plugin picked up the queue_to_config (all.q) as evidenced in the
+</em><br />
+error message:
+<br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; !!! ERROR - command 'qconf -mattr queue load_thresholds np_load_avg=1.5
+</em><br />
+*all.q*' failed with status 127
+<br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; My intention is to config the SGE at the cluster boot up time using the
+</em><br />
+plugin. Since I executed &quot;starcluster runplugin&quot; after the cluster
+<br />
+already booted up, it apparently is not an issue of plugin execution timing.
+<br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; The only reason I run the plugin or the plugin command after cluster
+</em><br />
+already booted up is for debugging purposes.
+<br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; It's just very strange to me that as root I can execute the exact same
+</em><br />
+command on the master node without any issue, but running as starcluster
+<br />
+plugin would fail.
+<br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Also, what is status 127 anyway??
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Thanks!
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; -Wei
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; On Wed, Dec 21, 2011 at 1:42 AM, Don MacMillen &lt;macd_at_nimbic.com
+</em><br />
+&lt;mailto:macd_at_nimbic.com&gt;&gt; wrote:
+<br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; The only difference that I can see is that I have not used arguments to
+</em><br />
+<em class="quotelev1">&gt; the plugin. I guess you did remember to set the argument &quot;queue_to_config&quot;
+</em><br />
+<em class="quotelev1">&gt; in your config file?
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Another possible issue is if you are trying to reconfig a cluster that
+</em><br />
+is just
+<br />
+<em class="quotelev1">&gt; in the process of coming up. If you try that command early on, it will
+</em><br />
+fail because
+<br />
+<em class="quotelev1">&gt; sge has not been installed yet. Why do you want to config the cluster
+</em><br />
+afterwards
+<br />
+<em class="quotelev1">&gt; rather than just on the initial bring up? HTH and let us know what you
+</em><br />
+find out.
+<br />
+<em class="quotelev1">&gt; Regards.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Don
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; On Tue, Dec 20, 2011 at 10:02 PM, Wei Tao &lt;wei.tao_at_tsibiocomputing.com
+</em><br />
+&lt;mailto:wei.tao_at_tsibiocomputing.com&gt;&gt; wrote:
+<br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Hi all,
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; I tried to implement the queue configuration suggested by Don MacMillen
+</em><br />
+a while ago. Here is my plugin code:
+<br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; from starcluster.clustersetup import ClusterSetup
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; class SgeConfig(ClusterSetup):
+</em><br />
+<em class="quotelev1">&gt; def __init__(self, queue_to_config):
+</em><br />
+<em class="quotelev1">&gt; self.queue_to_config = queue_to_config
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; def run(self, nodes, master, user, user_shell, volumes):
+</em><br />
+<em class="quotelev1">&gt; cmd_strg = 'qconf -mattr queue load_thresholds np_load_avg=1.5 %s'
+</em><br />
+%self.queue_to_config
+<br />
+<em class="quotelev1">&gt; output = master.ssh.execute(cmd_strg)
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; When I execute &quot;starcluster runplugin &lt;myplugin&gt; &lt;mycluster&gt;&quot;, I got:
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; Running plugin &lt;myplugin&gt;
+</em><br />
+<em class="quotelev1">&gt; !!! ERROR - command 'qconf -mattr queue load_thresholds np_load_avg=1.5
+</em><br />
+all.q' failed with status 127
+<br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; If I sshmaster and run the command directly as this:
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; root_at_master:~# qconf -mattr queue load_thresholds np_load_avg=1.5 all.q
+</em><br />
+<em class="quotelev1">&gt; root_at_master modified &quot;all.q&quot; in cluster queue list
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; It works fine. Could someone please point out why the plugin would have
+</em><br />
+a status code 127 when direct execution of the command apparently works
+<br />
+fine?
+<br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Thanks for the help!
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; -Wei
+</em><br />
+<em class="quotelev1">&gt; _______________________________________________
+</em><br />
+<em class="quotelev1">&gt; StarCluster mailing list
+</em><br />
+<em class="quotelev1">&gt; StarCluster_at_mit.edu &lt;mailto:StarCluster_at_mit.edu&gt;
+</em><br />
+<em class="quotelev1">&gt; <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; --
+</em><br />
+<em class="quotelev1">&gt; Wei Tao, Ph.D.
+</em><br />
+<em class="quotelev1">&gt; TSI Biocomputing LLC
+</em><br />
+<em class="quotelev1">&gt; 617-564-0934
+</em><br />
+<br />-----BEGIN PGP SIGNATURE-----
+<br />
+Version: GnuPG v1.4.11 (Darwin)
+<br />
+Comment: Using GnuPG with Mozilla - <a href="http://enigmail.mozdev.org/">http://enigmail.mozdev.org/</a>
+<br />
+<br />iEYEARECAAYFAk7yD3QACgkQ4llAkMfDcrmaQQCcCrSNwpQt53aqTU96MiI9R839
+<br />
+3yYAn1P/CRJjQIvzWLfht3kd3a6mZI1M
+<br />
+=R7Fe
+<br />
+-----END PGP SIGNATURE-----
+<br />
+<span id="received"><dfn>Received on</dfn> Wed Dec 21 2011 - 11:55:22 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="0936.html#start936">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="0937.html" title="Next message in the list">Rajat Banerjee: "Large Cluster Suggestion"</a></li>
+<li><dfn>Previous message</dfn>: <a href="0935.html" title="Previous message in the list">Paolo Di Tommaso: "Re:  Starcluster debug file"</a></li>
+<li><dfn>In reply to</dfn>: <a href="0932.html" title="Message to which this message replies">Wei Tao: "Re:  starcluster plugin status code 127"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg936" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg936" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg936" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg936" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

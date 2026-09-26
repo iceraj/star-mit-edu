@@ -1,0 +1,233 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Sergio Mafra ((no email))" />
+<meta name="Subject" content="Bug.. need urgent workaround" />
+<title>starcluster.mbox.out: Bug.. need urgent workaround</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Bug.. need urgent workaround</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Bug.. need urgent workaround</h1>
+<!-- received="Wed Jul 10 08:58:59 2013" -->
+<!-- isoreceived="20130710125859" -->
+<!-- sent="Wed, 10 Jul 2013 09:58:56 -0300" -->
+<!-- isosent="20130710125856" -->
+<!-- name="Sergio Mafra" -->
+<!-- email="(no email)" -->
+<!-- subject="Bug.. need urgent workaround" -->
+<!-- id="CALxTZg5kMDXDyKd14TBjGbkWA6n=v63-kb0Bt_24YJA0SnZ8oQ_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1774.html#start1774" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1774.html#options2">top</a>, <a href="1774.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1775.html" accesskey="d" title="Rayson Ho: &quot;Re:  Plan for Window Azure Virtual Machines?&quot;">Next message</a> ]
+[ <a href="1773.html" title="Hyungro Lee: &quot;Plan for Window Azure Virtual Machines?&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1774" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1774" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1774" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1774" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Sergio Mafra &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Wed, 10 Jul 2013 09:58:56 -0300</span><br />
+</address>
+<br />
+Dear Friends,
+<br />
+<br />I´m trying to setup a new cluster and StarCluster hangs on this point:
+<br />
+<br />It´s a fresh creation of a 2 cr1.8xlarge instances using spot instances.
+<br />
+I´m using the latest version of SC 0.999
+<br />
+<br /><pre>
+----
+ERROR - Error occured while running plugin
+'starcluster.clustersetup.DefaultClusterSetup':
+!!! ERROR - error occurred in job (id=master): remote command 'source
+/etc/profile &amp;&amp; groupadd -o -g 1000 sgeadmin' failed with status 9:
+groupadd: group sgeadmin exists
+Traceback (most recent call last):
+  File
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.9999-py2.7.egg/starcluster/threadpool.py&quot;,
+line 31, in run
+    job.run()
+  File
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.9999-py2.7.egg/starcluster/threadpool.py&quot;,
+line 58, in run
+    r = self.method(*self.args, **self.kwargs)
+  File
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.9999-py2.7.egg/starcluster/clustersetup.py&quot;,
+line 193, in _add_user_to_node
+    node.add_user(self._user, uid, gid, self._user_shell)
+  File
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.9999-py2.7.egg/starcluster/node.py&quot;,
+line 422, in add_user
+    self.ssh.execute('groupadd -o -g %s %s' % (gid, name))
+  File
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.9999-py2.7.egg/starcluster/sshutils/__init__.py&quot;,
+line 538, in execute
+    msg, command, exit_status, out_str)
+RemoteCommandFailed: remote command 'source /etc/profile &amp;&amp; groupadd -o -g
+1000 sgeadmin' failed with status 9:
+groupadd: group sgeadmin exists
+error occurred in job (id=node001): remote command 'source /etc/profile &amp;&amp;
+groupadd -o -g 1000 sgeadmin' failed with status 9:
+groupadd: group sgeadmin exists
+Traceback (most recent call last):
+  File
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.9999-py2.7.egg/starcluster/threadpool.py&quot;,
+line 31, in run
+    job.run()
+  File
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.9999-py2.7.egg/starcluster/threadpool.py&quot;,
+line 58, in run
+    r = self.method(*self.args, **self.kwargs)
+  File
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.9999-py2.7.egg/starcluster/clustersetup.py&quot;,
+line 193, in _add_user_to_node
+    node.add_user(self._user, uid, gid, self._user_shell)
+  File
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.9999-py2.7.egg/starcluster/node.py&quot;,
+line 422, in add_user
+    self.ssh.execute('groupadd -o -g %s %s' % (gid, name))
+  File
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.9999-py2.7.egg/starcluster/sshutils/__init__.py&quot;,
+line 538, in execute
+    msg, command, exit_status, out_str)
+RemoteCommandFailed: remote command 'source /etc/profile &amp;&amp; groupadd -o -g
+1000 sgeadmin' failed with status 9:
+groupadd: group sgeadmin exists
+!!! ERROR - Oops! Looks like you've found a bug in StarCluster
+!!! ERROR - Crash report written to:
+/home/ubuntu/.starcluster/logs/crash-report-8819.txt
+!!! ERROR - Please remove any sensitive data from the crash report
+!!! ERROR - and submit it to starcluster_at_mit.edu
+All the best,
+Sergio
+</pre>
+<span id="received"><dfn>Received on</dfn> Wed Jul 10 2013 - 08:58:59 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1774.html#start1774">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1775.html" title="Next message in the list">Rayson Ho: "Re:  Plan for Window Azure Virtual Machines?"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1773.html" title="Previous message in the list">Hyungro Lee: "Plan for Window Azure Virtual Machines?"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1774" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1774" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1774" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1774" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

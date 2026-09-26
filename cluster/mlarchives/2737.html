@@ -1,0 +1,248 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Laura Del Caño ((no email))" />
+<meta name="Subject" content="resizing an EBS volume" />
+<title>starcluster.mbox.out: resizing an EBS volume</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">resizing an EBS volume</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>resizing an EBS volume</h1>
+<!-- received="Thu Nov 19 06:14:11 2015" -->
+<!-- isoreceived="20151119111411" -->
+<!-- sent="Thu, 19 Nov 2015 12:14:10 +0100" -->
+<!-- isosent="20151119111410" -->
+<!-- name="Laura Del Caño" -->
+<!-- email="(no email)" -->
+<!-- subject="resizing an EBS volume" -->
+<!-- id="CAG-1JM5=7vcYpiyP47qJvQG+diXngwS29+qZWRC_rHp09YsCvA_at_mail.gmail.com" -->
+<!-- charset="UTF-8" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2737.html#start2737" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2737.html#options2">top</a>, <a href="2737.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2738.html" accesskey="d" title="Silverstein: &quot;loadbalancer not removing nodes&quot;">Next message</a> ]
+[ <a href="2736.html" title="Laura Del Ca&#0241;o: &quot;Re:  starcluster instance types&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2737" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2737" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2737" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2737" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Laura Del Caño &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 19 Nov 2015 12:14:10 +0100</span><br />
+</address>
+<br />
+Hi,
+<br />
+I just tried to resize an EBS Volume attached to my cluster and I got the
+<br />
+following error:
+<br />
+<br />ldelcano_at_bebop:~$ starcluster resizevolume vol-300354f3 1024
+<br />
+StarCluster - (<a href="/cluster/">/cluster</a>) (v. 0.95.6)
+<br />
+Software Tools for Academics and Researchers (STAR)
+<br />
+Please submit bug reports to starcluster_at_mit.edu
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; No keypair specified, picking one from config...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Using keypair: aws-key
+</em><br />
+!!! ERROR - Failed to resize volume vol-300354f3
+<br />
+!!! ERROR - Unhandled exception occured
+<br />
+Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.95.6-py2.7.egg/starcluster/cli.py&quot;,
+<br />
+line 274, in main
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;sc.execute(args)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.95.6-py2.7.egg/starcluster/commands/resizevolume.py&quot;,
+<br />
+line 103, in execute
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;new_volid = vc.resize(vol, size, dest_zone=self.opts.dest_zone)
+<br />
+&nbsp;&nbsp;File &quot;&lt;string&gt;&quot;, line 2, in resize
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.95.6-py2.7.egg/starcluster/utils.py&quot;,
+<br />
+line 112, in wrap_f
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;res = func(*arg, **kargs)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.95.6-py2.7.egg/starcluster/volume.py&quot;,
+<br />
+line 371, in resize
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;snap = self._snapshot
+<br />
+AttributeError: 'VolumeCreator' object has no attribute '_snapshot'
+<br />
+<br />!!! ERROR - Oops! Looks like you've found a bug in StarCluster
+<br />
+!!! ERROR - Crash report written to:
+<br />
+/home/ldelcano/.starcluster/logs/crash-report-31809.txt
+<br />
+!!! ERROR - Please remove any sensitive data from the crash report
+<br />
+!!! ERROR - and submit it to starcluster_at_mit.edu
+<br />
+<br />I have run the command when the cluster is stopped, is this correct?
+<br />
+Now I am doing a snapshot of the EBS volume from the AWS console, just in
+<br />
+case, bur from Starcluster documentation I understood that resizevolume
+<br />
+command does everything, right?
+<br />
+<br />thanks again
+<br />
+Laura
+<br />
+<br /><br />
+<br /><div>
+<ul>
+<li>text/plain attachment: <a href="att-2737/crash-report-31809.txt">crash-report-31809.txt</a></li>
+</ul>
+<!-- attachment="crash-report-31809.txt" -->
+</div>
+<span id="received"><dfn>Received on</dfn> Thu Nov 19 2015 - 06:14:11 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2737.html#start2737">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2738.html" title="Next message in the list">Silverstein: "loadbalancer not removing nodes"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2736.html" title="Previous message in the list">Laura Del Ca&#0241;o: "Re:  starcluster instance types"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2737" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2737" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2737" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2737" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Lilley, John F. ((no email))" />
+<meta name="Subject" content="DRMAA jobs failing when load balancer enabled and jobs longer than 60 mins" />
+<title>starcluster.mbox.out: DRMAA jobs failing when load balancer enabled and jobs longer than 60 mins</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">DRMAA jobs failing when load balancer enabled and jobs longer than 60 mins</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>DRMAA jobs failing when load balancer enabled and jobs longer than 60 mins</h1>
+<!-- received="Thu Mar  6 12:11:37 2014" -->
+<!-- isoreceived="20140306171137" -->
+<!-- sent="Thu, 6 Mar 2014 17:11:31 +0000" -->
+<!-- isosent="20140306171131" -->
+<!-- name="Lilley, John F." -->
+<!-- email="(no email)" -->
+<!-- subject="DRMAA jobs failing when load balancer enabled and jobs longer than 60 mins" -->
+<!-- id="CEA4E185-61B5-4A70-AE07-0E7DC1DEF867_at_caltech.edu" -->
+<!-- charset="Windows-1252" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2078.html#start2078" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2078.html#options2">top</a>, <a href="2078.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2079.html" accesskey="d" title="Rajat Banerjee: &quot;Re:  DRMAA jobs failing when load balancer enabled and jobs longer than 60 mins&quot;">Next message</a> ]
+[ <a href="2077.html" title="Rayson Ho: &quot;Re:  available StarCluster AMIs for g2.2xlarge on EC2&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="2079.html" accesskey="t" title="Rajat Banerjee: &quot;Re:  DRMAA jobs failing when load balancer enabled and jobs longer than 60 mins&quot;">Next in thread</a> ]
+ [ <a href="2078.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2078" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2078" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2078" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2078" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Lilley, John F. &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 6 Mar 2014 17:11:31 +0000</span><br />
+</address>
+<br />
+Hi,
+<br />
+<br /><br />I’m running a simple java based DRMAA job that runs a sleep commands on each of the Starcluster compute instances but am having a problem. If I create 10 non-loadbalanced nodes and then submit a job from DRMAA that runs sleep on each of those nodes in parallel everything completes fine.If I submit the same 10 node DRMAA sleep job with 1 non-loadbalanced node available everything works fine and the jobs eventually work their way through the single node serially and the main DRMAA process is happy. 
+<br />
+<br />If I then enable load balancing, submit 10 jobs that sleep 30 minutes each from the main DRMAA process it load balances beautifully by adding 9 nodes, all 10 jobs complete and the main process exits gracefully. However, if I submit 10 jobs that sleep for 70 minutes most of them finish but then the DRMAA process bails before all 10 jobs are complete. My guess is that when the first sleep jobs start to finish up the load balancer removes the nodes they ran on from the available execution hosts throwing the main DRMAA process which is monitoring the jobs for a loop. 
+<br />
+<br /><br />Perhaps there’s a way I can make the DRMAA process more tolerant of execution hosts being removed from the available pool? Another issue I have is that unless I have 1 execution host running all the time the DRMAA process refuses to start at all. I’d rather not have to keep an execution host running to accept the DRMAA job submissions if possible. I would really appreciate hearing any insights the community has on running DRMAA jobs in Starcluster and if anyone has experienced similar obstacles. 
+<br />
+<br /><br />Thanks for the help!
+<br />
+John
+<br />
+<br /><br />Output received from DRMAA after an hour when load balancing (jobs over 70 minutes)
+<br />
+--------------------------------------------------------------------------------------------------------------------
+<br />
+INFO [2014-03-05 19:59:26,077]  [OGSJob.java:211] [main]  Waiting for job 61...
+<br />
+Exception in thread &quot;main&quot; java.lang.IllegalStateException
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;at com.sun.grid.drmaa.JobInfoImpl.getExitStatus(JobInfoImpl.java:75)
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;at nextgen.core.job.OGSJob.waitFor(OGSJob.java:213)
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;at nextgen.core.job.JobUtils.waitForAll(JobUtils.java:23)
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;at tests.DrmaaSleepTest.main(DrmaaSleepTest.java:50)
+<br />
+INFO [2014-03-05 19:59:37,064]  [OGSUtils.java:84] [Thread-0]  Ending DRMAA session
+<br />
+--------------------------------------------------------------------------------------------------------------------
+<br />
+<br />Output received from DRMAA when there are no execution hosts available on initial job submission (If I have execution host available it submits OK)
+<br />
+--------------------------------------------------------------------------------------------------------------------
+<br />
+user_at_master:~/$ java -jar DrmaaSleepTest.jar -m 5 -n 10 -s Sleep.jar
+<br />
+log4j:ERROR Could not find value for key log4j.appender.R
+<br />
+log4j:ERROR Could not instantiate appender named &quot;R&quot;.
+<br />
+WARN [2014-03-06 05:09:54,984]  [OGSUtils.java:65] [main]  Starting a DRMAA session.
+<br />
+WARN [2014-03-06 05:09:54,989]  [OGSUtils.java:66] [main]  There should only be one active DRMAA session at a time.
+<br />
+INFO [2014-03-06 05:09:55,430]  [OGSUtils.java:92] [main]  Attached shutdown hook to close DRMAA session upon JVM exit.
+<br />
+Exception in thread &quot;main&quot; org.ggf.drmaa.DeniedByDrmException: warning:user your job is not allowed to run in any queue
+<br />
+error: no suitable queues
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;at com.sun.grid.drmaa.SessionImpl.nativeRunJob(Native Method)
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;at com.sun.grid.drmaa.SessionImpl.runJob(SessionImpl.java:349)
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;at nextgen.core.job.OGSJob.submit(OGSJob.java:188)
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;at tests.DrmaaSleepTest.main(DrmaaSleepTest.java:46)
+<br />
+INFO [2014-03-06 05:09:55,500]  [OGSUtils.java:84] [Thread-0]  Ending DRMAA session
+<br />
+--------------------------------------------------------------------------------------------------------------------
+<br />
+<span id="received"><dfn>Received on</dfn> Thu Mar 06 2014 - 12:11:37 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2078.html#start2078">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2079.html" title="Next message in the list">Rajat Banerjee: "Re:  DRMAA jobs failing when load balancer enabled and jobs longer than 60 mins"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2077.html" title="Previous message in the list">Rayson Ho: "Re:  available StarCluster AMIs for g2.2xlarge on EC2"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="2079.html" title="Next message in this discussion thread">Rajat Banerjee: "Re:  DRMAA jobs failing when load balancer enabled and jobs longer than 60 mins"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="2079.html" title="Message sent in reply to this message">Rajat Banerjee: "Re:  DRMAA jobs failing when load balancer enabled and jobs longer than 60 mins"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2078" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2078" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2078" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2078" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

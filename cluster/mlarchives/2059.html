@@ -1,0 +1,238 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Jackson, Xavier Jamel ((no email))" />
+<meta name="Subject" content="Configuration error?" />
+<title>starcluster.mbox.out: Configuration error?</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Configuration error?</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Configuration error?</h1>
+<!-- received="Sat Feb 15 23:52:30 2014" -->
+<!-- isoreceived="20140216045230" -->
+<!-- sent="Sun, 16 Feb 2014 04:52:25 +0000" -->
+<!-- isosent="20140216045225" -->
+<!-- name="Jackson, Xavier Jamel" -->
+<!-- email="(no email)" -->
+<!-- subject="Configuration error?" -->
+<!-- id="3C034ACDD2A7D44AB0D529DEEB004A9B2EC9D5D1_at_S281.admin.wpi.edu" -->
+<!-- charset="iso-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2059.html#start2059" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2059.html#options2">top</a>, <a href="2059.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2060.html" accesskey="d" title="Rayson Ho: &quot;Re:  Configuration error?&quot;">Next message</a> ]
+[ <a href="2058.html" title="Yugarshi Mondal: &quot;Re:  addnode fails on bid&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="2060.html" accesskey="t" title="Rayson Ho: &quot;Re:  Configuration error?&quot;">Next in thread</a> ]
+ [ <a href="2059.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2059" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2059" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2059" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2059" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Jackson, Xavier Jamel &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Sun, 16 Feb 2014 04:52:25 +0000</span><br />
+</address>
+<br />
+Hello, I am new to using Starcluster, and I am having issues setting up the configuration properly.  I followed all of the instructions in the Quick Start and the user menu.  Then I received this error when I tried to run:
+<br />
+<br />$ starcluster start mycluster
+<br />
+StarCluster - (<a href="/cluster/">/cluster</a>) (v. 0.95)
+<br />
+Software Tools for Academics and Researchers (STAR)
+<br />
+Please submit bug reports to starcluster_at_mit.edu
+<br />
+<br />!!! ERROR - AuthFailure: AWS was not able to validate the provided access credentials
+<br />
+Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.95-py2.7.egg/starcluster/cli.py&quot;, line 274, in main
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;sc.execute(args)
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.95-py2.7.egg/starcluster/commands/start.py&quot;, line 173, in execute
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;scluster = self.cm.get_cluster_group_or_none(tag)
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.95-py2.7.egg/starcluster/cluster.py&quot;, line 244, in get_cluster_group_or_none
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;return self.get_cluster_security_group(group_name)
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.95-py2.7.egg/starcluster/cluster.py&quot;, line 240, in get_cluster_security_group
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;return self.ec2.get_security_group(gname)
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.95-py2.7.egg/starcluster/awsutils.py&quot;, line 366, in get_security_group
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;filters={'group-name': groupname})[0]
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.95-py2.7.egg/starcluster/awsutils.py&quot;, line 378, in get_security_groups
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;return self.conn.get_all_security_groups(filters=filters)
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/boto/ec2/connection.py&quot;, line 2914, in get_all_security_groups
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;[('item', SecurityGroup)], verb='POST')
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/boto/connection.py&quot;, line 1141, in get_list
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;raise self.ResponseError(response.status, response.reason, body)
+<br />
+EC2ResponseError: EC2ResponseError: 401 Unauthorized
+<br />
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+<br />
+&lt;Response&gt;&lt;Errors&gt;&lt;Error&gt;&lt;Code&gt;AuthFailure&lt;/Code&gt;&lt;Message&gt;AWS was not able to validate the provided access credentials&lt;/Message&gt;&lt;/Error&gt;&lt;/Errors&gt;&lt;RequestID&gt;c91b02ff-1565-4b52-b3bb-12ae0ac0267d&lt;/RequestID&gt;&lt;/Response&gt;
+<br />
+<br /><br />Which didn't make sense to me, since I can run instances directly from aws with the credentials I used.  I read that you can use Ipython to check  that the credentials are valid, so I attempted to set up the Ipython plugin, then I got this error:
+<br />
+<br />$ starcluster start mycluster
+<br />
+StarCluster - (<a href="/cluster/">/cluster</a>) (v. 0.95)
+<br />
+Software Tools for Academics and Researchers (STAR)
+<br />
+Please submit bug reports to starcluster_at_mit.edu
+<br />
+<br />!!! ERROR - invalid node_instance_type specified: 't1.micro
+<br />
+[plugin ipcluster]
+<br />
+SETUP_CLASS=starcluster.plugins.ipcluster.IPCluster'
+<br />
+must be one of: m3.large, m1.small, c1.medium, cg1.4xlarge, t1.micro, cr1.8xlarge, c3.large, c3.xlarge, m1.large, hs1.8xlarge, c3.2xlarge, c3.4xlarge, hi1.4xlarge, i2.8xlarge, m2.2xlarge, m3.2xlarge, c1.xlarge, g2.2xlarge, m2.xlarge, c3.8xlarge, cc1.4xlarge, m1.medium, i2.xlarge, m3.medium, cc2.8xlarge, i2.2xlarge, i2.4xlarge, m1.xlarge, m2.4xlarge, m3.xlarge
+<br />
+<br />I don't know why the configuration is treating the plugin as an extension of the node instance, especially since I didn't use any ' ' when entering the information.
+<br />
+<br />Can anyone help with either error?  I will try playing around with it to find a fix, but I am a bit confused as to how to get the configuration to work.
+<br />
+<span id="received"><dfn>Received on</dfn> Sat Feb 15 2014 - 23:52:30 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2059.html#start2059">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2060.html" title="Next message in the list">Rayson Ho: "Re:  Configuration error?"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2058.html" title="Previous message in the list">Yugarshi Mondal: "Re:  addnode fails on bid"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="2060.html" title="Next message in this discussion thread">Rayson Ho: "Re:  Configuration error?"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="2060.html" title="Message sent in reply to this message">Rayson Ho: "Re:  Configuration error?"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2059" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2059" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2059" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2059" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

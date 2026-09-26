@@ -1,0 +1,257 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Ya Xue ((no email))" />
+<meta name="Subject" content="Cannot find a module" />
+<title>starcluster.mbox.out: Cannot find a module</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Cannot find a module</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Cannot find a module</h1>
+<!-- received="Mon Aug 18 15:49:53 2014" -->
+<!-- isoreceived="20140818194953" -->
+<!-- sent="Mon, 18 Aug 2014 15:49:49 -0400" -->
+<!-- isosent="20140818194949" -->
+<!-- name="Ya Xue" -->
+<!-- email="(no email)" -->
+<!-- subject="Cannot find a module" -->
+<!-- id="D3B85EB63C83354A87DAB0A49507D672F8C591C6_at_VMAIL4SERV.meas-inc.com" -->
+<!-- charset="us-ascii" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2315.html#start2315" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2315.html#options2">top</a>, <a href="2315.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2316.html" accesskey="d" title="Work: &quot;Re:  Cannot find a module&quot;">Next message</a> ]
+[ <a href="2314.html" title="John C. Earls: &quot;Re:  StarCluster with AWS IAM Role&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="2316.html" accesskey="t" title="Work: &quot;Re:  Cannot find a module&quot;">Next in thread</a> ]
+ [ <a href="2315.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2315" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2315" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2315" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2315" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Ya Xue &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Mon, 18 Aug 2014 15:49:49 -0400</span><br />
+</address>
+<br />
+Hi,
+<br />
+<br />I have a script that needs to import a module and the module name is given as an input parameter. It works well on a local machine but generates &quot;ImportError&quot; with StarCluster. Here is a simple script that can reproduce the error:
+<br />
+<br />error.py:
+<br />
+<br />def imp(fname):
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;if fname[-3:] == '.py':
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fname = fname[:-3]
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;exec('import ' + fname + ' as params')
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;print params.alpha
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;f = open(fname+'_alpha.txt', 'w')
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;f.write('%f' % params.alpha)
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;f.close()
+<br />
+<br />If I run it on the StarCluster master, no problem:
+<br />
+<br />In [1]: run error.py
+<br />
+<br />In [3]: imp('p1.py')
+<br />
+1
+<br />
+<br />However, on the cluster:
+<br />
+<br />In [4]:  from IPython.parallel import Client
+<br />
+<br />In [5]: c = Client()
+<br />
+<br />In [6]: v = c[:]
+<br />
+<br />In [7]: files = ['p1.py','p2.py','p3.py']
+<br />
+<br />In [8]: r = v.map(imp, files)
+<br />
+<br />In [9]: r[0]
+<br />
+[0:apply]:
+<br />
+---------------------------------------------------------------------------
+<br />
+ImportError                               Traceback (most recent call last)&lt;string&gt; in &lt;module&gt;()
+<br />
+/home/ya/Code/error.py in imp(fname)
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4     if fname[-3:] == '.py':
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5         fname = fname[:-3]
+<br />
+----&gt; 6     exec('import ' + fname + ' as params')
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7     print params.alpha
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8     f = open(fname+'_alpha.txt', 'w')
+<br />
+&lt;string&gt; in &lt;module&gt;()
+<br />
+ImportError: No module named p1
+<br />
+<br />Does anyone know how to fix it?
+<br />
+<br />Thanks,
+<br />
+Ya
+<br />
+<br />This email (including any attachments) may contain confidential information intended solely for acknowledged recipients. If you think you have received this information in error, please reply to the sender and delete all copies from your system. Please note that unauthorized use, disclosure, or further distribution of this information is prohibited by the sender. Note also that we may monitor email directed to or originating from our network. Thank you for your consideration and assistance. |
+<br />
+<br /><br /><br />
+<br /><div>
+<ul>
+<li>application/octet-stream attachment: <a href="/cluster/mlarchives/att-2315/p3.py">p3.py</a></li>
+</ul>
+<!-- attachment="p3.py" -->
+<ul>
+<li>application/octet-stream attachment: <a href="/cluster/mlarchives/att-2315/p2.py">p2.py</a></li>
+</ul>
+<!-- attachment="p2.py" -->
+<ul>
+<li>application/octet-stream attachment: <a href="/cluster/mlarchives/att-2315/p1.py">p1.py</a></li>
+</ul>
+<!-- attachment="p1.py" -->
+<ul>
+<li>application/octet-stream attachment: <a href="/cluster/mlarchives/att-2315/error.py">error.py</a></li>
+</ul>
+<!-- attachment="error.py" -->
+</div>
+<span id="received"><dfn>Received on</dfn> Mon Aug 18 2014 - 15:49:53 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2315.html#start2315">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2316.html" title="Next message in the list">Work: "Re:  Cannot find a module"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2314.html" title="Previous message in the list">John C. Earls: "Re:  StarCluster with AWS IAM Role"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="2316.html" title="Next message in this discussion thread">Work: "Re:  Cannot find a module"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="2316.html" title="Message sent in reply to this message">Work: "Re:  Cannot find a module"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2315" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2315" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2315" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2315" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

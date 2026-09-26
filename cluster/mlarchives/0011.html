@@ -1,0 +1,612 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Justin Riley ((no email))" />
+<meta name="Subject" content="Re: [Starcluster] How to update numpy / rebundle Starcluster" />
+<title>starcluster.mbox.out: Re: [Starcluster] How to update numpy / rebundle Starcluster</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Re: [Starcluster] How to update numpy / rebundle Starcluster</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Re: [Starcluster] How to update numpy / rebundle Starcluster</h1>
+<!-- received="Tue Dec  8 11:37:07 2009" -->
+<!-- isoreceived="20091208163707" -->
+<!-- sent="Tue, 08 Dec 2009 11:37:58 -0500" -->
+<!-- isosent="20091208163758" -->
+<!-- name="Justin Riley" -->
+<!-- email="(no email)" -->
+<!-- subject="Re: [Starcluster] How to update numpy / rebundle Starcluster" -->
+<!-- id="4B1E80E6.7010603_at_mit.edu" -->
+<!-- charset="ISO-8859-1" -->
+<!-- inreplyto="15e4667e0912022136u36fd6a21l3e42dc2b3d52a20_at_mail.gmail.com" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="0011.html#start11" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="0011.html#options2">top</a>, <a href="0011.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="0012.html" accesskey="d" title="Justin Riley: &quot;Re: [Starcluster] EC2 AMI creation&quot;">Next message</a> ]
+[ <a href="0010.html" title="Justin Riley: &quot;Re: [Starcluster] How to update numpy / rebundle Starcluster&quot;">Previous message</a> ]
+[ <a href="0007.html" title="Dan Yamins: &quot;[Starcluster] How to update numpy / rebundle Starcluster&quot;">Maybe in reply to</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg11" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg11" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg11" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg11" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Justin Riley &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Tue, 08 Dec 2009 11:37:58 -0500</span><br />
+</address>
+<br />
+-----BEGIN PGP SIGNED MESSAGE-----
+<br />
+Hash: SHA1
+<br />
+<br />Hi Dan,
+<br />
+<br />I'm cc'ing this list on this email, hope you don't mind :D
+<br />
+<br />Thanks for your suggestions concerning numpy/scipy/software suite on the
+<br />
+StarCluster base AMIs. I will certainly put them to good use and will
+<br />
+likely have you test the AMIs before I release. As of the first release
+<br />
+I did very little testing of scipy/numpy other than importing them and
+<br />
+running a few trivial calculations. This next time around I'll put more
+<br />
+of an effort in this space, especially since this will peak the interest
+<br />
+of the SciPY/NumPY community.
+<br />
+<br /><em class="quotelev1">&gt;     -- the python-drmaa module, which contains bindings for the drmaa
+</em><br />
+<em class="quotelev1">&gt; interface to the SGE engine  (much better than SGE's native interface,
+</em><br />
+<em class="quotelev1">&gt; in my opinion.  have you tried it).
+</em><br />
+<br />I am using the python-drmaa library for a couple projects and it is
+<br />
+extremely useful. I will certainly put this in for set of StarCluster AMIs.
+<br />
+<br /><em class="quotelev1">&gt; Will you include (optional) command-line parameters for things like
+</em><br />
+nodenumber and maybe root/master AMI?
+<br />
+<br />To answer your question about command-line parameters, the new version
+<br />
+of StarCluster now allows you to completely override anything that's in
+<br />
+the config besides the AWS credentials. Those most live either in a
+<br />
+config file or in environment variables. It's also now possible to
+<br />
+specify the config for StarCluster to use at command line. So you should
+<br />
+find you have considerably more flexibility in the next version ;)
+<br />
+<br /><em class="quotelev1">&gt; Great -- although I don't find the current EBS docs that cumbersome
+</em><br />
+<br />I will certainly leave the old EBS documentation for whoever's
+<br />
+interested but I will advertise more heavily the new createami action
+<br />
+that will automate the process of rebundling AMIs.
+<br />
+<br /><em class="quotelev1">&gt; Actually, what about having attaching multiple EBS volumes? ...
+</em><br />
+<br />Having the ability to mount multiple nfs'd EBS volumes on StarCluster is
+<br />
+a feature that I'd like to add, however, it may not make it for this
+<br />
+very next release. I'll add this as a feature request on github's issue
+<br />
+tracker. BTW, feel free to post suggestions/issues on the github issue
+<br />
+tracker for StarCluster:
+<br />
+<br /><a href="http://github.com/jtriley/StarCluster/issues">http://github.com/jtriley/StarCluster/issues</a>
+<br />
+<br />Thanks again for your interest in StarCluster!
+<br />
+<br />~Justin
+<br />
+<br />Dan Yamins wrote:
+<br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; I'm currently working on the next beta release of StarCluster that
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt;     should include multiple cluster support. 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Excellent.   That will be great.  
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt;  
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt;     With that in mind, I'll be
+</em><br />
+<em class="quotelev1">&gt;     updating the StarCluster base AMIs before then with the latest versions
+</em><br />
+<em class="quotelev1">&gt;     of ubuntu/sge/mpi/numpy/scipy/ipython etc and will likely ping you for
+</em><br />
+<em class="quotelev1">&gt;     help in testing things like atlas/lapack support in numpy/scipy, etc.
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; I'm more than happy to help.  Let me know ...  I definitely suggest
+</em><br />
+<em class="quotelev1">&gt; using numpy 1.4 when you make this upgrade, as it represents a major
+</em><br />
+<em class="quotelev1">&gt; advance over 1.3, especially in the bugfix arena ...
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Also, what about including:
+</em><br />
+<em class="quotelev1">&gt;     -- python2.6-dev, which is needed for building a lot of things
+</em><br />
+<em class="quotelev1">&gt;     -- apache2
+</em><br />
+<em class="quotelev1">&gt;     -- python-setuptools, for people who like to use easy_install
+</em><br />
+<em class="quotelev1">&gt;     -- the most recent version of the nose testing package, since it is
+</em><br />
+<em class="quotelev1">&gt; necessary to numpy and scipy test suites (what do you do now to test
+</em><br />
+<em class="quotelev1">&gt; your  scipy installations?)
+</em><br />
+<em class="quotelev1">&gt;     -- also, maybe consider creating symbolic links from your existing
+</em><br />
+<em class="quotelev1">&gt; lapack/atlas/blas files (which end with .3gf.0) to the &quot;standard names&quot;
+</em><br />
+<em class="quotelev1">&gt; as recognized by the numpy install (which don't have that ending), and
+</em><br />
+<em class="quotelev1">&gt; doing the analogous thing with amd and camd packages.  
+</em><br />
+<em class="quotelev1">&gt;     -- the python-drmaa module, which contains bindings for the drmaa
+</em><br />
+<em class="quotelev1">&gt; interface to the SGE engine  (much better than SGE's native interface,
+</em><br />
+<em class="quotelev1">&gt; in my opinion.  have you tried it).     The SGE build already has the
+</em><br />
+<em class="quotelev1">&gt; drmaa c library, it's just a matter of getting the pythin bindings.  
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; I've included at the end of this email brief summary of my  build notes
+</em><br />
+<em class="quotelev1">&gt; for the AMIs that I've bundled from yours.   Let me know if they're too
+</em><br />
+<em class="quotelev1">&gt; cryptic.
+</em><br />
+<em class="quotelev1">&gt;  
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt;     Also, I plan to add couchdb (with python bindings) and hadoop to the
+</em><br />
+<em class="quotelev1">&gt;     list of base software.
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt;  
+</em><br />
+<em class="quotelev1">&gt; Excellent.
+</em><br />
+<em class="quotelev1">&gt;  
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt;     2. Regarding rebundling the StarCluster AMI with your own software,
+</em><br />
+<em class="quotelev1">&gt;     there is a script, although not documented...I
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; I had no problem following the on-line instructions provided by Amazon
+</em><br />
+<em class="quotelev1">&gt; to do the rebundling ...  although it is a bit cumbersome.   I've
+</em><br />
+<em class="quotelev1">&gt; rebundled clean versions of your AMIs a few times, with a variety of
+</em><br />
+<em class="quotelev1">&gt; additional software, and have had generally good results. 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; I did have one problem when I tried to rebundle an AMI that I had myself
+</em><br />
+<em class="quotelev1">&gt; created by rebundling your 64bit AMI.  Instances of the resulting
+</em><br />
+<em class="quotelev1">&gt; re-re-bundled AMI wouldn't get through the starcluster initialization
+</em><br />
+<em class="quotelev1">&gt; process, stalling either when trying to mount EBS volumes or installing
+</em><br />
+<em class="quotelev1">&gt; the SGE. (I could start instances of the AMI directly with ec2-run, but
+</em><br />
+<em class="quotelev1">&gt; not via starcluster.)  I've found through a number of experiences with
+</em><br />
+<em class="quotelev1">&gt; other AMIs as well, then re-rebundling seems in general to be quite
+</em><br />
+<em class="quotelev1">&gt; problematic.   I have no idea why, though it always seems to have to do
+</em><br />
+<em class="quotelev1">&gt; with SSH or other startup things.   This problem is not _that_ crucial
+</em><br />
+<em class="quotelev1">&gt; since I rarely need to build new machines, but as of now, when I do have
+</em><br />
+<em class="quotelev1">&gt; to, I always start from scratch (meaning, a clean version of your AMI).
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt;     I will likely build this in as an action in the command line interface
+</em><br />
+<em class="quotelev1">&gt;     in the next version
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Excellent, that should make things simpler. 
+</em><br />
+<em class="quotelev1">&gt;  
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt;     StarCluster will switch to an action-based command line interface
+</em><br />
+<em class="quotelev1">&gt;     (similar to manage.py if you're familiar with django) rather than
+</em><br />
+<em class="quotelev1">&gt;     option-based:
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; This seems like a good design choice.   Will you include (optional)
+</em><br />
+<em class="quotelev1">&gt; command-line parameters for things like nodenumber and maybe root/master
+</em><br />
+<em class="quotelev1">&gt; AMI?   I find myself needing to start clusters of widely varying sizes
+</em><br />
+<em class="quotelev1">&gt; at different points, and varying AMIs (since I switch back and from
+</em><br />
+<em class="quotelev1">&gt; 32-bit to 64-bit depending on what has to be done).   
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt;     There should also appear an action for initializing a new EBS volume
+</em><br />
+<em class="quotelev1">&gt;     which will lessen the EBS volume docs on the web site.
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Great -- although I don't find the current EBS docs that cumbersome to
+</em><br />
+<em class="quotelev1">&gt; use ... I actually think that having them is helpful, because it
+</em><br />
+<em class="quotelev1">&gt; introduces you to the elasticfox tools and gives you a better idea of
+</em><br />
+<em class="quotelev1">&gt; how EBS works in general ... this is not to say that you shouldn't build
+</em><br />
+<em class="quotelev1">&gt; an EBS initialization action, but maybe don't take down those docs.
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Actually, what about having attaching multiple EBS volumes?  Configured
+</em><br />
+<em class="quotelev1">&gt; either in the config file or at the command line?   I'm rapidly
+</em><br />
+<em class="quotelev1">&gt; approaching the point where I need to have multiple TBs of drive space,
+</em><br />
+<em class="quotelev1">&gt; and would like to attach several EBS volumes to my cluster.
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt;     If you'd be interested in testing these (and others) new features,
+</em><br />
+<em class="quotelev1">&gt;     please let me know!
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Delighted to help if I can!  Just let me know how.
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Dan
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= BUILD NOTES -=-=-=-=-=-=-=-=-=-=-=-=
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; start with starcluster 32-bit or 64-bit base
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; sudo apt-get install python2.6-dev
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; get numpy 1.3
+</em><br />
+<em class="quotelev1">&gt;     set up site.cfg with /usr/lib and /usr/include as defaults
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt;     in /usr/lib:
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt;         ln -s libblas.so.3gf.0 libblas.so
+</em><br />
+<em class="quotelev1">&gt;         ln -s libcblas.so.3gf.0 libcblas.so
+</em><br />
+<em class="quotelev1">&gt;         ln -s libf77blas.so.3gf.0 libf77blas.so
+</em><br />
+<em class="quotelev1">&gt;         ln -s liblapack.so.3gf.0 liblapack.so
+</em><br />
+<em class="quotelev1">&gt;         ln -s liblapack_atlas.so.3gf.0 liblapack_atlas.so
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt;         ln -s libamd.so.3.2.0 libamd.so
+</em><br />
+<em class="quotelev1">&gt;         ln -s libcamd.so.3.2.0 libcamd.so
+</em><br />
+<em class="quotelev1">&gt;         ln -s libcolamd.so.3.2.0 libcolamd.so
+</em><br />
+<em class="quotelev1">&gt;         ln -s libccolamd.so.3.2.0 libccolamd.so
+</em><br />
+<em class="quotelev1">&gt;         ln -s libumfpack.so.3.2.0 libumfpack.so
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt;     in /usr/lib/atlas:
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt;         ln -s libblas.so.3gf.0 libblas.so
+</em><br />
+<em class="quotelev1">&gt;         ln -s liblapack_atlas.so.3gf.0 liblapack_atlas.so   
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; edit site.cfg in numpy, then build
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; sudo apt-get install python-setuptools
+</em><br />
+<em class="quotelev1">&gt; easy_install nose
+</em><br />
+<em class="quotelev1">&gt;     -- test numpy
+</em><br />
+<em class="quotelev1">&gt; beautifulsoup 3.0.7
+</em><br />
+<em class="quotelev1">&gt; pp and clientform and mechanize via easy_install
+</em><br />
+<em class="quotelev1">&gt; sudo apt-get install python-tk
+</em><br />
+<em class="quotelev1">&gt; installed PIL
+</em><br />
+<em class="quotelev1">&gt; sudo apt-get install r-base r-base-dev
+</em><br />
+<em class="quotelev1">&gt; easy_install rpy2
+</em><br />
+<em class="quotelev1">&gt; easy_install feedparser
+</em><br />
+<em class="quotelev1">&gt; sudo apt-get install libttf-dev
+</em><br />
+<em class="quotelev1">&gt; installed reportlab2.3
+</em><br />
+<em class="quotelev1">&gt; easy_installed html5lib
+</em><br />
+<em class="quotelev1">&gt; easy_install   pisa
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; sudo apt-get install apache2
+</em><br />
+<em class="quotelev1">&gt; sudo apt-get install mercurial
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; sudo apt-get install subversion
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; easy_install networkx
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; sudo apt-get install tk-dev
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; sudo apt-get install python-lxml
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; sudo apt-get install graphviz
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; I also use python-drmaa bindings for using the drmaa interface to SGE
+</em><br />
+<em class="quotelev1">&gt; ... but I run the egg from the user directory in /home as opposed to
+</em><br />
+<em class="quotelev1">&gt; installing it.
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt;  
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<br />-----BEGIN PGP SIGNATURE-----
+<br />
+Version: GnuPG v2.0.11 (GNU/Linux)
+<br />
+Comment: Using GnuPG with Mozilla - <a href="http://enigmail.mozdev.org">http://enigmail.mozdev.org</a>
+<br />
+<br />iEYEARECAAYFAksegOYACgkQ4llAkMfDcrmg0ACgi+BxfAAimcCbwnKupu3oSOcI
+<br />
+7I0AoIzYQrdTJOW5SPKpXbxN7kRGL3tl
+<br />
+=qTzy
+<br />
+-----END PGP SIGNATURE-----
+<br />
+<span id="received"><dfn>Received on</dfn> Tue Dec 08 2009 - 11:37:07 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="0011.html#start11">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="0012.html" title="Next message in the list">Justin Riley: "Re: [Starcluster] EC2 AMI creation"</a></li>
+<li><dfn>Previous message</dfn>: <a href="0010.html" title="Previous message in the list">Justin Riley: "Re: [Starcluster] How to update numpy / rebundle Starcluster"</a></li>
+<li><dfn>Maybe in reply to</dfn>: <a href="0007.html" title="Message to which this message replies">Dan Yamins: "[Starcluster] How to update numpy / rebundle Starcluster"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg11" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg11" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg11" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg11" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="David Erickson ((no email))" />
+<meta name="Subject" content="Error removing node from SGE" />
+<title>starcluster.mbox.out: Error removing node from SGE</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Error removing node from SGE</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Error removing node from SGE</h1>
+<!-- received="Sat Feb  2 13:58:24 2013" -->
+<!-- isoreceived="20130202185824" -->
+<!-- sent="Sat, 02 Feb 2013 10:56:32 -0800" -->
+<!-- isosent="20130202185632" -->
+<!-- name="David Erickson" -->
+<!-- email="(no email)" -->
+<!-- subject="Error removing node from SGE" -->
+<!-- id="510D6160.6030709_at_stanford.edu" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1632.html#start1632" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1632.html#options2">top</a>, <a href="1632.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1633.html" accesskey="d" title="Drausin Wulsin: &quot;bug report&quot;">Next message</a> ]
+[ <a href="1631.html" title="Sergio Mafra: &quot;Exceptions Msgs after launching a cluster.&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1632" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1632" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1632" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1632" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: David Erickson &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Sat, 02 Feb 2013 10:56:32 -0800</span><br />
+</address>
+<br />
+Hi All-
+<br />
+I am seeing the following in my logs when running loadbalancer and 
+<br />
+removing nodes:
+<br />
+<br />*** WARNING - Removing node013: i-dc5dd8ac 
+<br />
+(ec2-54-234-124-79.compute-1.amazonaws.com)
+<br />
+<em class="quotelev3"> &gt;&gt;&gt; Running plugin dnrc-cplex
+</em><br />
+<em class="quotelev3"> &gt;&gt;&gt; Removing node node013 (i-dc5dd8ac)...
+</em><br />
+<em class="quotelev3"> &gt;&gt;&gt; Removing node013 from known_hosts files
+</em><br />
+<em class="quotelev3"> &gt;&gt;&gt; Removing node013 from /etc/hosts
+</em><br />
+<em class="quotelev3"> &gt;&gt;&gt; Removing node013 from NFS
+</em><br />
+<em class="quotelev3"> &gt;&gt;&gt; Removing node013 from SGE
+</em><br />
+!!! ERROR - command 'source /etc/profile &amp;&amp; qconf -dconf node013' failed 
+<br />
+with status 1
+<br />
+<em class="quotelev3"> &gt;&gt;&gt; Updating SGE parallel environment 'orte'
+</em><br />
+19/19 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 
+<br />
+100%
+<br />
+<em class="quotelev3"> &gt;&gt;&gt; Adding parallel environment 'orte' to queue 'all.q'
+</em><br />
+<em class="quotelev3"> &gt;&gt;&gt; Removing node node013 (i-dc5dd8ac)...
+</em><br />
+<em class="quotelev3"> &gt;&gt;&gt; Removing node013 from known_hosts files
+</em><br />
+<em class="quotelev3"> &gt;&gt;&gt; Removing node013 from /etc/hosts
+</em><br />
+<em class="quotelev3"> &gt;&gt;&gt; Removing node013 from NFS
+</em><br />
+<em class="quotelev3"> &gt;&gt;&gt; Canceling spot request sir-d69dda14
+</em><br />
+<em class="quotelev3"> &gt;&gt;&gt; Terminating node: node013 (i-dc5dd8ac)
+</em><br />
+<br />It eventually removes the node, but that qconf -dconf command is always 
+<br />
+failing with status 1.
+<br />
+<br />Thanks,
+<br />
+David
+<br />
+<span id="received"><dfn>Received on</dfn> Sat Feb 02 2013 - 13:58:24 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1632.html#start1632">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1633.html" title="Next message in the list">Drausin Wulsin: "bug report"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1631.html" title="Previous message in the list">Sergio Mafra: "Exceptions Msgs after launching a cluster."</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1632" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1632" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1632" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1632" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

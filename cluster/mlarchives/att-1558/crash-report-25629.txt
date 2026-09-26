@@ -1,0 +1,151 @@
+---------- SYSTEM INFO ----------
+StarCluster: 0.9999
+Python: 2.6.8 (unknown, Sep 17 2012, 03:13:50)  [GCC 4.6.2 20111027 (Red Hat 4.6.2-1)]
+Platform: Linux-3.2.21-1.32.6.amzn1.x86_64-x86_64-with-glibc2.2.5
+boto: 2.6.0
+paramiko: 1.9.0
+Crypto: 2.6
+
+---------- CRASH DETAILS ----------
+Command: starcluster removenode cluster node001 node002 node003 node004
+
+2012-11-27 10:38:24,182 PID: 25629 config.py:551 - DEBUG - Loading config
+2012-11-27 10:38:24,182 PID: 25629 config.py:120 - DEBUG - Loading file: /home/ec2-user/.starcluster/config
+2012-11-27 10:38:24,185 PID: 25629 awsutils.py:55 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'proxy_user': None, 'proxy_pass': None, 'proxy_port': None, 'proxy': None, 'is_secure': True, 'path': '/', 'region': None, 'port': None}
+2012-11-27 10:38:24,844 PID: 25629 cluster.py:638 - DEBUG - existing nodes: {}
+2012-11-27 10:38:24,845 PID: 25629 cluster.py:646 - DEBUG - adding node i-bb277ac4 to self._nodes list
+2012-11-27 10:38:24,845 PID: 25629 cluster.py:646 - DEBUG - adding node i-73c09d0c to self._nodes list
+2012-11-27 10:38:24,845 PID: 25629 cluster.py:646 - DEBUG - adding node i-6fc09d10 to self._nodes list
+2012-11-27 10:38:24,845 PID: 25629 cluster.py:646 - DEBUG - adding node i-6dc09d12 to self._nodes list
+2012-11-27 10:38:24,845 PID: 25629 cluster.py:646 - DEBUG - adding node i-6bc09d14 to self._nodes list
+2012-11-27 10:38:24,846 PID: 25629 cluster.py:646 - DEBUG - adding node i-81c39efe to self._nodes list
+2012-11-27 10:38:24,846 PID: 25629 cluster.py:654 - DEBUG - returning self._nodes = [<Node: master (i-bb277ac4)>, <Node: node001 (i-73c09d0c)>, <Node: node001 (i-81c39efe)>, <Node: node002 (i-6fc09d10)>, <Node: node003 (i-6dc09d12)>, <Node: node004 (i-6bc09d14)>]
+2012-11-27 10:38:25,129 PID: 25629 cluster.py:638 - DEBUG - existing nodes: {u'i-bb277ac4': <Node: master (i-bb277ac4)>, u'i-81c39efe': <Node: node001 (i-81c39efe)>, u'i-6dc09d12': <Node: node003 (i-6dc09d12)>, u'i-73c09d0c': <Node: node001 (i-73c09d0c)>, u'i-6bc09d14': <Node: node004 (i-6bc09d14)>, u'i-6fc09d10': <Node: node002 (i-6fc09d10)>}
+2012-11-27 10:38:25,129 PID: 25629 cluster.py:641 - DEBUG - updating existing node i-bb277ac4 in self._nodes
+2012-11-27 10:38:25,129 PID: 25629 cluster.py:641 - DEBUG - updating existing node i-73c09d0c in self._nodes
+2012-11-27 10:38:25,129 PID: 25629 cluster.py:641 - DEBUG - updating existing node i-6fc09d10 in self._nodes
+2012-11-27 10:38:25,129 PID: 25629 cluster.py:641 - DEBUG - updating existing node i-6dc09d12 in self._nodes
+2012-11-27 10:38:25,130 PID: 25629 cluster.py:641 - DEBUG - updating existing node i-6bc09d14 in self._nodes
+2012-11-27 10:38:25,130 PID: 25629 cluster.py:641 - DEBUG - updating existing node i-81c39efe in self._nodes
+2012-11-27 10:38:25,130 PID: 25629 cluster.py:654 - DEBUG - returning self._nodes = [<Node: master (i-bb277ac4)>, <Node: node001 (i-73c09d0c)>, <Node: node001 (i-81c39efe)>, <Node: node002 (i-6fc09d10)>, <Node: node003 (i-6dc09d12)>, <Node: node004 (i-6bc09d14)>]
+2012-11-27 10:38:25,206 PID: 25629 cluster.py:638 - DEBUG - existing nodes: {u'i-bb277ac4': <Node: master (i-bb277ac4)>, u'i-81c39efe': <Node: node001 (i-81c39efe)>, u'i-6dc09d12': <Node: node003 (i-6dc09d12)>, u'i-73c09d0c': <Node: node001 (i-73c09d0c)>, u'i-6bc09d14': <Node: node004 (i-6bc09d14)>, u'i-6fc09d10': <Node: node002 (i-6fc09d10)>}
+2012-11-27 10:38:25,206 PID: 25629 cluster.py:641 - DEBUG - updating existing node i-bb277ac4 in self._nodes
+2012-11-27 10:38:25,206 PID: 25629 cluster.py:641 - DEBUG - updating existing node i-73c09d0c in self._nodes
+2012-11-27 10:38:25,207 PID: 25629 cluster.py:641 - DEBUG - updating existing node i-6fc09d10 in self._nodes
+2012-11-27 10:38:25,207 PID: 25629 cluster.py:641 - DEBUG - updating existing node i-6dc09d12 in self._nodes
+2012-11-27 10:38:25,207 PID: 25629 cluster.py:641 - DEBUG - updating existing node i-6bc09d14 in self._nodes
+2012-11-27 10:38:25,207 PID: 25629 cluster.py:641 - DEBUG - updating existing node i-81c39efe in self._nodes
+2012-11-27 10:38:25,207 PID: 25629 cluster.py:654 - DEBUG - returning self._nodes = [<Node: master (i-bb277ac4)>, <Node: node001 (i-73c09d0c)>, <Node: node001 (i-81c39efe)>, <Node: node002 (i-6fc09d10)>, <Node: node003 (i-6dc09d12)>, <Node: node004 (i-6bc09d14)>]
+2012-11-27 10:38:25,208 PID: 25629 sge.py:158 - INFO - Removing node001 from SGE
+2012-11-27 10:38:25,208 PID: 25629 __init__.py:67 - DEBUG - loading private key /home/ec2-user/.ssh/rsa-11702
+2012-11-27 10:38:25,209 PID: 25629 __init__.py:159 - DEBUG - Using private key /home/ec2-user/.ssh/rsa-11702 (rsa)
+2012-11-27 10:38:25,209 PID: 25629 __init__.py:89 - DEBUG - connecting to host ec2-54-242-102-192.compute-1.amazonaws.com on port 22 as user root
+2012-11-27 10:38:26,577 PID: 25629 __init__.py:178 - DEBUG - creating sftp connection
+2012-11-27 10:38:26,703 PID: 25629 __init__.py:519 - DEBUG - executing remote command: source /etc/profile && qconf -dattr hostgroup hostlist node001 @allhosts
+2012-11-27 10:38:26,800 PID: 25629 __init__.py:543 - DEBUG - output of 'source /etc/profile && qconf -dattr hostgroup hostlist node001 @allhosts':
+root@master modified "@allhosts" in host group list
+2012-11-27 10:38:26,804 PID: 25629 __init__.py:519 - DEBUG - executing remote command: source /etc/profile && qconf -purge queue slots all.q@node001
+2012-11-27 10:38:26,943 PID: 25629 __init__.py:543 - DEBUG - output of 'source /etc/profile && qconf -purge queue slots all.q@node001':
+root@master modified "all.q" in cluster queue list
+2012-11-27 10:38:26,947 PID: 25629 __init__.py:519 - DEBUG - executing remote command: source /etc/profile && qconf -dconf node001
+2012-11-27 10:38:27,083 PID: 25629 __init__.py:543 - DEBUG - output of 'source /etc/profile && qconf -dconf node001':
+root@master removed "node001" from configuration list
+2012-11-27 10:38:27,087 PID: 25629 __init__.py:519 - DEBUG - executing remote command: source /etc/profile && qconf -de node001
+2012-11-27 10:38:27,223 PID: 25629 __init__.py:543 - DEBUG - output of 'source /etc/profile && qconf -de node001':
+root@master removed "node001" from execution host list
+2012-11-27 10:38:27,223 PID: 25629 __init__.py:67 - DEBUG - loading private key /home/ec2-user/.ssh/rsa-11702
+2012-11-27 10:38:27,224 PID: 25629 __init__.py:159 - DEBUG - Using private key /home/ec2-user/.ssh/rsa-11702 (rsa)
+2012-11-27 10:38:27,224 PID: 25629 __init__.py:89 - DEBUG - connecting to host ec2-107-22-93-200.compute-1.amazonaws.com on port 22 as user root
+2012-11-27 10:38:28,619 PID: 25629 __init__.py:178 - DEBUG - creating sftp connection
+2012-11-27 10:38:28,708 PID: 25629 __init__.py:519 - DEBUG - executing remote command: source /etc/profile && pkill -9 sge_execd
+2012-11-27 10:38:28,757 PID: 25629 __init__.py:543 - DEBUG - output of 'source /etc/profile && pkill -9 sge_execd':
+
+2012-11-27 10:38:28,856 PID: 25629 sge.py:47 - INFO - Updating SGE parallel environment 'orte'
+2012-11-27 10:38:28,861 PID: 25629 threadpool.py:135 - DEBUG - unfinished_tasks = 4
+2012-11-27 10:38:28,862 PID: 25629 __init__.py:67 - DEBUG - loading private key /home/ec2-user/.ssh/rsa-11702
+2012-11-27 10:38:28,863 PID: 25629 __init__.py:159 - DEBUG - Using private key /home/ec2-user/.ssh/rsa-11702 (rsa)
+2012-11-27 10:38:28,863 PID: 25629 __init__.py:89 - DEBUG - connecting to host ec2-184-73-134-94.compute-1.amazonaws.com on port 22 as user root
+2012-11-27 10:38:28,864 PID: 25629 __init__.py:67 - DEBUG - loading private key /home/ec2-user/.ssh/rsa-11702
+2012-11-27 10:38:28,865 PID: 25629 __init__.py:159 - DEBUG - Using private key /home/ec2-user/.ssh/rsa-11702 (rsa)
+2012-11-27 10:38:28,865 PID: 25629 __init__.py:89 - DEBUG - connecting to host ec2-184-73-39-237.compute-1.amazonaws.com on port 22 as user root
+2012-11-27 10:38:28,865 PID: 25629 __init__.py:67 - DEBUG - loading private key /home/ec2-user/.ssh/rsa-11702
+2012-11-27 10:38:28,866 PID: 25629 __init__.py:159 - DEBUG - Using private key /home/ec2-user/.ssh/rsa-11702 (rsa)
+2012-11-27 10:38:28,866 PID: 25629 __init__.py:89 - DEBUG - connecting to host ec2-107-22-120-29.compute-1.amazonaws.com on port 22 as user root
+2012-11-27 10:38:29,132 PID: 25629 __init__.py:519 - DEBUG - executing remote command: source /etc/profile && cat /proc/cpuinfo | grep processor | wc -l
+2012-11-27 10:38:29,418 PID: 25629 __init__.py:543 - DEBUG - output of 'source /etc/profile && cat /proc/cpuinfo | grep processor | wc -l':
+32
+2012-11-27 10:38:32,597 PID: 25629 threadpool.py:135 - DEBUG - unfinished_tasks = 3
+2012-11-27 10:38:33,199 PID: 25629 __init__.py:178 - DEBUG - creating sftp connection
+2012-11-27 10:38:33,205 PID: 25629 __init__.py:178 - DEBUG - creating sftp connection
+2012-11-27 10:38:33,206 PID: 25629 __init__.py:178 - DEBUG - creating sftp connection
+2012-11-27 10:38:33,275 PID: 25629 __init__.py:519 - DEBUG - executing remote command: source /etc/profile && cat /proc/cpuinfo | grep processor | wc -l
+2012-11-27 10:38:33,277 PID: 25629 __init__.py:519 - DEBUG - executing remote command: source /etc/profile && cat /proc/cpuinfo | grep processor | wc -l
+2012-11-27 10:38:33,278 PID: 25629 __init__.py:519 - DEBUG - executing remote command: source /etc/profile && cat /proc/cpuinfo | grep processor | wc -l
+2012-11-27 10:38:33,320 PID: 25629 __init__.py:543 - DEBUG - output of 'source /etc/profile && cat /proc/cpuinfo | grep processor | wc -l':
+32
+2012-11-27 10:38:33,322 PID: 25629 __init__.py:543 - DEBUG - output of 'source /etc/profile && cat /proc/cpuinfo | grep processor | wc -l':
+32
+2012-11-27 10:38:33,324 PID: 25629 __init__.py:543 - DEBUG - output of 'source /etc/profile && cat /proc/cpuinfo | grep processor | wc -l':
+32
+2012-11-27 10:38:33,610 PID: 25629 __init__.py:519 - DEBUG - executing remote command: source /etc/profile && qconf -Mp /tmp/pe.txt
+2012-11-27 10:38:33,708 PID: 25629 __init__.py:543 - DEBUG - output of 'source /etc/profile && qconf -Mp /tmp/pe.txt':
+root@master modified "orte" in parallel environment list
+2012-11-27 10:38:33,708 PID: 25629 sge.py:60 - INFO - Adding parallel environment 'orte' to queue 'all.q'
+2012-11-27 10:38:33,773 PID: 25629 __init__.py:519 - DEBUG - executing remote command: source /etc/profile && qconf -mattr queue pe_list "orte" all.q
+2012-11-27 10:38:33,870 PID: 25629 __init__.py:543 - DEBUG - output of 'source /etc/profile && qconf -mattr queue pe_list "orte" all.q':
+root@master modified "all.q" in cluster queue list
+2012-11-27 10:38:33,922 PID: 25629 __init__.py:277 - DEBUG - new /etc/exports after removing regex (node001) matches:
+
+2012-11-27 10:38:33,931 PID: 25629 __init__.py:519 - DEBUG - executing remote command: source /etc/profile && exportfs -fra
+2012-11-27 10:38:34,019 PID: 25629 __init__.py:543 - DEBUG - output of 'source /etc/profile && exportfs -fra':
+
+2012-11-27 10:38:34,090 PID: 25629 cluster.py:638 - DEBUG - existing nodes: {u'i-bb277ac4': <Node: master (i-bb277ac4)>, u'i-81c39efe': <Node: node001 (i-81c39efe)>, u'i-6dc09d12': <Node: node003 (i-6dc09d12)>, u'i-73c09d0c': <Node: node001 (i-73c09d0c)>, u'i-6bc09d14': <Node: node004 (i-6bc09d14)>, u'i-6fc09d10': <Node: node002 (i-6fc09d10)>}
+2012-11-27 10:38:34,090 PID: 25629 cluster.py:641 - DEBUG - updating existing node i-bb277ac4 in self._nodes
+2012-11-27 10:38:34,090 PID: 25629 cluster.py:641 - DEBUG - updating existing node i-73c09d0c in self._nodes
+2012-11-27 10:38:34,090 PID: 25629 cluster.py:641 - DEBUG - updating existing node i-6fc09d10 in self._nodes
+2012-11-27 10:38:34,091 PID: 25629 cluster.py:641 - DEBUG - updating existing node i-6dc09d12 in self._nodes
+2012-11-27 10:38:34,091 PID: 25629 cluster.py:641 - DEBUG - updating existing node i-6bc09d14 in self._nodes
+2012-11-27 10:38:34,091 PID: 25629 cluster.py:641 - DEBUG - updating existing node i-81c39efe in self._nodes
+2012-11-27 10:38:34,091 PID: 25629 cluster.py:654 - DEBUG - returning self._nodes = [<Node: master (i-bb277ac4)>, <Node: node001 (i-73c09d0c)>, <Node: node001 (i-81c39efe)>, <Node: node002 (i-6fc09d10)>, <Node: node003 (i-6dc09d12)>, <Node: node004 (i-6bc09d14)>]
+2012-11-27 10:38:34,091 PID: 25629 clustersetup.py:375 - INFO - Removing node node001 (i-73c09d0c)...
+2012-11-27 10:38:34,092 PID: 25629 clustersetup.py:376 - INFO - Removing node001 from known_hosts files
+2012-11-27 10:38:34,159 PID: 25629 __init__.py:277 - DEBUG - new /root/.ssh/known_hosts after removing regex (node001|ip-10-58-29-88.ec2.internal|ip-10-58-29-88|ec2-107-22-93-200.compute-1.amazonaws.com) matches:
+ip-10-58-33-175.ec2.internal,10.58.33.175 ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAvKDZ/0RGKk0R2bQugb9xBASmRl6KAqDpq+WvESqG8IGd2gZuvmh66WfK5gcaGb7CSdkK9qrh28vYrsD/fxYWht2p6NzY4ZPZ/4HXulCgvFb6i27Rnk98YW8ySuRSbgwUS/1W03xY0YSx6A5PFANBonEWhs7R6R3Hk2Q7CgfNxq4iGGKxzh4lVscajAtAmJZbsm2xfc/X4wKeJqFiz5yUtiErBVfHnwJoj3MNFr2YUChpTc0KcKYJ22hPSLPZGpq4ereNQWSPdc/ZZFfUDh/7xgQsCYhA9RPu1WkRwcQvGRm9DYZ5tL+dtWiRfLjdqdivqiv+fAwENtjvU9rvY9gziQ==
+ec2-54-242-102-192.compute-1.amazonaws.com,54.242.102.192 ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAvKDZ/0RGKk0R2bQugb9xBASmRl6KAqDpq+WvESqG8IGd2gZuvmh66WfK5gcaGb7CSdkK9qrh28vYrsD/fxYWht2p6NzY4ZPZ/4HXulCgvFb6i27Rnk98YW8ySuRSbgwUS/1W03xY0YSx6A5PFANBonEWhs7R6R3Hk2Q7CgfNxq4iGGKxzh4lVscajAtAmJZbsm2xfc/X4wKeJqFiz5yUtiErBVfHnwJoj3MNFr2YUChpTc0KcKYJ22hPSLPZGpq4ereNQWSPdc/ZZFfUDh/7xgQsCYhA9RPu1WkRwcQvGRm9DYZ5tL+dtWiRfLjdqdivqiv+fAwENtjvU9rvY9gziQ==
+master,10.58.33.175 ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAvKDZ/0RGKk0R2bQugb9xBASmRl6KAqDpq+WvESqG8IGd2gZuvmh66WfK5gcaGb7CSdkK9qrh28vYrsD/fxYWht2p6NzY4ZPZ/4HXulCgvFb6i27Rnk98YW8ySuRSbgwUS/1W03xY0YSx6A5PFANBonEWhs7R6R3Hk2Q7CgfNxq4iGGKxzh4lVscajAtAmJZbsm2xfc/X4wKeJqFiz5yUtiErBVfHnwJoj3MNFr2YUChpTc0KcKYJ22hPSLPZGpq4ereNQWSPdc/ZZFfUDh/7xgQsCYhA9RPu1WkRwcQvGRm9DYZ5tL+dtWiRfLjdqdivqiv+fAwENtjvU9rvY9gziQ==
+ip-10-58-33-175,10.58.33.175 ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAvKDZ/0RGKk0R2bQugb9xBASmRl6KAqDpq+WvESqG8IGd2gZuvmh66WfK5gcaGb7CSdkK9qrh28vYrsD/fxYWht2p6NzY4ZPZ/4HXulCgvFb6i27Rnk98YW8ySuRSbgwUS/1W03xY0YSx6A5PFANBonEWhs7R6R3Hk2Q7CgfNxq4iGGKxzh4lVscajAtAmJZbsm2xfc/X4wKeJqFiz5yUtiErBVfHnwJoj3MNFr2YUChpTc0KcKYJ22hPSLPZGpq4ereNQWSPdc/ZZFfUDh/7xgQsCYhA9RPu1WkRwcQvGRm9DYZ5tL+dtWiRfLjdqdivqiv+fAwENtjvU9rvY9gziQ==
+ip-10-58-33-175.ec2.internal,10.58.33.175 ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAvKDZ/0RGKk0R2bQugb9xBASmRl6KAqDpq+WvESqG8IGd2gZuvmh66WfK5gcaGb7CSdkK9qrh28vYrsD/fxYWht2p6NzY4ZPZ/4HXulCgvFb6i27Rnk98YW8ySuRSbgwUS/1W03xY0YSx6A5PFANBonEWhs7R6R3Hk2Q7CgfNxq4iGGKxzh4lVscajAtAmJZbsm2xfc/X4wKeJqFiz5yUtiErBVfHnwJoj3MNFr2YUChpTc0KcKYJ22hPSLPZGpq4ereNQWSPdc/ZZFfUDh/7xgQsCYhA9RPu1WkRwcQvGRm9DYZ5tL+dtWiRfLjdqdivqiv+fAwENtjvU9rvY9gziQ==
+ec2-54-242-102-192.compute-1.amazonaws.com,54.242.102.192 ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAvKDZ/0RGKk0R2bQugb9xBASmRl6KAqDpq+WvESqG8IGd2gZuvmh66WfK5gcaGb7CSdkK9qrh28vYrsD/fxYWht2p6NzY4ZPZ/4HXulCgvFb6i27Rnk98YW8ySuRSbgwUS/1W03xY0YSx6A5PFANBonEWhs7R6R3Hk2Q7CgfNxq4iGGKxzh4lVscajAtAmJZbsm2xfc/X4wKeJqFiz5yUtiErBVfHnwJoj3MNFr2YUChpTc0KcKYJ22hPSLPZGpq4ereNQWSPdc/ZZFfUDh/7xgQsCYhA9RPu1WkRwcQvGRm9DYZ5tL+dtWiRfLjdqdivqiv+fAwENtjvU9rvY9gziQ==
+master,10.58.33.175 ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAvKDZ/0RGKk0R2bQugb9xBASmRl6KAqDpq+WvESqG8IGd2gZuvmh66WfK5gcaGb7CSdkK9qrh28vYrsD/fxYWht2p6NzY4ZPZ/4HXulCgvFb6i27Rnk98YW8ySuRSbgwUS/1W03xY0YSx6A5PFANBonEWhs7R6R3Hk2Q7CgfNxq4iGGKxzh4lVscajAtAmJZbsm2xfc/X4wKeJqFiz5yUtiErBVfHnwJoj3MNFr2YUChpTc0KcKYJ22hPSLPZGpq4ereNQWSPdc/ZZFfUDh/7xgQsCYhA9RPu1WkRwcQvGRm9DYZ5tL+dtWiRfLjdqdivqiv+fAwENtjvU9rvY9gziQ==
+ip-10-58-33-175,10.58.33.175 ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAvKDZ/0RGKk0R2bQugb9xBASmRl6KAqDpq+WvESqG8IGd2gZuvmh66WfK5gcaGb7CSdkK9qrh28vYrsD/fxYWht2p6NzY4ZPZ/4HXulCgvFb6i27Rnk98YW8ySuRSbgwUS/1W03xY0YSx6A5PFANBonEWhs7R6R3Hk2Q7CgfNxq4iGGKxzh4lVscajAtAmJZbsm2xfc/X4wKeJqFiz5yUtiErBVfHnwJoj3MNFr2YUChpTc0KcKYJ22hPSLPZGpq4ereNQWSPdc/ZZFfUDh/7xgQsCYhA9RPu1WkRwcQvGRm9DYZ5tL+dtWiRfLjdqdivqiv+fAwENtjvU9rvY9gziQ==
+
+2012-11-27 10:38:34,205 PID: 25629 __init__.py:277 - DEBUG - new /home/admin/.ssh/known_hosts after removing regex (node001|ip-10-58-29-88.ec2.internal|ip-10-58-29-88|ec2-107-22-93-200.compute-1.amazonaws.com) matches:
+ip-10-58-33-175.ec2.internal,10.58.33.175 ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAvKDZ/0RGKk0R2bQugb9xBASmRl6KAqDpq+WvESqG8IGd2gZuvmh66WfK5gcaGb7CSdkK9qrh28vYrsD/fxYWht2p6NzY4ZPZ/4HXulCgvFb6i27Rnk98YW8ySuRSbgwUS/1W03xY0YSx6A5PFANBonEWhs7R6R3Hk2Q7CgfNxq4iGGKxzh4lVscajAtAmJZbsm2xfc/X4wKeJqFiz5yUtiErBVfHnwJoj3MNFr2YUChpTc0KcKYJ22hPSLPZGpq4ereNQWSPdc/ZZFfUDh/7xgQsCYhA9RPu1WkRwcQvGRm9DYZ5tL+dtWiRfLjdqdivqiv+fAwENtjvU9rvY9gziQ==
+ec2-54-242-102-192.compute-1.amazonaws.com,54.242.102.192 ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAvKDZ/0RGKk0R2bQugb9xBASmRl6KAqDpq+WvESqG8IGd2gZuvmh66WfK5gcaGb7CSdkK9qrh28vYrsD/fxYWht2p6NzY4ZPZ/4HXulCgvFb6i27Rnk98YW8ySuRSbgwUS/1W03xY0YSx6A5PFANBonEWhs7R6R3Hk2Q7CgfNxq4iGGKxzh4lVscajAtAmJZbsm2xfc/X4wKeJqFiz5yUtiErBVfHnwJoj3MNFr2YUChpTc0KcKYJ22hPSLPZGpq4ereNQWSPdc/ZZFfUDh/7xgQsCYhA9RPu1WkRwcQvGRm9DYZ5tL+dtWiRfLjdqdivqiv+fAwENtjvU9rvY9gziQ==
+master,10.58.33.175 ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAvKDZ/0RGKk0R2bQugb9xBASmRl6KAqDpq+WvESqG8IGd2gZuvmh66WfK5gcaGb7CSdkK9qrh28vYrsD/fxYWht2p6NzY4ZPZ/4HXulCgvFb6i27Rnk98YW8ySuRSbgwUS/1W03xY0YSx6A5PFANBonEWhs7R6R3Hk2Q7CgfNxq4iGGKxzh4lVscajAtAmJZbsm2xfc/X4wKeJqFiz5yUtiErBVfHnwJoj3MNFr2YUChpTc0KcKYJ22hPSLPZGpq4ereNQWSPdc/ZZFfUDh/7xgQsCYhA9RPu1WkRwcQvGRm9DYZ5tL+dtWiRfLjdqdivqiv+fAwENtjvU9rvY9gziQ==
+ip-10-58-33-175,10.58.33.175 ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAvKDZ/0RGKk0R2bQugb9xBASmRl6KAqDpq+WvESqG8IGd2gZuvmh66WfK5gcaGb7CSdkK9qrh28vYrsD/fxYWht2p6NzY4ZPZ/4HXulCgvFb6i27Rnk98YW8ySuRSbgwUS/1W03xY0YSx6A5PFANBonEWhs7R6R3Hk2Q7CgfNxq4iGGKxzh4lVscajAtAmJZbsm2xfc/X4wKeJqFiz5yUtiErBVfHnwJoj3MNFr2YUChpTc0KcKYJ22hPSLPZGpq4ereNQWSPdc/ZZFfUDh/7xgQsCYhA9RPu1WkRwcQvGRm9DYZ5tL+dtWiRfLjdqdivqiv+fAwENtjvU9rvY9gziQ==
+
+2012-11-27 10:38:34,219 PID: 25629 __init__.py:67 - DEBUG - loading private key /home/ec2-user/.ssh/rsa-11702
+2012-11-27 10:38:34,220 PID: 25629 __init__.py:159 - DEBUG - Using private key /home/ec2-user/.ssh/rsa-11702 (rsa)
+2012-11-27 10:38:34,221 PID: 25629 __init__.py:178 - DEBUG - creating sftp connection
+2012-11-27 10:38:34,221 PID: 25629 __init__.py:89 - DEBUG - connecting to host ec2-107-21-170-96.compute-1.amazonaws.com on port 22 as user root
+2012-11-27 10:38:35,597 PID: 25629 __init__.py:178 - DEBUG - creating sftp connection
+2012-11-27 10:38:35,690 PID: 25629 cli.py:288 - ERROR - Unhandled exception occured
+Traceback (most recent call last):
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/cli.py", line 257, in main
+    sc.execute(args)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/commands/removenode.py", line 46, in execute
+    self.cm.remove_node(tag, alias, terminate=self.opts.terminate)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/cluster.py", line 171, in remove_node
+    cl.remove_node(n, terminate=terminate)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/cluster.py", line 841, in remove_node
+    return self.remove_nodes([node], terminate=terminate)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/cluster.py", line 863, in remove_nodes
+    self.cluster_shell, self.volumes)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/clustersetup.py", line 377, in on_remove_node
+    self._remove_from_known_hosts(node)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/clustersetup.py", line 367, in _remove_from_known_hosts
+    n.remove_from_known_hosts(self._user, [node])
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/node.py", line 506, in remove_from_known_hosts
+    known_hosts_file = posixpath.join(user.pw_dir, '.ssh', 'known_hosts')
+AttributeError: 'NoneType' object has no attribute 'pw_dir'

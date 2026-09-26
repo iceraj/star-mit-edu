@@ -1,0 +1,962 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Badr Albanna ((no email))" />
+<meta name="Subject" content="error using ipcluster plugin" />
+<title>starcluster.mbox.out: error using ipcluster plugin</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">error using ipcluster plugin</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>error using ipcluster plugin</h1>
+<!-- received="Wed Apr 23 14:40:29 2014" -->
+<!-- isoreceived="20140423184029" -->
+<!-- sent="Wed, 23 Apr 2014 14:40:24 -0400" -->
+<!-- isosent="20140423184024" -->
+<!-- name="Badr Albanna" -->
+<!-- email="(no email)" -->
+<!-- subject="error using ipcluster plugin" -->
+<!-- id="497AB7AC-AE2D-4870-9B66-B4FC8DE47E35_at_gmail.com" -->
+<!-- charset="windows-1252" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2164.html#start2164" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2164.html#options2">top</a>, <a href="2164.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2165.html" accesskey="d" title="Lilley, John F.: &quot;Launch failure in 0.95.4 w/no spot and different master/compute set&quot;">Next message</a> ]
+[ <a href="2163.html" title="Gary Waters: &quot;New Plugin&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2164" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2164" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2164" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2164" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Badr Albanna &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Wed, 23 Apr 2014 14:40:24 -0400</span><br />
+</address>
+<br />
+Hi,
+<br />
+<br />I am on a mac using the anaconda distribution.  I recently had to reinstall star cluster and anaconda and now when I try and start a cluster I receive a &quot;IOError: [Errno 13] Permission denied” from paramiko (see attached crash report).  I’ve tried reinstalling anaconda, starcluster,  and paramiko with no success.  Any suggestions would be much appreciated as I’m under a deadline!
+<br />
+<br />Many Thanks,
+<br />
+Badr Albanna
+<br />
+<br /><br />&nbsp;
+<br />
+<br />
+---------- SYSTEM INFO ----------
+<br />
+StarCluster: 0.95.4
+<br />
+Python: 2.7.6 |Anaconda 1.9.2 (x86_64)| (default, Jan 10 2014, 11:23:15)  [GCC 4.0.1 (Apple Inc. build 5493)]
+<br />
+Platform: Darwin-13.1.0-x86_64-i386-64bit
+<br />
+boto: 2.27.0
+<br />
+paramiko: 1.13.0
+<br />
+Crypto: 2.6.1
+<br />
+<br />---------- CRASH DETAILS ----------
+<br />
+Command: starcluster start -c slow -s 1 TEST
+<br />
+<br />2014-04-23 13:47:38,382 PID: 460 config.py:567 - DEBUG - Loading config
+<br />
+2014-04-23 13:47:38,382 PID: 460 config.py:138 - DEBUG - Loading file: /Users/badr/.starcluster/config
+<br />
+2014-04-23 13:47:38,388 PID: 460 awsutils.py:75 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'proxy_user': None, 'proxy_pass': None, 'proxy_port': None, 'proxy': None, 'is_secure': True, 'path': '/', 'region': None, 'validate_certs': True, 'port': None}
+<br />
+2014-04-23 13:47:38,723 PID: 460 update_pip_pkgs.py:7 - DEBUG - pkg_to_install = tornado
+<br />
+2014-04-23 13:47:38,724 PID: 460 update_pip_pkgs.py:7 - DEBUG - pkg_to_install = ipython
+<br />
+2014-04-23 13:47:38,724 PID: 460 add_pkgs.py:7 - DEBUG - pkg_to_install = python-h5py
+<br />
+2014-04-23 13:47:38,725 PID: 460 cluster.py:1801 - INFO - Validating cluster template settings...
+<br />
+2014-04-23 13:47:39,228 PID: 460 sshutils.py:859 - DEBUG - rsa private key fingerprint (/Users/badr/.ssh/EC2key.rsa): d8:90:aa:a2:11:f8:90:83:98:db:31:8f:68:e5:5e:d9:34:7f:8a:36
+<br />
+2014-04-23 13:47:39,319 PID: 460 cluster.py:759 - DEBUG - existing nodes: {}
+<br />
+2014-04-23 13:47:39,320 PID: 460 cluster.py:775 - DEBUG - returning self._nodes = []
+<br />
+2014-04-23 13:47:39,619 PID: 460 cluster.py:911 - DEBUG - Userdata size in KB: 0.67
+<br />
+2014-04-23 13:47:39,619 PID: 460 cluster.py:1819 - INFO - Cluster template settings are valid
+<br />
+2014-04-23 13:47:39,619 PID: 460 cluster.py:1639 - INFO - Starting cluster...
+<br />
+2014-04-23 13:47:39,619 PID: 460 cluster.py:1157 - INFO - Launching a 1-node cluster...
+<br />
+2014-04-23 13:47:39,620 PID: 460 cluster.py:1182 - DEBUG - Launching master (ami: ami-765b3e1f, type: t1.micro)
+<br />
+2014-04-23 13:47:39,727 PID: 460 awsutils.py:295 - INFO - Creating security group _at_sc-TEST...
+<br />
+2014-04-23 13:47:41,644 PID: 460 cluster.py:911 - DEBUG - Userdata size in KB: 0.67
+<br />
+2014-04-23 13:47:41,747 PID: 460 cluster.py:759 - DEBUG - existing nodes: {}
+<br />
+2014-04-23 13:47:41,747 PID: 460 cluster.py:775 - DEBUG - returning self._nodes = []
+<br />
+2014-04-23 13:47:41,858 PID: 460 awsutils.py:495 - DEBUG - Forcing delete_on_termination for AMI: ami-765b3e1f
+<br />
+2014-04-23 13:47:42,422 PID: 460 cluster.py:968 - INFO - Reservation:r-360ec316
+<br />
+2014-04-23 13:47:42,423 PID: 460 awsutils.py:553 - INFO - Waiting for instances to propagate...
+<br />
+2014-04-23 13:47:42,715 PID: 460 cluster.py:1440 - INFO - Waiting for cluster to come up... (updating every 30s)
+<br />
+2014-04-23 13:47:42,869 PID: 460 cluster.py:1397 - INFO - Waiting for all nodes to be in a 'running' state...
+<br />
+2014-04-23 13:47:42,953 PID: 460 cluster.py:759 - DEBUG - existing nodes: {}
+<br />
+2014-04-23 13:47:42,954 PID: 460 cluster.py:767 - DEBUG - adding node i-bfbfadef to self._nodes list
+<br />
+2014-04-23 13:47:43,473 PID: 460 cluster.py:775 - DEBUG - returning self._nodes = [&lt;Node: master (i-bfbfadef)&gt;]
+<br />
+2014-04-23 13:48:13,791 PID: 460 cluster.py:759 - DEBUG - existing nodes: {u'i-bfbfadef': &lt;Node: master (i-bfbfadef)&gt;}
+<br />
+2014-04-23 13:48:13,791 PID: 460 cluster.py:762 - DEBUG - updating existing node i-bfbfadef in self._nodes
+<br />
+2014-04-23 13:48:13,791 PID: 460 cluster.py:775 - DEBUG - returning self._nodes = [&lt;Node: master (i-bfbfadef)&gt;]
+<br />
+2014-04-23 13:48:13,792 PID: 460 cluster.py:1425 - INFO - Waiting for SSH to come up on all nodes...
+<br />
+2014-04-23 13:48:13,908 PID: 460 cluster.py:759 - DEBUG - existing nodes: {u'i-bfbfadef': &lt;Node: master (i-bfbfadef)&gt;}
+<br />
+2014-04-23 13:48:13,908 PID: 460 cluster.py:762 - DEBUG - updating existing node i-bfbfadef in self._nodes
+<br />
+2014-04-23 13:48:13,908 PID: 460 cluster.py:775 - DEBUG - returning self._nodes = [&lt;Node: master (i-bfbfadef)&gt;]
+<br />
+2014-04-23 13:48:13,915 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:48:14,016 PID: 460 sshutils.py:87 - DEBUG - loading private key /Users/badr/.ssh/EC2key.rsa
+<br />
+2014-04-23 13:48:14,017 PID: 460 sshutils.py:185 - DEBUG - Using private key /Users/badr/.ssh/EC2key.rsa (RSA)
+<br />
+2014-04-23 13:48:14,017 PID: 460 sshutils.py:112 - DEBUG - connecting to host ec2-54-198-102-63.compute-1.amazonaws.com on port 22 as user root
+<br />
+2014-04-23 13:48:14,917 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:48:15,918 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:48:16,920 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:48:17,922 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:48:18,923 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:48:19,924 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:48:20,926 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:48:21,928 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:48:22,928 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:48:23,929 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:48:24,931 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:48:25,933 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:48:26,934 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:48:27,936 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:48:28,937 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:48:29,939 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:48:30,941 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:48:31,942 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:48:32,943 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:48:33,945 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:48:34,947 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:48:35,948 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:48:36,950 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:48:37,952 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:48:38,954 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:48:39,956 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:48:40,958 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:48:41,959 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:48:42,961 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:48:43,964 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:48:44,965 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:48:45,966 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:48:46,966 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:48:47,967 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:48:48,969 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:48:49,971 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:48:50,972 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:48:51,973 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:48:52,975 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:48:53,977 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:48:54,979 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:48:55,981 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:48:56,982 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:48:57,985 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:48:58,987 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:48:59,989 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:49:00,990 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:49:01,992 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:49:02,993 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:49:03,994 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:49:04,546 PID: 460 sshutils.py:112 - DEBUG - connecting to host ec2-54-198-102-63.compute-1.amazonaws.com on port 22 as user root
+<br />
+2014-04-23 13:49:04,996 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:49:05,110 PID: 460 sshutils.py:204 - DEBUG - creating sftp connection
+<br />
+2014-04-23 13:49:05,998 PID: 460 utils.py:118 - INFO - Waiting for cluster to come up took 1.388 mins
+<br />
+2014-04-23 13:49:05,999 PID: 460 cluster.py:1666 - INFO - The master node is ec2-54-198-102-63.compute-1.amazonaws.com
+<br />
+2014-04-23 13:49:05,999 PID: 460 cluster.py:1667 - INFO - Configuring cluster...
+<br />
+2014-04-23 13:49:06,350 PID: 460 cluster.py:759 - DEBUG - existing nodes: {u'i-bfbfadef': &lt;Node: master (i-bfbfadef)&gt;}
+<br />
+2014-04-23 13:49:06,350 PID: 460 cluster.py:762 - DEBUG - updating existing node i-bfbfadef in self._nodes
+<br />
+2014-04-23 13:49:06,350 PID: 460 cluster.py:775 - DEBUG - returning self._nodes = [&lt;Node: master (i-bfbfadef)&gt;]
+<br />
+2014-04-23 13:49:06,350 PID: 460 cluster.py:1712 - INFO - Running plugin starcluster.clustersetup.DefaultClusterSetup
+<br />
+2014-04-23 13:49:06,350 PID: 460 clustersetup.py:121 - INFO - Configuring hostnames...
+<br />
+2014-04-23 13:49:06,354 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:49:06,916 PID: 460 sshutils.py:561 - DEBUG - executing remote command: source /etc/profile &amp;&amp; hostname -F /etc/hostname
+<br />
+2014-04-23 13:49:07,107 PID: 460 sshutils.py:585 - DEBUG - output of 'source /etc/profile &amp;&amp; hostname -F /etc/hostname':
+<br />
+<br />2014-04-23 13:49:07,574 PID: 460 sshutils.py:561 - DEBUG - executing remote command: source /etc/profile &amp;&amp; fdisk -l 2&gt;/dev/null
+<br />
+2014-04-23 13:49:07,777 PID: 460 sshutils.py:585 - DEBUG - output of 'source /etc/profile &amp;&amp; fdisk -l 2&gt;/dev/null':
+<br />
+<br />Disk /dev/xvda1: 10.7 GB, 10737418240 bytes
+<br />
+255 heads, 63 sectors/track, 1305 cylinders, total 20971520 sectors
+<br />
+Units = sectors of 1 * 512 = 512 bytes
+<br />
+Sector size (logical/physical): 512 bytes / 512 bytes
+<br />
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+<br />
+Disk identifier: 0x00000000
+<br />
+<br />2014-04-23 13:49:08,045 PID: 460 sshutils.py:561 - DEBUG - executing remote command: source /etc/profile &amp;&amp; cat /proc/partitions
+<br />
+2014-04-23 13:49:08,349 PID: 460 sshutils.py:585 - DEBUG - output of 'source /etc/profile &amp;&amp; cat /proc/partitions':
+<br />
+major minor  #blocks  name
+<br />
+<br />202        1   10485760 xvda1
+<br />
+2014-04-23 13:49:08,813 PID: 460 clustersetup.py:192 - INFO - Creating cluster user: sgeadmin (uid: 1001, gid: 1001)
+<br />
+2014-04-23 13:49:08,814 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:49:08,963 PID: 460 clustersetup.py:209 - DEBUG - user sgeadmin does not exist, creating...
+<br />
+2014-04-23 13:49:08,998 PID: 460 sshutils.py:561 - DEBUG - executing remote command: source /etc/profile &amp;&amp; groupadd -o -g 1001 sgeadmin
+<br />
+2014-04-23 13:49:09,187 PID: 460 sshutils.py:585 - DEBUG - output of 'source /etc/profile &amp;&amp; groupadd -o -g 1001 sgeadmin':
+<br />
+<br />2014-04-23 13:49:09,288 PID: 460 sshutils.py:561 - DEBUG - executing remote command: source /etc/profile &amp;&amp; useradd -o -u 1001 -g 1001 -s `which bash` -m sgeadmin
+<br />
+2014-04-23 13:49:09,491 PID: 460 sshutils.py:585 - DEBUG - output of 'source /etc/profile &amp;&amp; useradd -o -u 1001 -g 1001 -s `which bash` -m sgeadmin':
+<br />
+<br />2014-04-23 13:49:09,815 PID: 460 clustersetup.py:238 - INFO - Configuring scratch space for user(s): sgeadmin
+<br />
+2014-04-23 13:49:09,816 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:49:09,956 PID: 460 sshutils.py:561 - DEBUG - executing remote command: source /etc/profile &amp;&amp; chown -R sgeadmin:sgeadmin /mnt/sgeadmin
+<br />
+2014-04-23 13:49:10,001 PID: 460 sshutils.py:585 - DEBUG - output of 'source /etc/profile &amp;&amp; chown -R sgeadmin:sgeadmin /mnt/sgeadmin':
+<br />
+<br />2014-04-23 13:49:10,178 PID: 460 sshutils.py:561 - DEBUG - executing remote command: source /etc/profile &amp;&amp; ln -s /mnt/sgeadmin /scratch
+<br />
+2014-04-23 13:49:10,225 PID: 460 sshutils.py:585 - DEBUG - output of 'source /etc/profile &amp;&amp; ln -s /mnt/sgeadmin /scratch':
+<br />
+<br />2014-04-23 13:49:10,818 PID: 460 clustersetup.py:247 - INFO - Configuring /etc/hosts on each node
+<br />
+2014-04-23 13:49:10,818 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:49:10,987 PID: 460 sshutils.py:307 - DEBUG - new /etc/hosts after removing regex (master) matches:
+<br />
+127.0.0.1 localhost
+<br />
+<br /># The following lines are desirable for IPv6 capable hosts
+<br />
+::1 ip6-localhost ip6-loopback
+<br />
+fe00::0 ip6-localnet
+<br />
+ff00::0 ip6-mcastprefix
+<br />
+ff02::1 ip6-allnodes
+<br />
+ff02::2 ip6-allrouters
+<br />
+ff02::3 ip6-allhosts
+<br />
+<br />2014-04-23 13:49:11,819 PID: 460 node.py:703 - INFO - Starting NFS server on master
+<br />
+2014-04-23 13:49:11,852 PID: 460 sshutils.py:561 - DEBUG - executing remote command: source /etc/profile &amp;&amp; /etc/init.d/portmap start
+<br />
+2014-04-23 13:49:12,280 PID: 460 sshutils.py:585 - DEBUG - output of 'source /etc/profile &amp;&amp; /etc/init.d/portmap start':
+<br />
+Rather than invoking init scripts through /etc/init.d, use the service(8)
+<br />
+utility, e.g. service portmap start
+<br />
+<br />Since the script you are attempting to invoke has been converted to an
+<br />
+Upstart job, you may also use the start(8) utility, e.g. start portmap
+<br />
+2014-04-23 13:49:12,383 PID: 460 sshutils.py:561 - DEBUG - executing remote command: source /etc/profile &amp;&amp; mount -t rpc_pipefs sunrpc /var/lib/nfs/rpc_pipefs/
+<br />
+2014-04-23 13:49:12,712 PID: 460 sshutils.py:582 - DEBUG - (ignored) remote command 'source /etc/profile &amp;&amp; mount -t rpc_pipefs sunrpc /var/lib/nfs/rpc_pipefs/' failed with status 32:
+<br />
+mount: mount point /var/lib/nfs/rpc_pipefs/ does not exist
+<br />
+2014-04-23 13:49:12,815 PID: 460 sshutils.py:561 - DEBUG - executing remote command: source /etc/profile &amp;&amp; mkdir -p /etc/exports.d
+<br />
+2014-04-23 13:49:12,868 PID: 460 sshutils.py:585 - DEBUG - output of 'source /etc/profile &amp;&amp; mkdir -p /etc/exports.d':
+<br />
+<br />2014-04-23 13:49:12,971 PID: 460 sshutils.py:561 - DEBUG - executing remote command: source /etc/profile &amp;&amp; mkdir -p /dummy_export_for_broken_init_script
+<br />
+2014-04-23 13:49:13,015 PID: 460 sshutils.py:585 - DEBUG - output of 'source /etc/profile &amp;&amp; mkdir -p /dummy_export_for_broken_init_script':
+<br />
+<br />2014-04-23 13:49:13,207 PID: 460 sshutils.py:561 - DEBUG - executing remote command: source /etc/profile &amp;&amp; /etc/init.d/nfs start
+<br />
+2014-04-23 13:49:13,340 PID: 460 sshutils.py:585 - DEBUG - output of 'source /etc/profile &amp;&amp; /etc/init.d/nfs start':
+<br />
+* Exporting directories for NFS kernel daemon...
+<br />
+...done.
+<br />
+* Starting NFS kernel daemon
+<br />
+...done.
+<br />
+2014-04-23 13:49:13,610 PID: 460 sshutils.py:561 - DEBUG - executing remote command: source /etc/profile &amp;&amp; rm -f /etc/exports.d/dummy.exports
+<br />
+2014-04-23 13:49:13,652 PID: 460 sshutils.py:585 - DEBUG - output of 'source /etc/profile &amp;&amp; rm -f /etc/exports.d/dummy.exports':
+<br />
+<br />2014-04-23 13:49:13,755 PID: 460 sshutils.py:561 - DEBUG - executing remote command: source /etc/profile &amp;&amp; rm -rf /dummy_export_for_broken_init_script
+<br />
+2014-04-23 13:49:13,802 PID: 460 sshutils.py:585 - DEBUG - output of 'source /etc/profile &amp;&amp; rm -rf /dummy_export_for_broken_init_script':
+<br />
+<br />2014-04-23 13:49:13,939 PID: 460 sshutils.py:561 - DEBUG - executing remote command: source /etc/profile &amp;&amp; exportfs -fra
+<br />
+2014-04-23 13:49:13,994 PID: 460 sshutils.py:585 - DEBUG - output of 'source /etc/profile &amp;&amp; exportfs -fra':
+<br />
+<br />2014-04-23 13:49:13,994 PID: 460 utils.py:118 - INFO - Setting up NFS took 0.036 mins
+<br />
+2014-04-23 13:49:13,995 PID: 460 clustersetup.py:259 - INFO - Configuring passwordless ssh for root
+<br />
+2014-04-23 13:49:17,859 PID: 460 node.py:538 - DEBUG - adding auth_key_contents
+<br />
+2014-04-23 13:49:19,554 PID: 460 clustersetup.py:267 - INFO - Configuring passwordless ssh for sgeadmin
+<br />
+2014-04-23 13:49:21,752 PID: 460 node.py:538 - DEBUG - adding auth_key_contents
+<br />
+2014-04-23 13:49:21,781 PID: 460 node.py:546 - DEBUG - adding conn_pubkey_contents
+<br />
+2014-04-23 13:49:22,885 PID: 460 cluster.py:759 - DEBUG - existing nodes: {u'i-bfbfadef': &lt;Node: master (i-bfbfadef)&gt;}
+<br />
+2014-04-23 13:49:22,886 PID: 460 cluster.py:762 - DEBUG - updating existing node i-bfbfadef in self._nodes
+<br />
+2014-04-23 13:49:22,886 PID: 460 cluster.py:775 - DEBUG - returning self._nodes = [&lt;Node: master (i-bfbfadef)&gt;]
+<br />
+2014-04-23 13:49:22,886 PID: 460 cluster.py:1712 - INFO - Running plugin starcluster.plugins.sge.SGEPlugin
+<br />
+2014-04-23 13:49:22,915 PID: 460 sge.py:175 - INFO - Configuring SGE...
+<br />
+2014-04-23 13:49:22,974 PID: 460 sshutils.py:561 - DEBUG - executing remote command: source /etc/profile &amp;&amp; cp -r /opt/sge6-fresh /opt/sge6
+<br />
+2014-04-23 13:50:03,791 PID: 460 sshutils.py:585 - DEBUG - output of 'source /etc/profile &amp;&amp; cp -r /opt/sge6-fresh /opt/sge6':
+<br />
+<br />2014-04-23 13:50:03,827 PID: 460 sshutils.py:561 - DEBUG - executing remote command: source /etc/profile &amp;&amp; chown -R sgeadmin:sgeadmin /opt/sge6
+<br />
+2014-04-23 13:50:03,931 PID: 460 sshutils.py:585 - DEBUG - output of 'source /etc/profile &amp;&amp; chown -R sgeadmin:sgeadmin /opt/sge6':
+<br />
+<br />2014-04-23 13:50:04,033 PID: 460 sshutils.py:561 - DEBUG - executing remote command: source /etc/profile &amp;&amp; cd /opt/sge6 &amp;&amp; sed 's/AddQueue/#AddQueue/g' inst_sge &gt; inst_sge_sc
+<br />
+2014-04-23 13:50:04,084 PID: 460 sshutils.py:585 - DEBUG - output of 'source /etc/profile &amp;&amp; cd /opt/sge6 &amp;&amp; sed 's/AddQueue/#AddQueue/g' inst_sge &gt; inst_sge_sc':
+<br />
+<br />2014-04-23 13:50:04,218 PID: 460 utils.py:118 - INFO - Setting up NFS took 0.000 mins
+<br />
+2014-04-23 13:50:04,322 PID: 460 sge.py:151 - INFO - Installing Sun Grid Engine...
+<br />
+2014-04-23 13:50:04,385 PID: 460 sshutils.py:561 - DEBUG - executing remote command: source /etc/profile &amp;&amp; /opt/sge6/util/arch
+<br />
+2014-04-23 13:50:04,444 PID: 460 sshutils.py:585 - DEBUG - output of 'source /etc/profile &amp;&amp; /opt/sge6/util/arch':
+<br />
+linux-x64
+<br />
+2014-04-23 13:50:04,634 PID: 460 sshutils.py:561 - DEBUG - executing remote command: source /etc/profile &amp;&amp; cd /opt/sge6 &amp;&amp; TERM=rxvt ./inst_sge_sc -m -x -noremote -auto ./ec2_sge.conf
+<br />
+2014-04-23 13:50:13,531 PID: 460 sshutils.py:585 - DEBUG - output of 'source /etc/profile &amp;&amp; cd /opt/sge6 &amp;&amp; TERM=rxvt ./inst_sge_sc -m -x -noremote -auto ./ec2_sge.conf':
+<br />
+Reading configuration from file ./ec2_sge.conf
+<br />
+[H[2JInstall log can be found in: /opt/sge6/default/common/install_logs/qmaster_install_master_2014-04-23_17:50:05.log
+<br />
+Install log can be found in: /opt/sge6/default/common/install_logs/execd_install_master_2014-04-23_17:50:10.log
+<br />
+2014-04-23 13:50:13,566 PID: 460 sshutils.py:561 - DEBUG - executing remote command: source /etc/profile &amp;&amp; cat /proc/cpuinfo | grep processor | wc -l
+<br />
+2014-04-23 13:50:13,662 PID: 460 sshutils.py:585 - DEBUG - output of 'source /etc/profile &amp;&amp; cat /proc/cpuinfo | grep processor | wc -l':
+<br />
+1
+<br />
+2014-04-23 13:50:13,832 PID: 460 sshutils.py:561 - DEBUG - executing remote command: source /etc/profile &amp;&amp; qconf -aattr hostgroup hostlist master _at_allhosts
+<br />
+2014-04-23 13:50:13,889 PID: 460 sshutils.py:585 - DEBUG - output of 'source /etc/profile &amp;&amp; qconf -aattr hostgroup hostlist master _at_allhosts':
+<br />
+root_at_master modified &quot;&#64;allhosts&quot; in host group list
+<br />
+2014-04-23 13:50:14,127 PID: 460 sshutils.py:561 - DEBUG - executing remote command: source /etc/profile &amp;&amp; qconf -aattr queue slots &quot;[master=1]&quot; all.q
+<br />
+2014-04-23 13:50:14,261 PID: 460 sshutils.py:585 - DEBUG - output of 'source /etc/profile &amp;&amp; qconf -aattr queue slots &quot;[master=1]&quot; all.q':
+<br />
+root_at_master modified &quot;all.q&quot; in cluster queue list
+<br />
+2014-04-23 13:50:14,297 PID: 460 sshutils.py:561 - DEBUG - executing remote command: source /etc/profile &amp;&amp; qconf -mattr queue shell &quot;/bin/bash&quot; all.q
+<br />
+2014-04-23 13:50:14,422 PID: 460 sshutils.py:585 - DEBUG - output of 'source /etc/profile &amp;&amp; qconf -mattr queue shell &quot;/bin/bash&quot; all.q':
+<br />
+root_at_master modified &quot;all.q&quot; in cluster queue list
+<br />
+2014-04-23 13:50:14,577 PID: 460 sge.py:70 - INFO - Creating SGE parallel environment 'orte'
+<br />
+2014-04-23 13:50:14,578 PID: 460 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2014-04-23 13:50:16,024 PID: 460 sshutils.py:561 - DEBUG - executing remote command: source /etc/profile &amp;&amp; qconf -Ap /tmp/pe.txt
+<br />
+2014-04-23 13:50:16,079 PID: 460 sshutils.py:585 - DEBUG - output of 'source /etc/profile &amp;&amp; qconf -Ap /tmp/pe.txt':
+<br />
+root_at_master added &quot;orte&quot; to parallel environment list
+<br />
+2014-04-23 13:50:16,080 PID: 460 sge.py:87 - INFO - Adding parallel environment 'orte' to queue 'all.q'
+<br />
+2014-04-23 13:50:16,182 PID: 460 sshutils.py:561 - DEBUG - executing remote command: source /etc/profile &amp;&amp; qconf -mattr queue pe_list &quot;orte&quot; all.q
+<br />
+2014-04-23 13:50:16,261 PID: 460 sshutils.py:585 - DEBUG - output of 'source /etc/profile &amp;&amp; qconf -mattr queue pe_list &quot;orte&quot; all.q':
+<br />
+Unable to find &quot;orte&quot; in &quot;pe_list&quot; of &quot;all.q&quot; - Adding new element.
+<br />
+<br />root_at_master modified &quot;all.q&quot; in cluster queue list
+<br />
+2014-04-23 13:50:16,363 PID: 460 cluster.py:759 - DEBUG - existing nodes: {u'i-bfbfadef': &lt;Node: master (i-bfbfadef)&gt;}
+<br />
+2014-04-23 13:50:16,364 PID: 460 cluster.py:762 - DEBUG - updating existing node i-bfbfadef in self._nodes
+<br />
+2014-04-23 13:50:16,364 PID: 460 cluster.py:775 - DEBUG - returning self._nodes = [&lt;Node: master (i-bfbfadef)&gt;]
+<br />
+2014-04-23 13:50:16,364 PID: 460 cluster.py:1712 - INFO - Running plugin update_tornado
+<br />
+2014-04-23 13:50:16,364 PID: 460 update_pip_pkgs.py:10 - INFO - Updating tornado on master
+<br />
+2014-04-23 13:50:16,432 PID: 460 sshutils.py:561 - DEBUG - executing remote command: source /etc/profile &amp;&amp; pip install --upgrade tornado
+<br />
+2014-04-23 13:50:33,423 PID: 460 sshutils.py:585 - DEBUG - output of 'source /etc/profile &amp;&amp; pip install --upgrade tornado':
+<br />
+Downloading/unpacking tornado
+<br />
+Running setup.py egg_info for package tornado
+<br />
+<br />Downloading/unpacking backports.ssl-match-hostname (from tornado)
+<br />
+Downloading backports.ssl_match_hostname-3.4.0.2.tar.gz
+<br />
+Running setup.py egg_info for package backports.ssl-match-hostname
+<br />
+<br />Installing collected packages: tornado, backports.ssl-match-hostname
+<br />
+Found existing installation: tornado 2.4.1
+<br />
+Uninstalling tornado:
+<br />
+Successfully uninstalled tornado
+<br />
+Running setup.py install for tornado
+<br />
+building 'tornado.speedups' extension
+<br />
+gcc -pthread -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -fPIC -I/usr/include/python2.7 -c tornado/speedups.c -o build/temp.linux-x86_64-2.7/tornado/speedups.o
+<br />
+tornado/speedups.c:46:1: warning: function declaration isnâ€™t a prototype [-Wstrict-prototypes]
+<br />
+gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro build/temp.linux-x86_64-2.7/tornado/speedups.o -o build/lib.linux-x86_64-2.7/tornado/speedups.so
+<br />
+<br />Running setup.py install for backports.ssl-match-hostname
+<br />
+<br />Successfully installed tornado backports.ssl-match-hostname
+<br />
+Cleaning up...
+<br />
+2014-04-23 13:50:33,527 PID: 460 cluster.py:759 - DEBUG - existing nodes: {u'i-bfbfadef': &lt;Node: master (i-bfbfadef)&gt;}
+<br />
+2014-04-23 13:50:33,527 PID: 460 cluster.py:762 - DEBUG - updating existing node i-bfbfadef in self._nodes
+<br />
+2014-04-23 13:50:33,527 PID: 460 cluster.py:775 - DEBUG - returning self._nodes = [&lt;Node: master (i-bfbfadef)&gt;]
+<br />
+2014-04-23 13:50:33,527 PID: 460 cluster.py:1712 - INFO - Running plugin update_ipython
+<br />
+2014-04-23 13:50:33,528 PID: 460 update_pip_pkgs.py:10 - INFO - Updating ipython on master
+<br />
+2014-04-23 13:50:33,562 PID: 460 sshutils.py:561 - DEBUG - executing remote command: source /etc/profile &amp;&amp; pip install --upgrade ipython
+<br />
+2014-04-23 13:50:51,357 PID: 460 sshutils.py:585 - DEBUG - output of 'source /etc/profile &amp;&amp; pip install --upgrade ipython':
+<br />
+Downloading/unpacking ipython
+<br />
+Running setup.py egg_info for package ipython
+<br />
+<br />Installing collected packages: ipython
+<br />
+Found existing installation: ipython 0.13.1
+<br />
+Uninstalling ipython:
+<br />
+Successfully uninstalled ipython
+<br />
+Running setup.py install for ipython
+<br />
+checking package data
+<br />
+<br />Installing ipengine2 script to /usr/local/bin
+<br />
+Installing iptest script to /usr/local/bin
+<br />
+Installing ipython2 script to /usr/local/bin
+<br />
+Installing ipcluster2 script to /usr/local/bin
+<br />
+Installing ipcluster script to /usr/local/bin
+<br />
+Installing ipython script to /usr/local/bin
+<br />
+Installing ipcontroller2 script to /usr/local/bin
+<br />
+Installing ipcontroller script to /usr/local/bin
+<br />
+Installing iptest2 script to /usr/local/bin
+<br />
+Installing ipengine script to /usr/local/bin
+<br />
+Successfully installed ipython
+<br />
+Cleaning up...
+<br />
+2014-04-23 13:50:52,193 PID: 460 cluster.py:759 - DEBUG - existing nodes: {u'i-bfbfadef': &lt;Node: master (i-bfbfadef)&gt;}
+<br />
+2014-04-23 13:50:52,193 PID: 460 cluster.py:762 - DEBUG - updating existing node i-bfbfadef in self._nodes
+<br />
+2014-04-23 13:50:52,194 PID: 460 cluster.py:775 - DEBUG - returning self._nodes = [&lt;Node: master (i-bfbfadef)&gt;]
+<br />
+2014-04-23 13:50:52,194 PID: 460 cluster.py:1712 - INFO - Running plugin h5py
+<br />
+2014-04-23 13:50:52,194 PID: 460 add_pkgs.py:10 - INFO - Installing python-h5py on master
+<br />
+2014-04-23 13:50:52,227 PID: 460 sshutils.py:561 - DEBUG - executing remote command: source /etc/profile &amp;&amp; apt-get -y install python-h5py
+<br />
+2014-04-23 13:51:32,369 PID: 460 sshutils.py:585 - DEBUG - output of 'source /etc/profile &amp;&amp; apt-get -y install python-h5py':
+<br />
+Reading package lists...
+<br />
+Building dependency tree...
+<br />
+Reading state information...
+<br />
+The following NEW packages will be installed:
+<br />
+python-h5py
+<br />
+0 upgraded, 1 newly installed, 0 to remove and 1 not upgraded.
+<br />
+Need to get 828 kB of archives.
+<br />
+After this operation, 2,615 kB of additional disk space will be used.
+<br />
+Get:1 <a href="http://archive.ubuntu.com/ubuntu/">http://archive.ubuntu.com/ubuntu/</a> precise/universe python-h5py amd64 2.0.1-1build1 [828 kB]
+<br />
+Fetched 828 kB in 0s (3,999 kB/s)
+<br />
+Selecting previously unselected package python-h5py.
+<br />
+(Reading database ... 96393 files and directories currently installed.)
+<br />
+Unpacking python-h5py (from .../python-h5py_2.0.1-1build1_amd64.deb) ...
+<br />
+Setting up python-h5py (2.0.1-1build1) ...
+<br />
+debconf: unable to initialize frontend: Dialog
+<br />
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+<br />
+debconf: falling back to frontend: Readline
+<br />
+debconf: unable to initialize frontend: Readline
+<br />
+debconf: (This frontend requires a controlling tty.)
+<br />
+debconf: falling back to frontend: Teletype
+<br />
+dpkg-preconfigure: unable to re-open stdin:
+<br />
+2014-04-23 13:51:32,484 PID: 460 cluster.py:759 - DEBUG - existing nodes: {u'i-bfbfadef': &lt;Node: master (i-bfbfadef)&gt;}
+<br />
+2014-04-23 13:51:32,484 PID: 460 cluster.py:762 - DEBUG - updating existing node i-bfbfadef in self._nodes
+<br />
+2014-04-23 13:51:32,484 PID: 460 cluster.py:775 - DEBUG - returning self._nodes = [&lt;Node: master (i-bfbfadef)&gt;]
+<br />
+2014-04-23 13:51:32,484 PID: 460 cluster.py:1712 - INFO - Running plugin ipcluster
+<br />
+2014-04-23 13:51:32,519 PID: 460 sshutils.py:561 - DEBUG - executing remote command: source /etc/profile &amp;&amp; which ipython
+<br />
+2014-04-23 13:51:32,657 PID: 460 sshutils.py:585 - DEBUG - output of 'source /etc/profile &amp;&amp; which ipython':
+<br />
+/usr/local/bin/ipython
+<br />
+2014-04-23 13:51:32,826 PID: 460 sshutils.py:561 - DEBUG - executing remote command: source /etc/profile &amp;&amp; which ipcluster
+<br />
+2014-04-23 13:51:32,884 PID: 460 sshutils.py:585 - DEBUG - output of 'source /etc/profile &amp;&amp; which ipcluster':
+<br />
+/usr/local/bin/ipcluster
+<br />
+2014-04-23 13:51:33,076 PID: 460 sshutils.py:112 - DEBUG - connecting to host ec2-54-198-102-63.compute-1.amazonaws.com on port 22 as user sgeadmin
+<br />
+2014-04-23 13:51:34,084 PID: 460 sshutils.py:204 - DEBUG - creating sftp connection
+<br />
+2014-04-23 13:51:34,776 PID: 460 ipcluster.py:117 - INFO - Writing IPython cluster config files
+<br />
+2014-04-23 13:51:34,811 PID: 460 sshutils.py:561 - DEBUG - executing remote command: source /etc/profile &amp;&amp; rm -rf '/home/sgeadmin/.ipython/profile_default'
+<br />
+2014-04-23 13:51:34,851 PID: 460 sshutils.py:585 - DEBUG - output of 'source /etc/profile &amp;&amp; rm -rf '/home/sgeadmin/.ipython/profile_default'':
+<br />
+<br />2014-04-23 13:51:34,954 PID: 460 sshutils.py:561 - DEBUG - executing remote command: source /etc/profile &amp;&amp; ipython profile create
+<br />
+2014-04-23 13:51:40,563 PID: 460 sshutils.py:585 - DEBUG - output of 'source /etc/profile &amp;&amp; ipython profile create':
+<br />
+OpenBLAS : Your OS does not support AVX instructions. OpenBLAS is using Nehalem kernels as a fallback, which may give poorer performance.
+<br />
+[ProfileCreate] Generating default config file: u'/home/sgeadmin/.ipython/profile_default/ipython_config.py'
+<br />
+[ProfileCreate] Generating default config file: u'/home/sgeadmin/.ipython/profile_default/ipython_notebook_config.py'
+<br />
+[ProfileCreate] Generating default config file: u'/home/sgeadmin/.ipython/profile_default/ipython_nbconvert_config.py'
+<br />
+2014-04-23 13:51:40,938 PID: 460 ipcluster.py:168 - INFO - Starting the IPython controller and 1 engines on master
+<br />
+2014-04-23 13:51:41,005 PID: 460 sshutils.py:561 - DEBUG - executing remote command: source /etc/profile &amp;&amp; rm -f /home/sgeadmin/.ipython/profile_default/security/*.json
+<br />
+2014-04-23 13:51:41,065 PID: 460 sshutils.py:585 - DEBUG - output of 'source /etc/profile &amp;&amp; rm -f /home/sgeadmin/.ipython/profile_default/security/*.json':
+<br />
+<br />2014-04-23 13:51:41,101 PID: 460 sshutils.py:561 - DEBUG - executing remote command: source /etc/profile &amp;&amp; ipcluster start --n=1 --delay=5 --daemonize
+<br />
+2014-04-23 13:51:42,098 PID: 460 sshutils.py:585 - DEBUG - output of 'source /etc/profile &amp;&amp; ipcluster start --n=1 --delay=5 --daemonize':
+<br />
+OpenBLAS : Your OS does not support AVX instructions. OpenBLAS is using Nehalem kernels as a fallback, which may give poorer performance.
+<br />
+2014-04-23 17:51:42.031 [IPClusterStart] Using existing profile dir: u'/home/sgeadmin/.ipython/profile_default'
+<br />
+2014-04-23 13:51:42,099 PID: 460 ipcluster.py:176 - INFO - Waiting for JSON connector file...
+<br />
+2014-04-23 13:51:44,504 PID: 460 sshutils.py:212 - DEBUG - creating scp connection
+<br />
+2014-04-23 13:51:44,741 PID: 460 ipcluster.py:274 - INFO - Authorizing tcp ports [40725-40725] on 0.0.0.0/0 for: control
+<br />
+2014-04-23 13:51:46,067 PID: 460 ipcluster.py:274 - INFO - Authorizing tcp ports [51992-51992] on 0.0.0.0/0 for: task
+<br />
+2014-04-23 13:51:46,328 PID: 460 ipcluster.py:274 - INFO - Authorizing tcp ports [50735-50735] on 0.0.0.0/0 for: notification
+<br />
+2014-04-23 13:51:47,034 PID: 460 ipcluster.py:274 - INFO - Authorizing tcp ports [38747-38747] on 0.0.0.0/0 for: mux
+<br />
+2014-04-23 13:51:48,288 PID: 460 ipcluster.py:274 - INFO - Authorizing tcp ports [40507-40507] on 0.0.0.0/0 for: iopub
+<br />
+2014-04-23 13:51:48,503 PID: 460 ipcluster.py:274 - INFO - Authorizing tcp ports [45702-45702] on 0.0.0.0/0 for: registration
+<br />
+2014-04-23 13:51:48,764 PID: 460 ipcluster.py:219 - INFO - Setting up IPython web notebook for user: sgeadmin
+<br />
+2014-04-23 13:51:56,030 PID: 460 ipcluster.py:223 - INFO - Creating SSL certificate for user sgeadmin
+<br />
+2014-04-23 13:51:56,097 PID: 460 sshutils.py:561 - DEBUG - executing remote command: source /etc/profile &amp;&amp; openssl req -new -newkey rsa:4096 -days 365 -nodes -x509 -subj /C=US/ST=SC/L=STAR/O=Dis/CN=ec2-54-198-102-63.compute-1.amazonaws.com -keyout /home/sgeadmin/.ipython/profile_default/sgeadmin.pem -out /home/sgeadmin/.ipython/profile_default/sgeadmin.pem
+<br />
+2014-04-23 13:51:57,298 PID: 460 sshutils.py:585 - DEBUG - output of 'source /etc/profile &amp;&amp; openssl req -new -newkey rsa:4096 -days 365 -nodes -x509 -subj /C=US/ST=SC/L=STAR/O=Dis/CN=ec2-54-198-102-63.compute-1.amazonaws.com -keyout /home/sgeadmin/.ipython/profile_default/sgeadmin.pem -out /home/sgeadmin/.ipython/profile_default/sgeadmin.pem':
+<br />
+Generating a 4096 bit RSA private key
+<br />
+........................++
+<br />
+..................................................................++
+<br />
+writing new private key to '/home/sgeadmin/.ipython/profile_default/sgeadmin.pem'
+<br />
+-----
+<br />
+2014-04-23 13:51:57,495 PID: 460 sshutils.py:561 - DEBUG - executing remote command: source /etc/profile &amp;&amp; python -c 'from IPython.lib import passwd; print passwd(&quot;a-secret-password&quot;)'
+<br />
+2014-04-23 13:51:57,868 PID: 460 sshutils.py:585 - DEBUG - output of 'source /etc/profile &amp;&amp; python -c 'from IPython.lib import passwd; print passwd(&quot;a-secret-password&quot;)'':
+<br />
+sha1:6369bb27f4ad:44ee6aef5d8ebf6b74149e7403e52fb8c69cf920
+<br />
+2014-04-23 13:52:54,634 PID: 460 cluster.py:1722 - ERROR - Error occured while running plugin 'ipcluster':
+<br />
+2014-04-23 13:52:54,635 PID: 460 cli.py:307 - ERROR - Unhandled exception occured
+<br />
+Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File &quot;/Users/badr/anaconda/lib/python2.7/site-packages/starcluster/cli.py&quot;, line 274, in main
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;sc.execute(args)
+<br />
+&nbsp;&nbsp;File &quot;/Users/badr/anaconda/lib/python2.7/site-packages/starcluster/commands/start.py&quot;, line 244, in execute
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;validate_running=validate_running)
+<br />
+&nbsp;&nbsp;File &quot;/Users/badr/anaconda/lib/python2.7/site-packages/starcluster/cluster.py&quot;, line 1626, in start
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;return self._start(create=create, create_only=create_only)
+<br />
+&nbsp;&nbsp;File &quot;&lt;string&gt;&quot;, line 2, in _start
+<br />
+&nbsp;&nbsp;File &quot;/Users/badr/anaconda/lib/python2.7/site-packages/starcluster/utils.py&quot;, line 112, in wrap_f
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;res = func(*arg, **kargs)
+<br />
+&nbsp;&nbsp;File &quot;/Users/badr/anaconda/lib/python2.7/site-packages/starcluster/cluster.py&quot;, line 1649, in _start
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self.setup_cluster()
+<br />
+&nbsp;&nbsp;File &quot;/Users/badr/anaconda/lib/python2.7/site-packages/starcluster/cluster.py&quot;, line 1658, in setup_cluster
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self._setup_cluster()
+<br />
+&nbsp;&nbsp;File &quot;&lt;string&gt;&quot;, line 2, in _setup_cluster
+<br />
+&nbsp;&nbsp;File &quot;/Users/badr/anaconda/lib/python2.7/site-packages/starcluster/utils.py&quot;, line 112, in wrap_f
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;res = func(*arg, **kargs)
+<br />
+&nbsp;&nbsp;File &quot;/Users/badr/anaconda/lib/python2.7/site-packages/starcluster/cluster.py&quot;, line 1670, in _setup_cluster
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self.run_plugins()
+<br />
+&nbsp;&nbsp;File &quot;/Users/badr/anaconda/lib/python2.7/site-packages/starcluster/cluster.py&quot;, line 1688, in run_plugins
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self.run_plugin(plug, method_name=method_name, node=node)
+<br />
+&nbsp;&nbsp;File &quot;/Users/badr/anaconda/lib/python2.7/site-packages/starcluster/cluster.py&quot;, line 1713, in run_plugin
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;func(*args)
+<br />
+&nbsp;&nbsp;File &quot;&lt;string&gt;&quot;, line 2, in run
+<br />
+&nbsp;&nbsp;File &quot;/Users/badr/anaconda/lib/python2.7/site-packages/starcluster/utils.py&quot;, line 112, in wrap_f
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;res = func(*arg, **kargs)
+<br />
+&nbsp;&nbsp;File &quot;/Users/badr/anaconda/lib/python2.7/site-packages/starcluster/plugins/ipcluster.py&quot;, line 302, in run
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self._start_notebook(master, user, profile_dir)
+<br />
+&nbsp;&nbsp;File &quot;/Users/badr/anaconda/lib/python2.7/site-packages/starcluster/plugins/ipcluster.py&quot;, line 249, in _start_notebook
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;master.ssh.makedirs(self.notebook_directory)
+<br />
+&nbsp;&nbsp;File &quot;/Users/badr/anaconda/lib/python2.7/site-packages/starcluster/sshutils.py&quot;, line 249, in makedirs
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self.makedirs(head, mode)
+<br />
+&nbsp;&nbsp;File &quot;/Users/badr/anaconda/lib/python2.7/site-packages/starcluster/sshutils.py&quot;, line 257, in makedirs
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self.mkdir(path, mode)
+<br />
+&nbsp;&nbsp;File &quot;/Users/badr/anaconda/lib/python2.7/site-packages/starcluster/sshutils.py&quot;, line 268, in mkdir
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;return self.sftp.mkdir(path, mode)
+<br />
+&nbsp;&nbsp;File &quot;/Users/badr/anaconda/lib/python2.7/site-packages/paramiko/sftp_client.py&quot;, line 296, in mkdir
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self._request(CMD_MKDIR, path, attr)
+<br />
+&nbsp;&nbsp;File &quot;/Users/badr/anaconda/lib/python2.7/site-packages/paramiko/sftp_client.py&quot;, line 647, in _request
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;return self._read_response(num)
+<br />
+&nbsp;&nbsp;File &quot;/Users/badr/anaconda/lib/python2.7/site-packages/paramiko/sftp_client.py&quot;, line 694, in _read_response
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self._convert_status(msg)
+<br />
+&nbsp;&nbsp;File &quot;/Users/badr/anaconda/lib/python2.7/site-packages/paramiko/sftp_client.py&quot;, line 722, in _convert_status
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;raise IOError(errno.EACCES, text)
+<br />
+IOError: [Errno 13] Permission denied
+<br />
+<span id="received"><dfn>Received on</dfn> Wed Apr 23 2014 - 14:40:29 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2164.html#start2164">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2165.html" title="Next message in the list">Lilley, John F.: "Launch failure in 0.95.4 w/no spot and different master/compute set"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2163.html" title="Previous message in the list">Gary Waters: "New Plugin"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2164" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2164" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2164" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2164" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

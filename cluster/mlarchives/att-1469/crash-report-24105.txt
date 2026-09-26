@@ -1,0 +1,69 @@
+---------- CRASH DETAILS ----------
+COMMAND: starcluster shell --ipcluster=myfourthcluster
+2012-10-24 17:59:03,176 PID: 24105 config.py:551 - DEBUG - Loading config
+2012-10-24 17:59:03,176 PID: 24105 config.py:118 - DEBUG - Loading file: /home/alessandro/.starcluster/config
+2012-10-24 17:59:03,178 PID: 24105 shell.py:89 - INFO - Loading parallel IPython library
+2012-10-24 17:59:04,171 PID: 24105 awsutils.py:54 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'proxy_user': None, 'proxy_pass': None, 'proxy_port': None, 'proxy': None, 'is_secure': True, 'path': '/', 'region': RegionInfo:us-west-1, 'port': None}
+2012-10-24 17:59:04,768 PID: 24105 utils.py:464 - DEBUG - nargs = 2
+2012-10-24 17:59:04,768 PID: 24105 utils.py:465 - DEBUG - ndefaults = 2
+2012-10-24 17:59:04,768 PID: 24105 utils.py:466 - DEBUG - nrequired = 0
+2012-10-24 17:59:04,768 PID: 24105 utils.py:467 - DEBUG - args = []
+2012-10-24 17:59:04,768 PID: 24105 utils.py:468 - DEBUG - kwargs = ['enable_notebook', 'notebook_passwd']
+2012-10-24 17:59:04,768 PID: 24105 utils.py:469 - DEBUG - defaults = (False, None)
+2012-10-24 17:59:04,769 PID: 24105 cluster.py:500 - DEBUG - config_args = []
+2012-10-24 17:59:04,769 PID: 24105 cluster.py:509 - DEBUG - config_kwargs = {'enable_notebook': 'True', 'notebook_passwd': 'a-secret-password'}
+2012-10-24 17:59:04,769 PID: 24105 utils.py:464 - DEBUG - nargs = 1
+2012-10-24 17:59:04,769 PID: 24105 utils.py:465 - DEBUG - ndefaults = 1
+2012-10-24 17:59:04,769 PID: 24105 utils.py:466 - DEBUG - nrequired = 0
+2012-10-24 17:59:04,769 PID: 24105 utils.py:467 - DEBUG - args = []
+2012-10-24 17:59:04,770 PID: 24105 utils.py:468 - DEBUG - kwargs = ['packages']
+2012-10-24 17:59:04,770 PID: 24105 utils.py:469 - DEBUG - defaults = (None,)
+2012-10-24 17:59:04,770 PID: 24105 cluster.py:500 - DEBUG - config_args = []
+2012-10-24 17:59:04,770 PID: 24105 cluster.py:509 - DEBUG - config_kwargs = {'packages': 'python-requests, mongodb, python-pymongo, python-nltk, r-base-core, python-rpy2'}
+2012-10-24 17:59:04,847 PID: 24105 cluster.py:1907 - WARNING - Skipping keypair fingerprint validation...
+2012-10-24 17:59:05,402 PID: 24105 cluster.py:664 - DEBUG - existing nodes: {}
+2012-10-24 17:59:05,402 PID: 24105 cluster.py:672 - DEBUG - adding node i-dd5bf284 to self._nodes list
+2012-10-24 17:59:05,402 PID: 24105 cluster.py:672 - DEBUG - adding node i-df5bf286 to self._nodes list
+2012-10-24 17:59:05,403 PID: 24105 cluster.py:672 - DEBUG - adding node i-d15bf288 to self._nodes list
+2012-10-24 17:59:05,403 PID: 24105 cluster.py:672 - DEBUG - adding node i-d35bf28a to self._nodes list
+2012-10-24 17:59:05,403 PID: 24105 cluster.py:672 - DEBUG - adding node i-d55bf28c to self._nodes list
+2012-10-24 17:59:05,403 PID: 24105 cluster.py:672 - DEBUG - adding node i-d75bf28e to self._nodes list
+2012-10-24 17:59:05,403 PID: 24105 cluster.py:672 - DEBUG - adding node i-c95bf290 to self._nodes list
+2012-10-24 17:59:05,403 PID: 24105 cluster.py:672 - DEBUG - adding node i-cb5bf292 to self._nodes list
+2012-10-24 17:59:05,403 PID: 24105 cluster.py:672 - DEBUG - adding node i-cd5bf294 to self._nodes list
+2012-10-24 17:59:05,404 PID: 24105 cluster.py:672 - DEBUG - adding node i-cf5bf296 to self._nodes list
+2012-10-24 17:59:05,404 PID: 24105 cluster.py:672 - DEBUG - adding node i-c15bf298 to self._nodes list
+2012-10-24 17:59:05,404 PID: 24105 cluster.py:672 - DEBUG - adding node i-c35bf29a to self._nodes list
+2012-10-24 17:59:05,404 PID: 24105 cluster.py:672 - DEBUG - adding node i-c55bf29c to self._nodes list
+2012-10-24 17:59:05,404 PID: 24105 cluster.py:672 - DEBUG - adding node i-c75bf29e to self._nodes list
+2012-10-24 17:59:05,404 PID: 24105 cluster.py:672 - DEBUG - adding node i-f95bf2a0 to self._nodes list
+2012-10-24 17:59:05,405 PID: 24105 cluster.py:672 - DEBUG - adding node i-fb5bf2a2 to self._nodes list
+2012-10-24 17:59:05,406 PID: 24105 cluster.py:672 - DEBUG - adding node i-fd5bf2a4 to self._nodes list
+2012-10-24 17:59:05,406 PID: 24105 cluster.py:672 - DEBUG - adding node i-ff5bf2a6 to self._nodes list
+2012-10-24 17:59:05,406 PID: 24105 cluster.py:672 - DEBUG - adding node i-f15bf2a8 to self._nodes list
+2012-10-24 17:59:05,406 PID: 24105 cluster.py:680 - DEBUG - returning self._nodes = [<Node: master (i-dd5bf284)>, <Node: node001 (i-df5bf286)>, <Node: node002 (i-d15bf288)>, <Node: node003 (i-d35bf28a)>, <Node: node004 (i-d55bf28c)>, <Node: node005 (i-d75bf28e)>, <Node: node006 (i-c95bf290)>, <Node: node007 (i-cb5bf292)>, <Node: node008 (i-cd5bf294)>, <Node: node009 (i-cf5bf296)>, <Node: node010 (i-c15bf298)>, <Node: node011 (i-c35bf29a)>, <Node: node012 (i-c55bf29c)>, <Node: node013 (i-c75bf29e)>, <Node: node014 (i-f95bf2a0)>, <Node: node015 (i-fb5bf2a2)>, <Node: node016 (i-fd5bf2a4)>, <Node: node017 (i-ff5bf2a6)>, <Node: node018 (i-f15bf2a8)>]
+2012-10-24 17:59:05,406 PID: 24105 shell.py:62 - INFO - Configuring local known_hosts file
+2012-10-24 17:59:05,407 PID: 24105 __init__.py:75 - DEBUG - loading private key /home/alessandro/.ssh/path-ops.pem
+2012-10-24 17:59:05,407 PID: 24105 __init__.py:82 - DEBUG - specified key does not end in either rsa or dsa, trying both
+2012-10-24 17:59:05,407 PID: 24105 __init__.py:167 - DEBUG - Using private key /home/alessandro/.ssh/path-ops.pem (rsa)
+2012-10-24 17:59:05,408 PID: 24105 __init__.py:97 - DEBUG - connecting to host ec2-54-241-118-32.us-west-1.compute.amazonaws.com on port 22 as user root
+2012-10-24 17:59:05,590 PID: 24105 __init__.py:186 - DEBUG - creating sftp connection
+2012-10-24 17:59:05,873 PID: 24105 shell.py:121 - INFO - Loading parallel IPython client and view
+2012-10-24 17:59:05,938 PID: 24105 cli.py:287 - DEBUG - Traceback (most recent call last):
+  File "/home/alessandro/.envs/matplotlib/local/lib/python2.7/site-packages/starcluster/cli.py", line 255, in main
+    sc.execute(args)
+  File "/home/alessandro/.envs/matplotlib/local/lib/python2.7/site-packages/starcluster/commands/shell.py", line 122, in execute
+    rc = Client(local_json, sshkey=key_location, packer='pickle')
+  File "/home/alessandro/.envs/matplotlib/local/lib/python2.7/site-packages/ipython-0.13.1-py2.7.egg/IPython/parallel/client/client.py", line 424, in __init__
+    cfg['url'] = util.disambiguate_url(cfg['url'], location)
+KeyError: 'url'
+
+---------- SYSTEM INFO ----------
+StarCluster: 0.93.3
+Python: 2.7.3 (default, Apr 20 2012, 22:39:59)  [GCC 4.6.3]
+Platform: Linux-3.2.0-32-generic-x86_64-with-Ubuntu-12.04-precise
+boto: 2.3.0
+ssh: 1.7.13
+Crypto: 2.4.1
+jinja2: 2.6
+decorator: 3.3.1

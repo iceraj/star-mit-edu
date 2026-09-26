@@ -1,0 +1,188 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Lyn Gerner ((no email))" />
+<meta name="Subject" content="Volumes not being destroyed on terminate" />
+<title>starcluster.mbox.out: Volumes not being destroyed on terminate</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Volumes not being destroyed on terminate</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Volumes not being destroyed on terminate</h1>
+<!-- received="Fri Mar  1 15:49:35 2013" -->
+<!-- isoreceived="20130301204935" -->
+<!-- sent="Fri, 1 Mar 2013 12:49:34 -0800" -->
+<!-- isosent="20130301204934" -->
+<!-- name="Lyn Gerner" -->
+<!-- email="(no email)" -->
+<!-- subject="Volumes not being destroyed on terminate" -->
+<!-- id="CAD3e3FZRMEPK9FJSZwAVgtV4AR+JfcPkv_ssbP3fYtRLEozL8Q_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1689.html#start1689" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1689.html#options2">top</a>, <a href="1689.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1690.html" accesskey="d" title="Ian Davis: &quot;&#0039;starcluster help start&#0039; causes a crash&quot;">Next message</a> ]
+[ <a href="1688.html" title="Steve Jaffe: &quot;Re:  !!! ERROR - placement group does not exist (Butson, Christopher)&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="1700.html" accesskey="t" title="Lyn Gerner: &quot;Re:  Volumes not being destroyed on terminate&quot;">Next in thread</a> ]
+ [ <a href="1689.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1689" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1689" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1689" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1689" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Lyn Gerner &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Fri, 1 Mar 2013 12:49:34 -0800</span><br />
+</address>
+<br />
+Hi All,
+<br />
+<br />I am using StarCluster in the process of iteratively building and testing
+<br />
+an AMI for a particular app.  While I am attaching a single, customized EBS
+<br />
+volume to each cluster I start, I am seeing many unrelated volumes being
+<br />
+attached and detached as I start and terminate each cluster.  Further, I'm
+<br />
+seeing an increasingly large number of EBS volumes in my AWS acct.
+<br />
+<br />If I understand correctly, the command &quot;starcluster terminate mycluster&quot;
+<br />
+should also be deleting any EBS volumes that were created as a result of
+<br />
+mycluster's instantiation.  Is that correct, and if so, any ideas why these
+<br />
+&quot;extra&quot; volumes are not being deleted/destroyed during termination?
+<br />
+<br />Thanks for any insights or suggestions.
+<br />
+<br />Lyn
+<br />
+<span id="received"><dfn>Received on</dfn> Fri Mar 01 2013 - 15:49:35 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1689.html#start1689">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1690.html" title="Next message in the list">Ian Davis: "&#0039;starcluster help start&#0039; causes a crash"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1688.html" title="Previous message in the list">Steve Jaffe: "Re:  !!! ERROR - placement group does not exist (Butson, Christopher)"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1700.html" title="Next message in this discussion thread">Lyn Gerner: "Re:  Volumes not being destroyed on terminate"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1700.html" title="Message sent in reply to this message">Lyn Gerner: "Re:  Volumes not being destroyed on terminate"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1689" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1689" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1689" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1689" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

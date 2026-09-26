@@ -1,0 +1,27 @@
+2011-10-30 08:50:12,783 PID: 11564 config.py:524 - DEBUG - Loading config
+2011-10-30 08:50:12,783 PID: 11564 config.py:118 - DEBUG - Loading file: /home/s0674613/.starcluster/config
+2011-10-30 08:50:12,785 PID: 11564 awsutils.py:55 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'path': '/', 'region': None, 'port': None, 'is_secure': True}
+2011-10-30 08:50:14,043 PID: 11564 cluster.py:647 - DEBUG - existing nodes: {}
+2011-10-30 08:50:14,044 PID: 11564 cluster.py:655 - DEBUG - adding node i-cf9359ac to self._nodes list
+2011-10-30 08:50:14,044 PID: 11564 cluster.py:655 - DEBUG - adding node i-cd9359ae to self._nodes list
+2011-10-30 08:50:14,044 PID: 11564 cluster.py:663 - DEBUG - returning self._nodes = [<Node: master (i-cf9359ac)>, <Node: node001 (i-cd9359ae)>]
+2011-10-30 08:50:14,044 PID: 11564 ssh.py:68 - DEBUG - loading private key /home/s0674613/.ssh/starcluster.pem
+2011-10-30 08:50:14,044 PID: 11564 ssh.py:75 - DEBUG - specified key does not end in either rsa or dsa, trying both
+2011-10-30 08:50:14,045 PID: 11564 ssh.py:153 - DEBUG - Using private key /home/s0674613/.ssh/starcluster.pem (rsa)
+2011-10-30 08:50:14,045 PID: 11564 ssh.py:180 - DEBUG - creating scp connection
+2011-10-30 08:50:14,045 PID: 11564 ssh.py:90 - DEBUG - connecting to host ec2-184-72-183-184.compute-1.amazonaws.com on port 22 as user root
+2011-10-30 08:55:03,450 PID: 11564 cli.py:189 - DEBUG - Traceback (most recent call last):
+  File "/usr/local/lib/python2.6/dist-packages/StarCluster-0.92-py2.6.egg/starcluster/cli.py", line 157, in main
+    sc.execute(args)
+  File "/usr/local/lib/python2.6/dist-packages/StarCluster-0.92-py2.6.egg/starcluster/commands/put.py", line 59, in execute
+    node.ssh.put(lpaths, rpath)
+  File "/usr/local/lib/python2.6/dist-packages/StarCluster-0.92-py2.6.egg/starcluster/ssh.py", line 430, in put
+    self.scp.put(localpaths, remote_path=remotepath, recursive=recursive)
+  File "/usr/local/lib/python2.6/dist-packages/StarCluster-0.92-py2.6.egg/starcluster/scp.py", line 100, in put
+    self._send_files(files)
+  File "/usr/local/lib/python2.6/dist-packages/StarCluster-0.92-py2.6.egg/starcluster/scp.py", line 168, in _send_files
+    chan.sendall(file_hdl.read(buff_size))
+  File "build/bdist.linux-x86_64/egg/paramiko/channel.py", line 763, in sendall
+    raise socket.error('Socket is closed')
+error: Socket is closed
+

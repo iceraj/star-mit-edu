@@ -1,0 +1,194 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Dmitry Serenbrennikov ((no email))" />
+<meta name="Subject" content="Starcluster behavior when nodes fail, when master fails" />
+<title>starcluster.mbox.out: Starcluster behavior when nodes fail, when master fails</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Starcluster behavior when nodes fail, when master fails</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Starcluster behavior when nodes fail, when master fails</h1>
+<!-- received="Fri Feb  7 14:01:08 2014" -->
+<!-- isoreceived="20140207190108" -->
+<!-- sent="Fri, 7 Feb 2014 19:01:01 +0000" -->
+<!-- isosent="20140207190101" -->
+<!-- name="Dmitry Serenbrennikov" -->
+<!-- email="(no email)" -->
+<!-- subject="Starcluster behavior when nodes fail, when master fails" -->
+<!-- id="078029eddcfd477cb1be0cb9e5fada72_at_BN1PR05MB360.namprd05.prod.outlook.com" -->
+<!-- charset="us-ascii" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2052.html#start2052" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2052.html#options2">top</a>, <a href="2052.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2053.html" accesskey="d" title="Rayson Ho: &quot;Re:  Starcluster behavior when nodes fail, when master fails&quot;">Next message</a> ]
+[ <a href="2051.html" title="Milton Pividori: &quot;Re:  StarCluster 0.95 Released!&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="2053.html" accesskey="t" title="Rayson Ho: &quot;Re:  Starcluster behavior when nodes fail, when master fails&quot;">Next in thread</a> ]
+ [ <a href="2052.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2052" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2052" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2052" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2052" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Dmitry Serenbrennikov &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Fri, 7 Feb 2014 19:01:01 +0000</span><br />
+</address>
+<br />
+Hello Fellow Starclusterers!
+<br />
+<br /><br />We've been using the starcluster as an experiment for training some models for a couple of months and it's been great in use! Easy to set up and easy to use.
+<br />
+<br />But now we are considering including it as a more permanent member into our tech stack and I'm looking more deeply into how it behaves in cases of failure, which is expected on Amazon. After some amount of Googling, I did find a few papers that describe clusters of large size (1000 nodes, even 10000 nodes) but somehow I found very little discussion about possible failures and recovery. We are also taking advantage of spot instances, so the failure of those is expected even more frequently than the regular &quot;retail&quot; nodes on Amazon.
+<br />
+<br /><br />I would appreciate very much, if someone on this list pointed me to any resources / documentation / discussion out there regarding what can be expected from Starcluster in cases of failure. Also, it would be great to know what other features might be on the drawing board, as we might be able to help build them!
+<br />
+<br /><br />Specifically, I'm trying to find answer to the following questions. Would appreciate very much any experiences or resources that anyone can share on this!
+<br />
+<br /><br />- If a node fails, is SGE/Starcluster able to detect this properly?
+<br />
+<br />- What happens to the jobs running on the failed node? Are they retried? Can they be configured to be retired? Does this work reliably?
+<br />
+<br />- What happens to SGE jobs if the master node dies?
+<br />
+<br />- Can the cluster be recovered if the master node is restarted? Is is a single point of failure?
+<br />
+<br />- If yes, does SGE itself support more redundancy than what is available as configured in Starcluster? Some diagrams in this presentation seems to imply so <a href="http://beowulf.rutgers.edu/info-user/pdf/ge_presentation.pdf">http://beowulf.rutgers.edu/info-user/pdf/ge_presentation.pdf</a>&lt;<a href="http://beowulf.rutgers.edu/info-user/pdf/ge_presentation.pdf">http://beowulf.rutgers.edu/info-user/pdf/ge_presentation.pdf</a>)&gt;
+<br />
+<br /><br />- If one uses Starcluster without the SGE, what is the behavior when master node dies? Can the cluster be recovered from this?
+<br />
+<br />- What if we limit the use of NFS and instead use a separate system for data storage which provides its own high availability. Does this improve ability of the starcluster to recover from failure of nodes and the master?
+<br />
+<br /><br />Thanks very much for any information or anecdotes along these lines!
+<br />
+<br />Best regards!
+<br />
+<br />-Dmitry
+<br />
+<span id="received"><dfn>Received on</dfn> Fri Feb 07 2014 - 14:01:08 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2052.html#start2052">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2053.html" title="Next message in the list">Rayson Ho: "Re:  Starcluster behavior when nodes fail, when master fails"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2051.html" title="Previous message in the list">Milton Pividori: "Re:  StarCluster 0.95 Released!"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="2053.html" title="Next message in this discussion thread">Rayson Ho: "Re:  Starcluster behavior when nodes fail, when master fails"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="2053.html" title="Message sent in reply to this message">Rayson Ho: "Re:  Starcluster behavior when nodes fail, when master fails"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2052" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2052" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2052" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2052" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

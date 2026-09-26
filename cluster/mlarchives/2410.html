@@ -1,0 +1,210 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Amanda Joy Kedaigle ((no email))" />
+<meta name="Subject" content="Loadbalancer error - node does not exist" />
+<title>starcluster.mbox.out: Loadbalancer error - node does not exist</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Loadbalancer error - node does not exist</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Loadbalancer error - node does not exist</h1>
+<!-- received="Thu Oct  2 12:36:55 2014" -->
+<!-- isoreceived="20141002163655" -->
+<!-- sent="Thu, 2 Oct 2014 16:36:53 +0000" -->
+<!-- isosent="20141002163653" -->
+<!-- name="Amanda Joy Kedaigle" -->
+<!-- email="(no email)" -->
+<!-- subject="Loadbalancer error - node does not exist" -->
+<!-- id="EC9907C17615C4408F71DDC2F0482B8553E1DA57_at_OC11EXPO24.exchange.mit.edu" -->
+<!-- charset="iso-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2410.html#start2410" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2410.html#options2">top</a>, <a href="2410.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2411.html" accesskey="d" title="Amanda Joy Kedaigle: &quot;Re:  Loadbalancer error - node does not exist&quot;">Next message</a> ]
+[ <a href="2409.html" title="greg: &quot;Re:  Configure Nodes to submit jobs&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="2411.html" accesskey="t" title="Amanda Joy Kedaigle: &quot;Re:  Loadbalancer error - node does not exist&quot;">Next in thread</a> ]
+ [ <a href="2410.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2410" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2410" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2410" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2410" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Amanda Joy Kedaigle &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 2 Oct 2014 16:36:53 +0000</span><br />
+</address>
+<br />
+Hi, I'm running the Elastic LoadBalancer to keep our cluster down to one node when we're not using it, and then ramp up as needed. Generally (i.e. when I run tests and watch it), it works just fine. But twice now, we've had it fail to remove nodes overnight and give the following error, leaving the cluster at full blast with no jobs to run. It says the nodes don't exist, but they are there both on the AWS EC2 console and when I run qhost on the cluster. Any ideas as to the cause? Thanks!
+<br />
+<br /><br /><em class="quotelev3">&gt;&gt;&gt; Removing node013 from SGE
+</em><br />
+<br />!!! ERROR - Error occured while running plugin 'starcluster.plugins.sge.SGEPlugin':
+<br />
+<br />!!! ERROR - Failed to remove node node013
+<br />
+<br />Traceback (most recent call last):
+<br />
+<br />&nbsp;&nbsp;File &quot;/home/mandyjoy/ENV/lib/python2.7/site-packages/StarCluster-0.95.5-py2.7.egg/starcluster/balancers/sge/__init__.py&quot;, line 754, in _eval_remove_node
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;self._cluster.remove_node(node)
+<br />
+<br />&nbsp;&nbsp;File &quot;/home/mandyjoy/ENV/lib/python2.7/site-packages/StarCluster-0.95.5-py2.7.egg/starcluster/cluster.py&quot;, line 1050, in remove_node
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;force=force)
+<br />
+<br />&nbsp;&nbsp;File &quot;/home/mandyjoy/ENV/lib/python2.7/site-packages/StarCluster-0.95.5-py2.7.egg/starcluster/cluster.py&quot;, line 1076, in remove_nodes
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;reverse=True)
+<br />
+<br />&nbsp;&nbsp;File &quot;/home/mandyjoy/ENV/lib/python2.7/site-packages/StarCluster-0.95.5-py2.7.egg/starcluster/cluster.py&quot;, line 1690, in run_plugins
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;self.run_plugin(plug, method_name=method_name, node=node)
+<br />
+<br />&nbsp;&nbsp;File &quot;/home/mandyjoy/ENV/lib/python2.7/site-packages/StarCluster-0.95.5-py2.7.egg/starcluster/cluster.py&quot;, line 1715, in run_plugin
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;func(*args)
+<br />
+<br />&nbsp;&nbsp;File &quot;/home/mandyjoy/ENV/lib/python2.7/site-packages/StarCluster-0.95.5-py2.7.egg/starcluster/plugins/sge.py&quot;, line 204, in on_remove_node
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;self._remove_from_sge(node)
+<br />
+<br />&nbsp;&nbsp;File &quot;/home/mandyjoy/ENV/lib/python2.7/site-packages/StarCluster-0.95.5-py2.7.egg/starcluster/plugins/sge.py&quot;, line 166, in _remove_from_sge
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;master.ssh.execute('qconf -de %s' % node.alias)
+<br />
+<br />&nbsp;&nbsp;File &quot;/home/mandyjoy/ENV/lib/python2.7/site-packages/StarCluster-0.95.5-py2.7.egg/starcluster/sshutils.py&quot;, line 579, in execute
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;msg, command, exit_status, out_str)
+<br />
+<br />RemoteCommandFailed: remote command 'source /etc/profile &amp;&amp; qconf -de node013' failed with status 1:
+<br />
+<br />denied: execution host &quot;node013&quot; does not exist
+<br />
+<span id="received"><dfn>Received on</dfn> Thu Oct 02 2014 - 12:36:55 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2410.html#start2410">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2411.html" title="Next message in the list">Amanda Joy Kedaigle: "Re:  Loadbalancer error - node does not exist"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2409.html" title="Previous message in the list">greg: "Re:  Configure Nodes to submit jobs"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="2411.html" title="Next message in this discussion thread">Amanda Joy Kedaigle: "Re:  Loadbalancer error - node does not exist"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="2411.html" title="Message sent in reply to this message">Amanda Joy Kedaigle: "Re:  Loadbalancer error - node does not exist"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2410" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2410" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2410" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2410" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

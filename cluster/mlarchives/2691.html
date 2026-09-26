@@ -1,0 +1,189 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Reza Ghotbi ((no email))" />
+<meta name="Subject" content="Keypair Problem" />
+<title>starcluster.mbox.out: Keypair Problem</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Keypair Problem</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Keypair Problem</h1>
+<!-- received="Mon Jul 27 02:17:27 2015" -->
+<!-- isoreceived="20150727061727" -->
+<!-- sent="Mon, 27 Jul 2015 06:17:25 +0000 (UTC)" -->
+<!-- isosent="20150727061725" -->
+<!-- name="Reza Ghotbi" -->
+<!-- email="(no email)" -->
+<!-- subject="Keypair Problem" -->
+<!-- id="1443751348.3114786.1437977845480.JavaMail.yahoo_at_mail.yahoo.com" -->
+<!-- charset="UTF-8" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2691.html#start2691" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2691.html#options2">top</a>, <a href="2691.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2692.html" accesskey="d" title="Sergio Mafra: &quot;(no subject)&quot;">Next message</a> ]
+[ <a href="2690.html" title="Christopher Clearfield: &quot;Moving to ubuntu 14.04 Trusty&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2691" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2691" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2691" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2691" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Reza Ghotbi &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Mon, 27 Jul 2015 06:17:25 +0000 (UTC)</span><br />
+</address>
+<br />
+Hi
+<br />
+I am trying to set my key pairs up.  
+<br />
+I create a private key pair through EC2 on Amazon and then save the key pair file as   reza.pem.text
+<br />
+then try to set the key pair name and path through 
+<br />
+<br />[keypair mykeypair1]
+<br />
+# this is the path to your openssh private key for mykeypair4
+<br />
+key_location=/path/to/your/mykeypair1.rsa
+<br />
+<br /><br />basically I put this 
+<br />
+[keypair   reza.pem.text]
+<br />
+key_location=/Users/rezag/Downloads/reza.pem.text
+<br />
+<br />but I keep getting error when I am trying to log into the cluster 
+<br />
+this is the error 
+<br />
+<br />!!! ERROR - Cluster settings are not valid:!!! ERROR - key_location '/Users/rezag/Downloads/reza.pem.txt' does not!!! ERROR - exist
+<br />
+Could someone please help, maybe the way I put the path is not correct ??
+<br />
+<br />ThanksReza.
+<br />
+<span id="received"><dfn>Received on</dfn> Mon Jul 27 2015 - 02:17:27 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2691.html#start2691">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2692.html" title="Next message in the list">Sergio Mafra: "(no subject)"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2690.html" title="Previous message in the list">Christopher Clearfield: "Moving to ubuntu 14.04 Trusty"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2691" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2691" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2691" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2691" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

@@ -1,0 +1,488 @@
+2011-10-07 09:29:55,579 PID: 24769 utils.py:466 - DEBUG - args = ['key_location', 'key_name']
+2011-10-07 09:29:55,580 PID: 24769 utils.py:467 - DEBUG - kwargs = []
+2011-10-07 09:29:55,580 PID: 24769 utils.py:468 - DEBUG - defaults = None
+2011-10-07 09:29:55,580 PID: 24769 cluster.py:461 - DEBUG - config_args = ['/Users/timb/.ssh/timb-key', 'identity']
+2011-10-07 09:29:55,580 PID: 24769 cluster.py:470 - DEBUG - config_kwargs = {}
+2011-10-07 09:29:55,580 PID: 24769 metrum.py:26 - DEBUG - key_location = /Users/timb/.ssh/timb-key
+2011-10-07 09:29:55,581 PID: 24769 metrum.py:27 - DEBUG - key_name = identity
+2011-10-07 09:29:55,581 PID: 24769 utils.py:463 - DEBUG - nargs = 1
+2011-10-07 09:29:55,581 PID: 24769 utils.py:464 - DEBUG - ndefaults = 0
+2011-10-07 09:29:55,581 PID: 24769 utils.py:465 - DEBUG - nrequired = 1
+2011-10-07 09:29:55,581 PID: 24769 utils.py:466 - DEBUG - args = ['sync_dir']
+2011-10-07 09:29:55,581 PID: 24769 utils.py:467 - DEBUG - kwargs = []
+2011-10-07 09:29:55,581 PID: 24769 utils.py:468 - DEBUG - defaults = None
+2011-10-07 09:29:55,581 PID: 24769 cluster.py:461 - DEBUG - config_args = ['/Users/timb/.starcluster/starDrop']
+2011-10-07 09:29:55,582 PID: 24769 cluster.py:470 - DEBUG - config_kwargs = {}
+2011-10-07 09:29:55,582 PID: 24769 metrum.py:45 - DEBUG - sync_dir = /Users/timb/.starcluster/starDrop
+2011-10-07 09:29:55,582 PID: 24769 utils.py:463 - DEBUG - nargs = 0
+2011-10-07 09:29:55,582 PID: 24769 utils.py:464 - DEBUG - ndefaults = 0
+2011-10-07 09:29:55,582 PID: 24769 utils.py:465 - DEBUG - nrequired = 0
+2011-10-07 09:29:55,582 PID: 24769 utils.py:466 - DEBUG - args = []
+2011-10-07 09:29:55,582 PID: 24769 utils.py:467 - DEBUG - kwargs = []
+2011-10-07 09:29:55,582 PID: 24769 utils.py:468 - DEBUG - defaults = None
+2011-10-07 09:29:55,583 PID: 24769 cluster.py:461 - DEBUG - config_args = []
+2011-10-07 09:29:55,583 PID: 24769 cluster.py:470 - DEBUG - config_kwargs = {}
+2011-10-07 09:29:55,728 PID: 24769 cluster.py:669 - DEBUG - existing nodes: {}
+2011-10-07 09:29:55,728 PID: 24769 cluster.py:677 - DEBUG - adding node i-c4530ca4 to self._nodes list
+2011-10-07 09:29:55,728 PID: 24769 cluster.py:677 - DEBUG - adding node i-c8530ca8 to self._nodes list
+2011-10-07 09:29:55,729 PID: 24769 cluster.py:677 - DEBUG - adding node i-ca530caa to self._nodes list
+2011-10-07 09:29:55,729 PID: 24769 cluster.py:677 - DEBUG - adding node i-cc530cac to self._nodes list
+2011-10-07 09:29:55,729 PID: 24769 cluster.py:677 - DEBUG - adding node i-ce530cae to self._nodes list
+2011-10-07 09:29:55,729 PID: 24769 cluster.py:677 - DEBUG - adding node i-d0530cb0 to self._nodes list
+2011-10-07 09:29:55,729 PID: 24769 cluster.py:677 - DEBUG - adding node i-d2530cb2 to self._nodes list
+2011-10-07 09:29:55,729 PID: 24769 cluster.py:677 - DEBUG - adding node i-d4530cb4 to self._nodes list
+2011-10-07 09:29:55,729 PID: 24769 cluster.py:677 - DEBUG - adding node i-d6530cb6 to self._nodes list
+2011-10-07 09:29:55,730 PID: 24769 cluster.py:677 - DEBUG - adding node i-d8530cb8 to self._nodes list
+2011-10-07 09:29:55,730 PID: 24769 cluster.py:677 - DEBUG - adding node i-da530cba to self._nodes list
+2011-10-07 09:29:55,730 PID: 24769 cluster.py:677 - DEBUG - adding node i-dc530cbc to self._nodes list
+2011-10-07 09:29:55,730 PID: 24769 cluster.py:677 - DEBUG - adding node i-de530cbe to self._nodes list
+2011-10-07 09:29:55,730 PID: 24769 cluster.py:677 - DEBUG - adding node i-a0530cc0 to self._nodes list
+2011-10-07 09:29:55,730 PID: 24769 cluster.py:677 - DEBUG - adding node i-a2530cc2 to self._nodes list
+2011-10-07 09:29:55,730 PID: 24769 cluster.py:677 - DEBUG - adding node i-a4530cc4 to self._nodes list
+2011-10-07 09:29:55,730 PID: 24769 cluster.py:677 - DEBUG - adding node i-a6530cc6 to self._nodes list
+2011-10-07 09:29:55,731 PID: 24769 cluster.py:677 - DEBUG - adding node i-a8530cc8 to self._nodes list
+2011-10-07 09:29:55,731 PID: 24769 cluster.py:677 - DEBUG - adding node i-aa530cca to self._nodes list
+2011-10-07 09:29:55,731 PID: 24769 cluster.py:677 - DEBUG - adding node i-ac530ccc to self._nodes list
+2011-10-07 09:29:55,731 PID: 24769 cluster.py:677 - DEBUG - adding node i-ae530cce to self._nodes list
+2011-10-07 09:29:55,731 PID: 24769 cluster.py:685 - DEBUG - returning self._nodes = [<Node: master (i-c4530ca4)>, <Node: node001 (i-c8530ca8)>, <Node: node002 (i-ca530caa)>, <Node: node003 (i-cc530cac)>, <Node: node004 (i-ce530cae)>, <Node: node005 (i-d0530cb0)>, <Node: node006 (i-d2530cb2)>, <Node: node007 (i-d4530cb4)>, <Node: node008 (i-d6530cb6)>, <Node: node009 (i-d8530cb8)>, <Node: node010 (i-da530cba)>, <Node: node011 (i-dc530cbc)>, <Node: node012 (i-de530cbe)>, <Node: node013 (i-a0530cc0)>, <Node: node014 (i-a2530cc2)>, <Node: node015 (i-a4530cc4)>, <Node: node016 (i-a6530cc6)>, <Node: node017 (i-a8530cc8)>, <Node: node018 (i-aa530cca)>, <Node: node019 (i-ac530ccc)>, <Node: node020 (i-ae530cce)>]
+2011-10-07 09:30:06,704 PID: 24769 cluster.py:669 - DEBUG - existing nodes: {u'i-ac530ccc': <Node: node019 (i-ac530ccc)>, u'i-d8530cb8': <Node: node009 (i-d8530cb8)>, u'i-a0530cc0': <Node: node013 (i-a0530cc0)>, u'i-ce530cae': <Node: node004 (i-ce530cae)>, u'i-de530cbe': <Node: node012 (i-de530cbe)>, u'i-da530cba': <Node: node010 (i-da530cba)>, u'i-d2530cb2': <Node: node006 (i-d2530cb2)>, u'i-ae530cce': <Node: node020 (i-ae530cce)>, u'i-dc530cbc': <Node: node011 (i-dc530cbc)>, u'i-c8530ca8': <Node: node001 (i-c8530ca8)>, u'i-a8530cc8': <Node: node017 (i-a8530cc8)>, u'i-d6530cb6': <Node: node008 (i-d6530cb6)>, u'i-d0530cb0': <Node: node005 (i-d0530cb0)>, u'i-c4530ca4': <Node: master (i-c4530ca4)>, u'i-a2530cc2': <Node: node014 (i-a2530cc2)>, u'i-aa530cca': <Node: node018 (i-aa530cca)>, u'i-d4530cb4': <Node: node007 (i-d4530cb4)>, u'i-a6530cc6': <Node: node016 (i-a6530cc6)>, u'i-a4530cc4': <Node: node015 (i-a4530cc4)>, u'i-cc530cac': <Node: node003 (i-cc530cac)>, u'i-ca530caa': <Node: node002 (i-ca530caa)>}
+2011-10-07 09:30:06,705 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-c4530ca4 in self._nodes
+2011-10-07 09:30:06,705 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-c8530ca8 in self._nodes
+2011-10-07 09:30:06,705 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-ca530caa in self._nodes
+2011-10-07 09:30:06,705 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-cc530cac in self._nodes
+2011-10-07 09:30:06,705 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-ce530cae in self._nodes
+2011-10-07 09:30:06,705 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-d0530cb0 in self._nodes
+2011-10-07 09:30:06,705 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-d2530cb2 in self._nodes
+2011-10-07 09:30:06,705 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-d4530cb4 in self._nodes
+2011-10-07 09:30:06,705 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-d6530cb6 in self._nodes
+2011-10-07 09:30:06,706 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-d8530cb8 in self._nodes
+2011-10-07 09:30:06,706 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-da530cba in self._nodes
+2011-10-07 09:30:06,706 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-dc530cbc in self._nodes
+2011-10-07 09:30:06,706 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-de530cbe in self._nodes
+2011-10-07 09:30:06,706 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-a0530cc0 in self._nodes
+2011-10-07 09:30:06,706 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-a2530cc2 in self._nodes
+2011-10-07 09:30:06,706 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-a4530cc4 in self._nodes
+2011-10-07 09:30:06,706 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-a6530cc6 in self._nodes
+2011-10-07 09:30:06,707 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-a8530cc8 in self._nodes
+2011-10-07 09:30:06,707 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-aa530cca in self._nodes
+2011-10-07 09:30:06,707 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-ac530ccc in self._nodes
+2011-10-07 09:30:06,707 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-ae530cce in self._nodes
+2011-10-07 09:30:06,707 PID: 24769 cluster.py:685 - DEBUG - returning self._nodes = [<Node: master (i-c4530ca4)>, <Node: node001 (i-c8530ca8)>, <Node: node002 (i-ca530caa)>, <Node: node003 (i-cc530cac)>, <Node: node004 (i-ce530cae)>, <Node: node005 (i-d0530cb0)>, <Node: node006 (i-d2530cb2)>, <Node: node007 (i-d4530cb4)>, <Node: node008 (i-d6530cb6)>, <Node: node009 (i-d8530cb8)>, <Node: node010 (i-da530cba)>, <Node: node011 (i-dc530cbc)>, <Node: node012 (i-de530cbe)>, <Node: node013 (i-a0530cc0)>, <Node: node014 (i-a2530cc2)>, <Node: node015 (i-a4530cc4)>, <Node: node016 (i-a6530cc6)>, <Node: node017 (i-a8530cc8)>, <Node: node018 (i-aa530cca)>, <Node: node019 (i-ac530ccc)>, <Node: node020 (i-ae530cce)>]
+2011-10-07 09:30:06,707 PID: 24769 cluster.py:1315 - INFO - Running plugin extras
+2011-10-07 09:30:06,707 PID: 24769 cluster.py:1319 - DEBUG - method on_shutdown not implemented by plugin extras
+2011-10-07 09:30:06,879 PID: 24769 cluster.py:669 - DEBUG - existing nodes: {u'i-ac530ccc': <Node: node019 (i-ac530ccc)>, u'i-d8530cb8': <Node: node009 (i-d8530cb8)>, u'i-a0530cc0': <Node: node013 (i-a0530cc0)>, u'i-ce530cae': <Node: node004 (i-ce530cae)>, u'i-de530cbe': <Node: node012 (i-de530cbe)>, u'i-da530cba': <Node: node010 (i-da530cba)>, u'i-d2530cb2': <Node: node006 (i-d2530cb2)>, u'i-ae530cce': <Node: node020 (i-ae530cce)>, u'i-dc530cbc': <Node: node011 (i-dc530cbc)>, u'i-c8530ca8': <Node: node001 (i-c8530ca8)>, u'i-a8530cc8': <Node: node017 (i-a8530cc8)>, u'i-d6530cb6': <Node: node008 (i-d6530cb6)>, u'i-d0530cb0': <Node: node005 (i-d0530cb0)>, u'i-c4530ca4': <Node: master (i-c4530ca4)>, u'i-a2530cc2': <Node: node014 (i-a2530cc2)>, u'i-aa530cca': <Node: node018 (i-aa530cca)>, u'i-d4530cb4': <Node: node007 (i-d4530cb4)>, u'i-a6530cc6': <Node: node016 (i-a6530cc6)>, u'i-a4530cc4': <Node: node015 (i-a4530cc4)>, u'i-cc530cac': <Node: node003 (i-cc530cac)>, u'i-ca530caa': <Node: node002 (i-ca530caa)>}
+2011-10-07 09:30:06,879 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-c4530ca4 in self._nodes
+2011-10-07 09:30:06,879 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-c8530ca8 in self._nodes
+2011-10-07 09:30:06,879 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-ca530caa in self._nodes
+2011-10-07 09:30:06,879 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-cc530cac in self._nodes
+2011-10-07 09:30:06,880 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-ce530cae in self._nodes
+2011-10-07 09:30:06,880 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-d0530cb0 in self._nodes
+2011-10-07 09:30:06,880 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-d2530cb2 in self._nodes
+2011-10-07 09:30:06,880 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-d4530cb4 in self._nodes
+2011-10-07 09:30:06,880 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-d6530cb6 in self._nodes
+2011-10-07 09:30:06,880 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-d8530cb8 in self._nodes
+2011-10-07 09:30:06,880 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-da530cba in self._nodes
+2011-10-07 09:30:06,880 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-dc530cbc in self._nodes
+2011-10-07 09:30:06,880 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-de530cbe in self._nodes
+2011-10-07 09:30:06,881 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-a0530cc0 in self._nodes
+2011-10-07 09:30:06,881 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-a2530cc2 in self._nodes
+2011-10-07 09:30:06,881 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-a4530cc4 in self._nodes
+2011-10-07 09:30:06,881 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-a6530cc6 in self._nodes
+2011-10-07 09:30:06,881 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-a8530cc8 in self._nodes
+2011-10-07 09:30:06,881 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-aa530cca in self._nodes
+2011-10-07 09:30:06,881 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-ac530ccc in self._nodes
+2011-10-07 09:30:06,881 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-ae530cce in self._nodes
+2011-10-07 09:30:06,882 PID: 24769 cluster.py:685 - DEBUG - returning self._nodes = [<Node: master (i-c4530ca4)>, <Node: node001 (i-c8530ca8)>, <Node: node002 (i-ca530caa)>, <Node: node003 (i-cc530cac)>, <Node: node004 (i-ce530cae)>, <Node: node005 (i-d0530cb0)>, <Node: node006 (i-d2530cb2)>, <Node: node007 (i-d4530cb4)>, <Node: node008 (i-d6530cb6)>, <Node: node009 (i-d8530cb8)>, <Node: node010 (i-da530cba)>, <Node: node011 (i-dc530cbc)>, <Node: node012 (i-de530cbe)>, <Node: node013 (i-a0530cc0)>, <Node: node014 (i-a2530cc2)>, <Node: node015 (i-a4530cc4)>, <Node: node016 (i-a6530cc6)>, <Node: node017 (i-a8530cc8)>, <Node: node018 (i-aa530cca)>, <Node: node019 (i-ac530ccc)>, <Node: node020 (i-ae530cce)>]
+2011-10-07 09:30:06,882 PID: 24769 cluster.py:1315 - INFO - Running plugin sync
+2011-10-07 09:30:06,882 PID: 24769 cluster.py:1319 - DEBUG - method on_shutdown not implemented by plugin sync
+2011-10-07 09:30:07,052 PID: 24769 cluster.py:669 - DEBUG - existing nodes: {u'i-ac530ccc': <Node: node019 (i-ac530ccc)>, u'i-d8530cb8': <Node: node009 (i-d8530cb8)>, u'i-a0530cc0': <Node: node013 (i-a0530cc0)>, u'i-ce530cae': <Node: node004 (i-ce530cae)>, u'i-de530cbe': <Node: node012 (i-de530cbe)>, u'i-da530cba': <Node: node010 (i-da530cba)>, u'i-d2530cb2': <Node: node006 (i-d2530cb2)>, u'i-ae530cce': <Node: node020 (i-ae530cce)>, u'i-dc530cbc': <Node: node011 (i-dc530cbc)>, u'i-c8530ca8': <Node: node001 (i-c8530ca8)>, u'i-a8530cc8': <Node: node017 (i-a8530cc8)>, u'i-d6530cb6': <Node: node008 (i-d6530cb6)>, u'i-d0530cb0': <Node: node005 (i-d0530cb0)>, u'i-c4530ca4': <Node: master (i-c4530ca4)>, u'i-a2530cc2': <Node: node014 (i-a2530cc2)>, u'i-aa530cca': <Node: node018 (i-aa530cca)>, u'i-d4530cb4': <Node: node007 (i-d4530cb4)>, u'i-a6530cc6': <Node: node016 (i-a6530cc6)>, u'i-a4530cc4': <Node: node015 (i-a4530cc4)>, u'i-cc530cac': <Node: node003 (i-cc530cac)>, u'i-ca530caa': <Node: node002 (i-ca530caa)>}
+2011-10-07 09:30:07,052 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-c4530ca4 in self._nodes
+2011-10-07 09:30:07,052 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-c8530ca8 in self._nodes
+2011-10-07 09:30:07,052 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-ca530caa in self._nodes
+2011-10-07 09:30:07,052 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-cc530cac in self._nodes
+2011-10-07 09:30:07,052 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-ce530cae in self._nodes
+2011-10-07 09:30:07,052 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-d0530cb0 in self._nodes
+2011-10-07 09:30:07,052 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-d2530cb2 in self._nodes
+2011-10-07 09:30:07,053 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-d4530cb4 in self._nodes
+2011-10-07 09:30:07,053 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-d6530cb6 in self._nodes
+2011-10-07 09:30:07,053 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-d8530cb8 in self._nodes
+2011-10-07 09:30:07,053 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-da530cba in self._nodes
+2011-10-07 09:30:07,053 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-dc530cbc in self._nodes
+2011-10-07 09:30:07,053 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-de530cbe in self._nodes
+2011-10-07 09:30:07,053 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-a0530cc0 in self._nodes
+2011-10-07 09:30:07,053 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-a2530cc2 in self._nodes
+2011-10-07 09:30:07,053 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-a4530cc4 in self._nodes
+2011-10-07 09:30:07,054 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-a6530cc6 in self._nodes
+2011-10-07 09:30:07,054 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-a8530cc8 in self._nodes
+2011-10-07 09:30:07,054 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-aa530cca in self._nodes
+2011-10-07 09:30:07,054 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-ac530ccc in self._nodes
+2011-10-07 09:30:07,054 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-ae530cce in self._nodes
+2011-10-07 09:30:07,054 PID: 24769 cluster.py:685 - DEBUG - returning self._nodes = [<Node: master (i-c4530ca4)>, <Node: node001 (i-c8530ca8)>, <Node: node002 (i-ca530caa)>, <Node: node003 (i-cc530cac)>, <Node: node004 (i-ce530cae)>, <Node: node005 (i-d0530cb0)>, <Node: node006 (i-d2530cb2)>, <Node: node007 (i-d4530cb4)>, <Node: node008 (i-d6530cb6)>, <Node: node009 (i-d8530cb8)>, <Node: node010 (i-da530cba)>, <Node: node011 (i-dc530cbc)>, <Node: node012 (i-de530cbe)>, <Node: node013 (i-a0530cc0)>, <Node: node014 (i-a2530cc2)>, <Node: node015 (i-a4530cc4)>, <Node: node016 (i-a6530cc6)>, <Node: node017 (i-a8530cc8)>, <Node: node018 (i-aa530cca)>, <Node: node019 (i-ac530ccc)>, <Node: node020 (i-ae530cce)>]
+2011-10-07 09:30:07,054 PID: 24769 cluster.py:1315 - INFO - Running plugin keys
+2011-10-07 09:30:07,055 PID: 24769 cluster.py:1319 - DEBUG - method on_shutdown not implemented by plugin keys
+2011-10-07 09:30:07,199 PID: 24769 cluster.py:669 - DEBUG - existing nodes: {u'i-ac530ccc': <Node: node019 (i-ac530ccc)>, u'i-d8530cb8': <Node: node009 (i-d8530cb8)>, u'i-a0530cc0': <Node: node013 (i-a0530cc0)>, u'i-ce530cae': <Node: node004 (i-ce530cae)>, u'i-de530cbe': <Node: node012 (i-de530cbe)>, u'i-da530cba': <Node: node010 (i-da530cba)>, u'i-d2530cb2': <Node: node006 (i-d2530cb2)>, u'i-ae530cce': <Node: node020 (i-ae530cce)>, u'i-dc530cbc': <Node: node011 (i-dc530cbc)>, u'i-c8530ca8': <Node: node001 (i-c8530ca8)>, u'i-a8530cc8': <Node: node017 (i-a8530cc8)>, u'i-d6530cb6': <Node: node008 (i-d6530cb6)>, u'i-d0530cb0': <Node: node005 (i-d0530cb0)>, u'i-c4530ca4': <Node: master (i-c4530ca4)>, u'i-a2530cc2': <Node: node014 (i-a2530cc2)>, u'i-aa530cca': <Node: node018 (i-aa530cca)>, u'i-d4530cb4': <Node: node007 (i-d4530cb4)>, u'i-a6530cc6': <Node: node016 (i-a6530cc6)>, u'i-a4530cc4': <Node: node015 (i-a4530cc4)>, u'i-cc530cac': <Node: node003 (i-cc530cac)>, u'i-ca530caa': <Node: node002 (i-ca530caa)>}
+2011-10-07 09:30:07,199 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-c4530ca4 in self._nodes
+2011-10-07 09:30:07,199 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-c8530ca8 in self._nodes
+2011-10-07 09:30:07,199 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-ca530caa in self._nodes
+2011-10-07 09:30:07,199 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-cc530cac in self._nodes
+2011-10-07 09:30:07,199 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-ce530cae in self._nodes
+2011-10-07 09:30:07,200 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-d0530cb0 in self._nodes
+2011-10-07 09:30:07,200 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-d2530cb2 in self._nodes
+2011-10-07 09:30:07,200 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-d4530cb4 in self._nodes
+2011-10-07 09:30:07,200 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-d6530cb6 in self._nodes
+2011-10-07 09:30:07,200 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-d8530cb8 in self._nodes
+2011-10-07 09:30:07,200 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-da530cba in self._nodes
+2011-10-07 09:30:07,200 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-dc530cbc in self._nodes
+2011-10-07 09:30:07,200 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-de530cbe in self._nodes
+2011-10-07 09:30:07,201 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-a0530cc0 in self._nodes
+2011-10-07 09:30:07,201 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-a2530cc2 in self._nodes
+2011-10-07 09:30:07,201 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-a4530cc4 in self._nodes
+2011-10-07 09:30:07,201 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-a6530cc6 in self._nodes
+2011-10-07 09:30:07,201 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-a8530cc8 in self._nodes
+2011-10-07 09:30:07,201 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-aa530cca in self._nodes
+2011-10-07 09:30:07,201 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-ac530ccc in self._nodes
+2011-10-07 09:30:07,201 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-ae530cce in self._nodes
+2011-10-07 09:30:07,202 PID: 24769 cluster.py:685 - DEBUG - returning self._nodes = [<Node: master (i-c4530ca4)>, <Node: node001 (i-c8530ca8)>, <Node: node002 (i-ca530caa)>, <Node: node003 (i-cc530cac)>, <Node: node004 (i-ce530cae)>, <Node: node005 (i-d0530cb0)>, <Node: node006 (i-d2530cb2)>, <Node: node007 (i-d4530cb4)>, <Node: node008 (i-d6530cb6)>, <Node: node009 (i-d8530cb8)>, <Node: node010 (i-da530cba)>, <Node: node011 (i-dc530cbc)>, <Node: node012 (i-de530cbe)>, <Node: node013 (i-a0530cc0)>, <Node: node014 (i-a2530cc2)>, <Node: node015 (i-a4530cc4)>, <Node: node016 (i-a6530cc6)>, <Node: node017 (i-a8530cc8)>, <Node: node018 (i-aa530cca)>, <Node: node019 (i-ac530ccc)>, <Node: node020 (i-ae530cce)>]
+2011-10-07 09:30:07,345 PID: 24769 cluster.py:669 - DEBUG - existing nodes: {u'i-ac530ccc': <Node: node019 (i-ac530ccc)>, u'i-d8530cb8': <Node: node009 (i-d8530cb8)>, u'i-a0530cc0': <Node: node013 (i-a0530cc0)>, u'i-ce530cae': <Node: node004 (i-ce530cae)>, u'i-de530cbe': <Node: node012 (i-de530cbe)>, u'i-da530cba': <Node: node010 (i-da530cba)>, u'i-d2530cb2': <Node: node006 (i-d2530cb2)>, u'i-ae530cce': <Node: node020 (i-ae530cce)>, u'i-dc530cbc': <Node: node011 (i-dc530cbc)>, u'i-c8530ca8': <Node: node001 (i-c8530ca8)>, u'i-a8530cc8': <Node: node017 (i-a8530cc8)>, u'i-d6530cb6': <Node: node008 (i-d6530cb6)>, u'i-d0530cb0': <Node: node005 (i-d0530cb0)>, u'i-c4530ca4': <Node: master (i-c4530ca4)>, u'i-a2530cc2': <Node: node014 (i-a2530cc2)>, u'i-aa530cca': <Node: node018 (i-aa530cca)>, u'i-d4530cb4': <Node: node007 (i-d4530cb4)>, u'i-a6530cc6': <Node: node016 (i-a6530cc6)>, u'i-a4530cc4': <Node: node015 (i-a4530cc4)>, u'i-cc530cac': <Node: node003 (i-cc530cac)>, u'i-ca530caa': <Node: node002 (i-ca530caa)>}
+2011-10-07 09:30:07,346 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-c4530ca4 in self._nodes
+2011-10-07 09:30:07,346 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-c8530ca8 in self._nodes
+2011-10-07 09:30:07,346 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-ca530caa in self._nodes
+2011-10-07 09:30:07,346 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-cc530cac in self._nodes
+2011-10-07 09:30:07,346 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-ce530cae in self._nodes
+2011-10-07 09:30:07,346 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-d0530cb0 in self._nodes
+2011-10-07 09:30:07,346 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-d2530cb2 in self._nodes
+2011-10-07 09:30:07,346 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-d4530cb4 in self._nodes
+2011-10-07 09:30:07,347 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-d6530cb6 in self._nodes
+2011-10-07 09:30:07,347 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-d8530cb8 in self._nodes
+2011-10-07 09:30:07,347 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-da530cba in self._nodes
+2011-10-07 09:30:07,347 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-dc530cbc in self._nodes
+2011-10-07 09:30:07,347 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-de530cbe in self._nodes
+2011-10-07 09:30:07,347 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-a0530cc0 in self._nodes
+2011-10-07 09:30:07,347 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-a2530cc2 in self._nodes
+2011-10-07 09:30:07,347 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-a4530cc4 in self._nodes
+2011-10-07 09:30:07,347 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-a6530cc6 in self._nodes
+2011-10-07 09:30:07,348 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-a8530cc8 in self._nodes
+2011-10-07 09:30:07,348 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-aa530cca in self._nodes
+2011-10-07 09:30:07,348 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-ac530ccc in self._nodes
+2011-10-07 09:30:07,348 PID: 24769 cluster.py:672 - DEBUG - updating existing node i-ae530cce in self._nodes
+2011-10-07 09:30:07,348 PID: 24769 cluster.py:685 - DEBUG - returning self._nodes = [<Node: master (i-c4530ca4)>, <Node: node001 (i-c8530ca8)>, <Node: node002 (i-ca530caa)>, <Node: node003 (i-cc530cac)>, <Node: node004 (i-ce530cae)>, <Node: node005 (i-d0530cb0)>, <Node: node006 (i-d2530cb2)>, <Node: node007 (i-d4530cb4)>, <Node: node008 (i-d6530cb6)>, <Node: node009 (i-d8530cb8)>, <Node: node010 (i-da530cba)>, <Node: node011 (i-dc530cbc)>, <Node: node012 (i-de530cbe)>, <Node: node013 (i-a0530cc0)>, <Node: node014 (i-a2530cc2)>, <Node: node015 (i-a4530cc4)>, <Node: node016 (i-a6530cc6)>, <Node: node017 (i-a8530cc8)>, <Node: node018 (i-aa530cca)>, <Node: node019 (i-ac530ccc)>, <Node: node020 (i-ae530cce)>]
+2011-10-07 09:30:07,348 PID: 24769 node.py:775 - INFO - Terminating node: master (i-c4530ca4)
+2011-10-07 09:30:08,217 PID: 24769 node.py:775 - INFO - Terminating node: node001 (i-c8530ca8)
+2011-10-07 09:30:08,421 PID: 24769 node.py:775 - INFO - Terminating node: node002 (i-ca530caa)
+2011-10-07 09:30:08,592 PID: 24769 node.py:775 - INFO - Terminating node: node003 (i-cc530cac)
+2011-10-07 09:30:08,774 PID: 24769 node.py:775 - INFO - Terminating node: node004 (i-ce530cae)
+2011-10-07 09:30:08,911 PID: 24769 node.py:775 - INFO - Terminating node: node005 (i-d0530cb0)
+2011-10-07 09:30:09,368 PID: 24769 node.py:775 - INFO - Terminating node: node006 (i-d2530cb2)
+2011-10-07 09:30:09,501 PID: 24769 node.py:775 - INFO - Terminating node: node007 (i-d4530cb4)
+2011-10-07 09:30:09,694 PID: 24769 node.py:775 - INFO - Terminating node: node008 (i-d6530cb6)
+2011-10-07 09:30:10,172 PID: 24769 node.py:775 - INFO - Terminating node: node009 (i-d8530cb8)
+2011-10-07 09:30:10,406 PID: 24769 node.py:775 - INFO - Terminating node: node010 (i-da530cba)
+2011-10-07 09:30:11,013 PID: 24769 node.py:775 - INFO - Terminating node: node011 (i-dc530cbc)
+2011-10-07 09:30:11,188 PID: 24769 node.py:775 - INFO - Terminating node: node012 (i-de530cbe)
+2011-10-07 09:30:11,343 PID: 24769 node.py:775 - INFO - Terminating node: node013 (i-a0530cc0)
+2011-10-07 09:30:11,495 PID: 24769 node.py:775 - INFO - Terminating node: node014 (i-a2530cc2)
+2011-10-07 09:30:11,919 PID: 24769 node.py:775 - INFO - Terminating node: node015 (i-a4530cc4)
+2011-10-07 09:30:12,090 PID: 24769 node.py:775 - INFO - Terminating node: node016 (i-a6530cc6)
+2011-10-07 09:30:12,259 PID: 24769 node.py:775 - INFO - Terminating node: node017 (i-a8530cc8)
+2011-10-07 09:30:12,427 PID: 24769 node.py:775 - INFO - Terminating node: node018 (i-aa530cca)
+2011-10-07 09:30:12,592 PID: 24769 node.py:775 - INFO - Terminating node: node019 (i-ac530ccc)
+2011-10-07 09:30:12,719 PID: 24769 node.py:775 - INFO - Terminating node: node020 (i-ae530cce)
+2011-10-07 09:30:13,017 PID: 24769 cluster.py:1038 - INFO - Waiting for cluster to terminate...
+2011-10-07 09:30:14,194 PID: 24769 cluster.py:1219 - INFO - Removing @sc-timbCluster security group
+2011-10-07 09:30:32,841 PID: 24774 config.py:524 - DEBUG - Loading config
+2011-10-07 09:30:32,842 PID: 24774 config.py:118 - DEBUG - Loading file: /Users/timb/.starcluster/config
+2011-10-07 09:30:32,846 PID: 24774 config.py:524 - DEBUG - Loading config
+2011-10-07 09:30:32,846 PID: 24774 config.py:118 - DEBUG - Loading file: /Users/timb/.starcluster/config
+2011-10-07 09:30:32,850 PID: 24774 awsutils.py:55 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'path': '/', 'region': None, 'port': None, 'is_secure': True}
+2011-10-07 09:30:33,086 PID: 24774 utils.py:463 - DEBUG - nargs = 2
+2011-10-07 09:30:33,086 PID: 24774 utils.py:464 - DEBUG - ndefaults = 0
+2011-10-07 09:30:33,086 PID: 24774 utils.py:465 - DEBUG - nrequired = 2
+2011-10-07 09:30:33,086 PID: 24774 utils.py:466 - DEBUG - args = ['key_location', 'key_name']
+2011-10-07 09:30:33,086 PID: 24774 utils.py:467 - DEBUG - kwargs = []
+2011-10-07 09:30:33,087 PID: 24774 utils.py:468 - DEBUG - defaults = None
+2011-10-07 09:30:33,087 PID: 24774 cluster.py:461 - DEBUG - config_args = ['/Users/timb/.ssh/timb-key', 'identity']
+2011-10-07 09:30:33,087 PID: 24774 cluster.py:470 - DEBUG - config_kwargs = {}
+2011-10-07 09:30:33,087 PID: 24774 metrum.py:26 - DEBUG - key_location = /Users/timb/.ssh/timb-key
+2011-10-07 09:30:33,087 PID: 24774 metrum.py:27 - DEBUG - key_name = identity
+2011-10-07 09:30:33,087 PID: 24774 utils.py:463 - DEBUG - nargs = 1
+2011-10-07 09:30:33,087 PID: 24774 utils.py:464 - DEBUG - ndefaults = 0
+2011-10-07 09:30:33,087 PID: 24774 utils.py:465 - DEBUG - nrequired = 1
+2011-10-07 09:30:33,088 PID: 24774 utils.py:466 - DEBUG - args = ['sync_dir']
+2011-10-07 09:30:33,088 PID: 24774 utils.py:467 - DEBUG - kwargs = []
+2011-10-07 09:30:33,088 PID: 24774 utils.py:468 - DEBUG - defaults = None
+2011-10-07 09:30:33,088 PID: 24774 cluster.py:461 - DEBUG - config_args = ['/Users/timb/.starcluster/starDrop']
+2011-10-07 09:30:33,088 PID: 24774 cluster.py:470 - DEBUG - config_kwargs = {}
+2011-10-07 09:30:33,088 PID: 24774 metrum.py:45 - DEBUG - sync_dir = /Users/timb/.starcluster/starDrop
+2011-10-07 09:30:33,088 PID: 24774 utils.py:463 - DEBUG - nargs = 0
+2011-10-07 09:30:33,088 PID: 24774 utils.py:464 - DEBUG - ndefaults = 0
+2011-10-07 09:30:33,089 PID: 24774 utils.py:465 - DEBUG - nrequired = 0
+2011-10-07 09:30:33,089 PID: 24774 utils.py:466 - DEBUG - args = []
+2011-10-07 09:30:33,089 PID: 24774 utils.py:467 - DEBUG - kwargs = []
+2011-10-07 09:30:33,089 PID: 24774 utils.py:468 - DEBUG - defaults = None
+2011-10-07 09:30:33,089 PID: 24774 cluster.py:461 - DEBUG - config_args = []
+2011-10-07 09:30:33,089 PID: 24774 cluster.py:470 - DEBUG - config_kwargs = {}
+2011-10-07 09:30:33,089 PID: 24774 cluster.py:1348 - INFO - Validating cluster template settings...
+2011-10-07 09:30:38,738 PID: 24774 cluster.py:887 - DEBUG - Launch map: node001 (ami: ami-cb08cba2, type: c1.xlarge)...
+2011-10-07 09:30:38,738 PID: 24774 cluster.py:887 - DEBUG - Launch map: node002 (ami: ami-cb08cba2, type: c1.xlarge)...
+2011-10-07 09:30:38,738 PID: 24774 cluster.py:887 - DEBUG - Launch map: node003 (ami: ami-cb08cba2, type: c1.xlarge)...
+2011-10-07 09:30:38,739 PID: 24774 cluster.py:887 - DEBUG - Launch map: node004 (ami: ami-cb08cba2, type: c1.xlarge)...
+2011-10-07 09:30:38,739 PID: 24774 cluster.py:887 - DEBUG - Launch map: node005 (ami: ami-cb08cba2, type: c1.xlarge)...
+2011-10-07 09:30:38,739 PID: 24774 cluster.py:887 - DEBUG - Launch map: node006 (ami: ami-cb08cba2, type: c1.xlarge)...
+2011-10-07 09:30:38,739 PID: 24774 cluster.py:887 - DEBUG - Launch map: node007 (ami: ami-cb08cba2, type: c1.xlarge)...
+2011-10-07 09:30:38,739 PID: 24774 cluster.py:887 - DEBUG - Launch map: node008 (ami: ami-cb08cba2, type: c1.xlarge)...
+2011-10-07 09:30:38,739 PID: 24774 cluster.py:887 - DEBUG - Launch map: node009 (ami: ami-cb08cba2, type: c1.xlarge)...
+2011-10-07 09:30:38,739 PID: 24774 cluster.py:887 - DEBUG - Launch map: node010 (ami: ami-cb08cba2, type: c1.xlarge)...
+2011-10-07 09:30:38,739 PID: 24774 cluster.py:887 - DEBUG - Launch map: node011 (ami: ami-cb08cba2, type: c1.xlarge)...
+2011-10-07 09:30:38,740 PID: 24774 cluster.py:887 - DEBUG - Launch map: node012 (ami: ami-cb08cba2, type: c1.xlarge)...
+2011-10-07 09:30:38,740 PID: 24774 cluster.py:887 - DEBUG - Launch map: node013 (ami: ami-cb08cba2, type: c1.xlarge)...
+2011-10-07 09:30:38,740 PID: 24774 cluster.py:887 - DEBUG - Launch map: node014 (ami: ami-cb08cba2, type: c1.xlarge)...
+2011-10-07 09:30:38,740 PID: 24774 cluster.py:887 - DEBUG - Launch map: node015 (ami: ami-cb08cba2, type: c1.xlarge)...
+2011-10-07 09:30:38,740 PID: 24774 cluster.py:887 - DEBUG - Launch map: node016 (ami: ami-cb08cba2, type: c1.xlarge)...
+2011-10-07 09:30:38,740 PID: 24774 cluster.py:887 - DEBUG - Launch map: node017 (ami: ami-cb08cba2, type: c1.xlarge)...
+2011-10-07 09:30:38,740 PID: 24774 cluster.py:887 - DEBUG - Launch map: node018 (ami: ami-cb08cba2, type: c1.xlarge)...
+2011-10-07 09:30:38,740 PID: 24774 cluster.py:887 - DEBUG - Launch map: node019 (ami: ami-cb08cba2, type: c1.xlarge)...
+2011-10-07 09:30:38,741 PID: 24774 cluster.py:887 - DEBUG - Launch map: node020 (ami: ami-cb08cba2, type: c1.xlarge)...
+2011-10-07 09:30:38,741 PID: 24774 cluster.py:1370 - INFO - Cluster template settings are valid
+2011-10-07 09:30:38,741 PID: 24774 cluster.py:1243 - INFO - Starting cluster...
+2011-10-07 09:30:38,741 PID: 24774 cluster.py:906 - INFO - Launching a 21-node cluster...
+2011-10-07 09:30:38,741 PID: 24774 cluster.py:887 - DEBUG - Launch map: node001 (ami: ami-cb08cba2, type: c1.xlarge)...
+2011-10-07 09:30:38,742 PID: 24774 cluster.py:887 - DEBUG - Launch map: node002 (ami: ami-cb08cba2, type: c1.xlarge)...
+2011-10-07 09:30:38,742 PID: 24774 cluster.py:887 - DEBUG - Launch map: node003 (ami: ami-cb08cba2, type: c1.xlarge)...
+2011-10-07 09:30:38,742 PID: 24774 cluster.py:887 - DEBUG - Launch map: node004 (ami: ami-cb08cba2, type: c1.xlarge)...
+2011-10-07 09:30:38,742 PID: 24774 cluster.py:887 - DEBUG - Launch map: node005 (ami: ami-cb08cba2, type: c1.xlarge)...
+2011-10-07 09:30:38,742 PID: 24774 cluster.py:887 - DEBUG - Launch map: node006 (ami: ami-cb08cba2, type: c1.xlarge)...
+2011-10-07 09:30:38,742 PID: 24774 cluster.py:887 - DEBUG - Launch map: node007 (ami: ami-cb08cba2, type: c1.xlarge)...
+2011-10-07 09:30:38,742 PID: 24774 cluster.py:887 - DEBUG - Launch map: node008 (ami: ami-cb08cba2, type: c1.xlarge)...
+2011-10-07 09:30:38,742 PID: 24774 cluster.py:887 - DEBUG - Launch map: node009 (ami: ami-cb08cba2, type: c1.xlarge)...
+2011-10-07 09:30:38,743 PID: 24774 cluster.py:887 - DEBUG - Launch map: node010 (ami: ami-cb08cba2, type: c1.xlarge)...
+2011-10-07 09:30:38,743 PID: 24774 cluster.py:887 - DEBUG - Launch map: node011 (ami: ami-cb08cba2, type: c1.xlarge)...
+2011-10-07 09:30:38,743 PID: 24774 cluster.py:887 - DEBUG - Launch map: node012 (ami: ami-cb08cba2, type: c1.xlarge)...
+2011-10-07 09:30:38,743 PID: 24774 cluster.py:887 - DEBUG - Launch map: node013 (ami: ami-cb08cba2, type: c1.xlarge)...
+2011-10-07 09:30:38,743 PID: 24774 cluster.py:887 - DEBUG - Launch map: node014 (ami: ami-cb08cba2, type: c1.xlarge)...
+2011-10-07 09:30:38,743 PID: 24774 cluster.py:887 - DEBUG - Launch map: node015 (ami: ami-cb08cba2, type: c1.xlarge)...
+2011-10-07 09:30:38,743 PID: 24774 cluster.py:887 - DEBUG - Launch map: node016 (ami: ami-cb08cba2, type: c1.xlarge)...
+2011-10-07 09:30:38,744 PID: 24774 cluster.py:887 - DEBUG - Launch map: node017 (ami: ami-cb08cba2, type: c1.xlarge)...
+2011-10-07 09:30:38,744 PID: 24774 cluster.py:887 - DEBUG - Launch map: node018 (ami: ami-cb08cba2, type: c1.xlarge)...
+2011-10-07 09:30:38,744 PID: 24774 cluster.py:887 - DEBUG - Launch map: node019 (ami: ami-cb08cba2, type: c1.xlarge)...
+2011-10-07 09:30:38,744 PID: 24774 cluster.py:887 - DEBUG - Launch map: node020 (ami: ami-cb08cba2, type: c1.xlarge)...
+2011-10-07 09:30:38,744 PID: 24774 cluster.py:933 - DEBUG - Launching master (ami: ami-cb08cba2, type: c1.xlarge)
+2011-10-07 09:30:38,744 PID: 24774 cluster.py:933 - DEBUG - Launching node001 (ami: ami-cb08cba2, type: c1.xlarge)
+2011-10-07 09:30:38,744 PID: 24774 cluster.py:933 - DEBUG - Launching node002 (ami: ami-cb08cba2, type: c1.xlarge)
+2011-10-07 09:30:38,744 PID: 24774 cluster.py:933 - DEBUG - Launching node003 (ami: ami-cb08cba2, type: c1.xlarge)
+2011-10-07 09:30:38,745 PID: 24774 cluster.py:933 - DEBUG - Launching node004 (ami: ami-cb08cba2, type: c1.xlarge)
+2011-10-07 09:30:38,745 PID: 24774 cluster.py:933 - DEBUG - Launching node005 (ami: ami-cb08cba2, type: c1.xlarge)
+2011-10-07 09:30:38,745 PID: 24774 cluster.py:933 - DEBUG - Launching node006 (ami: ami-cb08cba2, type: c1.xlarge)
+2011-10-07 09:30:38,745 PID: 24774 cluster.py:933 - DEBUG - Launching node007 (ami: ami-cb08cba2, type: c1.xlarge)
+2011-10-07 09:30:38,745 PID: 24774 cluster.py:933 - DEBUG - Launching node008 (ami: ami-cb08cba2, type: c1.xlarge)
+2011-10-07 09:30:38,745 PID: 24774 cluster.py:933 - DEBUG - Launching node009 (ami: ami-cb08cba2, type: c1.xlarge)
+2011-10-07 09:30:38,745 PID: 24774 cluster.py:933 - DEBUG - Launching node010 (ami: ami-cb08cba2, type: c1.xlarge)
+2011-10-07 09:30:38,745 PID: 24774 cluster.py:933 - DEBUG - Launching node011 (ami: ami-cb08cba2, type: c1.xlarge)
+2011-10-07 09:30:38,746 PID: 24774 cluster.py:933 - DEBUG - Launching node012 (ami: ami-cb08cba2, type: c1.xlarge)
+2011-10-07 09:30:38,746 PID: 24774 cluster.py:933 - DEBUG - Launching node013 (ami: ami-cb08cba2, type: c1.xlarge)
+2011-10-07 09:30:38,746 PID: 24774 cluster.py:933 - DEBUG - Launching node014 (ami: ami-cb08cba2, type: c1.xlarge)
+2011-10-07 09:30:38,746 PID: 24774 cluster.py:933 - DEBUG - Launching node015 (ami: ami-cb08cba2, type: c1.xlarge)
+2011-10-07 09:30:38,746 PID: 24774 cluster.py:933 - DEBUG - Launching node016 (ami: ami-cb08cba2, type: c1.xlarge)
+2011-10-07 09:30:38,746 PID: 24774 cluster.py:933 - DEBUG - Launching node017 (ami: ami-cb08cba2, type: c1.xlarge)
+2011-10-07 09:30:38,746 PID: 24774 cluster.py:933 - DEBUG - Launching node018 (ami: ami-cb08cba2, type: c1.xlarge)
+2011-10-07 09:30:38,746 PID: 24774 cluster.py:933 - DEBUG - Launching node019 (ami: ami-cb08cba2, type: c1.xlarge)
+2011-10-07 09:30:38,747 PID: 24774 cluster.py:933 - DEBUG - Launching node020 (ami: ami-cb08cba2, type: c1.xlarge)
+2011-10-07 09:30:38,803 PID: 24774 awsutils.py:160 - INFO - Creating security group @sc-timbCluster...
+2011-10-07 09:30:39,900 PID: 24774 cluster.py:637 - INFO - Opening tcp port range 8787-8787 for CIDR 0.0.0.0/0
+2011-10-07 09:30:40,429 PID: 24774 cluster.py:762 - INFO - Reservation:r-9863c2f6
+2011-10-07 09:30:40,429 PID: 24774 cluster.py:1063 - INFO - Waiting for cluster to come up... (updating every 30s)
+2011-10-07 09:30:40,948 PID: 24774 cluster.py:669 - DEBUG - existing nodes: {}
+2011-10-07 09:30:40,948 PID: 24774 cluster.py:685 - DEBUG - returning self._nodes = []
+2011-10-07 09:30:40,948 PID: 24774 cluster.py:1038 - INFO - Waiting for instances to activate...
+2011-10-07 09:31:11,357 PID: 24774 cluster.py:669 - DEBUG - existing nodes: {}
+2011-10-07 09:31:11,357 PID: 24774 cluster.py:677 - DEBUG - adding node i-38441b58 to self._nodes list
+2011-10-07 09:31:11,755 PID: 24774 cluster.py:677 - DEBUG - adding node i-3a441b5a to self._nodes list
+2011-10-07 09:31:11,913 PID: 24774 cluster.py:677 - DEBUG - adding node i-3c441b5c to self._nodes list
+2011-10-07 09:31:12,116 PID: 24774 cluster.py:677 - DEBUG - adding node i-3e441b5e to self._nodes list
+2011-10-07 09:31:12,385 PID: 24774 cluster.py:677 - DEBUG - adding node i-00441b60 to self._nodes list
+2011-10-07 09:31:12,547 PID: 24774 cluster.py:677 - DEBUG - adding node i-02441b62 to self._nodes list
+2011-10-07 09:31:12,726 PID: 24774 cluster.py:677 - DEBUG - adding node i-04441b64 to self._nodes list
+2011-10-07 09:31:12,890 PID: 24774 cluster.py:677 - DEBUG - adding node i-06441b66 to self._nodes list
+2011-10-07 09:31:13,065 PID: 24774 cluster.py:677 - DEBUG - adding node i-08441b68 to self._nodes list
+2011-10-07 09:31:13,218 PID: 24774 cluster.py:677 - DEBUG - adding node i-0a441b6a to self._nodes list
+2011-10-07 09:31:13,432 PID: 24774 cluster.py:677 - DEBUG - adding node i-0c441b6c to self._nodes list
+2011-10-07 09:31:13,607 PID: 24774 cluster.py:677 - DEBUG - adding node i-0e441b6e to self._nodes list
+2011-10-07 09:31:13,782 PID: 24774 cluster.py:677 - DEBUG - adding node i-10441b70 to self._nodes list
+2011-10-07 09:31:14,011 PID: 24774 cluster.py:677 - DEBUG - adding node i-12441b72 to self._nodes list
+2011-10-07 09:31:14,162 PID: 24774 cluster.py:677 - DEBUG - adding node i-14441b74 to self._nodes list
+2011-10-07 09:31:14,342 PID: 24774 cluster.py:677 - DEBUG - adding node i-16441b76 to self._nodes list
+2011-10-07 09:31:14,507 PID: 24774 cluster.py:677 - DEBUG - adding node i-18441b78 to self._nodes list
+2011-10-07 09:31:14,669 PID: 24774 cluster.py:677 - DEBUG - adding node i-1a441b7a to self._nodes list
+2011-10-07 09:31:14,891 PID: 24774 cluster.py:677 - DEBUG - adding node i-1c441b7c to self._nodes list
+2011-10-07 09:31:15,060 PID: 24774 cluster.py:677 - DEBUG - adding node i-1e441b7e to self._nodes list
+2011-10-07 09:31:15,277 PID: 24774 cluster.py:685 - DEBUG - returning self._nodes = [<Node: node001 (i-38441b58)>, <Node: node002 (i-3a441b5a)>, <Node: node003 (i-3c441b5c)>, <Node: node004 (i-3e441b5e)>, <Node: node005 (i-00441b60)>, <Node: node006 (i-02441b62)>, <Node: node007 (i-04441b64)>, <Node: node008 (i-06441b66)>, <Node: node009 (i-08441b68)>, <Node: node010 (i-0a441b6a)>, <Node: node011 (i-0c441b6c)>, <Node: node012 (i-0e441b6e)>, <Node: node013 (i-10441b70)>, <Node: node014 (i-12441b72)>, <Node: node015 (i-14441b74)>, <Node: node016 (i-16441b76)>, <Node: node017 (i-18441b78)>, <Node: node018 (i-1a441b7a)>, <Node: node019 (i-1c441b7c)>, <Node: node020 (i-1e441b7e)>]
+2011-10-07 09:31:16,278 PID: 24774 cluster.py:1085 - INFO - Waiting for all nodes to be in a 'running' state...
+2011-10-07 09:31:46,411 PID: 24774 cluster.py:669 - DEBUG - existing nodes: {u'i-10441b70': <Node: node013 (i-10441b70)>, u'i-0a441b6a': <Node: node010 (i-0a441b6a)>, u'i-3c441b5c': <Node: node003 (i-3c441b5c)>, u'i-14441b74': <Node: node015 (i-14441b74)>, u'i-1c441b7c': <Node: node019 (i-1c441b7c)>, u'i-18441b78': <Node: node017 (i-18441b78)>, u'i-08441b68': <Node: node009 (i-08441b68)>, u'i-06441b66': <Node: node008 (i-06441b66)>, u'i-02441b62': <Node: node006 (i-02441b62)>, u'i-16441b76': <Node: node016 (i-16441b76)>, u'i-12441b72': <Node: node014 (i-12441b72)>, u'i-1a441b7a': <Node: node018 (i-1a441b7a)>, u'i-3e441b5e': <Node: node004 (i-3e441b5e)>, u'i-0c441b6c': <Node: node011 (i-0c441b6c)>, u'i-04441b64': <Node: node007 (i-04441b64)>, u'i-0e441b6e': <Node: node012 (i-0e441b6e)>, u'i-1e441b7e': <Node: node020 (i-1e441b7e)>, u'i-38441b58': <Node: node001 (i-38441b58)>, u'i-3a441b5a': <Node: node002 (i-3a441b5a)>, u'i-00441b60': <Node: node005 (i-00441b60)>}
+2011-10-07 09:31:46,412 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-38441b58 in self._nodes
+2011-10-07 09:31:46,412 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-3a441b5a in self._nodes
+2011-10-07 09:31:46,412 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-3c441b5c in self._nodes
+2011-10-07 09:31:46,412 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-3e441b5e in self._nodes
+2011-10-07 09:31:46,412 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-00441b60 in self._nodes
+2011-10-07 09:31:46,412 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-02441b62 in self._nodes
+2011-10-07 09:31:46,412 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-04441b64 in self._nodes
+2011-10-07 09:31:46,412 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-06441b66 in self._nodes
+2011-10-07 09:31:46,413 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-08441b68 in self._nodes
+2011-10-07 09:31:46,413 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-0a441b6a in self._nodes
+2011-10-07 09:31:46,413 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-0c441b6c in self._nodes
+2011-10-07 09:31:46,413 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-0e441b6e in self._nodes
+2011-10-07 09:31:46,413 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-10441b70 in self._nodes
+2011-10-07 09:31:46,413 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-12441b72 in self._nodes
+2011-10-07 09:31:46,413 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-14441b74 in self._nodes
+2011-10-07 09:31:46,413 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-16441b76 in self._nodes
+2011-10-07 09:31:46,413 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-18441b78 in self._nodes
+2011-10-07 09:31:46,414 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-1a441b7a in self._nodes
+2011-10-07 09:31:46,414 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-1c441b7c in self._nodes
+2011-10-07 09:31:46,414 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-1e441b7e in self._nodes
+2011-10-07 09:31:46,414 PID: 24774 cluster.py:685 - DEBUG - returning self._nodes = [<Node: node001 (i-38441b58)>, <Node: node002 (i-3a441b5a)>, <Node: node003 (i-3c441b5c)>, <Node: node004 (i-3e441b5e)>, <Node: node005 (i-00441b60)>, <Node: node006 (i-02441b62)>, <Node: node007 (i-04441b64)>, <Node: node008 (i-06441b66)>, <Node: node009 (i-08441b68)>, <Node: node010 (i-0a441b6a)>, <Node: node011 (i-0c441b6c)>, <Node: node012 (i-0e441b6e)>, <Node: node013 (i-10441b70)>, <Node: node014 (i-12441b72)>, <Node: node015 (i-14441b74)>, <Node: node016 (i-16441b76)>, <Node: node017 (i-18441b78)>, <Node: node018 (i-1a441b7a)>, <Node: node019 (i-1c441b7c)>, <Node: node020 (i-1e441b7e)>]
+2011-10-07 09:31:46,415 PID: 24774 cluster.py:1096 - INFO - Waiting for SSH to come up on all nodes...
+2011-10-07 09:31:46,494 PID: 24774 ssh.py:68 - DEBUG - loading private key /Users/timb/.ssh/timb-key
+2011-10-07 09:31:46,494 PID: 24774 ssh.py:75 - DEBUG - specified key does not end in either rsa or dsa, trying both
+2011-10-07 09:31:46,495 PID: 24774 ssh.py:152 - DEBUG - Using private key /Users/timb/.ssh/timb-key (rsa)
+2011-10-07 09:31:46,495 PID: 24774 ssh.py:89 - DEBUG - connecting to host ec2-184-72-95-169.compute-1.amazonaws.com on port 22 as user root
+2011-10-07 09:31:47,031 PID: 24774 ssh.py:68 - DEBUG - loading private key /Users/timb/.ssh/timb-key
+2011-10-07 09:31:47,032 PID: 24774 ssh.py:75 - DEBUG - specified key does not end in either rsa or dsa, trying both
+2011-10-07 09:31:47,032 PID: 24774 ssh.py:152 - DEBUG - Using private key /Users/timb/.ssh/timb-key (rsa)
+2011-10-07 09:31:47,033 PID: 24774 ssh.py:89 - DEBUG - connecting to host ec2-50-17-134-153.compute-1.amazonaws.com on port 22 as user root
+2011-10-07 09:31:48,527 PID: 24774 ssh.py:68 - DEBUG - loading private key /Users/timb/.ssh/timb-key
+2011-10-07 09:31:48,528 PID: 24774 ssh.py:75 - DEBUG - specified key does not end in either rsa or dsa, trying both
+2011-10-07 09:31:48,529 PID: 24774 ssh.py:152 - DEBUG - Using private key /Users/timb/.ssh/timb-key (rsa)
+2011-10-07 09:31:48,529 PID: 24774 ssh.py:89 - DEBUG - connecting to host ec2-50-17-78-49.compute-1.amazonaws.com on port 22 as user root
+2011-10-07 09:31:49,062 PID: 24774 ssh.py:68 - DEBUG - loading private key /Users/timb/.ssh/timb-key
+2011-10-07 09:31:49,062 PID: 24774 ssh.py:75 - DEBUG - specified key does not end in either rsa or dsa, trying both
+2011-10-07 09:31:49,063 PID: 24774 ssh.py:152 - DEBUG - Using private key /Users/timb/.ssh/timb-key (rsa)
+2011-10-07 09:31:49,063 PID: 24774 ssh.py:89 - DEBUG - connecting to host ec2-50-16-175-59.compute-1.amazonaws.com on port 22 as user root
+2011-10-07 09:31:50,192 PID: 24774 ssh.py:68 - DEBUG - loading private key /Users/timb/.ssh/timb-key
+2011-10-07 09:31:50,193 PID: 24774 ssh.py:75 - DEBUG - specified key does not end in either rsa or dsa, trying both
+2011-10-07 09:31:50,194 PID: 24774 ssh.py:152 - DEBUG - Using private key /Users/timb/.ssh/timb-key (rsa)
+2011-10-07 09:31:50,194 PID: 24774 ssh.py:89 - DEBUG - connecting to host ec2-50-19-76-160.compute-1.amazonaws.com on port 22 as user root
+2011-10-07 09:31:50,712 PID: 24774 ssh.py:68 - DEBUG - loading private key /Users/timb/.ssh/timb-key
+2011-10-07 09:31:50,712 PID: 24774 ssh.py:75 - DEBUG - specified key does not end in either rsa or dsa, trying both
+2011-10-07 09:31:50,713 PID: 24774 ssh.py:152 - DEBUG - Using private key /Users/timb/.ssh/timb-key (rsa)
+2011-10-07 09:31:50,713 PID: 24774 ssh.py:89 - DEBUG - connecting to host ec2-184-72-87-89.compute-1.amazonaws.com on port 22 as user root
+2011-10-07 09:31:51,579 PID: 24774 ssh.py:68 - DEBUG - loading private key /Users/timb/.ssh/timb-key
+2011-10-07 09:31:51,579 PID: 24774 ssh.py:75 - DEBUG - specified key does not end in either rsa or dsa, trying both
+2011-10-07 09:31:51,580 PID: 24774 ssh.py:152 - DEBUG - Using private key /Users/timb/.ssh/timb-key (rsa)
+2011-10-07 09:31:51,580 PID: 24774 ssh.py:89 - DEBUG - connecting to host ec2-204-236-243-97.compute-1.amazonaws.com on port 22 as user root
+2011-10-07 09:31:52,128 PID: 24774 ssh.py:68 - DEBUG - loading private key /Users/timb/.ssh/timb-key
+2011-10-07 09:31:52,128 PID: 24774 ssh.py:75 - DEBUG - specified key does not end in either rsa or dsa, trying both
+2011-10-07 09:31:52,129 PID: 24774 ssh.py:152 - DEBUG - Using private key /Users/timb/.ssh/timb-key (rsa)
+2011-10-07 09:31:52,129 PID: 24774 ssh.py:89 - DEBUG - connecting to host ec2-50-17-39-231.compute-1.amazonaws.com on port 22 as user root
+2011-10-07 09:31:53,702 PID: 24774 ssh.py:68 - DEBUG - loading private key /Users/timb/.ssh/timb-key
+2011-10-07 09:31:53,702 PID: 24774 ssh.py:75 - DEBUG - specified key does not end in either rsa or dsa, trying both
+2011-10-07 09:31:53,703 PID: 24774 ssh.py:152 - DEBUG - Using private key /Users/timb/.ssh/timb-key (rsa)
+2011-10-07 09:31:53,704 PID: 24774 ssh.py:89 - DEBUG - connecting to host ec2-174-129-72-74.compute-1.amazonaws.com on port 22 as user root
+2011-10-07 09:32:23,817 PID: 24774 ssh.py:68 - DEBUG - loading private key /Users/timb/.ssh/timb-key
+2011-10-07 09:32:23,817 PID: 24774 ssh.py:75 - DEBUG - specified key does not end in either rsa or dsa, trying both
+2011-10-07 09:32:23,818 PID: 24774 ssh.py:152 - DEBUG - Using private key /Users/timb/.ssh/timb-key (rsa)
+2011-10-07 09:32:23,818 PID: 24774 ssh.py:89 - DEBUG - connecting to host ec2-50-16-155-108.compute-1.amazonaws.com on port 22 as user root
+2011-10-07 09:32:24,562 PID: 24774 ssh.py:68 - DEBUG - loading private key /Users/timb/.ssh/timb-key
+2011-10-07 09:32:24,562 PID: 24774 ssh.py:75 - DEBUG - specified key does not end in either rsa or dsa, trying both
+2011-10-07 09:32:24,563 PID: 24774 ssh.py:152 - DEBUG - Using private key /Users/timb/.ssh/timb-key (rsa)
+2011-10-07 09:32:24,563 PID: 24774 ssh.py:89 - DEBUG - connecting to host ec2-50-16-75-58.compute-1.amazonaws.com on port 22 as user root
+2011-10-07 09:32:27,108 PID: 24774 ssh.py:68 - DEBUG - loading private key /Users/timb/.ssh/timb-key
+2011-10-07 09:32:27,108 PID: 24774 ssh.py:75 - DEBUG - specified key does not end in either rsa or dsa, trying both
+2011-10-07 09:32:27,109 PID: 24774 ssh.py:152 - DEBUG - Using private key /Users/timb/.ssh/timb-key (rsa)
+2011-10-07 09:32:27,109 PID: 24774 ssh.py:89 - DEBUG - connecting to host ec2-50-17-119-118.compute-1.amazonaws.com on port 22 as user root
+2011-10-07 09:32:30,585 PID: 24774 ssh.py:68 - DEBUG - loading private key /Users/timb/.ssh/timb-key
+2011-10-07 09:32:30,585 PID: 24774 ssh.py:75 - DEBUG - specified key does not end in either rsa or dsa, trying both
+2011-10-07 09:32:30,586 PID: 24774 ssh.py:152 - DEBUG - Using private key /Users/timb/.ssh/timb-key (rsa)
+2011-10-07 09:32:30,586 PID: 24774 ssh.py:89 - DEBUG - connecting to host ec2-50-19-205-242.compute-1.amazonaws.com on port 22 as user root
+2011-10-07 09:32:31,083 PID: 24774 ssh.py:68 - DEBUG - loading private key /Users/timb/.ssh/timb-key
+2011-10-07 09:32:31,084 PID: 24774 ssh.py:75 - DEBUG - specified key does not end in either rsa or dsa, trying both
+2011-10-07 09:32:31,084 PID: 24774 ssh.py:152 - DEBUG - Using private key /Users/timb/.ssh/timb-key (rsa)
+2011-10-07 09:32:31,085 PID: 24774 ssh.py:89 - DEBUG - connecting to host ec2-50-19-45-43.compute-1.amazonaws.com on port 22 as user root
+2011-10-07 09:32:31,668 PID: 24774 ssh.py:68 - DEBUG - loading private key /Users/timb/.ssh/timb-key
+2011-10-07 09:32:31,668 PID: 24774 ssh.py:75 - DEBUG - specified key does not end in either rsa or dsa, trying both
+2011-10-07 09:32:31,669 PID: 24774 ssh.py:152 - DEBUG - Using private key /Users/timb/.ssh/timb-key (rsa)
+2011-10-07 09:32:31,669 PID: 24774 ssh.py:89 - DEBUG - connecting to host ec2-75-101-185-182.compute-1.amazonaws.com on port 22 as user root
+2011-10-07 09:32:32,310 PID: 24774 ssh.py:68 - DEBUG - loading private key /Users/timb/.ssh/timb-key
+2011-10-07 09:32:32,310 PID: 24774 ssh.py:75 - DEBUG - specified key does not end in either rsa or dsa, trying both
+2011-10-07 09:32:32,311 PID: 24774 ssh.py:152 - DEBUG - Using private key /Users/timb/.ssh/timb-key (rsa)
+2011-10-07 09:32:32,311 PID: 24774 ssh.py:89 - DEBUG - connecting to host ec2-50-19-151-103.compute-1.amazonaws.com on port 22 as user root
+2011-10-07 09:32:32,902 PID: 24774 ssh.py:68 - DEBUG - loading private key /Users/timb/.ssh/timb-key
+2011-10-07 09:32:32,902 PID: 24774 ssh.py:75 - DEBUG - specified key does not end in either rsa or dsa, trying both
+2011-10-07 09:32:32,903 PID: 24774 ssh.py:152 - DEBUG - Using private key /Users/timb/.ssh/timb-key (rsa)
+2011-10-07 09:32:32,904 PID: 24774 ssh.py:89 - DEBUG - connecting to host ec2-184-73-143-216.compute-1.amazonaws.com on port 22 as user root
+2011-10-07 09:32:33,470 PID: 24774 ssh.py:68 - DEBUG - loading private key /Users/timb/.ssh/timb-key
+2011-10-07 09:32:33,470 PID: 24774 ssh.py:75 - DEBUG - specified key does not end in either rsa or dsa, trying both
+2011-10-07 09:32:33,471 PID: 24774 ssh.py:152 - DEBUG - Using private key /Users/timb/.ssh/timb-key (rsa)
+2011-10-07 09:32:33,471 PID: 24774 ssh.py:89 - DEBUG - connecting to host ec2-50-17-72-17.compute-1.amazonaws.com on port 22 as user root
+2011-10-07 09:32:34,143 PID: 24774 ssh.py:68 - DEBUG - loading private key /Users/timb/.ssh/timb-key
+2011-10-07 09:32:34,144 PID: 24774 ssh.py:75 - DEBUG - specified key does not end in either rsa or dsa, trying both
+2011-10-07 09:32:34,145 PID: 24774 ssh.py:152 - DEBUG - Using private key /Users/timb/.ssh/timb-key (rsa)
+2011-10-07 09:32:34,145 PID: 24774 ssh.py:89 - DEBUG - connecting to host ec2-184-72-167-198.compute-1.amazonaws.com on port 22 as user root
+2011-10-07 09:32:34,284 PID: 24774 ssh.py:68 - DEBUG - loading private key /Users/timb/.ssh/timb-key
+2011-10-07 09:32:34,285 PID: 24774 ssh.py:75 - DEBUG - specified key does not end in either rsa or dsa, trying both
+2011-10-07 09:32:34,285 PID: 24774 ssh.py:152 - DEBUG - Using private key /Users/timb/.ssh/timb-key (rsa)
+2011-10-07 09:32:34,286 PID: 24774 ssh.py:89 - DEBUG - connecting to host ec2-50-17-165-213.compute-1.amazonaws.com on port 22 as user root
+2011-10-07 09:33:34,470 PID: 24774 cluster.py:669 - DEBUG - existing nodes: {u'i-10441b70': <Node: node013 (i-10441b70)>, u'i-0a441b6a': <Node: node010 (i-0a441b6a)>, u'i-3c441b5c': <Node: node003 (i-3c441b5c)>, u'i-14441b74': <Node: node015 (i-14441b74)>, u'i-1c441b7c': <Node: node019 (i-1c441b7c)>, u'i-18441b78': <Node: node017 (i-18441b78)>, u'i-08441b68': <Node: node009 (i-08441b68)>, u'i-06441b66': <Node: node008 (i-06441b66)>, u'i-02441b62': <Node: node006 (i-02441b62)>, u'i-16441b76': <Node: node016 (i-16441b76)>, u'i-12441b72': <Node: node014 (i-12441b72)>, u'i-1a441b7a': <Node: node018 (i-1a441b7a)>, u'i-3e441b5e': <Node: node004 (i-3e441b5e)>, u'i-0c441b6c': <Node: node011 (i-0c441b6c)>, u'i-04441b64': <Node: node007 (i-04441b64)>, u'i-0e441b6e': <Node: node012 (i-0e441b6e)>, u'i-1e441b7e': <Node: node020 (i-1e441b7e)>, u'i-38441b58': <Node: node001 (i-38441b58)>, u'i-3a441b5a': <Node: node002 (i-3a441b5a)>, u'i-00441b60': <Node: node005 (i-00441b60)>}
+2011-10-07 09:33:34,470 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-38441b58 in self._nodes
+2011-10-07 09:33:34,471 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-3a441b5a in self._nodes
+2011-10-07 09:33:34,471 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-3c441b5c in self._nodes
+2011-10-07 09:33:34,471 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-3e441b5e in self._nodes
+2011-10-07 09:33:34,471 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-00441b60 in self._nodes
+2011-10-07 09:33:34,471 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-02441b62 in self._nodes
+2011-10-07 09:33:34,471 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-04441b64 in self._nodes
+2011-10-07 09:33:34,471 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-06441b66 in self._nodes
+2011-10-07 09:33:34,471 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-08441b68 in self._nodes
+2011-10-07 09:33:34,472 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-0a441b6a in self._nodes
+2011-10-07 09:33:34,472 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-0c441b6c in self._nodes
+2011-10-07 09:33:34,472 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-0e441b6e in self._nodes
+2011-10-07 09:33:34,472 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-10441b70 in self._nodes
+2011-10-07 09:33:34,472 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-12441b72 in self._nodes
+2011-10-07 09:33:34,472 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-14441b74 in self._nodes
+2011-10-07 09:33:34,473 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-16441b76 in self._nodes
+2011-10-07 09:33:34,473 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-18441b78 in self._nodes
+2011-10-07 09:33:34,473 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-1a441b7a in self._nodes
+2011-10-07 09:33:34,473 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-1c441b7c in self._nodes
+2011-10-07 09:33:34,473 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-1e441b7e in self._nodes
+2011-10-07 09:33:34,473 PID: 24774 cluster.py:685 - DEBUG - returning self._nodes = [<Node: node001 (i-38441b58)>, <Node: node002 (i-3a441b5a)>, <Node: node003 (i-3c441b5c)>, <Node: node004 (i-3e441b5e)>, <Node: node005 (i-00441b60)>, <Node: node006 (i-02441b62)>, <Node: node007 (i-04441b64)>, <Node: node008 (i-06441b66)>, <Node: node009 (i-08441b68)>, <Node: node010 (i-0a441b6a)>, <Node: node011 (i-0c441b6c)>, <Node: node012 (i-0e441b6e)>, <Node: node013 (i-10441b70)>, <Node: node014 (i-12441b72)>, <Node: node015 (i-14441b74)>, <Node: node016 (i-16441b76)>, <Node: node017 (i-18441b78)>, <Node: node018 (i-1a441b7a)>, <Node: node019 (i-1c441b7c)>, <Node: node020 (i-1e441b7e)>]
+2011-10-07 09:33:35,207 PID: 24774 ssh.py:89 - DEBUG - connecting to host ec2-174-129-72-74.compute-1.amazonaws.com on port 22 as user root
+2011-10-07 09:33:36,793 PID: 24774 ssh.py:89 - DEBUG - connecting to host ec2-184-72-167-198.compute-1.amazonaws.com on port 22 as user root
+2011-10-07 09:33:42,877 PID: 24774 ssh.py:89 - DEBUG - connecting to host ec2-50-17-165-213.compute-1.amazonaws.com on port 22 as user root
+2011-10-07 09:33:43,411 PID: 24774 cluster.py:669 - DEBUG - existing nodes: {u'i-10441b70': <Node: node013 (i-10441b70)>, u'i-0a441b6a': <Node: node010 (i-0a441b6a)>, u'i-3c441b5c': <Node: node003 (i-3c441b5c)>, u'i-14441b74': <Node: node015 (i-14441b74)>, u'i-1c441b7c': <Node: node019 (i-1c441b7c)>, u'i-18441b78': <Node: node017 (i-18441b78)>, u'i-08441b68': <Node: node009 (i-08441b68)>, u'i-06441b66': <Node: node008 (i-06441b66)>, u'i-02441b62': <Node: node006 (i-02441b62)>, u'i-16441b76': <Node: node016 (i-16441b76)>, u'i-12441b72': <Node: node014 (i-12441b72)>, u'i-1a441b7a': <Node: node018 (i-1a441b7a)>, u'i-3e441b5e': <Node: node004 (i-3e441b5e)>, u'i-0c441b6c': <Node: node011 (i-0c441b6c)>, u'i-04441b64': <Node: node007 (i-04441b64)>, u'i-0e441b6e': <Node: node012 (i-0e441b6e)>, u'i-1e441b7e': <Node: node020 (i-1e441b7e)>, u'i-38441b58': <Node: node001 (i-38441b58)>, u'i-3a441b5a': <Node: node002 (i-3a441b5a)>, u'i-00441b60': <Node: node005 (i-00441b60)>}
+2011-10-07 09:33:43,411 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-38441b58 in self._nodes
+2011-10-07 09:33:43,411 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-3a441b5a in self._nodes
+2011-10-07 09:33:43,412 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-3c441b5c in self._nodes
+2011-10-07 09:33:43,412 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-3e441b5e in self._nodes
+2011-10-07 09:33:43,412 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-00441b60 in self._nodes
+2011-10-07 09:33:43,412 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-02441b62 in self._nodes
+2011-10-07 09:33:43,412 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-04441b64 in self._nodes
+2011-10-07 09:33:43,412 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-06441b66 in self._nodes
+2011-10-07 09:33:43,412 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-08441b68 in self._nodes
+2011-10-07 09:33:43,412 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-0a441b6a in self._nodes
+2011-10-07 09:33:43,413 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-0c441b6c in self._nodes
+2011-10-07 09:33:43,413 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-0e441b6e in self._nodes
+2011-10-07 09:33:43,413 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-10441b70 in self._nodes
+2011-10-07 09:33:43,413 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-12441b72 in self._nodes
+2011-10-07 09:33:43,413 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-14441b74 in self._nodes
+2011-10-07 09:33:43,414 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-16441b76 in self._nodes
+2011-10-07 09:33:43,414 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-18441b78 in self._nodes
+2011-10-07 09:33:43,414 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-1a441b7a in self._nodes
+2011-10-07 09:33:43,414 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-1c441b7c in self._nodes
+2011-10-07 09:33:43,414 PID: 24774 cluster.py:672 - DEBUG - updating existing node i-1e441b7e in self._nodes
+2011-10-07 09:33:43,414 PID: 24774 cluster.py:685 - DEBUG - returning self._nodes = [<Node: node001 (i-38441b58)>, <Node: node002 (i-3a441b5a)>, <Node: node003 (i-3c441b5c)>, <Node: node004 (i-3e441b5e)>, <Node: node005 (i-00441b60)>, <Node: node006 (i-02441b62)>, <Node: node007 (i-04441b64)>, <Node: node008 (i-06441b66)>, <Node: node009 (i-08441b68)>, <Node: node010 (i-0a441b6a)>, <Node: node011 (i-0c441b6c)>, <Node: node012 (i-0e441b6e)>, <Node: node013 (i-10441b70)>, <Node: node014 (i-12441b72)>, <Node: node015 (i-14441b74)>, <Node: node016 (i-16441b76)>, <Node: node017 (i-18441b78)>, <Node: node018 (i-1a441b7a)>, <Node: node019 (i-1c441b7c)>, <Node: node020 (i-1e441b7e)>]
+2011-10-07 09:33:43,456 PID: 24774 cli.py:187 - DEBUG - Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/cli.py", line 155, in main
+    sc.execute(args)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/commands/start.py", line 213, in execute
+    scluster.start(create=create, create_only=create_only, validate=False)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/cluster.py", line 1234, in start
+    return self._start(create, create_only)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/utils.py", line 95, in wrap_f
+    res = func(*arg, **kargs)
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/cluster.py", line 1252, in _start
+    self._setup_cluster()
+  File "/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/cluster.py", line 1267, in _setup_cluster
+    log.info("The master node is %s" % self.master_node.dns_name)
+AttributeError: 'NoneType' object has no attribute 'dns_name'
+
+2011-10-07 09:33:43,456 PID: 24774 cli.py:124 - ERROR - Oops! Looks like you've found a bug in StarCluster
+2011-10-07 09:33:43,456 PID: 24774 cli.py:125 - ERROR - Debug file written to: /tmp/starcluster-debug-timb.log
+2011-10-07 09:33:43,457 PID: 24774 cli.py:126 - ERROR - Look for lines starting with PID: 24774
+2011-10-07 09:33:43,457 PID: 24774 cli.py:127 - ERROR - Please submit this file, minus any private information,
+2011-10-07 09:33:43,457 PID: 24774 cli.py:128 - ERROR - to starcluster@mit.edu

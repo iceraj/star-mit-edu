@@ -1,0 +1,186 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="James Ching ((no email))" />
+<meta name="Subject" content="executing plugins before enabling/adding to queue" />
+<title>starcluster.mbox.out: executing plugins before enabling/adding to queue</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">executing plugins before enabling/adding to queue</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>executing plugins before enabling/adding to queue</h1>
+<!-- received="Wed May 27 10:29:44 2015" -->
+<!-- isoreceived="20150527142944" -->
+<!-- sent="Wed, 27 May 2015 10:29:42 -0400" -->
+<!-- isosent="20150527142942" -->
+<!-- name="James Ching" -->
+<!-- email="(no email)" -->
+<!-- subject="executing plugins before enabling/adding to queue" -->
+<!-- id="CAH8=mF5eG-Vqd7GL6OZADka=GXZzauPX86ZZwpFD+bRtHiXZZw_at_mail.gmail.com" -->
+<!-- charset="UTF-8" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2637.html#start2637" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2637.html#options2">top</a>, <a href="2637.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2638.html" accesskey="d" title="Sergio Mafra: &quot;Starcluster and Microsoft Active Directory&quot;">Next message</a> ]
+[ <a href="2636.html" title="Andrey Evtikhov: &quot;Re:  launching c3.xlarge crashed every time&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="2664.html" accesskey="t" title="James Ching: &quot;Re:  executing plugins before enabling/adding to queue&quot;">Next in thread</a> ]
+ [ <a href="2637.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2637" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2637" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2637" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2637" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: James Ching &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Wed, 27 May 2015 10:29:42 -0400</span><br />
+</address>
+<br />
+Hi,
+<br />
+<br />I'm currently using a plugin to format the local ephemeral drives and it
+<br />
+works great when I launch a new cluster but when I use the load balance
+<br />
+feature and it adds nodes to expand the queue, the node being formatted
+<br />
+takes in jobs and they end up failing because it's in the process of
+<br />
+formatting the drives.
+<br />
+<br />I tried the queue disable_queue feature and it doesn't seem to work, I also
+<br />
+ensured that when I declared PLUGINS, i have the format first, then sge
+<br />
+last but still no luck... is there something that I am missing to have the
+<br />
+node added to the queue after the plugins are executed?
+<br />
+<br />Thanks!
+<br />
+<span id="received"><dfn>Received on</dfn> Wed May 27 2015 - 10:29:44 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2637.html#start2637">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2638.html" title="Next message in the list">Sergio Mafra: "Starcluster and Microsoft Active Directory"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2636.html" title="Previous message in the list">Andrey Evtikhov: "Re:  launching c3.xlarge crashed every time"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="2664.html" title="Next message in this discussion thread">James Ching: "Re:  executing plugins before enabling/adding to queue"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="2664.html" title="Message sent in reply to this message">James Ching: "Re:  executing plugins before enabling/adding to queue"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2637" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2637" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2637" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2637" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

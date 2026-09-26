@@ -1,0 +1,197 @@
+---------- SYSTEM INFO ----------
+StarCluster: 0.95.6
+Python: 2.7.9 (default, Dec 10 2014, 12:24:55) [MSC v.1500 32 bit (Intel)]
+Platform: Windows-7-6.1.7601-SP1
+boto: 2.34.0
+paramiko: 1.16.0
+Crypto: 2.6.1
+
+
+2015-04-21 10:55:39,253 PID: 3352 sshutils.py:562 - DEBUG - executing remote command: source /etc/profile && which ipcluster
+2015-04-21 10:55:39,309 PID: 3352 sshutils.py:586 - DEBUG - output of 'source /etc/profile && which ipcluster':
+/usr/local/bin/ipcluster
+2015-04-21 10:55:39,556 PID: 3352 sshutils.py:112 - DEBUG - connecting to host ec2-52-4-119-73.compute-1.amazonaws.com on port 22 as user ipuser
+2015-04-21 10:55:40,253 PID: 3352 sshutils.py:204 - DEBUG - creating sftp connection
+2015-04-21 10:55:40,499 PID: 3352 ipcluster.py:117 - INFO - Writing IPython cluster config files
+2015-04-21 10:55:40,565 PID: 3352 sshutils.py:562 - DEBUG - executing remote command: source /etc/profile && rm -rf '/home/ipuser/.ipython/profile_default'
+2015-04-21 10:55:40,617 PID: 3352 sshutils.py:586 - DEBUG - output of 'source /etc/profile && rm -rf '/home/ipuser/.ipython/profile_default'':
+
+2015-04-21 10:55:40,750 PID: 3352 sshutils.py:562 - DEBUG - executing remote command: source /etc/profile && ipython profile create
+2015-04-21 10:55:53,859 PID: 3352 sshutils.py:586 - DEBUG - output of 'source /etc/profile && ipython profile create':
+[ProfileCreate] Generating default config file: u'/home/ipuser/.ipython/profile_default/ipython_config.py'
+[ProfileCreate] Generating default config file: u'/home/ipuser/.ipython/profile_default/ipython_notebook_config.py'
+2015-04-21 10:55:54,417 PID: 3352 sshutils.py:562 - DEBUG - executing remote command: source /etc/profile && cat /proc/cpuinfo | grep processor | wc -l
+2015-04-21 10:55:54,536 PID: 3352 sshutils.py:586 - DEBUG - output of 'source /etc/profile && cat /proc/cpuinfo | grep processor | wc -l':
+8
+2015-04-21 10:55:54,539 PID: 3352 ipcluster.py:168 - INFO - Starting the IPython controller and 7 engines on master
+2015-04-21 10:55:54,671 PID: 3352 sshutils.py:562 - DEBUG - executing remote command: source /etc/profile && rm -f /home/ipuser/.ipython/profile_default/security/*.json
+2015-04-21 10:55:54,724 PID: 3352 sshutils.py:586 - DEBUG - output of 'source /etc/profile && rm -f /home/ipuser/.ipython/profile_default/security/*.json':
+
+2015-04-21 10:55:54,858 PID: 3352 sshutils.py:562 - DEBUG - executing remote command: source /etc/profile && ipcluster start --n=7 --delay=5 --daemonize
+2015-04-21 10:55:55,507 PID: 3352 sshutils.py:586 - DEBUG - output of 'source /etc/profile && ipcluster start --n=7 --delay=5 --daemonize':
+2015-04-21 15:55:55,466.466 [IPClusterStart] Using existing profile dir: u'/home/ipuser/.ipython/profile_default'
+2015-04-21 10:55:55,509 PID: 3352 ipcluster.py:176 - INFO - Waiting for JSON connector file...
+2015-04-21 10:55:57,869 PID: 3352 sshutils.py:212 - DEBUG - creating scp connection
+2015-04-21 10:55:58,176 PID: 3352 ipcluster.py:274 - INFO - Authorizing tcp ports [1000-65535] on 0.0.0.0/0 for: IPython controller
+2015-04-21 10:55:58,404 PID: 3352 sshutils.py:562 - DEBUG - executing remote command: source /etc/profile && cat /proc/cpuinfo | grep processor | wc -l
+2015-04-21 10:55:58,513 PID: 3352 sshutils.py:586 - DEBUG - output of 'source /etc/profile && cat /proc/cpuinfo | grep processor | wc -l':
+8
+2015-04-21 10:55:58,516 PID: 3352 sshutils.py:112 - DEBUG - connecting to host ec2-52-6-113-149.compute-1.amazonaws.com on port 22 as user ipuser
+2015-04-21 10:55:58,581 PID: 3352 sshutils.py:562 - DEBUG - executing remote command: source /etc/profile && cat /proc/cpuinfo | grep processor | wc -l
+2015-04-21 10:55:58,746 PID: 3352 sshutils.py:586 - DEBUG - output of 'source /etc/profile && cat /proc/cpuinfo | grep processor | wc -l':
+8
+2015-04-21 10:55:58,746 PID: 3352 sshutils.py:112 - DEBUG - connecting to host ec2-52-6-135-168.compute-1.amazonaws.com on port 22 as user ipuser
+2015-04-21 10:55:58,887 PID: 3352 sshutils.py:562 - DEBUG - executing remote command: source /etc/profile && cat /proc/cpuinfo | grep processor | wc -l
+2015-04-21 10:55:58,986 PID: 3352 sshutils.py:586 - DEBUG - output of 'source /etc/profile && cat /proc/cpuinfo | grep processor | wc -l':
+8
+2015-04-21 10:55:58,986 PID: 3352 sshutils.py:112 - DEBUG - connecting to host ec2-52-6-144-27.compute-1.amazonaws.com on port 22 as user ipuser
+2015-04-21 10:55:59,216 PID: 3352 sshutils.py:562 - DEBUG - executing remote command: source /etc/profile && cat /proc/cpuinfo | grep processor | wc -l
+2015-04-21 10:55:59,834 PID: 3352 sshutils.py:586 - DEBUG - output of 'source /etc/profile && cat /proc/cpuinfo | grep processor | wc -l':
+8
+2015-04-21 10:55:59,834 PID: 3352 ipcluster.py:299 - INFO - Adding 32 engines on 4 nodes
+2015-04-21 10:55:59,834 PID: 3352 sshutils.py:112 - DEBUG - connecting to host ec2-52-6-141-104.compute-1.amazonaws.com on port 22 as user ipuser
+2015-04-21 10:55:59,835 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:00,835 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:01,838 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:02,838 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:03,839 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:04,841 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:05,842 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:06,842 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:07,844 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:08,845 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:09,845 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:10,846 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:11,848 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:12,848 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:13,849 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:14,851 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:15,851 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:16,852 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:17,854 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:18,855 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:19,855 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:20,857 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:21,858 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:22,858 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:23,859 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:24,861 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:25,861 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:26,862 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:27,864 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:28,865 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:29,865 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:30,867 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:31,868 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:32,868 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:33,869 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:34,871 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:35,871 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:36,872 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:37,874 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:38,875 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:39,875 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:40,877 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:41,878 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:42,878 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:43,880 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:44,881 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:45,881 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:46,882 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:47,884 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:48,884 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:49,885 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:50,887 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:51,888 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:52,888 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:53,890 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:54,874 PID: 3352 sshutils.py:204 - DEBUG - creating sftp connection
+2015-04-21 10:56:54,891 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:55,134 PID: 3352 sshutils.py:562 - DEBUG - executing remote command: source /etc/profile && ipcluster engines --n=8 --daemonize
+2015-04-21 10:56:55,171 PID: 3352 sshutils.py:204 - DEBUG - creating sftp connection
+2015-04-21 10:56:55,450 PID: 3352 sshutils.py:562 - DEBUG - executing remote command: source /etc/profile && ipcluster engines --n=8 --daemonize
+2015-04-21 10:56:55,467 PID: 3352 sshutils.py:204 - DEBUG - creating sftp connection
+2015-04-21 10:56:55,714 PID: 3352 sshutils.py:562 - DEBUG - executing remote command: source /etc/profile && ipcluster engines --n=8 --daemonize
+2015-04-21 10:56:55,891 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:56,065 PID: 3352 sshutils.py:204 - DEBUG - creating sftp connection
+2015-04-21 10:56:56,312 PID: 3352 sshutils.py:562 - DEBUG - executing remote command: source /etc/profile && ipcluster engines --n=8 --daemonize
+2015-04-21 10:56:56,892 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:57,894 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:58,894 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:59,558 PID: 3352 sshutils.py:586 - DEBUG - output of 'source /etc/profile && ipcluster engines --n=8 --daemonize':
+2015-04-21 15:56:59,509.509 [IPClusterEngines] Using existing profile dir: u'/home/ipuser/.ipython/profile_default'
+2015-04-21 10:56:59,559 PID: 3352 sshutils.py:112 - DEBUG - connecting to host ec2-52-6-113-149.compute-1.amazonaws.com on port 22 as user root
+2015-04-21 10:56:59,598 PID: 3352 sshutils.py:586 - DEBUG - output of 'source /etc/profile && ipcluster engines --n=8 --daemonize':
+2015-04-21 15:56:59,551.551 [IPClusterEngines] Using existing profile dir: u'/home/ipuser/.ipython/profile_default'
+2015-04-21 10:56:59,598 PID: 3352 sshutils.py:112 - DEBUG - connecting to host ec2-52-6-144-27.compute-1.amazonaws.com on port 22 as user root
+2015-04-21 10:56:59,904 PID: 3352 sshutils.py:586 - DEBUG - output of 'source /etc/profile && ipcluster engines --n=8 --daemonize':
+2015-04-21 15:56:59,715.715 [IPClusterEngines] Using existing profile dir: u'/home/ipuser/.ipython/profile_default'
+2015-04-21 10:56:59,904 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:56:59,964 PID: 3352 sshutils.py:586 - DEBUG - output of 'source /etc/profile && ipcluster engines --n=8 --daemonize':
+2015-04-21 15:56:59,766.766 [IPClusterEngines] Using existing profile dir: u'/home/ipuser/.ipython/profile_default'
+2015-04-21 10:56:59,964 PID: 3352 sshutils.py:112 - DEBUG - connecting to host ec2-52-6-141-104.compute-1.amazonaws.com on port 22 as user root
+2015-04-21 10:56:59,966 PID: 3352 sshutils.py:112 - DEBUG - connecting to host ec2-52-6-135-168.compute-1.amazonaws.com on port 22 as user root
+2015-04-21 10:57:00,694 PID: 3352 sshutils.py:204 - DEBUG - creating sftp connection
+2015-04-21 10:57:00,694 PID: 3352 sshutils.py:204 - DEBUG - creating sftp connection
+2015-04-21 10:57:00,986 PID: 3352 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2015-04-21 10:57:01,101 PID: 3352 sshutils.py:204 - DEBUG - creating sftp connection
+2015-04-21 10:57:01,181 PID: 3352 sshutils.py:204 - DEBUG - creating sftp connection
+2015-04-21 10:57:01,989 PID: 3352 ipcluster.py:219 - INFO - Setting up IPython web notebook for user: ipuser
+2015-04-21 10:57:02,030 PID: 3352 ipcluster.py:223 - INFO - Creating SSL certificate for user ipuser
+2015-04-21 10:57:02,096 PID: 3352 sshutils.py:562 - DEBUG - executing remote command: source /etc/profile && openssl req -new -newkey rsa:4096 -days 365 -nodes -x509 -subj /C=US/ST=SC/L=STAR/O=Dis/CN=ec2-52-4-119-73.compute-1.amazonaws.com -keyout /home/ipuser/.ipython/profile_default/ipuser.pem -out /home/ipuser/.ipython/profile_default/ipuser.pem
+2015-04-21 10:57:03,457 PID: 3352 sshutils.py:586 - DEBUG - output of 'source /etc/profile && openssl req -new -newkey rsa:4096 -days 365 -nodes -x509 -subj /C=US/ST=SC/L=STAR/O=Dis/CN=ec2-52-4-119-73.compute-1.amazonaws.com -keyout /home/ipuser/.ipython/profile_default/ipuser.pem -out /home/ipuser/.ipython/profile_default/ipuser.pem':
+Generating a 4096 bit RSA private key
+........................................................................................................................................................................++
+...............................++
+writing new private key to '/home/ipuser/.ipython/profile_default/ipuser.pem'
+-----
+2015-04-21 10:57:03,640 PID: 3352 sshutils.py:562 - DEBUG - executing remote command: source /etc/profile && python -c 'from IPython.lib import passwd; print passwd("biteMYass3")'
+2015-04-21 10:57:03,828 PID: 3352 sshutils.py:586 - DEBUG - output of 'source /etc/profile && python -c 'from IPython.lib import passwd; print passwd("biteMYass3")'':
+sha1:ba7dba3c3be7:493d8b38e56f746e25c0e0f0074cb81ef9e04c2d
+2015-04-21 10:57:04,150 PID: 3352 cluster.py:1724 - ERROR - Error occured while running plugin 'ipcluster':
+2015-04-21 10:57:04,150 PID: 3352 cli.py:307 - ERROR - Unhandled exception occured
+Traceback (most recent call last):
+  File "C:\Python27\lib\site-packages\starcluster\cli.py", line 274, in main
+    sc.execute(args)
+  File "C:\Python27\lib\site-packages\starcluster\commands\start.py", line 244, in execute
+    validate_running=validate_running)
+  File "C:\Python27\lib\site-packages\starcluster\cluster.py", line 1628, in start
+    return self._start(create=create, create_only=create_only)
+  File "<string>", line 2, in _start
+  File "C:\Python27\lib\site-packages\starcluster\utils.py", line 112, in wrap_f
+    res = func(*arg, **kargs)
+  File "C:\Python27\lib\site-packages\starcluster\cluster.py", line 1651, in _start
+    self.setup_cluster()
+  File "C:\Python27\lib\site-packages\starcluster\cluster.py", line 1660, in setup_cluster
+    self._setup_cluster()
+  File "<string>", line 2, in _setup_cluster
+  File "C:\Python27\lib\site-packages\starcluster\utils.py", line 112, in wrap_f
+    res = func(*arg, **kargs)
+  File "C:\Python27\lib\site-packages\starcluster\cluster.py", line 1672, in _setup_cluster
+    self.run_plugins()
+  File "C:\Python27\lib\site-packages\starcluster\cluster.py", line 1690, in run_plugins
+    self.run_plugin(plug, method_name=method_name, node=node)
+  File "C:\Python27\lib\site-packages\starcluster\cluster.py", line 1715, in run_plugin
+    func(*args)
+  File "<string>", line 2, in run
+  File "C:\Python27\lib\site-packages\starcluster\utils.py", line 112, in wrap_f
+    res = func(*arg, **kargs)
+  File "C:\Python27\lib\site-packages\starcluster\plugins\ipcluster.py", line 302, in run
+    self._start_notebook(master, user, profile_dir)
+  File "C:\Python27\lib\site-packages\starcluster\plugins\ipcluster.py", line 249, in _start_notebook
+    master.ssh.makedirs(self.notebook_directory)
+  File "C:\Python27\lib\site-packages\starcluster\sshutils.py", line 250, in makedirs
+    self.makedirs(head, mode)
+  File "C:\Python27\lib\site-packages\starcluster\sshutils.py", line 258, in makedirs
+    self.mkdir(path, mode)
+  File "C:\Python27\lib\site-packages\starcluster\sshutils.py", line 269, in mkdir
+    return self.sftp.mkdir(path, mode)
+  File "c:\python27\lib\site-packages\paramiko-1.16.0-py2.7.egg\paramiko\sftp_client.py", line 380, in mkdir
+    self._request(CMD_MKDIR, path, attr)
+  File "c:\python27\lib\site-packages\paramiko-1.16.0-py2.7.egg\paramiko\sftp_client.py", line 729, in _request
+    return self._read_response(num)
+  File "c:\python27\lib\site-packages\paramiko-1.16.0-py2.7.egg\paramiko\sftp_client.py", line 776, in _read_response
+    self._convert_status(msg)
+  File "c:\python27\lib\site-packages\paramiko-1.16.0-py2.7.egg\paramiko\sftp_client.py", line 804, in _convert_status
+    raise IOError(errno.EACCES, text)
+IOError: [Errno 13] Permission denied

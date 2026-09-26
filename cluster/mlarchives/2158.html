@@ -1,0 +1,226 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Torstein Fjermestad ((no email))" />
+<meta name="Subject" content="compiling MPI applications on starcluster" />
+<title>starcluster.mbox.out: compiling MPI applications on starcluster</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">compiling MPI applications on starcluster</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>compiling MPI applications on starcluster</h1>
+<!-- received="Thu Apr 17 13:19:29 2014" -->
+<!-- isoreceived="20140417171929" -->
+<!-- sent="Thu, 17 Apr 2014 19:19:28 +0200" -->
+<!-- isosent="20140417171928" -->
+<!-- name="Torstein Fjermestad" -->
+<!-- email="(no email)" -->
+<!-- subject="compiling MPI applications on starcluster" -->
+<!-- id="CAAZdUwKNXwdD79WvYcZmKwC=tJqftzmJph39fDquXAzARfVZvQ_at_mail.gmail.com" -->
+<!-- charset="UTF-8" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2158.html#start2158" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2158.html#options2">top</a>, <a href="2158.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2159.html" accesskey="d" title="Sergio Mafra: &quot;StarCluster deserves a GUI interface&quot;">Next message</a> ]
+[ <a href="2157.html" title="Lyn Gerner: &quot;Metadata Written to Instance?&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="2168.html" accesskey="t" title="Justin Riley: &quot;Re:  compiling MPI applications on starcluster&quot;">Next in thread</a> ]
+ [ <a href="2158.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2158" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2158" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2158" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2158" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Torstein Fjermestad &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 17 Apr 2014 19:19:28 +0200</span><br />
+</address>
+<br />
+Dear all,
+<br />
+<br />I recently tried to compile an application (Quantum Espresso,
+<br />
+<a href="http://www.quantum-espresso.org/">http://www.quantum-espresso.org/</a>) to be used for parallel computations on
+<br />
+StarCluster. The installation procedure of the application consists of the
+<br />
+standard &quot;./configure + make&quot; steps.  At the end of the output from
+<br />
+./configure, the statement &quot;Parallel environment detected successfully.\
+<br />
+Configured for compilation of parallel executables.&quot; appears.
+<br />
+<br />The compilation with &quot;make&quot; completes without errors. I then run the
+<br />
+application in the following way:
+<br />
+<br />I first write a submit script (submit.sh) with the following content:
+<br />
+<br />cp /path/to/executable/pw.x .
+<br />
+mpirun ./pw.x -in input.inp
+<br />
+<br />I then submit the job to the queueing system with the following command
+<br />
+<br />qsub -cwd -pe orte 16 ./submit.sh
+<br />
+<br />However, in the output of the calculation, the following line is repeated
+<br />
+16 times:
+<br />
+<br />Parallel version (MPI), running on 1 processors
+<br />
+<br />It therefore seems like the program runs 16 1 processor calculations that
+<br />
+all write to the same output.
+<br />
+<br />I wrote about this problem to the mailing list of Quantum Espresso, and I
+<br />
+got the suggestion that perhaps the mpirun belonged to a different MPI
+<br />
+library than pw.x (a particular package of Quantum Espresso) was compiled
+<br />
+with.
+<br />
+<br />I compiled pw.x on the same cluster as I executed mpirun. Are there several
+<br />
+versions of openMPI on the AMIs provided by StarCluster? In that case, how
+<br />
+can I choose the correct one.
+<br />
+<br />Perhaps the problem has a different cause. Does anyone have suggestions on
+<br />
+how to solve it?
+<br />
+<br />Thanks in advance for your help.
+<br />
+<br />Yours sincerely,
+<br />
+Torstein Fjermestad
+<br />
+<span id="received"><dfn>Received on</dfn> Thu Apr 17 2014 - 13:19:29 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2158.html#start2158">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2159.html" title="Next message in the list">Sergio Mafra: "StarCluster deserves a GUI interface"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2157.html" title="Previous message in the list">Lyn Gerner: "Metadata Written to Instance?"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="2168.html" title="Next message in this discussion thread">Justin Riley: "Re:  compiling MPI applications on starcluster"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="2168.html" title="Message sent in reply to this message">Justin Riley: "Re:  compiling MPI applications on starcluster"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2158" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2158" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2158" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2158" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

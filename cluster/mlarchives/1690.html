@@ -1,0 +1,253 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Ian Davis ((no email))" />
+<meta name="Subject" content="'starcluster help start' causes a crash" />
+<title>starcluster.mbox.out: 'starcluster help start' causes a crash</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">'starcluster help start' causes a crash</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>'starcluster help start' causes a crash</h1>
+<!-- received="Thu Feb 28 11:14:09 2013" -->
+<!-- isoreceived="20130228161409" -->
+<!-- sent="Thu, 28 Feb 2013 11:14:03 -0500" -->
+<!-- isosent="20130228161403" -->
+<!-- name="Ian Davis" -->
+<!-- email="(no email)" -->
+<!-- subject="'starcluster help start' causes a crash" -->
+<!-- id="426A47C50BE2584EA2D39E976018B1DC84CB61644C_at_GRB-SBS.grb.local" -->
+<!-- charset="us-ascii" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1690.html#start1690" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1690.html#options2">top</a>, <a href="1690.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1691.html" accesskey="d" title="Lyn Gerner: &quot;ELB: Failing to Add Spot-Bid Instances&quot;">Next message</a> ]
+[ <a href="1689.html" title="Lyn Gerner: &quot;Volumes not being destroyed on terminate&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1690" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1690" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1690" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1690" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Ian Davis &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 28 Feb 2013 11:14:03 -0500</span><br />
+</address>
+<br />
+Hi,
+<br />
+<br />I noticed that 'starcluster help start' causes a crash (Python exception), but 'starcluster start -help' does not.  I believe the problem is that the 'help' subcommand object does not fully configure the other subcommand object ('start', in this case) before asking it to print its help info.  Copying a few lines of initialization code from cli.py to help.py seems to fix this.  Please see the bottom of this email for a diff / patch file that fixes the bug (at least on my system, so far).
+<br />
+<br />I just started using StarCluster, and I *love* it.  Thank you so much for creating this.  I was absolutely giddy in describing it to a co-worker this morning, and it's really helping me get my research done quickly and cheaply.  The option to use spot instances as workers is especially brilliant.  I hope this little patch helps out in some small way.
+<br />
+<br />Best,
+<br />
+Ian
+<br />
+<br /><br /><br />Below is (1) the crash log, and (2) the patch to fix it.
+<br />
+<br /><br /><br />---------- CRASH DETAILS ----------
+<br />
+COMMAND: starcluster help start
+<br />
+2013-02-28 10:54:44,162 PID: 12056 config.py:551 - DEBUG - Loading config
+<br />
+2013-02-28 10:54:44,162 PID: 12056 config.py:118 - DEBUG - Loading file: /home/grb/.starcluster/config
+<br />
+2013-02-28 10:54:44,164 PID: 12056 cli.py:287 - DEBUG - Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File &quot;/home/grb/starclust/venv/local/lib/python2.7/site-packages/StarCluster-0.93.3-py2.7.egg/starcluster/cli.py&quot;, line 255, in main
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;sc.execute(args)
+<br />
+&nbsp;&nbsp;File &quot;/home/grb/starclust/venv/local/lib/python2.7/site-packages/StarCluster-0.93.3-py2.7.egg/starcluster/commands/help.py&quot;, line 21, in execute
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;sc.addopts(lparser)
+<br />
+&nbsp;&nbsp;File &quot;/home/grb/starclust/venv/local/lib/python2.7/site-packages/StarCluster-0.93.3-py2.7.egg/starcluster/commands/start.py&quot;, line 39, in addopts
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;if self.cfg:
+<br />
+&nbsp;&nbsp;File &quot;/home/grb/starclust/venv/local/lib/python2.7/site-packages/StarCluster-0.93.3-py2.7.egg/starcluster/commands/base.py&quot;, line 77, in cfg
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self._cfg = self.goptions_dict.get('CONFIG')
+<br />
+&nbsp;&nbsp;File &quot;/home/grb/starclust/venv/local/lib/python2.7/site-packages/StarCluster-0.93.3-py2.7.egg/starcluster/commands/base.py&quot;, line 46, in goptions_dict
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;return dict(self.gopts.__dict__)
+<br />
+AttributeError: 'NoneType' object has no attribute '__dict__'
+<br />
+<br />---------- SYSTEM INFO ----------
+<br />
+StarCluster: 0.93.3
+<br />
+Python: 2.7.2+ (default, Oct  4 2011, 20:06:09)  [GCC 4.6.1]
+<br />
+Platform: Linux-3.0.0-12-generic-x86_64-with-LinuxMint-12-lisa
+<br />
+boto: 2.3.0
+<br />
+ssh: 1.7.13
+<br />
+Crypto: 2.3
+<br />
+jinja2: 2.6
+<br />
+decorator: 3.3.1
+<br />
+<br /><br /><br />--- help.py.orig  2013-02-28 11:03:22.863318498 -0500
+<br />
++++ help.py        2013-02-28 11:04:13.287884893 -0500
+<br />
+_at__at_ -17,6 +17,10 &#64;&#64;
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try:
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sc = self.subcmds_map[cmdname]
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lparser = optparse.OptionParser(sc.__doc__.strip())
+<br />
++                sc.gopts = self.gopts
+<br />
++                sc.parser = lparser
+<br />
++                sc.gparser = self.gparser
+<br />
++                sc.subcmds_map = self.subcmds_map
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if hasattr(sc, 'addopts'):
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sc.addopts(lparser)
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lparser.print_help()
+<br />
+<br /><pre>
+---
+Ian W. Davis, PhD
+Head of Computing / Bioinformatics
+GrassRoots Biotechnology
+</pre>
+<span id="received"><dfn>Received on</dfn> Thu Feb 28 2013 - 11:14:09 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1690.html#start1690">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1691.html" title="Next message in the list">Lyn Gerner: "ELB: Failing to Add Spot-Bid Instances"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1689.html" title="Previous message in the list">Lyn Gerner: "Volumes not being destroyed on terminate"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1690" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1690" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1690" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1690" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

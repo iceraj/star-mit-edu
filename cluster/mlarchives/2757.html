@@ -1,0 +1,300 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Florian Oswald ((no email))" />
+<meta name="Subject" content="cannot start starcluster" />
+<title>starcluster.mbox.out: cannot start starcluster</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">cannot start starcluster</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>cannot start starcluster</h1>
+<!-- received="Wed Mar  2 09:01:43 2016" -->
+<!-- isoreceived="20160302140143" -->
+<!-- sent="Wed, 2 Mar 2016 15:01:21 +0100" -->
+<!-- isosent="20160302140121" -->
+<!-- name="Florian Oswald" -->
+<!-- email="(no email)" -->
+<!-- subject="cannot start starcluster" -->
+<!-- id="CAKezR-wJ97+-q3dFsB3NHjgw=qt80eNd326H5VPQ28yR3z3BHQ_at_mail.gmail.com" -->
+<!-- charset="UTF-8" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2757.html#start2757" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2757.html#options2">top</a>, <a href="2757.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2758.html" accesskey="d" title="(no email): &quot;starcluster with chameleon openstack&quot;">Next message</a> ]
+[ <a href="2756.html" title="Xin Chu: &quot;problem installing starcluster on Windows10&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="2761.html" accesskey="t" title="Florian Oswald: &quot;Fwd: cannot start starcluster&quot;">Next in thread</a> ]
+ [ <a href="2757.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2757" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2757" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2757" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2757" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Florian Oswald &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Wed, 2 Mar 2016 15:01:21 +0100</span><br />
+</address>
+<br />
+hi all,
+<br />
+<br />I just installed star cluster and get the following error. Any idea whats
+<br />
+wrong?
+<br />
+Florian
+<br />
+<br />*➜  **~* starcluster --help
+<br />
+<br />Traceback (most recent call last):
+<br />
+<br />&nbsp;&nbsp;File &quot;/usr/local/bin/starcluster&quot;, line 9, in &lt;module&gt;
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;load_entry_point('StarCluster==0.95.6', 'console_scripts',
+<br />
+'starcluster')()
+<br />
+<br />&nbsp;&nbsp;File
+<br />
+&quot;/System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/pkg_resources.py&quot;,
+<br />
+line 357, in load_entry_point
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;return get_distribution(dist).load_entry_point(group, name)
+<br />
+<br />&nbsp;&nbsp;File
+<br />
+&quot;/System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/pkg_resources.py&quot;,
+<br />
+line 2394, in load_entry_point
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;return ep.load()
+<br />
+<br />&nbsp;&nbsp;File
+<br />
+&quot;/System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/pkg_resources.py&quot;,
+<br />
+line 2108, in load
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;entry = __import__(self.module_name, globals(),globals(), ['__name__'])
+<br />
+<br />&nbsp;&nbsp;File
+<br />
+&quot;/Library/Python/2.7/site-packages/StarCluster-0.95.6-py2.7.egg/starcluster/cli.py&quot;,
+<br />
+line 32, in &lt;module&gt;
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;from starcluster import config
+<br />
+<br />&nbsp;&nbsp;File
+<br />
+&quot;/Library/Python/2.7/site-packages/StarCluster-0.95.6-py2.7.egg/starcluster/config.py&quot;,
+<br />
+line 25, in &lt;module&gt;
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;from starcluster import cluster
+<br />
+<br />&nbsp;&nbsp;File
+<br />
+&quot;/Library/Python/2.7/site-packages/StarCluster-0.95.6-py2.7.egg/starcluster/cluster.py&quot;,
+<br />
+line 33, in &lt;module&gt;
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;from starcluster import deathrow
+<br />
+<br />&nbsp;&nbsp;File
+<br />
+&quot;/Library/Python/2.7/site-packages/StarCluster-0.95.6-py2.7.egg/starcluster/deathrow.py&quot;,
+<br />
+line 24, in &lt;module&gt;
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;from starcluster import clustersetup
+<br />
+<br />&nbsp;&nbsp;File
+<br />
+&quot;/Library/Python/2.7/site-packages/StarCluster-0.95.6-py2.7.egg/starcluster/clustersetup.py&quot;,
+<br />
+line 24, in &lt;module&gt;
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;from starcluster import threadpool
+<br />
+<br />&nbsp;&nbsp;File
+<br />
+&quot;/Library/Python/2.7/site-packages/StarCluster-0.95.6-py2.7.egg/starcluster/threadpool.py&quot;,
+<br />
+line 25, in &lt;module&gt;
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;import workerpool
+<br />
+<br />&nbsp;&nbsp;File
+<br />
+&quot;/Library/Python/2.7/site-packages/workerpool-0.9.4-py2.7.egg/workerpool/__init__.py&quot;,
+<br />
+line 29, in &lt;module&gt;
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;from workerpool.pools import *
+<br />
+<br />&nbsp;&nbsp;File
+<br />
+&quot;/Library/Python/2.7/site-packages/workerpool-0.9.4-py2.7.egg/workerpool/pools.py&quot;,
+<br />
+line 8, in &lt;module&gt;
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;from six.moves.queue import Queue
+<br />
+<br />ImportError: No module named queue
+<br />
+<br />*➜  **~* which python
+<br />
+<br />/usr/bin/python
+<br />
+<br />*➜  **~* python --version
+<br />
+<br />Python 2.7.10
+<br />
+<br />*➜  **~* python
+<br />
+<br />Python 2.7.10 (default, Oct 23 2015, 18:05:06)
+<br />
+<br />[GCC 4.2.1 Compatible Apple LLVM 7.0.0 (clang-700.0.59.5)] on darwin
+<br />
+<br />Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; from six.moves import queue
+</em><br />
+<br /><em class="quotelev3">&gt;&gt;&gt; queue
+</em><br />
+<br />&lt;module 'Queue' from
+<br />
+'/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/Queue.pyc'&gt;
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; exit()
+</em><br />
+<br />*➜  **~*
+<br />
+<span id="received"><dfn>Received on</dfn> Wed Mar 02 2016 - 09:01:43 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2757.html#start2757">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2758.html" title="Next message in the list">(no email): "starcluster with chameleon openstack"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2756.html" title="Previous message in the list">Xin Chu: "problem installing starcluster on Windows10"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="2761.html" title="Next message in this discussion thread">Florian Oswald: "Fwd: cannot start starcluster"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="2761.html" title="Message sent in reply to this message">Florian Oswald: "Fwd: cannot start starcluster"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2757" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2757" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2757" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2757" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

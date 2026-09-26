@@ -1,0 +1,206 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="David Stuebe ((no email))" />
+<meta name="Subject" content="MPICH Fabric" />
+<title>starcluster.mbox.out: MPICH Fabric</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">MPICH Fabric</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>MPICH Fabric</h1>
+<!-- received="Thu May 15 15:18:27 2014" -->
+<!-- isoreceived="20140515191827" -->
+<!-- sent="Thu, 15 May 2014 19:18:23 +0000" -->
+<!-- isosent="20140515191823" -->
+<!-- name="David Stuebe" -->
+<!-- email="(no email)" -->
+<!-- subject="MPICH Fabric" -->
+<!-- id="CF9A8B3D.48088%dstuebe_at_asascience.com" -->
+<!-- charset="Windows-1252" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2210.html#start2210" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2210.html#options2">top</a>, <a href="2210.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2211.html" accesskey="d" title="Rayson Ho: &quot;Re:  MPICH Fabric&quot;">Next message</a> ]
+[ <a href="2209.html" title="Steve Darnell: &quot;Re:  USERDATA_SCRIPTS not running with addnode&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="2211.html" accesskey="t" title="Rayson Ho: &quot;Re:  MPICH Fabric&quot;">Next in thread</a> ]
+ [ <a href="2210.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2210" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2210" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2210" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2210" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: David Stuebe &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 15 May 2014 19:18:23 +0000</span><br />
+</address>
+<br />
+Hi Starcluster
+<br />
+<br />Do anyone have advice on what fabric to use when running on AWS?
+<br />
+<br />I know the interconnect is supposed to be 10-gigE but my model is more dependent on latency than throughput.
+<br />
+<br />I have had to use the Intel Cluster Compiler Suite rather than the built in OpenMPI. Hoping to resolve those issues and compare the two – I am interested to see the performance differences…
+<br />
+<br />Currently the model actually has a negative performance curve as I add processors past a single node.
+<br />
+<br />Model performance on running on Amazon…
+<br />
+C3.8Xlarge - 1 instance, 32 cores
+<br />
+&nbsp;!   IINT         SIMTIME(UTC)             FINISH IN       SECS/IT   PERCENT COMPLETE
+<br />
+!8396282   2014-03-18T00:18:02.000000   0000:07:54:19     0.1103  |                    |
+<br />
+<br />C3.8Xlarge - 2 instance, 64 cores
+<br />
+&nbsp;!8395221   2014-03-18T00:00:21.000000   0000:20:27:58     0.2843  |                    |
+<br />
+<br />C3.8Xlarge - 3 instance, 96 cores
+<br />
+!8395273   2014-03-18T00:01:13.000000   0007:18:33:19     2.5918  |                    |
+<br />
+<br /><br />David Stuebe
+<br />
+Scientist &amp; Software Engineer – RPS ASA
+<br />
+<br />55 Village Square Drive
+<br />
+South Kingstown, RI 02879-8248
+<br />
+<br />Tel: +1 (401) 789-6224
+<br />
+Email: David.Stuebe_at_rpsgroup.com&lt;mailto:David.Stuebe_at_rpsgroup.com&gt;
+<br />
+www: asascience.com&lt;<a href="http://www.asascience.com/">http://www.asascience.com/</a>&gt; | rpsgroup.com&lt;<a href="http://www.rpsgroup.com/">http://www.rpsgroup.com/</a>&gt;
+<br />
+<br />A member of the RPS Group plc
+<br />
+<span id="received"><dfn>Received on</dfn> Thu May 15 2014 - 15:18:27 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2210.html#start2210">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2211.html" title="Next message in the list">Rayson Ho: "Re:  MPICH Fabric"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2209.html" title="Previous message in the list">Steve Darnell: "Re:  USERDATA_SCRIPTS not running with addnode"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="2211.html" title="Next message in this discussion thread">Rayson Ho: "Re:  MPICH Fabric"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="2211.html" title="Message sent in reply to this message">Rayson Ho: "Re:  MPICH Fabric"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2210" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2210" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2210" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2210" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

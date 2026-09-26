@@ -1,0 +1,375 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Marc Resnick ((no email))" />
+<meta name="Subject" content="Re:  creating a new AMI for starcluster -- can't log in" />
+<title>starcluster.mbox.out: Re:  creating a new AMI for starcluster -- can't log in</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Re:  creating a new AMI for starcluster -- can't log in</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Re:  creating a new AMI for starcluster -- can't log in</h1>
+<!-- received="Sat Oct 30 08:31:36 2010" -->
+<!-- isoreceived="20101030123136" -->
+<!-- sent="Sat, 30 Oct 2010 08:31:13 -0400" -->
+<!-- isosent="20101030123113" -->
+<!-- name="Marc Resnick" -->
+<!-- email="(no email)" -->
+<!-- subject="Re:  creating a new AMI for starcluster &ndash;&ndash; can't log in" -->
+<!-- id="AANLkTi=Ms_pdRToZ0EUpdQTi48+aDC_8xEKJ3Dh0f7o9_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- inreplyto="AANLkTik_ZrwXTODV4Ug-0ySMKPWPGJpTAVi9mkWzW0W8_at_mail.gmail.com" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="0478.html#start478" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="0478.html#options2">top</a>, <a href="0478.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="0479.html" accesskey="d" title="Marc Resnick: &quot;Re:  creating a new AMI for starcluster -- can&#0039;t log in&quot;">Next message</a> ]
+[ <a href="0477.html" title="Dan Tenenbaum: &quot;Re:  creating a new AMI for starcluster -- can&#0039;t log in&quot;">Previous message</a> ]
+[ <a href="0477.html" title="Dan Tenenbaum: &quot;Re:  creating a new AMI for starcluster -- can&#0039;t log in&quot;">In reply to</a> ]
+<!-- unextthread="start" -->
+[ <a href="0479.html" accesskey="t" title="Marc Resnick: &quot;Re:  creating a new AMI for starcluster -- can&#0039;t log in&quot;">Next in thread</a> ]
+ [ <a href="0478.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg478" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg478" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg478" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg478" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Marc Resnick &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Sat, 30 Oct 2010 08:31:13 -0400</span><br />
+</address>
+<br />
+In my experience (mostly with a 10.04 alestic cluster), once you
+<br />
+remove the command prefix from the authorized keys file, you should be
+<br />
+able to SSH as root. However, if the instance restarts and
+<br />
+(set_disable_root == True), the commands prefix will be put back in.
+<br />
+<br />So, unless 10.10 is completely and totally different, try SSHing as
+<br />
+root after you fix the authorized_keys file. If that doesn't work,
+<br />
+something is wrong (or 10.10 is completely and totally different).
+<br />
+<br />I'll see if I can replicate the behavior you're seeing.
+<br />
+<br />Marc
+<br />
+<br />On Fri, Oct 29, 2010 at 8:07 PM, Dan Tenenbaum &lt;dtenenba_at_fhcrc.org&gt; wrote:
+<br />
+<em class="quotelev1">&gt; OK, I spoke too soon.
+</em><br />
+<em class="quotelev1">&gt; This didn't work either.
+</em><br />
+<em class="quotelev1">&gt; After I made this change, I was able to ssh to the machine as root, but
+</em><br />
+<em class="quotelev1">&gt; after I made an AMI out of that instance, I could not ssh either as root or
+</em><br />
+<em class="quotelev1">&gt; as ubuntu.
+</em><br />
+<em class="quotelev1">&gt; Could this have something to do with the preparation that starcluster does
+</em><br />
+<em class="quotelev1">&gt; prior to creating an image?
+</em><br />
+<em class="quotelev1">&gt; Next I'll try just creating a starcluster image without altering anything
+</em><br />
+<em class="quotelev1">&gt; and see if I can ssh in as ubuntu.
+</em><br />
+<em class="quotelev1">&gt; If that doesn't work, I'll try creating an image without using starcluster
+</em><br />
+<em class="quotelev1">&gt; at all (instead running ec2-bundle-vol and ec2-upload-bundle on the
+</em><br />
+<em class="quotelev1">&gt; instance).
+</em><br />
+<em class="quotelev1">&gt; Thanks
+</em><br />
+<em class="quotelev1">&gt; Dan
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; On Fri, Oct 29, 2010 at 4:55 PM, Dan Tenenbaum &lt;dtenenba_at_fhcrc.org&gt; wrote:
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; I found the answer, hidden here:
+</em><br />
+<em class="quotelev2">&gt;&gt; <a href="http://alestic.com/2009/04/ubuntu-ec2-sudo-ssh-rsync">http://alestic.com/2009/04/ubuntu-ec2-sudo-ssh-rsync</a>
+</em><br />
+<em class="quotelev2">&gt;&gt; ROOT SSH
+</em><br />
+<em class="quotelev2">&gt;&gt; Finally, if you wish to circumvent the Ubuntu security standard and revert
+</em><br />
+<em class="quotelev2">&gt;&gt; to the old practice of allowing ssh and rsync as root, this command will
+</em><br />
+<em class="quotelev2">&gt;&gt; open it up for a new instance of the official Ubuntu images:
+</em><br />
+<em class="quotelev2">&gt;&gt; ssh -i KEYPAIR.pem ubuntu_at_HOSTNAME   'sudo cp
+</em><br />
+<em class="quotelev2">&gt;&gt; /home/ubuntu/.ssh/authorized_keys /root/.ssh/'
+</em><br />
+<em class="quotelev2">&gt;&gt; This is not recommended, but it may be a way to get existing EC2
+</em><br />
+<em class="quotelev2">&gt;&gt; automation code to continue working until you can upgrade to the sudo
+</em><br />
+<em class="quotelev2">&gt;&gt; practices described above.
+</em><br />
+<em class="quotelev2">&gt;&gt; I didn't have to do any of the steps described on the cookbook page.
+</em><br />
+<em class="quotelev2">&gt;&gt; I'll find out later I guess if they are still necessary.
+</em><br />
+<em class="quotelev2">&gt;&gt; Thanks
+</em><br />
+<em class="quotelev2">&gt;&gt; Dan
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; On Fri, Oct 29, 2010 at 4:45 PM, Dan Tenenbaum &lt;dtenenba_at_fhcrc.org&gt; wrote:
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Hi all,
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; I am following the instructions here:
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; <a href="http://starcluster.scripts.mit.edu/~starcluster/wiki/index.php?title=StarCluster_AMI_Cookbook_Ubuntu_10.04">http://starcluster.scripts.mit.edu/~starcluster/wiki/index.php?title=StarCluster_AMI_Cookbook_Ubuntu_10.04</a>
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; ...to create a new AMI for use with StarCluster.
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; The problem is, I end up with an AMI that I cannot ssh into.
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; I am using Ubuntu 10.10 instead of 10.04.
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; I need some clarification on these steps:
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Configure Root Login
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; The alestic AMI's have been configured to disable root logins. Follow the
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; commands below to undo this behavior:
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; edit /etc/cloud/cloud.cfg and set disable_root: 0
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; edit /root/.ssh/authorized_keys and remove prefix commands from pubkey
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; entry
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; edit /usr/bin/cloud-init, go to line 67 and change 'once-per-instance' to
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; 'always', save and exit
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Step 1 is easy. Step 3 I'm not sure about since that file looks different
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; in Ubuntu 10.10 and the string &quot;once-per-instance&quot; occurs three times in the
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; file. Should I change all occurrences of it?
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Step 2 is the one that I think is messing me up.
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Before modification, /root/.ssh/authorized_keys looked like this:
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; command=&quot;echo 'Please login as the ubuntu user rather than root
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; user.';echo;sleep 10&quot; ssh-rsa AAAAB3..... my-keypair
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; (actual public key omitted)
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; I edited it to look like this:
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; ssh-rsa AAAAB3..... my-keypair
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; This is how a typical authorized_keys line looks, in my (limited)
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; experience. I've never seen one with a command in it before.
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; But I'm wondering if it is still being interpreted as a command. Could it
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; be because of something I did in step 2 or 3?
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Hope someone can help. It's no fun having instances I can't log into. ;(
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Dan
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; _______________________________________________
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; StarCluster mailing list
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; StarCluster_at_mit.edu
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; _______________________________________________
+</em><br />
+<em class="quotelev2">&gt;&gt; StarCluster mailing list
+</em><br />
+<em class="quotelev2">&gt;&gt; StarCluster_at_mit.edu
+</em><br />
+<em class="quotelev2">&gt;&gt; <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; _______________________________________________
+</em><br />
+<em class="quotelev1">&gt; StarCluster mailing list
+</em><br />
+<em class="quotelev1">&gt; StarCluster_at_mit.edu
+</em><br />
+<em class="quotelev1">&gt; <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<span id="received"><dfn>Received on</dfn> Sat Oct 30 2010 - 08:31:36 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="0478.html#start478">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="0479.html" title="Next message in the list">Marc Resnick: "Re:  creating a new AMI for starcluster -- can&#0039;t log in"</a></li>
+<li><dfn>Previous message</dfn>: <a href="0477.html" title="Previous message in the list">Dan Tenenbaum: "Re:  creating a new AMI for starcluster -- can&#0039;t log in"</a></li>
+<li><dfn>In reply to</dfn>: <a href="0477.html" title="Message to which this message replies">Dan Tenenbaum: "Re:  creating a new AMI for starcluster -- can&#0039;t log in"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="0479.html" title="Next message in this discussion thread">Marc Resnick: "Re:  creating a new AMI for starcluster -- can&#0039;t log in"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="0479.html" title="Message sent in reply to this message">Marc Resnick: "Re:  creating a new AMI for starcluster -- can&#0039;t log in"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg478" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg478" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg478" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg478" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

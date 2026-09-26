@@ -1,0 +1,199 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Rayson Ho ((no email))" />
+<meta name="Subject" content="Tagging all resources used by a starcluster (to allow charge-back support)" />
+<title>starcluster.mbox.out: Tagging all resources used by a starcluster (to allow charge-back support)</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Tagging all resources used by a starcluster (to allow charge-back support)</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Tagging all resources used by a starcluster (to allow charge-back support)</h1>
+<!-- received="Wed Aug 22 03:59:28 2012" -->
+<!-- isoreceived="20120822075928" -->
+<!-- sent="Wed, 22 Aug 2012 03:59:26 -0400" -->
+<!-- isosent="20120822075926" -->
+<!-- name="Rayson Ho" -->
+<!-- email="(no email)" -->
+<!-- subject="Tagging all resources used by a starcluster (to allow charge-back support)" -->
+<!-- id="CAHwLALP3SvRPzt8Q9THRaisgHdgp-o6nqktHZq=N6gHkY0N-sw_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1377.html#start1377" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1377.html#options2">top</a>, <a href="1377.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1378.html" accesskey="d" title="Anders Nielsen: &quot;EBS storage does not mount &#0060;newbie&#0062;&quot;">Next message</a> ]
+[ <a href="1376.html" title="Charles Cadieu: &quot;Re:  static IP solution in starcluster?&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1377" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1377" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1377" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1377" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Rayson Ho &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Wed, 22 Aug 2012 03:59:26 -0400</span><br />
+</address>
+<br />
+Just announced by Amazon today... Cost Allocation Report entries can
+<br />
+be grouped by the tags attached to the resources (EBS, instances,
+<br />
+bandwidth - pretty much all we use in StarCluster):
+<br />
+<br /><a href="http://aws.typepad.com/aws/2012/08/aws-cost-allocation.html">http://aws.typepad.com/aws/2012/08/aws-cost-allocation.html</a>
+<br />
+<br />It is really useful to tag a cluster, such that charge back (or even
+<br />
+just show back) would work. For example, different departments within
+<br />
+a company can share one company-wide AWS account, and still be able to
+<br />
+find out the resource usage of each department. Even for non-shared
+<br />
+AWS accounts, we can tag clusters by projects, and thus we can see how
+<br />
+much resource each project consumes.
+<br />
+<br />If no one is already working on this (or no one is interested in doing
+<br />
+it now), then I think I will give it a try (currently I'm real busy,
+<br />
+so may be beginning of Sept the earliest). BTW, I am no longer
+<br />
+actively working on VPC support (
+<br />
+<a href="https://github.com/jtriley/StarCluster/issues/21">https://github.com/jtriley/StarCluster/issues/21</a> ), since Justin &amp;
+<br />
+locojay are already working on the final stages.
+<br />
+<br />Rayson
+<br />
+<br />==================================================
+<br />
+Open Grid Scheduler - The Official Open Source Grid Engine
+<br />
+<a href="http://gridscheduler.sourceforge.net/">http://gridscheduler.sourceforge.net/</a>
+<br />
+<span id="received"><dfn>Received on</dfn> Wed Aug 22 2012 - 03:59:28 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1377.html#start1377">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1378.html" title="Next message in the list">Anders Nielsen: "EBS storage does not mount &#0060;newbie&#0062;"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1376.html" title="Previous message in the list">Charles Cadieu: "Re:  static IP solution in starcluster?"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1377" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1377" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1377" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1377" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

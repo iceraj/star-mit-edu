@@ -1,0 +1,367 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Austin So ((no email))" />
+<meta name="Subject" content="Re:  IPython parallel DirectView not distributing to starcluster nodes." />
+<title>starcluster.mbox.out: Re:  IPython parallel DirectView not distributing to starcluster nodes.</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Re:  IPython parallel DirectView not distributing to starcluster nodes.</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Re:  IPython parallel DirectView not distributing to starcluster nodes.</h1>
+<!-- received="Fri Jul  3 13:17:30 2015" -->
+<!-- isoreceived="20150703171730" -->
+<!-- sent="Fri, 3 Jul 2015 10:17:24 -0700" -->
+<!-- isosent="20150703171724" -->
+<!-- name="Austin So" -->
+<!-- email="(no email)" -->
+<!-- subject="Re:  IPython parallel DirectView not distributing to starcluster nodes." -->
+<!-- id="291485E7-7A1A-4153-B19E-2ED779C410DF_at_tomabio.com" -->
+<!-- charset="utf-8" -->
+<!-- inreplyto="01E7B858-F5EA-4887-9CF6-2FBA7BB3DE79_at_tomabio.com" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2677.html#start2677" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2677.html#options2">top</a>, <a href="2677.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2678.html" accesskey="d" title="MinRK: &quot;Re:  IPython parallel DirectView not distributing to starcluster nodes.&quot;">Next message</a> ]
+[ <a href="2676.html" title="Cedar McKay: &quot;failure on making new AMI&quot;">Previous message</a> ]
+[ <a href="2673.html" title="Austin So: &quot;Re:  IPython parallel DirectView not distributing to starcluster nodes.&quot;">In reply to</a> ]
+<!-- unextthread="start" -->
+[ <a href="2678.html" accesskey="t" title="MinRK: &quot;Re:  IPython parallel DirectView not distributing to starcluster nodes.&quot;">Next in thread</a> ]
+ [ <a href="2677.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2677" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2677" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2677" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2677" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Austin So &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Fri, 3 Jul 2015 10:17:24 -0700</span><br />
+</address>
+<br />
+Okay. So it appears to be related to IP[y]: Notebook.
+<br />
+<br />Running the test script from the command line on the master shows distribution across all nodes. Running it on the same cluster through IP[y]: Notebook just shows the master.
+<br />
+<br />A.
+<br />
+<br /><br /><em class="quotelev1">&gt; On Jul 1, 2015, at 4:40 PM, Austin So &lt;austin.so_at_tomabio.com&gt; wrote:
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Thanks.
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Yes, I started checking before and after line execution, but nothing different. So a relaunch:
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; IPCluster has been started on SecurityGroup:_at_sc-toma for user 'sgeadmin'
+</em><br />
+<em class="quotelev1">&gt; with 159 engines on 5 nodes.
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; In IP[y]: Notebook
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Through IP[y]: Notebook, I’m assigning 150 engines.
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; So using the following test code:
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; from IPython.parallel import Client
+</em><br />
+<em class="quotelev1">&gt; ipclient = Client(packer = 'pickle')
+</em><br />
+<em class="quotelev1">&gt; dview = ipclient[:]
+</em><br />
+<em class="quotelev1">&gt; lview = ipclient.load_balanced_view()
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Here I am getting an array of 150 elements as expected when using len(ipclient.ids)
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Now executing code:
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; %%px --local
+</em><br />
+<em class="quotelev1">&gt; import socket
+</em><br />
+<em class="quotelev1">&gt; import pandas as pd
+</em><br />
+<em class="quotelev1">&gt; def distribute(a):
+</em><br />
+<em class="quotelev1">&gt; 	return socket.getfqdn()
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; a = pd.DataFrame(range(0,10000))
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; version 1a:
+</em><br />
+<em class="quotelev1">&gt; dview.map(distribute, a[0]).get()
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; version 1b:
+</em><br />
+<em class="quotelev1">&gt; lview.map(distribute, a[0]).get()
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; --This results in an output of ‘master’ in each element.
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; version 2:
+</em><br />
+<em class="quotelev1">&gt; dview.scatter('a', a)
+</em><br />
+<em class="quotelev1">&gt; dview.execute('b = distribute(a[0])', block=True)
+</em><br />
+<em class="quotelev1">&gt; dview.gather('b', block=True)
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; --This also results in an output of ‘master’ in each element.
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; verifying with len(ipclient.ids) confirms that I have all the engines in place.
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; A.
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; On Jul 1, 2015, at 11:14 AM, MinRK &lt;benjaminrk_at_gmail.com &lt;mailto:benjaminrk_at_gmail.com&gt;&gt; wrote:
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; Can you perhaps share a code sample? Have you verified that all the engines are registered with the Client (`Client.ids`) before submitting the tasks?
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; -MinRK
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; On Wed, Jul 1, 2015 at 9:09 AM, Austin So &lt;austin.so_at_tomabio.com &lt;mailto:austin.so_at_tomabio.com&gt;&gt; wrote:
+</em><br />
+<em class="quotelev2">&gt;&gt; I’ve been trying to figure out what I’m doing wrong here, and if it is an issue within the starcluster config file. I’ve exhausted all possible implementations in my code that I could think of.
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; During set up, 255 engines have been recorded to have been set-up by starcluster upon launch that are available to IPcluster.
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; Within IPython Notebooks, I’m trying to distribute a function across all my nodes and engines (5_at_r3.8xlarge).
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; So when the line of code is running, I’m looking at qhost, and I see that only the Master is showing a CPU load. I look at the Cloud Metrics, and I see that only the Master is showing a CPU load. At the suggestion of a friend, I returned a socket.fqdn() call to identify if the results were processed by the master or one of the nodes. All results returned were generated by the Master.
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; Any hints to identify where the source of the problem lies would be greatly appreciated.
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; Best
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; Austin
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; _______________________________________________
+</em><br />
+<em class="quotelev2">&gt;&gt; StarCluster mailing list
+</em><br />
+<em class="quotelev2">&gt;&gt; StarCluster_at_mit.edu &lt;mailto:StarCluster_at_mit.edu&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a> &lt;<a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<br />==============================
+<br />
+<br />Austin P. So, Ph. D.
+<br />
+Director, Research and Development
+<br />
+<br /><br /><br /><br /><br />353E Vintage Park Dr.
+<br />
+Foster City CA 94404
+<br />
+<br />email: austin.so_at_tomabio.com
+<br />
+<br />**************************************************
+<br />
+This email and any attachments thereto may contain private, confidential, and privileged material for the sole use of the intended recipient.  Any review, copying, or distribution of this email (or any attachments thereto) by others is strictly prohibited.  If you are not the intended recipient, please contact the sender immediately and permanently delete the original and any copies of this email and any attachments thereto.
+<br />
+<span id="received"><dfn>Received on</dfn> Fri Jul 03 2015 - 13:17:30 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2677.html#start2677">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2678.html" title="Next message in the list">MinRK: "Re:  IPython parallel DirectView not distributing to starcluster nodes."</a></li>
+<li><dfn>Previous message</dfn>: <a href="2676.html" title="Previous message in the list">Cedar McKay: "failure on making new AMI"</a></li>
+<li><dfn>In reply to</dfn>: <a href="2673.html" title="Message to which this message replies">Austin So: "Re:  IPython parallel DirectView not distributing to starcluster nodes."</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="2678.html" title="Next message in this discussion thread">MinRK: "Re:  IPython parallel DirectView not distributing to starcluster nodes."</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="2678.html" title="Message sent in reply to this message">MinRK: "Re:  IPython parallel DirectView not distributing to starcluster nodes."</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2677" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2677" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2677" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2677" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

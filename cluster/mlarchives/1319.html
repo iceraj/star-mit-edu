@@ -1,0 +1,204 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="MacMullan, Hugh ((no email))" />
+<meta name="Subject" content="spothistory output to stderr?" />
+<title>starcluster.mbox.out: spothistory output to stderr?</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">spothistory output to stderr?</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>spothistory output to stderr?</h1>
+<!-- received="Tue Jul 17 16:36:27 2012" -->
+<!-- isoreceived="20120717203627" -->
+<!-- sent="Tue, 17 Jul 2012 20:36:25 +0000" -->
+<!-- isosent="20120717203625" -->
+<!-- name="MacMullan, Hugh" -->
+<!-- email="(no email)" -->
+<!-- subject="spothistory output to stderr?" -->
+<!-- id="C35D2A9F0F1DBE47832D25035CA02DAB9F0327_at_GENO4.wharton.upenn.edu" -->
+<!-- charset="us-ascii" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1319.html#start1319" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1319.html#options2">top</a>, <a href="1319.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1320.html" accesskey="d" title="Justin Riley: &quot;Re:  spothistory output to stderr?&quot;">Next message</a> ]
+[ <a href="1318.html" title="David Erickson: &quot;Re:  Loadbalance and setup plugins&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="1320.html" accesskey="t" title="Justin Riley: &quot;Re:  spothistory output to stderr?&quot;">Next in thread</a> ]
+ [ <a href="1319.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1319" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1319" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1319" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1319" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: MacMullan, Hugh &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Tue, 17 Jul 2012 20:36:25 +0000</span><br />
+</address>
+<br />
+Hi Team:
+<br />
+<br />I noticed that 'starcluster showhistory' outputs the data to stderr (starcluster header to stdout):
+<br />
+<br /># starcluster shi m1.small
+<br />
+StarCluster - (<a href="http://web.mit.edu/starcluster">http://web.mit.edu/starcluster</a>) (v. 0.93.3)
+<br />
+Software Tools for Academics and Researchers (STAR)
+<br />
+Please submit bug reports to starcluster_at_mit.edu
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Current price: $0.04
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Max price: $3.10
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Average price: $0.19
+</em><br />
+<br /># starcluster shi m1.small &gt;stdout 2&gt;stderr
+<br />
+<br /># cat stdout
+<br />
+StarCluster - (<a href="http://web.mit.edu/starcluster">http://web.mit.edu/starcluster</a>) (v. 0.93.3)
+<br />
+Software Tools for Academics and Researchers (STAR)
+<br />
+Please submit bug reports to starcluster_at_mit.edu
+<br />
+<br /># cat stderr
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Current price: $0.04
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Max price: $3.10
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Average price: $0.19
+</em><br />
+<br />Is this intentional? Just thought I'd point it out in case it should be otherwise.
+<br />
+<br />Cheers, Hugh
+<br />
+<span id="received"><dfn>Received on</dfn> Tue Jul 17 2012 - 16:36:27 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1319.html#start1319">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1320.html" title="Next message in the list">Justin Riley: "Re:  spothistory output to stderr?"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1318.html" title="Previous message in the list">David Erickson: "Re:  Loadbalance and setup plugins"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1320.html" title="Next message in this discussion thread">Justin Riley: "Re:  spothistory output to stderr?"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1320.html" title="Message sent in reply to this message">Justin Riley: "Re:  spothistory output to stderr?"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1319" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1319" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1319" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1319" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Sylvain Foisy Ph. D. ((no email))" />
+<meta name="Subject" content="Mounting an external NFS server on a starcluster" />
+<title>starcluster.mbox.out: Mounting an external NFS server on a starcluster</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Mounting an external NFS server on a starcluster</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Mounting an external NFS server on a starcluster</h1>
+<!-- received="Tue Apr 16 11:40:01 2013" -->
+<!-- isoreceived="20130416154001" -->
+<!-- sent="Tue, 16 Apr 2013 11:39:58 -0400" -->
+<!-- isosent="20130416153958" -->
+<!-- name="Sylvain Foisy Ph. D." -->
+<!-- email="(no email)" -->
+<!-- subject="Mounting an external NFS server on a starcluster" -->
+<!-- id="CD1D0BFB-9D53-4084-8C3C-7F87187BC0E2_at_diploide.net" -->
+<!-- charset="us-ascii" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1703.html#start1703" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1703.html#options2">top</a>, <a href="1703.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1704.html" accesskey="d" title="Jerry Lee, GW/US: &quot;Starcluster loadbalance error&quot;">Next message</a> ]
+[ <a href="1702.html" title="Xu, Guorong: &quot;EBS volumes and copy file error&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1703" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1703" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1703" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1703" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Sylvain Foisy Ph. D. &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Tue, 16 Apr 2013 11:39:58 -0400</span><br />
+</address>
+<br />
+Hi,
+<br />
+<br />I am working on analyzing a massive dataset that I have on an AWS instance. This machine is accessible by users using an Elastic IP address mapped to a FQID for their convenience. But of course (:-)), they need more power!
+<br />
+<br />I have used Starcluster as a standalone cluster creation tool with put and get but this time, I would need to access the data on my primary server at boot time. Is there a suggested path to do so? I planned on modifing the Starcluster AMI to mount this server at booth time on all servers, as long as the mount point is not present on them and that the user list is compatible for permissions. Would I also need to modify the security groups to allow NFS traffic?
+<br />
+<br />Thanks in advance
+<br />
+<br />Sylvain
+<br />
+<br />-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+<br />
+<br />Sylvain Foisy, Ph. D.
+<br />
+Consultant principal | Lead Consultant
+<br />
+Diploide BioIT -&gt; TI pour la vie / IT for Life
+<br />
+<br />M: sylvain.foisy_at_diploide.net
+<br />
+wW: <a href="http://www.diploide.net">http://www.diploide.net</a>
+<br />
+<br />-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+<br />
+<span id="received"><dfn>Received on</dfn> Tue Apr 16 2013 - 11:40:01 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1703.html#start1703">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1704.html" title="Next message in the list">Jerry Lee, GW/US: "Starcluster loadbalance error"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1702.html" title="Previous message in the list">Xu, Guorong: "EBS volumes and copy file error"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1703" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1703" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1703" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1703" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

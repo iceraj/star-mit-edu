@@ -1,0 +1,197 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Manuel J. Torres ((no email))" />
+<meta name="Subject" content="Error Loading EBS Volume" />
+<title>starcluster.mbox.out: Error Loading EBS Volume</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Error Loading EBS Volume</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Error Loading EBS Volume</h1>
+<!-- received="Fri Aug  2 18:02:44 2013" -->
+<!-- isoreceived="20130802220244" -->
+<!-- sent="Fri, 2 Aug 2013 15:02:43 -0700" -->
+<!-- isosent="20130802220243" -->
+<!-- name="Manuel J. Torres" -->
+<!-- email="(no email)" -->
+<!-- subject="Error Loading EBS Volume" -->
+<!-- id="CAAGWsdx+rDo9KdgEM7hRE=b7k82recZYVvW6Yf+dV9cqVP86mg_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1809.html#start1809" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1809.html#options2">top</a>, <a href="1809.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1810.html" accesskey="d" title="Rayson Ho: &quot;Re:  Tophat run on a 2-node cluster&quot;">Next message</a> ]
+[ <a href="1808.html" title="Jacob Barhak: &quot;Re:  Tophat run on a 2-node cluster&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="1811.html" accesskey="t" title="Rayson Ho: &quot;Re:  Error Loading EBS Volume&quot;">Next in thread</a> ]
+ [ <a href="1809.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1809" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1809" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1809" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1809" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Manuel J. Torres &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Fri, 2 Aug 2013 15:02:43 -0700</span><br />
+</address>
+<br />
+I have launched 3 EBS storage volumes using the EC2 Management Console on
+<br />
+AWS and defined these three volumes in my .starcluster/config file but I am
+<br />
+getting the following error from 'starcluster start smallcluster'
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Mounting EBS volume vol-38a7c165 on /home/large-data...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Mounting EBS volume vol-73d15b2e on /home/genomic-data...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Mounting EBS volume vol-42dcdb1f on /home/results-data...
+</em><br />
+!!! ERROR - Error occured while running plugin
+<br />
+'starcluster.clustersetup.DefaultClusterSetup':
+<br />
+!!! ERROR - remote command 'source /etc/profile &amp;&amp; mount
+<br />
+!!! ERROR - /home/results-data' failed with status 32:
+<br />
+!!! ERROR - mount: you must specify the filesystem type
+<br />
+<br />I am running StarCluster v 0.94
+<br />
+<br />Thanks!
+<br />
+<pre>
+-- 
+Manuel J Torres, PhD
+219 Brannan Street Unit 6G
+San Francisco, CA 94107
+VOICE: 415-656-9548
+</pre>
+<span id="received"><dfn>Received on</dfn> Fri Aug 02 2013 - 18:02:44 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1809.html#start1809">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1810.html" title="Next message in the list">Rayson Ho: "Re:  Tophat run on a 2-node cluster"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1808.html" title="Previous message in the list">Jacob Barhak: "Re:  Tophat run on a 2-node cluster"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1811.html" title="Next message in this discussion thread">Rayson Ho: "Re:  Error Loading EBS Volume"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1811.html" title="Message sent in reply to this message">Rayson Ho: "Re:  Error Loading EBS Volume"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1809" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1809" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1809" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1809" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

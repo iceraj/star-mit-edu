@@ -1,0 +1,345 @@
+config.py:281 - DEBUG - Loading config
+config.py:99 - DEBUG - Loading file: /root/.starcluster/config
+cli.py:213 - INFO - Using default cluster template: smallcluster
+awsutils.py:47 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'path': '/services/Cloud', 'region': RegionInfo:eucalyptus, 'port': 8773, 'is_secure': False}
+cli.py:228 - INFO - Validating cluster template settings...
+awsutils.py:47 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'path': '/services/Cloud', 'region': RegionInfo:eucalyptus, 'port': 8773, 'is_secure': False}
+cluster.py:766 - ERROR - key_location=/home/asusanto/.euca/nianika.private does not exist.
+cli.py:243 - ERROR - settings for cluster template "smallcluster" are not valid
+config.py:281 - DEBUG - Loading config
+config.py:99 - DEBUG - Loading file: /root/.starcluster/config
+cli.py:213 - INFO - Using default cluster template: smallcluster
+awsutils.py:47 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'path': '/services/Cloud', 'region': RegionInfo:eucalyptus, 'port': 8773, 'is_secure': False}
+cli.py:228 - INFO - Validating cluster template settings...
+awsutils.py:47 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'path': '/services/Cloud', 'region': RegionInfo:eucalyptus, 'port': 8773, 'is_secure': False}
+cli.py:230 - INFO - Cluster template settings are valid
+cluster.py:677 - INFO - Starting cluster...
+cluster.py:578 - INFO - Launching a 2-node cluster...
+cluster.py:583 - INFO - Launching master node...
+cluster.py:584 - INFO - Master AMI: ami-00000007
+awsutils.py:108 - INFO - Creating security group @sc-mycluster...
+cluster.py:605 - INFO - Launching worker nodes...
+cluster.py:606 - INFO - Node AMI: ami-00000007
+cluster.py:681 - Level 21 - Waiting for cluster to start...
+node.py:162 - DEBUG - instance i-000000fe has no private_ip_address
+node.py:165 - DEBUG - attempting to determine private_ip_address for instance i-000000fe
+ssh.py:71 - DEBUG - private key specified
+ssh.py:77 - WARNING - specified key does not end in either rsa or dsa, trying both
+ssh.py:106 - INFO - Using private key /root/.euca/nianika.private (rsa)
+ssh.py:251 - DEBUG - 10.0.5.3
+node.py:171 - DEBUG - determined instance i-000000fe's private ip to be 10.0.5.3
+node.py:162 - DEBUG - instance i-000000ff has no private_ip_address
+node.py:165 - DEBUG - attempting to determine private_ip_address for instance i-000000ff
+ssh.py:71 - DEBUG - private key specified
+ssh.py:77 - WARNING - specified key does not end in either rsa or dsa, trying both
+ssh.py:106 - INFO - Using private key /root/.euca/nianika.private (rsa)
+ssh.py:251 - DEBUG - 10.0.5.4
+node.py:171 - DEBUG - determined instance i-000000ff's private ip to be 10.0.5.4
+cluster.py:687 - INFO - The master node is 10.0.5.3
+cluster.py:692 - INFO - Setting up the cluster...
+cluster.py:532 - DEBUG - refreshing instance i-000000fe
+cluster.py:532 - DEBUG - refreshing instance i-000000ff
+clustersetup.py:73 - DEBUG - Cluster user gid/uid: (1001, 1001)
+clustersetup.py:74 - INFO - Creating cluster user: sgeadmin
+clustersetup.py:83 - INFO - Configuring scratch space for user: sgeadmin
+clustersetup.py:93 - INFO - Configuring /etc/hosts on each node
+clustersetup.py:217 - INFO - Configuring NFS...
+ssh.py:245 - ERROR - command cp -r /opt/sge6-fresh /opt/sge6 failed with status 1
+ssh.py:251 - DEBUG - cp: cannot stat `/opt/sge6-fresh': No such file or directory
+ssh.py:245 - ERROR - command chown -R sgeadmin:sgeadmin /opt/sge6 failed with status 1
+ssh.py:251 - DEBUG - chown: cannot access `/opt/sge6': No such file or directory
+ssh.py:245 - ERROR - command /etc/init.d/portmap start failed with status 127
+ssh.py:251 - DEBUG - bash: /etc/init.d/portmap: No such file or directory
+ssh.py:245 - ERROR - command mount -t rpc_pipefs sunrpc /var/lib/nfs/rpc_pipefs/ failed with status 32
+ssh.py:251 - DEBUG - mount: mount point /var/lib/nfs/rpc_pipefs/ does not exist
+ssh.py:245 - ERROR - command /etc/init.d/nfs start failed with status 127
+ssh.py:251 - DEBUG - bash: /etc/init.d/nfs: No such file or directory
+ssh.py:245 - ERROR - command /usr/sbin/exportfs -r failed with status 127
+ssh.py:251 - DEBUG - bash: /usr/sbin/exportfs: No such file or directory
+ssh.py:248 - DEBUG - command mount -t devpts none /dev/pts failed with status 32
+ssh.py:251 - DEBUG - mount: none already mounted or /dev/pts busy
+ssh.py:251 - DEBUG - mount: according to mtab, none is already mounted on /dev/pts
+ssh.py:245 - ERROR - command /etc/init.d/portmap start failed with status 127
+ssh.py:251 - DEBUG - bash: /etc/init.d/portmap: No such file or directory
+ssh.py:245 - ERROR - command mount /home failed with status 32
+ssh.py:251 - DEBUG - mount: wrong fs type, bad option, bad superblock on 10.0.5.3:/home,
+ssh.py:251 - DEBUG - missing codepage or helper program, or other error
+ssh.py:251 - DEBUG - (for several filesystems (e.g. nfs, cifs) you might
+ssh.py:251 - DEBUG - need a /sbin/mount.<type> helper program)
+ssh.py:251 - DEBUG - In some cases useful info is found in syslog - try
+ssh.py:251 - DEBUG - dmesg | tail  or so
+ssh.py:251 - DEBUG - 
+ssh.py:245 - ERROR - command mount /opt/sge6 failed with status 32
+ssh.py:251 - DEBUG - mount: wrong fs type, bad option, bad superblock on 10.0.5.3:/opt/sge6,
+ssh.py:251 - DEBUG - missing codepage or helper program, or other error
+ssh.py:251 - DEBUG - (for several filesystems (e.g. nfs, cifs) you might
+ssh.py:251 - DEBUG - need a /sbin/mount.<type> helper program)
+ssh.py:251 - DEBUG - In some cases useful info is found in syslog - try
+ssh.py:251 - DEBUG - dmesg | tail  or so
+ssh.py:251 - DEBUG - 
+ssh.py:248 - DEBUG - command mount -t devpts none /dev/pts failed with status 32
+ssh.py:251 - DEBUG - mount: none already mounted or /dev/pts busy
+ssh.py:251 - DEBUG - mount: according to mtab, none is already mounted on /dev/pts
+clustersetup.py:105 - INFO - Configuring passwordless ssh for root
+ssh.py:248 - DEBUG - command rm /root/.ssh/id_rsa* failed with status 1
+ssh.py:251 - DEBUG - rm: cannot remove `/root/.ssh/id_rsa*': No such file or directory
+ssh.py:251 - DEBUG - i-000000fe
+ssh.py:251 - DEBUG - Warning: Permanently added '10.0.5.3' (RSA) to the list of known hosts.
+ssh.py:251 - DEBUG - i-000000fe
+ssh.py:251 - DEBUG - Warning: Permanently added 'master' (RSA) to the list of known hosts.
+ssh.py:251 - DEBUG - i-000000fe
+ssh.py:245 - ERROR - command ssh -o "StrictHostKeyChecking=no" 10 hostname failed with status 255
+ssh.py:251 - DEBUG - ssh: connect to host 10 port 22: Invalid argument
+ssh.py:251 - DEBUG - i-000000ff
+ssh.py:251 - DEBUG - Warning: Permanently added '10.0.5.4' (RSA) to the list of known hosts.
+ssh.py:251 - DEBUG - i-000000ff
+ssh.py:251 - DEBUG - Warning: Permanently added 'node001' (RSA) to the list of known hosts.
+ssh.py:251 - DEBUG - i-000000ff
+ssh.py:245 - ERROR - command ssh -o "StrictHostKeyChecking=no" 10 hostname failed with status 255
+ssh.py:251 - DEBUG - ssh: connect to host 10 port 22: Invalid argument
+clustersetup.py:144 - INFO - Configuring passwordless ssh for user: sgeadmin
+ssh.py:251 - DEBUG - False
+ssh.py:251 - DEBUG - False
+clustersetup.py:158 - DEBUG - Checking for orphaned private key file: /home/sgeadmin/.ssh/id_rsa | exists = False
+clustersetup.py:158 - DEBUG - Checking for orphaned private key file: /home/sgeadmin/.ssh/id_rsa.pub | exists = False
+clustersetup.py:162 - INFO - Generating local RSA ssh keys for user: sgeadmin
+clustersetup.py:276 - INFO - Installing Sun Grid Engine...
+ssh.py:245 - ERROR - command /opt/sge6/util/arch failed with status 127
+ssh.py:251 - DEBUG - bash: /opt/sge6/util/arch: No such file or directory
+ssh.py:245 - ERROR - command /opt/sge6/util/arch failed with status 127
+ssh.py:251 - DEBUG - bash: /opt/sge6/util/arch: No such file or directory
+cli.py:1098 - DEBUG - Traceback (most recent call last):
+  File "/usr/local/lib/python2.6/dist-packages/StarCluster-0.91.2-py2.6.egg/starcluster/cli.py", line 1075, in main
+    sc.execute(args)
+  File "/usr/local/lib/python2.6/dist-packages/StarCluster-0.91.2-py2.6.egg/starcluster/cli.py", line 239, in execute
+    scluster.start(create=not self.opts.no_create)
+  File "/usr/local/lib/python2.6/dist-packages/StarCluster-0.91.2-py2.6.egg/starcluster/utils.py", line 27, in wrapper
+    res = func(*arg, **kargs)
+  File "/usr/local/lib/python2.6/dist-packages/StarCluster-0.91.2-py2.6.egg/starcluster/cluster.py", line 696, in start
+    self.volumes
+  File "/usr/local/lib/python2.6/dist-packages/StarCluster-0.91.2-py2.6.egg/starcluster/clustersetup.py", line 340, in run
+    self._setup_sge()
+  File "/usr/local/lib/python2.6/dist-packages/StarCluster-0.91.2-py2.6.egg/starcluster/clustersetup.py", line 297, in _setup_sge
+    ec2_sge_conf = mconn.remote_file("/opt/sge6/ec2_sge.conf")
+  File "/usr/local/lib/python2.6/dist-packages/StarCluster-0.91.2-py2.6.egg/starcluster/ssh.py", line 129, in remote_file
+    rfile = self._sftp.open(file, mode)
+  File "/usr/local/lib/python2.6/dist-packages/paramiko-1.7.6-py2.6.egg/paramiko/sftp_client.py", line 245, in open
+    t, msg = self._request(CMD_OPEN, filename, imode, attrblock)
+  File "/usr/local/lib/python2.6/dist-packages/paramiko-1.7.6-py2.6.egg/paramiko/sftp_client.py", line 628, in _request
+    return self._read_response(num)
+  File "/usr/local/lib/python2.6/dist-packages/paramiko-1.7.6-py2.6.egg/paramiko/sftp_client.py", line 675, in _read_response
+    self._convert_status(msg)
+  File "/usr/local/lib/python2.6/dist-packages/paramiko-1.7.6-py2.6.egg/paramiko/sftp_client.py", line 701, in _convert_status
+    raise IOError(errno.ENOENT, text)
+IOError: [Errno 2] No such file
+
+cli.py:1100 - ERROR - Oops! Looks like you've found a bug in StarCluster
+cli.py:1101 - ERROR - Debug file written to: /tmp/starcluster-debug.log
+cli.py:1102 - ERROR - Please submit this file, minus any private information,
+cli.py:1103 - ERROR - to starcluster@mit.edu
+ssh.py:344 - DEBUG - __del__ called
+ssh.py:344 - DEBUG - __del__ called
+config.py:281 - DEBUG - Loading config
+config.py:99 - DEBUG - Loading file: /root/.starcluster/config
+awsutils.py:47 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'path': '/services/Cloud', 'region': RegionInfo:eucalyptus, 'port': 8773, 'is_secure': False}
+awsutils.py:47 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'path': '/services/Cloud', 'region': RegionInfo:eucalyptus, 'port': 8773, 'is_secure': False}
+awsutils.py:47 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'path': '/services/Cloud', 'region': RegionInfo:eucalyptus, 'port': 8773, 'is_secure': False}
+cli.py:1079 - ERROR - cluster master does not exist
+config.py:281 - DEBUG - Loading config
+config.py:99 - DEBUG - Loading file: /root/.starcluster/config
+awsutils.py:47 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'path': '/services/Cloud', 'region': RegionInfo:eucalyptus, 'port': 8773, 'is_secure': False}
+awsutils.py:47 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'path': '/services/Cloud', 'region': RegionInfo:eucalyptus, 'port': 8773, 'is_secure': False}
+cluster.py:104 - INFO - Shutting down i-000000fe
+cli.py:1098 - DEBUG - Traceback (most recent call last):
+  File "/usr/local/lib/python2.6/dist-packages/StarCluster-0.91.2-py2.6.egg/starcluster/cli.py", line 1075, in main
+    sc.execute(args)
+  File "/usr/local/lib/python2.6/dist-packages/StarCluster-0.91.2-py2.6.egg/starcluster/cli.py", line 289, in execute
+    cluster.stop_cluster(cluster_name, cfg)
+  File "/usr/local/lib/python2.6/dist-packages/StarCluster-0.91.2-py2.6.egg/starcluster/cluster.py", line 105, in stop_cluster
+    node.stop()
+  File "/usr/lib/pymodules/python2.6/boto/ec2/instance.py", line 212, in stop
+    self._update(rs[0])
+IndexError: list index out of range
+
+cli.py:1100 - ERROR - Oops! Looks like you've found a bug in StarCluster
+cli.py:1101 - ERROR - Debug file written to: /tmp/starcluster-debug.log
+cli.py:1102 - ERROR - Please submit this file, minus any private information,
+cli.py:1103 - ERROR - to starcluster@mit.edu
+config.py:281 - DEBUG - Loading config
+config.py:99 - DEBUG - Loading file: /root/.starcluster/config
+awsutils.py:47 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'path': '/services/Cloud', 'region': RegionInfo:eucalyptus, 'port': 8773, 'is_secure': False}
+awsutils.py:47 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'path': '/services/Cloud', 'region': RegionInfo:eucalyptus, 'port': 8773, 'is_secure': False}
+cluster.py:104 - INFO - Shutting down i-000000ff
+cli.py:1098 - DEBUG - Traceback (most recent call last):
+  File "/usr/local/lib/python2.6/dist-packages/StarCluster-0.91.2-py2.6.egg/starcluster/cli.py", line 1075, in main
+    sc.execute(args)
+  File "/usr/local/lib/python2.6/dist-packages/StarCluster-0.91.2-py2.6.egg/starcluster/cli.py", line 289, in execute
+    cluster.stop_cluster(cluster_name, cfg)
+  File "/usr/local/lib/python2.6/dist-packages/StarCluster-0.91.2-py2.6.egg/starcluster/cluster.py", line 105, in stop_cluster
+    node.stop()
+  File "/usr/lib/pymodules/python2.6/boto/ec2/instance.py", line 212, in stop
+    self._update(rs[0])
+IndexError: list index out of range
+
+cli.py:1100 - ERROR - Oops! Looks like you've found a bug in StarCluster
+cli.py:1101 - ERROR - Debug file written to: /tmp/starcluster-debug.log
+cli.py:1102 - ERROR - Please submit this file, minus any private information,
+cli.py:1103 - ERROR - to starcluster@mit.edu
+config.py:281 - DEBUG - Loading config
+config.py:99 - DEBUG - Loading file: /root/.starcluster/config
+awsutils.py:47 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'path': '/services/Cloud', 'region': RegionInfo:eucalyptus, 'port': 8773, 'is_secure': False}
+awsutils.py:47 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'path': '/services/Cloud', 'region': RegionInfo:eucalyptus, 'port': 8773, 'is_secure': False}
+cluster.py:106 - INFO - Removing cluster security group @sc-mycluster
+config.py:281 - DEBUG - Loading config
+config.py:99 - DEBUG - Loading file: /root/.starcluster/config
+awsutils.py:47 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'path': '/services/Cloud', 'region': RegionInfo:eucalyptus, 'port': 8773, 'is_secure': False}
+cli.py:1079 - ERROR - cluster mycluster does not exist
+config.py:281 - DEBUG - Loading config
+config.py:99 - DEBUG - Loading file: /root/.starcluster/config
+cli.py:213 - INFO - Using default cluster template: smallcluster
+awsutils.py:47 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'path': '/services/Cloud', 'region': RegionInfo:eucalyptus, 'port': 8773, 'is_secure': False}
+cli.py:1079 - ERROR - Cluster with tag name susantocluster already exists. 
+cli.py:1079 - ERROR - 
+cli.py:1079 - ERROR - Either choose a different tag name, or stop the existing cluster using:
+cli.py:1079 - ERROR - 
+cli.py:1079 - ERROR -    $ starcluster stop susantocluster
+cli.py:1079 - ERROR - 
+cli.py:1079 - ERROR - If you wish to use these existing instances anyway, pass --no-create to the start command
+config.py:281 - DEBUG - Loading config
+config.py:99 - DEBUG - Loading file: /root/.starcluster/config
+awsutils.py:47 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'path': '/services/Cloud', 'region': RegionInfo:eucalyptus, 'port': 8773, 'is_secure': False}
+awsutils.py:47 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'path': '/services/Cloud', 'region': RegionInfo:eucalyptus, 'port': 8773, 'is_secure': False}
+cluster.py:106 - INFO - Removing cluster security group @sc-susantocluster
+config.py:281 - DEBUG - Loading config
+config.py:99 - DEBUG - Loading file: /root/.starcluster/config
+cli.py:213 - INFO - Using default cluster template: smallcluster
+awsutils.py:47 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'path': '/services/Cloud', 'region': RegionInfo:eucalyptus, 'port': 8773, 'is_secure': False}
+cli.py:228 - INFO - Validating cluster template settings...
+awsutils.py:47 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'path': '/services/Cloud', 'region': RegionInfo:eucalyptus, 'port': 8773, 'is_secure': False}
+cli.py:230 - INFO - Cluster template settings are valid
+cluster.py:677 - INFO - Starting cluster...
+cluster.py:578 - INFO - Launching a 2-node cluster...
+cluster.py:583 - INFO - Launching master node...
+cluster.py:584 - INFO - Master AMI: ami-00000007
+awsutils.py:108 - INFO - Creating security group @sc-susantocluster...
+cluster.py:605 - INFO - Launching worker nodes...
+cluster.py:606 - INFO - Node AMI: ami-00000007
+cluster.py:681 - Level 21 - Waiting for cluster to start...
+node.py:162 - DEBUG - instance i-00000100 has no private_ip_address
+node.py:165 - DEBUG - attempting to determine private_ip_address for instance i-00000100
+ssh.py:71 - DEBUG - private key specified
+ssh.py:77 - WARNING - specified key does not end in either rsa or dsa, trying both
+ssh.py:106 - INFO - Using private key /root/.euca/nianika.private (rsa)
+ssh.py:251 - DEBUG - 10.0.5.3
+node.py:171 - DEBUG - determined instance i-00000100's private ip to be 10.0.5.3
+node.py:162 - DEBUG - instance i-00000101 has no private_ip_address
+node.py:165 - DEBUG - attempting to determine private_ip_address for instance i-00000101
+ssh.py:71 - DEBUG - private key specified
+ssh.py:77 - WARNING - specified key does not end in either rsa or dsa, trying both
+ssh.py:106 - INFO - Using private key /root/.euca/nianika.private (rsa)
+ssh.py:251 - DEBUG - 10.0.5.4
+node.py:171 - DEBUG - determined instance i-00000101's private ip to be 10.0.5.4
+cluster.py:687 - INFO - The master node is 10.0.5.3
+cluster.py:692 - INFO - Setting up the cluster...
+cluster.py:532 - DEBUG - refreshing instance i-00000100
+cluster.py:532 - DEBUG - refreshing instance i-00000101
+clustersetup.py:73 - DEBUG - Cluster user gid/uid: (1001, 1001)
+clustersetup.py:74 - INFO - Creating cluster user: sgeadmin
+clustersetup.py:83 - INFO - Configuring scratch space for user: sgeadmin
+clustersetup.py:93 - INFO - Configuring /etc/hosts on each node
+clustersetup.py:217 - INFO - Configuring NFS...
+ssh.py:245 - ERROR - command cp -r /opt/sge6-fresh /opt/sge6 failed with status 1
+ssh.py:251 - DEBUG - cp: cannot stat `/opt/sge6-fresh': No such file or directory
+ssh.py:245 - ERROR - command chown -R sgeadmin:sgeadmin /opt/sge6 failed with status 1
+ssh.py:251 - DEBUG - chown: cannot access `/opt/sge6': No such file or directory
+ssh.py:245 - ERROR - command /etc/init.d/portmap start failed with status 127
+ssh.py:251 - DEBUG - bash: /etc/init.d/portmap: No such file or directory
+ssh.py:245 - ERROR - command mount -t rpc_pipefs sunrpc /var/lib/nfs/rpc_pipefs/ failed with status 32
+ssh.py:251 - DEBUG - mount: mount point /var/lib/nfs/rpc_pipefs/ does not exist
+ssh.py:245 - ERROR - command /etc/init.d/nfs start failed with status 127
+ssh.py:251 - DEBUG - bash: /etc/init.d/nfs: No such file or directory
+ssh.py:245 - ERROR - command /usr/sbin/exportfs -r failed with status 127
+ssh.py:251 - DEBUG - bash: /usr/sbin/exportfs: No such file or directory
+ssh.py:248 - DEBUG - command mount -t devpts none /dev/pts failed with status 32
+ssh.py:251 - DEBUG - mount: none already mounted or /dev/pts busy
+ssh.py:251 - DEBUG - mount: according to mtab, none is already mounted on /dev/pts
+ssh.py:245 - ERROR - command /etc/init.d/portmap start failed with status 127
+ssh.py:251 - DEBUG - bash: /etc/init.d/portmap: No such file or directory
+ssh.py:245 - ERROR - command mount /home failed with status 32
+ssh.py:251 - DEBUG - mount: wrong fs type, bad option, bad superblock on 10.0.5.3:/home,
+ssh.py:251 - DEBUG - missing codepage or helper program, or other error
+ssh.py:251 - DEBUG - (for several filesystems (e.g. nfs, cifs) you might
+ssh.py:251 - DEBUG - need a /sbin/mount.<type> helper program)
+ssh.py:251 - DEBUG - In some cases useful info is found in syslog - try
+ssh.py:251 - DEBUG - dmesg | tail  or so
+ssh.py:251 - DEBUG - 
+ssh.py:245 - ERROR - command mount /opt/sge6 failed with status 32
+ssh.py:251 - DEBUG - mount: wrong fs type, bad option, bad superblock on 10.0.5.3:/opt/sge6,
+ssh.py:251 - DEBUG - missing codepage or helper program, or other error
+ssh.py:251 - DEBUG - (for several filesystems (e.g. nfs, cifs) you might
+ssh.py:251 - DEBUG - need a /sbin/mount.<type> helper program)
+ssh.py:251 - DEBUG - In some cases useful info is found in syslog - try
+ssh.py:251 - DEBUG - dmesg | tail  or so
+ssh.py:251 - DEBUG - 
+ssh.py:248 - DEBUG - command mount -t devpts none /dev/pts failed with status 32
+ssh.py:251 - DEBUG - mount: none already mounted or /dev/pts busy
+ssh.py:251 - DEBUG - mount: according to mtab, none is already mounted on /dev/pts
+clustersetup.py:105 - INFO - Configuring passwordless ssh for root
+ssh.py:248 - DEBUG - command rm /root/.ssh/id_rsa* failed with status 1
+ssh.py:251 - DEBUG - rm: cannot remove `/root/.ssh/id_rsa*': No such file or directory
+ssh.py:251 - DEBUG - i-00000100
+ssh.py:251 - DEBUG - Warning: Permanently added '10.0.5.3' (RSA) to the list of known hosts.
+ssh.py:251 - DEBUG - i-00000100
+ssh.py:251 - DEBUG - Warning: Permanently added 'master' (RSA) to the list of known hosts.
+ssh.py:251 - DEBUG - i-00000100
+ssh.py:245 - ERROR - command ssh -o "StrictHostKeyChecking=no" 10 hostname failed with status 255
+ssh.py:251 - DEBUG - ssh: connect to host 10 port 22: Invalid argument
+ssh.py:251 - DEBUG - i-00000101
+ssh.py:251 - DEBUG - Warning: Permanently added '10.0.5.4' (RSA) to the list of known hosts.
+ssh.py:251 - DEBUG - i-00000101
+ssh.py:251 - DEBUG - Warning: Permanently added 'node001' (RSA) to the list of known hosts.
+ssh.py:251 - DEBUG - i-00000101
+ssh.py:245 - ERROR - command ssh -o "StrictHostKeyChecking=no" 10 hostname failed with status 255
+ssh.py:251 - DEBUG - ssh: connect to host 10 port 22: Invalid argument
+clustersetup.py:144 - INFO - Configuring passwordless ssh for user: sgeadmin
+ssh.py:251 - DEBUG - False
+ssh.py:251 - DEBUG - False
+clustersetup.py:158 - DEBUG - Checking for orphaned private key file: /home/sgeadmin/.ssh/id_rsa | exists = False
+clustersetup.py:158 - DEBUG - Checking for orphaned private key file: /home/sgeadmin/.ssh/id_rsa.pub | exists = False
+clustersetup.py:162 - INFO - Generating local RSA ssh keys for user: sgeadmin
+clustersetup.py:276 - INFO - Installing Sun Grid Engine...
+ssh.py:245 - ERROR - command /opt/sge6/util/arch failed with status 127
+ssh.py:251 - DEBUG - bash: /opt/sge6/util/arch: No such file or directory
+ssh.py:245 - ERROR - command /opt/sge6/util/arch failed with status 127
+ssh.py:251 - DEBUG - bash: /opt/sge6/util/arch: No such file or directory
+cli.py:1098 - DEBUG - Traceback (most recent call last):
+  File "/usr/local/lib/python2.6/dist-packages/StarCluster-0.91.2-py2.6.egg/starcluster/cli.py", line 1075, in main
+    sc.execute(args)
+  File "/usr/local/lib/python2.6/dist-packages/StarCluster-0.91.2-py2.6.egg/starcluster/cli.py", line 239, in execute
+    scluster.start(create=not self.opts.no_create)
+  File "/usr/local/lib/python2.6/dist-packages/StarCluster-0.91.2-py2.6.egg/starcluster/utils.py", line 27, in wrapper
+    res = func(*arg, **kargs)
+  File "/usr/local/lib/python2.6/dist-packages/StarCluster-0.91.2-py2.6.egg/starcluster/cluster.py", line 696, in start
+    self.volumes
+  File "/usr/local/lib/python2.6/dist-packages/StarCluster-0.91.2-py2.6.egg/starcluster/clustersetup.py", line 340, in run
+    self._setup_sge()
+  File "/usr/local/lib/python2.6/dist-packages/StarCluster-0.91.2-py2.6.egg/starcluster/clustersetup.py", line 297, in _setup_sge
+    ec2_sge_conf = mconn.remote_file("/opt/sge6/ec2_sge.conf")
+  File "/usr/local/lib/python2.6/dist-packages/StarCluster-0.91.2-py2.6.egg/starcluster/ssh.py", line 129, in remote_file
+    rfile = self._sftp.open(file, mode)
+  File "/usr/local/lib/python2.6/dist-packages/paramiko-1.7.6-py2.6.egg/paramiko/sftp_client.py", line 245, in open
+    t, msg = self._request(CMD_OPEN, filename, imode, attrblock)
+  File "/usr/local/lib/python2.6/dist-packages/paramiko-1.7.6-py2.6.egg/paramiko/sftp_client.py", line 628, in _request
+    return self._read_response(num)
+  File "/usr/local/lib/python2.6/dist-packages/paramiko-1.7.6-py2.6.egg/paramiko/sftp_client.py", line 675, in _read_response
+    self._convert_status(msg)
+  File "/usr/local/lib/python2.6/dist-packages/paramiko-1.7.6-py2.6.egg/paramiko/sftp_client.py", line 701, in _convert_status
+    raise IOError(errno.ENOENT, text)
+IOError: [Errno 2] No such file
+
+cli.py:1100 - ERROR - Oops! Looks like you've found a bug in StarCluster
+cli.py:1101 - ERROR - Debug file written to: /tmp/starcluster-debug.log
+cli.py:1102 - ERROR - Please submit this file, minus any private information,
+cli.py:1103 - ERROR - to starcluster@mit.edu
+ssh.py:344 - DEBUG - __del__ called
+ssh.py:344 - DEBUG - __del__ called

@@ -1,0 +1,221 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Wayne Delport ((no email))" />
+<meta name="Subject" content="crash report" />
+<title>starcluster.mbox.out: crash report</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">crash report</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>crash report</h1>
+<!-- received="Wed Feb 22 12:29:13 2012" -->
+<!-- isoreceived="20120222172913" -->
+<!-- sent="Wed, 22 Feb 2012 09:28:59 -0800" -->
+<!-- isosent="20120222172859" -->
+<!-- name="Wayne Delport" -->
+<!-- email="(no email)" -->
+<!-- subject="crash report" -->
+<!-- id="A310BE7B-5E39-465E-A705-528DEC7E169C_at_prognosysbio.com" -->
+<!-- charset="us-ascii" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1038.html#start1038" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1038.html#options2">top</a>, <a href="1038.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1039.html" accesskey="d" title="Justin Riley: &quot;Re:  crash report&quot;">Next message</a> ]
+[ <a href="1037.html" title="Justin Riley: &quot;Re:  Error when running mpich2 plugin using Starcluster&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="1039.html" accesskey="t" title="Justin Riley: &quot;Re:  crash report&quot;">Next in thread</a> ]
+ [ <a href="1038.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1038" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1038" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1038" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1038" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Wayne Delport &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Wed, 22 Feb 2012 09:28:59 -0800</span><br />
+</address>
+<br />
+Hi, 
+<br />
+<br />crash report attached. this is the result of a bug on my end when trying to restart a failed cluster before shutting the original down. the failure is not starcluster related, although the failed start does not exit cleanly.
+<br />
+<br />thanks ./w
+<br />
+<br /><br />
+---------- CRASH DETAILS ----------
+<br />
+COMMAND: starcluster -c /vol/sites/shared/starcluster/configs/devpbyko3f2ww8qa0fb2g15pti55_exp.config terminate devpbyko3f2ww8qa0fb2g15pti55_exp
+<br />
+2012-02-21 18:30:14,089 PID: 4314 config.py:551 - DEBUG - Loading config
+<br />
+2012-02-21 18:30:14,089 PID: 4314 config.py:118 - DEBUG - Loading file: /vol/sites/shared/starcluster/configs/devpbyko3f2ww8qa0fb2g15pti55_exp.config
+<br />
+2012-02-21 18:30:14,091 PID: 4314 awsutils.py:54 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'proxy_user': None, 'proxy_pass': None, 'proxy_port': None, 'proxy': None, 'is_secure': True, 'path': '/', 'region': None, 'port': None}
+<br />
+2012-02-21 18:30:14,251 PID: 4314 cluster.py:665 - DEBUG - existing nodes: {}
+<br />
+2012-02-21 18:30:14,251 PID: 4314 cluster.py:673 - DEBUG - adding node i-9a0206ff to self._nodes list
+<br />
+2012-02-21 18:30:14,252 PID: 4314 cluster.py:681 - DEBUG - returning self._nodes = [&lt;Node: master (i-9a0206ff)&gt;]
+<br />
+2012-02-21 18:30:14,268 PID: 4314 cli.py:287 - DEBUG - Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/cli.py&quot;, line 255, in main
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;sc.execute(args)
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/commands/terminate.py&quot;, line 65, in execute
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self.terminate_cluster(cluster_name)
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/commands/terminate.py&quot;, line 41, in terminate_cluster
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&quot;%s cluster %s (y/n)? &quot; % (action, cluster_name))
+<br />
+EOFError: EOF when reading a line
+<br />
+<br />---------- SYSTEM INFO ----------
+<br />
+StarCluster: 0.93.1
+<br />
+Python: 2.7.2+ (default, Oct  4 2011, 20:03:08)  [GCC 4.6.1]
+<br />
+Platform: Linux-3.0.0-14-virtual-i686-with-Ubuntu-11.10-oneiric
+<br />
+boto: 2.0
+<br />
+paramiko: 1.7.7.1 (George)
+<br />
+Crypto: 2.5
+<br />
+jinja2: 2.5.5
+<br />
+decorator: 3.3.1
+<br />
+<span id="received"><dfn>Received on</dfn> Wed Feb 22 2012 - 12:29:13 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1038.html#start1038">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1039.html" title="Next message in the list">Justin Riley: "Re:  crash report"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1037.html" title="Previous message in the list">Justin Riley: "Re:  Error when running mpich2 plugin using Starcluster"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1039.html" title="Next message in this discussion thread">Justin Riley: "Re:  crash report"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1039.html" title="Message sent in reply to this message">Justin Riley: "Re:  crash report"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1038" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1038" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1038" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1038" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

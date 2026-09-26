@@ -1,0 +1,231 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Sergio Mafra ((no email))" />
+<meta name="Subject" content="(no subject)" />
+<title>starcluster.mbox.out: (no subject)</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">(no subject)</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>(no subject)</h1>
+<!-- received="Fri Jul 19 07:08:13 2013" -->
+<!-- isoreceived="20130719110813" -->
+<!-- sent="Fri, 19 Jul 2013 08:08:11 -0300" -->
+<!-- isosent="20130719110811" -->
+<!-- name="Sergio Mafra" -->
+<!-- email="(no email)" -->
+<!-- subject="(no subject)" -->
+<!-- id="CALxTZg4yXnbjtot7Y0xwpvLmEL_aQ2-X6PdAKJbEYpr2Cgep4w_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1777.html#start1777" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1777.html#options2">top</a>, <a href="1777.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1778.html" accesskey="d" title="Jacob Barhak: &quot;Star cluster issues when running MIST over the cloud&quot;">Next message</a> ]
+[ <a href="1776.html" title="Ryan Golhar: &quot;starcluster Failed to add new host but continues addings hosts when using loadbalance&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1777" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1777" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1777" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1777" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Sergio Mafra &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Fri, 19 Jul 2013 08:08:11 -0300</span><br />
+</address>
+<br />
+Hi Fellows,
+<br />
+<br />When trying to delete a node from a cluster, got this message:
+<br />
+<br />ubuntu_at_domU-12-31-39-15-11-FA:~$ starcluster removenode decomp node004
+<br />
+StarCluster - (<a href="/cluster/">/cluster</a>) (v. 0.9999)
+<br />
+Software Tools for Academics and Researchers (STAR)
+<br />
+Please submit bug reports to starcluster_at_mit.edu
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Running plugin starcluster.plugins.sge.SGEPlugin
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Removing node004 from SGE
+</em><br />
+!!! ERROR - Error occured while running plugin
+<br />
+'starcluster.plugins.sge.SGEPlugi
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n':
+<br />
+!!! ERROR - remote command 'source /etc/profile &amp;&amp; qconf -de node004'
+<br />
+!!! ERROR - failed with status 1:
+<br />
+!!! ERROR - denied: execution host &quot;node004&quot; does not exist
+<br />
+<br />*** Wooww.. Why come it doesn�t exist... let�s take a look on the remaining
+<br />
+cluster ***
+<br />
+ubuntu_at_domU-12-31-39-15-11-FA:~$ starcluster lc
+<br />
+StarCluster - (<a href="/cluster/">/cluster</a>) (v. 0.9999)
+<br />
+Software Tools for Academics and Researchers (STAR)
+<br />
+Please submit bug reports to starcluster_at_mit.edu
+<br />
+<br />-----------------------------------
+<br />
+decomp (security group: _at_sc-decomp)
+<br />
+-----------------------------------
+<br />
+Launch time: 2013-07-18 05:46:31
+<br />
+Uptime: 1 days, 05:18:26
+<br />
+Zone: us-east-1d
+<br />
+Keypair: MasterNode
+<br />
+EBS volumes:
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;vol-fb714ca1 on master:/dev/sdz (status: attached)
+<br />
+Spot requests: 1 active
+<br />
+Cluster nodes:
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;master running i-335e4e53 ec2-23-23-241-73.compute-1.amazonaws.com
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;node004 running i-b6b5d1d3
+<br />
+ec2-54-242-25-40.compute-1.amazonaws.com(spot si
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;r-3146ee34)
+<br />
+Total nodes: 2
+<br />
+<span id="received"><dfn>Received on</dfn> Fri Jul 19 2013 - 07:08:13 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1777.html#start1777">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1778.html" title="Next message in the list">Jacob Barhak: "Star cluster issues when running MIST over the cloud"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1776.html" title="Previous message in the list">Ryan Golhar: "starcluster Failed to add new host but continues addings hosts when using loadbalance"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1777" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1777" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1777" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1777" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

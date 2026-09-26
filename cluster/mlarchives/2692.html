@@ -1,0 +1,240 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Sergio Mafra ((no email))" />
+<meta name="Subject" content="(no subject)" />
+<title>starcluster.mbox.out: (no subject)</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">(no subject)</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>(no subject)</h1>
+<!-- received="Mon Jul 27 17:10:17 2015" -->
+<!-- isoreceived="20150727211017" -->
+<!-- sent="Mon, 27 Jul 2015 18:10:16 -0300" -->
+<!-- isosent="20150727211016" -->
+<!-- name="Sergio Mafra" -->
+<!-- email="(no email)" -->
+<!-- subject="(no subject)" -->
+<!-- id="CALxTZg6oWP5MtX-aYiqz-4t-s06Na1shj-SNgH+iAtLob4tsng_at_mail.gmail.com" -->
+<!-- charset="UTF-8" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2692.html#start2692" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2692.html#options2">top</a>, <a href="2692.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2693.html" accesskey="d" title="Nick Stong: &quot;Re:  (no subject)&quot;">Next message</a> ]
+[ <a href="2691.html" title="Reza Ghotbi: &quot;Keypair Problem&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="2693.html" accesskey="t" title="Nick Stong: &quot;Re:  (no subject)&quot;">Next in thread</a> ]
+ [ <a href="2692.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2692" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2692" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2692" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2692" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Sergio Mafra &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Mon, 27 Jul 2015 18:10:16 -0300</span><br />
+</address>
+<br />
+Hi fellows,
+<br />
+<br />I´m back from vacations and my StarCluster on my Ubuntu Desktop 14.04
+<br />
+decided to stop working..
+<br />
+Now I get this error message:
+<br />
+<br />!!! ERROR - AuthFailure: AWS was not able to validate the provided access
+<br />
+credentials
+<br />
+Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/cli.py&quot;, line
+<br />
+274, in main
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;sc.execute(args)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/starcluster/commands/listclusters.py&quot;,
+<br />
+line 36, in execute
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;show_ssh_status=self.opts.show_ssh_status)
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/cluster.py&quot;,
+<br />
+line 280, in list_clusters
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;cluster_groups = self.get_cluster_security_groups()
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/cluster.py&quot;,
+<br />
+line 253, in get_cluster_security_groups
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;sgs = self.ec2.get_security_groups(filters={'group-name': glob})
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/awsutils.py&quot;,
+<br />
+line 369, in get_security_groups
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;return self.conn.get_all_security_groups(filters=filters)
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/boto/ec2/connection.py&quot;,
+<br />
+line 2968, in get_all_security_groups
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;[('item', SecurityGroup)], verb='POST')
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/boto/connection.py&quot;, line
+<br />
+1186, in get_list
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;raise self.ResponseError(response.status, response.reason, body)
+<br />
+EC2ResponseError: EC2ResponseError: 401 Unauthorized
+<br />
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+<br />
+&lt;Response&gt;&lt;Errors&gt;&lt;Error&gt;&lt;Code&gt;AuthFailure&lt;/Code&gt;&lt;Message&gt;AWS was not able
+<br />
+to validate the provided access
+<br />
+credentials&lt;/Message&gt;&lt;/Error&gt;&lt;/Errors&gt;&lt;RequestID&gt;677dd993-2fd1-4010-a794-95e3dbeecc0b&lt;/RequestID&gt;&lt;/Response&gt;
+<br />
+<br /><br />I can connect using AWS CLI with same credentials with no problem.
+<br />
+<br />Any suggestions?
+<br />
+<br />All best,
+<br />
+<br />Sergio
+<br />
+<span id="received"><dfn>Received on</dfn> Mon Jul 27 2015 - 17:10:17 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2692.html#start2692">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2693.html" title="Next message in the list">Nick Stong: "Re:  (no subject)"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2691.html" title="Previous message in the list">Reza Ghotbi: "Keypair Problem"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="2693.html" title="Next message in this discussion thread">Nick Stong: "Re:  (no subject)"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="2693.html" title="Message sent in reply to this message">Nick Stong: "Re:  (no subject)"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2692" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2692" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2692" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2692" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

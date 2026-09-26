@@ -1,0 +1,208 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Ying Sonia Ting ((no email))" />
+<meta name="Subject" content="Many jobs stuck in &quot;t state&quot;" />
+<title>starcluster.mbox.out: Many jobs stuck in &quot;t state&quot;</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Many jobs stuck in &quot;t state&quot;</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Many jobs stuck in &quot;t state&quot;</h1>
+<!-- received="Tue Feb 24 15:09:44 2015" -->
+<!-- isoreceived="20150224200944" -->
+<!-- sent="Tue, 24 Feb 2015 12:08:44 -0800" -->
+<!-- isosent="20150224200844" -->
+<!-- name="Ying Sonia Ting" -->
+<!-- email="(no email)" -->
+<!-- subject="Many jobs stuck in &quot;t state&quot;" -->
+<!-- id="CAHAMJ6td55X71X4sOitDAHhDWOdYdtbYM6tONQD4_dS_JyfhDQ_at_mail.gmail.com" -->
+<!-- charset="UTF-8" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2557.html#start2557" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2557.html#options2">top</a>, <a href="2557.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2558.html" accesskey="d" title="Avner May: &quot;Error creating/deleting security groups&quot;">Next message</a> ]
+[ <a href="2556.html" title="Vas Kum: &quot;Re:  StarCluster Digest, Vol 66, Issue 7&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="2563.html" accesskey="t" title="Jennifer Staab: &quot;Re:  Many jobs stuck in &#0034;t state&#0034;&quot;">Next in thread</a> ]
+ [ <a href="2557.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2557" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2557" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2557" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2557" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Ying Sonia Ting &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Tue, 24 Feb 2015 12:08:44 -0800</span><br />
+</address>
+<br />
+Hi all,
+<br />
+<br />This might be more of a SGE issue than Starcluster issue but I'd really
+<br />
+appreciate any comments.
+<br />
+<br />I have a bunch of jobs running on AWS spot instances using
+<br />
+starcluster. *Most of
+<br />
+them would stuck in &quot;t state&quot; for hours and then finally execute (in the r
+<br />
+state). *For instance, 50% of the jobs now that are not in qw are in &quot;t
+<br />
+state&quot;.
+<br />
+<br />The same program/script/AMI have been used frequently and this is the worse
+<br />
+ever. The only difference is the jobs this time are processing bigger files
+<br />
+(~6G each, 90 of them) located on a NFS shared gp2 volume. Jobs were
+<br />
+divided into tasks to ensure that only 4-5 jobs are processing the same
+<br />
+file at once. The memory were not even close to be overloaded (only used 5G
+<br />
+out of 240G each node). The long stuck in &quot;t state&quot; is wasting money and
+<br />
+CPU hours.
+<br />
+<br />Have any of you seen this issue before? Is there anyway I can fix / work
+<br />
+around this issue?
+<br />
+<br />Thanks a lot,
+<br />
+Sonia
+<br />
+<br /><br /><br /><pre>
+-- 
+Ying S. Ting
+Ph.D. Candidate, MacCoss Lab
+Department of Genome Sciences, University of Washington
+</pre>
+<span id="received"><dfn>Received on</dfn> Tue Feb 24 2015 - 15:09:44 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2557.html#start2557">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2558.html" title="Next message in the list">Avner May: "Error creating/deleting security groups"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2556.html" title="Previous message in the list">Vas Kum: "Re:  StarCluster Digest, Vol 66, Issue 7"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="2563.html" title="Next message in this discussion thread">Jennifer Staab: "Re:  Many jobs stuck in &#0034;t state&#0034;"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="2563.html" title="Message sent in reply to this message">Jennifer Staab: "Re:  Many jobs stuck in &#0034;t state&#0034;"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2557" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2557" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2557" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2557" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

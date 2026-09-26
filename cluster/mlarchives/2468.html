@@ -1,0 +1,249 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Ramon Ramirez-Linan ((no email))" />
+<meta name="Subject" content="problem adding nodes. Node003 doesnt exist so I crash" />
+<title>starcluster.mbox.out: problem adding nodes. Node003 doesnt exist so I crash</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">problem adding nodes. Node003 doesnt exist so I crash</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>problem adding nodes. Node003 doesnt exist so I crash</h1>
+<!-- received="Fri Nov 14 10:41:04 2014" -->
+<!-- isoreceived="20141114154104" -->
+<!-- sent="Fri, 14 Nov 2014 10:41:02 -0500" -->
+<!-- isosent="20141114154102" -->
+<!-- name="Ramon Ramirez-Linan" -->
+<!-- email="(no email)" -->
+<!-- subject="problem adding nodes. Node003 doesnt exist so I crash" -->
+<!-- id="CAFLaOSZaxr-uTwVf0norQ4b6PzwFVJRQuAYjnnuNZA6F2tPiHw_at_mail.gmail.com" -->
+<!-- charset="UTF-8" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2468.html#start2468" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2468.html#options2">top</a>, <a href="2468.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2469.html" accesskey="d" title="Jennifer Staab: &quot;Re:  User security&quot;">Next message</a> ]
+[ <a href="2467.html" title="Ramon Ramirez-Linan: &quot;Create volume from snapshot and mount it&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2468" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2468" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2468" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2468" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Ramon Ramirez-Linan &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Fri, 14 Nov 2014 10:41:02 -0500</span><br />
+</address>
+<br />
+I was trying to add 97 nodes to y 3 nodes cluster.
+<br />
+<br />I try last evening without success because AWS didnt have enought EC2 of
+<br />
+this type on my region (c3.4xlarge US-EAST)
+<br />
+<br />I tried this morning and it looks like it was adding them, but for some
+<br />
+reason some nodes did not get added and StarCluster crashed since it
+<br />
+couldnt find those nodes to configure them
+<br />
+<br />This is the error
+<br />
+<br />ec2-user_at_ip-172-31-1-249 ~]$ time starcluster addnode -n 97 aes-300
+<br />
+/usr/lib64/python2.6/site-packages/Crypto/Util/number.py:57:
+<br />
+PowmInsecureWarning: Not using mpz_powm_sec.  You should rebuild using
+<br />
+libgmp &gt;= 5 to avoid timing attack vulnerability.
+<br />
+&nbsp;&nbsp;_warn(&quot;Not using mpz_powm_sec.  You should rebuild using libgmp &gt;= 5 to
+<br />
+avoid timing attack vulnerability.&quot;, PowmInsecureWarning)
+<br />
+StarCluster - (<a href="/cluster/">/cluster</a>) (v. 0.95.5)
+<br />
+Software Tools for Academics and Researchers (STAR)
+<br />
+Please submit bug reports to starcluster_at_mit.edu
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Launching node(s): node003, node004, node005, node006, node007,
+</em><br />
+node008, node009, node010, node011, node012, node013, node014, node015,
+<br />
+node016, node017, node018, node019, node020, node021, node022, node023,
+<br />
+node024, node025, node026, node027, node028, node029, node030, node031,
+<br />
+node032, node033, node034, node035, node036, node037, node038, node039,
+<br />
+node040, node041, node042, node043, node044, node045, node046, node047,
+<br />
+node048, node049, node050, node051, node052, node053, node054, node055,
+<br />
+node056, node057, node058, node059, node060, node061, node062, node063,
+<br />
+node064, node065, node066, node067, node068, node069, node070, node071,
+<br />
+node072, node073, node074, node075, node076, node077, node078, node079,
+<br />
+node080, node081, node082, node083, node084, node085, node086, node087,
+<br />
+node088, node089, node090, node091, node092, node093, node094, node095,
+<br />
+node096, node097, node098, node099
+<br />
+Reservation:r-2fe2d905
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for instances to propagate...
+</em><br />
+97/97 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for node(s) to come up... (updating every 30s)
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for all nodes to be in a 'running' state...
+</em><br />
+38/38 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for SSH to come up on all nodes...
+</em><br />
+38/38 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for cluster to come up took 1.882 mins
+</em><br />
+!!! ERROR - node 'node003' does not exist
+<br />
+<br />real    2m4.162s
+<br />
+user    0m4.868s
+<br />
+sys     0m0.332s
+<br />
+<span id="received"><dfn>Received on</dfn> Fri Nov 14 2014 - 10:41:04 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2468.html#start2468">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2469.html" title="Next message in the list">Jennifer Staab: "Re:  User security"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2467.html" title="Previous message in the list">Ramon Ramirez-Linan: "Create volume from snapshot and mount it"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2468" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2468" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2468" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2468" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

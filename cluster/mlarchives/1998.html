@@ -1,0 +1,299 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Justin Riley ((no email))" />
+<meta name="Subject" content="Re:  _at_sc-core tag exceeds maximum length of 255 chars (#348)" />
+<title>starcluster.mbox.out: Re:  _at_sc-core tag exceeds maximum length of 255 chars (#348)</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Re:  _at_sc-core tag exceeds maximum length of 255 chars (#348)</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Re:  _at_sc-core tag exceeds maximum length of 255 chars (#348)</h1>
+<!-- received="Thu Dec 12 16:15:35 2013" -->
+<!-- isoreceived="20131212211535" -->
+<!-- sent="Thu, 12 Dec 2013 16:15:33 -0500" -->
+<!-- isosent="20131212211533" -->
+<!-- name="Justin Riley" -->
+<!-- email="(no email)" -->
+<!-- subject="Re:  _at_sc-core tag exceeds maximum length of 255 chars (#348)" -->
+<!-- id="20131212211533.GA20335_at_starnix.mit.edu" -->
+<!-- charset="utf-8" -->
+<!-- inreplyto="CABiDiYv-KenMSrPXBNfp2gzvG5B9nra7dgi011BAHFo9c0K56Q_at_mail.gmail.com" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1998.html#start1998" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1998.html#options2">top</a>, <a href="1998.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1999.html" accesskey="d" title="Emilia Vynnycky: &quot;Re:  bug report for updated Starcluster release 0.94.3 - Windows 7&quot;">Next message</a> ]
+[ <a href="1997.html" title="Jennifer Staab: &quot;Re:  _at_sc-core tag exceeds maximum length of 255 chars (#348)&quot;">Previous message</a> ]
+[ <a href="1997.html" title="Jennifer Staab: &quot;Re:  _at_sc-core tag exceeds maximum length of 255 chars (#348)&quot;">In reply to</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1998" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1998" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1998" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1998" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Justin Riley &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 12 Dec 2013 16:15:33 -0500</span><br />
+</address>
+<br />
+Just following up to the list: this issue occured because of an
+<br />
+unsupported change in a fork of StarCluster. Nevertheless we're working
+<br />
+on a fix for this but this shouldn't be an issue for folks using the
+<br />
+official repo.
+<br />
+<br />~Justin
+<br />
+<br />On Thu, Dec 12, 2013 at 03:34:22PM -0500, Jennifer Staab wrote:
+<br />
+<em class="quotelev1">&gt;    I have a feeling you were about to suggest the fix that I have outlined
+</em><br />
+<em class="quotelev1">&gt;    below. It involves no code change just a change in how you set up your
+</em><br />
+<em class="quotelev1">&gt;    cluster template such that your _at_sc-core tag squeezes within the 255
+</em><br />
+<em class="quotelev1">&gt;    character limit.
+</em><br />
+<em class="quotelev1">&gt;    Things to note about EC2-VPC and the this issue: 
+</em><br />
+<em class="quotelev1">&gt;    1) EC2-VPC limits their tag lengths to 255 characters (this is not true
+</em><br />
+<em class="quotelev1">&gt;    for EC2-Classic)
+</em><br />
+<em class="quotelev1">&gt;    2) _at_sc-core tag and (non-truncated) value are needed for starcluster to
+</em><br />
+<em class="quotelev1">&gt;    function properly
+</em><br />
+<em class="quotelev1">&gt;    3) _at_sc-core tag values are serialized (via json) and compressed to make
+</em><br />
+<em class="quotelev1">&gt;    them usable but reduce their size
+</em><br />
+<em class="quotelev1">&gt;    4) changing zlib.compress() function to use level 9 (highest compression)
+</em><br />
+<em class="quotelev1">&gt;    instead of default 6 doesn't solve the problem
+</em><br />
+<em class="quotelev1">&gt;    SOLUTION
+</em><br />
+<em class="quotelev1">&gt;    Changing your [cluster]/cluster template configuration in the
+</em><br />
+<em class="quotelev1">&gt;    configuration file such that 'master_instance_type' and
+</em><br />
+<em class="quotelev1">&gt;    'node_instance_type' are of same type (like m1.small) AND
+</em><br />
+<em class="quotelev1">&gt;    'master_image_id' and 'node_image_id' use the same ID (like ami-xxxxxxxx)
+</em><br />
+<em class="quotelev1">&gt;    will allow compression such that the _at_sc-core tag value can be compressed
+</em><br />
+<em class="quotelev1">&gt;    to a size that is under 255 characters.
+</em><br />
+<em class="quotelev1">&gt;    You can use VPC even if your master and worker nodes are of different
+</em><br />
+<em class="quotelev1">&gt;    types or use different AMI's. To allow this type of variation and not
+</em><br />
+<em class="quotelev1">&gt;    violate the 255 character limit, I would suggest creating a cluster
+</em><br />
+<em class="quotelev1">&gt;    template with the AMI id and type you want for the master node for both
+</em><br />
+<em class="quotelev1">&gt;    master and (worker) node. Then use starcluster addnode with -i and -I
+</em><br />
+<em class="quotelev1">&gt;    options to add all the worker nodes you want of the TYPE and AMI ID you
+</em><br />
+<em class="quotelev1">&gt;    want. I have tried it and it seems to work perfectly.
+</em><br />
+<em class="quotelev1">&gt;    Just in case someone runs into a similar problem in the future, below are
+</em><br />
+<em class="quotelev1">&gt;    the dictionary of values that are serialized and compressed to create the
+</em><br />
+<em class="quotelev1">&gt;    _at_sc-core tag's value:
+</em><br />
+<em class="quotelev1">&gt;    {'disable_cloudinit': False, 'master_instance_type': 'm1.small',
+</em><br />
+<em class="quotelev1">&gt;    'disable_queue': False, 'subnet_id': 'subnet-xxxxxxxx',
+</em><br />
+<em class="quotelev1">&gt;    'availability_zone': 'us-east-1b', 'node_image_id': 'ami-xxxxxxxx',
+</em><br />
+<em class="quotelev1">&gt;    'node_instance_type': 'm1.small', 'use_nfs_crossmnt': True,
+</em><br />
+<em class="quotelev1">&gt;    'cluster_size': 1, 'master_image_id': 'ami-xxxxxxxx', 'dns_prefix': False}
+</em><br />
+<em class="quotelev1">&gt;    Thanks,
+</em><br />
+<em class="quotelev1">&gt;    -Jennifer
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt;    On Thu, Dec 12, 2013 at 1:04 PM, Justin Riley
+</em><br />
+<em class="quotelev1">&gt;    &lt;[1]notifications_at_github.com&gt; wrote:
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt;      [2]_at_jmstaab Yep, that's the issue. The reason I asked for the config is
+</em><br />
+<em class="quotelev1">&gt;      I'm curious what is making the value that long. I have a more general
+</em><br />
+<em class="quotelev1">&gt;      fix for this but in the mean time would you mind pasting your [cluster]
+</em><br />
+<em class="quotelev1">&gt;      section? Thanks!
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt;      —
+</em><br />
+<em class="quotelev1">&gt;      Reply to this email directly or [3]view it on GitHub.[IMG]
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; References
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt;    Visible links
+</em><br />
+<em class="quotelev1">&gt;    1. mailto:notifications_at_github.com
+</em><br />
+<em class="quotelev1">&gt;    2. <a href="https://github.com/jmstaab">https://github.com/jmstaab</a>
+</em><br />
+<em class="quotelev1">&gt;    3. <a href="https://github.com/jtriley/StarCluster/issues/348#issuecomment-30446236">https://github.com/jtriley/StarCluster/issues/348#issuecomment-30446236</a>
+</em><br />
+<br /><em class="quotelev1">&gt; _______________________________________________
+</em><br />
+<em class="quotelev1">&gt; StarCluster mailing list
+</em><br />
+<em class="quotelev1">&gt; StarCluster_at_mit.edu
+</em><br />
+<em class="quotelev1">&gt; <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<br /><br /><br />
+<br /><div>
+<ul>
+<li>application/pgp-signature attachment: <a href="/cluster/mlarchives/att-1998/signature.asc">Digital signature</a></li>
+</ul>
+<!-- attachment="signature.asc" -->
+</div>
+<span id="received"><dfn>Received on</dfn> Thu Dec 12 2013 - 16:15:35 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1998.html#start1998">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1999.html" title="Next message in the list">Emilia Vynnycky: "Re:  bug report for updated Starcluster release 0.94.3 - Windows 7"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1997.html" title="Previous message in the list">Jennifer Staab: "Re:  _at_sc-core tag exceeds maximum length of 255 chars (#348)"</a></li>
+<li><dfn>In reply to</dfn>: <a href="1997.html" title="Message to which this message replies">Jennifer Staab: "Re:  _at_sc-core tag exceeds maximum length of 255 chars (#348)"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1998" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1998" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1998" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1998" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

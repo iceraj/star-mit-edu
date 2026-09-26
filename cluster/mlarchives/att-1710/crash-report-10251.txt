@@ -1,0 +1,37 @@
+---------- SYSTEM INFO ----------
+StarCluster: 0.9999
+Python: 2.7.3 (default, Aug  1 2012, 05:14:39)  [GCC 4.6.3]
+Platform: Linux-3.5.0-28-generic-x86_64-with-Ubuntu-12.04-precise
+boto: 2.8.0
+paramiko: 1.10.0
+Crypto: 2.4.1
+
+---------- CRASH DETAILS ----------
+Command: starcluster listclusters
+
+2013-05-02 16:32:46,712 PID: 10251 config.py:548 - DEBUG - Loading config
+2013-05-02 16:32:46,712 PID: 10251 config.py:119 - DEBUG - Loading file: /home/kli/.starcluster/config
+2013-05-02 16:32:46,714 PID: 10251 config.py:119 - DEBUG - Loading file: /home/kli/.starcluster/config
+2013-05-02 16:32:46,714 PID: 10251 config.py:119 - DEBUG - Loading file: /home/kli/.starcluster/awscreds
+2013-05-02 16:32:46,718 PID: 10251 awsutils.py:55 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'proxy_user': None, 'proxy_pass': None, 'proxy_port': 3128, 'proxy': 'wwwcache', 'is_secure': True, 'path': '/', 'region': None, 'port': None}
+2013-05-02 16:32:47,622 PID: 10251 cluster.py:689 - DEBUG - existing nodes: {}
+2013-05-02 16:32:47,622 PID: 10251 cluster.py:697 - DEBUG - adding node i-888126e6 to self._nodes list
+2013-05-02 16:32:47,622 PID: 10251 cluster.py:697 - DEBUG - adding node i-1e798372 to self._nodes list
+2013-05-02 16:32:47,623 PID: 10251 cluster.py:705 - DEBUG - returning self._nodes = [<Node: master (i-888126e6)>, <Node: node001 (i-1e798372)>]
+2013-05-02 16:32:48,093 PID: 10251 cluster.py:689 - DEBUG - existing nodes: {}
+2013-05-02 16:32:48,094 PID: 10251 cluster.py:697 - DEBUG - adding node i-c9e1a1a9 to self._nodes list
+2013-05-02 16:32:48,235 PID: 10251 cli.py:289 - ERROR - Unhandled exception occured
+Traceback (most recent call last):
+  File "/home/kli/.local/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/cli.py", line 257, in main
+    sc.execute(args)
+  File "/home/kli/.local/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/commands/listclusters.py", line 19, in execute
+    show_ssh_status=self.opts.show_ssh_status)
+  File "/home/kli/.local/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/cluster.py", line 273, in list_clusters
+    nodes = cl.nodes
+  File "/home/kli/.local/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/cluster.py", line 699, in nodes
+    if n.is_master():
+  File "/home/kli/.local/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/node.py", line 856, in is_master
+    return self.alias == "master"
+  File "/home/kli/.local/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/node.py", line 122, in alias
+    aliases = aliasestxt.splitlines()[2:]
+AttributeError: 'NoneType' object has no attribute 'splitlines'

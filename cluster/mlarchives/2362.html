@@ -1,0 +1,492 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="MacMullan, Hugh ((no email))" />
+<meta name="Subject" content="Re:  Changing iinstance type for everynode in the	cluster" />
+<title>starcluster.mbox.out: Re:  Changing iinstance type for everynode in the	cluster</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Re:  Changing iinstance type for everynode in the	cluster</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Re:  Changing iinstance type for everynode in the	cluster</h1>
+<!-- received="Thu Sep 18 10:58:17 2014" -->
+<!-- isoreceived="20140918145817" -->
+<!-- sent="Thu, 18 Sep 2014 14:58:13 +0000" -->
+<!-- isosent="20140918145813" -->
+<!-- name="MacMullan, Hugh" -->
+<!-- email="(no email)" -->
+<!-- subject="Re:  Changing iinstance type for everynode in the	cluster" -->
+<!-- id="C35D2A9F0F1DBE47832D25035CA02DAB3796938D_at_GENO3.wharton.upenn.edu" -->
+<!-- charset="us-ascii" -->
+<!-- inreplyto="541AF117.3080500_at_nasa.gov" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2362.html#start2362" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2362.html#options2">top</a>, <a href="2362.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2363.html" accesskey="d" title="greg: &quot;Re:  Customizing AMI but to distribute share&quot;">Next message</a> ]
+[ <a href="2361.html" title="MacMullan, Hugh: &quot;Re:  stopping the cluster makes dismounts all EBS volumes&quot;">Previous message</a> ]
+[ <a href="2360.html" title="Steve Heistand: &quot;Re:  Changing iinstance type for everynode in the cluster&quot;">In reply to</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2362" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2362" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2362" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2362" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: MacMullan, Hugh &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 18 Sep 2014 14:58:13 +0000</span><br />
+</address>
+<br />
+Indeed Steve! And you won't have to pay for or configure and manage all of those 1TB EBS volumes, either.
+<br />
+<br />And a modification of my 'for ID' code (the old line wouldn't work with systems with attached drives):
+<br />
+<br />for ID in $(starcluster lc mycluster 2&gt;/dev/null | grep -e &quot;^ *node[0-9][0-9][0-9]&quot; -e &quot;^ master&quot; | awk '{print $3}'); do
+<br />
+<br />There's probably a better way, too. :)
+<br />
+<br />-Hugh
+<br />
+<br />-----Original Message-----
+<br />
+From: starcluster-bounces_at_mit.edu [mailto:starcluster-bounces_at_mit&#46;<!--nospam-->edu] On Behalf Of Steve Heistand
+<br />
+Sent: Thursday, September 18, 2014 10:50 AM
+<br />
+To: starcluster_at_mit.edu
+<br />
+Subject: Re: [StarCluster] Changing iinstance type for everynode in the cluster
+<br />
+<br />-----BEGIN PGP SIGNED MESSAGE-----
+<br />
+Hash: SHA1
+<br />
+<br />while this is a good feature to have I will throw this out there for the original
+<br />
+person wanting to do this and everyone else.
+<br />
+<br />if these instances are going to be long running you will get much much better
+<br />
+overall performance if the data is sitting in S3 and you copy the data each
+<br />
+instance needs to a local ephemeral disk assigned to that instance type.
+<br />
+(note this isnt retained across type changes)
+<br />
+The pipe from S3 to an instance is huge and the slight extra run time for
+<br />
+the transfer will be made up for in IO speed to the 1T of data.
+<br />
+and copy the data back to S3 when the job is done as its ephemeral after all :)
+<br />
+<br />s
+<br />
+<br />On 09/18/2014 07:43 AM, Rayson Ho wrote:
+<br />
+<em class="quotelev1">&gt; Hugh, thanks for testing instance type change, it was very late last night and I did
+</em><br />
+<em class="quotelev1">&gt; not have time to test it.
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Ramon, we can add code in StarCluster to provide support for instance type change,
+</em><br />
+<em class="quotelev1">&gt; and in my original email I wanted to point out that you need to use StarCluster to
+</em><br />
+<em class="quotelev1">&gt; stop the cluster first, as changing the instance type means changing the IP of the
+</em><br />
+<em class="quotelev1">&gt; instance too, and thus a change of instance type without letting StarCluster know
+</em><br />
+<em class="quotelev1">&gt; wouldn't work.
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Rayson
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; ================================================== Open Grid Scheduler - The Official
+</em><br />
+<em class="quotelev1">&gt; Open Source Grid Engine <a href="http://gridscheduler.sourceforge.net/">http://gridscheduler.sourceforge.net/</a> 
+</em><br />
+<em class="quotelev1">&gt; <a href="http://gridscheduler.sourceforge.net/GridEngine/GridEngineCloud.html">http://gridscheduler.sourceforge.net/GridEngine/GridEngineCloud.html</a>
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; On Thu, Sep 18, 2014 at 10:22 AM, MacMullan, Hugh &lt;hughmac_at_wharton.upenn.edu
+</em><br />
+<em class="quotelev2">&gt;&gt; wrote:
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; Wow, I can't believe I never thought of that. Just tested c3.large &gt; c3.8xlarge
+</em><br />
+<em class="quotelev2">&gt;&gt; transformation, and it worked just fine ? AWS CLI for the command line win!
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; starcluster start -i c3.large -c mycluster mycluster
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; starcluster stop -c mycluster
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; starcluster lc ## wait till the nodes are all 'stopped'
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; for ID in $(starcluster lc mycluster 2&gt;/dev/null | grep -e node[0-9][0-9][0-9] -e
+</em><br />
+<em class="quotelev2">&gt;&gt; master | awk '{print $3}'); do
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; echo $ID
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; # the magic:
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; aws ec2 modify-instance-attribute --instance-id $ID --instance-type c3.8xlarge
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; done
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; starcluster start -x mycluster
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; Seems like that could be pretty easily integrated into StarCluster.
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; -Hugh
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; *From:* Rayson Ho [mailto:raysonlogin_at_gmail.com] *Sent:* Thursday, September 18,
+</em><br />
+<em class="quotelev2">&gt;&gt; 2014 1:18 AM *To:* Ramon Ramirez-Linan *Cc:* MacMullan, Hugh; starcluster_at_mit.edu 
+</em><br />
+<em class="quotelev2">&gt;&gt; *Subject:* Re: [StarCluster] Changing iinstance type for everynode in the cluster
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; I've never tried something like this myself, but I believe it would work if you
+</em><br />
+<em class="quotelev2">&gt;&gt; stop the EBS cluster (*NOT* terminate), and then change the instance type from the
+</em><br />
+<em class="quotelev2">&gt;&gt; EC2 management Console, and then restart the cluster, then StarCluster would
+</em><br />
+<em class="quotelev2">&gt;&gt; happily reconfig the cluster for you:
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; <a href="../docs/latest/manual/launch.html#stopping-an-ebs-backed-cluster">/cluster/docs/latest/manual/launch.html#stopping-an-ebs-backed-cluster</a>
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+Just a reboot won't do it, as the private IP address changes when you
+<br />
+<em class="quotelev2">&gt;&gt; change the instance type, and /etc/hosts would need to be changed again.
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; (Test with a 2-node t1.micro cluster and change the type to t2.micro before doing
+</em><br />
+<em class="quotelev2">&gt;&gt; anything experimental on a real production cluster.)
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; Rayson
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; On Wed, Sep 17, 2014 at 10:53 PM, Ramon Ramirez-Linan &lt;rlinan_at_navteca.com&gt; wrote:
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; Hi,
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; Is there a way of changing the instance type for the entire cluster after it has
+</em><br />
+<em class="quotelev2">&gt;&gt; already be launched?
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; I want to launch a 30  nodes cluster with a cheaper instance type to ingest data on
+</em><br />
+<em class="quotelev2">&gt;&gt; each node's volume. Each node has a 1TB EBS attached and there is no need to share
+</em><br />
+<em class="quotelev2">&gt;&gt; data between nodes (no nfs or anything). Then once the data is injected on each
+</em><br />
+<em class="quotelev2">&gt;&gt; node I want to be able to change the cluster instances to a more expensive one
+</em><br />
+<em class="quotelev2">&gt;&gt; (more CPU/RAM)
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; Will cluster reboot let me do that?
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; Thanks in advance
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; _______________________________________________ StarCluster mailing list 
+</em><br />
+<em class="quotelev1">&gt; StarCluster_at_mit.edu <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<br />- -- 
+<br />
+************************************************************************
+<br />
+&nbsp;Steve Heistand                          NASA Ames Research Center
+<br />
+&nbsp;Email: steve.heistand_at_nasa.gov          Steve Heistand/Mail Stop 258-6
+<br />
+&nbsp;Work Phone: (650) 604-4369              Bldg. 258, Rm. 232-5
+<br />
+&nbsp;Scientific &amp; HPC Application            P.O. Box 1
+<br />
+&nbsp;Development/Optimization                Moffett Field, CA 94035-0001
+<br />
+************************************************************************
+<br />
+&nbsp;&quot;Any opinions expressed are those of our alien overlords, not my own.&quot;
+<br />
+<br /># For Remedy                        #
+<br />
+#Action: Resolve                    #	
+<br />
+#Resolution: Resolved               #
+<br />
+#Reason: No Further Action Required #
+<br />
+#Tier1:	User Code                   #
+<br />
+#Tier2:	Other                       #
+<br />
+#Tier3:	Assistance                  #
+<br />
+#Notification: None                 #
+<br />
+-----BEGIN PGP SIGNATURE-----
+<br />
+Version: GnuPG v2.0.14 (GNU/Linux)
+<br />
+<br />iEYEARECAAYFAlQa8RcACgkQoBCTJSAkVrFGHgCgyGbIELl9+eKQabFLviDrI4BP
+<br />
+vsMAniWKHvcQDGFVFR8c74zQrObp/SUz
+<br />
+=mqvF
+<br />
+-----END PGP SIGNATURE-----
+<br />
+_______________________________________________
+<br />
+StarCluster mailing list
+<br />
+StarCluster_at_mit.edu
+<br />
+<a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+<br />
+<span id="received"><dfn>Received on</dfn> Thu Sep 18 2014 - 10:58:17 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2362.html#start2362">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2363.html" title="Next message in the list">greg: "Re:  Customizing AMI but to distribute share"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2361.html" title="Previous message in the list">MacMullan, Hugh: "Re:  stopping the cluster makes dismounts all EBS volumes"</a></li>
+<li><dfn>In reply to</dfn>: <a href="2360.html" title="Message to which this message replies">Steve Heistand: "Re:  Changing iinstance type for everynode in the cluster"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2362" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2362" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2362" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2362" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

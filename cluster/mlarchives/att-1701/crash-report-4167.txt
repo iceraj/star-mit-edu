@@ -1,0 +1,187 @@
+---------- CRASH DETAILS ----------
+COMMAND: starcluster addnode -b 0.1 -n 15 MC
+2013-03-27 15:27:20,410 PID: 4167 config.py:551 - DEBUG - Loading config
+2013-03-27 15:27:20,410 PID: 4167 config.py:118 - DEBUG - Loading file: /home/david/.starcluster/config
+2013-03-27 15:27:20,414 PID: 4167 awsutils.py:54 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'proxy_user': None, 'proxy_pass': None, 'proxy_port': None, 'proxy': None, 'is_secure': True, 'path': '/', 'region': None, 'port': None}
+2013-03-27 15:27:22,688 PID: 4167 cluster.py:664 - DEBUG - existing nodes: {}
+2013-03-27 15:27:22,688 PID: 4167 cluster.py:672 - DEBUG - adding node i-70e4c51e to self._nodes list
+2013-03-27 15:27:22,689 PID: 4167 cluster.py:672 - DEBUG - adding node i-8cf397ed to self._nodes list
+2013-03-27 15:27:22,689 PID: 4167 cluster.py:672 - DEBUG - adding node i-74194418 to self._nodes list
+2013-03-27 15:27:22,689 PID: 4167 cluster.py:672 - DEBUG - adding node i-ec044587 to self._nodes list
+2013-03-27 15:27:22,689 PID: 4167 cluster.py:672 - DEBUG - adding node i-543bef3e to self._nodes list
+2013-03-27 15:27:22,689 PID: 4167 cluster.py:672 - DEBUG - adding node i-ee044585 to self._nodes list
+2013-03-27 15:27:22,689 PID: 4167 cluster.py:680 - DEBUG - returning self._nodes = [<Node: master (i-70e4c51e)>, <Node: node001 (i-74194418)>, <Node: node002 (i-8cf397ed)>, <Node: node003 (i-ee044585)>, <Node: node004 (i-543bef3e)>, <Node: node005 (i-ec044587)>]
+2013-03-27 15:27:22,841 PID: 4167 cluster.py:664 - DEBUG - existing nodes: {u'i-ee044585': <Node: node003 (i-ee044585)>, u'i-70e4c51e': <Node: master (i-70e4c51e)>, u'i-8cf397ed': <Node: node002 (i-8cf397ed)>, u'i-ec044587': <Node: node005 (i-ec044587)>, u'i-543bef3e': <Node: node004 (i-543bef3e)>, u'i-74194418': <Node: node001 (i-74194418)>}
+2013-03-27 15:27:22,841 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-70e4c51e in self._nodes
+2013-03-27 15:27:22,841 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-8cf397ed in self._nodes
+2013-03-27 15:27:22,841 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-74194418 in self._nodes
+2013-03-27 15:27:22,842 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-ec044587 in self._nodes
+2013-03-27 15:27:22,842 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-543bef3e in self._nodes
+2013-03-27 15:27:22,842 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-ee044585 in self._nodes
+2013-03-27 15:27:22,842 PID: 4167 cluster.py:680 - DEBUG - returning self._nodes = [<Node: master (i-70e4c51e)>, <Node: node001 (i-74194418)>, <Node: node002 (i-8cf397ed)>, <Node: node003 (i-ee044585)>, <Node: node004 (i-543bef3e)>, <Node: node005 (i-ec044587)>]
+2013-03-27 15:27:22,842 PID: 4167 cluster.py:785 - DEBUG - Highest node number is 5. choosing 6.
+2013-03-27 15:27:22,842 PID: 4167 cluster.py:827 - INFO - Launching node(s): node006, node007, node008, node009, node010, node011, node012, node013, node014, node015, node016, node017, node018, node019, node020
+2013-03-27 15:27:24,525 PID: 4167 cluster.py:772 - INFO - SpotInstanceRequest:sir-14559434
+2013-03-27 15:27:24,526 PID: 4167 cluster.py:772 - INFO - SpotInstanceRequest:sir-4ad4d434
+2013-03-27 15:27:24,526 PID: 4167 cluster.py:772 - INFO - SpotInstanceRequest:sir-e7793232
+2013-03-27 15:27:24,526 PID: 4167 cluster.py:772 - INFO - SpotInstanceRequest:sir-df8d0434
+2013-03-27 15:27:24,526 PID: 4167 cluster.py:772 - INFO - SpotInstanceRequest:sir-cef27e34
+2013-03-27 15:27:24,527 PID: 4167 cluster.py:772 - INFO - SpotInstanceRequest:sir-5afc7e34
+2013-03-27 15:27:24,527 PID: 4167 cluster.py:772 - INFO - SpotInstanceRequest:sir-61071e35
+2013-03-27 15:27:24,527 PID: 4167 cluster.py:772 - INFO - SpotInstanceRequest:sir-477c5c32
+2013-03-27 15:27:24,527 PID: 4167 cluster.py:772 - INFO - SpotInstanceRequest:sir-4291f435
+2013-03-27 15:27:24,527 PID: 4167 cluster.py:772 - INFO - SpotInstanceRequest:sir-d4965e35
+2013-03-27 15:27:24,528 PID: 4167 cluster.py:772 - INFO - SpotInstanceRequest:sir-311e7a35
+2013-03-27 15:27:24,528 PID: 4167 cluster.py:772 - INFO - SpotInstanceRequest:sir-f627c835
+2013-03-27 15:27:24,528 PID: 4167 cluster.py:772 - INFO - SpotInstanceRequest:sir-9520dc32
+2013-03-27 15:27:24,528 PID: 4167 cluster.py:772 - INFO - SpotInstanceRequest:sir-4e69b835
+2013-03-27 15:27:24,529 PID: 4167 cluster.py:772 - INFO - SpotInstanceRequest:sir-1712d434
+2013-03-27 15:27:24,529 PID: 4167 cluster.py:1235 - INFO - Waiting for node(s) to come up... (updating every 30s)
+2013-03-27 15:27:24,696 PID: 4167 cluster.py:1165 - INFO - Waiting for open spot requests to become active...
+2013-03-27 15:30:26,159 PID: 4167 cluster.py:664 - DEBUG - existing nodes: {u'i-ee044585': <Node: node003 (i-ee044585)>, u'i-70e4c51e': <Node: master (i-70e4c51e)>, u'i-8cf397ed': <Node: node002 (i-8cf397ed)>, u'i-ec044587': <Node: node005 (i-ec044587)>, u'i-543bef3e': <Node: node004 (i-543bef3e)>, u'i-74194418': <Node: node001 (i-74194418)>}
+2013-03-27 15:30:26,159 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-70e4c51e in self._nodes
+2013-03-27 15:30:26,160 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-8cf397ed in self._nodes
+2013-03-27 15:30:26,160 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-74194418 in self._nodes
+2013-03-27 15:30:26,160 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-ec044587 in self._nodes
+2013-03-27 15:30:26,160 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-543bef3e in self._nodes
+2013-03-27 15:30:26,160 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-ee044585 in self._nodes
+2013-03-27 15:30:26,160 PID: 4167 cluster.py:680 - DEBUG - returning self._nodes = [<Node: master (i-70e4c51e)>, <Node: node001 (i-74194418)>, <Node: node002 (i-8cf397ed)>, <Node: node003 (i-ee044585)>, <Node: node004 (i-543bef3e)>, <Node: node005 (i-ec044587)>]
+2013-03-27 15:30:26,160 PID: 4167 cluster.py:1193 - INFO - Waiting for all nodes to be in a 'running' state...
+2013-03-27 15:30:26,280 PID: 4167 cluster.py:664 - DEBUG - existing nodes: {u'i-ee044585': <Node: node003 (i-ee044585)>, u'i-70e4c51e': <Node: master (i-70e4c51e)>, u'i-8cf397ed': <Node: node002 (i-8cf397ed)>, u'i-ec044587': <Node: node005 (i-ec044587)>, u'i-543bef3e': <Node: node004 (i-543bef3e)>, u'i-74194418': <Node: node001 (i-74194418)>}
+2013-03-27 15:30:26,280 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-70e4c51e in self._nodes
+2013-03-27 15:30:26,281 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-8cf397ed in self._nodes
+2013-03-27 15:30:26,281 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-74194418 in self._nodes
+2013-03-27 15:30:26,281 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-ec044587 in self._nodes
+2013-03-27 15:30:26,281 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-543bef3e in self._nodes
+2013-03-27 15:30:26,281 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-ee044585 in self._nodes
+2013-03-27 15:30:26,281 PID: 4167 cluster.py:680 - DEBUG - returning self._nodes = [<Node: master (i-70e4c51e)>, <Node: node001 (i-74194418)>, <Node: node002 (i-8cf397ed)>, <Node: node003 (i-ee044585)>, <Node: node004 (i-543bef3e)>, <Node: node005 (i-ec044587)>]
+2013-03-27 15:30:26,282 PID: 4167 cluster.py:1211 - INFO - Waiting for SSH to come up on all nodes...
+2013-03-27 15:30:26,393 PID: 4167 cluster.py:664 - DEBUG - existing nodes: {u'i-ee044585': <Node: node003 (i-ee044585)>, u'i-70e4c51e': <Node: master (i-70e4c51e)>, u'i-8cf397ed': <Node: node002 (i-8cf397ed)>, u'i-ec044587': <Node: node005 (i-ec044587)>, u'i-543bef3e': <Node: node004 (i-543bef3e)>, u'i-74194418': <Node: node001 (i-74194418)>}
+2013-03-27 15:30:26,394 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-70e4c51e in self._nodes
+2013-03-27 15:30:26,394 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-8cf397ed in self._nodes
+2013-03-27 15:30:26,394 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-74194418 in self._nodes
+2013-03-27 15:30:26,394 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-ec044587 in self._nodes
+2013-03-27 15:30:26,394 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-543bef3e in self._nodes
+2013-03-27 15:30:26,394 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-ee044585 in self._nodes
+2013-03-27 15:30:26,394 PID: 4167 cluster.py:680 - DEBUG - returning self._nodes = [<Node: master (i-70e4c51e)>, <Node: node001 (i-74194418)>, <Node: node002 (i-8cf397ed)>, <Node: node003 (i-ee044585)>, <Node: node004 (i-543bef3e)>, <Node: node005 (i-ec044587)>]
+2013-03-27 15:30:26,500 PID: 4167 __init__.py:75 - DEBUG - loading private key /home/david/.ssh/t1key.rsa
+2013-03-27 15:30:26,505 PID: 4167 __init__.py:167 - DEBUG - Using private key /home/david/.ssh/t1key.rsa (rsa)
+2013-03-27 15:30:26,506 PID: 4167 __init__.py:97 - DEBUG - connecting to host ec2-174-129-73-130.compute-1.amazonaws.com on port 22 as user root
+2013-03-27 15:30:26,779 PID: 4167 __init__.py:186 - DEBUG - creating sftp connection
+2013-03-27 15:30:27,198 PID: 4167 __init__.py:75 - DEBUG - loading private key /home/david/.ssh/t1key.rsa
+2013-03-27 15:30:27,199 PID: 4167 __init__.py:167 - DEBUG - Using private key /home/david/.ssh/t1key.rsa (rsa)
+2013-03-27 15:30:27,199 PID: 4167 __init__.py:97 - DEBUG - connecting to host ec2-107-20-61-158.compute-1.amazonaws.com on port 22 as user root
+2013-03-27 15:30:27,431 PID: 4167 __init__.py:186 - DEBUG - creating sftp connection
+2013-03-27 15:30:28,423 PID: 4167 __init__.py:75 - DEBUG - loading private key /home/david/.ssh/t1key.rsa
+2013-03-27 15:30:28,424 PID: 4167 __init__.py:167 - DEBUG - Using private key /home/david/.ssh/t1key.rsa (rsa)
+2013-03-27 15:30:28,424 PID: 4167 __init__.py:97 - DEBUG - connecting to host ec2-50-19-26-224.compute-1.amazonaws.com on port 22 as user root
+2013-03-27 15:30:29,547 PID: 4167 __init__.py:186 - DEBUG - creating sftp connection
+2013-03-27 15:30:30,737 PID: 4167 __init__.py:75 - DEBUG - loading private key /home/david/.ssh/t1key.rsa
+2013-03-27 15:30:30,738 PID: 4167 __init__.py:167 - DEBUG - Using private key /home/david/.ssh/t1key.rsa (rsa)
+2013-03-27 15:30:30,738 PID: 4167 __init__.py:97 - DEBUG - connecting to host ec2-204-236-193-51.compute-1.amazonaws.com on port 22 as user root
+2013-03-27 15:30:31,010 PID: 4167 __init__.py:186 - DEBUG - creating sftp connection
+2013-03-27 15:30:32,596 PID: 4167 __init__.py:75 - DEBUG - loading private key /home/david/.ssh/t1key.rsa
+2013-03-27 15:30:32,597 PID: 4167 __init__.py:167 - DEBUG - Using private key /home/david/.ssh/t1key.rsa (rsa)
+2013-03-27 15:30:32,597 PID: 4167 __init__.py:97 - DEBUG - connecting to host ec2-50-19-73-20.compute-1.amazonaws.com on port 22 as user root
+2013-03-27 15:30:32,836 PID: 4167 __init__.py:186 - DEBUG - creating sftp connection
+2013-03-27 15:30:33,677 PID: 4167 __init__.py:75 - DEBUG - loading private key /home/david/.ssh/t1key.rsa
+2013-03-27 15:30:33,678 PID: 4167 __init__.py:167 - DEBUG - Using private key /home/david/.ssh/t1key.rsa (rsa)
+2013-03-27 15:30:33,678 PID: 4167 __init__.py:97 - DEBUG - connecting to host ec2-54-242-31-218.compute-1.amazonaws.com on port 22 as user root
+2013-03-27 15:30:33,960 PID: 4167 __init__.py:186 - DEBUG - creating sftp connection
+2013-03-27 15:30:34,914 PID: 4167 utils.py:93 - INFO - Waiting for cluster to come up took 3.173 mins
+2013-03-27 15:30:34,914 PID: 4167 cluster.py:833 - DEBUG - Adding node(s): ['node006', 'node007', 'node008', 'node009', 'node010', 'node011', 'node012', 'node013', 'node014', 'node015', 'node016', 'node017', 'node018', 'node019', 'node020']
+2013-03-27 15:30:35,319 PID: 4167 cluster.py:664 - DEBUG - existing nodes: {u'i-ee044585': <Node: node003 (i-ee044585)>, u'i-70e4c51e': <Node: master (i-70e4c51e)>, u'i-8cf397ed': <Node: node002 (i-8cf397ed)>, u'i-ec044587': <Node: node005 (i-ec044587)>, u'i-543bef3e': <Node: node004 (i-543bef3e)>, u'i-74194418': <Node: node001 (i-74194418)>}
+2013-03-27 15:30:35,319 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-70e4c51e in self._nodes
+2013-03-27 15:30:35,319 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-8cf397ed in self._nodes
+2013-03-27 15:30:35,320 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-74194418 in self._nodes
+2013-03-27 15:30:35,320 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-ec044587 in self._nodes
+2013-03-27 15:30:35,320 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-543bef3e in self._nodes
+2013-03-27 15:30:35,320 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-ee044585 in self._nodes
+2013-03-27 15:30:35,320 PID: 4167 cluster.py:672 - DEBUG - adding node i-3c8e5350 to self._nodes list
+2013-03-27 15:30:35,725 PID: 4167 cluster.py:672 - DEBUG - adding node i-6a31de09 to self._nodes list
+2013-03-27 15:30:35,852 PID: 4167 node.py:95 - DEBUG - InvalidInstanceID.NotFound: retrying fetching user data (tries: 1)
+2013-03-27 15:30:40,916 PID: 4167 node.py:95 - DEBUG - InvalidInstanceID.NotFound: retrying fetching user data (tries: 2)
+2013-03-27 15:30:45,972 PID: 4167 node.py:95 - DEBUG - InvalidInstanceID.NotFound: retrying fetching user data (tries: 3)
+2013-03-27 15:30:51,033 PID: 4167 node.py:95 - DEBUG - InvalidInstanceID.NotFound: retrying fetching user data (tries: 4)
+2013-03-27 15:30:56,452 PID: 4167 cluster.py:672 - DEBUG - adding node i-f1f36699 to self._nodes list
+2013-03-27 15:30:56,900 PID: 4167 cluster.py:672 - DEBUG - adding node i-483dcc2b to self._nodes list
+2013-03-27 15:30:57,331 PID: 4167 cluster.py:672 - DEBUG - adding node i-16ac4a75 to self._nodes list
+2013-03-27 15:30:57,842 PID: 4167 cluster.py:672 - DEBUG - adding node i-9e3aeef4 to self._nodes list
+2013-03-27 15:30:58,297 PID: 4167 cluster.py:672 - DEBUG - adding node i-6699090c to self._nodes list
+2013-03-27 15:30:58,690 PID: 4167 cluster.py:672 - DEBUG - adding node i-2004454b to self._nodes list
+2013-03-27 15:30:59,121 PID: 4167 cluster.py:672 - DEBUG - adding node i-b1653dd1 to self._nodes list
+2013-03-27 15:30:59,514 PID: 4167 cluster.py:672 - DEBUG - adding node i-22044549 to self._nodes list
+2013-03-27 15:31:00,392 PID: 4167 cluster.py:672 - DEBUG - adding node i-3a8e5356 to self._nodes list
+2013-03-27 15:31:00,946 PID: 4167 cluster.py:672 - DEBUG - adding node i-7683d315 to self._nodes list
+2013-03-27 15:31:01,420 PID: 4167 cluster.py:672 - DEBUG - adding node i-59779234 to self._nodes list
+2013-03-27 15:31:01,838 PID: 4167 cluster.py:672 - DEBUG - adding node i-3552f05a to self._nodes list
+2013-03-27 15:31:02,234 PID: 4167 cluster.py:672 - DEBUG - adding node i-d3dc32b2 to self._nodes list
+2013-03-27 15:31:03,093 PID: 4167 cluster.py:680 - DEBUG - returning self._nodes = [<Node: master (i-70e4c51e)>, <Node: node001 (i-74194418)>, <Node: node002 (i-8cf397ed)>, <Node: node003 (i-ee044585)>, <Node: node004 (i-543bef3e)>, <Node: node005 (i-ec044587)>, <Node: node006 (i-7683d315)>, <Node: node007 (i-9e3aeef4)>, <Node: node008 (i-483dcc2b)>, <Node: node009 (i-f1f36699)>, <Node: node010 (i-3c8e5350)>, <Node: node011 (i-2004454b)>, <Node: node012 (i-3552f05a)>, <Node: node013 (i-b1653dd1)>, <Node: node014 (i-16ac4a75)>, <Node: node015 (i-3a8e5356)>, <Node: node016 (i-6a31de09)>, <Node: node017 (i-59779234)>, <Node: node018 (i-6699090c)>, <Node: node019 (i-d3dc32b2)>, <Node: node020 (i-22044549)>]
+2013-03-27 15:31:03,467 PID: 4167 cluster.py:664 - DEBUG - existing nodes: {u'i-9e3aeef4': <Node: node007 (i-9e3aeef4)>, u'i-2004454b': <Node: node011 (i-2004454b)>, u'i-ee044585': <Node: node003 (i-ee044585)>, u'i-3c8e5350': <Node: node010 (i-3c8e5350)>, u'i-3552f05a': <Node: node012 (i-3552f05a)>, u'i-70e4c51e': <Node: master (i-70e4c51e)>, u'i-16ac4a75': <Node: node014 (i-16ac4a75)>, u'i-b1653dd1': <Node: node013 (i-b1653dd1)>, u'i-8cf397ed': <Node: node002 (i-8cf397ed)>, u'i-ec044587': <Node: node005 (i-ec044587)>, u'i-3a8e5356': <Node: node015 (i-3a8e5356)>, u'i-6699090c': <Node: node018 (i-6699090c)>, u'i-543bef3e': <Node: node004 (i-543bef3e)>, u'i-22044549': <Node: node020 (i-22044549)>, u'i-483dcc2b': <Node: node008 (i-483dcc2b)>, u'i-59779234': <Node: node017 (i-59779234)>, u'i-f1f36699': <Node: node009 (i-f1f36699)>, u'i-d3dc32b2': <Node: node019 (i-d3dc32b2)>, u'i-74194418': <Node: node001 (i-74194418)>, u'i-7683d315': <Node: node006 (i-7683d315)>, u'i-6a31de09': <Node: node016 (i-6a31de09)>}
+2013-03-27 15:31:03,467 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-70e4c51e in self._nodes
+2013-03-27 15:31:03,467 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-8cf397ed in self._nodes
+2013-03-27 15:31:03,467 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-74194418 in self._nodes
+2013-03-27 15:31:03,467 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-ec044587 in self._nodes
+2013-03-27 15:31:03,468 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-543bef3e in self._nodes
+2013-03-27 15:31:03,468 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-ee044585 in self._nodes
+2013-03-27 15:31:03,468 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-3c8e5350 in self._nodes
+2013-03-27 15:31:03,468 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-6a31de09 in self._nodes
+2013-03-27 15:31:03,468 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-f1f36699 in self._nodes
+2013-03-27 15:31:03,468 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-483dcc2b in self._nodes
+2013-03-27 15:31:03,468 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-16ac4a75 in self._nodes
+2013-03-27 15:31:03,469 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-9e3aeef4 in self._nodes
+2013-03-27 15:31:03,469 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-6699090c in self._nodes
+2013-03-27 15:31:03,469 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-2004454b in self._nodes
+2013-03-27 15:31:03,469 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-b1653dd1 in self._nodes
+2013-03-27 15:31:03,469 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-22044549 in self._nodes
+2013-03-27 15:31:03,469 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-3a8e5356 in self._nodes
+2013-03-27 15:31:03,469 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-7683d315 in self._nodes
+2013-03-27 15:31:03,469 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-59779234 in self._nodes
+2013-03-27 15:31:03,470 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-3552f05a in self._nodes
+2013-03-27 15:31:03,470 PID: 4167 cluster.py:667 - DEBUG - updating existing node i-d3dc32b2 in self._nodes
+2013-03-27 15:31:03,470 PID: 4167 cluster.py:680 - DEBUG - returning self._nodes = [<Node: master (i-70e4c51e)>, <Node: node001 (i-74194418)>, <Node: node002 (i-8cf397ed)>, <Node: node003 (i-ee044585)>, <Node: node004 (i-543bef3e)>, <Node: node005 (i-ec044587)>, <Node: node006 (i-7683d315)>, <Node: node007 (i-9e3aeef4)>, <Node: node008 (i-483dcc2b)>, <Node: node009 (i-f1f36699)>, <Node: node010 (i-3c8e5350)>, <Node: node011 (i-2004454b)>, <Node: node012 (i-3552f05a)>, <Node: node013 (i-b1653dd1)>, <Node: node014 (i-16ac4a75)>, <Node: node015 (i-3a8e5356)>, <Node: node016 (i-6a31de09)>, <Node: node017 (i-59779234)>, <Node: node018 (i-6699090c)>, <Node: node019 (i-d3dc32b2)>, <Node: node020 (i-22044549)>]
+2013-03-27 15:31:03,470 PID: 4167 clustersetup.py:90 - INFO - Configuring hostnames...
+2013-03-27 15:31:03,473 PID: 4167 __init__.py:75 - DEBUG - loading private key /home/david/.ssh/t1key.rsa
+2013-03-27 15:31:03,473 PID: 4167 __init__.py:167 - DEBUG - Using private key /home/david/.ssh/t1key.rsa (rsa)
+2013-03-27 15:31:03,473 PID: 4167 __init__.py:186 - DEBUG - creating sftp connection
+2013-03-27 15:31:03,474 PID: 4167 __init__.py:97 - DEBUG - connecting to host ec2-54-224-87-211.compute-1.amazonaws.com on port 22 as user root
+2013-03-27 15:31:03,474 PID: 4167 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-03-27 15:31:04,476 PID: 4167 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-03-27 15:31:05,478 PID: 4167 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-03-27 15:31:06,480 PID: 4167 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-03-27 15:31:07,481 PID: 4167 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-03-27 15:31:08,483 PID: 4167 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-03-27 15:31:09,485 PID: 4167 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-03-27 15:31:10,486 PID: 4167 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-03-27 15:31:11,488 PID: 4167 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-03-27 15:31:12,490 PID: 4167 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-03-27 15:31:13,491 PID: 4167 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-03-27 15:31:14,493 PID: 4167 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-03-27 15:31:15,495 PID: 4167 cli.py:266 - DEBUG - error occurred in job (id=node006): failed to connect to host ec2-54-224-87-211.compute-1.amazonaws.com on port 22
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.93.3-py2.7.egg/starcluster/threadpool.py", line 31, in run
+    job.run()
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.93.3-py2.7.egg/starcluster/threadpool.py", line 58, in run
+    r = self.method(*self.args, **self.kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.93.3-py2.7.egg/starcluster/node.py", line 696, in set_hostname
+    hostname_file = self.ssh.remote_file("/etc/hostname", "w")
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.93.3-py2.7.egg/starcluster/sshutils/__init__.py", line 296, in remote_file
+    rfile = self.sftp.open(file, mode)
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.93.3-py2.7.egg/starcluster/sshutils/__init__.py", line 187, in sftp
+    self._sftp = ssh.SFTPClient.from_transport(self.transport)
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.93.3-py2.7.egg/starcluster/sshutils/__init__.py", line 136, in transport
+    port=self._port, timeout=self._timeout)
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.93.3-py2.7.egg/starcluster/sshutils/__init__.py", line 103, in connect
+    raise exception.SSHConnectionError(host, port)
+SSHConnectionError: failed to connect to host ec2-54-224-87-211.compute-1.amazonaws.com on port 22
+
+---------- SYSTEM INFO ----------
+StarCluster: 0.93.3
+Python: 2.7.3 (default, Sep 26 2012, 21:53:58)  [GCC 4.7.2]
+Platform: Linux-3.5.0-17-generic-i686-with-Ubuntu-12.10-quantal
+boto: 2.3.0
+ssh: 1.7.13
+Crypto: 2.6
+jinja2: 2.6
+decorator: 3.3.1
+

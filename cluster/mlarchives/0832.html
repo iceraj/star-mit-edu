@@ -1,0 +1,359 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Justin Riley ((no email))" />
+<meta name="Subject" content="StarCluster 0.92 Released!" />
+<title>starcluster.mbox.out: StarCluster 0.92 Released!</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">StarCluster 0.92 Released!</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>StarCluster 0.92 Released!</h1>
+<!-- received="Tue Oct 18 13:59:06 2011" -->
+<!-- isoreceived="20111018175906" -->
+<!-- sent="Tue, 18 Oct 2011 13:59:03 -0400" -->
+<!-- isosent="20111018175903" -->
+<!-- name="Justin Riley" -->
+<!-- email="(no email)" -->
+<!-- subject="StarCluster 0.92 Released!" -->
+<!-- id="4E9DBE67.1070901_at_mit.edu" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="0832.html#start832" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="0832.html#options2">top</a>, <a href="0832.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="0833.html" accesskey="d" title="Abhijit Bendale: &quot;login user for GPU instance&quot;">Next message</a> ]
+[ <a href="0831.html" title="Jan Paral: &quot;Re:  Adding user accounts without passwordless SSH&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg832" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg832" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg832" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg832" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Justin Riley &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Tue, 18 Oct 2011 13:59:03 -0400</span><br />
+</address>
+<br />
+-----BEGIN PGP SIGNED MESSAGE-----
+<br />
+Hash: SHA1
+<br />
+<br />Hi All,
+<br />
+<br />StarCluster 0.92 has officially been released:
+<br />
+<br /><a href="http://pypi.python.org/pypi/StarCluster">http://pypi.python.org/pypi/StarCluster</a>
+<br />
+<a href="http://web.mit.edu/stardev/cluster/download.html">http://web.mit.edu/stardev/cluster/download.html</a>
+<br />
+<br />You can find the new docs for 0.92 here:
+<br />
+<br /><a href="http://web.mit.edu/stardev/cluster/docs/0.92">http://web.mit.edu/stardev/cluster/docs/0.92</a>
+<br />
+<br />Please take some time to skim through the docs as new content has been
+<br />
+added and old content updated/reworked. Also, the &quot;Overview&quot; page in
+<br />
+the docs now has a nice summary of StarCluster's core commands and
+<br />
+features. I've attached a list of highlights for the new release to
+<br />
+the end of this email.
+<br />
+<br />Please upgrade at your leisure, test the new release candidate, and
+<br />
+submit any bug reports preferably to StarCluster's github issue
+<br />
+tracker[1] or to the mailing list[2].
+<br />
+<br />Enjoy!
+<br />
+<br />~Justin
+<br />
+<br />[1] <a href="https://github.com/jtriley/StarCluster/issues">https://github.com/jtriley/StarCluster/issues</a>
+<br />
+[2] <a href="http://web.mit.edu/stardev/cluster/mailinglist.html">http://web.mit.edu/stardev/cluster/mailinglist.html</a>
+<br />
+<br />- -------------
+<br />
+Release Notes
+<br />
+- -------------
+<br />
+<br />Below is a list of highlights from the 0.92 release:
+<br />
+<br />* StarCluster now builds a crash report that you should use when
+<br />
+reporting bugs. When a crash occurs StarCluster will dump a full log
+<br />
+for the session in ~/.starcluster/crash-report-&lt;PID&gt;.txt where &lt;PID&gt;
+<br />
+is the process id of the starcluster session that crashed. This
+<br />
+contains a full debug log for the session as well as the stack-trace
+<br />
+for the bug. Don't forget to remove any sensitive data from the crash
+<br />
+report before sending.
+<br />
+<br />* StarCluster now launches the master node of a spot cluster as a
+<br />
+flat-rate instance instead of a spot instance, by default, for
+<br />
+stability. If you wish to force using a spot instance for the master
+<br />
+(risky) use the --force-spot-master option:
+<br />
+<br />$ starcluster start -b 0.50 --force-spot-master mycluster
+<br />
+<br />The only exception to this rule is if the cluster size is 1. In this
+<br />
+case the master will be launched as a spot instance given that it's
+<br />
+the only instance being requested. This is mostly for convenience so
+<br />
+that users can launch a single spot node for creating new AMIs, cheap
+<br />
+testing, etc.
+<br />
+<br />* You can now easily copy files to and from a StarCluster using the
+<br />
+new &quot;put&quot; and &quot;get&quot; commands:
+<br />
+<br />$ starcluster put /path/to/file/or/dir /remote/path
+<br />
+$ starcluster get /path/to/remote/file/or/dir /local/path
+<br />
+<br />These commands handle recursively copying directories automatically if
+<br />
+necessary. For now these commands are experimental and require
+<br />
+enable_experimental=True to be set in the config
+<br />
+<br />* The plot option (-p) to StarCluster's &quot;spothistory&quot; command no
+<br />
+longer requires matplotlib and instead renders the plot using an
+<br />
+embedded web server and the interactive javascript plotting library flot:
+<br />
+<br />$ starcluster spothistory cg1.4xlarge -p
+<br />
+<br />You can see an example plot in the new &quot;Overview&quot; page in the docs:
+<br />
+<br /><a href="http://web.mit.edu/stardev/cluster/docs/latest/overview.html#reduce-costs-using-spot-instances">http://web.mit.edu/stardev/cluster/docs/latest/overview.html#reduce-costs-using-spot-instances</a>
+<br />
+<br />You can change the web browser launched by StarCluster to view the
+<br />
+spot history plot using the WEB_BROWSER setting in the [global]
+<br />
+section of the config.
+<br />
+<br />* The &quot;addnode&quot; command now supports adding more than one node:
+<br />
+<br />$ starcluster addnode -n 3 mycluster
+<br />
+<br />You can also provide your own custom aliases for multiple nodes:
+<br />
+<br />$ starcluster addnode -n 3 -a webnode,datanode,sqlnode mycluster
+<br />
+<br />* The &quot;removenode&quot; command has a new &quot;-k&quot; option that allows you to
+<br />
+remove the node from the cluster but not terminate it:
+<br />
+<br />$ starcluster removenode mycluster -k node001
+<br />
+<br />You can then use the new &quot;-x&quot; option to the addnode command to re-add
+<br />
+the existing node:
+<br />
+<br />$ starcluster addnode mycluster -x -a node001
+<br />
+<br />This is useful, for example,  when testing a plugin's on_add_node or
+<br />
+on_remove_node code without having to waste instance hours terminating
+<br />
+and creating new nodes repeatedly.
+<br />
+<br />* This was mentioned in the last release candidate but there is now
+<br />
+&quot;createkey&quot;, &quot;removekey&quot;, and &quot;listkeypairs&quot; commands for managing
+<br />
+your EC2 keypairs.
+<br />
+<br />* The node.ssh.execute_async() method has been updated to use &quot;nohup&quot;
+<br />
+and will now successfully leave a long running command running on the
+<br />
+cluster after StarCluster exits. This means you no longer need to use
+<br />
+'GNU screen' when trying to put a long running command in the
+<br />
+background in a StarCluster plugin; just use node.ssh.execute_async
+<br />
+instead.
+<br />
+<br />** Fixed the &quot;InvalidGroup.InUse&quot; bug when terminating a cluster
+<br />
+<br />** Fixed the &quot;eventual consistency&quot; bug that sometimes occurred when
+<br />
+StarCluster attempted to access AWS meta-data on a node too quickly
+<br />
+after creating it. This manifested itself as an
+<br />
+&quot;InvalidInstanceID.NotFound&quot; bug when creating a new cluster.
+<br />
+StarCluster now retries the failing operations up to 5 times before
+<br />
+throwing an error.
+<br />
+<br />** Fixed a bug with when attempting to restrict SSH (port 22) access
+<br />
+to the cluster via a [permission] section in the config.
+<br />
+<br />** Fixed a bug when defining two [volume] sections in the config that
+<br />
+use different partitions on the same volume.
+<br />
+<br />** Fixed support for kwargs in a plugin's __init__
+<br />
+<br />** Added support for IPython 0.11 in the development shell ($
+<br />
+starcluster shell)
+<br />
+-----BEGIN PGP SIGNATURE-----
+<br />
+Version: GnuPG v2.0.17 (GNU/Linux)
+<br />
+Comment: Using GnuPG with Mozilla - <a href="http://enigmail.mozdev.org/">http://enigmail.mozdev.org/</a>
+<br />
+<br />iEYEARECAAYFAk6dvmcACgkQ4llAkMfDcrn2qQCfXCavHE+Iru0lC3E12jAQl+yQ
+<br />
+1fIAoIvyxkKQHynJpdXm5dDrTR8sq04+
+<br />
+=29F7
+<br />
+-----END PGP SIGNATURE-----
+<br />
+<span id="received"><dfn>Received on</dfn> Tue Oct 18 2011 - 13:59:06 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="0832.html#start832">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="0833.html" title="Next message in the list">Abhijit Bendale: "login user for GPU instance"</a></li>
+<li><dfn>Previous message</dfn>: <a href="0831.html" title="Previous message in the list">Jan Paral: "Re:  Adding user accounts without passwordless SSH"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg832" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg832" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg832" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg832" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

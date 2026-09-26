@@ -1,0 +1,208 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Torstein Fjermestad ((no email))" />
+<meta name="Subject" content="problems when adding a node to the cluster" />
+<title>starcluster.mbox.out: problems when adding a node to the cluster</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">problems when adding a node to the cluster</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>problems when adding a node to the cluster</h1>
+<!-- received="Tue Apr 15 13:28:45 2014" -->
+<!-- isoreceived="20140415172845" -->
+<!-- sent="Tue, 15 Apr 2014 19:28:44 +0200" -->
+<!-- isosent="20140415172844" -->
+<!-- name="Torstein Fjermestad" -->
+<!-- email="(no email)" -->
+<!-- subject="problems when adding a node to the cluster" -->
+<!-- id="CAAZdUwJo8BnVP5Twt1YQHg3y_A4g=BggHGcoapwXm8rw50_f4w_at_mail.gmail.com" -->
+<!-- charset="UTF-8" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2155.html#start2155" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2155.html#options2">top</a>, <a href="2155.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2156.html" accesskey="d" title="Justin Riley: &quot;Re:  problems when adding a node to the cluster&quot;">Next message</a> ]
+[ <a href="2154.html" title="Stewart, Andrew: &quot;Re:  load balanced nodes accepting jobs before ready&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="2156.html" accesskey="t" title="Justin Riley: &quot;Re:  problems when adding a node to the cluster&quot;">Next in thread</a> ]
+ [ <a href="2155.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2155" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2155" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2155" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2155" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Torstein Fjermestad &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Tue, 15 Apr 2014 19:28:44 +0200</span><br />
+</address>
+<br />
+Dear all,
+<br />
+<br />today I tried to add a spot instance node to a cluster with the following
+<br />
+command:
+<br />
+<br />starcluster addnode -b 0.25 -I c3.4xlarge chemistrycluster
+<br />
+<br />The first part of the output is as follows:
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Launching node(s): node003
+</em><br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Creating placement group _at_sc-chemistrycluster...
+</em><br />
+<br />SpotInstanceRequest:sir-9b8c5e4a
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Waiting for spot requests to propagate...
+</em><br />
+<br />1/1 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Waiting for node(s) to come up... (updating every 30s)
+</em><br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Waiting for open spot requests to become active...
+</em><br />
+<br />2/3 |\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ | 66%
+<br />
+<br /><br />The program came relatively quickly to &quot;Waiting for open spot requests to
+<br />
+become active...&quot;, but thereafter it did not progress for several hours. In
+<br />
+the end I had to cancel the program because I had to leave for the day.
+<br />
+<br />What is causing the program to wait for open spot request to become active?
+<br />
+Is it because of the spot bid? Should I change the spot bid?
+<br />
+<br />Thanks in advance for your help.
+<br />
+<br />Yours sincerely,
+<br />
+<br />Torstein Fjermestad
+<br />
+<span id="received"><dfn>Received on</dfn> Tue Apr 15 2014 - 13:28:45 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2155.html#start2155">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2156.html" title="Next message in the list">Justin Riley: "Re:  problems when adding a node to the cluster"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2154.html" title="Previous message in the list">Stewart, Andrew: "Re:  load balanced nodes accepting jobs before ready"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="2156.html" title="Next message in this discussion thread">Justin Riley: "Re:  problems when adding a node to the cluster"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="2156.html" title="Message sent in reply to this message">Justin Riley: "Re:  problems when adding a node to the cluster"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2155" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2155" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2155" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2155" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="RT Brown ((no email))" />
+<meta name="Subject" content="Please advise." />
+<title>starcluster.mbox.out: Please advise.</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Please advise.</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Please advise.</h1>
+<!-- received="Mon Jan  7 13:21:09 2013" -->
+<!-- isoreceived="20130107182109" -->
+<!-- sent="Mon, 7 Jan 2013 10:19:01 -0800" -->
+<!-- isosent="20130107181901" -->
+<!-- name="RT Brown" -->
+<!-- email="(no email)" -->
+<!-- subject="Please advise." -->
+<!-- id="CD106DB5.3E04%rt.brown_at_americansentinel.edu" -->
+<!-- charset="us-ascii" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1588.html#start1588" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1588.html#options2">top</a>, <a href="1588.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1589.html" accesskey="d" title="Ron Chen: &quot;Re:  Using a hi-I/O instance as the master node in a StarCluster Cluster&quot;">Next message</a> ]
+[ <a href="1587.html" title="Oppe, Thomas C ERDC-RDE-ITL-MS Contractor: &quot;Re:  Using a hi-I/O instance as the master node in a StarCluster Cluster&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1588" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1588" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1588" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1588" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: RT Brown &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Mon, 7 Jan 2013 10:19:01 -0800</span><br />
+</address>
+<br />
+Received errors when trying to perform addnode, stop, and terminate
+<br />
+commands.
+<br />
+<br />Thanks --
+<br />
+<br /><br /><br />---------- CRASH DETAILS ----------
+<br />
+COMMAND: starcluster terminate mycluster
+<br />
+2013-01-07 18:14:57,620 PID: 26677 config.py:551 - DEBUG - Loading config
+<br />
+2013-01-07 18:14:57,620 PID: 26677 config.py:118 - DEBUG - Loading file:
+<br />
+/home/ubuntu/.starcluster/config
+<br />
+2013-01-07 18:14:57,623 PID: 26677 awsutils.py:54 - DEBUG - creating
+<br />
+self._conn w/ connection_authenticator kwargs = {'proxy_user': None,
+<br />
+'proxy_pass': None, 'proxy_port': None, 'proxy': None, 'is_secure': True,
+<br />
+'path': '/', 'region': None, 'port': None}
+<br />
+2013-01-07 18:14:58,093 PID: 26677 cluster.py:664 - DEBUG - existing
+<br />
+nodes: {}
+<br />
+2013-01-07 18:14:58,093 PID: 26677 cluster.py:672 - DEBUG - adding node
+<br />
+i-3bce074a to self._nodes list
+<br />
+2013-01-07 18:14:58,093 PID: 26677 cluster.py:672 - DEBUG - adding node
+<br />
+i-3dce074c to self._nodes list
+<br />
+2013-01-07 18:14:58,094 PID: 26677 cluster.py:672 - DEBUG - adding node
+<br />
+i-3fce074e to self._nodes list
+<br />
+2013-01-07 18:14:58,094 PID: 26677 cluster.py:672 - DEBUG - adding node
+<br />
+i-3feb554e to self._nodes list
+<br />
+2013-01-07 18:14:58,261 PID: 26677 cli.py:287 - DEBUG - Traceback (most
+<br />
+recent call last):
+<br />
+&nbsp;&nbsp;File 
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.93.3-py2.7.egg/starcl
+<br />
+uster/cli.py&quot;, line 255, in main
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;sc.execute(args)
+<br />
+&nbsp;&nbsp;File 
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.93.3-py2.7.egg/starcl
+<br />
+uster/commands/terminate.py&quot;, line 72, in execute
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self.terminate(cluster_name)
+<br />
+&nbsp;&nbsp;File 
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.93.3-py2.7.egg/starcl
+<br />
+uster/commands/terminate.py&quot;, line 63, in terminate
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self._terminate_cluster(cluster_name)
+<br />
+&nbsp;&nbsp;File 
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.93.3-py2.7.egg/starcl
+<br />
+uster/commands/terminate.py&quot;, line 38, in _terminate_cluster
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;if cl.is_ebs_cluster():
+<br />
+&nbsp;&nbsp;File 
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.93.3-py2.7.egg/starcl
+<br />
+uster/cluster.py&quot;, line 1053, in is_ebs_cluster
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;nodes = self.nodes
+<br />
+&nbsp;&nbsp;File 
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.93.3-py2.7.egg/starcl
+<br />
+uster/cluster.py&quot;, line 674, in nodes
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;if n.is_master():
+<br />
+&nbsp;&nbsp;File 
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.93.3-py2.7.egg/starcl
+<br />
+uster/node.py&quot;, line 764, in is_master
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;return self.alias == &quot;master&quot;
+<br />
+&nbsp;&nbsp;File 
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.93.3-py2.7.egg/starcl
+<br />
+uster/node.py&quot;, line 108, in alias
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;user_data = self._get_user_data(tries=5)
+<br />
+&nbsp;&nbsp;File 
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.93.3-py2.7.egg/starcl
+<br />
+uster/node.py&quot;, line 88, in _get_user_data
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;user_data = self.ec2.get_instance_user_data(self.id)
+<br />
+&nbsp;&nbsp;File 
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.93.3-py2.7.egg/starcl
+<br />
+uster/awsutils.py&quot;, line 450, in get_instance_user_data
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;return base64.b64decode(user_data)
+<br />
+&nbsp;&nbsp;File &quot;/usr/lib/python2.7/base64.py&quot;, line 73, in b64decode
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;return binascii.a2b_base64(s)
+<br />
+TypeError: must be string or buffer, not None
+<br />
+<br />---------- SYSTEM INFO ----------
+<br />
+StarCluster: 0.93.3
+<br />
+Python: 2.7.2+ (default, Jul 20 2012, 22:15:08)  [GCC 4.6.1]
+<br />
+Platform: Linux-3.0.0-14-virtual-x86_64-with-Ubuntu-11.10-oneiric
+<br />
+boto: 2.3.0
+<br />
+ssh: 1.7.13
+<br />
+Crypto: 2.3
+<br />
+jinja2: 2.6
+<br />
+decorator: 3.3.1
+<br />
+<span id="received"><dfn>Received on</dfn> Mon Jan 07 2013 - 13:21:09 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1588.html#start1588">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1589.html" title="Next message in the list">Ron Chen: "Re:  Using a hi-I/O instance as the master node in a StarCluster Cluster"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1587.html" title="Previous message in the list">Oppe, Thomas C ERDC-RDE-ITL-MS Contractor: "Re:  Using a hi-I/O instance as the master node in a StarCluster Cluster"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1588" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1588" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1588" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1588" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

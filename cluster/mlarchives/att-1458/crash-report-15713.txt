@@ -1,0 +1,39 @@
+---------- CRASH DETAILS ----------
+COMMAND: starcluster start -c csg8g tpgstar
+2012-10-22 09:58:53,454 PID: 15713 config.py:551 - DEBUG - Loading config
+2012-10-22 09:58:53,454 PID: 15713 config.py:118 - DEBUG - Loading file: /home/tpg/.starcluster/config
+2012-10-22 09:58:53,467 PID: 15713 awsutils.py:54 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'proxy_user': None, 'proxy_pass': None, 'proxy_port': None, 'proxy': None, 'is_secure': True, 'path': '/', 'region': None, 'port': None}
+2012-10-22 09:58:53,755 PID: 15713 utils.py:464 - DEBUG - nargs = 4
+2012-10-22 09:58:53,756 PID: 15713 utils.py:465 - DEBUG - ndefaults = 4
+2012-10-22 09:58:53,758 PID: 15713 utils.py:466 - DEBUG - nrequired = 0
+2012-10-22 09:58:53,759 PID: 15713 utils.py:467 - DEBUG - args = []
+2012-10-22 09:58:53,760 PID: 15713 utils.py:468 - DEBUG - kwargs = ['num_users', 'usernames', 'download_keys', 'download_keys_dir']
+2012-10-22 09:58:53,762 PID: 15713 utils.py:469 - DEBUG - defaults = (None, None, None, None)
+2012-10-22 09:58:53,763 PID: 15713 cluster.py:500 - DEBUG - config_args = []
+2012-10-22 09:58:53,764 PID: 15713 cluster.py:509 - DEBUG - config_kwargs = {'num_users': '3', 'usernames': 'mktrost, tpg', 'download_keys': 'True', 'download_keys_dir': '/tmp'}
+2012-10-22 09:58:53,798 PID: 15713 cli.py:287 - DEBUG - Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.93.3-py2.7.egg/starcluster/cli.py", line 255, in main
+    sc.execute(args)
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.93.3-py2.7.egg/starcluster/commands/start.py", line 177, in execute
+    scluster = self.cm.get_cluster_template(template, tag)
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.93.3-py2.7.egg/starcluster/cluster.py", line 87, in get_cluster_template
+    ec2_conn=self.ec2)
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.93.3-py2.7.egg/starcluster/config.py", line 616, in get_cluster_template
+    clust = Cluster(ec2_conn, **kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.93.3-py2.7.egg/starcluster/cluster.py", line 367, in __init__
+    self.plugins = self.load_plugins(plugins)
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.93.3-py2.7.egg/starcluster/cluster.py", line 510, in load_plugins
+    plugs.append((plugin_name, klass(*config_args, **config_kwargs)))
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.93.3-py2.7.egg/starcluster/plugins/users.py", line 36, in __init__
+    (len(usernames), self._num_users))
+AttributeError: 'CreateUsers' object has no attribute '_num_users'
+
+---------- SYSTEM INFO ----------
+StarCluster: 0.93.3
+Python: 2.7.3 (default, Aug  1 2012, 05:14:39)  [GCC 4.6.3]
+Platform: Linux-3.2.0-23-generic-x86_64-with-Ubuntu-12.04-precise
+boto: 2.3.0
+ssh: 1.7.13
+Crypto: 2.4.1
+jinja2: 2.6
+decorator: 3.3.1

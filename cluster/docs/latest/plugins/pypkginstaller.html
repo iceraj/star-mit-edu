@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Python Package Installer Plugin &mdash; StarCluster 0.95.6 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/pylons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/issuetracker.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.95.6',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="StarCluster 0.95.6 documentation" href="../index.html" />
+    <link rel="up" title="Plugin Documentation" href="index.html" />
+    <link rel="next" title="Xvfb Plugin" href="xvfb.html" />
+    <link rel="prev" title="Package Installer Plugin" href="pkginstaller.html" />
+<link rel="stylesheet" href="../_static/nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="../_static/neuton.css" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="../_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+<link rel="shortcut icon" href="../_static/starcluster.ico"/>
+
+  </head>
+  <body>
+<div class="header-small">
+	
+	<div class="logo-small">
+		<a href="../index.html">
+      		<img class="logo" src="../_static/logo-small.png" alt="Logo"/>
+		</a>
+  	</div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="xvfb.html" title="Xvfb Plugin"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="pkginstaller.html" title="Package Installer Plugin"
+             accesskey="P">previous</a> |</li>
+    	<li><a href="../index.html">Home</a> &raquo;</li>
+          <li><a href="../contents.html" >Master Table of Contents</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Plugin Documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="python-package-installer-plugin">
+<span id="pypkginstaller-plugin"></span><h1>Python Package Installer Plugin<a class="headerlink" href="pypkginstaller.html#python-package-installer-plugin" title="Permalink to this headline">¶</a></h1>
+<p>The <tt class="docutils literal"><span class="pre">PyPkgInstaller</span></tt> plugin installs a list of Python packages on all nodes
+in parallel using <a class="reference external" href="https://pypi.python.org/pypi/pip">pip</a> (by default).</p>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="pypkginstaller.html#usage" title="Permalink to this headline">¶</a></h2>
+<p>To use this plugin add the following to your starcluster config file with the list
+of packages to install. For instance to install libraries to build an HTTP API
+with a database:</p>
+<div class="highlight-ini"><div class="highlight"><pre><span class="k">[plugin webapp-packages-installer]</span>
+<span class="na">setup_class</span> <span class="o">=</span> <span class="s">starcluster.plugins.pypkginstaller.PyPkgInstaller</span>
+<span class="na">packages</span> <span class="o">=</span> <span class="s">flask, SQLAlchemy</span>
+</pre></div>
+</div>
+<p>The <tt class="docutils literal"><span class="pre">packages</span></tt> setting specifies the list of Python packages to install on
+each node.</p>
+<p>Once you&#8217;ve configured the <tt class="docutils literal"><span class="pre">PyPkgInstaller</span></tt> plugin the next step is to add
+it to the <tt class="docutils literal"><span class="pre">plugins</span></tt> list in one of your cluster templates in the config:</p>
+<div class="highlight-ini"><div class="highlight"><pre><span class="k">[cluster mycluster]</span>
+<span class="na">plugins</span> <span class="o">=</span> <span class="s">webapp-packages-installer</span>
+</pre></div>
+</div>
+<p>If you already have a cluster running that didn&#8217;t originally include the
+<tt class="docutils literal"><span class="pre">PyPkgInstaller</span></tt> plugin in its config you can manually run the plugin on
+the cluster using:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ starcluster runplugin webapp-packages-installer mycluster
+StarCluster - (/cluster)
+Software Tools for Academics and Researchers (STAR)
+Please submit bug reports to starcluster@mit.edu
+
+&gt;&gt;&gt; Running plugin webapp-packages-installer
+&gt;&gt;&gt; Installing Python packages on all nodes:
+&gt;&gt;&gt; $ pip install flask
+&gt;&gt;&gt; $ pip install SQLAlchemy
+2/2 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%
+&gt;&gt;&gt; PyPkgInstaller took 0.317 mins
+</pre></div>
+</div>
+</div>
+<div class="section" id="installing-unreleased-software">
+<h2>Installing Unreleased Software<a class="headerlink" href="pypkginstaller.html#installing-unreleased-software" title="Permalink to this headline">¶</a></h2>
+<p>pip can also install the development branch of software project directly from
+source code repositories such as github. For instance the following configuration
+makes it possible to install the master branch of IPython. If this plugin is
+configured to run before <a class="reference internal" href="ipython.html#ipcluster-plugin"><em>IPython Cluster Plugin</em></a>, this makes it possible to test
+yet unreleased features of IPython.parallel and notebook:</p>
+<div class="highlight-ini"><div class="highlight"><pre><span class="k">[plugin ipython-dev]</span>
+<span class="na">setup_class</span> <span class="o">=</span> <span class="s">starcluster.plugins.pypkginstaller.PyPkgInstaller</span>
+<span class="na">packages</span> <span class="o">=</span> <span class="s">pyzmq,</span>
+<span class="s">           python-msgpack,</span>
+<span class="s">           git+http://github.com/ipython/ipython.git</span>
+
+<span class="k">[plugin ipcluster]</span>
+<span class="na">setup_class</span> <span class="o">=</span> <span class="s">starcluster.plugins.ipcluster.IPCluster</span>
+<span class="na">enable_notebook</span> <span class="o">=</span> <span class="s">True</span>
+
+<span class="k">[cluster mycluster]</span>
+<span class="na">plugins</span> <span class="o">=</span> <span class="s">ipython-dev, ipcluster</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="pypkginstaller.html">Python Package Installer Plugin</a><ul>
+<li><a class="reference internal" href="pypkginstaller.html#usage">Usage</a></li>
+<li><a class="reference internal" href="pypkginstaller.html#installing-unreleased-software">Installing Unreleased Software</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="pkginstaller.html"
+                        title="previous chapter">Package Installer Plugin</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="xvfb.html"
+                        title="next chapter">Xvfb Plugin</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="xvfb.html" title="Xvfb Plugin"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="pkginstaller.html" title="Package Installer Plugin"
+             >previous</a> |</li>
+    	<li><a href="../index.html">Home</a> &raquo;</li>
+          <li><a href="../contents.html" >Master Table of Contents</a> &raquo;</li>
+          <li><a href="index.html" >Plugin Documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+
+
+    <div class="footer">
+        &copy; Copyright 2011, Software Tools for Academics and Researchers.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+    </script>
+
+  </body>
+</html>

@@ -1,0 +1,755 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Version History &mdash; StarCluster 0.94 documentation</title>
+    
+    <link rel="stylesheet" href="_static/pylons.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '0.94',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="StarCluster 0.94 documentation" href="index.html" />
+    <link rel="up" title="Master Table of Contents" href="contents.html" />
+    <link rel="next" title="License: LGPL (version 3)" href="license.html" />
+    <link rel="prev" title="StarCluster TODOs" href="TODO.html" />
+<link rel="stylesheet" href="_static/nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="_static/neuton.css" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+<link rel="shortcut icon" href="_static/starcluster.ico"/>
+
+  </head>
+  <body>
+<div class="header-small">
+	
+	<div class="logo-small">
+		<a href="index.html">
+      		<img class="logo" src="_static/logo-small.png" alt="Logo"/>
+		</a>
+  	</div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="license.html" title="License: LGPL (version 3)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="TODO.html" title="StarCluster TODOs"
+             accesskey="P">previous</a> |</li>
+    	<li><a href="index.html">Home</a> &raquo;</li>
+          <li><a href="contents.html" accesskey="U">Master Table of Contents</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="version-history">
+<h1>Version History<a class="headerlink" href="changelog.html#version-history" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="changelog.html#version-0-94" id="id23">0.94</a><ul>
+<li><a class="reference internal" href="changelog.html#news" id="id24">News</a></li>
+<li><a class="reference internal" href="changelog.html#features" id="id25">Features</a></li>
+<li><a class="reference internal" href="changelog.html#bug-fixes" id="id26">Bug Fixes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="changelog.html#version-0-93-3" id="id27">0.93.3</a><ul>
+<li><a class="reference internal" href="changelog.html#v0933-news" id="id28">News</a></li>
+<li><a class="reference internal" href="changelog.html#v0933-fixes" id="id29">Bug Fixes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="changelog.html#version-0-93-2" id="id30">0.93.2</a><ul>
+<li><a class="reference internal" href="changelog.html#v0932-news" id="id31">News</a></li>
+<li><a class="reference internal" href="changelog.html#v0932-features" id="id32">Features</a></li>
+<li><a class="reference internal" href="changelog.html#v0932-fixes" id="id33">Bug Fixes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="changelog.html#version-0-93-1" id="id34">0.93.1</a><ul>
+<li><a class="reference internal" href="changelog.html#v0931-news" id="id35">News</a></li>
+<li><a class="reference internal" href="changelog.html#v0931-features" id="id36">Features</a></li>
+<li><a class="reference internal" href="changelog.html#v0931-fixes" id="id37">Bug Fixes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="changelog.html#version-0-93" id="id38">0.93</a><ul>
+<li><a class="reference internal" href="changelog.html#v093-news" id="id39">News</a></li>
+<li><a class="reference internal" href="changelog.html#v093-features" id="id40">Features</a><ul>
+<li><a class="reference internal" href="changelog.html#new-plugins" id="id41">New Plugins</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="changelog.html#v093-fixes" id="id42">Bug Fixes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="changelog.html#version-0-92-1" id="id43">0.92.1</a><ul>
+<li><a class="reference internal" href="changelog.html#v0921-features" id="id44">Features</a></li>
+<li><a class="reference internal" href="changelog.html#v0921-fixes" id="id45">Bug Fixes</a></li>
+<li><a class="reference internal" href="changelog.html#improvements" id="id46">Improvements</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="changelog.html#version-0-92" id="id47">0.92</a><ul>
+<li><a class="reference internal" href="changelog.html#v092-news" id="id48">News</a></li>
+<li><a class="reference internal" href="changelog.html#v092-features" id="id49">Features</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="version-0-94">
+<span id="id1"></span><h2><a class="toc-backref" href="changelog.html#id23">0.94</a><a class="headerlink" href="changelog.html#version-0-94" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="news">
+<span id="v094-news"></span><h3><a class="toc-backref" href="changelog.html#id24">News</a><a class="headerlink" href="changelog.html#news" title="Permalink to this headline">¶</a></h3>
+<p>Version 0.94 of StarCluster is a feature release that fixes <em>many</em> bugs. See
+the &#8220;Features&#8221; and &#8220;Bug Fixes&#8221; sections below for details.  This release is
+not compatible with any active clusters that were created using any previous
+version of StarCluster. Please terminate all existing clusters before
+upgrading to 0.94.</p>
+</div>
+<div class="section" id="features">
+<span id="v094-features"></span><h3><a class="toc-backref" href="changelog.html#id25">Features</a><a class="headerlink" href="changelog.html#features" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Support for hs1.8xlarge, hi1.4xlarge, and m3 instance types</li>
+<li>Added support for userdata scripts (new cluster setting: userdata_scripts)</li>
+<li>Add <em>all</em> ephemeral drives for any instance type when launching instances</li>
+<li>Updated base AMIs to latest 12.04 versions</li>
+<li>OGS (formerly SGE): set default parallel environment allocation_rule to $fill_up</li>
+<li>Added authentication agent forwarding to sshmaster, sshnode, and sshinstance</li>
+<li>Support for loading config based on STARCLUSTER_CONFIG environment variable</li>
+<li>New plugin to install python packages with pip (pypkginstaller plugin)</li>
+<li>New plugin that either copies or autogenerates a boto config for the cluster
+user</li>
+<li>Added &#8211;force option to terminate/stop commands</li>
+<li>Add tags and virtualization type to listinstance output</li>
+<li>Add &#8211;zone (-z) option to spothistory command</li>
+</ul>
+</div>
+<div class="section" id="bug-fixes">
+<span id="v094-fixes"></span><h3><a class="toc-backref" href="changelog.html#id26">Bug Fixes</a><a class="headerlink" href="changelog.html#bug-fixes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>sshutils: source /etc/profile by default</li>
+<li>awsutils: validate AWS SSL certificates by default</li>
+<li>awsutils: refetch group before calling authorize</li>
+<li>awsutils: use 3 decimal places in spot history prices</li>
+<li>cluster: fix thread leak when running plugins</li>
+<li>cluster: store cluster metadata in userdata/tags</li>
+<li>cluster: dont launch master as spot when cluster_size=1</li>
+<li>cluster: reraise uncaught exceptions in run_plugins</li>
+<li>cluster: fix instance filtering for default VPC</li>
+<li>cluster: only clean-up placement groups in supported regions</li>
+<li>clustersetup: ebs volume mounting improvements</li>
+<li>clustersetup: raise exception if user&#8217;s $HOME is owned by root</li>
+<li>improve ebs volume device and partition detection</li>
+<li>config: allow inline comments in the config file</li>
+<li>config: support [vol] shortcut in config</li>
+<li>config: document/warn where/when env overrides cfg</li>
+<li>threadpool: clear the exceptions queue in wait()</li>
+<li>node: fix Node.root_device_name for misconfigured AMIs</li>
+<li>node: fix ~/.ssh ownership in generate_key_for_user</li>
+<li>sge: Export DRMAA_LIBRARY_PATH for Python DRMAA</li>
+<li>cli: use logging module to log/show exceptions</li>
+<li>cli: write header to sys.stderr</li>
+<li>logger: move console logs from stderr to stdout</li>
+<li>logger: output error messages to stderr</li>
+<li>logger: remove in-memory log handler (memory-leak fix)</li>
+<li>fix for DependencyViolation when deleting security group</li>
+<li>replace group-name filter with instance.group-name</li>
+<li>spothistory: show <em>current</em> spot price instead of oldest</li>
+</ul>
+<p><strong>resizevol/createvol</strong>:</p>
+<ul class="simple">
+<li>call e2fsck before resize2fs if needed</li>
+<li>cleanup vol on failure in resize()</li>
+<li>fix bug in _warn_about_volume_hosts</li>
+<li>fix bug in sfdisk repartitioning</li>
+<li>set default instance type to t1.micro for volume hosts</li>
+<li>fix bug when cleaning up failed volumes</li>
+<li>use force_spot_master when launching cluster</li>
+</ul>
+<p><strong>ebsimage/s3image</strong>:</p>
+<ul class="simple">
+<li>fetch root device from instance metadata</li>
+<li>only wait for snapshot if root device is in bmap</li>
+<li>show progress bar for CreateImage snapshot</li>
+<li>remove ssh host keys in clean_private_data</li>
+<li>use ec2.get_snapshot to fetch snapshots</li>
+</ul>
+<p><strong>loadbalance</strong>:</p>
+<ul class="simple">
+<li>collect all queue info from qstat</li>
+<li>fix logic in SGEStats._count_tasks</li>
+<li>fix node count in _eval_remove_node</li>
+<li>get slot calculations from all.q</li>
+<li>handle qacct error on fresh SGE install</li>
+<li>improve qstat parsing</li>
+<li>maintain a single instance of SGEStats</li>
+<li>move static settings to __init__</li>
+<li>remove bounds on interval and wait_time</li>
+<li>remove estimated time to completion calcs</li>
+<li>replace &#8216;qlen &gt; ts&#8217; condition in _eval_add_node</li>
+<li>require positive ints for numeric options</li>
+<li>take slots into account in _eval_add_node</li>
+<li>update sge tests for latest parser changes</li>
+<li>use # of nodes for max_nodes check (not exec hosts)</li>
+<li>don&#8217;t wait for cluster to stabilize to add a node when there are no slots</li>
+<li>immediately add a node when jobs are in the queue and no slots exists</li>
+</ul>
+<p><strong>IPython plugin</strong>:</p>
+<ul class="simple">
+<li>Add section on engine restart + note on growing new engines</li>
+<li>ipcluster: raise exception if IPython isnt installed</li>
+<li>Better docstrings for the stop and restart plugins</li>
+<li>Better packer configuration support + updated doc</li>
+<li>Make it possible to configure a custom notebook folder</li>
+<li>Make it possible to restart engine, better logs, make msgpack setup explicit</li>
+<li>Open the controller ports for IPython 0.13.1</li>
+<li>Use the cluster thread pool to start the engines on the nodes</li>
+<li>Update the documentation according to tests done on 0.13.1</li>
+</ul>
+</div>
+</div>
+<div class="section" id="version-0-93-3">
+<span id="id2"></span><h2><a class="toc-backref" href="changelog.html#id27">0.93.3</a><a class="headerlink" href="changelog.html#version-0-93-3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="v0933-news">
+<span id="id3"></span><h3><a class="toc-backref" href="changelog.html#id28">News</a><a class="headerlink" href="changelog.html#v0933-news" title="Permalink to this headline">¶</a></h3>
+<p>Version 0.93.3 of StarCluster is a patch release that fixes several bugs. See
+the &#8220;Bug Fixes&#8221; section below for details.</p>
+<ul class="simple">
+<li>Bumped boto dep to 2.3.0</li>
+<li>Updated and improved default config template</li>
+</ul>
+</div>
+<div class="section" id="v0933-fixes">
+<span id="id4"></span><h3><a class="toc-backref" href="changelog.html#id29">Bug Fixes</a><a class="headerlink" href="changelog.html#v0933-fixes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>sge: fix bug where master could never be an exec host even when toggling the
+<tt class="docutils literal"><span class="pre">master_is_exec_host</span></tt> plugin setting (issue 89)</li>
+<li>fix bug when setting custom SSH permission without <tt class="docutils literal"><span class="pre">cidr_ip</span></tt> (issue 91)</li>
+<li>start-cmd: fix bug where <tt class="docutils literal"><span class="pre">refresh_interval</span></tt> is always <tt class="docutils literal"><span class="pre">None</span></tt> if
+<tt class="docutils literal"><span class="pre">[global]</span></tt> is not defined in the config (issue 90)</li>
+<li>dont allow <tt class="docutils literal"><span class="pre">cluster_user=root</span></tt> when validating cluster settings (issue 92)</li>
+<li>fix another textwrap error with python 2.5</li>
+</ul>
+</div>
+</div>
+<div class="section" id="version-0-93-2">
+<span id="id5"></span><h2><a class="toc-backref" href="changelog.html#id30">0.93.2</a><a class="headerlink" href="changelog.html#version-0-93-2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="v0932-news">
+<span id="id6"></span><h3><a class="toc-backref" href="changelog.html#id31">News</a><a class="headerlink" href="changelog.html#v0932-news" title="Permalink to this headline">¶</a></h3>
+<p>Version 0.93.2 of StarCluster fixes several bugs and adds a couple new
+features. See the &#8220;Bug Fixes&#8221; section below for details.</p>
+<ul class="simple">
+<li>Amazon recently announced a new instance type <tt class="docutils literal"><span class="pre">m1.medium</span></tt> which is now
+supported. Amazon also enabled the m1.small and c1.medium instance types to
+be compatible with both 32bit <em>and</em> 64bit AMIs now. StarCluster now supports
+the new <tt class="docutils literal"><span class="pre">m1.medium</span></tt> instance type as well as the new changes to
+<tt class="docutils literal"><span class="pre">m1.small</span></tt> and <tt class="docutils literal"><span class="pre">c1.medium</span></tt>.</li>
+<li>Switched from paramiko to actively maintained fork called <cite>ssh</cite> (1.7.13)</li>
+<li>loadbalancer: <tt class="docutils literal"><span class="pre">--kill-master</span></tt> option renamed to <tt class="docutils literal"><span class="pre">--kill-cluster</span></tt></li>
+<li>Bumped boto dep to 2.2.2</li>
+<li>Bumped jinja dep to 2.6</li>
+</ul>
+</div>
+<div class="section" id="v0932-features">
+<span id="id7"></span><h3><a class="toc-backref" href="changelog.html#id32">Features</a><a class="headerlink" href="changelog.html#v0932-features" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>SGE setup code has been moved to a plugin that is executed by default (<strong>no
+configuration changes required</strong>). This plugin supports an optional setting
+<tt class="docutils literal"><span class="pre">master_is_exec_host</span></tt> which controls whether or not the master node
+executes jobs. This is set to <tt class="docutils literal"><span class="pre">True</span></tt> by default. To change this you will
+need to set <tt class="docutils literal"><span class="pre">disable_queue=True</span></tt> in your cluster config and then manually
+define and add the SGE plugin in order to configure the new plugin&#8217;s
+settings. See <a class="reference internal" href="plugins/sge.html#sge-plugin"><em>Sun Grid Engine Plugin</em></a> for more details.</li>
+<li>Added the following new options to <tt class="docutils literal"><span class="pre">addnode</span></tt> command: <tt class="docutils literal"><span class="pre">--image-id</span></tt>,
+<tt class="docutils literal"><span class="pre">--instance-type</span></tt>, <tt class="docutils literal"><span class="pre">--availability-zone</span></tt>, <tt class="docutils literal"><span class="pre">--bid</span></tt>. Thanks to Dan Yamins
+for his contributions. (issue 76)</li>
+<li>New <tt class="docutils literal"><span class="pre">CreateUsers</span></tt> plugin that creates multiple cluster users and configures
+passwordless SSH. Either number of users or a list of usernames can be
+specified. Also has options to tar and download all SSH keys for generated
+users. See <a class="reference internal" href="plugins/users.html#users-plugin"><em>Create Users Plugin</em></a> for more details.</li>
+<li>Added -X option to <tt class="docutils literal"><span class="pre">sshmaster</span></tt> and <tt class="docutils literal"><span class="pre">sshnode</span></tt> commands for forwarding X11.
+Can be used both when logging in interactively and when executing remote
+commands.</li>
+</ul>
+</div>
+<div class="section" id="v0932-fixes">
+<span id="id8"></span><h3><a class="toc-backref" href="changelog.html#id33">Bug Fixes</a><a class="headerlink" href="changelog.html#v0932-fixes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>catch <cite>Garbage packet received</cite> exception and warn users about incompatible
+AMI</li>
+<li><tt class="docutils literal"><span class="pre">createvolume</span></tt>: support new /dev/xvd* device names</li>
+<li>fix textwrap error with python 2.5 (issue 85)</li>
+<li><tt class="docutils literal"><span class="pre">sshmaster</span></tt>, <tt class="docutils literal"><span class="pre">sshnode</span></tt>: load /etc/profile by default when executing
+remote cmds</li>
+<li><tt class="docutils literal"><span class="pre">terminate</span></tt>: handle Ctrl-D gracefully when prompting for input (issue 80)</li>
+<li><tt class="docutils literal"><span class="pre">terminate</span></tt>: ignore keys when terminating manually</li>
+<li>validate key_location is readable (issue 77)</li>
+<li>relax validation constraints for running instances when using <tt class="docutils literal"><span class="pre">starcluster</span>
+<span class="pre">start</span> <span class="pre">-x</span></tt> (issue 78)</li>
+<li>fix cluster validation for <cite>t1.micro</cite> AMIs/instance types</li>
+<li><tt class="docutils literal"><span class="pre">loadbalance</span></tt>: fix _get_stats when no exec hosts</li>
+<li><tt class="docutils literal"><span class="pre">loadbalance</span></tt>: respect min_nodes when removing nodes (issue 75)</li>
+<li><tt class="docutils literal"><span class="pre">loadbalance</span></tt>: fix -K option to kill cluster when queue is empty (issue 86)</li>
+<li><tt class="docutils literal"><span class="pre">loadbalance</span></tt>: retry fetching stats 5x before failing (issue 65)</li>
+<li>skip NFS exports setup when there are no worker nodes</li>
+<li>sge: configure SGE profile on all nodes concurrently</li>
+<li>sge: use qconf&#8217;s -*attr commands to update cluster config (replaced a bunch
+of ugly code that parsed SGE&#8217;s console output)</li>
+<li>add Changelog to MANIFEST.in in order to include Changelog in future release
+dists</li>
+</ul>
+</div>
+</div>
+<div class="section" id="version-0-93-1">
+<span id="id9"></span><h2><a class="toc-backref" href="changelog.html#id34">0.93.1</a><a class="headerlink" href="changelog.html#version-0-93-1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="v0931-news">
+<span id="id10"></span><h3><a class="toc-backref" href="changelog.html#id35">News</a><a class="headerlink" href="changelog.html#v0931-news" title="Permalink to this headline">¶</a></h3>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">It is recommended that you upgrade as soon as possible.</p>
+</div>
+<p>Version 0.93.1 of StarCluster is largely a patch release that fixes several
+bugs. See the &#8220;Bug Fixes&#8221; section below for details.</p>
+<p>Also, the <tt class="docutils literal"><span class="pre">put</span></tt> and <tt class="docutils literal"><span class="pre">get</span></tt> commands have been marked stable which means they
+no longer require <tt class="docutils literal"><span class="pre">ENABLE_EXPERIMENTAL=True</span></tt> in the config in order to use
+them.</p>
+</div>
+<div class="section" id="v0931-features">
+<span id="id11"></span><h3><a class="toc-backref" href="changelog.html#id36">Features</a><a class="headerlink" href="changelog.html#v0931-features" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Added sys.argv to crash reports for better details when things go wrong</li>
+<li>Implemented on_add_node and on_remove_node for TMUX plugin to add/remove
+nodes from the TMUX control-center sessions for both <tt class="docutils literal"><span class="pre">root</span></tt> and
+<tt class="docutils literal"><span class="pre">CLUSTER_USER</span></tt></li>
+<li>Implemented on_add_node for the Ubuntu package installer plugin
+(<tt class="docutils literal"><span class="pre">pkginstaller</span></tt>) to ensure new nodes also install the required packages</li>
+<li>Implemented on_add_node for the MPICH2 plugin to ensure new nodes are
+configured for MPICH2 and also added to the hosts file. Moved the MPICH2
+hosts file to an NFS-shared location (<tt class="docutils literal"><span class="pre">/home/mpich2.hosts</span></tt>) for faster
+configuration</li>
+<li>Implemented on_add_node for the Xvfb plugin that installs and runs Xvfb on
+newly added nodes</li>
+</ul>
+</div>
+<div class="section" id="v0931-fixes">
+<span id="id12"></span><h3><a class="toc-backref" href="changelog.html#id37">Bug Fixes</a><a class="headerlink" href="changelog.html#v0931-fixes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Fixed major NFS bug in <tt class="docutils literal"><span class="pre">addnode</span></tt> command where <tt class="docutils literal"><span class="pre">/etc/exports</span></tt> was being
+wiped each time a new node was added. This caused the last-to-be-added node
+to be the only node correctly configured for NFS in the entire cluster.</li>
+<li>Updated all plugins which subclass DefaultClusterSetup to implement
+on_add_node and on_remove_node regardless of whether or not they actually use
+them to avoid the &#8216;default&#8217; plugin&#8217;s implementation being incorrectly called
+multiple times by plugins when adding/removing nodes using the <tt class="docutils literal"><span class="pre">addnode</span></tt>
+and <tt class="docutils literal"><span class="pre">removenode</span></tt> commands</li>
+<li>Fixed string formatting bug in Condor plugin</li>
+</ul>
+</div>
+</div>
+<div class="section" id="version-0-93">
+<span id="id13"></span><h2><a class="toc-backref" href="changelog.html#id38">0.93</a><a class="headerlink" href="changelog.html#version-0-93" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="v093-news">
+<span id="id14"></span><h3><a class="toc-backref" href="changelog.html#id39">News</a><a class="headerlink" href="changelog.html#v093-news" title="Permalink to this headline">¶</a></h3>
+<p>New StarCluster Ubuntu 11.10 EBS AMIs available including a new HVM AMI for use
+with CC/CC2/CG instance types! Includes OpenGridScheduler (to replace SGE),
+Condor, Hadoop/Dumbo, MPICH2, OpenMPI, IPython 0.12 (parallel+notebook), and
+more. Run <tt class="docutils literal"><span class="pre">dpkg</span> <span class="pre">-l</span></tt> on the AMIs for the full list of packages.</p>
+<p>The new StarCluster Ubuntu 11.10 EBS HVM AMI additionally comes with NVIDIA
+driver, CUDA Toolkit/SDK, PyCuda, PyOpenCL, and Magma for GPU computing.</p>
+<p>These new AMIs are available in all AWS regions. The new <tt class="docutils literal"><span class="pre">us-east-1</span></tt> 11.10
+EBS AMIs are now the defaults in the StarCluster config template. Use the
+<tt class="docutils literal"><span class="pre">listpublic</span></tt> command to obtain a list of available StarCluster AMIs in other
+regions:</p>
+<div class="highlight-python"><pre>$ starcluster -r sa-east-1 listpublic</pre>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <strong>HVM</strong> AMI is currently only available in the <tt class="docutils literal"><span class="pre">us-east-1</span></tt> region
+until other regions support HVM.</p>
+</div>
+</div>
+<div class="section" id="v093-features">
+<span id="id15"></span><h3><a class="toc-backref" href="changelog.html#id40">Features</a><a class="headerlink" href="changelog.html#v093-features" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">Added support for new CC2 instance types</p>
+</li>
+<li><p class="first">Added support for specifying a proxy host to use when connecting to AWS:</p>
+<div class="highlight-python"><pre>[aws info]
+aws_proxy = your.proxy.com
+aws_proxy_port = 8080
+aws_proxy_user = yourproxyuser
+aws_proxy_pass = yourproxypass</pre>
+</div>
+<p>See <a class="reference internal" href="manual/configuration.html#proxy-config"><em>Using a Proxy Host</em></a> for more details</p>
+</li>
+<li><p class="first">Updated IPCluster plugin to support IPython 0.12 with <a class="reference internal" href="plugins/ipython.html#using-ipython-cluster"><em>parallel</em></a> and <a class="reference internal" href="plugins/ipython.html#ipython-notebook"><em>notebook</em></a>
+support (SSL+password auth). See <a class="reference internal" href="plugins/ipython.html#ipcluster-plugin"><em>IPython Cluster Plugin</em></a> for more details</p>
+</li>
+<li><p class="first">Keypairs are now validated against EC2 fingerprint which notifies users ahead
+of time if the file they specified in KEY_LOCATION doesn&#8217;t match the EC2
+keypair specified</p>
+</li>
+<li><p class="first">Support for Windows (tested on 32bit Windows 7). See <a class="reference internal" href="installation.html#windows-install"><em>Installing on Windows</em></a>
+for more details</p>
+</li>
+</ul>
+<div class="section" id="new-plugins">
+<h4><a class="toc-backref" href="changelog.html#id41">New Plugins</a><a class="headerlink" href="changelog.html#new-plugins" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><strong>Condor</strong> - experimental support for creating a Condor pool on StarCluster.
+See <a class="reference internal" href="plugins/condor.html#condor-plugin"><em>Condor Plugin</em></a> for more details</li>
+<li><strong>Hadoop</strong> - support for creating a Hadoop cluster with StarCluster
+See <a class="reference internal" href="plugins/hadoop.html#hadoop-plugin"><em>Hadoop Plugin</em></a> for more details</li>
+<li><strong>MPICH2</strong> - configure cluster to use MPICH2 instead of OpenMPI
+See <a class="reference internal" href="plugins/mpich2.html#mpich2-plugin"><em>MPICH2 Plugin</em></a> for more details</li>
+<li><strong>TMUX</strong> - configures cluster SSH &#8220;dashboard&#8221; in tmux
+See <a class="reference internal" href="plugins/tmux.html#tmux-plugin"><em>TMUX Plugin</em></a> for more details</li>
+<li><strong>Package installer</strong> - install Ubuntu packages on all nodes concurrently
+See <a class="reference internal" href="plugins/pkginstaller.html#pkginstaller-plugin"><em>Package Installer Plugin</em></a> for more details</li>
+<li><strong>Xvfb</strong> - install and configure an Xvfb session on all nodes (<tt class="docutils literal"><span class="pre">sets</span>
+<span class="pre">DISPLAY=:1</span></tt>) See <a class="reference internal" href="plugins/xvfb.html#xvfb-plugin"><em>Xvfb Plugin</em></a> for more details</li>
+<li><strong>MySQL</strong> - install and configure a MySQL cluster on StarCluster. See
+<a class="reference internal" href="plugins/mysqlcluster.html#mysql-plugin"><em>MySQL Cluster Plugin</em></a> for more details</li>
+</ul>
+</div>
+</div>
+<div class="section" id="v093-fixes">
+<span id="id16"></span><h3><a class="toc-backref" href="changelog.html#id42">Bug Fixes</a><a class="headerlink" href="changelog.html#v093-fixes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Fix bug in <tt class="docutils literal"><span class="pre">put</span></tt> command where in random cases the last few bytes of the
+file weren&#8217;t being transferred</li>
+<li>Raise an error if placement group creation fails</li>
+<li>Fix bug in terminate command in the case that nodes are already
+<tt class="docutils literal"><span class="pre">shutting-down</span></tt> when the terminate command is executed</li>
+<li>Fix bug in s3image when destination S3 bucket already exists</li>
+<li>Fix known_hosts warnings when ssh&#8217;ing from node to node internally</li>
+<li>Fix trivial logging bug in createvolume command</li>
+</ul>
+</div>
+</div>
+<div class="section" id="version-0-92-1">
+<span id="id17"></span><h2><a class="toc-backref" href="changelog.html#id43">0.92.1</a><a class="headerlink" href="changelog.html#version-0-92-1" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">release-date:</th><td class="field-body">11-05-2011</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="v0921-features">
+<span id="id18"></span><h3><a class="toc-backref" href="changelog.html#id44">Features</a><a class="headerlink" href="changelog.html#v0921-features" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">Support for splitting the config into an arbitrary set of files:</p>
+<div class="highlight-python"><pre>[global]
+include=~/.starcluster/awscreds, ~/.starcluster/myconf</pre>
+</div>
+<p>See <a class="reference internal" href="manual/configuration.html#splitting-the-config"><em>Splitting the Config into Multiple Files</em></a> for more details</p>
+</li>
+<li><p class="first">createvolume: support naming/tagging newly created volumes:</p>
+<div class="highlight-python"><pre>$ starcluster createvolume --name mynewvol 30 us-east-1d</pre>
+</div>
+<p>See <a class="reference internal" href="manual/volumes.html#create-and-format-ebs-volumes"><em>Create and Format a new EBS Volume</em></a> for more details</p>
+</li>
+<li><p class="first">listvolumes: add support for filtering by tags:</p>
+<div class="highlight-python"><pre>$ starcluster listvolumes --name mynewvol
+$ starcluster listvolumes --tag mykey=myvalue</pre>
+</div>
+<p>See <a class="reference internal" href="manual/volumes.html#managing-ebs-volumes"><em>Managing EBS Volumes</em></a> for more details</p>
+</li>
+<li><p class="first">sshmaster, sshnode, sshinstance: support for running remote
+commands from command line:</p>
+<div class="highlight-python"><pre>$ starcluster sshmaster mycluster 'cat /etc/fstab'
+$ starcluster sshnode mycluster node001 'cat /etc/fstab'
+$ starcluster sshinstance i-99999999 'cat /etc/hosts'</pre>
+</div>
+<p>See <a class="reference internal" href="manual/runcommands.html"><em>Running Remote Commands from Command Line</em></a> for more details</p>
+</li>
+</ul>
+</div>
+<div class="section" id="v0921-fixes">
+<span id="id19"></span><h3><a class="toc-backref" href="changelog.html#id45">Bug Fixes</a><a class="headerlink" href="changelog.html#v0921-fixes" title="Permalink to this headline">¶</a></h3>
+<p>The following bugs were fixed in this release:</p>
+<p><strong>spothistory command</strong></p>
+<ul class="simple">
+<li>add package_data to sdist in order to include the necessary web media and
+templates needed for the <tt class="docutils literal"><span class="pre">--plot</span></tt> feature. The previous 0.92 version left
+these out and thus the <tt class="docutils literal"><span class="pre">--plot</span></tt> feature was broken. This should be fixed.</li>
+<li>fix bug when launching default browser on mac</li>
+</ul>
+<p><strong>start command</strong></p>
+<ul class="simple">
+<li>fix bug in option completion when using the start command&#8217;s
+<tt class="docutils literal"><span class="pre">--cluster-template</span></tt> option</li>
+</ul>
+<p><strong>terminate command</strong></p>
+<ul class="simple">
+<li>fix bug in terminate cmd when region != us-east-1</li>
+</ul>
+<p><strong>listkeypairs command</strong></p>
+<ul class="simple">
+<li>fix bug in list_keypairs when no keys exist</li>
+</ul>
+</div>
+<div class="section" id="improvements">
+<h3><a class="toc-backref" href="changelog.html#id46">Improvements</a><a class="headerlink" href="changelog.html#improvements" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>listinstances: add &#8216;state_reason&#8217; msg to output if available</li>
+<li>add system info, Python info, and package versions to crash-report</li>
+<li>listregions: sort regions by name</li>
+<li>improved bash/zsh completion support. completion will read from the correct
+config file, if possible, in the case that the global -c option is specified
+while completing.</li>
+<li>separate the timing of cluster setup into time spent on waiting for EC2
+instances to come up and time spent configuring the cluster after all
+instances are up and running. this is useful when profiling StarCluster&#8217;s
+performance on large (100+ node) clusters.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="version-0-92">
+<span id="id20"></span><h2><a class="toc-backref" href="changelog.html#id47">0.92</a><a class="headerlink" href="changelog.html#version-0-92" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">release-date:</th><td class="field-body">10-17-2011</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="v092-news">
+<span id="id21"></span><h3><a class="toc-backref" href="changelog.html#id48">News</a><a class="headerlink" href="changelog.html#v092-news" title="Permalink to this headline">¶</a></h3>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Before upgrading please be aware that rc1 does not support clusters created
+with previous versions and will print a warning along with instructions on
+how to proceed if it finds old clusters. With that said, it&#8217;s best not to
+upgrade until you&#8217;ve terminated any currently running clusters created with
+an old version. Also, the &#64;sc-masters group is no longer needed and can be
+removed after upgrading by running &#8220;starcluster terminate masters&#8221;</p>
+</div>
+<p>You can find the new docs for 0.92rc1 here:</p>
+<p><a class="reference external" href="../0.92rc1/index.html">/cluster/docs/0.92rc1/</a></p>
+<p>NOTE: these docs are still very much a work in progress. If anyone is
+interested in helping to improve the docs, please fork the project on github
+and submit pull requests. Here&#8217;s a guide to get you started:</p>
+<p><a class="reference external" href="../0.92rc1/contribute.html">/cluster/docs/0.92rc1/contribute.html</a></p>
+<p>Please upgrade at your leisure, test the new release candidate, and submit any
+bug reports preferably on StarCluster&#8217;s github issue tracker or this mailing
+list.</p>
+</div>
+<div class="section" id="v092-features">
+<span id="id22"></span><h3><a class="toc-backref" href="changelog.html#id49">Features</a><a class="headerlink" href="changelog.html#v092-features" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">Cluster Compute/GPU Instances- Added support for the new Cluster
+Compute/GPU instance types. Thanks to Fred Rotbart for his contributions</p>
+</li>
+<li><p class="first">EBS-Backed Clusters- Added support for starting/stopping EBS-backed
+clusters on EC2. The <tt class="docutils literal"><span class="pre">stop</span></tt> command now stops (instead of terminate)
+an EBS-backed cluster and terminates an S3-backed cluster. Added a
+terminate command that terminates <em>any</em> cluster</p>
+</li>
+<li><p class="first">Improved performance - using workerpool library
+(<a class="reference external" href="http://pypi.python.org/pypi/StarCluster">http://pypi.python.org/pypi/StarCluster</a>) to configure nodes concurrently</p>
+</li>
+<li><p class="first">New <tt class="docutils literal"><span class="pre">ebsimage</span></tt> and <tt class="docutils literal"><span class="pre">s3image</span></tt> commands for easily creating new EBS-backed
+AMIs. Each command supports creating a new AMI from S3 and EBS-backed image
+hosts respectively. (NOTE: <tt class="docutils literal"><span class="pre">createimage</span></tt> has been renamed to s3image. you can
+still call <tt class="docutils literal"><span class="pre">createimage</span></tt> but this will go away in future releases)</p>
+</li>
+<li><p class="first">Add/Remove Nodes - added new <tt class="docutils literal"><span class="pre">addnode</span></tt> and <tt class="docutils literal"><span class="pre">removenode</span></tt> commands for
+adding/removing nodes to a cluster and removing existing nodes from a cluster</p>
+</li>
+<li><p class="first">Restart command - Added new restart command that reboots the cluster and
+reconfigures the cluster</p>
+</li>
+<li><p class="first">Create Keypairs - Added ability to add/list/remove keypairs</p>
+</li>
+<li><p class="first">Elastic Load Balancing - Support for shrinking/expanding clusters based on Sun
+Grid Engine queue statistics. This allow the user to start a single-node
+cluster (or larger) and scale the number of instances needed to meet the
+current SGE queue load. For example, a single-node cluster can be launched and
+as the queue load increases new EC2 instances are launched, added to the
+cluster, used for computation, and then removed when they&#8217;re idle. This
+minimizes the cost of using EC2 for an unknown and on-demand workload. Thanks
+to Rajat Banerjee (rqbanerjee)</p>
+</li>
+<li><p class="first">Security Group Permissions - Added ability to specify permission settings to
+be applied automatically to a cluster&#8217;s security group after it&#8217;s been started</p>
+</li>
+<li><p class="first">Multiple Instance Types - Added support for specifying instance types on a
+per-node basis. Thanks to Dan Yamins for his contributions</p>
+</li>
+<li><p class="first">Unpartitioned Volumes- StarCluster now supports both partitioned and
+unpartitioned EBS volumes</p>
+</li>
+<li><p class="first">New Plugin Hooks - Plugins can now play a part when adding or removing a node as
+well as when restarting or shutting down the entire cluster by implementing the
+<tt class="docutils literal"><span class="pre">on_remove_node</span></tt>, <tt class="docutils literal"><span class="pre">on_add_node</span></tt>, <tt class="docutils literal"><span class="pre">on_shutdown</span></tt>, and <tt class="docutils literal"><span class="pre">on_reboot</span></tt>
+methods respectively</p>
+</li>
+<li><p class="first">Added a <tt class="docutils literal"><span class="pre">runplugin</span></tt> command and fixed the run_plugin() method in the
+development shell. You can now run a plugin in the dev shell like so:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="o">~</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">&gt;</span> <span class="n">cm</span><span class="o">.</span><span class="n">run_plugin</span><span class="p">(</span><span class="s">&#39;myplugin&#39;</span><span class="p">,</span> <span class="s">&#39;mycluster&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Added support for easily switching regions (without config changes)
+using a global -z option. For example:</p>
+<div class="highlight-python"><pre>$ starcluster -r eu-west-1 listclusters
+StarCluster - (/cluster) (v. 0.92rc1)
+Software Tools for Academics and Researchers (STAR)
+Please submit bug reports to starcluster@mit.edu
+
+&gt;&gt;&gt; No clusters found...</pre>
+</div>
+</li>
+<li><p class="first">Added new <tt class="docutils literal"><span class="pre">resizevolume</span></tt> command for easily resizing existing EBS volumes</p>
+</li>
+<li><p class="first">Added listregions/listzones commands</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="changelog.html">Version History</a><ul>
+<li><a class="reference internal" href="changelog.html#version-0-94">0.94</a><ul>
+<li><a class="reference internal" href="changelog.html#news">News</a></li>
+<li><a class="reference internal" href="changelog.html#features">Features</a></li>
+<li><a class="reference internal" href="changelog.html#bug-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="changelog.html#version-0-93-3">0.93.3</a><ul>
+<li><a class="reference internal" href="changelog.html#v0933-news">News</a></li>
+<li><a class="reference internal" href="changelog.html#v0933-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="changelog.html#version-0-93-2">0.93.2</a><ul>
+<li><a class="reference internal" href="changelog.html#v0932-news">News</a></li>
+<li><a class="reference internal" href="changelog.html#v0932-features">Features</a></li>
+<li><a class="reference internal" href="changelog.html#v0932-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="changelog.html#version-0-93-1">0.93.1</a><ul>
+<li><a class="reference internal" href="changelog.html#v0931-news">News</a></li>
+<li><a class="reference internal" href="changelog.html#v0931-features">Features</a></li>
+<li><a class="reference internal" href="changelog.html#v0931-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="changelog.html#version-0-93">0.93</a><ul>
+<li><a class="reference internal" href="changelog.html#v093-news">News</a></li>
+<li><a class="reference internal" href="changelog.html#v093-features">Features</a><ul>
+<li><a class="reference internal" href="changelog.html#new-plugins">New Plugins</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="changelog.html#v093-fixes">Bug Fixes</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="changelog.html#version-0-92-1">0.92.1</a><ul>
+<li><a class="reference internal" href="changelog.html#v0921-features">Features</a></li>
+<li><a class="reference internal" href="changelog.html#v0921-fixes">Bug Fixes</a></li>
+<li><a class="reference internal" href="changelog.html#improvements">Improvements</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="changelog.html#version-0-92">0.92</a><ul>
+<li><a class="reference internal" href="changelog.html#v092-news">News</a></li>
+<li><a class="reference internal" href="changelog.html#v092-features">Features</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="TODO.html"
+                        title="previous chapter">StarCluster TODOs</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="license.html"
+                        title="next chapter">License: LGPL (version 3)</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="license.html" title="License: LGPL (version 3)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="TODO.html" title="StarCluster TODOs"
+             >previous</a> |</li>
+    	<li><a href="index.html">Home</a> &raquo;</li>
+          <li><a href="contents.html" >Master Table of Contents</a> &raquo;</li> 
+      </ul>
+    </div>
+
+
+    <div class="footer">
+        &copy; Copyright 2011, Software Tools for Academics and Researchers.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2.
+    </div>
+
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+    </script>
+
+  </body>
+</html>

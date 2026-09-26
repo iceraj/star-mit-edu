@@ -1,0 +1,242 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Lyn Gerner ((no email))" />
+<meta name="Subject" content="New Option for Extra EBS Volumes?" />
+<title>starcluster.mbox.out: New Option for Extra EBS Volumes?</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">New Option for Extra EBS Volumes?</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>New Option for Extra EBS Volumes?</h1>
+<!-- received="Fri Oct  4 14:26:44 2013" -->
+<!-- isoreceived="20131004182644" -->
+<!-- sent="Fri, 4 Oct 2013 08:26:39 -1000" -->
+<!-- isosent="20131004182639" -->
+<!-- name="Lyn Gerner" -->
+<!-- email="(no email)" -->
+<!-- subject="New Option for Extra EBS Volumes?" -->
+<!-- id="CAD3e3FYVVu=zk3JK8hAgA4daZcFt_GhgOcqa3rZ4JeavAXGOoA_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1895.html#start1895" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1895.html#options2">top</a>, <a href="1895.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1896.html" accesskey="d" title="Jacob Barhak: &quot;Re:  New Option for Extra EBS Volumes?&quot;">Next message</a> ]
+[ <a href="1894.html" title="Adam: &quot;Re:  t1.micro cluster problem&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="1896.html" accesskey="t" title="Jacob Barhak: &quot;Re:  New Option for Extra EBS Volumes?&quot;">Next in thread</a> ]
+ [ <a href="1895.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1895" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1895" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1895" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1895" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Lyn Gerner &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Fri, 4 Oct 2013 08:26:39 -1000</span><br />
+</address>
+<br />
+Hi Developers, All,
+<br />
+<br />I am struggling operationally with the snapshots and volumes that
+<br />
+starcluster creates when I attach extra (non-root) EBS volumes to the
+<br />
+&nbsp;cluster nodes that I launch.
+<br />
+<br />I have read everything I can find that's relevant in the mailing list -- in
+<br />
+particular, this &lt;<a href="1368.html">/cluster/mlarchives/1368.html</a>&gt; -- and
+<br />
+understand that this is just how it's designed to work.
+<br />
+<br />As background for anyone unfamiliar with this, currently, starcluster only
+<br />
+will NFS-share volumes that are specified in the cluster template.  It
+<br />
+doesn't share volumes that are already existing devices in an AMI.
+<br />
+<br />I have also experimented with the Delete on Termination setting for volumes
+<br />
+associated with my AMIs.  The volume has to be built into an AMI (as a
+<br />
+block device), and  has to be attached to an instance when it's terminated,
+<br />
+in order for the deletion to take place.
+<br />
+<br />Starcluster terminate operation umounts devices and detaches  volumes
+<br />
+before terminating cluster instances.  This negates the Delete on
+<br />
+Termination operation for such volumes.
+<br />
+<br />I would like to be able to have starcluster share such additional volumes
+<br />
+that are already present as block devices in the AMI.  This would allow me
+<br />
+to flip the bit in the AMI that would cause delete-on-termination for the
+<br />
+volume.
+<br />
+<br />Could we have a new option, basically a &quot;--share-also=&lt;dev&gt;:&lt;mount_point&gt;&quot;?
+<br />
+&nbsp;I think you would also need to *not* detach such extra volumes (though
+<br />
+you'd of course umount them) in the cluster termination process, in order
+<br />
+for the Delete-on-Termination setting to take effect.
+<br />
+<br />I acknowledge that it's more complex than I've described, because the
+<br />
+&quot;volumes&quot; attached to the instances are actually snapshots, in the way that
+<br />
+starcluster (and AWS) functions.  I haven't found anything in AWS-land that
+<br />
+auto-deletes snapshots on termination.
+<br />
+<br />This is all pretty confusing and frustrating.
+<br />
+<br />I'd appreciate it if Justin and others would discuss the feasibility of
+<br />
+such a &quot;--share-also&quot; function, any reasons why it could not work
+<br />
+correctly, or would foul up the Starcluster design or operations.
+<br />
+<br />And if anyone has overcome the operational issue of volumes and snapshots
+<br />
+piling up -- that is, if you've automated recognition and deletion of
+<br />
+temporary copies of volumes and snapshopts -- I'd love to hear about your
+<br />
+approach.
+<br />
+<br />Thanks to all,
+<br />
+Lyn
+<br />
+<span id="received"><dfn>Received on</dfn> Fri Oct 04 2013 - 14:26:44 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1895.html#start1895">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1896.html" title="Next message in the list">Jacob Barhak: "Re:  New Option for Extra EBS Volumes?"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1894.html" title="Previous message in the list">Adam: "Re:  t1.micro cluster problem"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1896.html" title="Next message in this discussion thread">Jacob Barhak: "Re:  New Option for Extra EBS Volumes?"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1896.html" title="Message sent in reply to this message">Jacob Barhak: "Re:  New Option for Extra EBS Volumes?"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1895" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1895" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1895" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1895" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

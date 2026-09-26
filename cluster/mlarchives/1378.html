@@ -1,0 +1,346 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Anders Nielsen ((no email))" />
+<meta name="Subject" content="EBS storage does not mount &lt;newbie&gt;" />
+<title>starcluster.mbox.out: EBS storage does not mount &lt;newbie&gt;</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">EBS storage does not mount &lt;newbie&gt;</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>EBS storage does not mount &lt;newbie&gt;</h1>
+<!-- received="Thu Aug 23 15:11:14 2012" -->
+<!-- isoreceived="20120823191114" -->
+<!-- sent="Thu, 23 Aug 2012 21:11:07 +0200" -->
+<!-- isosent="20120823191107" -->
+<!-- name="Anders Nielsen" -->
+<!-- email="(no email)" -->
+<!-- subject="EBS storage does not mount &lt;newbie&gt;" -->
+<!-- id="cc97bb932bf5cca6720fae217e5fb755_at_mail.gmail.com" -->
+<!-- charset="US-ASCII" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1378.html#start1378" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1378.html#options2">top</a>, <a href="1378.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1379.html" accesskey="d" title="Chandra Pedamallu: &quot;Problem with AMI creation&quot;">Next message</a> ]
+[ <a href="1377.html" title="Rayson Ho: &quot;Tagging all resources used by a starcluster (to allow charge-back support)&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1378" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1378" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1378" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1378" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Anders Nielsen &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 23 Aug 2012 21:11:07 +0200</span><br />
+</address>
+<br />
+I am a newbie and am just getting my feet wet on StarCluster and AWS
+<br />
+<br /><br /><br />I have successfully installed 0.93.3 on Windows and associated it with my
+<br />
+AWS login. I can create clusters and I have used the documented way of
+<br />
+created an EBS store for use by my application.
+<br />
+<br /><br /><br />My problem is that none of the instances in the cluster will mount the EBS
+<br />
+and the master complains about it having more than one partition. It was
+<br />
+created according to the method here:
+<br />
+<a href="http://web.mit.edu/star/cluster/docs/latest/manual/volumes.html#create-and-format-a-new-ebs-volume–">http://web.mit.edu/star/cluster/docs/latest/manual/volumes.html#create-and-format-a-new-ebs-volume–</a>
+<br />
+and to the best of my knowledge correctly so. I think I am doing all
+<br />
+the
+<br />
+things I am supposed to do, but obviously I am missing something. The
+<br />
+configuration file is attached but it does not seem to be causing
+<br />
+StarCluster any problems.
+<br />
+<br /><br /><br />The runtime output is  however not so great:
+<br />
+<br /><br /><br />C:\Windows\System32&gt;starcluster start imagingcluster
+<br />
+<br />StarCluster - (<a href="http://web.mit.edu/starcluster">http://web.mit.edu/starcluster</a>) (v. 0.93.3)
+<br />
+<br />Software Tools for Academics and Researchers (STAR)
+<br />
+<br />Please submit bug reports to starcluster_at_mit.edu
+<br />
+<br /><br /><br /><em class="quotelev3">&gt;&gt;&gt; Using default cluster template: smallcluster
+</em><br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Validating cluster template settings...
+</em><br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Cluster template settings are valid
+</em><br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Starting cluster...
+</em><br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Launching a 3-node cluster...
+</em><br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Creating security group _at_sc-imagingcluster...
+</em><br />
+<br />Reservation:r-953beddd
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Waiting for cluster to come up... (updating every 30s)
+</em><br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Waiting for all nodes to be in a 'running' state...
+</em><br />
+<br />3/3 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Waiting for SSH to come up on all nodes...
+</em><br />
+<br />3/3 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Waiting for cluster to come up took 1.383 mins
+</em><br />
+<br /><em class="quotelev3">&gt;&gt;&gt; The master node is ec2-46-137-154-117.eu-west-1.compute.amazonaws.com
+</em><br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Setting up the cluster...
+</em><br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Attaching volume vol-ae98c1c6 to master node on /dev/sdz ...
+</em><br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Configuring hostnames...
+</em><br />
+<br />3/3 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<br />!!! ERROR - volume has more than one partition, please specify which
+<br />
+partition t
+<br />
+<br />o use (e.g. partition=0, partition=1, etc.) in the volume's config
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Creating cluster user: None (uid: 1001, gid: 1001)
+</em><br />
+<br />3/3 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Configuring scratch space for user(s): qadmin
+</em><br />
+<br />3/3 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Configuring /etc/hosts on each node
+</em><br />
+<br />3/3 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Starting NFS server on master
+</em><br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Configuring NFS exports path(s):
+</em><br />
+<br />/home /mr_data
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Mounting all NFS export path(s) on 2 worker node(s)
+</em><br />
+<br />!!! ERROR - command 'mount /mr_data' failed with status 32             |
+<br />
+0%
+<br />
+<br />!!! ERROR - command 'mount /mr_data' failed with status 32
+<br />
+<br />2/2 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Setting up NFS took 0.145 mins
+</em><br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Configuring passwordless ssh for root
+</em><br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Configuring passwordless ssh for qadmin
+</em><br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Shutting down threads...
+</em><br />
+<br />20/20 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Configuring cluster took 0.889 mins
+</em><br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Starting cluster took 2.375 mins
+</em><br />
+<br /><br /><br />A clue could be that when I sshmaster in, the /dev looks very odd as sda
+<br />
+etc. are missing:
+<br />
+<br />root_at_master:~# ls -l /dev/s*
+<br />
+<br /><br /><br />lrwxrwxrwx 1 root root       8 2012-08-23 18:44  /dev/shm-&gt;/run/shm
+<br />
+<br />crw------- 1 root root 10, 231 2012-08-23 18:44  /dev/snapshot
+<br />
+<br />lrwxrwxrwx 1 root root      15 2012-08-23 18:44 /dev/stderr-&gt;
+<br />
+/proc/self/fd/2
+<br />
+<br />lrwxrwxrwx 1 root root      15 2012-08-23 18:44 /dev/stdin-&gt;/proc/self/fd/0
+<br />
+<br />lrwxrwxrwx 1 root root      15 2012-08-23 18:44 /dev/stdout -&gt;
+<br />
+proc/self/fd/1
+<br />
+<br /><br /><br />However is seems that the disks are not sda1/sdz but xvd1 and xvdz:
+<br />
+<br /><br /><br />root_at_master:~# ls -l /dev/x*
+<br />
+<br />ls -l /dev/x*
+<br />
+<br />brw-rw---- 1 root disk 202,   1 2012-08-23 18:44 /dev/xvda1
+<br />
+<br />brw-rw---- 1 root disk 202, 400 2012-08-23 18:45 /dev/xvdz
+<br />
+<br /><br /><br />Would that trip up StarCluster?
+<br />
+<br /><br /><br />BTW, does anybody know why the output from the ssh session via Python SSH
+<br />
+are all filled by garbage control characters? The outputs above I had to
+<br />
+clean manually for it to be readable) – remember: total newbie.
+<br />
+<br /><br /><br />All and any help is much appreciated.
+<br />
+<br /><br /><br />Regards,
+<br />
+<br />Anders Nielsen
+<br />
+<br /><br />
+<br /><div>
+<ul>
+<li>text/plain attachment: <a href="att-1378/my_config.txt">my_config.txt</a></li>
+</ul>
+<!-- attachment="my_config.txt" -->
+</div>
+<span id="received"><dfn>Received on</dfn> Thu Aug 23 2012 - 15:11:14 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1378.html#start1378">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1379.html" title="Next message in the list">Chandra Pedamallu: "Problem with AMI creation"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1377.html" title="Previous message in the list">Rayson Ho: "Tagging all resources used by a starcluster (to allow charge-back support)"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1378" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1378" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1378" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1378" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

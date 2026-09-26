@@ -1,0 +1,242 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Jin Yu ((no email))" />
+<meta name="Subject" content="Instances are not accepting jobs when the slots are available." />
+<title>starcluster.mbox.out: Instances are not accepting jobs when the slots are available.</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Instances are not accepting jobs when the slots are available.</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Instances are not accepting jobs when the slots are available.</h1>
+<!-- received="Thu Jul 17 14:44:37 2014" -->
+<!-- isoreceived="20140717184437" -->
+<!-- sent="Thu, 17 Jul 2014 13:44:36 -0500" -->
+<!-- isosent="20140717184436" -->
+<!-- name="Jin Yu" -->
+<!-- email="(no email)" -->
+<!-- subject="Instances are not accepting jobs when the slots are available." -->
+<!-- id="CAEBYWs9MrbfxwWPZq=oQarGPq9a5QEBF1Dy=_Krry=HAXBiy_g_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2292.html#start2292" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2292.html#options2">top</a>, <a href="2292.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2293.html" accesskey="d" title="Chris Dagdigian: &quot;Re:  Instances are not accepting jobs when the slots are available.&quot;">Next message</a> ]
+[ <a href="2291.html" title="Jin Yu: &quot;loadbalancer error with different type of instances&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="2293.html" accesskey="t" title="Chris Dagdigian: &quot;Re:  Instances are not accepting jobs when the slots are available.&quot;">Next in thread</a> ]
+ [ <a href="2292.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2292" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2292" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2292" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2292" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Jin Yu &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 17 Jul 2014 13:44:36 -0500</span><br />
+</address>
+<br />
+Hello,
+<br />
+<br />I just started a cluster of 20 c3.8xlarge instances, which have 32 virtual
+<br />
+cores in each.  In my understanding, each instance should have 32 slots
+<br />
+available  to run the jobs by default. But after running it for a while, I
+<br />
+found a lot of nodes are not running at the full speed.
+<br />
+<br />Following as an example, you can see node016 has only 13 jobs running and
+<br />
+node017 has 9 jobs running, while node018 has 32 jobs running. I have
+<br />
+another ~10000 jobs waiting in the queue, so it is not a matter of running
+<br />
+out of jobs.
+<br />
+<br />Can anyone give me a hint what is going on here?
+<br />
+<br />Thanks!
+<br />
+Jin
+<br />
+<br /><br />all.q_at_node016                  BIP   0/13/32        148.35   linux-x64     a
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;784 0.55500 job.part.a sgeadmin     r     07/17/2014 11:25:59     1
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;982 0.55500 job.part.a sgeadmin     r     07/17/2014 14:43:59     1
+<br />
+<br />&nbsp;&nbsp;&nbsp;1056 0.55500 job.part.a sgeadmin     r     07/17/2014 16:34:44     1
+<br />
+<br />&nbsp;&nbsp;&nbsp;1057 0.55500 job.part.a sgeadmin     r     07/17/2014 16:34:44     1
+<br />
+<br />&nbsp;&nbsp;&nbsp;1058 0.55500 job.part.a sgeadmin     r     07/17/2014 16:34:59     1
+<br />
+<br />&nbsp;&nbsp;&nbsp;1121 0.55500 job.part.a sgeadmin     r     07/17/2014 17:22:44     1
+<br />
+<br />&nbsp;&nbsp;&nbsp;1122 0.55500 job.part.a sgeadmin     r     07/17/2014 17:22:44     1
+<br />
+<br />&nbsp;&nbsp;&nbsp;1123 0.55500 job.part.a sgeadmin     r     07/17/2014 17:22:44     1
+<br />
+<br />&nbsp;&nbsp;&nbsp;1124 0.55500 job.part.a sgeadmin     r     07/17/2014 17:22:44     1
+<br />
+<br />&nbsp;&nbsp;&nbsp;1125 0.55500 job.part.a sgeadmin     r     07/17/2014 17:22:44     1
+<br />
+<br />&nbsp;&nbsp;&nbsp;1126 0.55500 job.part.a sgeadmin     r     07/17/2014 17:22:44     1
+<br />
+<br />&nbsp;&nbsp;&nbsp;1127 0.55500 job.part.a sgeadmin     r     07/17/2014 17:22:44     1
+<br />
+<br />&nbsp;&nbsp;&nbsp;1128 0.55500 job.part.a sgeadmin     r     07/17/2014 17:22:44     1
+<br />
+<br />---------------------------------------------------------------------------------
+<br />
+all.q_at_node017                  BIP   0/9/32         83.86    linux-x64     a
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;568 0.55500 job.part.a sgeadmin     r     07/17/2014 04:01:14     1
+<br />
+<br />&nbsp;&nbsp;&nbsp;1001 0.55500 job.part.a sgeadmin     r     07/17/2014 15:07:29     1
+<br />
+<br />&nbsp;&nbsp;&nbsp;1002 0.55500 job.part.a sgeadmin     r     07/17/2014 15:07:29     1
+<br />
+<br />&nbsp;&nbsp;&nbsp;1072 0.55500 job.part.a sgeadmin     r     07/17/2014 16:53:29     1
+<br />
+<br />&nbsp;&nbsp;&nbsp;1116 0.55500 job.part.a sgeadmin     r     07/17/2014 17:19:29     1
+<br />
+<br />&nbsp;&nbsp;&nbsp;1117 0.55500 job.part.a sgeadmin     r     07/17/2014 17:19:29     1
+<br />
+<br />&nbsp;&nbsp;&nbsp;1118 0.55500 job.part.a sgeadmin     r     07/17/2014 17:19:44     1
+<br />
+<br />&nbsp;&nbsp;&nbsp;1119 0.55500 job.part.a sgeadmin     r     07/17/2014 17:19:59     1
+<br />
+<br />&nbsp;&nbsp;&nbsp;1120 0.55500 job.part.a sgeadmin     r     07/17/2014 17:19:59     1
+<br />
+<br />---------------------------------------------------------------------------------
+<br />
+all.q_at_node018                  BIP   0/32/32        346.00   linux-x64     a
+<br />
+<span id="received"><dfn>Received on</dfn> Thu Jul 17 2014 - 14:44:37 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2292.html#start2292">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2293.html" title="Next message in the list">Chris Dagdigian: "Re:  Instances are not accepting jobs when the slots are available."</a></li>
+<li><dfn>Previous message</dfn>: <a href="2291.html" title="Previous message in the list">Jin Yu: "loadbalancer error with different type of instances"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="2293.html" title="Next message in this discussion thread">Chris Dagdigian: "Re:  Instances are not accepting jobs when the slots are available."</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="2293.html" title="Message sent in reply to this message">Chris Dagdigian: "Re:  Instances are not accepting jobs when the slots are available."</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2292" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2292" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2292" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2292" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

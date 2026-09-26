@@ -1,0 +1,267 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Andrey Evtikhov ((no email))" />
+<meta name="Subject" content="launching c3.xlarge crashed every time" />
+<title>starcluster.mbox.out: launching c3.xlarge crashed every time</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">launching c3.xlarge crashed every time</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>launching c3.xlarge crashed every time</h1>
+<!-- received="Thu May 14 10:51:07 2015" -->
+<!-- isoreceived="20150514145107" -->
+<!-- sent="Thu, 14 May 2015 14:51:01 +0000" -->
+<!-- isosent="20150514145101" -->
+<!-- name="Andrey Evtikhov" -->
+<!-- email="(no email)" -->
+<!-- subject="launching c3.xlarge crashed every time" -->
+<!-- id="fb7084ef0a034014ab9042e281de7c6f_at_EPBYMINSA0001.epam.com" -->
+<!-- charset="us-ascii" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2631.html#start2631" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2631.html#options2">top</a>, <a href="2631.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2632.html" accesskey="d" title="Sergio Mafra: &quot;Ganglia Plugin ?&quot;">Next message</a> ]
+[ <a href="2630.html" title="Andrey Evtikhov: &quot;Re:  load balancer - crashed with !!! ERROR - Unhandled exception occured&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2631" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2631" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2631" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2631" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Andrey Evtikhov &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 14 May 2015 14:51:01 +0000</span><br />
+</address>
+<br />
+Hi there - we`re seeing a weird behavior - when I tried to start  c3.xlarge we got following error:
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Cluster template settings are valid
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Starting cluster...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Launching a 4-node VPC cluster...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Creating security group _at_sc-test-big-cluster-ae...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Creating placement group _at_sc-test-big-cluster-ae...
+</em><br />
+!!! ERROR - UnauthorizedOperation: You are not authorized to perform this operation. Encoded authorization failure message: ppMtGmkpwecYK0HVdCOo4hfojboeMHX_5o5qhpKVHhcllS3nduh13jiBVylikVNAI1UG0qbQmghBBxo3xizYmDF_                             Cp2yjrXi3Az4-nsfK03-mKBIIsxDDTuscEQQUzwvhgb_Ln7550yfOqensIsYLq7OEm752IOcv4SugNcfDGWTUsEiJRy5p-FWS-yQhjWIjHZwjYFp6URUHyLBQHE7TlhIBg90q0A3XhchbhzihhRSlC2B9-UxR3oeJi_Tw0DD0bSQghS3WfkrbVkB_pTXVC9CKMbRop3Piql8sfUlzbA7                             Ua9mtxAOxJwp_Ujv1L_VuaJaD_l1agwWiSTcbeRHLaQRLxam704PJlFmC-RV3_tWYUzhb7-jtT6ktawyStwPKJ2B7s0hMeWGBFzI1tkzlbZARQ5ywzLtlRiD5DoaUbfPX_Jm9a1Ur9pRxX5mPIoGO7ysZLljQ3x8Nlebu5ZHfm8vayd6ZKR0wz0dXjLS9LyjSGFpskfIMMwT47OtZ1F1
+<br />
+<br />There is a table with different images we tried and it seems c3.xlarge failed everywhere : What could be a problem ? We can launch c3 manually from AWS console without any problem. But starcluster crashed every time .
+<br />
+<br /><br />AMI
+<br />
+<br />description
+<br />
+<br />c3.xlarge
+<br />
+<br />m3.xlarge
+<br />
+<br />t1.micro
+<br />
+<br />t2.micro
+<br />
+<br />i2.xlarge
+<br />
+<br />r3.xlarge
+<br />
+<br />c1.xlarge
+<br />
+<br />ami-8a6d78e2
+<br />
+<br />bioc-3.1-starcluster-ubuntu-14.04-100GB-201505061055
+<br />
+<br />Fail
+<br />
+<br />Success
+<br />
+<br /><br /><br /><br /><br /><br /><br />Fail
+<br />
+<br />Error*
+<br />
+<br />ami-6b211202
+<br />
+<br />starcluster-base-ubuntu-13.04-x86_64-hvm
+<br />
+<br />Fail
+<br />
+<br />Success
+<br />
+<br /><br /><br /><br /><br /><br /><br />Fail
+<br />
+<br />Error*
+<br />
+<br />ami-3393a45a
+<br />
+<br />starcluster-base-ubuntu-13.04-x86_64
+<br />
+<br />Fail
+<br />
+<br />Success
+<br />
+<br />Success
+<br />
+<br /><br /><br /><br /><br />Error*
+<br />
+<br />Success
+<br />
+<br />ami-52a0c53b
+<br />
+<br />starcluster-base-ubuntu-12.04-x86_64-hvm
+<br />
+<br />Fail
+<br />
+<br />Success
+<br />
+<br />Error
+<br />
+<br />Success
+<br />
+<br />Fail
+<br />
+<br />Fail
+<br />
+<br />Error*
+<br />
+<br />ami-765b3e1f
+<br />
+<br />starcluster-base-ubuntu-12.04-x86_64
+<br />
+<br />Fail
+<br />
+<br />Success
+<br />
+<br /><br /><br /><br /><br /><br /><br />Error*
+<br />
+<br />Success
+<br />
+<br /><br />If somebody met the same problem please let me know.
+<br />
+<br />Cheers
+<br />
+Andrey
+<br />
+<span id="received"><dfn>Received on</dfn> Thu May 14 2015 - 10:51:07 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2631.html#start2631">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2632.html" title="Next message in the list">Sergio Mafra: "Ganglia Plugin ?"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2630.html" title="Previous message in the list">Andrey Evtikhov: "Re:  load balancer - crashed with !!! ERROR - Unhandled exception occured"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2631" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2631" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2631" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2631" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

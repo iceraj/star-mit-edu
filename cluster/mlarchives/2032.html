@@ -1,0 +1,432 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Signell, Richard ((no email))" />
+<meta name="Subject" content="&quot;connection closed&quot; when running &quot;starcluster ssmaster&quot;" />
+<title>starcluster.mbox.out: &quot;connection closed&quot; when running &quot;starcluster ssmaster&quot;</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">&quot;connection closed&quot; when running &quot;starcluster ssmaster&quot;</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>&quot;connection closed&quot; when running &quot;starcluster ssmaster&quot;</h1>
+<!-- received="Thu Jan 16 16:55:21 2014" -->
+<!-- isoreceived="20140116215521" -->
+<!-- sent="Thu, 16 Jan 2014 16:55:16 -0500" -->
+<!-- isosent="20140116215516" -->
+<!-- name="Signell, Richard" -->
+<!-- email="(no email)" -->
+<!-- subject="&quot;connection closed&quot; when running &quot;starcluster ssmaster&quot;" -->
+<!-- id="CAFhraUwy+BJ2WQDEjJaAkSgvU72CsuzYx-7gs78d42tbQ04vOg_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2032.html#start2032" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2032.html#options2">top</a>, <a href="2032.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2033.html" accesskey="d" title="Rayson Ho: &quot;Re:  &#0034;connection closed&#0034; when running &#0034;starcluster ssmaster&#0034;&quot;">Next message</a> ]
+[ <a href="2031.html" title="Shmuel Link: &quot;Re:  openmpi libraries in starcluster AMIs&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="2033.html" accesskey="t" title="Rayson Ho: &quot;Re:  &#0034;connection closed&#0034; when running &#0034;starcluster ssmaster&#0034;&quot;">Next in thread</a> ]
+ [ <a href="2032.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2032" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2032" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2032" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2032" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Signell, Richard &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 16 Jan 2014 16:55:16 -0500</span><br />
+</address>
+<br />
+I set up a machine this morning and
+<br />
+starcluster sshmaster rps_cluster
+<br />
+was working fine to ssh in.
+<br />
+<br />But now I'm getting &quot;Connection closed by 54.204.55.67&quot;
+<br />
+<br />It seem that the cluster is running:
+<br />
+<br />rsignell_at_gam:~$ starcluster listclusters
+<br />
+StarCluster - (<a href="/cluster/">/cluster</a>) (v. 0.94.3)
+<br />
+Software Tools for Academics and Researchers (STAR)
+<br />
+Please submit bug reports to starcluster_at_mit.edu
+<br />
+<br />---------------------------------------------
+<br />
+rps_cluster (security group: _at_sc-rps_cluster)
+<br />
+---------------------------------------------
+<br />
+Launch time: 2014-01-16 08:18:09
+<br />
+Uptime: 0 days, 08:34:07
+<br />
+Zone: us-east-1a
+<br />
+Keypair: mykey2
+<br />
+EBS volumes: N/A
+<br />
+Cluster nodes:
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;master running i-7950f657 ec2-54-204-55-67.compute-1.amazonaws.com
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;node001 running i-7a50f654 ec2-54-196-2-68.compute-1.amazonaws.com
+<br />
+Total nodes: 2
+<br />
+<br />And I don't see anything obvious in the verbose debug output:
+<br />
+<br />rsignell_at_gam:~$ starcluster -d sshmaster rps_cluster
+<br />
+StarCluster - (<a href="/cluster/">/cluster</a>) (v. 0.94.3)
+<br />
+Software Tools for Academics and Researchers (STAR)
+<br />
+Please submit bug reports to starcluster_at_mit.edu
+<br />
+<br />2014-01-16 16:53:13,515 config.py:567 - DEBUG - Loading config
+<br />
+2014-01-16 16:53:13,515 config.py:138 - DEBUG - Loading file:
+<br />
+/home/rsignell/.starcluster/config
+<br />
+2014-01-16 16:53:13,517 config.py:322 - DEBUG - include setting not
+<br />
+specified. Defaulting to []
+<br />
+2014-01-16 16:53:13,518 config.py:322 - DEBUG - web_browser setting
+<br />
+not specified. Defaulting to None
+<br />
+2014-01-16 16:53:13,518 config.py:322 - DEBUG - refresh_interval
+<br />
+setting not specified. Defaulting to 30
+<br />
+2014-01-16 16:53:13,518 config.py:322 - DEBUG - include setting not
+<br />
+specified. Defaulting to []
+<br />
+2014-01-16 16:53:13,518 config.py:322 - DEBUG - web_browser setting
+<br />
+not specified. Defaulting to None
+<br />
+2014-01-16 16:53:13,519 config.py:322 - DEBUG - refresh_interval
+<br />
+setting not specified. Defaulting to 30
+<br />
+2014-01-16 16:53:13,519 config.py:322 - DEBUG - aws_proxy_pass setting
+<br />
+not specified. Defaulting to None
+<br />
+2014-01-16 16:53:13,519 config.py:322 - DEBUG - aws_validate_certs
+<br />
+setting not specified. Defaulting to True
+<br />
+2014-01-16 16:53:13,520 config.py:322 - DEBUG - aws_ec2_path setting
+<br />
+not specified. Defaulting to /
+<br />
+2014-01-16 16:53:13,520 config.py:322 - DEBUG - aws_region_name
+<br />
+setting not specified. Defaulting to None
+<br />
+2014-01-16 16:53:13,521 config.py:322 - DEBUG - aws_region_host
+<br />
+setting not specified. Defaulting to None
+<br />
+2014-01-16 16:53:13,521 config.py:322 - DEBUG - aws_s3_path setting
+<br />
+not specified. Defaulting to /
+<br />
+2014-01-16 16:53:13,521 config.py:322 - DEBUG - aws_proxy_user setting
+<br />
+not specified. Defaulting to None
+<br />
+2014-01-16 16:53:13,521 config.py:322 - DEBUG - aws_is_secure setting
+<br />
+not specified. Defaulting to True
+<br />
+2014-01-16 16:53:13,522 config.py:322 - DEBUG - aws_s3_host setting
+<br />
+not specified. Defaulting to None
+<br />
+2014-01-16 16:53:13,522 config.py:322 - DEBUG - aws_port setting not
+<br />
+specified. Defaulting to None
+<br />
+2014-01-16 16:53:13,522 config.py:322 - DEBUG - ec2_private_key
+<br />
+setting not specified. Defaulting to None
+<br />
+2014-01-16 16:53:13,522 config.py:322 - DEBUG - ec2_cert setting not
+<br />
+specified. Defaulting to None
+<br />
+2014-01-16 16:53:13,523 config.py:322 - DEBUG - aws_proxy setting not
+<br />
+specified. Defaulting to None
+<br />
+2014-01-16 16:53:13,523 config.py:322 - DEBUG - aws_proxy_port setting
+<br />
+not specified. Defaulting to None
+<br />
+2014-01-16 16:53:13,523 config.py:322 - DEBUG - device setting not
+<br />
+specified. Defaulting to None
+<br />
+2014-01-16 16:53:13,523 config.py:322 - DEBUG - partition setting not
+<br />
+specified. Defaulting to None
+<br />
+2014-01-16 16:53:13,524 config.py:322 - DEBUG - device setting not
+<br />
+specified. Defaulting to None
+<br />
+2014-01-16 16:53:13,524 config.py:322 - DEBUG - partition setting not
+<br />
+specified. Defaulting to None
+<br />
+2014-01-16 16:53:13,525 config.py:322 - DEBUG - disable_queue setting
+<br />
+not specified. Defaulting to False
+<br />
+2014-01-16 16:53:13,525 config.py:322 - DEBUG - volumes setting not
+<br />
+specified. Defaulting to []
+<br />
+2014-01-16 16:53:13,525 config.py:322 - DEBUG - availability_zone
+<br />
+setting not specified. Defaulting to None
+<br />
+2014-01-16 16:53:13,526 config.py:322 - DEBUG - spot_bid setting not
+<br />
+specified. Defaulting to None
+<br />
+2014-01-16 16:53:13,526 config.py:322 - DEBUG - master_instance_type
+<br />
+setting not specified. Defaulting to None
+<br />
+2014-01-16 16:53:13,526 config.py:322 - DEBUG - disable_cloudinit
+<br />
+setting not specified. Defaulting to False
+<br />
+2014-01-16 16:53:13,526 config.py:322 - DEBUG - force_spot_master
+<br />
+setting not specified. Defaulting to False
+<br />
+2014-01-16 16:53:13,526 config.py:322 - DEBUG - extends setting not
+<br />
+specified. Defaulting to None
+<br />
+2014-01-16 16:53:13,526 config.py:322 - DEBUG - master_image_id
+<br />
+setting not specified. Defaulting to None
+<br />
+2014-01-16 16:53:13,527 config.py:322 - DEBUG - userdata_scripts
+<br />
+setting not specified. Defaulting to []
+<br />
+2014-01-16 16:53:13,527 config.py:322 - DEBUG - permissions setting
+<br />
+not specified. Defaulting to []
+<br />
+2014-01-16 16:53:13,529 awsutils.py:74 - DEBUG - creating self._conn
+<br />
+w/ connection_authenticator kwargs = {'proxy_user': None,
+<br />
+'proxy_pass': None, 'proxy_port': None, 'proxy': None, 'is_secure':
+<br />
+True, 'path': '/', 'region': None, 'validate_certs': True, 'port':
+<br />
+None}
+<br />
+2014-01-16 16:53:13,872 cluster.py:711 - DEBUG - existing nodes: {}
+<br />
+2014-01-16 16:53:13,872 cluster.py:719 - DEBUG - adding node
+<br />
+i-7a50f654 to self._nodes list
+<br />
+2014-01-16 16:53:13,873 cluster.py:719 - DEBUG - adding node
+<br />
+i-7950f657 to self._nodes list
+<br />
+2014-01-16 16:53:13,873 cluster.py:727 - DEBUG - returning self._nodes
+<br />
+= [&lt;Node: master (i-7950f657)&gt;, &lt;Node: node001 (i-7a50f654)&gt;]
+<br />
+2014-01-16 16:53:14,063 cluster.py:711 - DEBUG - existing nodes:
+<br />
+{u'i-7a50f654': &lt;Node: node001 (i-7a50f654)&gt;, u'i-7950f657': &lt;Node:
+<br />
+master (i-7950f657)&gt;}
+<br />
+2014-01-16 16:53:14,064 cluster.py:714 - DEBUG - updating existing
+<br />
+node i-7a50f654 in self._nodes
+<br />
+2014-01-16 16:53:14,064 cluster.py:714 - DEBUG - updating existing
+<br />
+node i-7950f657 in self._nodes
+<br />
+2014-01-16 16:53:14,064 cluster.py:727 - DEBUG - returning self._nodes
+<br />
+= [&lt;Node: master (i-7950f657)&gt;, &lt;Node: node001 (i-7a50f654)&gt;]
+<br />
+2014-01-16 16:53:14,168 node.py:1039 - DEBUG - Using native OpenSSH client
+<br />
+2014-01-16 16:53:14,169 node.py:1050 - DEBUG - ssh_cmd: ssh -i
+<br />
+/home/rsignell/.ssh/mykey2.rsa
+<br />
+root_at_ec2-54-204-55-67.compute-1.amazonaws.com
+<br />
+Connection closed by 54.204.55.67
+<br />
+<br /><br />I didn't see any &quot;common problems&quot; or &quot;troubleshooting&quot; sections in
+<br />
+the starcluster documentation, and I checked the FAQ and the mailing
+<br />
+list archives, but I probably overlooked something, as this certainly
+<br />
+seems like a newbie question (which I am).
+<br />
+<br />Thanks,
+<br />
+Rich
+<br />
+<pre>
+-- 
+Dr. Richard P. Signell   (508) 457-2229
+USGS, 384 Woods Hole Rd.
+Woods Hole, MA 02543-1598
+</pre>
+<span id="received"><dfn>Received on</dfn> Thu Jan 16 2014 - 16:55:21 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2032.html#start2032">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2033.html" title="Next message in the list">Rayson Ho: "Re:  &#0034;connection closed&#0034; when running &#0034;starcluster ssmaster&#0034;"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2031.html" title="Previous message in the list">Shmuel Link: "Re:  openmpi libraries in starcluster AMIs"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="2033.html" title="Next message in this discussion thread">Rayson Ho: "Re:  &#0034;connection closed&#0034; when running &#0034;starcluster ssmaster&#0034;"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="2033.html" title="Message sent in reply to this message">Rayson Ho: "Re:  &#0034;connection closed&#0034; when running &#0034;starcluster ssmaster&#0034;"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2032" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2032" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2032" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2032" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

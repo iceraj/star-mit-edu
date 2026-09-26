@@ -1,0 +1,142 @@
+---------- CRASH DETAILS ----------
+COMMAND: starcluster start admin5-1
+2013-02-13 17:02:18,366 PID: 14394 config.py:551 - DEBUG - Loading config
+2013-02-13 17:02:18,367 PID: 14394 config.py:118 - DEBUG - Loading file: /root/.starcluster/config
+2013-02-13 17:02:18,367 PID: 14394 config.py:118 - DEBUG - Loading file: /root/.starcluster/config
+2013-02-13 17:02:18,368 PID: 14394 config.py:118 - DEBUG - Loading file: /root/.starcluster/easy_cluster
+2013-02-13 17:02:18,379 PID: 14394 awsutils.py:54 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'proxy_user': None, 'proxy_pass': None, 'proxy_port': None, 'proxy': None, 'is_secure': True, 'path': '/', 'region': None, 'port': None}
+2013-02-13 17:02:18,597 PID: 14394 start.py:176 - INFO - Using default cluster template: easy_cluster
+2013-02-13 17:02:18,598 PID: 14394 cluster.py:1539 - INFO - Validating cluster template settings...
+2013-02-13 17:02:19,002 PID: 14394 cluster.py:926 - DEBUG - Launch map: node001 (ami: ami-899d49e0, type: t1.micro)...
+2013-02-13 17:02:19,002 PID: 14394 cluster.py:1555 - INFO - Cluster template settings are valid
+2013-02-13 17:02:19,002 PID: 14394 cluster.py:1427 - INFO - Starting cluster...
+2013-02-13 17:02:19,003 PID: 14394 cluster.py:952 - INFO - Launching a 2-node cluster...
+2013-02-13 17:02:19,003 PID: 14394 cluster.py:926 - DEBUG - Launch map: node001 (ami: ami-899d49e0, type: t1.micro)...
+2013-02-13 17:02:19,003 PID: 14394 cluster.py:1004 - INFO - Launching master node (ami: ami-899d49e0, type: t1.micro)...
+2013-02-13 17:02:19,070 PID: 14394 awsutils.py:165 - INFO - Creating security group @sc-admin5-1...
+2013-02-13 17:02:20,588 PID: 14394 cluster.py:772 - INFO - Reservation:r-c4c4d9bf
+2013-02-13 17:02:20,588 PID: 14394 cluster.py:926 - DEBUG - Launch map: node001 (ami: ami-899d49e0, type: t1.micro)...
+2013-02-13 17:02:20,588 PID: 14394 cluster.py:1024 - INFO - Launching node001 (ami: ami-899d49e0, type: t1.micro)
+2013-02-13 17:02:20,805 PID: 14394 cluster.py:772 - INFO - SpotInstanceRequest:sir-c4e6cc14
+2013-02-13 17:02:20,806 PID: 14394 cluster.py:1235 - INFO - Waiting for cluster to come up... (updating every 30s)
+2013-02-13 17:02:21,095 PID: 14394 cluster.py:664 - DEBUG - existing nodes: {}
+2013-02-13 17:02:21,095 PID: 14394 cluster.py:672 - DEBUG - adding node i-758d8205 to self._nodes list
+2013-02-13 17:02:21,430 PID: 14394 cluster.py:680 - DEBUG - returning self._nodes = [<Node: master (i-758d8205)>]
+2013-02-13 17:02:21,430 PID: 14394 cluster.py:1193 - INFO - Waiting for all nodes to be in a 'running' state...
+2013-02-13 17:02:21,526 PID: 14394 cluster.py:664 - DEBUG - existing nodes: {u'i-758d8205': <Node: master (i-758d8205)>}
+2013-02-13 17:02:21,527 PID: 14394 cluster.py:667 - DEBUG - updating existing node i-758d8205 in self._nodes
+2013-02-13 17:02:21,527 PID: 14394 cluster.py:680 - DEBUG - returning self._nodes = [<Node: master (i-758d8205)>]
+2013-02-13 17:02:51,990 PID: 14394 cluster.py:664 - DEBUG - existing nodes: {u'i-758d8205': <Node: master (i-758d8205)>}
+2013-02-13 17:02:51,990 PID: 14394 cluster.py:667 - DEBUG - updating existing node i-758d8205 in self._nodes
+2013-02-13 17:02:51,991 PID: 14394 cluster.py:680 - DEBUG - returning self._nodes = [<Node: master (i-758d8205)>]
+2013-02-13 17:02:51,991 PID: 14394 cluster.py:1211 - INFO - Waiting for SSH to come up on all nodes...
+2013-02-13 17:02:52,110 PID: 14394 cluster.py:664 - DEBUG - existing nodes: {u'i-758d8205': <Node: master (i-758d8205)>}
+2013-02-13 17:02:52,110 PID: 14394 cluster.py:667 - DEBUG - updating existing node i-758d8205 in self._nodes
+2013-02-13 17:02:52,111 PID: 14394 cluster.py:680 - DEBUG - returning self._nodes = [<Node: master (i-758d8205)>]
+2013-02-13 17:02:52,230 PID: 14394 __init__.py:75 - DEBUG - loading private key /root/.ssh/<scratch>.pem
+2013-02-13 17:02:52,231 PID: 14394 __init__.py:82 - DEBUG - specified key does not end in either rsa or dsa, trying both
+2013-02-13 17:02:52,234 PID: 14394 __init__.py:167 - DEBUG - Using private key /root/.ssh/<scratched>.pem (rsa)
+2013-02-13 17:02:52,235 PID: 14394 __init__.py:97 - DEBUG - connecting to host ec2-54-234-97-248.compute-1.amazonaws.com on port 22 as user root
+2013-02-13 17:03:26,396 PID: 14394 cluster.py:664 - DEBUG - existing nodes: {u'i-758d8205': <Node: master (i-758d8205)>}
+2013-02-13 17:03:26,401 PID: 14394 cluster.py:667 - DEBUG - updating existing node i-758d8205 in self._nodes
+2013-02-13 17:03:26,401 PID: 14394 cluster.py:680 - DEBUG - returning self._nodes = [<Node: master (i-758d8205)>]
+2013-02-13 17:03:26,516 PID: 14394 __init__.py:97 - DEBUG - connecting to host ec2-54-234-97-248.compute-1.amazonaws.com on port 22 as user root
+2013-02-13 17:03:56,740 PID: 14394 cluster.py:664 - DEBUG - existing nodes: {u'i-758d8205': <Node: master (i-758d8205)>}
+2013-02-13 17:03:56,741 PID: 14394 cluster.py:667 - DEBUG - updating existing node i-758d8205 in self._nodes
+2013-02-13 17:03:56,743 PID: 14394 cluster.py:680 - DEBUG - returning self._nodes = [<Node: master (i-758d8205)>]
+2013-02-13 17:03:56,860 PID: 14394 __init__.py:97 - DEBUG - connecting to host ec2-54-234-97-248.compute-1.amazonaws.com on port 22 as user root
+2013-02-13 17:03:57,212 PID: 14394 __init__.py:186 - DEBUG - creating sftp connection
+2013-02-13 17:03:57,927 PID: 14394 utils.py:93 - INFO - Waiting for cluster to come up took 1.619 mins
+2013-02-13 17:03:57,927 PID: 14394 cluster.py:1454 - INFO - The master node is ec2-54-234-97-248.compute-1.amazonaws.com
+2013-02-13 17:03:57,928 PID: 14394 cluster.py:1455 - INFO - Setting up the cluster...
+2013-02-13 17:03:58,000 PID: 14394 cluster.py:664 - DEBUG - existing nodes: {u'i-758d8205': <Node: master (i-758d8205)>}
+2013-02-13 17:03:58,001 PID: 14394 cluster.py:667 - DEBUG - updating existing node i-758d8205 in self._nodes
+2013-02-13 17:03:58,001 PID: 14394 cluster.py:680 - DEBUG - returning self._nodes = [<Node: master (i-758d8205)>]
+2013-02-13 17:03:58,004 PID: 14394 clustersetup.py:90 - INFO - Configuring hostnames...
+2013-02-13 17:03:58,034 PID: 14394 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-13 17:03:59,140 PID: 14394 clustersetup.py:154 - INFO - Creating cluster user: None (uid: 1001, gid: 1001)
+2013-02-13 17:03:59,141 PID: 14394 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-13 17:03:59,144 PID: 14394 clustersetup.py:171 - DEBUG - user sgeadmin does not exist, creating...
+2013-02-13 17:04:00,142 PID: 14394 clustersetup.py:200 - INFO - Configuring scratch space for user(s): sgeadmin
+2013-02-13 17:04:00,144 PID: 14394 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-13 17:04:01,145 PID: 14394 clustersetup.py:209 - INFO - Configuring /etc/hosts on each node
+2013-02-13 17:04:01,146 PID: 14394 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-13 17:04:01,151 PID: 14394 __init__.py:284 - DEBUG - new /etc/hosts after removing regex (master) matches:
+127.0.0.1 ubuntu
+
+# The following lines are desirable for IPv6 capable hosts
+::1 ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+ff02::3 ip6-allhosts
+# Added by cloud-init
+127.0.1.1	domU-12-31-39-09-CD-4F.compute-1.internal domU-12-31-39-09-CD-4F
+
+2013-02-13 17:04:02,146 PID: 14394 node.py:606 - INFO - Starting NFS server on master
+2013-02-13 17:04:02,168 PID: 14394 __init__.py:543 - DEBUG - Rather than invoking init scripts through /etc/init.d, use the service(8)
+2013-02-13 17:04:02,168 PID: 14394 __init__.py:543 - DEBUG - utility, e.g. service portmap start
+2013-02-13 17:04:02,169 PID: 14394 __init__.py:543 - DEBUG - 
+2013-02-13 17:04:02,169 PID: 14394 __init__.py:543 - DEBUG - Since the script you are attempting to invoke has been converted to an
+2013-02-13 17:04:02,169 PID: 14394 __init__.py:543 - DEBUG - Upstart job, you may also use the start(8) utility, e.g. start portmap
+2013-02-13 17:04:02,245 PID: 14394 __init__.py:540 - DEBUG - command 'mount -t rpc_pipefs sunrpc /var/lib/nfs/rpc_pipefs/' failed with status 32
+2013-02-13 17:04:02,245 PID: 14394 __init__.py:543 - DEBUG - mount: unknown filesystem type 'rpc_pipefs'
+2013-02-13 17:04:02,430 PID: 14394 __init__.py:543 - DEBUG - * Exporting directories for NFS kernel daemon...
+2013-02-13 17:04:02,431 PID: 14394 __init__.py:543 - DEBUG - ...done.
+2013-02-13 17:04:02,431 PID: 14394 __init__.py:543 - DEBUG - * Starting NFS kernel daemon
+2013-02-13 17:04:02,431 PID: 14394 __init__.py:543 - DEBUG - ...done.
+2013-02-13 17:04:02,431 PID: 14394 __init__.py:543 - DEBUG - exportfs: scandir /etc/exports.d: No such file or directory
+2013-02-13 17:04:02,431 PID: 14394 __init__.py:543 - DEBUG - 
+2013-02-13 17:04:02,505 PID: 14394 __init__.py:543 - DEBUG - exportfs: scandir /etc/exports.d: No such file or directory
+2013-02-13 17:04:02,505 PID: 14394 __init__.py:543 - DEBUG - 
+2013-02-13 17:04:02,505 PID: 14394 utils.py:93 - INFO - Setting up NFS took 0.006 mins
+2013-02-13 17:04:02,506 PID: 14394 clustersetup.py:221 - INFO - Configuring passwordless ssh for root
+2013-02-13 17:04:02,552 PID: 14394 threadpool.py:123 - INFO - Shutting down threads...
+2013-02-13 17:04:02,553 PID: 14394 threadpool.py:135 - DEBUG - unfinished_tasks = 20
+2013-02-13 17:04:03,670 PID: 14394 cli.py:287 - DEBUG - Traceback (most recent call last):
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.93.3-py2.6.egg/starcluster/cli.py", line 255, in main
+    sc.execute(args)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.93.3-py2.6.egg/starcluster/commands/start.py", line 194, in execute
+    validate_running=validate_running)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.93.3-py2.6.egg/starcluster/cluster.py", line 1414, in start
+    return self._start(create=create, create_only=create_only)
+  File "<string>", line 2, in _start
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.93.3-py2.6.egg/starcluster/utils.py", line 87, in wrap_f
+    res = func(*arg, **kargs)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.93.3-py2.6.egg/starcluster/cluster.py", line 1437, in _start
+    self.setup_cluster()
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.93.3-py2.6.egg/starcluster/cluster.py", line 1446, in setup_cluster
+    self._setup_cluster()
+  File "<string>", line 2, in _setup_cluster
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.93.3-py2.6.egg/starcluster/utils.py", line 87, in wrap_f
+    res = func(*arg, **kargs)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.93.3-py2.6.egg/starcluster/cluster.py", line 1460, in _setup_cluster
+    self.cluster_shell, self.volumes)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.93.3-py2.6.egg/starcluster/clustersetup.py", line 350, in run
+    self._setup_passwordless_ssh()
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.93.3-py2.6.egg/starcluster/clustersetup.py", line 225, in _setup_passwordless_ssh
+    auth_conn_key=True)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.93.3-py2.6.egg/starcluster/node.py", line 420, in generate_key_for_user
+    key = self.ssh.generate_rsa_key()
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.93.3-py2.6.egg/starcluster/sshutils/__init__.py", line 200, in generate_rsa_key
+    return ssh.RSAKey.generate(2048)
+  File "/usr/lib/python2.6/site-packages/ssh-1.7.13-py2.6.egg/ssh/rsakey.py", line 140, in generate
+    rsa = RSA.generate(bits, rng.read, progress_func)
+  File "/usr/lib64/python2.6/site-packages/Crypto/PublicKey/RSA.py", line 508, in generate
+    obj = _RSA.generate_py(bits, rf, progress_func, e)    # TODO: Don't use legacy _RSA module
+  File "/usr/lib64/python2.6/site-packages/Crypto/PublicKey/_RSA.py", line 50, in generate_py
+    p = pubkey.getStrongPrime(bits>>1, obj.e, 1e-12, randfunc)
+  File "/usr/lib64/python2.6/site-packages/Crypto/Util/number.py", line 264, in getStrongPrime
+    return _fastmath.getStrongPrime(long(N), long(e), false_positive_prob,
+AttributeError: 'module' object has no attribute 'getStrongPrime'
+
+---------- SYSTEM INFO ----------
+StarCluster: 0.93.3
+Python: 2.6.6 (r266:84292, Sep 11 2012, 08:34:23)  [GCC 4.4.6 20120305 (Red Hat 4.4.6-4)]
+Platform: Linux-2.6.32-279.14.1.el6.x86_64-x86_64-with-centos-6.3-Final
+boto: 2.3.0
+ssh: 1.7.13
+Crypto: 2.6
+jinja2: 2.6
+decorator: 3.3.1

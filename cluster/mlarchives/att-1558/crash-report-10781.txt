@@ -1,0 +1,52 @@
+---------- SYSTEM INFO ----------
+StarCluster: 0.9999
+Python: 2.6.8 (unknown, Sep 17 2012, 03:13:50)  [GCC 4.6.2 20111027 (Red Hat 4.6.2-1)]
+Platform: Linux-3.2.21-1.32.6.amzn1.x86_64-x86_64-with-glibc2.2.5
+boto: 2.6.0
+paramiko: 1.9.0
+Crypto: 2.6
+
+---------- CRASH DETAILS ----------
+Command: starcluster resizevolume vol-3da35c42 20
+
+2012-12-05 19:38:52,934 PID: 10781 config.py:551 - DEBUG - Loading config
+2012-12-05 19:38:52,934 PID: 10781 config.py:120 - DEBUG - Loading file: /home/ec2-user/.starcluster/config
+2012-12-05 19:38:52,936 PID: 10781 awsutils.py:55 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'proxy_user': None, 'proxy_pass': None, 'proxy_port': None, 'proxy': None, 'is_secure': True, 'path': '/', 'region': None, 'port': None}
+2012-12-05 19:38:53,162 PID: 10781 createvolume.py:74 - INFO - No keypair specified, picking one from config...
+2012-12-05 19:38:53,224 PID: 10781 createvolume.py:80 - INFO - Using keypair: 11702
+2012-12-05 19:38:53,449 PID: 10781 cluster.py:638 - DEBUG - existing nodes: {}
+2012-12-05 19:38:53,450 PID: 10781 cluster.py:654 - DEBUG - returning self._nodes = []
+2012-12-05 19:38:53,631 PID: 10781 awsutils.py:166 - INFO - Creating security group @sc-volumecreator...
+2012-12-05 19:38:54,879 PID: 10781 volume.py:77 - INFO - No instance in group @sc-volumecreator for zone us-east-1a, launching one now.
+2012-12-05 19:38:55,344 PID: 10781 cluster.py:759 - INFO - Reservation:r-dda5b9a4
+2012-12-05 19:38:55,344 PID: 10781 cluster.py:1233 - INFO - Waiting for volume host to come up... (updating every 30s)
+2012-12-05 19:38:55,601 PID: 10781 cluster.py:638 - DEBUG - existing nodes: {}
+2012-12-05 19:38:55,601 PID: 10781 cluster.py:646 - DEBUG - adding node i-6e0ff610 to self._nodes list
+2012-12-05 19:38:55,997 PID: 10781 cluster.py:654 - DEBUG - returning self._nodes = [<Node: volhost-us-east-1a (i-6e0ff610)>]
+2012-12-05 19:38:55,998 PID: 10781 cluster.py:1201 - INFO - Waiting for all nodes to be in a 'running' state...
+2012-12-05 19:38:56,073 PID: 10781 cluster.py:638 - DEBUG - existing nodes: {u'i-6e0ff610': <Node: volhost-us-east-1a (i-6e0ff610)>}
+2012-12-05 19:38:56,074 PID: 10781 cluster.py:641 - DEBUG - updating existing node i-6e0ff610 in self._nodes
+2012-12-05 19:38:56,074 PID: 10781 cluster.py:654 - DEBUG - returning self._nodes = [<Node: volhost-us-east-1a (i-6e0ff610)>]
+2012-12-05 19:39:26,308 PID: 10781 cluster.py:638 - DEBUG - existing nodes: {u'i-6e0ff610': <Node: volhost-us-east-1a (i-6e0ff610)>}
+2012-12-05 19:39:26,309 PID: 10781 cluster.py:641 - DEBUG - updating existing node i-6e0ff610 in self._nodes
+2012-12-05 19:39:26,309 PID: 10781 cluster.py:654 - DEBUG - returning self._nodes = [<Node: volhost-us-east-1a (i-6e0ff610)>]
+2012-12-05 19:39:26,309 PID: 10781 cluster.py:1219 - INFO - Waiting for SSH to come up on all nodes...
+2012-12-05 19:39:26,382 PID: 10781 cluster.py:638 - DEBUG - existing nodes: {u'i-6e0ff610': <Node: volhost-us-east-1a (i-6e0ff610)>}
+2012-12-05 19:39:26,382 PID: 10781 cluster.py:641 - DEBUG - updating existing node i-6e0ff610 in self._nodes
+2012-12-05 19:39:26,382 PID: 10781 cluster.py:654 - DEBUG - returning self._nodes = [<Node: volhost-us-east-1a (i-6e0ff610)>]
+2012-12-05 19:39:26,387 PID: 10781 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2012-12-05 19:39:26,453 PID: 10781 __init__.py:67 - DEBUG - loading private key /home/ec2-user/.ssh/rsa-11702
+2012-12-05 19:39:26,454 PID: 10781 __init__.py:159 - DEBUG - Using private key /home/ec2-user/.ssh/rsa-11702 (rsa)
+2012-12-05 19:39:26,454 PID: 10781 __init__.py:89 - DEBUG - connecting to host ec2-23-22-123-79.compute-1.amazonaws.com on port 22 as user root
+2012-12-05 19:39:27,354 PID: 10781 cli.py:288 - ERROR - Unhandled exception occured
+Traceback (most recent call last):
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/cli.py", line 257, in main
+    sc.execute(args)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/commands/resizevolume.py", line 86, in execute
+    new_volid = vc.resize(vol, size, dest_zone=self.opts.dest_zone)
+  File "<string>", line 2, in resize
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/utils.py", line 91, in wrap_f
+    res = func(*arg, **kargs)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/volume.py", line 353, in resize
+    snap = self._snapshot
+AttributeError: 'VolumeCreator' object has no attribute '_snapshot'

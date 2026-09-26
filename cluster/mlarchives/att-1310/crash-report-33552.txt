@@ -1,0 +1,26 @@
+---------- CRASH DETAILS ----------
+COMMAND: starcluster help start
+2012-07-06 20:46:17,877 PID: 33552 config.py:551 - DEBUG - Loading config
+2012-07-06 20:46:17,877 PID: 33552 config.py:118 - DEBUG - Loading file: /Users/mcdonald/.starcluster/config
+2012-07-06 20:46:17,919 PID: 33552 cli.py:287 - DEBUG - Traceback (most recent call last):
+  File "/Users/mcdonald/lib/python2.7/site-packages/StarCluster-0.93.3-py2.7.egg/starcluster/cli.py", line 255, in main
+    sc.execute(args)
+  File "/Users/mcdonald/lib/python2.7/site-packages/StarCluster-0.93.3-py2.7.egg/starcluster/commands/help.py", line 21, in execute
+    sc.addopts(lparser)
+  File "/Users/mcdonald/lib/python2.7/site-packages/StarCluster-0.93.3-py2.7.egg/starcluster/commands/start.py", line 39, in addopts
+    if self.cfg:
+  File "/Users/mcdonald/lib/python2.7/site-packages/StarCluster-0.93.3-py2.7.egg/starcluster/commands/base.py", line 77, in cfg
+    self._cfg = self.goptions_dict.get('CONFIG')
+  File "/Users/mcdonald/lib/python2.7/site-packages/StarCluster-0.93.3-py2.7.egg/starcluster/commands/base.py", line 46, in goptions_dict
+    return dict(self.gopts.__dict__)
+AttributeError: 'NoneType' object has no attribute '__dict__'
+
+---------- SYSTEM INFO ----------
+StarCluster: 0.93.3
+Python: 2.7.2 (default, Mar 23 2012, 13:31:52)  [GCC 4.2.1 (Based on Apple Inc. build 5658) (LLVM build 2336.9.00)]
+Platform: Darwin-11.3.0-x86_64-i386-64bit
+boto: 2.3.0
+ssh: 1.7.13
+Crypto: 2.5
+jinja2: 2.6
+decorator: 3.3.1

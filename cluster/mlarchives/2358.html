@@ -1,0 +1,221 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Ramon Ramirez-Linan ((no email))" />
+<meta name="Subject" content="stopping the cluster makes dismounts all EBS volumes" />
+<title>starcluster.mbox.out: stopping the cluster makes dismounts all EBS volumes</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">stopping the cluster makes dismounts all EBS volumes</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>stopping the cluster makes dismounts all EBS volumes</h1>
+<!-- received="Thu Sep 18 10:22:49 2014" -->
+<!-- isoreceived="20140918142249" -->
+<!-- sent="Thu, 18 Sep 2014 10:21:39 -0400" -->
+<!-- isosent="20140918142139" -->
+<!-- name="Ramon Ramirez-Linan" -->
+<!-- email="(no email)" -->
+<!-- subject="stopping the cluster makes dismounts all EBS volumes" -->
+<!-- id="CAFLaOSacbHEWmepSkPm3CWkCWnz-cuXE=Yz1mjsLnr8mo_3B0Q_at_mail.gmail.com" -->
+<!-- charset="UTF-8" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2358.html#start2358" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2358.html#options2">top</a>, <a href="2358.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2359.html" accesskey="d" title="Rayson Ho: &quot;Re:  Changing iinstance type for everynode in the cluster&quot;">Next message</a> ]
+[ <a href="2357.html" title="MacMullan, Hugh: &quot;Re:  Changing iinstance type for everynode in the cluster&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="2361.html" accesskey="t" title="MacMullan, Hugh: &quot;Re:  stopping the cluster makes dismounts all EBS volumes&quot;">Next in thread</a> ]
+ [ <a href="2358.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2358" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2358" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2358" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2358" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Ramon Ramirez-Linan &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 18 Sep 2014 10:21:39 -0400</span><br />
+</address>
+<br />
+Hi,
+<br />
+<br />I have a cluster based on a custom AMI. The AMI has 2 EBS, the root one and
+<br />
+a 1TB one.
+<br />
+So each node in the cluster has this 1TB EBS volume with custom data that
+<br />
+is not shared.
+<br />
+<br />The problem is that whenever I stopped the cluster with starcluster stop
+<br />
+mycluster it dismounts the 1TB volumes and when i resume the cluster with
+<br />
+starcluster start -x mycluster it doesnt mount the 1TB volume back.
+<br />
+<br />Is there a way to tell Starcluster not to dismount the EBS when stopping?
+<br />
+<br />Thanks
+<br />
+<br />Ramon
+<br />
+<br /><br />[image: logo]
+<br />
+Navteca
+<br />
+Ramon Ramirez-Linan
+<br />
+C: 301.789.9139
+<br />
+O: 202.505.1553
+<br />
+*www.navteca.com &lt;<a href="http://www.navteca.com/">http://www.navteca.com/</a>&gt;*
+<br />
+<br />6301 Ivy Lane, Greenbelt, MD 20770
+<br />
+Suite 700
+<br />
+<br />[image: script]
+<br />
+[image: <a href="https://s3.amazonaws.com/www.navteca.com/img/certified.png">https://s3.amazonaws.com/www.navteca.com/img/certified.png</a>]
+<br />
+<br /><br />
+<br /><div>
+<p><img src="att-2358/image009.jpg" alt="image009.jpg" />
+<br />
+(image/jpeg attachment: <a href="att-2358/image009.jpg">image009.jpg</a>)</p>
+<!-- attachment="image009.jpg" -->
+<p><img src="att-2358/image010.jpg" alt="image010.jpg" />
+<br />
+(image/jpeg attachment: <a href="att-2358/image010.jpg">image010.jpg</a>)</p>
+<!-- attachment="image010.jpg" -->
+<p><img src="att-2358/image011.png" alt="image011.png" />
+<br />
+(image/png attachment: <a href="att-2358/image011.png">image011.png</a>)</p>
+<!-- attachment="image011.png" -->
+</div>
+<span id="received"><dfn>Received on</dfn> Thu Sep 18 2014 - 10:22:49 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2358.html#start2358">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2359.html" title="Next message in the list">Rayson Ho: "Re:  Changing iinstance type for everynode in the cluster"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2357.html" title="Previous message in the list">MacMullan, Hugh: "Re:  Changing iinstance type for everynode in the cluster"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="2361.html" title="Next message in this discussion thread">MacMullan, Hugh: "Re:  stopping the cluster makes dismounts all EBS volumes"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="2361.html" title="Message sent in reply to this message">MacMullan, Hugh: "Re:  stopping the cluster makes dismounts all EBS volumes"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2358" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2358" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2358" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2358" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

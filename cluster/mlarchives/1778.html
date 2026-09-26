@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Jacob Barhak ((no email))" />
+<meta name="Subject" content="Star cluster issues when running MIST over the cloud" />
+<title>starcluster.mbox.out: Star cluster issues when running MIST over the cloud</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Star cluster issues when running MIST over the cloud</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Star cluster issues when running MIST over the cloud</h1>
+<!-- received="Sun Jul 21 01:40:35 2013" -->
+<!-- isoreceived="20130721054035" -->
+<!-- sent="Sun, 21 Jul 2013 00:40:19 -0500" -->
+<!-- isosent="20130721054019" -->
+<!-- name="Jacob Barhak" -->
+<!-- email="(no email)" -->
+<!-- subject="Star cluster issues when running MIST over the cloud" -->
+<!-- id="AE78B78C-17B5-43C0-A191-25CEB8ECE700_at_gmail.com" -->
+<!-- charset="utf-8" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1778.html#start1778" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1778.html#options2">top</a>, <a href="1778.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1779.html" accesskey="d" title="Abhimanyu Dubey: &quot;Starcluster error message&quot;">Next message</a> ]
+[ <a href="1777.html" title="Sergio Mafra: &quot;(no subject)&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="1780.html" accesskey="t" title="Rayson Ho: &quot;Re:  Star cluster issues when running MIST over the cloud&quot;">Next in thread</a> ]
+ [ <a href="1778.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1778" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1778" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1778" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1778" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Jacob Barhak &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Sun, 21 Jul 2013 00:40:19 -0500</span><br />
+</address>
+<br />
+Hello,
+<br />
+<br />First, thank you for releasing such a useful tool as Star Cluster. 
+<br />
+<br />I just started using it not long ago and have several issues. If you can find the time to help me I will appreciate it. 
+<br />
+<br />1. Sometime starcluster is unable to properly connect the instances on the start command and cannot mount /home. It happened once when I asked for 5 m1.small machines and when I terminated this cluster and started again things went fine. Is this intermittent due to cloud traffic or is this a bug? Is there a way for me to check why? 
+<br />
+<br />2.  After launching 20 c1.xlarge machines and running about 2500 jobs, each about 5 minutes long, I encountered a problem after and hour or so. It seems that SGE stopped sending jobs from to the queue to the instances. No error was found and the queue showed about 850 pending jobs. This did not change for a while and I could not find any failure with qstat or qhost. No jobs were running on any nodes and I waited a while for these to start without success. I tried the same thing again after a few hours and it seems that the cluster stops sending jobs from the queue after about 1600 jobs have been submitted. This does not happen when SGE is installed on a single Ubuntu machine I have at home. I am trying to figure out what is wrong. Did you impose some limit on the number of jobs? Can this be fixed? I really need to submit many jobs - tens of thousands jobs in my full runs. This one was relatively small and still did not pass. 
+<br />
+<br />3. I tried to start Star Cluster with 50 nodes and got an error about exceeding a quota of 20. Is it your quota or Amazon quota? Are there any other restrictions I should be aware of at the beginning? Also after the system is unable start the cluster it thinks it is still running and a terminate command is needed before another start can be issued - even though nothing got started. 
+<br />
+<br />This all happened on us-west-2 with the help of star cluster 0.93.3 and the Anaconda AMI - ami-a4d64194
+<br />
+<br />Here is some more information on what I am doing to help you answer the above. 
+<br />
+<br />I am running Monte Carlo simulations to simulate chronic disease progression. I am using MIST to run over the cloud:
+<br />
+<br /><a href="https://github.com/scipy/scipy2013_talks/blob/master/talks/jacob_barhak/readme.md">https://github.com/scipy/scipy2013_talks/blob/master/talks/jacob_barhak/readme.md</a>
+<br />
+<br />The Reference Model is what I am running using MIST:
+<br />
+<br /><a href="http://youtu.be/7qxPSgINaD8">http://youtu.be/7qxPSgINaD8</a>
+<br />
+<br />I am launching many simulations in parallel and it takes me days on a single 8 core machine. The cloud allows me to cut down this time to hours. This is why star cluster is so useful. In the past I did this over other clusters yet the cloud is still new to me. 
+<br />
+<br />I will appreciate any recommendations I can get from you to improve the behaviors I am experiencing. 
+<br />
+<br /><pre>
+--
+Jacob Barhak Ph.D.
+<a href="http://sites.google.com/site/jacobbarhak/">http://sites.google.com/site/jacobbarhak/</a>
+Sent from my iPhone
+</pre>
+<span id="received"><dfn>Received on</dfn> Sun Jul 21 2013 - 01:40:35 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1778.html#start1778">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1779.html" title="Next message in the list">Abhimanyu Dubey: "Starcluster error message"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1777.html" title="Previous message in the list">Sergio Mafra: "(no subject)"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1780.html" title="Next message in this discussion thread">Rayson Ho: "Re:  Star cluster issues when running MIST over the cloud"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1780.html" title="Message sent in reply to this message">Rayson Ho: "Re:  Star cluster issues when running MIST over the cloud"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1778" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1778" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1778" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1778" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

@@ -1,0 +1,216 @@
+---------- SYSTEM INFO ----------
+StarCluster: 0.9999
+Python: 2.7.3 (default, Apr 10 2013, 06:20:15)  [GCC 4.6.3]
+Platform: Linux-3.5.0-39-generic-x86_64-with-Ubuntu-12.04-precise
+boto: 2.10.0
+paramiko: 1.11.0
+Crypto: 2.4.1
+
+---------- CRASH DETAILS ----------
+Command: starcluster addnode -n 1 mycluster
+
+2013-09-02 17:46:49,407 PID: 3785 config.py:567 - DEBUG - Loading config
+2013-09-02 17:46:49,407 PID: 3785 config.py:138 - DEBUG - Loading file: /home/kli/.starcluster/config
+2013-09-02 17:46:49,410 PID: 3785 config.py:138 - DEBUG - Loading file: /home/kli/.starcluster/config
+2013-09-02 17:46:49,410 PID: 3785 config.py:138 - DEBUG - Loading file: /home/kli/.starcluster/awscreds
+2013-09-02 17:46:49,414 PID: 3785 awsutils.py:74 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'proxy_user': None, 'proxy_pass': None, 'proxy_port': None, 'proxy': None, 'is_secure': True, 'path': '/', 'region': None, 'validate_certs': True, 'port': None}
+2013-09-02 17:46:55,947 PID: 3785 cluster.py:710 - DEBUG - existing nodes: {}
+2013-09-02 17:46:55,948 PID: 3785 cluster.py:718 - DEBUG - adding node i-74295818 to self._nodes list
+2013-09-02 17:46:55,948 PID: 3785 cluster.py:726 - DEBUG - returning self._nodes = [<Node: master (i-74295818)>]
+2013-09-02 17:46:56,648 PID: 3785 cluster.py:2038 - WARNING - Unable to validate imported keypair fingerprint...
+2013-09-02 17:46:56,894 PID: 3785 cluster.py:710 - DEBUG - existing nodes: {u'i-74295818': <Node: master (i-74295818)>}
+2013-09-02 17:46:56,894 PID: 3785 cluster.py:713 - DEBUG - updating existing node i-74295818 in self._nodes
+2013-09-02 17:46:56,895 PID: 3785 cluster.py:726 - DEBUG - returning self._nodes = [<Node: master (i-74295818)>]
+2013-09-02 17:46:57,134 PID: 3785 cluster.py:710 - DEBUG - existing nodes: {u'i-74295818': <Node: master (i-74295818)>}
+2013-09-02 17:46:57,134 PID: 3785 cluster.py:713 - DEBUG - updating existing node i-74295818 in self._nodes
+2013-09-02 17:46:57,135 PID: 3785 cluster.py:726 - DEBUG - returning self._nodes = [<Node: master (i-74295818)>]
+2013-09-02 17:46:57,135 PID: 3785 cluster.py:859 - DEBUG - Highest node number is 0. choosing 1.
+2013-09-02 17:46:57,135 PID: 3785 cluster.py:901 - INFO - Launching node(s): node001
+2013-09-02 17:46:57,167 PID: 3785 cluster.py:800 - DEBUG - Userdata size in KB: 0.71
+2013-09-02 17:46:57,657 PID: 3785 cluster.py:800 - DEBUG - Userdata size in KB: 0.71
+2013-09-02 17:46:58,380 PID: 3785 cluster.py:846 - INFO - SpotInstanceRequest:sir-d5909034
+2013-09-02 17:46:58,380 PID: 3785 utils.py:624 - INFO - Waiting for spot requests to propagate...
+2013-09-02 17:46:59,755 PID: 3785 cluster.py:1297 - INFO - Waiting for node(s) to come up... (updating every 30s)
+2013-09-02 17:47:00,035 PID: 3785 cluster.py:1234 - INFO - Waiting for open spot requests to become active...
+2013-09-02 17:50:32,091 PID: 3785 utils.py:624 - INFO - Waiting for instances to propagate...
+2013-09-02 17:50:33,481 PID: 3785 cluster.py:1254 - INFO - Waiting for all nodes to be in a 'running' state...
+2013-09-02 17:50:33,735 PID: 3785 cluster.py:710 - DEBUG - existing nodes: {u'i-74295818': <Node: master (i-74295818)>}
+2013-09-02 17:50:33,736 PID: 3785 cluster.py:713 - DEBUG - updating existing node i-74295818 in self._nodes
+2013-09-02 17:50:33,736 PID: 3785 cluster.py:718 - DEBUG - adding node i-39ef6956 to self._nodes list
+2013-09-02 17:50:34,678 PID: 3785 cluster.py:726 - DEBUG - returning self._nodes = [<Node: master (i-74295818)>, <Node: node001 (i-39ef6956)>]
+2013-09-02 17:51:04,957 PID: 3785 cluster.py:710 - DEBUG - existing nodes: {u'i-39ef6956': <Node: node001 (i-39ef6956)>, u'i-74295818': <Node: master (i-74295818)>}
+2013-09-02 17:51:04,958 PID: 3785 cluster.py:713 - DEBUG - updating existing node i-74295818 in self._nodes
+2013-09-02 17:51:04,958 PID: 3785 cluster.py:713 - DEBUG - updating existing node i-39ef6956 in self._nodes
+2013-09-02 17:51:04,959 PID: 3785 cluster.py:726 - DEBUG - returning self._nodes = [<Node: master (i-74295818)>, <Node: node001 (i-39ef6956)>]
+2013-09-02 17:51:04,959 PID: 3785 cluster.py:1282 - INFO - Waiting for SSH to come up on all nodes...
+2013-09-02 17:51:05,214 PID: 3785 cluster.py:710 - DEBUG - existing nodes: {u'i-39ef6956': <Node: node001 (i-39ef6956)>, u'i-74295818': <Node: master (i-74295818)>}
+2013-09-02 17:51:05,214 PID: 3785 cluster.py:713 - DEBUG - updating existing node i-74295818 in self._nodes
+2013-09-02 17:51:05,214 PID: 3785 cluster.py:713 - DEBUG - updating existing node i-39ef6956 in self._nodes
+2013-09-02 17:51:05,214 PID: 3785 cluster.py:726 - DEBUG - returning self._nodes = [<Node: master (i-74295818)>, <Node: node001 (i-39ef6956)>]
+2013-09-02 17:51:05,222 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-09-02 17:51:05,475 PID: 3785 __init__.py:86 - DEBUG - loading private key /home/kli/.ssh/kli_rsa
+2013-09-02 17:51:05,477 PID: 3785 __init__.py:178 - DEBUG - Using private key /home/kli/.ssh/kli_rsa (rsa)
+2013-09-02 17:51:05,477 PID: 3785 __init__.py:108 - DEBUG - connecting to host ec2-54-234-12-113.compute-1.amazonaws.com on port 22 as user root
+2013-09-02 17:51:06,223 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-09-02 17:51:06,651 PID: 3785 __init__.py:86 - DEBUG - loading private key /home/kli/.ssh/kli_rsa
+2013-09-02 17:51:06,651 PID: 3785 __init__.py:178 - DEBUG - Using private key /home/kli/.ssh/kli_rsa (rsa)
+2013-09-02 17:51:06,651 PID: 3785 __init__.py:108 - DEBUG - connecting to host ec2-184-72-186-133.compute-1.amazonaws.com on port 22 as user root
+2013-09-02 17:51:07,225 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-09-02 17:51:07,420 PID: 3785 __init__.py:197 - DEBUG - creating sftp connection
+2013-09-02 17:51:08,225 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2013-09-02 17:51:09,227 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2013-09-02 17:51:10,228 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2013-09-02 17:51:11,230 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2013-09-02 17:51:12,232 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2013-09-02 17:51:13,234 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2013-09-02 17:51:14,236 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2013-09-02 17:51:15,238 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2013-09-02 17:51:16,239 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2013-09-02 17:51:17,241 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2013-09-02 17:51:18,243 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2013-09-02 17:51:19,245 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2013-09-02 17:51:20,247 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2013-09-02 17:51:21,248 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2013-09-02 17:51:22,250 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2013-09-02 17:51:23,252 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2013-09-02 17:51:24,254 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2013-09-02 17:51:25,256 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2013-09-02 17:51:26,257 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2013-09-02 17:51:27,259 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2013-09-02 17:51:28,261 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2013-09-02 17:51:29,263 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2013-09-02 17:51:30,265 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2013-09-02 17:51:31,266 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2013-09-02 17:51:32,268 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2013-09-02 17:51:33,270 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2013-09-02 17:51:34,272 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2013-09-02 17:51:35,273 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2013-09-02 17:51:36,275 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2013-09-02 17:51:37,277 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2013-09-02 17:51:37,351 PID: 3785 __init__.py:108 - DEBUG - connecting to host ec2-184-72-186-133.compute-1.amazonaws.com on port 22 as user root
+2013-09-02 17:51:38,279 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2013-09-02 17:51:39,280 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2013-09-02 17:51:39,859 PID: 3785 __init__.py:197 - DEBUG - creating sftp connection
+2013-09-02 17:51:40,281 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2013-09-02 17:51:41,283 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2013-09-02 17:51:42,285 PID: 3785 utils.py:117 - INFO - Waiting for cluster to come up took 4.709 mins
+2013-09-02 17:51:42,286 PID: 3785 cluster.py:911 - DEBUG - Adding node(s): ['node001']
+2013-09-02 17:51:42,544 PID: 3785 cluster.py:710 - DEBUG - existing nodes: {u'i-39ef6956': <Node: node001 (i-39ef6956)>, u'i-74295818': <Node: master (i-74295818)>}
+2013-09-02 17:51:42,544 PID: 3785 cluster.py:713 - DEBUG - updating existing node i-74295818 in self._nodes
+2013-09-02 17:51:42,545 PID: 3785 cluster.py:713 - DEBUG - updating existing node i-39ef6956 in self._nodes
+2013-09-02 17:51:42,545 PID: 3785 cluster.py:726 - DEBUG - returning self._nodes = [<Node: master (i-74295818)>, <Node: node001 (i-39ef6956)>]
+2013-09-02 17:51:42,808 PID: 3785 cluster.py:710 - DEBUG - existing nodes: {u'i-39ef6956': <Node: node001 (i-39ef6956)>, u'i-74295818': <Node: master (i-74295818)>}
+2013-09-02 17:51:42,809 PID: 3785 cluster.py:713 - DEBUG - updating existing node i-74295818 in self._nodes
+2013-09-02 17:51:42,809 PID: 3785 cluster.py:713 - DEBUG - updating existing node i-39ef6956 in self._nodes
+2013-09-02 17:51:42,809 PID: 3785 cluster.py:726 - DEBUG - returning self._nodes = [<Node: master (i-74295818)>, <Node: node001 (i-39ef6956)>]
+2013-09-02 17:51:42,810 PID: 3785 cluster.py:1568 - INFO - Running plugin starcluster.clustersetup.DefaultClusterSetup
+2013-09-02 17:51:42,810 PID: 3785 clustersetup.py:121 - INFO - Configuring hostnames...
+2013-09-02 17:51:42,821 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2013-09-02 17:51:43,552 PID: 3785 __init__.py:538 - DEBUG - executing remote command: source /etc/profile && hostname -F /etc/hostname
+2013-09-02 17:51:43,732 PID: 3785 __init__.py:562 - DEBUG - output of 'source /etc/profile && hostname -F /etc/hostname':
+
+2013-09-02 17:51:43,823 PID: 3785 clustersetup.py:247 - INFO - Configuring /etc/hosts on each node
+2013-09-02 17:51:43,826 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-09-02 17:51:44,441 PID: 3785 __init__.py:296 - DEBUG - new /etc/hosts after removing regex (master|node001) matches:
+127.0.0.1 localhost
+
+# The following lines are desirable for IPv6 capable hosts
+::1 ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+ff02::3 ip6-allhosts
+10.164.101.139 node002
+10.164.101.142 node003
+10.155.145.111 node004
+10.166.0.52 node005
+10.167.1.188 node006
+10.167.1.132 node007
+10.145.206.205 node008
+10.164.97.8 node009
+10.154.146.85 node010
+10.154.146.153 node011
+10.155.145.120 node012
+10.155.145.80 node013
+10.164.101.135 node014
+10.179.11.97 node015
+10.179.16.150 node016
+10.167.1.96 node017
+10.179.16.215 node018
+10.166.3.55 node019
+
+2013-09-02 17:51:44,569 PID: 3785 __init__.py:296 - DEBUG - new /etc/hosts after removing regex (master|node001) matches:
+127.0.0.1 localhost
+
+# The following lines are desirable for IPv6 capable hosts
+::1 ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+ff02::3 ip6-allhosts
+
+2013-09-02 17:51:44,827 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-09-02 17:51:45,829 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-09-02 17:51:46,831 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-09-02 17:51:47,833 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-09-02 17:51:48,835 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2013-09-02 17:51:49,837 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2013-09-02 17:51:50,838 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2013-09-02 17:51:51,840 PID: 3785 node.py:660 - INFO - Configuring NFS exports path(s):
+/home
+2013-09-02 17:51:53,121 PID: 3785 __init__.py:538 - DEBUG - executing remote command: source /etc/profile && exportfs -fra
+2013-09-02 17:51:53,303 PID: 3785 __init__.py:562 - DEBUG - output of 'source /etc/profile && exportfs -fra':
+
+2013-09-02 17:51:53,304 PID: 3785 clustersetup.py:347 - INFO - Mounting all NFS export path(s) on 1 worker node(s)
+2013-09-02 17:51:53,305 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2013-09-02 17:51:53,471 PID: 3785 __init__.py:538 - DEBUG - executing remote command: source /etc/profile && /etc/init.d/portmap start
+2013-09-02 17:51:53,663 PID: 3785 __init__.py:562 - DEBUG - output of 'source /etc/profile && /etc/init.d/portmap start':
+Rather than invoking init scripts through /etc/init.d, use the service(8)
+utility, e.g. service portmap start
+
+Since the script you are attempting to invoke has been converted to an
+Upstart job, you may also use the start(8) utility, e.g. start portmap
+2013-09-02 17:51:53,829 PID: 3785 __init__.py:538 - DEBUG - executing remote command: source /etc/profile && mount -t devpts none /dev/pts
+2013-09-02 17:51:54,184 PID: 3785 __init__.py:559 - DEBUG - (ignored) remote command 'source /etc/profile && mount -t devpts none /dev/pts' failed with status 32:
+mount: none already mounted or /dev/pts busy
+mount: according to mtab, devpts is already mounted on /dev/pts
+2013-09-02 17:51:54,308 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2013-09-02 17:51:54,350 PID: 3785 __init__.py:538 - DEBUG - executing remote command: source /etc/profile && mount
+2013-09-02 17:51:54,707 PID: 3785 __init__.py:562 - DEBUG - output of 'source /etc/profile && mount':
+/dev/xvda1 on / type ext4 (rw)
+proc on /proc type proc (rw,noexec,nosuid,nodev)
+sysfs on /sys type sysfs (rw,noexec,nosuid,nodev)
+none on /sys/fs/fuse/connections type fusectl (rw)
+none on /sys/kernel/debug type debugfs (rw)
+none on /sys/kernel/security type securityfs (rw)
+udev on /dev type devtmpfs (rw,mode=0755)
+devpts on /dev/pts type devpts (rw,noexec,nosuid,gid=5,mode=0620)
+tmpfs on /run type tmpfs (rw,noexec,nosuid,size=10%,mode=0755)
+none on /run/lock type tmpfs (rw,noexec,nosuid,nodev,size=5242880)
+none on /run/shm type tmpfs (rw,nosuid,nodev)
+binfmt_misc on /proc/sys/fs/binfmt_misc type binfmt_misc (rw,noexec,nosuid,nodev)
+rpc_pipefs on /run/rpc_pipefs type rpc_pipefs (rw)
+2013-09-02 17:51:55,309 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2013-09-02 17:51:55,550 PID: 3785 __init__.py:296 - DEBUG - new /etc/fstab after removing regex ( /home ) matches:
+LABEL=cloudimg-rootfs	/	 ext4	defaults	0 0
+
+2013-09-02 17:51:56,311 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2013-09-02 17:51:57,153 PID: 3785 __init__.py:538 - DEBUG - executing remote command: source /etc/profile && mount /home
+2013-09-02 17:51:57,313 PID: 3785 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2013-09-02 17:51:58,315 PID: 3785 cluster.py:1578 - ERROR - Error occured while running plugin 'starcluster.clustersetup.DefaultClusterSetup':
+2013-09-02 17:51:58,316 PID: 3785 cli.py:284 - ERROR - error occurred in job (id=node001): remote command 'source /etc/profile && mount /home' failed with status 32:
+mount.nfs: access denied by server while mounting master:/home
+Traceback (most recent call last):
+  File "/home/kli/.local/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/threadpool.py", line 48, in run
+    job.run()
+  File "/home/kli/.local/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/threadpool.py", line 75, in run
+    r = self.method(*self.args, **self.kwargs)
+  File "/home/kli/.local/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/node.py", line 730, in mount_nfs_shares
+    self.ssh.execute('mount %s' % path)
+  File "/home/kli/.local/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/sshutils/__init__.py", line 555, in execute
+    msg, command, exit_status, out_str)
+RemoteCommandFailed: remote command 'source /etc/profile && mount /home' failed with status 32:
+mount.nfs: access denied by server while mounting master:/home
+

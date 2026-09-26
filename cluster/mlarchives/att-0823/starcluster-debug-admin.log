@@ -1,0 +1,546 @@
+PID: 2499 config.py:515 - DEBUG - Loading config
+PID: 2499 config.py:108 - DEBUG - Loading file: /home/admin/.starcluster/config
+PID: 2499 cli.py:87 - ERROR - config file /home/admin/.starcluster/config does not exist
+
+PID: 2499 exception.py:211 - INFO - Config template written to /home/admin/.starcluster/config. Please customize this file.
+PID: 5617 config.py:515 - DEBUG - Loading config
+PID: 5617 config.py:108 - DEBUG - Loading file: /home/admin/.starcluster/config
+PID: 5617 config.py:515 - DEBUG - Loading config
+PID: 5617 config.py:108 - DEBUG - Loading file: /home/admin/.starcluster/config
+PID: 5617 awsutils.py:54 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'path': '/', 'region': None, 'port': None, 'is_secure': True}
+PID: 5617 start.py:167 - INFO - Using default cluster template: smallcluster
+PID: 5617 cluster.py:1333 - INFO - Validating cluster template settings...
+PID: 5617 start.py:180 - ERROR - settings for cluster template "smallcluster" are not valid:
+PID: 5617 cli.py:170 - ERROR - Account does not contain a key with keyname = gsg-keypair. 
+PID: 5623 config.py:515 - DEBUG - Loading config
+PID: 5623 config.py:108 - DEBUG - Loading file: /home/admin/.starcluster/config
+PID: 5623 config.py:515 - DEBUG - Loading config
+PID: 5623 config.py:108 - DEBUG - Loading file: /home/admin/.starcluster/config
+PID: 5623 awsutils.py:54 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'path': '/', 'region': None, 'port': None, 'is_secure': True}
+PID: 5623 start.py:167 - INFO - Using default cluster template: smallcluster
+PID: 5623 cluster.py:1333 - INFO - Validating cluster template settings...
+PID: 5623 start.py:180 - ERROR - settings for cluster template "smallcluster" are not valid:
+PID: 5623 cli.py:170 - ERROR - Incompatible node_image_id and node_instance_type:
+Instance type m1.small is for an i386 platform while ami-353af75c is an x86_64 platform
+PID: 5624 config.py:515 - DEBUG - Loading config
+PID: 5624 config.py:108 - DEBUG - Loading file: /home/admin/.starcluster/config
+PID: 5624 config.py:515 - DEBUG - Loading config
+PID: 5624 config.py:108 - DEBUG - Loading file: /home/admin/.starcluster/config
+PID: 5624 awsutils.py:54 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'path': '/', 'region': None, 'port': None, 'is_secure': True}
+PID: 5624 start.py:167 - INFO - Using default cluster template: smallcluster
+PID: 5624 cluster.py:1333 - INFO - Validating cluster template settings...
+PID: 5624 cluster.py:872 - DEBUG - Launch map: node001 (ami: ami-353af75c, type: t1.micro)...
+PID: 5624 cluster.py:1355 - INFO - Cluster template settings are valid
+PID: 5624 cluster.py:1228 - INFO - Starting cluster...
+PID: 5624 cluster.py:891 - INFO - Launching a 2-node cluster...
+PID: 5624 cluster.py:908 - INFO - Launching a 2-node cluster...
+PID: 5624 cluster.py:872 - DEBUG - Launch map: node001 (ami: ami-353af75c, type: t1.micro)...
+PID: 5624 cluster.py:919 - DEBUG - Launching master (ami: ami-353af75c, type: t1.micro)
+PID: 5624 cluster.py:919 - DEBUG - Launching node001 (ami: ami-353af75c, type: t1.micro)
+PID: 5624 awsutils.py:175 - INFO - Creating security group @sc-mycluster...
+PID: 5624 cli.py:157 - ERROR - UnsupportedOperation: AMI 'ami-353af75c' with an instance-store root device is not supported for the instance type 't1.micro'.
+PID: 5625 config.py:515 - DEBUG - Loading config
+PID: 5625 config.py:108 - DEBUG - Loading file: /home/admin/.starcluster/config
+PID: 5625 config.py:515 - DEBUG - Loading config
+PID: 5625 config.py:108 - DEBUG - Loading file: /home/admin/.starcluster/config
+PID: 5625 awsutils.py:54 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'path': '/', 'region': None, 'port': None, 'is_secure': True}
+PID: 5625 cluster.py:670 - DEBUG - existing nodes: {}
+PID: 5625 cluster.py:686 - DEBUG - returning self._nodes = []
+PID: 5625 cluster.py:670 - DEBUG - existing nodes: {}
+PID: 5625 cluster.py:686 - DEBUG - returning self._nodes = []
+PID: 5625 cli.py:170 - ERROR - Cluster with tag name mycluster already exists.
+
+If you want to reconfigure the existing instances use the 'restart' command:
+
+  $ starcluster restart mycluster
+
+This will reboot all of the instances and configure the cluster starting from scratch.
+
+Otherwise either choose a different tag name, or terminate the existing cluster using:
+
+  $ starcluster terminate mycluster
+
+
+PID: 5626 config.py:515 - DEBUG - Loading config
+PID: 5626 config.py:108 - DEBUG - Loading file: /home/admin/.starcluster/config
+PID: 5626 awsutils.py:54 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'path': '/', 'region': None, 'port': None, 'is_secure': True}
+PID: 5626 cluster.py:670 - DEBUG - existing nodes: {}
+PID: 5626 cluster.py:686 - DEBUG - returning self._nodes = []
+PID: 5626 cli.py:170 - ERROR - No running nodes found
+PID: 5627 config.py:515 - DEBUG - Loading config
+PID: 5627 config.py:108 - DEBUG - Loading file: /home/admin/.starcluster/config
+PID: 5627 awsutils.py:54 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'path': '/', 'region': None, 'port': None, 'is_secure': True}
+PID: 5627 cluster.py:670 - DEBUG - existing nodes: {}
+PID: 5627 cluster.py:686 - DEBUG - returning self._nodes = []
+PID: 5627 cluster.py:670 - DEBUG - existing nodes: {}
+PID: 5627 cluster.py:686 - DEBUG - returning self._nodes = []
+PID: 5627 cluster.py:670 - DEBUG - existing nodes: {}
+PID: 5627 cluster.py:686 - DEBUG - returning self._nodes = []
+PID: 5627 cluster.py:1196 - INFO - Removing @sc-mycluster security group
+PID: 5628 config.py:515 - DEBUG - Loading config
+PID: 5628 config.py:108 - DEBUG - Loading file: /home/admin/.starcluster/config
+PID: 5628 config.py:515 - DEBUG - Loading config
+PID: 5628 config.py:108 - DEBUG - Loading file: /home/admin/.starcluster/config
+PID: 5628 awsutils.py:54 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'path': '/', 'region': None, 'port': None, 'is_secure': True}
+PID: 5628 start.py:167 - INFO - Using default cluster template: smallcluster
+PID: 5628 cluster.py:1333 - INFO - Validating cluster template settings...
+PID: 5628 start.py:180 - ERROR - settings for cluster template "smallcluster" are not valid:
+PID: 5628 cli.py:170 - ERROR - Incompatible node_image_id and node_instance_type:
+Instance type c1.medium is for an i386 platform while ami-353af75c is an x86_64 platform
+PID: 5629 config.py:515 - DEBUG - Loading config
+PID: 5629 config.py:108 - DEBUG - Loading file: /home/admin/.starcluster/config
+PID: 5629 config.py:515 - DEBUG - Loading config
+PID: 5629 config.py:108 - DEBUG - Loading file: /home/admin/.starcluster/config
+PID: 5629 awsutils.py:54 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'path': '/', 'region': None, 'port': None, 'is_secure': True}
+PID: 5629 start.py:167 - INFO - Using default cluster template: smallcluster
+PID: 5629 cluster.py:1333 - INFO - Validating cluster template settings...
+PID: 5629 cluster.py:872 - DEBUG - Launch map: node001 (ami: ami-8cf913e5, type: m1.small)...
+PID: 5629 cluster.py:1355 - INFO - Cluster template settings are valid
+PID: 5629 cluster.py:1228 - INFO - Starting cluster...
+PID: 5629 cluster.py:891 - INFO - Launching a 2-node cluster...
+PID: 5629 cluster.py:908 - INFO - Launching a 2-node cluster...
+PID: 5629 cluster.py:872 - DEBUG - Launch map: node001 (ami: ami-8cf913e5, type: m1.small)...
+PID: 5629 cluster.py:919 - DEBUG - Launching master (ami: ami-8cf913e5, type: m1.small)
+PID: 5629 cluster.py:919 - DEBUG - Launching node001 (ami: ami-8cf913e5, type: m1.small)
+PID: 5629 awsutils.py:175 - INFO - Creating security group @sc-mycluster...
+PID: 5629 cluster.py:1048 - INFO - Waiting for cluster to come up... (updating every 30s)
+PID: 5629 cluster.py:670 - DEBUG - existing nodes: {}
+PID: 5629 cluster.py:678 - DEBUG - adding node i-56bb9b36 to self._nodes list
+PID: 5629 cluster.py:678 - DEBUG - adding node i-58bb9b38 to self._nodes list
+PID: 5629 cluster.py:686 - DEBUG - returning self._nodes = [<Node: master (i-56bb9b36)>, <Node: node001 (i-58bb9b38)>]
+PID: 5629 cluster.py:1070 - INFO - Waiting for all nodes to be in a 'running' state...
+PID: 5629 cluster.py:670 - DEBUG - existing nodes: {u'i-56bb9b36': <Node: master (i-56bb9b36)>, u'i-58bb9b38': <Node: node001 (i-58bb9b38)>}
+PID: 5629 cluster.py:673 - DEBUG - updating existing node i-56bb9b36 in self._nodes
+PID: 5629 cluster.py:673 - DEBUG - updating existing node i-58bb9b38 in self._nodes
+PID: 5629 cluster.py:686 - DEBUG - returning self._nodes = [<Node: master (i-56bb9b36)>, <Node: node001 (i-58bb9b38)>]
+PID: 5629 cluster.py:670 - DEBUG - existing nodes: {u'i-56bb9b36': <Node: master (i-56bb9b36)>, u'i-58bb9b38': <Node: node001 (i-58bb9b38)>}
+PID: 5629 cluster.py:673 - DEBUG - updating existing node i-56bb9b36 in self._nodes
+PID: 5629 cluster.py:673 - DEBUG - updating existing node i-58bb9b38 in self._nodes
+PID: 5629 cluster.py:686 - DEBUG - returning self._nodes = [<Node: master (i-56bb9b36)>, <Node: node001 (i-58bb9b38)>]
+PID: 5629 cluster.py:670 - DEBUG - existing nodes: {u'i-56bb9b36': <Node: master (i-56bb9b36)>, u'i-58bb9b38': <Node: node001 (i-58bb9b38)>}
+PID: 5629 cluster.py:673 - DEBUG - updating existing node i-56bb9b36 in self._nodes
+PID: 5629 cluster.py:673 - DEBUG - updating existing node i-58bb9b38 in self._nodes
+PID: 5629 cluster.py:686 - DEBUG - returning self._nodes = [<Node: master (i-56bb9b36)>, <Node: node001 (i-58bb9b38)>]
+PID: 5629 cluster.py:670 - DEBUG - existing nodes: {u'i-56bb9b36': <Node: master (i-56bb9b36)>, u'i-58bb9b38': <Node: node001 (i-58bb9b38)>}
+PID: 5629 cluster.py:673 - DEBUG - updating existing node i-56bb9b36 in self._nodes
+PID: 5629 cluster.py:673 - DEBUG - updating existing node i-58bb9b38 in self._nodes
+PID: 5629 cluster.py:686 - DEBUG - returning self._nodes = [<Node: master (i-56bb9b36)>, <Node: node001 (i-58bb9b38)>]
+PID: 5629 cluster.py:670 - DEBUG - existing nodes: {u'i-56bb9b36': <Node: master (i-56bb9b36)>, u'i-58bb9b38': <Node: node001 (i-58bb9b38)>}
+PID: 5629 cluster.py:673 - DEBUG - updating existing node i-56bb9b36 in self._nodes
+PID: 5629 cluster.py:673 - DEBUG - updating existing node i-58bb9b38 in self._nodes
+PID: 5629 cluster.py:686 - DEBUG - returning self._nodes = [<Node: master (i-56bb9b36)>, <Node: node001 (i-58bb9b38)>]
+PID: 5629 cluster.py:670 - DEBUG - existing nodes: {u'i-56bb9b36': <Node: master (i-56bb9b36)>, u'i-58bb9b38': <Node: node001 (i-58bb9b38)>}
+PID: 5629 cluster.py:673 - DEBUG - updating existing node i-56bb9b36 in self._nodes
+PID: 5629 cluster.py:673 - DEBUG - updating existing node i-58bb9b38 in self._nodes
+PID: 5629 cluster.py:686 - DEBUG - returning self._nodes = [<Node: master (i-56bb9b36)>, <Node: node001 (i-58bb9b38)>]
+PID: 5629 cluster.py:670 - DEBUG - existing nodes: {u'i-56bb9b36': <Node: master (i-56bb9b36)>, u'i-58bb9b38': <Node: node001 (i-58bb9b38)>}
+PID: 5629 cluster.py:673 - DEBUG - updating existing node i-56bb9b36 in self._nodes
+PID: 5629 cluster.py:673 - DEBUG - updating existing node i-58bb9b38 in self._nodes
+PID: 5629 cluster.py:686 - DEBUG - returning self._nodes = [<Node: master (i-56bb9b36)>, <Node: node001 (i-58bb9b38)>]
+PID: 5629 cluster.py:1081 - INFO - Waiting for SSH to come up on all nodes...
+PID: 5629 ssh.py:61 - DEBUG - loading private key /home/admin/.ssh/maquito.pem
+PID: 5629 ssh.py:68 - DEBUG - specified key does not end in either rsa or dsa, trying both
+PID: 5629 ssh.py:145 - DEBUG - Using private key /home/admin/.ssh/maquito.pem (rsa)
+PID: 5629 ssh.py:82 - DEBUG - connecting to host ec2-50-16-90-215.compute-1.amazonaws.com on port 22 as user root
+PID: 5629 ssh.py:61 - DEBUG - loading private key /home/admin/.ssh/maquito.pem
+PID: 5629 ssh.py:68 - DEBUG - specified key does not end in either rsa or dsa, trying both
+PID: 5629 ssh.py:145 - DEBUG - Using private key /home/admin/.ssh/maquito.pem (rsa)
+PID: 5629 ssh.py:82 - DEBUG - connecting to host ec2-50-17-152-131.compute-1.amazonaws.com on port 22 as user root
+PID: 5629 cluster.py:1252 - INFO - The master node is ec2-50-16-90-215.compute-1.amazonaws.com
+PID: 5629 cluster.py:1253 - INFO - Setting up the cluster...
+PID: 5629 cluster.py:670 - DEBUG - existing nodes: {u'i-56bb9b36': <Node: master (i-56bb9b36)>, u'i-58bb9b38': <Node: node001 (i-58bb9b38)>}
+PID: 5629 cluster.py:673 - DEBUG - updating existing node i-56bb9b36 in self._nodes
+PID: 5629 cluster.py:673 - DEBUG - updating existing node i-58bb9b38 in self._nodes
+PID: 5629 cluster.py:686 - DEBUG - returning self._nodes = [<Node: master (i-56bb9b36)>, <Node: node001 (i-58bb9b38)>]
+PID: 5629 clustersetup.py:96 - INFO - Configuring hostnames...
+PID: 5629 threadpool.py:108 - DEBUG - unfinished_tasks = 2
+PID: 5629 ssh.py:164 - DEBUG - creating sftp connection
+PID: 5629 ssh.py:164 - DEBUG - creating sftp connection
+PID: 5629 threadpool.py:108 - DEBUG - unfinished_tasks = 2
+PID: 5629 threadpool.py:108 - DEBUG - unfinished_tasks = 2
+PID: 5629 threadpool.py:108 - DEBUG - unfinished_tasks = 1
+PID: 5629 threadpool.py:108 - DEBUG - unfinished_tasks = 1
+PID: 5629 threadpool.py:108 - DEBUG - unfinished_tasks = 1
+PID: 5629 threadpool.py:108 - DEBUG - unfinished_tasks = 1
+PID: 5629 clustersetup.py:144 - INFO - Creating cluster user: sgeadmin (uid: 1001, gid: 1001)
+PID: 5629 threadpool.py:108 - DEBUG - unfinished_tasks = 2
+PID: 5629 clustersetup.py:161 - DEBUG - user sgeadmin does not exist, creating...
+PID: 5629 clustersetup.py:161 - DEBUG - user sgeadmin does not exist, creating...
+PID: 5629 threadpool.py:108 - DEBUG - unfinished_tasks = 2
+PID: 5629 clustersetup.py:186 - INFO - Configuring scratch space for user: sgeadmin
+PID: 5629 threadpool.py:108 - DEBUG - unfinished_tasks = 2
+PID: 5629 threadpool.py:108 - DEBUG - unfinished_tasks = 2
+PID: 5629 clustersetup.py:195 - INFO - Configuring /etc/hosts on each node
+PID: 5629 threadpool.py:108 - DEBUG - unfinished_tasks = 2
+PID: 5629 ssh.py:254 - DEBUG - new /etc/hosts after removing regex (master|node001) matches:
+127.0.0.1 localhost
+
+# The following lines are desirable for IPv6 capable hosts
+::1 ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+ff02::3 ip6-allhosts
+
+PID: 5629 ssh.py:254 - DEBUG - new /etc/hosts after removing regex (master|node001) matches:
+127.0.0.1 localhost
+
+# The following lines are desirable for IPv6 capable hosts
+::1 ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+ff02::3 ip6-allhosts
+
+PID: 5629 threadpool.py:108 - DEBUG - unfinished_tasks = 2
+PID: 5629 threadpool.py:108 - DEBUG - unfinished_tasks = 2
+PID: 5629 clustersetup.py:314 - INFO - Configuring NFS...
+PID: 5629 ssh.py:405 - DEBUG - Rather than invoking init scripts through /etc/init.d, use the service(8)
+PID: 5629 ssh.py:405 - DEBUG - utility, e.g. service portmap start
+PID: 5629 ssh.py:405 - DEBUG - 
+PID: 5629 ssh.py:405 - DEBUG - Since the script you are attempting to invoke has been converted to an
+PID: 5629 ssh.py:405 - DEBUG - Upstart job, you may also use the start(8) utility, e.g. start portmap
+PID: 5629 ssh.py:405 - DEBUG - * Exporting directories for NFS kernel daemon...
+PID: 5629 ssh.py:405 - DEBUG - ...done.
+PID: 5629 ssh.py:405 - DEBUG - * Starting NFS kernel daemon
+PID: 5629 ssh.py:405 - DEBUG - ...done.
+PID: 5629 ssh.py:405 - DEBUG - /dev/sda1 on / type ext3 (rw)
+PID: 5629 ssh.py:405 - DEBUG - proc on /proc type proc (rw,noexec,nosuid,nodev)
+PID: 5629 ssh.py:405 - DEBUG - none on /sys type sysfs (rw,noexec,nosuid,nodev)
+PID: 5629 ssh.py:405 - DEBUG - none on /sys/kernel/debug type debugfs (rw)
+PID: 5629 ssh.py:405 - DEBUG - none on /sys/kernel/security type securityfs (rw)
+PID: 5629 ssh.py:405 - DEBUG - devtmpfs on /dev type devtmpfs (rw,mode=0755)
+PID: 5629 ssh.py:405 - DEBUG - none on /dev/pts type devpts (rw,noexec,nosuid,gid=5,mode=0620)
+PID: 5629 ssh.py:405 - DEBUG - none on /dev/shm type tmpfs (rw,nosuid,nodev)
+PID: 5629 ssh.py:405 - DEBUG - none on /var/run type tmpfs (rw,nosuid,mode=0755)
+PID: 5629 ssh.py:405 - DEBUG - none on /var/lock type tmpfs (rw,noexec,nosuid,nodev)
+PID: 5629 ssh.py:405 - DEBUG - none on /lib/init/rw type tmpfs (rw,nosuid,mode=0755)
+PID: 5629 ssh.py:405 - DEBUG - /dev/sda2 on /mnt type ext3 (rw)
+PID: 5629 ssh.py:405 - DEBUG - nfsd on /proc/fs/nfsd type nfsd (rw)
+PID: 5629 clustersetup.py:304 - INFO - Mounting shares for node node001
+PID: 5629 threadpool.py:108 - DEBUG - unfinished_tasks = 1
+PID: 5629 ssh.py:405 - DEBUG - Rather than invoking init scripts through /etc/init.d, use the service(8)
+PID: 5629 ssh.py:405 - DEBUG - utility, e.g. service portmap start
+PID: 5629 ssh.py:405 - DEBUG - 
+PID: 5629 ssh.py:405 - DEBUG - Since the script you are attempting to invoke has been converted to an
+PID: 5629 ssh.py:405 - DEBUG - Upstart job, you may also use the start(8) utility, e.g. start portmap
+PID: 5629 ssh.py:402 - DEBUG - command mount -t devpts none /dev/pts failed with status 32
+PID: 5629 ssh.py:405 - DEBUG - mount: none already mounted or /dev/pts busy
+PID: 5629 ssh.py:405 - DEBUG - mount: according to mtab, none is already mounted on /dev/pts
+PID: 5629 threadpool.py:108 - DEBUG - unfinished_tasks = 1
+PID: 5629 ssh.py:254 - DEBUG - new /etc/fstab after removing regex ( /home | /opt/sge6 ) matches:
+# /etc/fstab: static file system information.
+# <file system>                                 <mount point>   <type>  <options>       <dump>  <pass>
+proc                                            /proc           proc    nodev,noexec,nosuid 0       0
+/dev/sda1                                       /               ext3    defaults        0       0
+/dev/sda2	/mnt	auto	defaults,comment=cloudconfig	0	0
+/dev/sda3	none	swap	sw,comment=cloudconfig	0	0
+
+PID: 5629 threadpool.py:108 - DEBUG - unfinished_tasks = 1
+PID: 5629 threadpool.py:108 - DEBUG - unfinished_tasks = 1
+PID: 5629 threadpool.py:108 - DEBUG - unfinished_tasks = 1
+PID: 5629 threadpool.py:108 - DEBUG - unfinished_tasks = 1
+PID: 5629 threadpool.py:108 - DEBUG - unfinished_tasks = 1
+PID: 5629 utils.py:61 - INFO - _setup_nfs took 0.387 mins
+PID: 5629 clustersetup.py:207 - INFO - Configuring passwordless ssh for root
+PID: 5629 node.py:396 - DEBUG - adding auth_key_contents
+PID: 5629 clustersetup.py:215 - INFO - Configuring passwordless ssh for sgeadmin
+PID: 5629 node.py:396 - DEBUG - adding auth_key_contents
+PID: 5629 node.py:404 - DEBUG - adding conn_pubkey_contents
+PID: 5629 ssh.py:402 - DEBUG - command pkill -9 sge failed with status 1
+PID: 5629 ssh.py:402 - DEBUG - command rm /etc/init.d/sge* failed with status 1
+PID: 5629 ssh.py:405 - DEBUG - rm: cannot remove `/etc/init.d/sge*': No such file or directory
+PID: 5629 ssh.py:405 - DEBUG - lx24-x86
+PID: 5629 ssh.py:405 - DEBUG - [: 359: 11: unexpected operator
+PID: 5629 ssh.py:405 - DEBUG - [: 359: 11: unexpected operator
+PID: 5629 ssh.py:402 - DEBUG - command pkill -9 sge failed with status 1
+PID: 5629 ssh.py:402 - DEBUG - command rm /etc/init.d/sge* failed with status 1
+PID: 5629 ssh.py:405 - DEBUG - rm: cannot remove `/etc/init.d/sge*': No such file or directory
+PID: 5629 ssh.py:405 - DEBUG - lx24-x86
+PID: 5629 ssh.py:405 - DEBUG - [: 359: 11: unexpected operator
+PID: 5629 ssh.py:405 - DEBUG - [: 359: 11: unexpected operator
+PID: 5629 clustersetup.py:360 - INFO - Installing Sun Grid Engine...
+PID: 5629 ssh.py:405 - DEBUG - Reading configuration from file ./ec2_sge.conf
+PID: 5629 ssh.py:405 - DEBUG - [H[2JInstall log can be found in: /opt/sge6/default/common/install_logs/qmaster_install_master_2011-10-10_11:49:00.log
+PID: 5629 ssh.py:405 - DEBUG - Install log can be found in: /opt/sge6/default/common/install_logs/execd_install_master_2011-10-10_11:49:07.log
+PID: 5629 ssh.py:405 - DEBUG - [: 359: 11: unexpected operator
+PID: 5629 ssh.py:405 - DEBUG - [: 359: 11: unexpected operator
+PID: 5629 ssh.py:405 - DEBUG - [: 359: 11: unexpected operator
+PID: 5629 ssh.py:405 - DEBUG - [: 359: 11: unexpected operator
+PID: 5629 ssh.py:405 - DEBUG - root@master modified "all.q" in cluster queue list
+PID: 5629 ssh.py:405 - DEBUG - adminhost "node001" already exists
+PID: 5629 ssh.py:405 - DEBUG - submithost "node001" already exists
+PID: 5629 threadpool.py:108 - DEBUG - unfinished_tasks = 1
+PID: 5629 ssh.py:405 - DEBUG - lx24-x86
+PID: 5629 ssh.py:405 - DEBUG - [: 359: 11: unexpected operator
+PID: 5629 ssh.py:405 - DEBUG - [: 359: 11: unexpected operator
+PID: 5629 threadpool.py:108 - DEBUG - unfinished_tasks = 1
+PID: 5629 ssh.py:405 - DEBUG - adminhost "node001" already exists
+PID: 5629 ssh.py:405 - DEBUG - submithost "node001" already exists
+PID: 5629 threadpool.py:108 - DEBUG - unfinished_tasks = 1
+PID: 5629 threadpool.py:108 - DEBUG - unfinished_tasks = 1
+PID: 5629 threadpool.py:108 - DEBUG - unfinished_tasks = 1
+PID: 5629 threadpool.py:108 - DEBUG - unfinished_tasks = 1
+PID: 5629 threadpool.py:108 - DEBUG - unfinished_tasks = 1
+PID: 5629 threadpool.py:108 - DEBUG - unfinished_tasks = 1
+PID: 5629 ssh.py:405 - DEBUG - Reading configuration from file ./ec2_sge.conf
+PID: 5629 ssh.py:405 - DEBUG - [H[2JInstall log can be found in: /opt/sge6/default/common/install_logs/execd_install_node001_2011-10-10_11:49:16.log
+PID: 5629 ssh.py:405 - DEBUG - [: 359: 11: unexpected operator
+PID: 5629 ssh.py:405 - DEBUG - [: 359: 11: unexpected operator
+PID: 5629 ssh.py:405 - DEBUG - [: 359: 11: unexpected operator
+PID: 5629 ssh.py:405 - DEBUG - [: 359: 11: unexpected operator
+PID: 5629 ssh.py:405 - DEBUG - 1
+PID: 5629 ssh.py:405 - DEBUG - 1
+PID: 5629 ssh.py:405 - DEBUG - root@master added "orte" to parallel environment list
+PID: 5629 ssh.py:405 - DEBUG - Unable to find "orte" in "pe_list" of "all.q" - Adding new element.
+PID: 5629 ssh.py:405 - DEBUG - 
+PID: 5629 ssh.py:405 - DEBUG - root@master modified "all.q" in cluster queue list
+PID: 5629 threadpool.py:96 - INFO - Shutting down threads...
+PID: 5629 threadpool.py:108 - DEBUG - unfinished_tasks = 20
+PID: 5629 cluster.py:1243 - INFO - 
+
+The cluster has been started and configured.
+Login to the master node as root by running:
+
+    $ starcluster sshmaster mycluster
+
+When you are finished using the cluster, run:
+
+    $ starcluster stop mycluster
+
+to shutdown the cluster and stop paying for service.
+
+If this cluster uses EBS instances then the 'stop' command above will put all nodes into a 'stopped' state. The cluster may then be restarted at a later time, without losing data, by passing the -x option to the 'start' command.
+
+To completely terminate an EBS cluster:
+
+    $ starcluster terminate mycluster
+
+NOTE: Terminating an EBS cluster will destroy all volumes backing the nodes.
+
+PID: 5629 utils.py:72 - INFO - Starting cluster took 5.177 mins
+PID: 5629 ssh.py:536 - DEBUG - __del__ called
+PID: 5629 ssh.py:536 - DEBUG - __del__ called
+PID: 5664 config.py:515 - DEBUG - Loading config
+PID: 5664 config.py:108 - DEBUG - Loading file: /home/admin/.starcluster/config
+PID: 5664 awsutils.py:54 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'path': '/', 'region': None, 'port': None, 'is_secure': True}
+PID: 5664 cluster.py:670 - DEBUG - existing nodes: {}
+PID: 5664 cluster.py:678 - DEBUG - adding node i-56bb9b36 to self._nodes list
+PID: 5664 cluster.py:678 - DEBUG - adding node i-58bb9b38 to self._nodes list
+PID: 5664 cluster.py:686 - DEBUG - returning self._nodes = [<Node: master (i-56bb9b36)>, <Node: node001 (i-58bb9b38)>]
+PID: 5664 node.py:822 - DEBUG - using system's ssh client
+PID: 5664 node.py:825 - DEBUG - ssh_cmd: ssh -i /home/admin/.ssh/maquito.pem root@ec2-50-16-90-215.compute-1.amazonaws.com
+PID: 5667 config.py:515 - DEBUG - Loading config
+PID: 5667 config.py:108 - DEBUG - Loading file: /home/admin/.starcluster/config
+PID: 5667 awsutils.py:54 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'path': '/', 'region': None, 'port': None, 'is_secure': True}
+PID: 5667 cluster.py:670 - DEBUG - existing nodes: {}
+PID: 5667 cluster.py:678 - DEBUG - adding node i-56bb9b36 to self._nodes list
+PID: 5667 cluster.py:678 - DEBUG - adding node i-58bb9b38 to self._nodes list
+PID: 5667 cluster.py:686 - DEBUG - returning self._nodes = [<Node: master (i-56bb9b36)>, <Node: node001 (i-58bb9b38)>]
+PID: 5669 config.py:515 - DEBUG - Loading config
+PID: 5669 config.py:108 - DEBUG - Loading file: /home/admin/.starcluster/config
+PID: 5669 awsutils.py:54 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'path': '/', 'region': None, 'port': None, 'is_secure': True}
+PID: 5669 cluster.py:670 - DEBUG - existing nodes: {}
+PID: 5669 cluster.py:678 - DEBUG - adding node i-56bb9b36 to self._nodes list
+PID: 5669 cluster.py:678 - DEBUG - adding node i-58bb9b38 to self._nodes list
+PID: 5669 cluster.py:686 - DEBUG - returning self._nodes = [<Node: master (i-56bb9b36)>, <Node: node001 (i-58bb9b38)>]
+PID: 5669 node.py:822 - DEBUG - using system's ssh client
+PID: 5669 node.py:825 - DEBUG - ssh_cmd: ssh -i /home/admin/.ssh/maquito.pem root@ec2-50-16-90-215.compute-1.amazonaws.com
+PID: 5672 config.py:515 - DEBUG - Loading config
+PID: 5672 config.py:108 - DEBUG - Loading file: /home/admin/.starcluster/config
+PID: 5672 awsutils.py:54 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'path': '/', 'region': None, 'port': None, 'is_secure': True}
+PID: 5672 cluster.py:670 - DEBUG - existing nodes: {}
+PID: 5672 cluster.py:678 - DEBUG - adding node i-56bb9b36 to self._nodes list
+PID: 5672 cluster.py:678 - DEBUG - adding node i-58bb9b38 to self._nodes list
+PID: 5672 cluster.py:686 - DEBUG - returning self._nodes = [<Node: master (i-56bb9b36)>, <Node: node001 (i-58bb9b38)>]
+PID: 5672 node.py:822 - DEBUG - using system's ssh client
+PID: 5672 node.py:825 - DEBUG - ssh_cmd: ssh -i /home/admin/.ssh/maquito.pem root@ec2-50-16-90-215.compute-1.amazonaws.com
+PID: 5699 config.py:515 - DEBUG - Loading config
+PID: 5699 config.py:108 - DEBUG - Loading file: /home/admin/.starcluster/config
+PID: 5700 config.py:515 - DEBUG - Loading config
+PID: 5700 config.py:108 - DEBUG - Loading file: /home/admin/.starcluster/config
+PID: 5700 awsutils.py:54 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'path': '/', 'region': None, 'port': None, 'is_secure': True}
+PID: 5700 cluster.py:670 - DEBUG - existing nodes: {}
+PID: 5700 cluster.py:678 - DEBUG - adding node i-56bb9b36 to self._nodes list
+PID: 5700 cluster.py:678 - DEBUG - adding node i-58bb9b38 to self._nodes list
+PID: 5700 cluster.py:686 - DEBUG - returning self._nodes = [<Node: master (i-56bb9b36)>, <Node: node001 (i-58bb9b38)>]
+PID: 5700 node.py:822 - DEBUG - using system's ssh client
+PID: 5700 node.py:825 - DEBUG - ssh_cmd: ssh -i /home/admin/.ssh/maquito.pem root@ec2-50-17-152-131.compute-1.amazonaws.com
+PID: 5728 config.py:515 - DEBUG - Loading config
+PID: 5728 config.py:108 - DEBUG - Loading file: /home/admin/.starcluster/config
+PID: 5729 config.py:515 - DEBUG - Loading config
+PID: 5729 config.py:108 - DEBUG - Loading file: /home/admin/.starcluster/config
+PID: 5729 awsutils.py:54 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'path': '/', 'region': None, 'port': None, 'is_secure': True}
+PID: 5729 cluster.py:670 - DEBUG - existing nodes: {}
+PID: 5729 cluster.py:678 - DEBUG - adding node i-56bb9b36 to self._nodes list
+PID: 5729 cluster.py:678 - DEBUG - adding node i-58bb9b38 to self._nodes list
+PID: 5729 cluster.py:686 - DEBUG - returning self._nodes = [<Node: master (i-56bb9b36)>, <Node: node001 (i-58bb9b38)>]
+PID: 5730 config.py:515 - DEBUG - Loading config
+PID: 5730 config.py:108 - DEBUG - Loading file: /home/admin/.starcluster/config
+PID: 5730 awsutils.py:54 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'path': '/', 'region': None, 'port': None, 'is_secure': True}
+PID: 5730 cluster.py:670 - DEBUG - existing nodes: {}
+PID: 5730 cluster.py:678 - DEBUG - adding node i-56bb9b36 to self._nodes list
+PID: 5730 cluster.py:678 - DEBUG - adding node i-58bb9b38 to self._nodes list
+PID: 5730 cluster.py:686 - DEBUG - returning self._nodes = [<Node: master (i-56bb9b36)>, <Node: node001 (i-58bb9b38)>]
+PID: 5730 cluster.py:670 - DEBUG - existing nodes: {u'i-56bb9b36': <Node: master (i-56bb9b36)>, u'i-58bb9b38': <Node: node001 (i-58bb9b38)>}
+PID: 5730 cluster.py:673 - DEBUG - updating existing node i-56bb9b36 in self._nodes
+PID: 5730 cluster.py:673 - DEBUG - updating existing node i-58bb9b38 in self._nodes
+PID: 5730 cluster.py:686 - DEBUG - returning self._nodes = [<Node: master (i-56bb9b36)>, <Node: node001 (i-58bb9b38)>]
+PID: 5730 cluster.py:670 - DEBUG - existing nodes: {u'i-56bb9b36': <Node: master (i-56bb9b36)>, u'i-58bb9b38': <Node: node001 (i-58bb9b38)>}
+PID: 5730 cluster.py:673 - DEBUG - updating existing node i-56bb9b36 in self._nodes
+PID: 5730 cluster.py:673 - DEBUG - updating existing node i-58bb9b38 in self._nodes
+PID: 5730 cluster.py:686 - DEBUG - returning self._nodes = [<Node: master (i-56bb9b36)>, <Node: node001 (i-58bb9b38)>]
+PID: 5730 node.py:745 - INFO - Terminating node: master (i-56bb9b36)
+PID: 5730 node.py:745 - INFO - Terminating node: node001 (i-58bb9b38)
+PID: 5730 cluster.py:1196 - INFO - Removing @sc-mycluster security group
+PID: 5730 cli.py:157 - ERROR - InvalidGroup.InUse: There are active instances using security group '@sc-mycluster'
+PID: 5732 config.py:515 - DEBUG - Loading config
+PID: 5732 config.py:108 - DEBUG - Loading file: /home/admin/.starcluster/config
+PID: 5732 awsutils.py:54 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'path': '/', 'region': None, 'port': None, 'is_secure': True}
+PID: 5732 cluster.py:670 - DEBUG - existing nodes: {}
+PID: 5732 cluster.py:686 - DEBUG - returning self._nodes = []
+PID: 5733 config.py:515 - DEBUG - Loading config
+PID: 5733 config.py:108 - DEBUG - Loading file: /home/admin/.starcluster/config
+PID: 5761 config.py:515 - DEBUG - Loading config
+PID: 5761 config.py:108 - DEBUG - Loading file: /home/admin/.starcluster/config
+PID: 5761 config.py:515 - DEBUG - Loading config
+PID: 5761 config.py:108 - DEBUG - Loading file: /home/admin/.starcluster/config
+PID: 5761 awsutils.py:54 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'path': '/', 'region': None, 'port': None, 'is_secure': True}
+PID: 5761 cluster.py:670 - DEBUG - existing nodes: {}
+PID: 5761 cluster.py:686 - DEBUG - returning self._nodes = []
+PID: 5761 cluster.py:670 - DEBUG - existing nodes: {}
+PID: 5761 cluster.py:686 - DEBUG - returning self._nodes = []
+PID: 5761 cli.py:170 - ERROR - Cluster with tag name mycluster already exists.
+
+If you want to reconfigure the existing instances use the 'restart' command:
+
+  $ starcluster restart mycluster
+
+This will reboot all of the instances and configure the cluster starting from scratch.
+
+Otherwise either choose a different tag name, or terminate the existing cluster using:
+
+  $ starcluster terminate mycluster
+
+
+PID: 5762 config.py:515 - DEBUG - Loading config
+PID: 5762 config.py:108 - DEBUG - Loading file: /home/admin/.starcluster/config
+PID: 5762 awsutils.py:54 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'path': '/', 'region': None, 'port': None, 'is_secure': True}
+PID: 5762 cluster.py:670 - DEBUG - existing nodes: {}
+PID: 5762 cluster.py:686 - DEBUG - returning self._nodes = []
+PID: 5762 cluster.py:670 - DEBUG - existing nodes: {}
+PID: 5762 cluster.py:686 - DEBUG - returning self._nodes = []
+PID: 5762 cluster.py:670 - DEBUG - existing nodes: {}
+PID: 5762 cluster.py:686 - DEBUG - returning self._nodes = []
+PID: 5762 cluster.py:670 - DEBUG - existing nodes: {}
+PID: 5762 cluster.py:686 - DEBUG - returning self._nodes = []
+PID: 5762 cluster.py:1178 - INFO - Removing @sc-mycluster security group
+PID: 5763 config.py:515 - DEBUG - Loading config
+PID: 5763 config.py:108 - DEBUG - Loading file: /home/admin/.starcluster/config
+PID: 5763 config.py:515 - DEBUG - Loading config
+PID: 5763 config.py:108 - DEBUG - Loading file: /home/admin/.starcluster/config
+PID: 5763 awsutils.py:54 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'path': '/', 'region': None, 'port': None, 'is_secure': True}
+PID: 5763 start.py:167 - INFO - Using default cluster template: smallcluster
+PID: 5763 cluster.py:1333 - INFO - Validating cluster template settings...
+PID: 5763 cluster.py:872 - DEBUG - Launch map: node001 (ami: ami-353af75c, type: m1.large)...
+PID: 5763 cluster.py:1355 - INFO - Cluster template settings are valid
+PID: 5763 cluster.py:1228 - INFO - Starting cluster...
+PID: 5763 cluster.py:891 - INFO - Launching a 2-node cluster...
+PID: 5763 cluster.py:908 - INFO - Launching a 2-node cluster...
+PID: 5763 cluster.py:872 - DEBUG - Launch map: node001 (ami: ami-353af75c, type: m1.large)...
+PID: 5763 cluster.py:919 - DEBUG - Launching master (ami: ami-353af75c, type: m1.large)
+PID: 5763 cluster.py:919 - DEBUG - Launching node001 (ami: ami-353af75c, type: m1.large)
+PID: 5763 awsutils.py:175 - INFO - Creating security group @sc-mycluster...
+PID: 5763 cluster.py:1048 - INFO - Waiting for cluster to come up... (updating every 30s)
+PID: 5763 cluster.py:670 - DEBUG - existing nodes: {}
+PID: 5763 cluster.py:678 - DEBUG - adding node i-248bab44 to self._nodes list
+PID: 5763 cluster.py:678 - DEBUG - adding node i-268bab46 to self._nodes list
+PID: 5763 cluster.py:686 - DEBUG - returning self._nodes = [<Node: master (i-248bab44)>, <Node: node001 (i-268bab46)>]
+PID: 5763 cluster.py:1070 - INFO - Waiting for all nodes to be in a 'running' state...
+PID: 5763 cluster.py:670 - DEBUG - existing nodes: {u'i-248bab44': <Node: master (i-248bab44)>, u'i-268bab46': <Node: node001 (i-268bab46)>}
+PID: 5763 cluster.py:673 - DEBUG - updating existing node i-248bab44 in self._nodes
+PID: 5763 cluster.py:673 - DEBUG - updating existing node i-268bab46 in self._nodes
+PID: 5763 cluster.py:686 - DEBUG - returning self._nodes = [<Node: master (i-248bab44)>, <Node: node001 (i-268bab46)>]
+PID: 5763 cluster.py:670 - DEBUG - existing nodes: {u'i-248bab44': <Node: master (i-248bab44)>, u'i-268bab46': <Node: node001 (i-268bab46)>}
+PID: 5763 cluster.py:673 - DEBUG - updating existing node i-248bab44 in self._nodes
+PID: 5763 cluster.py:673 - DEBUG - updating existing node i-268bab46 in self._nodes
+PID: 5763 cluster.py:686 - DEBUG - returning self._nodes = [<Node: master (i-248bab44)>, <Node: node001 (i-268bab46)>]
+PID: 5763 cluster.py:1081 - INFO - Waiting for SSH to come up on all nodes...
+PID: 5763 ssh.py:61 - DEBUG - loading private key /home/admin/.ssh/maquito.pem
+PID: 5763 ssh.py:68 - DEBUG - specified key does not end in either rsa or dsa, trying both
+PID: 5763 ssh.py:145 - DEBUG - Using private key /home/admin/.ssh/maquito.pem (rsa)
+PID: 5763 ssh.py:82 - DEBUG - connecting to host ec2-75-101-240-158.compute-1.amazonaws.com on port 22 as user root
+PID: 5763 ssh.py:61 - DEBUG - loading private key /home/admin/.ssh/maquito.pem
+PID: 5763 ssh.py:68 - DEBUG - specified key does not end in either rsa or dsa, trying both
+PID: 5763 ssh.py:145 - DEBUG - Using private key /home/admin/.ssh/maquito.pem (rsa)
+PID: 5763 ssh.py:82 - DEBUG - connecting to host ec2-107-20-99-79.compute-1.amazonaws.com on port 22 as user root
+PID: 5763 cluster.py:670 - DEBUG - existing nodes: {u'i-248bab44': <Node: master (i-248bab44)>, u'i-268bab46': <Node: node001 (i-268bab46)>}
+PID: 5763 cluster.py:673 - DEBUG - updating existing node i-248bab44 in self._nodes
+PID: 5763 cluster.py:673 - DEBUG - updating existing node i-268bab46 in self._nodes
+PID: 5763 cluster.py:686 - DEBUG - returning self._nodes = [<Node: master (i-248bab44)>, <Node: node001 (i-268bab46)>]
+PID: 5763 ssh.py:82 - DEBUG - connecting to host ec2-75-101-240-158.compute-1.amazonaws.com on port 22 as user root
+PID: 5763 cluster.py:1252 - INFO - The master node is ec2-75-101-240-158.compute-1.amazonaws.com
+PID: 5763 cluster.py:1253 - INFO - Setting up the cluster...
+PID: 5763 cluster.py:670 - DEBUG - existing nodes: {u'i-248bab44': <Node: master (i-248bab44)>, u'i-268bab46': <Node: node001 (i-268bab46)>}
+PID: 5763 cluster.py:673 - DEBUG - updating existing node i-248bab44 in self._nodes
+PID: 5763 cluster.py:673 - DEBUG - updating existing node i-268bab46 in self._nodes
+PID: 5763 cluster.py:686 - DEBUG - returning self._nodes = [<Node: master (i-248bab44)>, <Node: node001 (i-268bab46)>]
+PID: 5763 clustersetup.py:96 - INFO - Configuring hostnames...
+PID: 5763 threadpool.py:108 - DEBUG - unfinished_tasks = 2
+PID: 5763 ssh.py:164 - DEBUG - creating sftp connection
+PID: 5763 ssh.py:164 - DEBUG - creating sftp connection
+PID: 5763 threadpool.py:96 - INFO - Shutting down threads...
+PID: 5763 threadpool.py:108 - DEBUG - unfinished_tasks = 20
+PID: 5763 cli.py:166 - DEBUG - error occured in job (id=master): Garbage packet received
+Traceback (most recent call last):
+  File "build/bdist.linux-x86_64/egg/starcluster/threadpool.py", line 32, in run
+    job.run()
+  File "build/bdist.linux-x86_64/egg/starcluster/threadpool.py", line 55, in run
+    r = self.method(*self.args)
+  File "build/bdist.linux-x86_64/egg/starcluster/node.py", line 622, in set_hostname
+    hostname_file = self.ssh.remote_file("/etc/hostname", "w")
+  File "build/bdist.linux-x86_64/egg/starcluster/ssh.py", line 266, in remote_file
+    rfile = self.sftp.open(file, mode)
+  File "build/bdist.linux-x86_64/egg/starcluster/ssh.py", line 165, in sftp
+    self._sftp = paramiko.SFTPClient.from_transport(self.transport)
+  File "build/bdist.linux-x86_64/egg/paramiko/sftp_client.py", line 106, in from_transport
+    return cls(chan)
+  File "build/bdist.linux-x86_64/egg/paramiko/sftp_client.py", line 87, in __init__
+    server_version = self._send_version()
+  File "build/bdist.linux-x86_64/egg/paramiko/sftp.py", line 108, in _send_version
+    t, data = self._read_packet()
+  File "build/bdist.linux-x86_64/egg/paramiko/sftp.py", line 179, in _read_packet
+    raise SFTPError('Garbage packet received')
+SFTPError: Garbage packet received
+
+error occured in job (id=node001): Garbage packet received
+Traceback (most recent call last):
+  File "build/bdist.linux-x86_64/egg/starcluster/threadpool.py", line 32, in run
+    job.run()
+  File "build/bdist.linux-x86_64/egg/starcluster/threadpool.py", line 55, in run
+    r = self.method(*self.args)
+  File "build/bdist.linux-x86_64/egg/starcluster/node.py", line 622, in set_hostname
+    hostname_file = self.ssh.remote_file("/etc/hostname", "w")
+  File "build/bdist.linux-x86_64/egg/starcluster/ssh.py", line 266, in remote_file
+    rfile = self.sftp.open(file, mode)
+  File "build/bdist.linux-x86_64/egg/starcluster/ssh.py", line 165, in sftp
+    self._sftp = paramiko.SFTPClient.from_transport(self.transport)
+  File "build/bdist.linux-x86_64/egg/paramiko/sftp_client.py", line 106, in from_transport
+    return cls(chan)
+  File "build/bdist.linux-x86_64/egg/paramiko/sftp_client.py", line 87, in __init__
+    server_version = self._send_version()
+  File "build/bdist.linux-x86_64/egg/paramiko/sftp.py", line 108, in _send_version
+    t, data = self._read_packet()
+  File "build/bdist.linux-x86_64/egg/paramiko/sftp.py", line 179, in _read_packet
+    raise SFTPError('Garbage packet received')
+SFTPError: Garbage packet received
+
+PID: 5763 cli.py:124 - ERROR - Oops! Looks like you've found a bug in StarCluster
+PID: 5763 cli.py:125 - ERROR - Debug file written to: /tmp/starcluster-debug-admin.log
+PID: 5763 cli.py:126 - ERROR - Look for lines starting with PID: 5763
+PID: 5763 cli.py:127 - ERROR - Please submit this file, minus any private information,
+PID: 5763 cli.py:128 - ERROR - to starcluster@mit.edu
+PID: 5763 ssh.py:536 - DEBUG - __del__ called
+PID: 5763 ssh.py:536 - DEBUG - __del__ called

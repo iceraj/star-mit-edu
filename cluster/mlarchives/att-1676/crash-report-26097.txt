@@ -1,0 +1,101 @@
+---------- CRASH DETAILS ----------
+COMMAND: starcluster removenode mycluster1 node004
+2013-02-21 01:52:21,045 PID: 26097 config.py:551 - DEBUG - Loading config
+2013-02-21 01:52:21,045 PID: 26097 config.py:118 - DEBUG - Loading file: /home/dpovey/.starcluster/config
+2013-02-21 01:52:21,047 PID: 26097 config.py:118 - DEBUG - Loading file: /home/dpovey/.starcluster/config
+2013-02-21 01:52:21,048 PID: 26097 config.py:118 - DEBUG - Loading file: /home/dpovey/.starcluster/credentials
+2013-02-21 01:52:21,052 PID: 26097 awsutils.py:54 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'proxy_user': None, 'proxy_pass': None, 'proxy_port': None, 'proxy': None, 'is_secure': True, 'path': '/', 'region': None, 'port': None}
+2013-02-21 01:52:21,518 PID: 26097 cluster.py:664 - DEBUG - existing nodes: {}
+2013-02-21 01:52:21,518 PID: 26097 cluster.py:672 - DEBUG - adding node i-aeda0bdd to self._nodes list
+2013-02-21 01:52:21,519 PID: 26097 cluster.py:672 - DEBUG - adding node i-acda0bdf to self._nodes list
+2013-02-21 01:52:21,519 PID: 26097 cluster.py:672 - DEBUG - adding node i-1e0ddc6d to self._nodes list
+2013-02-21 01:52:21,520 PID: 26097 cluster.py:672 - DEBUG - adding node i-fada0a89 to self._nodes list
+2013-02-21 01:52:21,520 PID: 26097 cluster.py:672 - DEBUG - adding node i-e2a17391 to self._nodes list
+2013-02-21 01:52:21,521 PID: 26097 cluster.py:680 - DEBUG - returning self._nodes = [<Node: master (i-aeda0bdd)>, <Node: node001 (i-acda0bdf)>, <Node: node002 (i-1e0ddc6d)>, <Node: node003 (i-fada0a89)>, <Node: node004 (i-e2a17391)>]
+2013-02-21 01:52:21,610 PID: 26097 cluster.py:664 - DEBUG - existing nodes: {u'i-aeda0bdd': <Node: master (i-aeda0bdd)>, u'i-fada0a89': <Node: node003 (i-fada0a89)>, u'i-e2a17391': <Node: node004 (i-e2a17391)>, u'i-acda0bdf': <Node: node001 (i-acda0bdf)>, u'i-1e0ddc6d': <Node: node002 (i-1e0ddc6d)>}
+2013-02-21 01:52:21,611 PID: 26097 cluster.py:667 - DEBUG - updating existing node i-aeda0bdd in self._nodes
+2013-02-21 01:52:21,612 PID: 26097 cluster.py:667 - DEBUG - updating existing node i-acda0bdf in self._nodes
+2013-02-21 01:52:21,612 PID: 26097 cluster.py:667 - DEBUG - updating existing node i-1e0ddc6d in self._nodes
+2013-02-21 01:52:21,612 PID: 26097 cluster.py:667 - DEBUG - updating existing node i-fada0a89 in self._nodes
+2013-02-21 01:52:21,613 PID: 26097 cluster.py:667 - DEBUG - updating existing node i-e2a17391 in self._nodes
+2013-02-21 01:52:21,613 PID: 26097 cluster.py:680 - DEBUG - returning self._nodes = [<Node: master (i-aeda0bdd)>, <Node: node001 (i-acda0bdf)>, <Node: node002 (i-1e0ddc6d)>, <Node: node003 (i-fada0a89)>, <Node: node004 (i-e2a17391)>]
+2013-02-21 01:52:21,614 PID: 26097 sge.py:161 - INFO - Removing node004 from SGE
+2013-02-21 01:52:21,614 PID: 26097 __init__.py:75 - DEBUG - loading private key /home/dpovey/.ssh/mykey.rsa
+2013-02-21 01:52:21,616 PID: 26097 __init__.py:167 - DEBUG - Using private key /home/dpovey/.ssh/mykey.rsa (rsa)
+2013-02-21 01:52:21,617 PID: 26097 __init__.py:97 - DEBUG - connecting to host ec2-50-19-194-50.compute-1.amazonaws.com on port 22 as user root
+2013-02-21 01:52:22,643 PID: 26097 __init__.py:186 - DEBUG - creating sftp connection
+2013-02-21 01:52:23,271 PID: 26097 __init__.py:543 - DEBUG - "node004" does not exist in "hostlist" of "hostgroup"
+2013-02-21 01:52:23,272 PID: 26097 __init__.py:543 - DEBUG - 
+2013-02-21 01:52:23,272 PID: 26097 __init__.py:543 - DEBUG - root@master modified "@allhosts" in host group list
+2013-02-21 01:52:23,396 PID: 26097 __init__.py:543 - DEBUG - Attribute name ("slots") and/or value ("node004") not found
+2013-02-21 01:52:23,508 PID: 26097 __init__.py:543 - DEBUG - error deleting object "node004" from spooling database
+2013-02-21 01:52:23,662 PID: 26097 __init__.py:538 - ERROR - command 'source /etc/profile && qconf -de node004' failed with status 1
+2013-02-21 01:52:23,662 PID: 26097 __init__.py:543 - DEBUG - denied: execution host "node004" does not exist
+2013-02-21 01:52:23,663 PID: 26097 __init__.py:75 - DEBUG - loading private key /home/dpovey/.ssh/mykey.rsa
+2013-02-21 01:52:23,665 PID: 26097 __init__.py:167 - DEBUG - Using private key /home/dpovey/.ssh/mykey.rsa (rsa)
+2013-02-21 01:52:23,665 PID: 26097 __init__.py:97 - DEBUG - connecting to host ec2-50-16-135-86.compute-1.amazonaws.com on port 22 as user root
+2013-02-21 01:52:24,673 PID: 26097 __init__.py:186 - DEBUG - creating sftp connection
+2013-02-21 01:52:24,982 PID: 26097 __init__.py:538 - ERROR - command 'pkill -9 sge_execd' failed with status 1
+2013-02-21 01:52:25,079 PID: 26097 sge.py:47 - INFO - Updating SGE parallel environment 'orte'
+2013-02-21 01:52:25,092 PID: 26097 threadpool.py:135 - DEBUG - unfinished_tasks = 4
+2013-02-21 01:52:25,093 PID: 26097 __init__.py:75 - DEBUG - loading private key /home/dpovey/.ssh/mykey.rsa
+2013-02-21 01:52:25,093 PID: 26097 __init__.py:75 - DEBUG - loading private key /home/dpovey/.ssh/mykey.rsa
+2013-02-21 01:52:25,093 PID: 26097 __init__.py:75 - DEBUG - loading private key /home/dpovey/.ssh/mykey.rsa
+2013-02-21 01:52:25,096 PID: 26097 __init__.py:167 - DEBUG - Using private key /home/dpovey/.ssh/mykey.rsa (rsa)
+2013-02-21 01:52:25,097 PID: 26097 __init__.py:167 - DEBUG - Using private key /home/dpovey/.ssh/mykey.rsa (rsa)
+2013-02-21 01:52:25,098 PID: 26097 __init__.py:97 - DEBUG - connecting to host ec2-54-235-239-5.compute-1.amazonaws.com on port 22 as user root
+2013-02-21 01:52:25,099 PID: 26097 __init__.py:167 - DEBUG - Using private key /home/dpovey/.ssh/mykey.rsa (rsa)
+2013-02-21 01:52:25,099 PID: 26097 __init__.py:97 - DEBUG - connecting to host ec2-50-17-170-42.compute-1.amazonaws.com on port 22 as user root
+2013-02-21 01:52:25,101 PID: 26097 __init__.py:97 - DEBUG - connecting to host ec2-23-22-72-123.compute-1.amazonaws.com on port 22 as user root
+2013-02-21 01:52:25,316 PID: 26097 __init__.py:543 - DEBUG - 8
+2013-02-21 01:52:26,989 PID: 26097 threadpool.py:135 - DEBUG - unfinished_tasks = 3
+2013-02-21 01:52:27,005 PID: 26097 __init__.py:186 - DEBUG - creating sftp connection
+2013-02-21 01:52:27,005 PID: 26097 __init__.py:186 - DEBUG - creating sftp connection
+2013-02-21 01:52:27,415 PID: 26097 __init__.py:543 - DEBUG - 8
+2013-02-21 01:52:27,578 PID: 26097 __init__.py:543 - DEBUG - 8
+2013-02-21 01:52:27,996 PID: 26097 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-21 01:52:29,002 PID: 26097 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-21 01:52:30,009 PID: 26097 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-21 01:52:31,015 PID: 26097 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-21 01:52:32,021 PID: 26097 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-21 01:52:33,027 PID: 26097 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-21 01:52:34,034 PID: 26097 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-21 01:52:35,040 PID: 26097 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-21 01:52:36,046 PID: 26097 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-21 01:52:37,053 PID: 26097 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-21 01:52:38,059 PID: 26097 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-21 01:52:39,065 PID: 26097 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-21 01:52:40,071 PID: 26097 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-21 01:52:41,077 PID: 26097 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-21 01:52:42,083 PID: 26097 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-21 01:52:43,090 PID: 26097 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-21 01:52:44,096 PID: 26097 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-21 01:52:45,102 PID: 26097 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-21 01:52:46,108 PID: 26097 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-02-21 01:52:47,112 PID: 26097 cli.py:266 - DEBUG - error occurred in job (id=139906233857792): failed to connect to host ec2-23-22-72-123.compute-1.amazonaws.com on port 22
+Traceback (most recent call last):
+  File "/opt/lib/python2.6/site-packages/StarCluster-0.93.3-py2.6.egg/starcluster/threadpool.py", line 31, in run
+    job.run()
+  File "/opt/lib/python2.6/site-packages/StarCluster-0.93.3-py2.6.egg/starcluster/threadpool.py", line 58, in run
+    r = self.method(*self.args, **self.kwargs)
+  File "/opt/lib/python2.6/site-packages/StarCluster-0.93.3-py2.6.egg/starcluster/plugins/sge.py", line 50, in <lambda>
+    num_processors = sum(self.pool.map(lambda n: n.num_processors, nodes))
+  File "/opt/lib/python2.6/site-packages/StarCluster-0.93.3-py2.6.egg/starcluster/node.py", line 169, in num_processors
+    'cat /proc/cpuinfo | grep processor | wc -l')[0])
+  File "/opt/lib/python2.6/site-packages/StarCluster-0.93.3-py2.6.egg/starcluster/sshutils/__init__.py", line 519, in execute
+    channel = self.transport.open_session()
+  File "/opt/lib/python2.6/site-packages/StarCluster-0.93.3-py2.6.egg/starcluster/sshutils/__init__.py", line 136, in transport
+    port=self._port, timeout=self._timeout)
+  File "/opt/lib/python2.6/site-packages/StarCluster-0.93.3-py2.6.egg/starcluster/sshutils/__init__.py", line 103, in connect
+    raise exception.SSHConnectionError(host, port)
+SSHConnectionError: failed to connect to host ec2-23-22-72-123.compute-1.amazonaws.com on port 22
+
+---------- SYSTEM INFO ----------
+StarCluster: 0.93.3
+Python: 2.6.6 (r266:84292, Dec 26 2010, 22:31:48)  [GCC 4.4.5]
+Platform: Linux-2.6.32-5-amd64-x86_64-with-debian-6.0.6
+boto: 2.3.0
+ssh: 1.7.13
+Crypto: 2.6
+jinja2: 2.6
+decorator: 3.3.1

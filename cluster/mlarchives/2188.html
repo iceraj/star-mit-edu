@@ -1,0 +1,255 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Cedar McKay ((no email))" />
+<meta name="Subject" content="ubuntu 14.04?" />
+<title>starcluster.mbox.out: ubuntu 14.04?</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">ubuntu 14.04?</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>ubuntu 14.04?</h1>
+<!-- received="Thu May  8 19:12:09 2014" -->
+<!-- isoreceived="20140508231209" -->
+<!-- sent="Thu, 8 May 2014 16:12:06 -0700" -->
+<!-- isosent="20140508231206" -->
+<!-- name="Cedar McKay" -->
+<!-- email="(no email)" -->
+<!-- subject="ubuntu 14.04?" -->
+<!-- id="46D875F3-69F9-4687-AB67-6B3A353FE313_at_uw.edu" -->
+<!-- charset="us-ascii" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2188.html#start2188" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2188.html#options2">top</a>, <a href="2188.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2189.html" accesskey="d" title="Rayson Ho: &quot;Re:  Parallelization of MPI application with Star Cluster&quot;">Next message</a> ]
+[ <a href="2187.html" title="Cedar McKay: &quot;Fast shared or local storage?&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2188" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2188" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2188" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2188" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Cedar McKay &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 8 May 2014 16:12:06 -0700</span><br />
+</address>
+<br />
+Hello all.
+<br />
+<br />I have several software packages that are not available in ubuntu 13, so I'ld love to upgrade to 14.04. What is the best practice for upgrading to the latest, while still keeping starcluster working? If I can't get dist upgrade to 14.04, is there any way to access more recent debs? The usual way of editing /etc/apt/sources.list doesn't seem available in the standard starcluster official AMIs. 
+<br />
+<br /><br /><br /><br /><br />I took a crack at rolling my own 14.04 starting with the script  here:
+<br />
+<br /><a href="https://github.com/jtriley/StarCluster/blob/develop/utils/scimage.py">https://github.com/jtriley/StarCluster/blob/develop/utils/scimage.py</a>
+<br />
+<br />I started with an official ubuntu 14.04 snapshot, but it failed like this after running for a while:
+<br />
+<br /><em class="quotelev1">&gt; Ign <a href="http://www.cs.wisc.edu">http://www.cs.wisc.edu</a> lenny Release       
+</em><br />
+<em class="quotelev1">&gt; Get:1 <a href="http://security.ubuntu.com">http://security.ubuntu.com</a> trusty-security Release.gpg [933 B]
+</em><br />
+<em class="quotelev1">&gt; Err <a href="http://www.cs.wisc.edu">http://www.cs.wisc.edu</a> lenny/contrib Sources                     
+</em><br />
+<em class="quotelev1">&gt;   
+</em><br />
+<em class="quotelev1">&gt; Ign <a href="http://www.cs.wisc.edu">http://www.cs.wisc.edu</a> lenny/contrib amd64 Packages/DiffIndex
+</em><br />
+<em class="quotelev1">&gt; Get:2 <a href="http://security.ubuntu.com">http://security.ubuntu.com</a> trusty-security Release [58.5 kB]
+</em><br />
+<em class="quotelev1">&gt; Err <a href="http://www.cs.wisc.edu">http://www.cs.wisc.edu</a> lenny/contrib Sources         
+</em><br />
+<em class="quotelev1">&gt;   
+</em><br />
+<em class="quotelev1">&gt; Hit <a href="http://www.cs.wisc.edu">http://www.cs.wisc.edu</a> lenny/contrib amd64 Packages
+</em><br />
+<em class="quotelev1">&gt; Get:3 <a href="http://security.ubuntu.com">http://security.ubuntu.com</a> trusty-security/main Sources [12.0 kB]
+</em><br />
+<em class="quotelev1">&gt; Err <a href="http://www.cs.wisc.edu">http://www.cs.wisc.edu</a> lenny/contrib Sources                      
+</em><br />
+<em class="quotelev1">&gt;   
+</em><br />
+<em class="quotelev1">&gt; Get:4 <a href="http://security.ubuntu.com">http://security.ubuntu.com</a> trusty-security/universe Sources [1,785 B]
+</em><br />
+<em class="quotelev1">&gt; Err <a href="http://www.cs.wisc.edu">http://www.cs.wisc.edu</a> lenny/contrib Sources                      
+</em><br />
+<em class="quotelev1">&gt;   
+</em><br />
+<em class="quotelev1">&gt; Get:5 <a href="http://security.ubuntu.com">http://security.ubuntu.com</a> trusty-security/main amd64 Packages [37.9 kB]
+</em><br />
+<em class="quotelev1">&gt; Err <a href="http://www.cs.wisc.edu">http://www.cs.wisc.edu</a> lenny/contrib Sources                                             
+</em><br />
+<em class="quotelev1">&gt;   404  Not Found
+</em><br />
+<em class="quotelev1">&gt; Ign <a href="http://www.cs.wisc.edu">http://www.cs.wisc.edu</a> lenny/contrib Translation-en_US            
+</em><br />
+<em class="quotelev1">&gt; Get:6 <a href="http://security.ubuntu.com">http://security.ubuntu.com</a> trusty-security/universe amd64 Packages [9,525 B]
+</em><br />
+<em class="quotelev1">&gt; Ign <a href="http://www.cs.wisc.edu">http://www.cs.wisc.edu</a> lenny/contrib Translation-en                
+</em><br />
+<em class="quotelev1">&gt; Hit <a href="http://security.ubuntu.com">http://security.ubuntu.com</a> trusty-security/main Translation-en
+</em><br />
+<em class="quotelev1">&gt; Hit <a href="http://security.ubuntu.com">http://security.ubuntu.com</a> trusty-security/universe Translation-en                                                                                                    
+</em><br />
+<em class="quotelev1">&gt; Ign <a href="http://security.ubuntu.com">http://security.ubuntu.com</a> trusty-security/main Translation-en_US                                                                                                     
+</em><br />
+<em class="quotelev1">&gt; Ign <a href="http://security.ubuntu.com">http://security.ubuntu.com</a> trusty-security/universe Translation-en_US                                                                                                 
+</em><br />
+<em class="quotelev1">&gt; Fetched 121 kB in 10s (11.4 kB/s)                                                                                                                                         
+</em><br />
+<em class="quotelev1">&gt; W: Failed to fetch <a href="http://www.cs.wisc.edu/condor/debian/development/dists/lenny/contrib/source/Sources">http://www.cs.wisc.edu/condor/debian/development/dists/lenny/contrib/source/Sources</a>  404  Not Found
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; E: Some index files failed to download. They have been ignored, or old ones used instead.
+</em><br />
+<em class="quotelev1">&gt; Traceback (most recent call last):
+</em><br />
+<em class="quotelev1">&gt;   File &quot;scimage.py&quot;, line 612, in &lt;module&gt;
+</em><br />
+<em class="quotelev1">&gt;     main()
+</em><br />
+<em class="quotelev1">&gt;   File &quot;scimage.py&quot;, line 590, in main
+</em><br />
+<em class="quotelev1">&gt;     upgrade_packages()
+</em><br />
+<em class="quotelev1">&gt;   File &quot;scimage.py&quot;, line 274, in upgrade_packages
+</em><br />
+<em class="quotelev1">&gt;     apt_command('update')
+</em><br />
+<em class="quotelev1">&gt;   File &quot;scimage.py&quot;, line 228, in apt_command
+</em><br />
+<em class="quotelev1">&gt;     run_command(cmd)
+</em><br />
+<em class="quotelev1">&gt;   File &quot;scimage.py&quot;, line 216, in run_command
+</em><br />
+<em class="quotelev1">&gt;     raise Exception(errmsg)
+</em><br />
+<em class="quotelev1">&gt; Exception: command 'DEBIAN_FRONTEND='noninteractive' apt-get -o Dpkg::Options::='--force-confnew' -y --force-yes update' failed with status 100
+</em><br />
+<br /><br /><br /><br />Thanks for your help!
+<br />
+Cedar
+<br />
+<span id="received"><dfn>Received on</dfn> Thu May 08 2014 - 19:12:09 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2188.html#start2188">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2189.html" title="Next message in the list">Rayson Ho: "Re:  Parallelization of MPI application with Star Cluster"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2187.html" title="Previous message in the list">Cedar McKay: "Fast shared or local storage?"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2188" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2188" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2188" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2188" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

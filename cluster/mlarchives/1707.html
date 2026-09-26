@@ -1,0 +1,283 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Sergio Mafra ((no email))" />
+<meta name="Subject" content="LoadBalance" />
+<title>starcluster.mbox.out: LoadBalance</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">LoadBalance</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>LoadBalance</h1>
+<!-- received="Tue Apr 30 10:05:48 2013" -->
+<!-- isoreceived="20130430140548" -->
+<!-- sent="Tue, 30 Apr 2013 11:05:45 -0300" -->
+<!-- isosent="20130430140545" -->
+<!-- name="Sergio Mafra" -->
+<!-- email="(no email)" -->
+<!-- subject="LoadBalance" -->
+<!-- id="CALxTZg4KYr3mRiTUG_q3s09idMJEKjxiEynFb6v24qmmMsqC-w_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1707.html#start1707" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1707.html#options2">top</a>, <a href="1707.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1708.html" accesskey="d" title="Rajat Banerjee: &quot;Re:  StarCluster Digest, Vol 44, Issue 5&quot;">Next message</a> ]
+[ <a href="1706.html" title="Jerry Lee, GW/US: &quot;Unable to mount ebs volume&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1707" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1707" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1707" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1707" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Sergio Mafra &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Tue, 30 Apr 2013 11:05:45 -0300</span><br />
+</address>
+<br />
+Hi fellows,
+<br />
+<br />I�m testing StarCluster version 0.999 and so far so good.
+<br />
+one thing that isn�t working is loadbalance. This is what I get:
+<br />
+<br />ubuntu_at_domU-12-31-39-02-19-36:~$ starcluster loadbalance newcam
+<br />
+StarCluster - (<a href="/cluster/">/cluster</a>) (v. 0.9999)
+<br />
+Software Tools for Academics and Researchers (STAR)
+<br />
+Please submit bug reports to starcluster_at_mit.edu
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Starting load balancer (Use ctrl-c to exit)
+</em><br />
+Maximum cluster size: 3
+<br />
+Minimum cluster size: 1
+<br />
+Cluster growth rate: 1 nodes/iteration
+<br />
+<br />*** WARNING - Failed to retrieve stats (1/5):
+<br />
+Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.9999-py2.7.egg/starcluster/balancers/sge/__init__.py&quot;,
+<br />
+line 515, in get_stats
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self.stat = self._get_stats()
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.9999-py2.7.egg/starcluster/balancers/sge/__init__.py&quot;,
+<br />
+line 487, in _get_stats
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;now = self.get_remote_time()
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.9999-py2.7.egg/starcluster/balancers/sge/__init__.py&quot;,
+<br />
+line 466, in get_remote_time
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;return datetime.datetime.strptime(str, &quot;%a %b %d %H:%M:%S UTC %Y&quot;)
+<br />
+&nbsp;&nbsp;File &quot;/usr/lib/python2.7/_strptime.py&quot;, line 325, in _strptime
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;(data_string, format))
+<br />
+ValueError: time data 'Tue Apr 30 07:01:35 PDT 2013' does not match format
+<br />
+'%a %b %d %H:%M:%S UTC %Y'
+<br />
+*** WARNING - Retrying in 60s
+<br />
+^CTraceback (most recent call last):
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/bin/starcluster&quot;, line 9, in &lt;module&gt;
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;load_entry_point('StarCluster==0.9999', 'console_scripts',
+<br />
+'starcluster')()
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.9999-py2.7.egg/starcluster/cli.py&quot;,
+<br />
+line 313, in main
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;StarClusterCLI().main()
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.9999-py2.7.egg/starcluster/cli.py&quot;,
+<br />
+line 257, in main
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;sc.execute(args)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.9999-py2.7.egg/starcluster/commands/loadbalance.py&quot;,
+<br />
+line 90, in execute
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;lb.run(cluster)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.9999-py2.7.egg/starcluster/balancers/sge/__init__.py&quot;,
+<br />
+line 576, in run
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self.get_stats()
+<br />
+&nbsp;&nbsp;File &quot;&lt;string&gt;&quot;, line 2, in get_stats
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.9999-py2.7.egg/starcluster/utils.py&quot;,
+<br />
+line 92, in wrap_f
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;res = func(*arg, **kargs)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.9999-py2.7.egg/starcluster/balancers/sge/__init__.py&quot;,
+<br />
+line 521, in get_stats
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;time.sleep(self.polling_interval)
+<br />
+<br />Any ideas?
+<br />
+<br />All Best,
+<br />
+<br />Sergio
+<br />
+<span id="received"><dfn>Received on</dfn> Tue Apr 30 2013 - 10:05:48 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1707.html#start1707">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1708.html" title="Next message in the list">Rajat Banerjee: "Re:  StarCluster Digest, Vol 44, Issue 5"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1706.html" title="Previous message in the list">Jerry Lee, GW/US: "Unable to mount ebs volume"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1707" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1707" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1707" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1707" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

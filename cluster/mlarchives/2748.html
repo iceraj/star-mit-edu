@@ -1,0 +1,213 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Silverstein ((no email))" />
+<meta name="Subject" content="removenode failing" />
+<title>starcluster.mbox.out: removenode failing</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">removenode failing</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>removenode failing</h1>
+<!-- received="Thu Dec 10 01:00:03 2015" -->
+<!-- isoreceived="20151210060003" -->
+<!-- sent="Wed, 09 Dec 2015 21:59:54 -0800" -->
+<!-- isosent="20151210055954" -->
+<!-- name="Silverstein" -->
+<!-- email="(no email)" -->
+<!-- subject="removenode failing" -->
+<!-- id="566914DA.1000908_at_schrodinger.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2748.html#start2748" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2748.html#options2">top</a>, <a href="2748.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2749.html" accesskey="d" title="Avner May: &quot;Updating public AMIs to have Ubuntu 14.04? Or how to install starcluster on AWS AMI?&quot;">Next message</a> ]
+[ <a href="2747.html" title="(no email): &quot;Re:  R3 SSD not mounted xvdaa&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2748" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2748" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2748" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2748" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Silverstein &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Wed, 09 Dec 2015 21:59:54 -0800</span><br />
+</address>
+<br />
+I'm running the loadbalancer on a cluster with 5 compute nodes and a 
+<br />
+master (started with a master and 1 compute node).  It correctly 
+<br />
+detected that it should remove nodes.  It removed the nodes from SGE's 
+<br />
+execute list, but the nodes were still in the cluster (listclusters 
+<br />
+shows them).  I then killed the loadbalancer and tried removing manually 
+<br />
+via &quot;removenode&quot;.  This resulted in:
+<br />
+<br />Remove 5 nodes from cluster5(y/n)? y
+<br />
+<em class="quotelev3"> &gt;&gt;&gt; Running plugin elasticip.ElasticIPSetup
+</em><br />
+<em class="quotelev3"> &gt;&gt;&gt; Running plugin schrowscoreconfigurator.SchrodingerConfiguratorPlugin
+</em><br />
+<em class="quotelev3"> &gt;&gt;&gt; Running plugin starcluster.plugins.sge.SGEPlugin
+</em><br />
+<em class="quotelev3"> &gt;&gt;&gt; Removing node006 from SGE
+</em><br />
+!!! ERROR - Error occured while running plugin 
+<br />
+'starcluster.plugins.sge.SGEPlugin':
+<br />
+!!! ERROR - remote command 'source /etc/profile &amp;&amp; qconf -de node006'
+<br />
+!!! ERROR - failed with status 1:
+<br />
+!!! ERROR - denied: execution host &quot;node006&quot; does not exist
+<br />
+<br />So I forcibly removed them.  when I do that I get messages like this for 
+<br />
+each node:
+<br />
+<br /><em class="quotelev3"> &gt;&gt;&gt; Terminating node: node006 (i-d16e4815)
+</em><br />
+<em class="quotelev3"> &gt;&gt;&gt; Running plugin elasticip.ElasticIPSetup
+</em><br />
+<em class="quotelev3"> &gt;&gt;&gt; Running plugin schrowscoreconfigurator.SchrodingerConfiguratorPlugin
+</em><br />
+<em class="quotelev3"> &gt;&gt;&gt; Running plugin starcluster.plugins.sge.SGEPlugin
+</em><br />
+<em class="quotelev3"> &gt;&gt;&gt; Removing node005 from SGE
+</em><br />
+!!! ERROR - Error occured while running plugin 
+<br />
+'starcluster.plugins.sge.SGEPlugin':
+<br />
+<br />Has anyone experienced this?  If so, what is causing this?
+<br />
+<br />Herc
+<br />
+<span id="received"><dfn>Received on</dfn> Thu Dec 10 2015 - 01:00:03 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2748.html#start2748">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2749.html" title="Next message in the list">Avner May: "Updating public AMIs to have Ubuntu 14.04? Or how to install starcluster on AWS AMI?"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2747.html" title="Previous message in the list">(no email): "Re:  R3 SSD not mounted xvdaa"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2748" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2748" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2748" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2748" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

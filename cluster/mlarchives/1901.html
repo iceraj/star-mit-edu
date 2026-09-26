@@ -1,0 +1,492 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Nik Krumm ((no email))" />
+<meta name="Subject" content="bug report regarding NFS mounting on &quot;addnode&quot;" />
+<title>starcluster.mbox.out: bug report regarding NFS mounting on &quot;addnode&quot;</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">bug report regarding NFS mounting on &quot;addnode&quot;</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>bug report regarding NFS mounting on &quot;addnode&quot;</h1>
+<!-- received="Wed Oct  9 18:16:10 2013" -->
+<!-- isoreceived="20131009221610" -->
+<!-- sent="Wed, 9 Oct 2013 15:16:02 -0700" -->
+<!-- isosent="20131009221602" -->
+<!-- name="Nik Krumm" -->
+<!-- email="(no email)" -->
+<!-- subject="bug report regarding NFS mounting on &quot;addnode&quot;" -->
+<!-- id="D8489137-2700-4E9A-91CB-ED81A1AA4F9F_at_gmail.com" -->
+<!-- charset="us-ascii" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1901.html#start1901" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1901.html#options2">top</a>, <a href="1901.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1902.html" accesskey="d" title="Alex Gaudio: &quot;Let&#0039;s start to merge all the pull requests into develop!&quot;">Next message</a> ]
+[ <a href="1900.html" title="Rayson Ho: &quot;Re:  Manipulating # of slots in Sun Grid Engine&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1901" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1901" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1901" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1901" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Nik Krumm &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Wed, 9 Oct 2013 15:16:02 -0700</span><br />
+</address>
+<br />
+Hi Justin,
+<br />
+<br />Just ran into the following bug, which happened after I tried to &quot;starcluster addnode&quot; to a cluster. The only thing to note is that the previous nodes on the cluster were all terminated due to being outbid, so perhaps that is playing a role?
+<br />
+<br />The crash log is attached. Let me know if I can help.
+<br />
+<br />Thanks
+<br />
+Nik
+<br />
+<br /><br /><br />
+---------- SYSTEM INFO ----------
+<br />
+StarCluster: 0.9999
+<br />
+Python: 2.7.3 |EPD_free 7.3-1 (32-bit)| (default, Apr 12 2012, 11:28:34)  [GCC 4.0.1 (Apple Inc. build 5493)]
+<br />
+Platform: Darwin-10.8.0-i386-32bit
+<br />
+boto: 2.10.0
+<br />
+paramiko: 1.11.0
+<br />
+Crypto: 2.6
+<br />
+<br />---------- CRASH DETAILS ----------
+<br />
+Command: starcluster addnode test
+<br />
+<br />2013-10-09 14:39:47,035 PID: 89616 config.py:567 - DEBUG - Loading config
+<br />
+2013-10-09 14:39:47,035 PID: 89616 config.py:138 - DEBUG - Loading file: /Users/nkrumm/.starcluster/config
+<br />
+2013-10-09 14:39:47,043 PID: 89616 awsutils.py:74 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'proxy_user': None, 'proxy_pass': None, 'proxy_port': None, 'proxy': None, 'is_secure': True, 'path': '/', 'region': None, 'validate_certs': True, 'port': None}
+<br />
+2013-10-09 14:39:47,778 PID: 89616 cluster.py:711 - DEBUG - existing nodes: {}
+<br />
+2013-10-09 14:39:47,778 PID: 89616 cluster.py:719 - DEBUG - adding node i-94fff1ef to self._nodes list
+<br />
+2013-10-09 14:39:47,779 PID: 89616 cluster.py:727 - DEBUG - returning self._nodes = [&lt;Node: master (i-94fff1ef)&gt;]
+<br />
+2013-10-09 14:39:47,779 PID: 89616 awsutils.py:74 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'proxy_user': None, 'proxy_pass': None, 'proxy_port': None, 'proxy': None, 'is_secure': True, 'path': '/', 'region': None, 'validate_certs': True, 'port': None}
+<br />
+2013-10-09 14:39:48,551 PID: 89616 cluster.py:711 - DEBUG - existing nodes: {u'i-94fff1ef': &lt;Node: master (i-94fff1ef)&gt;}
+<br />
+2013-10-09 14:39:48,552 PID: 89616 cluster.py:714 - DEBUG - updating existing node i-94fff1ef in self._nodes
+<br />
+2013-10-09 14:39:48,552 PID: 89616 cluster.py:727 - DEBUG - returning self._nodes = [&lt;Node: master (i-94fff1ef)&gt;]
+<br />
+2013-10-09 14:39:48,693 PID: 89616 cluster.py:711 - DEBUG - existing nodes: {u'i-94fff1ef': &lt;Node: master (i-94fff1ef)&gt;}
+<br />
+2013-10-09 14:39:48,693 PID: 89616 cluster.py:714 - DEBUG - updating existing node i-94fff1ef in self._nodes
+<br />
+2013-10-09 14:39:48,693 PID: 89616 cluster.py:727 - DEBUG - returning self._nodes = [&lt;Node: master (i-94fff1ef)&gt;]
+<br />
+2013-10-09 14:39:48,693 PID: 89616 cluster.py:860 - DEBUG - Highest node number is 0. choosing 1.
+<br />
+2013-10-09 14:39:48,693 PID: 89616 cluster.py:902 - INFO - Launching node(s): node001
+<br />
+2013-10-09 14:39:48,699 PID: 89616 cluster.py:801 - DEBUG - Userdata size in KB: 0.55
+<br />
+2013-10-09 14:39:49,081 PID: 89616 cluster.py:801 - DEBUG - Userdata size in KB: 0.55
+<br />
+2013-10-09 14:39:49,469 PID: 89616 cluster.py:847 - INFO - SpotInstanceRequest:sir-14231032
+<br />
+2013-10-09 14:39:49,469 PID: 89616 utils.py:624 - INFO - Waiting for spot requests to propagate...
+<br />
+2013-10-09 14:39:50,659 PID: 89616 cluster.py:1298 - INFO - Waiting for node(s) to come up... (updating every 30s)
+<br />
+2013-10-09 14:39:50,790 PID: 89616 cluster.py:1235 - INFO - Waiting for open spot requests to become active...
+<br />
+2013-10-09 14:41:21,246 PID: 89616 utils.py:624 - INFO - Waiting for instances to propagate...
+<br />
+2013-10-09 14:41:22,518 PID: 89616 cluster.py:1255 - INFO - Waiting for all nodes to be in a 'running' state...
+<br />
+2013-10-09 14:41:22,651 PID: 89616 cluster.py:711 - DEBUG - existing nodes: {u'i-94fff1ef': &lt;Node: master (i-94fff1ef)&gt;}
+<br />
+2013-10-09 14:41:22,651 PID: 89616 cluster.py:714 - DEBUG - updating existing node i-94fff1ef in self._nodes
+<br />
+2013-10-09 14:41:22,651 PID: 89616 cluster.py:719 - DEBUG - adding node i-b13fc6c9 to self._nodes list
+<br />
+2013-10-09 14:41:22,651 PID: 89616 awsutils.py:74 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'proxy_user': None, 'proxy_pass': None, 'proxy_port': None, 'proxy': None, 'is_secure': True, 'path': '/', 'region': None, 'validate_certs': True, 'port': None}
+<br />
+2013-10-09 14:41:23,565 PID: 89616 cluster.py:727 - DEBUG - returning self._nodes = [&lt;Node: master (i-94fff1ef)&gt;, &lt;Node: node001 (i-b13fc6c9)&gt;]
+<br />
+2013-10-09 14:41:54,151 PID: 89616 cluster.py:711 - DEBUG - existing nodes: {u'i-94fff1ef': &lt;Node: master (i-94fff1ef)&gt;, u'i-b13fc6c9': &lt;Node: node001 (i-b13fc6c9)&gt;}
+<br />
+2013-10-09 14:41:54,151 PID: 89616 cluster.py:714 - DEBUG - updating existing node i-94fff1ef in self._nodes
+<br />
+2013-10-09 14:41:54,151 PID: 89616 cluster.py:714 - DEBUG - updating existing node i-b13fc6c9 in self._nodes
+<br />
+2013-10-09 14:41:54,151 PID: 89616 cluster.py:727 - DEBUG - returning self._nodes = [&lt;Node: master (i-94fff1ef)&gt;, &lt;Node: node001 (i-b13fc6c9)&gt;]
+<br />
+2013-10-09 14:42:24,297 PID: 89616 cluster.py:711 - DEBUG - existing nodes: {u'i-94fff1ef': &lt;Node: master (i-94fff1ef)&gt;, u'i-b13fc6c9': &lt;Node: node001 (i-b13fc6c9)&gt;}
+<br />
+2013-10-09 14:42:24,298 PID: 89616 cluster.py:714 - DEBUG - updating existing node i-94fff1ef in self._nodes
+<br />
+2013-10-09 14:42:24,298 PID: 89616 cluster.py:714 - DEBUG - updating existing node i-b13fc6c9 in self._nodes
+<br />
+2013-10-09 14:42:24,298 PID: 89616 cluster.py:727 - DEBUG - returning self._nodes = [&lt;Node: master (i-94fff1ef)&gt;, &lt;Node: node001 (i-b13fc6c9)&gt;]
+<br />
+2013-10-09 14:42:54,534 PID: 89616 cluster.py:711 - DEBUG - existing nodes: {u'i-94fff1ef': &lt;Node: master (i-94fff1ef)&gt;, u'i-b13fc6c9': &lt;Node: node001 (i-b13fc6c9)&gt;}
+<br />
+2013-10-09 14:42:54,534 PID: 89616 cluster.py:714 - DEBUG - updating existing node i-94fff1ef in self._nodes
+<br />
+2013-10-09 14:42:54,535 PID: 89616 cluster.py:714 - DEBUG - updating existing node i-b13fc6c9 in self._nodes
+<br />
+2013-10-09 14:42:54,535 PID: 89616 cluster.py:727 - DEBUG - returning self._nodes = [&lt;Node: master (i-94fff1ef)&gt;, &lt;Node: node001 (i-b13fc6c9)&gt;]
+<br />
+2013-10-09 14:43:24,828 PID: 89616 cluster.py:711 - DEBUG - existing nodes: {u'i-94fff1ef': &lt;Node: master (i-94fff1ef)&gt;, u'i-b13fc6c9': &lt;Node: node001 (i-b13fc6c9)&gt;}
+<br />
+2013-10-09 14:43:24,828 PID: 89616 cluster.py:714 - DEBUG - updating existing node i-94fff1ef in self._nodes
+<br />
+2013-10-09 14:43:24,828 PID: 89616 cluster.py:714 - DEBUG - updating existing node i-b13fc6c9 in self._nodes
+<br />
+2013-10-09 14:43:24,828 PID: 89616 cluster.py:727 - DEBUG - returning self._nodes = [&lt;Node: master (i-94fff1ef)&gt;, &lt;Node: node001 (i-b13fc6c9)&gt;]
+<br />
+2013-10-09 14:43:24,828 PID: 89616 cluster.py:1283 - INFO - Waiting for SSH to come up on all nodes...
+<br />
+2013-10-09 14:43:24,951 PID: 89616 cluster.py:711 - DEBUG - existing nodes: {u'i-94fff1ef': &lt;Node: master (i-94fff1ef)&gt;, u'i-b13fc6c9': &lt;Node: node001 (i-b13fc6c9)&gt;}
+<br />
+2013-10-09 14:43:24,952 PID: 89616 cluster.py:714 - DEBUG - updating existing node i-94fff1ef in self._nodes
+<br />
+2013-10-09 14:43:24,952 PID: 89616 cluster.py:714 - DEBUG - updating existing node i-b13fc6c9 in self._nodes
+<br />
+2013-10-09 14:43:24,952 PID: 89616 cluster.py:727 - DEBUG - returning self._nodes = [&lt;Node: master (i-94fff1ef)&gt;, &lt;Node: node001 (i-b13fc6c9)&gt;]
+<br />
+2013-10-09 14:43:24,958 PID: 89616 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+<br />
+2013-10-09 14:43:25,338 PID: 89616 __init__.py:86 - DEBUG - loading private key /net/eichler/vol8/home/nkrumm/.ssh/ndar_aws_key.rsa
+<br />
+2013-10-09 14:43:25,340 PID: 89616 __init__.py:178 - DEBUG - Using private key /net/eichler/vol8/home/nkrumm/.ssh/ndar_aws_key.rsa (rsa)
+<br />
+2013-10-09 14:43:25,340 PID: 89616 __init__.py:108 - DEBUG - connecting to host ec2-54-225-32-49.compute-1.amazonaws.com on port 22 as user root
+<br />
+2013-10-09 14:43:25,360 PID: 89616 __init__.py:86 - DEBUG - loading private key /net/eichler/vol8/home/nkrumm/.ssh/ndar_aws_key.rsa
+<br />
+2013-10-09 14:43:25,361 PID: 89616 __init__.py:178 - DEBUG - Using private key /net/eichler/vol8/home/nkrumm/.ssh/ndar_aws_key.rsa (rsa)
+<br />
+2013-10-09 14:43:25,362 PID: 89616 __init__.py:108 - DEBUG - connecting to host ec2-54-221-172-46.compute-1.amazonaws.com on port 22 as user root
+<br />
+2013-10-09 14:43:25,982 PID: 89616 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+<br />
+2013-10-09 14:43:34,706 PID: 89616 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+<br />
+2013-10-09 14:43:43,185 PID: 89616 __init__.py:197 - DEBUG - creating sftp connection
+<br />
+2013-10-09 14:43:44,184 PID: 89616 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2013-10-09 14:43:45,089 PID: 89616 __init__.py:197 - DEBUG - creating sftp connection
+<br />
+2013-10-09 14:43:45,185 PID: 89616 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2013-10-09 14:43:46,185 PID: 89616 utils.py:117 - INFO - Waiting for cluster to come up took 3.925 mins
+<br />
+2013-10-09 14:43:46,186 PID: 89616 cluster.py:912 - DEBUG - Adding node(s): ['node001']
+<br />
+2013-10-09 14:43:46,313 PID: 89616 cluster.py:711 - DEBUG - existing nodes: {u'i-94fff1ef': &lt;Node: master (i-94fff1ef)&gt;, u'i-b13fc6c9': &lt;Node: node001 (i-b13fc6c9)&gt;}
+<br />
+2013-10-09 14:43:46,313 PID: 89616 cluster.py:714 - DEBUG - updating existing node i-94fff1ef in self._nodes
+<br />
+2013-10-09 14:43:46,313 PID: 89616 cluster.py:714 - DEBUG - updating existing node i-b13fc6c9 in self._nodes
+<br />
+2013-10-09 14:43:46,314 PID: 89616 cluster.py:727 - DEBUG - returning self._nodes = [&lt;Node: master (i-94fff1ef)&gt;, &lt;Node: node001 (i-b13fc6c9)&gt;]
+<br />
+2013-10-09 14:43:46,436 PID: 89616 cluster.py:711 - DEBUG - existing nodes: {u'i-94fff1ef': &lt;Node: master (i-94fff1ef)&gt;, u'i-b13fc6c9': &lt;Node: node001 (i-b13fc6c9)&gt;}
+<br />
+2013-10-09 14:43:46,436 PID: 89616 cluster.py:714 - DEBUG - updating existing node i-94fff1ef in self._nodes
+<br />
+2013-10-09 14:43:46,436 PID: 89616 cluster.py:714 - DEBUG - updating existing node i-b13fc6c9 in self._nodes
+<br />
+2013-10-09 14:43:46,436 PID: 89616 cluster.py:727 - DEBUG - returning self._nodes = [&lt;Node: master (i-94fff1ef)&gt;, &lt;Node: node001 (i-b13fc6c9)&gt;]
+<br />
+2013-10-09 14:43:46,437 PID: 89616 cluster.py:1571 - INFO - Running plugin starcluster.clustersetup.DefaultClusterSetup
+<br />
+2013-10-09 14:43:46,437 PID: 89616 clustersetup.py:121 - INFO - Configuring hostnames...
+<br />
+2013-10-09 14:43:46,443 PID: 89616 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2013-10-09 14:43:46,755 PID: 89616 __init__.py:538 - DEBUG - executing remote command: source /etc/profile &amp;&amp; hostname -F /etc/hostname
+<br />
+2013-10-09 14:43:46,839 PID: 89616 __init__.py:562 - DEBUG - output of 'source /etc/profile &amp;&amp; hostname -F /etc/hostname':
+<br />
+<br />2013-10-09 14:43:47,444 PID: 89616 clustersetup.py:247 - INFO - Configuring /etc/hosts on each node
+<br />
+2013-10-09 14:43:47,445 PID: 89616 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+<br />
+2013-10-09 14:43:47,715 PID: 89616 __init__.py:296 - DEBUG - new /etc/hosts after removing regex (master|node001) matches:
+<br />
+127.0.0.1 localhost
+<br />
+<br /># The following lines are desirable for IPv6 capable hosts
+<br />
+::1 ip6-localhost ip6-loopback
+<br />
+fe00::0 ip6-localnet
+<br />
+ff00::0 ip6-mcastprefix
+<br />
+ff02::1 ip6-allnodes
+<br />
+ff02::2 ip6-allrouters
+<br />
+ff02::3 ip6-allhosts
+<br />
+10.232.9.232 node002
+<br />
+<br />2013-10-09 14:43:47,725 PID: 89616 __init__.py:296 - DEBUG - new /etc/hosts after removing regex (master|node001) matches:
+<br />
+127.0.0.1 localhost
+<br />
+<br /># The following lines are desirable for IPv6 capable hosts
+<br />
+::1 ip6-localhost ip6-loopback
+<br />
+fe00::0 ip6-localnet
+<br />
+ff00::0 ip6-mcastprefix
+<br />
+ff02::1 ip6-allnodes
+<br />
+ff02::2 ip6-allrouters
+<br />
+ff02::3 ip6-allhosts
+<br />
+<br />2013-10-09 14:43:48,446 PID: 89616 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+<br />
+2013-10-09 14:43:49,447 PID: 89616 node.py:660 - INFO - Configuring NFS exports path(s):
+<br />
+/home /data
+<br />
+2013-10-09 14:43:50,018 PID: 89616 __init__.py:538 - DEBUG - executing remote command: source /etc/profile &amp;&amp; exportfs -fra
+<br />
+2013-10-09 14:43:50,101 PID: 89616 __init__.py:562 - DEBUG - output of 'source /etc/profile &amp;&amp; exportfs -fra':
+<br />
+<br />2013-10-09 14:43:50,101 PID: 89616 clustersetup.py:347 - INFO - Mounting all NFS export path(s) on 1 worker node(s)
+<br />
+2013-10-09 14:43:50,102 PID: 89616 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2013-10-09 14:43:50,203 PID: 89616 __init__.py:538 - DEBUG - executing remote command: source /etc/profile &amp;&amp; /etc/init.d/portmap start
+<br />
+2013-10-09 14:43:50,329 PID: 89616 __init__.py:562 - DEBUG - output of 'source /etc/profile &amp;&amp; /etc/init.d/portmap start':
+<br />
+Rather than invoking init scripts through /etc/init.d, use the service(8)
+<br />
+utility, e.g. service portmap start
+<br />
+<br />Since the script you are attempting to invoke has been converted to an
+<br />
+Upstart job, you may also use the start(8) utility, e.g. start portmap
+<br />
+2013-10-09 14:43:50,530 PID: 89616 __init__.py:538 - DEBUG - executing remote command: source /etc/profile &amp;&amp; mount -t devpts none /dev/pts
+<br />
+2013-10-09 14:43:50,613 PID: 89616 __init__.py:559 - DEBUG - (ignored) remote command 'source /etc/profile &amp;&amp; mount -t devpts none /dev/pts' failed with status 32:
+<br />
+mount: none already mounted or /dev/pts busy
+<br />
+mount: according to mtab, devpts is already mounted on /dev/pts
+<br />
+2013-10-09 14:43:50,814 PID: 89616 __init__.py:538 - DEBUG - executing remote command: source /etc/profile &amp;&amp; mount
+<br />
+2013-10-09 14:43:50,897 PID: 89616 __init__.py:562 - DEBUG - output of 'source /etc/profile &amp;&amp; mount':
+<br />
+/dev/xvda1 on / type ext4 (rw)
+<br />
+proc on /proc type proc (rw,noexec,nosuid,nodev)
+<br />
+sysfs on /sys type sysfs (rw,noexec,nosuid,nodev)
+<br />
+none on /sys/fs/fuse/connections type fusectl (rw)
+<br />
+none on /sys/kernel/debug type debugfs (rw)
+<br />
+none on /sys/kernel/security type securityfs (rw)
+<br />
+udev on /dev type devtmpfs (rw,mode=0755)
+<br />
+devpts on /dev/pts type devpts (rw,noexec,nosuid,gid=5,mode=0620)
+<br />
+tmpfs on /run type tmpfs (rw,noexec,nosuid,size=10%,mode=0755)
+<br />
+none on /run/lock type tmpfs (rw,noexec,nosuid,nodev,size=5242880)
+<br />
+none on /run/shm type tmpfs (rw,nosuid,nodev)
+<br />
+binfmt_misc on /proc/sys/fs/binfmt_misc type binfmt_misc (rw,noexec,nosuid,nodev)
+<br />
+rpc_pipefs on /run/rpc_pipefs type rpc_pipefs (rw)
+<br />
+/dev/xvdb1 on /mnt type ext3 (rw,_netdev)
+<br />
+2013-10-09 14:43:51,103 PID: 89616 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2013-10-09 14:43:51,284 PID: 89616 __init__.py:296 - DEBUG - new /etc/fstab after removing regex ( /home | /data ) matches:
+<br />
+LABEL=cloudimg-rootfs   /        ext4   defaults        0 0
+<br />
+/dev/xvdb1      /mnt    auto    defaults,nobootwait,comment=cloudconfig 0       2
+<br />
+<br />2013-10-09 14:43:52,084 PID: 89616 __init__.py:538 - DEBUG - executing remote command: source /etc/profile &amp;&amp; mount /home
+<br />
+2013-10-09 14:43:52,103 PID: 89616 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2013-10-09 14:43:53,104 PID: 89616 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+<br />
+2013-10-09 14:43:54,104 PID: 89616 cluster.py:1581 - ERROR - Error occured while running plugin 'starcluster.clustersetup.DefaultClusterSetup':
+<br />
+2013-10-09 14:43:54,104 PID: 89616 cli.py:284 - ERROR - error occurred in job (id=node001): remote command 'source /etc/profile &amp;&amp; mount /home' failed with status 32:
+<br />
+mount.nfs: access denied by server while mounting master:/home
+<br />
+Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File &quot;/Library/Frameworks/Python.framework/Versions/7.3/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/threadpool.py&quot;, line 48, in run
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;job.run()
+<br />
+&nbsp;&nbsp;File &quot;/Library/Frameworks/Python.framework/Versions/7.3/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/threadpool.py&quot;, line 75, in run
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;r = self.method(*self.args, **self.kwargs)
+<br />
+&nbsp;&nbsp;File &quot;/Library/Frameworks/Python.framework/Versions/7.3/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/node.py&quot;, line 730, in mount_nfs_shares
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self.ssh.execute('mount %s' % path)
+<br />
+&nbsp;&nbsp;File &quot;/Library/Frameworks/Python.framework/Versions/7.3/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/sshutils/__init__.py&quot;, line 555, in execute
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;msg, command, exit_status, out_str)
+<br />
+RemoteCommandFailed: remote command 'source /etc/profile &amp;&amp; mount /home' failed with status 32:
+<br />
+mount.nfs: access denied by server while mounting master:/home
+<br />
+<span id="received"><dfn>Received on</dfn> Wed Oct 09 2013 - 18:16:10 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1901.html#start1901">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1902.html" title="Next message in the list">Alex Gaudio: "Let&#0039;s start to merge all the pull requests into develop!"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1900.html" title="Previous message in the list">Rayson Ho: "Re:  Manipulating # of slots in Sun Grid Engine"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1901" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1901" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1901" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1901" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

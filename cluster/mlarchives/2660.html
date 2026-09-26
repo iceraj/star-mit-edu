@@ -1,0 +1,195 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Austin So ((no email))" />
+<meta name="Subject" content="Connecting from your Local IPython Installation" />
+<title>starcluster.mbox.out: Connecting from your Local IPython Installation</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Connecting from your Local IPython Installation</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Connecting from your Local IPython Installation</h1>
+<!-- received="Fri Jun 19 15:56:04 2015" -->
+<!-- isoreceived="20150619195604" -->
+<!-- sent="Fri, 19 Jun 2015 12:55:59 -0700" -->
+<!-- isosent="20150619195559" -->
+<!-- name="Austin So" -->
+<!-- email="(no email)" -->
+<!-- subject="Connecting from your Local IPython Installation" -->
+<!-- id="15A27871-1702-4A28-9A05-4054FF62A98D_at_tomabio.com" -->
+<!-- charset="utf-8" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2660.html#start2660" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2660.html#options2">top</a>, <a href="2660.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2661.html" accesskey="d" title="Liu Lei: &quot;Fwd: start cluster error at CN-North-1 region&quot;">Next message</a> ]
+[ <a href="2659.html" title="Ryan G: &quot;Re:  processes still running after qdel&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2660" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2660" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2660" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2660" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Austin So &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Fri, 19 Jun 2015 12:55:59 -0700</span><br />
+</address>
+<br />
+I’m not sure if there is a problem with the .config I set up, but I can’t seem to do this, even though the cluster I created (c3.8xlarge, 5 instances) is working well i.e. I can log in to the master and nodes, I can run from an IPython notebook, etc. etc.
+<br />
+<br />Any hints? Error message below. And just to frame this, I am a neophyte to programming (need to know basis).
+<br />
+<br />Cheers
+<br />
+<br />Austin
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Loading parallel IPython library
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring local known_hosts file
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Loading parallel IPython client and view
+</em><br />
+!!! ERROR - Unhandled exception occured
+<br />
+Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File &quot;/Applications/anaconda/lib/python2.7/site-packages/StarCluster-0.95.6-py2.7.egg/starcluster/cli.py&quot;, line 274, in main
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;sc.execute(args)
+<br />
+&nbsp;&nbsp;File &quot;/Applications/anaconda/lib/python2.7/site-packages/StarCluster-0.95.6-py2.7.egg/starcluster/commands/shell.py&quot;, line 140, in execute
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;rc = Client(local_json, sshkey=key_location)
+<br />
+&nbsp;&nbsp;File &quot;/Applications/anaconda/lib/python2.7/site-packages/IPython/parallel/client/client.py&quot;, line 504, in __init__
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self._connect(sshserver, ssh_kwargs, timeout)
+<br />
+&nbsp;&nbsp;File &quot;/Applications/anaconda/lib/python2.7/site-packages/IPython/parallel/client/client.py&quot;, line 624, in _connect
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;raise error.TimeoutError(&quot;Hub connection request timed out&quot;)
+<br />
+TimeoutError: Hub connection request timed out
+<br />
+<span id="received"><dfn>Received on</dfn> Fri Jun 19 2015 - 15:56:04 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2660.html#start2660">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2661.html" title="Next message in the list">Liu Lei: "Fwd: start cluster error at CN-North-1 region"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2659.html" title="Previous message in the list">Ryan G: "Re:  processes still running after qdel"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2660" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2660" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2660" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2660" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

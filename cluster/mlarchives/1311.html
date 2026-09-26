@@ -1,0 +1,353 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Mrinal Zalpuri ((no email))" />
+<meta name="Subject" content="bug" />
+<title>starcluster.mbox.out: bug</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">bug</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>bug</h1>
+<!-- received="Mon Jul  2 15:08:55 2012" -->
+<!-- isoreceived="20120702190855" -->
+<!-- sent="Tue, 3 Jul 2012 00:38:39 +0530" -->
+<!-- isosent="20120702190839" -->
+<!-- name="Mrinal Zalpuri" -->
+<!-- email="(no email)" -->
+<!-- subject="bug" -->
+<!-- id="000001cd5886$1ccea8a0$566bf9e0$_at_com" -->
+<!-- charset="us-ascii" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1311.html#start1311" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1311.html#options2">top</a>, <a href="1311.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1312.html" accesskey="d" title="Shunde Zhang: &quot;Re:  running starcluster on openstack&quot;">Next message</a> ]
+[ <a href="1310.html" title="Daniel McDonald: &quot;Traceback from incorrectly using &#0034;starcluster help&#0034;&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1311" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1311" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1311" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1311" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Mrinal Zalpuri &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Tue, 3 Jul 2012 00:38:39 +0530</span><br />
+</address>
+<br />
+Folks got this bug while creating cluster, please check
+<br />
+<br />&nbsp;
+<br />
+<br />---------- CRASH DETAILS ----------
+<br />
+<br />COMMAND: starcluster put mytestcluster /home/mrinal/source-files /mnt
+<br />
+<br />2012-07-03 00:32:42,240 PID: 24607 config.py:551 - DEBUG - Loading config
+<br />
+<br />2012-07-03 00:32:42,241 PID: 24607 config.py:118 - DEBUG - Loading file:
+<br />
+/home/mrinal/.starcluster/config
+<br />
+<br />2012-07-03 00:32:42,242 PID: 24607 awsutils.py:54 - DEBUG - creating
+<br />
+self._conn w/ connection_authenticator kwargs = {'proxy_user': None,
+<br />
+'proxy_pass': None, 'proxy_port': None, 'proxy': None, 'is_secure': True,
+<br />
+'path': '/', 'region': RegionInfo:us-east-1, 'port': None}
+<br />
+<br />2012-07-03 00:32:45,449 PID: 24607 cluster.py:1907 - WARNING - Skipping
+<br />
+keypair fingerprint validation...
+<br />
+<br />2012-07-03 00:32:46,299 PID: 24607 cluster.py:664 - DEBUG - existing nodes:
+<br />
+{}
+<br />
+<br />2012-07-03 00:32:46,299 PID: 24607 cluster.py:672 - DEBUG - adding node
+<br />
+i-c0ff05b8 to self._nodes list
+<br />
+<br />2012-07-03 00:32:46,300 PID: 24607 cluster.py:672 - DEBUG - adding node
+<br />
+i-aeff05d6 to self._nodes list
+<br />
+<br />2012-07-03 00:32:46,300 PID: 24607 cluster.py:680 - DEBUG - returning
+<br />
+self._nodes = [&lt;Node: master (i-c0ff05b8)&gt;, &lt;Node: node001 (i-aeff05d6)&gt;]
+<br />
+<br />2012-07-03 00:32:46,301 PID: 24607 __init__.py:75 - DEBUG - loading private
+<br />
+key /home/.ssh/id_rsa
+<br />
+<br />2012-07-03 00:32:46,302 PID: 24607 __init__.py:167 - DEBUG - Using private
+<br />
+key /home/.ssh/id_rsa (rsa)
+<br />
+<br />2012-07-03 00:32:46,302 PID: 24607 __init__.py:194 - DEBUG - creating scp
+<br />
+connection
+<br />
+<br />2012-07-03 00:32:46,302 PID: 24607 __init__.py:97 - DEBUG - connecting to
+<br />
+host ec2-72-44-32-125.compute-1.amazonaws.com on port 22 as user root
+<br />
+<br />2012-07-03 00:32:49,410 PID: 24607 __init__.py:186 - DEBUG - creating sftp
+<br />
+connection
+<br />
+<br />2012-07-03 00:33:01,634 PID: 24607 cli.py:287 - DEBUG - Traceback (most
+<br />
+recent call last):
+<br />
+<br />&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.93.3-py2.7.egg/starclu
+<br />
+ster/cli.py&quot;, line 255, in main
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;sc.execute(args)
+<br />
+<br />&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.93.3-py2.7.egg/starclu
+<br />
+ster/commands/put.py&quot;, line 56, in execute
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;node.ssh.put(lpaths, rpath)
+<br />
+<br />&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.93.3-py2.7.egg/starclu
+<br />
+ster/sshutils/__init__.py&quot;, line 443, in put
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;self.scp.put(localpaths, remote_path=remotepath, recursive=recursive)
+<br />
+<br />&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.93.3-py2.7.egg/starclu
+<br />
+ster/sshutils/scp.py&quot;, line 98, in put
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;self._send_recursive(files)
+<br />
+<br />&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.93.3-py2.7.egg/starclu
+<br />
+ster/sshutils/scp.py&quot;, line 192, in _send_recursive
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;self._send_files([os.path.join(root, f) for f in fls])
+<br />
+<br />&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.93.3-py2.7.egg/starclu
+<br />
+ster/sshutils/scp.py&quot;, line 168, in _send_files
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;chan.sendall(file_hdl.read(buff_size))
+<br />
+<br />&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/ssh-1.7.13-py2.7.egg/ssh/channel.py&quot;
+<br />
+, line 789, in sendall
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;sent = self.send(s)
+<br />
+<br />&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/ssh-1.7.13-py2.7.egg/ssh/channel.py&quot;
+<br />
+, line 726, in send
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;self.transport._send_user_message(m)
+<br />
+<br />&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/ssh-1.7.13-py2.7.egg/ssh/transport.p
+<br />
+y&quot;, line 1442, in _send_user_message
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;self._send_message(data)
+<br />
+<br />&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/ssh-1.7.13-py2.7.egg/ssh/transport.p
+<br />
+y&quot;, line 1422, in _send_message
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;self.packetizer.send_message(data)
+<br />
+<br />&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/ssh-1.7.13-py2.7.egg/ssh/packet.py&quot;,
+<br />
+line 310, in send_message
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;self.write_all(out)
+<br />
+<br />&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/ssh-1.7.13-py2.7.egg/ssh/packet.py&quot;,
+<br />
+line 260, in write_all
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;raise EOFError()
+<br />
+<br />EOFError
+<br />
+<br />&nbsp;
+<br />
+<br />---------- SYSTEM INFO ----------
+<br />
+<br />StarCluster: 0.93.3
+<br />
+<br />Python: 2.7.3 (default, Apr 20 2012, 22:39:59)  [GCC 4.6.3]
+<br />
+<br />Platform: Linux-3.2.0-25-generic-x86_64-with-Ubuntu-12.04-precise
+<br />
+<br />boto: 2.3.0
+<br />
+<br />ssh: 1.7.13
+<br />
+<br />Crypto: 2.4.1
+<br />
+<br />jinja2: 2.6
+<br />
+<br />decorator: 3.3.1
+<br />
+<br />&nbsp;
+<br />
+<br />best regards
+<br />
+<br />&nbsp;
+<br />
+<br />Mrinal Zalpuri
+<br />
+<br />&nbsp;
+<br />
+<span id="received"><dfn>Received on</dfn> Mon Jul 02 2012 - 15:08:55 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1311.html#start1311">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1312.html" title="Next message in the list">Shunde Zhang: "Re:  running starcluster on openstack"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1310.html" title="Previous message in the list">Daniel McDonald: "Traceback from incorrectly using &#0034;starcluster help&#0034;"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1311" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1311" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1311" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1311" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

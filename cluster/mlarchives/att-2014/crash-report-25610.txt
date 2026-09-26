@@ -1,0 +1,274 @@
+---------- SYSTEM INFO ----------
+StarCluster: 0.94.3
+Python: 2.6.6 (r266:84292, Jun 18 2012, 09:57:52)  [GCC 4.4.6 20110731 (Red Hat 4.4.6-3)]
+Platform: Linux-2.6.32-220.4.2.el6.x86_64-x86_64-with-redhat-6.3-Carbon
+boto: 2.18.0
+paramiko: 1.12.0
+Crypto: 2.6.1
+
+---------- CRASH DETAILS ----------
+Command: starcluster addnode -I c3.8xlarge --num-nodes=2 w2b
+
+2013-12-31 19:13:06,515 PID: 25610 config.py:567 - DEBUG - Loading config
+2013-12-31 19:13:06,516 PID: 25610 config.py:138 - DEBUG - Loading file: /root/.starcluster/config
+2013-12-31 19:13:06,520 PID: 25610 config.py:138 - DEBUG - Loading file: /root/.starcluster/config
+2013-12-31 19:13:06,521 PID: 25610 config.py:138 - DEBUG - Loading file: /root/.starcluster/perms-vcl
+2013-12-31 19:13:06,521 PID: 25610 config.py:138 - DEBUG - Loading file: /root/.starcluster/perms-vfe
+2013-12-31 19:13:06,556 PID: 25610 awsutils.py:74 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'proxy_user': None, 'proxy_pass': None, 'proxy_port': None, 'proxy': None, 'is_secure': True, 'path': '/', 'region': RegionInfo:us-west-2, 'validate_certs': True, 'port': None}
+2013-12-31 19:13:07,016 PID: 25610 cluster.py:711 - DEBUG - existing nodes: {}
+2013-12-31 19:13:07,016 PID: 25610 cluster.py:719 - DEBUG - adding node i-20a94716 to self._nodes list
+2013-12-31 19:13:07,016 PID: 25610 cluster.py:719 - DEBUG - adding node i-86148bb0 to self._nodes list
+2013-12-31 19:13:07,017 PID: 25610 cluster.py:727 - DEBUG - returning self._nodes = [<Node: master (i-86148bb0)>, <Node: node001 (i-20a94716)>]
+2013-12-31 19:13:07,458 PID: 25610 cluster.py:711 - DEBUG - existing nodes: {u'i-20a94716': <Node: node001 (i-20a94716)>, u'i-86148bb0': <Node: master (i-86148bb0)>}
+2013-12-31 19:13:07,458 PID: 25610 cluster.py:714 - DEBUG - updating existing node i-20a94716 in self._nodes
+2013-12-31 19:13:07,458 PID: 25610 cluster.py:714 - DEBUG - updating existing node i-86148bb0 in self._nodes
+2013-12-31 19:13:07,458 PID: 25610 cluster.py:727 - DEBUG - returning self._nodes = [<Node: master (i-86148bb0)>, <Node: node001 (i-20a94716)>]
+2013-12-31 19:13:07,526 PID: 25610 cluster.py:711 - DEBUG - existing nodes: {u'i-20a94716': <Node: node001 (i-20a94716)>, u'i-86148bb0': <Node: master (i-86148bb0)>}
+2013-12-31 19:13:07,526 PID: 25610 cluster.py:714 - DEBUG - updating existing node i-20a94716 in self._nodes
+2013-12-31 19:13:07,526 PID: 25610 cluster.py:714 - DEBUG - updating existing node i-86148bb0 in self._nodes
+2013-12-31 19:13:07,527 PID: 25610 cluster.py:727 - DEBUG - returning self._nodes = [<Node: master (i-86148bb0)>, <Node: node001 (i-20a94716)>]
+2013-12-31 19:13:07,527 PID: 25610 cluster.py:860 - DEBUG - Highest node number is 1. choosing 2.
+2013-12-31 19:13:07,527 PID: 25610 cluster.py:902 - INFO - Launching node(s): node002, node003
+2013-12-31 19:13:07,536 PID: 25610 cluster.py:801 - DEBUG - Userdata size in KB: 0.70
+2013-12-31 19:13:08,469 PID: 25610 cluster.py:847 - INFO - Reservation:r-8c97ebb8
+2013-12-31 19:13:08,469 PID: 25610 utils.py:624 - INFO - Waiting for instances to propagate...
+2013-12-31 19:13:09,661 PID: 25610 cluster.py:1298 - INFO - Waiting for node(s) to come up... (updating every 30s)
+2013-12-31 19:13:09,720 PID: 25610 cluster.py:1255 - INFO - Waiting for all nodes to be in a 'running' state...
+2013-12-31 19:13:09,797 PID: 25610 cluster.py:711 - DEBUG - existing nodes: {u'i-20a94716': <Node: node001 (i-20a94716)>, u'i-86148bb0': <Node: master (i-86148bb0)>}
+2013-12-31 19:13:09,797 PID: 25610 cluster.py:719 - DEBUG - adding node i-8b539fbd to self._nodes list
+2013-12-31 19:13:10,243 PID: 25610 cluster.py:719 - DEBUG - adding node i-0f6ca039 to self._nodes list
+2013-12-31 19:13:10,664 PID: 25610 cluster.py:714 - DEBUG - updating existing node i-20a94716 in self._nodes
+2013-12-31 19:13:10,712 PID: 25610 cluster.py:714 - DEBUG - updating existing node i-86148bb0 in self._nodes
+2013-12-31 19:13:10,713 PID: 25610 cluster.py:727 - DEBUG - returning self._nodes = [<Node: master (i-86148bb0)>, <Node: node001 (i-20a94716)>, <Node: node002 (i-0f6ca039)>, <Node: node003 (i-8b539fbd)>]
+2013-12-31 19:13:41,000 PID: 25610 cluster.py:711 - DEBUG - existing nodes: {u'i-0f6ca039': <Node: node002 (i-0f6ca039)>, u'i-8b539fbd': <Node: node003 (i-8b539fbd)>, u'i-20a94716': <Node: node001 (i-20a94716)>, u'i-86148bb0': <Node: master (i-86148bb0)>}
+2013-12-31 19:13:41,000 PID: 25610 cluster.py:714 - DEBUG - updating existing node i-8b539fbd in self._nodes
+2013-12-31 19:13:41,000 PID: 25610 cluster.py:714 - DEBUG - updating existing node i-0f6ca039 in self._nodes
+2013-12-31 19:13:41,001 PID: 25610 cluster.py:714 - DEBUG - updating existing node i-20a94716 in self._nodes
+2013-12-31 19:13:41,001 PID: 25610 cluster.py:714 - DEBUG - updating existing node i-86148bb0 in self._nodes
+2013-12-31 19:13:41,001 PID: 25610 cluster.py:727 - DEBUG - returning self._nodes = [<Node: master (i-86148bb0)>, <Node: node001 (i-20a94716)>, <Node: node002 (i-0f6ca039)>, <Node: node003 (i-8b539fbd)>]
+2013-12-31 19:13:41,001 PID: 25610 cluster.py:1283 - INFO - Waiting for SSH to come up on all nodes...
+2013-12-31 19:13:41,068 PID: 25610 cluster.py:711 - DEBUG - existing nodes: {u'i-0f6ca039': <Node: node002 (i-0f6ca039)>, u'i-8b539fbd': <Node: node003 (i-8b539fbd)>, u'i-20a94716': <Node: node001 (i-20a94716)>, u'i-86148bb0': <Node: master (i-86148bb0)>}
+2013-12-31 19:13:41,068 PID: 25610 cluster.py:714 - DEBUG - updating existing node i-8b539fbd in self._nodes
+2013-12-31 19:13:41,068 PID: 25610 cluster.py:714 - DEBUG - updating existing node i-0f6ca039 in self._nodes
+2013-12-31 19:13:41,068 PID: 25610 cluster.py:714 - DEBUG - updating existing node i-20a94716 in self._nodes
+2013-12-31 19:13:41,069 PID: 25610 cluster.py:714 - DEBUG - updating existing node i-86148bb0 in self._nodes
+2013-12-31 19:13:41,069 PID: 25610 cluster.py:727 - DEBUG - returning self._nodes = [<Node: master (i-86148bb0)>, <Node: node001 (i-20a94716)>, <Node: node002 (i-0f6ca039)>, <Node: node003 (i-8b539fbd)>]
+2013-12-31 19:13:41,078 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2013-12-31 19:13:41,151 PID: 25610 __init__.py:86 - DEBUG - loading private key /root/.ssh/lapuserkey-west.pem
+2013-12-31 19:13:41,190 PID: 25610 __init__.py:93 - DEBUG - specified key does not end in either rsa or dsa, trying both
+2013-12-31 19:13:41,191 PID: 25610 __init__.py:178 - DEBUG - Using private key /root/.ssh/lapuserkey-west.pem (rsa)
+2013-12-31 19:13:41,191 PID: 25610 __init__.py:108 - DEBUG - connecting to host ec2-54-244-79-153.us-west-2.compute.amazonaws.com on port 22 as user root
+2013-12-31 19:13:41,326 PID: 25610 __init__.py:86 - DEBUG - loading private key /root/.ssh/lapuserkey-west.pem
+2013-12-31 19:13:41,327 PID: 25610 __init__.py:93 - DEBUG - specified key does not end in either rsa or dsa, trying both
+2013-12-31 19:13:41,329 PID: 25610 __init__.py:86 - DEBUG - loading private key /root/.ssh/lapuserkey-west.pem
+2013-12-31 19:13:41,329 PID: 25610 __init__.py:93 - DEBUG - specified key does not end in either rsa or dsa, trying both
+2013-12-31 19:13:41,330 PID: 25610 __init__.py:178 - DEBUG - Using private key /root/.ssh/lapuserkey-west.pem (rsa)
+2013-12-31 19:13:41,330 PID: 25610 __init__.py:108 - DEBUG - connecting to host ec2-50-112-68-130.us-west-2.compute.amazonaws.com on port 22 as user root
+2013-12-31 19:13:41,439 PID: 25610 __init__.py:178 - DEBUG - Using private key /root/.ssh/lapuserkey-west.pem (rsa)
+2013-12-31 19:13:41,440 PID: 25610 __init__.py:108 - DEBUG - connecting to host ec2-54-203-164-37.us-west-2.compute.amazonaws.com on port 22 as user root
+2013-12-31 19:13:41,446 PID: 25610 __init__.py:86 - DEBUG - loading private key /root/.ssh/lapuserkey-west.pem
+2013-12-31 19:13:41,446 PID: 25610 __init__.py:93 - DEBUG - specified key does not end in either rsa or dsa, trying both
+2013-12-31 19:13:41,450 PID: 25610 __init__.py:178 - DEBUG - Using private key /root/.ssh/lapuserkey-west.pem (rsa)
+2013-12-31 19:13:41,450 PID: 25610 __init__.py:108 - DEBUG - connecting to host ec2-54-244-131-49.us-west-2.compute.amazonaws.com on port 22 as user root
+2013-12-31 19:13:48,073 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2013-12-31 19:13:48,392 PID: 25610 __init__.py:197 - DEBUG - creating sftp connection
+2013-12-31 19:13:55,124 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2013-12-31 19:13:55,358 PID: 25610 __init__.py:197 - DEBUG - creating sftp connection
+2013-12-31 19:13:56,126 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:13:57,127 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:13:58,129 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:13:59,130 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:00,132 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:01,133 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:02,135 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:03,137 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:04,138 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:05,140 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:06,142 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:07,144 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:08,145 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:09,147 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:10,149 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:11,150 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:12,152 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:13,154 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:14,155 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:15,157 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:16,159 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:17,160 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:18,162 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:18,181 PID: 25610 __init__.py:108 - DEBUG - connecting to host ec2-54-203-164-37.us-west-2.compute.amazonaws.com on port 22 as user root
+2013-12-31 19:14:18,194 PID: 25610 __init__.py:108 - DEBUG - connecting to host ec2-54-244-131-49.us-west-2.compute.amazonaws.com on port 22 as user root
+2013-12-31 19:14:19,164 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:20,165 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:21,167 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:22,168 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:23,187 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:24,188 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:25,190 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:26,191 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:27,193 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:28,225 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:29,227 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:30,229 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:31,230 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:32,232 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:33,234 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:34,235 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:35,237 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:36,239 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:37,240 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:38,242 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:39,243 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:40,245 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:41,247 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:42,248 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:43,250 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:44,251 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:45,253 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:46,255 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:47,256 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:48,258 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:49,259 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:50,261 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:51,263 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:51,339 PID: 25610 __init__.py:108 - DEBUG - connecting to host ec2-54-203-164-37.us-west-2.compute.amazonaws.com on port 22 as user root
+2013-12-31 19:14:51,346 PID: 25610 __init__.py:108 - DEBUG - connecting to host ec2-54-244-131-49.us-west-2.compute.amazonaws.com on port 22 as user root
+2013-12-31 19:14:52,265 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:53,266 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:54,268 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:55,270 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:56,271 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:57,273 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:58,274 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:14:59,276 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:15:00,278 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:15:01,279 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:15:02,281 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:15:03,283 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:15:04,285 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:15:05,286 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:15:06,288 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:15:07,309 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:15:08,310 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:15:09,311 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:15:10,347 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:15:11,356 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:15:12,357 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:15:13,361 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:15:14,370 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:15:15,371 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:15:16,373 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:15:17,374 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:15:18,376 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:15:19,396 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:15:20,398 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:15:21,399 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:15:21,439 PID: 25610 __init__.py:108 - DEBUG - connecting to host ec2-54-203-164-37.us-west-2.compute.amazonaws.com on port 22 as user root
+2013-12-31 19:15:21,515 PID: 25610 __init__.py:108 - DEBUG - connecting to host ec2-54-244-131-49.us-west-2.compute.amazonaws.com on port 22 as user root
+2013-12-31 19:15:28,312 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:15:35,064 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 19:15:35,235 PID: 25610 __init__.py:197 - DEBUG - creating sftp connection
+2013-12-31 19:15:35,264 PID: 25610 __init__.py:197 - DEBUG - creating sftp connection
+2013-12-31 19:15:36,066 PID: 25610 utils.py:117 - INFO - Waiting for cluster to come up took 2.440 mins
+2013-12-31 19:15:36,067 PID: 25610 cluster.py:912 - DEBUG - Adding node(s): ['node002', 'node003']
+2013-12-31 19:15:36,148 PID: 25610 cluster.py:711 - DEBUG - existing nodes: {u'i-0f6ca039': <Node: node002 (i-0f6ca039)>, u'i-8b539fbd': <Node: node003 (i-8b539fbd)>, u'i-20a94716': <Node: node001 (i-20a94716)>, u'i-86148bb0': <Node: master (i-86148bb0)>}
+2013-12-31 19:15:36,148 PID: 25610 cluster.py:714 - DEBUG - updating existing node i-8b539fbd in self._nodes
+2013-12-31 19:15:36,148 PID: 25610 cluster.py:714 - DEBUG - updating existing node i-0f6ca039 in self._nodes
+2013-12-31 19:15:36,149 PID: 25610 cluster.py:714 - DEBUG - updating existing node i-20a94716 in self._nodes
+2013-12-31 19:15:36,150 PID: 25610 cluster.py:714 - DEBUG - updating existing node i-86148bb0 in self._nodes
+2013-12-31 19:15:36,150 PID: 25610 cluster.py:727 - DEBUG - returning self._nodes = [<Node: master (i-86148bb0)>, <Node: node001 (i-20a94716)>, <Node: node002 (i-0f6ca039)>, <Node: node003 (i-8b539fbd)>]
+2013-12-31 19:15:36,225 PID: 25610 cluster.py:711 - DEBUG - existing nodes: {u'i-0f6ca039': <Node: node002 (i-0f6ca039)>, u'i-8b539fbd': <Node: node003 (i-8b539fbd)>, u'i-20a94716': <Node: node001 (i-20a94716)>, u'i-86148bb0': <Node: master (i-86148bb0)>}
+2013-12-31 19:15:36,226 PID: 25610 cluster.py:714 - DEBUG - updating existing node i-8b539fbd in self._nodes
+2013-12-31 19:15:36,226 PID: 25610 cluster.py:714 - DEBUG - updating existing node i-0f6ca039 in self._nodes
+2013-12-31 19:15:36,226 PID: 25610 cluster.py:714 - DEBUG - updating existing node i-20a94716 in self._nodes
+2013-12-31 19:15:36,226 PID: 25610 cluster.py:714 - DEBUG - updating existing node i-86148bb0 in self._nodes
+2013-12-31 19:15:36,227 PID: 25610 cluster.py:727 - DEBUG - returning self._nodes = [<Node: master (i-86148bb0)>, <Node: node001 (i-20a94716)>, <Node: node002 (i-0f6ca039)>, <Node: node003 (i-8b539fbd)>]
+2013-12-31 19:15:36,227 PID: 25610 cluster.py:1571 - INFO - Running plugin starcluster.clustersetup.DefaultClusterSetup
+2013-12-31 19:15:36,227 PID: 25610 clustersetup.py:121 - INFO - Configuring hostnames...
+2013-12-31 19:15:36,233 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2013-12-31 19:15:36,238 PID: 25610 __init__.py:538 - DEBUG - executing remote command: source /etc/profile && hostname -F /etc/hostname
+2013-12-31 19:15:36,353 PID: 25610 __init__.py:562 - DEBUG - output of 'source /etc/profile && hostname -F /etc/hostname':
+
+2013-12-31 19:15:37,235 PID: 25610 clustersetup.py:247 - INFO - Configuring /etc/hosts on each node
+2013-12-31 19:15:37,242 PID: 25610 __init__.py:296 - DEBUG - new /etc/hosts after removing regex (master|node001|node002|node003) matches:
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+
+2013-12-31 19:15:37,243 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2013-12-31 19:15:37,246 PID: 25610 __init__.py:296 - DEBUG - new /etc/hosts after removing regex (master|node001|node002|node003) matches:
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+10.225.183.220 vfe
+10.231.134.243 vcl
+54.214.209.70 ec2-54-214-209-70.us-west-2.compute.amazonaws.com
+54.244.79.153 ec2-54-244-79-153.us-west-2.compute.amazonaws.com
+
+2013-12-31 19:15:37,247 PID: 25610 __init__.py:296 - DEBUG - new /etc/hosts after removing regex (master|node001|node002|node003) matches:
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+
+2013-12-31 19:15:37,253 PID: 25610 __init__.py:296 - DEBUG - new /etc/hosts after removing regex (master|node001|node002|node003) matches:
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+
+2013-12-31 19:15:38,249 PID: 25610 node.py:661 - INFO - Configuring NFS exports path(s):
+/home /usr/share/jobs/
+2013-12-31 19:15:38,258 PID: 25610 __init__.py:538 - DEBUG - executing remote command: source /etc/profile && exportfs -fra
+2013-12-31 19:15:38,391 PID: 25610 __init__.py:562 - DEBUG - output of 'source /etc/profile && exportfs -fra':
+
+2013-12-31 19:15:38,391 PID: 25610 clustersetup.py:355 - INFO - Mounting all NFS export path(s) on 1 worker node(s)
+2013-12-31 19:15:38,392 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2013-12-31 19:15:38,393 PID: 25610 __init__.py:538 - DEBUG - executing remote command: source /etc/profile && /etc/init.d/portmap start
+2013-12-31 19:15:38,509 PID: 25610 __init__.py:562 - DEBUG - output of 'source /etc/profile && /etc/init.d/portmap start':
+
+2013-12-31 19:15:38,573 PID: 25610 __init__.py:538 - DEBUG - executing remote command: source /etc/profile && mount -t devpts none /dev/pts
+2013-12-31 19:15:38,686 PID: 25610 __init__.py:559 - DEBUG - (ignored) remote command 'source /etc/profile && mount -t devpts none /dev/pts' failed with status 32:
+mount: none already mounted or /dev/pts busy
+mount: according to mtab, devpts is already mounted on /dev/pts
+2013-12-31 19:15:38,750 PID: 25610 __init__.py:538 - DEBUG - executing remote command: source /etc/profile && mount
+2013-12-31 19:15:38,862 PID: 25610 __init__.py:562 - DEBUG - output of 'source /etc/profile && mount':
+/dev/xvde1 on / type ext4 (rw,relatime)
+proc on /proc type proc (rw)
+sysfs on /sys type sysfs (rw)
+devpts on /dev/pts type devpts (rw,gid=5,mode=620)
+tmpfs on /dev/shm type tmpfs (rw)
+none on /proc/sys/fs/binfmt_misc type binfmt_misc (rw)
+sunrpc on /var/lib/nfs/rpc_pipefs type rpc_pipefs (rw)
+2013-12-31 19:15:38,906 PID: 25610 __init__.py:296 - DEBUG - new /etc/fstab after removing regex ( /home | /usr/share/jobs/ ) matches:
+
+#
+# /etc/fstab
+# Created by anaconda on Tue Feb 14 14:54:34 2012
+#
+# Accessible filesystems, by reference, are maintained under '/dev/disk'
+# See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info
+#
+LABEL=/     		/           		ext4    defaults,relatime 1 1
+tmpfs                   /dev/shm                tmpfs   defaults        0 0
+devpts                  /dev/pts                devpts  gid=5,mode=620  0 0
+sysfs                   /sys                    sysfs   defaults        0 0
+proc                    /proc                   proc    defaults        0 0
+LABEL=ebs-swap		none			swap	sw		0 0
+/dev/sdb	/media/ephemeral0	auto	defaults,comment=cloudconfig	0	2
+master:/usr/share/jobs /usr/share/jobs nfs sec=sys,vers=3,suid,user,rw,exec,noauto,bg 0 0
+master:/opt/sge6 /opt/sge6 nfs vers=3,user,rw,exec,noauto 0 0
+
+2013-12-31 19:15:39,394 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2013-12-31 19:15:40,132 PID: 25610 __init__.py:538 - DEBUG - executing remote command: source /etc/profile && mount /home
+2013-12-31 19:15:40,396 PID: 25610 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2013-12-31 19:15:41,397 PID: 25610 cluster.py:1581 - ERROR - Error occured while running plugin 'starcluster.clustersetup.DefaultClusterSetup':
+2013-12-31 19:15:41,397 PID: 25610 cli.py:284 - ERROR - error occurred in job (id=node002): remote command 'source /etc/profile && mount /home' failed with status 32:
+mount.nfs: access denied by server while mounting master:/home
+Traceback (most recent call last):
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.94.3-py2.6.egg/starcluster/threadpool.py", line 48, in run
+    job.run()
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.94.3-py2.6.egg/starcluster/threadpool.py", line 75, in run
+    r = self.method(*self.args, **self.kwargs)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.94.3-py2.6.egg/starcluster/node.py", line 731, in mount_nfs_shares
+    self.ssh.execute('mount %s' % path)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.94.3-py2.6.egg/starcluster/sshutils/__init__.py", line 555, in execute
+    msg, command, exit_status, out_str)
+RemoteCommandFailed: remote command 'source /etc/profile && mount /home' failed with status 32:
+mount.nfs: access denied by server while mounting master:/home
+

@@ -1,0 +1,498 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="james pettengill ((no email))" />
+<meta name="Subject" content="Loadbalancing error against ubuntu QIIME AMI" />
+<title>starcluster.mbox.out: Loadbalancing error against ubuntu QIIME AMI</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Loadbalancing error against ubuntu QIIME AMI</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Loadbalancing error against ubuntu QIIME AMI</h1>
+<!-- received="Thu Aug 29 08:14:16 2013" -->
+<!-- isoreceived="20130829121416" -->
+<!-- sent="Thu, 29 Aug 2013 08:14:12 -0400" -->
+<!-- isosent="20130829121412" -->
+<!-- name="james pettengill" -->
+<!-- email="(no email)" -->
+<!-- subject="Loadbalancing error against ubuntu QIIME AMI" -->
+<!-- id="CAFHA4DQYRKNrEiNYd2OX3rBP_r9Vwbc8_=oQ6ERDV=56csWdxg_at_mail.gmail.com" -->
+<!-- charset="windows-1252" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1840.html#start1840" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1840.html#options2">top</a>, <a href="1840.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1841.html" accesskey="d" title="Rayson Ho: &quot;Re:  Loadbalancing error against ubuntu QIIME AMI&quot;">Next message</a> ]
+[ <a href="1839.html" title="Hyokun Yun: &quot;starcluster crash report&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="1841.html" accesskey="t" title="Rayson Ho: &quot;Re:  Loadbalancing error against ubuntu QIIME AMI&quot;">Next in thread</a> ]
+ [ <a href="1840.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1840" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1840" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1840" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1840" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: james pettengill &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 29 Aug 2013 08:14:12 -0400</span><br />
+</address>
+<br />
+We are trying to run the loadbalancing when launching a cluster of QIIME
+<br />
+AMI's (a software for analysis of next-gen sequencing data) and are running
+<br />
+into some errors.
+<br />
+<br />The loadbalancing works well when running the StarCluster AMI but we have
+<br />
+not been able to get QIIME (easily) installed on that AMI.
+<br />
+<br />Below is the error.  Any info would be great.
+<br />
+<br />Thanks.
+<br />
+<br />*
+<br />
+*
+<br />
+*StarCluster Configuration
+<br />
+<br />*####################################
+<br />
+## StarCluster Configuration File ##
+<br />
+####################################
+<br />
+[global]
+<br />
+DEFAULT_TEMPLATE=qiime
+<br />
+ENABLE_EXPERIMENTAL=True
+<br />
+<br />###########################
+<br />
+## Defining Cluster      ##
+<br />
+###########################
+<br />
+<br />[cluster QIIMETest]
+<br />
+# change this to the name of one of the keypair sections defined above
+<br />
+KEYNAME = StarCluster
+<br />
+# number of ec2 instances to launch
+<br />
+CLUSTER_SIZE = 2
+<br />
+# create the following user on the cluster
+<br />
+NODE_IMAGE_ID = ami-d5cc8fbc   #FDA QIIME 11.10 image
+<br />
+<br /># instance type for all cluster nodes
+<br />
+# (options: m1.medium, m3.2xlarge, cc2.8xlarge, m1.large, c1.xlarge,
+<br />
+hs1.8xlarge, cr1.8xlarge, m1.small, c1.medium, cg1.4xlarge, m1.xlarge,
+<br />
+m2.xlarge, hi1.4xlarge, t1.micro, m2.4xlarge, m2.2xlarge, m3.xlarge,
+<br />
+cc1.4xlarge)
+<br />
+NODE_INSTANCE_TYPE = m2.2xlarge
+<br />
+VOLUMES = CFSANdata3
+<br />
+CLUSTER_SHELL = bash
+<br />
+CLUSTER_USER = ubuntu
+<br />
+<br />#############################
+<br />
+## Configuring EBS Volumes ##
+<br />
+#############################
+<br />
+<br />[volume CFSANdata3]
+<br />
+#attach vol-c9999999 to /home on master node and NFS-shre to worker nodes
+<br />
+VOLUME_ID = vol-xxxxxx
+<br />
+MOUNT_PATH = /home/ubuntu/CFSANdata
+<br />
+<br />[plugin ipcluster]
+<br />
+SETUP_CLASS = starcluster.plugins.ipcluster.IPCluster
+<br />
+<br />*Creating cluster�
+<br />
+<br />*ubuntu_at_ip-10-181-159-232:~$ starcluster start -c QIIMETest STAR-ELASTIC
+<br />
+StarCluster - (*<a href="/cluster/">/cluster</a>*) (v. 0.94)
+<br />
+Software Tools for Academics and Researchers (STAR)
+<br />
+*
+<br />
+*
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Validating cluster template settings...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Cluster template settings are valid
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Starting cluster...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Launching a 2-node cluster...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Creating security group _at_sc-STAR-ELASTIC...
+</em><br />
+Reservation:r-f8c93594
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for cluster to come up... (updating every 30s)
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for all nodes to be in a 'running' state...
+</em><br />
+2/2 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for SSH to come up on all nodes...
+</em><br />
+2/2 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for cluster to come up took 1.148 mins
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; The master node is ec2-50-19-65-196.compute-1.amazonaws.com
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring cluster...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Attaching volume vol-12183458 to master node on /dev/sdz ...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for vol-12183458 to transition to: attached...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Running plugin starcluster.clustersetup.DefaultClusterSetup
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring hostnames...
+</em><br />
+2/2 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Mounting EBS volume vol-12183458 on /home/ubuntu/CFSANdata...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Creating cluster user: ubuntu (uid: 1000, gid: 1000)
+</em><br />
+2/2 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring scratch space for user(s): ubuntu
+</em><br />
+2/2 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring /etc/hosts on each node
+</em><br />
+2/2 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Starting NFS server on master
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring NFS exports path(s):
+</em><br />
+/home /home/ubuntu/CFSANdata
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Mounting all NFS export path(s) on 1 worker node(s)
+</em><br />
+1/1 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Setting up NFS took 0.087 mins
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring passwordless ssh for root
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring passwordless ssh for ubuntu
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Running plugin starcluster.plugins.sge.SGEPlugin
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring SGE...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring NFS exports path(s):
+</em><br />
+/opt/sge6
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Mounting all NFS export path(s) on 1 worker node(s)
+</em><br />
+1/1 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Setting up NFS took 0.018 mins
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Installing Sun Grid Engine...
+</em><br />
+1/1 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Creating SGE parallel environment 'orte'
+</em><br />
+2/2 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Adding parallel environment 'orte' to queue 'all.q'
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring cluster took 0.867 mins
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Starting cluster took 2.060 mins
+</em><br />
+<br />The cluster is now ready to use. To login to the master node
+<br />
+as root, run:
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;$ starcluster sshmaster STAR-ELASTIC
+<br />
+<br />If you're having issues with the cluster you can reboot the
+<br />
+instances and completely reconfigure the cluster from
+<br />
+scratch using:
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;$ starcluster restart STAR-ELASTIC
+<br />
+<br />When you're finished using the cluster and wish to terminate
+<br />
+it and stop paying for service:
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;$ starcluster terminate STAR-ELASTIC
+<br />
+<br />Alternatively, if the cluster uses EBS instances, you can
+<br />
+use the 'stop' command to shutdown all nodes and put them
+<br />
+into a 'stopped' state preserving the EBS volumes backing
+<br />
+the nodes:
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;$ starcluster stop STAR-ELASTIC
+<br />
+<br />WARNING: Any data stored in ephemeral storage (usually /mnt)
+<br />
+will be lost!
+<br />
+<br />You can activate a 'stopped' cluster by passing the -x
+<br />
+option to the 'start' command:
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;$ starcluster start -x STAR-ELASTIC
+<br />
+<br />This will start all 'stopped' nodes and reconfigure the
+<br />
+cluster.
+<br />
+<br />*ubuntu_at_ip-$ starcluster loadbalance -m 80 -a 2 -n 2 -d -w 60 STAR-ELASTIC
+<br />
+*StarCluster - (*<a href="/cluster/">/cluster</a>*) (v. 0.94)
+<br />
+Software Tools for Academics and Researchers (STAR)
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Starting load balancer (Use ctrl-c to exit)
+</em><br />
+Maximum cluster size: 80
+<br />
+Minimum cluster size: 2
+<br />
+Cluster growth rate: 2 nodes/iteration
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Writing stats to file:
+</em><br />
+/home/ubuntu/.starcluster/sge/STAR-ELASTIC/sge-stats.csv
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Loading full job history
+</em><br />
+*** WARNING - Failed to retrieve stats (1/5):
+<br />
+Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.94-py2.7.egg/starcluster/balancers/sge/__init__.py&quot;,
+<br />
+line 536, in get_stats
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;return self._get_stats()
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.94-py2.7.egg/starcluster/balancers/sge/__init__.py&quot;,
+<br />
+line 507, in _get_stats
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;qstatxml = '\n'.join(master.ssh.execute(qstat_cmd))
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.94-py2.7.egg/starcluster/sshutils/__init__.py&quot;,
+<br />
+line 555, in execute
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;msg, command, exit_status, out_str)
+<br />
+RemoteCommandFailed: remote command 'source /etc/profile &amp;&amp; qstat -u \*
+<br />
+-xml -f -r' failed with status 2:
+<br />
+qstat: invalid option -- 'm'
+<br />
+qstat: conflicting options.
+<br />
+usage:
+<br />
+qstat [-f [-1]] [-W site_specific] [-x] [ job_identifier... |
+<br />
+destination... ]
+<br />
+qstat [-a|-i|-r|-e] [-u user] [-n [-1]] [-s] [-G|-M] [-R] [job_id... |
+<br />
+destination...]
+<br />
+qstat -Q [-f [-1]] [-W site_specific] [ destination... ]
+<br />
+qstat -q [-G|-M] [ destination... ]
+<br />
+qstat -B [-f [-1]] [-W site_specific] [ server_name... ]
+<br />
+*** WARNING - Retrying in 60s
+<br />
+<span id="received"><dfn>Received on</dfn> Thu Aug 29 2013 - 08:14:16 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1840.html#start1840">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1841.html" title="Next message in the list">Rayson Ho: "Re:  Loadbalancing error against ubuntu QIIME AMI"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1839.html" title="Previous message in the list">Hyokun Yun: "starcluster crash report"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1841.html" title="Next message in this discussion thread">Rayson Ho: "Re:  Loadbalancing error against ubuntu QIIME AMI"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1841.html" title="Message sent in reply to this message">Rayson Ho: "Re:  Loadbalancing error against ubuntu QIIME AMI"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1840" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1840" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1840" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1840" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

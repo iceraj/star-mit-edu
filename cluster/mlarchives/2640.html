@@ -1,0 +1,286 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Avner May ((no email))" />
+<meta name="Subject" content="Load Balancer issues" />
+<title>starcluster.mbox.out: Load Balancer issues</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Load Balancer issues</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Load Balancer issues</h1>
+<!-- received="Tue Jun  2 15:06:23 2015" -->
+<!-- isoreceived="20150602190623" -->
+<!-- sent="Tue, 2 Jun 2015 15:06:00 -0400" -->
+<!-- isosent="20150602190600" -->
+<!-- name="Avner May" -->
+<!-- email="(no email)" -->
+<!-- subject="Load Balancer issues" -->
+<!-- id="CALkg49xsXdX7miyhMD3AVGu9wasKj_6pkp845vPqhMKoBmA12g_at_mail.gmail.com" -->
+<!-- charset="UTF-8" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2640.html#start2640" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2640.html#options2">top</a>, <a href="2640.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2641.html" accesskey="d" title="Rajat Banerjee: &quot;Re:  Load Balancer issues&quot;">Next message</a> ]
+[ <a href="2639.html" title="Andrey Evtikhov: &quot;Cannot mount properly /home over NFS&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="2641.html" accesskey="t" title="Rajat Banerjee: &quot;Re:  Load Balancer issues&quot;">Next in thread</a> ]
+ [ <a href="2640.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2640" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2640" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2640" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2640" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Avner May &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Tue, 2 Jun 2015 15:06:00 -0400</span><br />
+</address>
+<br />
+Hi all,
+<br />
+<br />I was writing because I have been having a lot of issues with the load
+<br />
+balancer.  The most common issue I have is that it fails to remove
+<br />
+instances effectively.  In a super slow fashion, it goes through the
+<br />
+instances it wants to terminate (this pace is frustrating independent of
+<br />
+the failure/success of the operation), and one by one fails to terminate
+<br />
+each one.  Then, I am forced to kill a subset of the nodes in my cluster
+<br />
+manually.  But this results in the scheduler being confused by how many
+<br />
+nodes are actually in the network, so when I later submit jobs to the
+<br />
+cluster again, it thinks it has enough nodes to handle that load, and
+<br />
+doesn't create new instances.  So I am forced to create a ton of dummy jobs
+<br />
+(eg, &quot;qsub -V -b y -cwd hostname&quot;), to trick the scheduler into thinking
+<br />
+that it has more queued jobs than &quot;available&quot; machines.  These issues are
+<br />
+quite annoying.
+<br />
+<br />Additionally, just now I had an issue where the load balancer failed to
+<br />
+launch a machine:
+<br />
+<br />!!! ERROR - Error occured while running plugin
+<br />
+'starcluster.clustersetup.DefaultClusterSetup':
+<br />
+!!! ERROR - Failed to add new host
+<br />
+Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;C:\Python27\lib\site-packages\starcluster-0.95.6-py2.7.egg\starcluster\balancers\sge\__init__.py&quot;,
+<br />
+line 719, in _eval_add_node
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self._cluster.add_nodes(need_to_add)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;C:\Python27\lib\site-packages\starcluster-0.95.6-py2.7.egg\starcluster\cluster.py&quot;,
+<br />
+line 1042, in add_nodes
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self.run_plugins(method_name=&quot;on_add_node&quot;, node=node)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;C:\Python27\lib\site-packages\starcluster-0.95.6-py2.7.egg\starcluster\cluster.py&quot;,
+<br />
+line 1690, in run_plugins
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self.run_plugin(plug, method_name=method_name, node=node)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;C:\Python27\lib\site-packages\starcluster-0.95.6-py2.7.egg\starcluster\cluster.py&quot;,
+<br />
+line 1715, in run_plugin
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;func(*args)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;C:\Python27\lib\site-packages\starcluster-0.95.6-py2.7.egg\starcluster\clustersetup.py&quot;,
+<br />
+line 425, in on_add_node
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self._setup_etc_hosts(nodes)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;C:\Python27\lib\site-packages\starcluster-0.95.6-py2.7.egg\starcluster\clustersetup.py&quot;,
+<br />
+line 252, in _setup_etc_hosts
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self.pool.wait(numtasks=len(nodes))
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;C:\Python27\lib\site-packages\starcluster-0.95.6-py2.7.egg\starcluster\threadpool.py&quot;,
+<br />
+line 177, in wait
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&quot;An error occurred in ThreadPool&quot;, excs)
+<br />
+ThreadPoolException: An error occurred in ThreadPool
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Sleeping...(looping again in 60 secs)
+</em><br />
+<br />After getting this error, for some reason the load balancer stopped
+<br />
+recognizing the existance of the cluster:
+<br />
+<br />C:\Windows\system32&gt;starcluster loadbalance --max_nodes=100 --min_nodes=1
+<br />
+--add_nodes_per_iter=17 babel2
+<br />
+StarCluster - (<a href="/cluster/">/cluster</a>) (v. 0.95.6)
+<br />
+Software Tools for Academics and Researchers (STAR)
+<br />
+Please submit bug reports to starcluster_at_mit.edu
+<br />
+<br />!!! ERROR - cluster babel2 is not running
+<br />
+<br />Is anyone else hitting similar issues with the load balancer?
+<br />
+<br />Thanks,
+<br />
+Avner
+<br />
+<span id="received"><dfn>Received on</dfn> Tue Jun 02 2015 - 15:06:23 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2640.html#start2640">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2641.html" title="Next message in the list">Rajat Banerjee: "Re:  Load Balancer issues"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2639.html" title="Previous message in the list">Andrey Evtikhov: "Cannot mount properly /home over NFS"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="2641.html" title="Next message in this discussion thread">Rajat Banerjee: "Re:  Load Balancer issues"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="2641.html" title="Message sent in reply to this message">Rajat Banerjee: "Re:  Load Balancer issues"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2640" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2640" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2640" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2640" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

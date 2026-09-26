@@ -1,0 +1,293 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Lyn Gerner ((no email))" />
+<meta name="Subject" content="0.94.2 volume mount issue" />
+<title>starcluster.mbox.out: 0.94.2 volume mount issue</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">0.94.2 volume mount issue</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>0.94.2 volume mount issue</h1>
+<!-- received="Tue Nov  5 17:59:58 2013" -->
+<!-- isoreceived="20131105225958" -->
+<!-- sent="Tue, 5 Nov 2013 12:59:55 -1000" -->
+<!-- isosent="20131105225955" -->
+<!-- name="Lyn Gerner" -->
+<!-- email="(no email)" -->
+<!-- subject="0.94.2 volume mount issue" -->
+<!-- id="CAD3e3FYfZQVpqn-URGVF0RT_A33rAez4=Ey0kKWcePp7+y-FKg_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1935.html#start1935" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1935.html#options2">top</a>, <a href="1935.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1936.html" accesskey="d" title="Lyn Gerner: &quot;Interest in &#0034;--master-local&#0034; feature?&quot;">Next message</a> ]
+[ <a href="1934.html" title="Del Munkhbaatar: &quot;Take a short survey to get amazon gift card&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1935" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1935" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1935" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1935" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Lyn Gerner &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Tue, 5 Nov 2013 12:59:55 -1000</span><br />
+</address>
+<br />
+Hi All,
+<br />
+<br />I've been using 0.93.3 with only minor, known operational issues.  Decided
+<br />
+it was time to move to 0.94.2 about a week ago.  Haven't been operational
+<br />
+since, because of new, incorrect behavior in the way a volume is getting
+<br />
+attached.  Actually it's the way that starcluster is trying to mount it
+<br />
+--referring to the wrong /dev/xvd* --when trying to mount the vol.
+<br />
+<br />I have the following specified for the volume I'm telling starcluster to
+<br />
+mount:
+<br />
+<br />[volume jobspoolse1d]
+<br />
+VOLUME_ID = vol-f1a0d380
+<br />
+MOUNT_PATH = /usr/share/jobs/
+<br />
+DEVICE = /dev/sdq
+<br />
+<br />Here is the excerpt of the failing vol attachment:
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Configuring cluster...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Attaching volume vol-f1a0d380 to master node on /dev/sdq ...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for vol-f1a0d380 to transition to: attached...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Running plugin starcluster.clustersetup.DefaultClusterSetup
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring hostnames...
+</em><br />
+2/2 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+*** WARNING - Cannot find device /dev/xvdq for volume vol-f1a0d380
+<br />
+*** WARNING - Not mounting vol-f1a0d380 on /usr/share/jobs/
+<br />
+*** WARNING - This usually means there was a problem attaching the EBS
+<br />
+volume to the master node
+<br />
+<br />Here is how the master node looks:
+<br />
+<br />[root_at_master ~]# ls -l /dev/sd*
+<br />
+lrwxrwxrwx 1 root root 4 Nov  5 22:31 /dev/sda -&gt; xvde
+<br />
+lrwxrwxrwx 1 root root 5 Nov  5 22:31 /dev/sda1 -&gt; xvde1
+<br />
+lrwxrwxrwx 1 root root 5 Nov  5 22:31 /dev/sda2 -&gt; xvde2
+<br />
+lrwxrwxrwx 1 root root 5 Nov  5 22:31 /dev/sda3 -&gt; xvde3
+<br />
+lrwxrwxrwx 1 root root 5 Nov  5 22:31 /dev/sdaa -&gt; xvdaa
+<br />
+lrwxrwxrwx 1 root root 4 Nov  5 22:32 /dev/sdq -&gt; xvdu
+<br />
+[root_at_master ~]# mount
+<br />
+/dev/xvde1 on / type ext4 (rw,relatime)
+<br />
+proc on /proc type proc (rw)
+<br />
+sysfs on /sys type sysfs (rw)
+<br />
+devpts on /dev/pts type devpts (rw,gid=5,mode=620)
+<br />
+tmpfs on /dev/shm type tmpfs (rw)
+<br />
+none on /proc/sys/fs/binfmt_misc type binfmt_misc (rw)
+<br />
+sunrpc on /var/lib/nfs/rpc_pipefs type rpc_pipefs (rw)
+<br />
+nfsd on /proc/fs/nfsd type nfsd (rw)
+<br />
+[root_at_master ~]# df
+<br />
+Filesystem           1K-blocks      Used Available Use% Mounted on
+<br />
+/dev/xvde1             4909772   3344868   1315500  72% /
+<br />
+tmpfs                   847740         0    847740   0% /dev/shm
+<br />
+<br />So, the vol is getting attached at /dev/sdq, but this actually points to
+<br />
+/dev/xvdu, instead of the /dev/xvdq that starcluster is looking for.  This
+<br />
+&quot;multiletter offset&quot; (sdq -&gt; xvdu) in the device mapping was present in
+<br />
+.93.3 also, but was handled therein correctly.
+<br />
+<br />I can manually mount /dev/xvdu and confirm that it's got the right stuff in
+<br />
+it:
+<br />
+<br />[root_at_master ~]# mount /dev/xvdu /usr/share/jobs
+<br />
+[root_at_master ~]# ls -l /usr/share/jobs
+<br />
+total 32
+<br />
+drwxrwsr-x  2 prod prod 4096 Jun 20 19:31 ami-bridge
+<br />
+drwxrwsr-x  3 prod prod 4096 Mar 20  2013 common
+<br />
+drwxrwsr-x 10 prod prod 4096 Jun 19 19:19 demo
+<br />
+drwxr-sr-x  3 root prod 4096 Mar 21  2013 etc
+<br />
+drwxrwsr-x  8 prod prod 4096 Feb 20  2013 internal
+<br />
+drwxrwsr-x 10 prod prod 4096 Jun 19 19:19 live
+<br />
+drwxrwsr-x  2 prod prod 4096 Jun 20 18:58 log
+<br />
+drwxrwsr-x 10 prod prod 4096 Jun 19 19:20 test
+<br />
+<br />Just what I wanted to see there.
+<br />
+<br />So, I'll appreciate any support regarding a fix for this, whether it's a
+<br />
+patch or a workaround.
+<br />
+<br />Thanks much,
+<br />
+Lyn
+<br />
+<span id="received"><dfn>Received on</dfn> Tue Nov 05 2013 - 17:59:58 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1935.html#start1935">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1936.html" title="Next message in the list">Lyn Gerner: "Interest in &#0034;--master-local&#0034; feature?"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1934.html" title="Previous message in the list">Del Munkhbaatar: "Take a short survey to get amazon gift card"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1935" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1935" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1935" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1935" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

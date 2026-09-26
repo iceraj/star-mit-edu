@@ -1,0 +1,328 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Justin Riley ((no email))" />
+<meta name="Subject" content="StarCluster 0.93.2 Released!" />
+<title>starcluster.mbox.out: StarCluster 0.93.2 Released!</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">StarCluster 0.93.2 Released!</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>StarCluster 0.93.2 Released!</h1>
+<!-- received="Thu Mar  8 15:49:33 2012" -->
+<!-- isoreceived="20120308204933" -->
+<!-- sent="Thu, 08 Mar 2012 15:49:32 -0500" -->
+<!-- isosent="20120308204932" -->
+<!-- name="Justin Riley" -->
+<!-- email="(no email)" -->
+<!-- subject="StarCluster 0.93.2 Released!" -->
+<!-- id="4F591B5C.50400_at_mit.edu" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1106.html#start1106" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1106.html#options2">top</a>, <a href="1106.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1107.html" accesskey="d" title="Michael Lachmann: &quot;Creating a volume from a snapshot and mounting it&quot;">Next message</a> ]
+[ <a href="1105.html" title="Jeffrey Wan: &quot;Re:  unable to start a cluster created with starcluster: NoneType object is not iterable&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="1122.html" accesskey="t" title="Justin Riley: &quot;StarCluster 0.93.3 Released!&quot;">Next in thread</a> ]
+ [ <a href="1106.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1106" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1106" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1106" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1106" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Justin Riley &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 08 Mar 2012 15:49:32 -0500</span><br />
+</address>
+<br />
+-----BEGIN PGP SIGNED MESSAGE-----
+<br />
+Hash: SHA1
+<br />
+<br />Hi All,
+<br />
+<br />StarCluster 0.93.2 has officially been released and is available for
+<br />
+download from the usual places:
+<br />
+<br /><a href="http://pypi.python.org/pypi/StarCluster">http://pypi.python.org/pypi/StarCluster</a>
+<br />
+<a href="http://web.mit.edu/stardev/cluster/download.html">http://web.mit.edu/stardev/cluster/download.html</a>
+<br />
+<br />The change log has been pasted to the end of this email for
+<br />
+convenience. The complete change log is available here:
+<br />
+<br /><a href="http://web.mit.edu/star/cluster/docs/latest/changelog.html">http://web.mit.edu/star/cluster/docs/latest/changelog.html</a>
+<br />
+<br />You can find the official docs for 0.93.2 here:
+<br />
+<br /><a href="http://web.mit.edu/stardev/cluster/docs/latest">http://web.mit.edu/stardev/cluster/docs/latest</a>
+<br />
+<br />Please upgrade ASAP, test the new 0.93.2 release, and submit any bug
+<br />
+reports preferably to StarCluster's github issue tracker[1] or to the
+<br />
+mailing list.
+<br />
+<br />Thanks to everyone for testing and reporting issues!
+<br />
+<br />~Justin
+<br />
+<br />News
+<br />
+- ----
+<br />
+Version 0.93.2 of StarCluster fixes several bugs and adds a few new
+<br />
+features. See the &quot;Bug Fixes&quot; section below for details.
+<br />
+<br />* Amazon recently announced a new instance type m1.medium which is now
+<br />
+supported. Amazon also enabled the m1.small and c1.medium instance
+<br />
+types to be compatible with both 32bit *and* 64bit AMIs now.
+<br />
+StarCluster now supports the new m1.medium instance type as well as
+<br />
+the new changes to m1.small and c1.medium.
+<br />
+* Switched from paramiko to actively maintained fork called &quot;ssh&quot; (1.7.13)
+<br />
+* loadbalancer: --kill-master option renamed to --kill-cluster
+<br />
+* Bumped boto dep to 2.2.2
+<br />
+* Bumped jinja dep to 2.6
+<br />
+<br />Features
+<br />
+- --------
+<br />
+* SGE setup code has been moved to a plugin that is executed by
+<br />
+default (**no  configuration changes required**). This plugin supports
+<br />
+an optional setting master_is_exec_host which controls whether or not
+<br />
+the master node executes jobs. This is set to True by default. To
+<br />
+change this you will need to set disable_queue=True in your cluster
+<br />
+config and then manually define and add the SGE plugin in order to
+<br />
+configure the new plugin's settings. See the SGE plugin page for more
+<br />
+details.
+<br />
+* Added the following new options to addnode command: --image-id,
+<br />
+- --instance-type, --availability-zone, --bid. Thanks to Dan Yamins for
+<br />
+his contributions. (issue 76)
+<br />
+* New CreateUsers plugin that creates multiple cluster users and
+<br />
+configures passwordless SSH. Either number of users or a list of
+<br />
+usernames can be specified. Also has options to tar and download all
+<br />
+SSH keys for generated users. See the users plugin page for more details.
+<br />
+* Added -X option to sshmaster and sshnode commands for forwarding
+<br />
+X11. Can be used both when logging in interactively and when executing
+<br />
+remote commands.
+<br />
+<br />Bug Fixes
+<br />
+- ---------
+<br />
+* catch &quot;Garbage packet received&quot; exception and warn users about
+<br />
+incompatible AMI
+<br />
+* createvolume: support new /dev/xvd* device names
+<br />
+* fix textwrap error with python 2.5 (issue 85)
+<br />
+* sshmaster, sshnode: load /etc/profile by default when executing
+<br />
+remote cmds
+<br />
+* terminate: handle Ctrl-D gracefully when prompting for input (issue 80)
+<br />
+* terminate: ignore keys when terminating manually
+<br />
+* validate key_location is readable (issue 77)
+<br />
+* relax validation constraints for running instances when using
+<br />
+&quot;starcluster start -x&quot; (issue 78)
+<br />
+* fix cluster validation for t1.micro AMIs/instance types
+<br />
+* loadbalance: fix _get_stats when no exec hosts
+<br />
+* loadbalance: respect min_nodes when removing nodes (issue 75)
+<br />
+* loadbalance: fix -K option to kill cluster when queue is empty
+<br />
+(issue 86)
+<br />
+* loadbalance: retry fetching stats 5x before failing (issue 65)
+<br />
+* skip NFS exports setup when there are no worker nodes
+<br />
+* sge: configure SGE profile on all nodes concurrently
+<br />
+* sge: use qconf's -\*attr commands to update cluster config (replaced
+<br />
+a bunch of ugly code that parsed SGE's console output)
+<br />
+* add Changelog to MANIFEST.in in order to include Changelog in future
+<br />
+release dists
+<br />
+-----BEGIN PGP SIGNATURE-----
+<br />
+Version: GnuPG v2.0.17 (GNU/Linux)
+<br />
+Comment: Using GnuPG with Mozilla - <a href="http://enigmail.mozdev.org/">http://enigmail.mozdev.org/</a>
+<br />
+<br />iEYEARECAAYFAk9ZG1sACgkQ4llAkMfDcrlDBACfTw5mNydvlRSql22+U0DMo4Dd
+<br />
+xi4An2mRH2MxfwSLry1G2iJ4qerj42R2
+<br />
+=PlPT
+<br />
+-----END PGP SIGNATURE-----
+<br />
+<span id="received"><dfn>Received on</dfn> Thu Mar 08 2012 - 15:49:33 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1106.html#start1106">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1107.html" title="Next message in the list">Michael Lachmann: "Creating a volume from a snapshot and mounting it"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1105.html" title="Previous message in the list">Jeffrey Wan: "Re:  unable to start a cluster created with starcluster: NoneType object is not iterable"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1122.html" title="Next message in this discussion thread">Justin Riley: "StarCluster 0.93.3 Released!"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1122.html" title="Message sent in reply to this message">Justin Riley: "StarCluster 0.93.3 Released!"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1106" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1106" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1106" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1106" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

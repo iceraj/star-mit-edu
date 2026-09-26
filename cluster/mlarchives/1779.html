@@ -1,0 +1,209 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Abhimanyu Dubey ((no email))" />
+<meta name="Subject" content="Starcluster error message" />
+<title>starcluster.mbox.out: Starcluster error message</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Starcluster error message</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Starcluster error message</h1>
+<!-- received="Mon Jul 22 06:19:37 2013" -->
+<!-- isoreceived="20130722101937" -->
+<!-- sent="Mon, 22 Jul 2013 06:19:34 -0400" -->
+<!-- isosent="20130722101934" -->
+<!-- name="Abhimanyu Dubey" -->
+<!-- email="(no email)" -->
+<!-- subject="Starcluster error message" -->
+<!-- id="851C21CB-C4C0-401B-A562-CC4E51FB78DA_at_gmail.com" -->
+<!-- charset="us-ascii" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1779.html#start1779" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1779.html#options2">top</a>, <a href="1779.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1780.html" accesskey="d" title="Rayson Ho: &quot;Re:  Star cluster issues when running MIST over the cloud&quot;">Next message</a> ]
+[ <a href="1778.html" title="Jacob Barhak: &quot;Star cluster issues when running MIST over the cloud&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1779" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1779" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1779" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1779" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Abhimanyu Dubey &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Mon, 22 Jul 2013 06:19:34 -0400</span><br />
+</address>
+<br />
+Hey,
+<br />
+<br />I installed StarCluster but on running starcluster start mycluster I get the following error message:
+<br />
+<br />neelima_at_mudra:~$ starcluster start mycluster
+<br />
+Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/bin/starcluster&quot;, line 9, in &lt;module&gt;
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;load_entry_point('StarCluster==0.93.3', 'console_scripts', 'starcluster')()
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.93.3-py2.7.egg/starcluster/cli.py&quot;, line 310, in main
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;logger.configure_sc_logging()
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.93.3-py2.7.egg/starcluster/logger.py&quot;, line 129, in configure_sc_logging
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;backupCount=2)
+<br />
+&nbsp;&nbsp;File &quot;/usr/lib/python2.7/logging/handlers.py&quot;, line 118, in __init__
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;BaseRotatingHandler.__init__(self, filename, mode, encoding, delay)
+<br />
+&nbsp;&nbsp;File &quot;/usr/lib/python2.7/logging/handlers.py&quot;, line 65, in __init__
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;logging.FileHandler.__init__(self, filename, mode, encoding, delay)
+<br />
+&nbsp;&nbsp;File &quot;/usr/lib/python2.7/logging/__init__.py&quot;, line 897, in __init__
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;StreamHandler.__init__(self, self._open())
+<br />
+&nbsp;&nbsp;File &quot;/usr/lib/python2.7/logging/__init__.py&quot;, line 916, in _open
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;stream = open(self.baseFilename, self.mode)
+<br />
+IOError: [Errno 2] No such file or directory: '/home/neelima/.starcluster/logs/debug.log'
+<br />
+<br />Could you tell me what's wrong with my installation?
+<br />
+<br />Thanks,
+<br />
+<br />Abhimanyu Dubey
+<br />
+Junior Undergraduate, Electrical Engineering
+<br />
+Indian Institute of Technology Delhi
+<br />
+ee2110061_at_ee.iitd.ac.in
+<br />
+<span id="received"><dfn>Received on</dfn> Mon Jul 22 2013 - 06:19:37 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1779.html#start1779">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1780.html" title="Next message in the list">Rayson Ho: "Re:  Star cluster issues when running MIST over the cloud"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1778.html" title="Previous message in the list">Jacob Barhak: "Star cluster issues when running MIST over the cloud"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1779" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1779" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1779" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1779" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

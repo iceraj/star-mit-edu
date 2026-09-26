@@ -1,0 +1,347 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Santosh Kumar Divvala ((no email))" />
+<meta name="Subject" content="Problem with SGE: jobs crash after running for sometime" />
+<title>starcluster.mbox.out: Problem with SGE: jobs crash after running for sometime</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Problem with SGE: jobs crash after running for sometime</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Problem with SGE: jobs crash after running for sometime</h1>
+<!-- received="Fri Nov  9 17:49:06 2012" -->
+<!-- isoreceived="20121109224906" -->
+<!-- sent="Fri, 9 Nov 2012 14:48:45 -0800" -->
+<!-- isosent="20121109224845" -->
+<!-- name="Santosh Kumar Divvala" -->
+<!-- email="(no email)" -->
+<!-- subject="Problem with SGE: jobs crash after running for sometime" -->
+<!-- id="CA+xVXqdQZYEKDRTw=zRjhS4ArmZyoyW3LcrvschHXX0_rkRyTQ_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1490.html#start1490" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1490.html#options2">top</a>, <a href="1490.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1491.html" accesskey="d" title="Ren&#0233; Pfitzner: &quot;BugReport: spothistory&quot;">Next message</a> ]
+[ <a href="1489.html" title="Alessandro Gagliardi: &quot;Re:  Waiting for JSON connector file...&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1490" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1490" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1490" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1490" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Santosh Kumar Divvala &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Fri, 9 Nov 2012 14:48:45 -0800</span><br />
+</address>
+<br />
+Hello,
+<br />
+<br />I have recently started using starcluster for scheduling my jobs on ec2.
+<br />
+<br />I am using the following command to run my jobs:
+<br />
+qsub -N MultiMatlab -pe orte 8 -e /home/ubuntu/outputs/ -o
+<br />
+/home/ubuntu/outputs/ -j y &lt;job to run&gt;
+<br />
+<br />where &lt;job to run&gt; is a matlab compiled binary (generated using
+<br />
+<a href="http://www.mathworks.com/help/toolbox/compiler/mcc.html">http://www.mathworks.com/help/toolbox/compiler/mcc.html</a> and run using
+<br />
+<a href="http://www.mathworks.com/products/compiler/mcr/index.html">http://www.mathworks.com/products/compiler/mcr/index.html</a>) that
+<br />
+internally uses the matlab 'parfor'
+<br />
+(<a href="http://www.mathworks.com/help/distcomp/parfor.html">http://www.mathworks.com/help/distcomp/parfor.html</a>).
+<br />
+<br />Although I am able to successfully schedule my jobs, many of them are
+<br />
+crashing after running for sometime on the nodes. (I have made sure
+<br />
+that I am not exceeding the amount of memory/cpu resources on each
+<br />
+node.)
+<br />
+I have included the qstat output before/after job3 on node002 crashed.
+<br />
+(In this case, I have started four similar/identical jobs on each of
+<br />
+the four nodes.)
+<br />
+The output of &quot;qstat -explain a&quot; (also included below) indicates the
+<br />
+error as &quot;error: no value for 'np_load_avg' because execd is in
+<br />
+unknown state&quot;.
+<br />
+I have tried modifying the queue configuration using &quot;qconf -mq&quot; but
+<br />
+to no avail. I have included qconf output below. (set
+<br />
+np_load_avg=11.75 instead of the default 1.75)
+<br />
+<br />I was wondering if there are any suggestions for fixing this issue.
+<br />
+Could you kindly let me know.
+<br />
+<br />[21:55:49Fri Nov 09~]qstat -f
+<br />
+queuename                      qtype resv/used/tot. load_avg arch
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;states
+<br />
+---------------------------------------------------------------------------------
+<br />
+all.q_at_node001                  BIP   0/8/8          35.28    linux-x64
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 0.55500 MultiMatla ubuntu       r     11/09/2012 21:39:31     8
+<br />
+---------------------------------------------------------------------------------
+<br />
+all.q_at_node002                  BIP   0/8/8          31.54    linux-x64
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3 0.55500 MultiMatla ubuntu       r     11/09/2012 21:40:46     8
+<br />
+---------------------------------------------------------------------------------
+<br />
+all.q_at_node003                  BIP   0/8/8          37.81    linux-x64
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4 0.55500 MultiMatla ubuntu       r     11/09/2012 21:41:01     8
+<br />
+---------------------------------------------------------------------------------
+<br />
+all.q_at_node004                  BIP   0/8/8          21.15    linux-x64
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5 0.55500 MultiMatla ubuntu       r     11/09/2012 21:41:16     8
+<br />
+<br /><br />[21:55:51Fri Nov 09~]qstat -f
+<br />
+queuename                      qtype resv/used/tot. load_avg arch
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;states
+<br />
+---------------------------------------------------------------------------------
+<br />
+all.q_at_node001                  BIP   0/8/8          35.07    linux-x64
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 0.55500 MultiMatla ubuntu       r     11/09/2012 21:39:31     8
+<br />
+---------------------------------------------------------------------------------
+<br />
+all.q_at_node002                  BIP   0/8/8          -NA-     linux-x64     au
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3 0.55500 MultiMatla ubuntu       r     11/09/2012 21:40:46     8
+<br />
+---------------------------------------------------------------------------------
+<br />
+all.q_at_node003                  BIP   0/8/8          38.70    linux-x64
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4 0.55500 MultiMatla ubuntu       r     11/09/2012 21:41:01     8
+<br />
+---------------------------------------------------------------------------------
+<br />
+all.q_at_node004                  BIP   0/8/8          20.34    linux-x64
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5 0.55500 MultiMatla ubuntu       r     11/09/2012 21:41:16     8
+<br />
+<br /><br />[21:56:46Fri Nov 09~]qstat -explain a
+<br />
+queuename                      qtype resv/used/tot. load_avg arch
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;states
+<br />
+---------------------------------------------------------------------------------
+<br />
+all.q_at_node001                  BIP   0/8/8          35.07    linux-x64
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 0.55500 MultiMatla ubuntu       r     11/09/2012 21:39:31     8
+<br />
+---------------------------------------------------------------------------------
+<br />
+all.q_at_node002                  BIP   0/8/8          -NA-     linux-x64     au
+<br />
+&nbsp;error: no value for &quot;np_load_avg&quot; because execd is in unknown state
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3 0.55500 MultiMatla ubuntu       r     11/09/2012 21:40:46     8
+<br />
+---------------------------------------------------------------------------------
+<br />
+all.q_at_node003                  BIP   0/8/8          38.70    linux-x64
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4 0.55500 MultiMatla ubuntu       r     11/09/2012 21:41:01     8
+<br />
+---------------------------------------------------------------------------------
+<br />
+all.q_at_node004                  BIP   0/8/8          20.34    linux-x64
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5 0.55500 MultiMatla ubuntu       r     11/09/2012 21:41:16     8
+<br />
+<br />root_at_master:~# qconf -mq all.q
+<br />
+qname                 all.q
+<br />
+hostlist              _at_allhosts
+<br />
+seq_no                0
+<br />
+load_thresholds       np_load_avg=11.75
+<br />
+suspend_thresholds    NONE
+<br />
+nsuspend              1
+<br />
+suspend_interval      00:05:00
+<br />
+priority              0
+<br />
+min_cpu_interval      00:05:00
+<br />
+processors            UNDEFINED
+<br />
+qtype                 BATCH INTERACTIVE
+<br />
+ckpt_list             NONE
+<br />
+pe_list               make orte
+<br />
+rerun                 FALSE
+<br />
+slots                 1,[node001=8],[node002=8],[node003=8],[node004=8]
+<br />
+tmpdir                /tmp
+<br />
+shell                 /bin/bash
+<br />
+prolog                NONE
+<br />
+epilog                NONE
+<br />
+shell_start_mode      posix_compliant
+<br />
+<br />thanks,
+<br />
+~Santosh
+<br />
+<span id="received"><dfn>Received on</dfn> Fri Nov 09 2012 - 17:49:06 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1490.html#start1490">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1491.html" title="Next message in the list">Ren&#0233; Pfitzner: "BugReport: spothistory"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1489.html" title="Previous message in the list">Alessandro Gagliardi: "Re:  Waiting for JSON connector file..."</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1490" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1490" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1490" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1490" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

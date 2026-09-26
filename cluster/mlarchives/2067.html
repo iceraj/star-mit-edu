@@ -1,0 +1,217 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Mark Spillman ((no email))" />
+<meta name="Subject" content="SGE allocation rule" />
+<title>starcluster.mbox.out: SGE allocation rule</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">SGE allocation rule</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>SGE allocation rule</h1>
+<!-- received="Thu Feb 27 04:36:32 2014" -->
+<!-- isoreceived="20140227093632" -->
+<!-- sent="Thu, 27 Feb 2014 09:36:30 +0000" -->
+<!-- isosent="20140227093630" -->
+<!-- name="Mark Spillman" -->
+<!-- email="(no email)" -->
+<!-- subject="SGE allocation rule" -->
+<!-- id="CAF4fwa9CGdAQNonrGtQrysj_0FcDEQXcryGFwKtpkv-3mdWSoQ_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- inreplyto="CAF4fwa8RztE=RuR3gQCGvChTj2ay-CDTk3uzyXPfBPH6YpZ7vQ_at_mail.gmail.com" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2067.html#start2067" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2067.html#options2">top</a>, <a href="2067.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2068.html" accesskey="d" title="Sergio Mafra: &quot;Re:  SGE allocation rule&quot;">Next message</a> ]
+[ <a href="2066.html" title="Dmitry Serenbrennikov: &quot;writing plugins&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="2068.html" accesskey="t" title="Sergio Mafra: &quot;Re:  SGE allocation rule&quot;">Next in thread</a> ]
+ [ <a href="2067.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2067" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2067" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2067" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2067" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Mark Spillman &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 27 Feb 2014 09:36:30 +0000</span><br />
+</address>
+<br />
+Dear all,
+<br />
+<br />I recently upgraded to 0.95.2, and at the moment, when I first start a
+<br />
+cluster, the default SGE allocation rule appears to be fill_up. It used to
+<br />
+be set to round_robin (see
+<br />
+<a href="../docs/0.93.3/guides/sge.html">/cluster/docs/0.93.3/guides/sge.html</a>).
+<br />
+<br />I have been using the 64-bit Ubuntu 12.04 hvm-backed AMIs, in the us-east-1
+<br />
+region.
+<br />
+<br />I was wondering if there is a simple way to re-enable the
+<br />
+round_robin setting by default, rather than having to manually change it
+<br />
+using qconf -mp orte and a text editor?
+<br />
+<br />Many thanks,
+<br />
+<br />Mark
+<br />
+<br />This is the output given by qconf -sp orte
+<br />
+<br />root_at_master:~# qconf -sp orte
+<br />
+qconf -sp orte
+<br />
+pe_name            orte
+<br />
+slots              2
+<br />
+user_lists         NONE
+<br />
+xuser_lists        NONE
+<br />
+start_proc_args    /bin/true
+<br />
+stop_proc_args     /bin/true
+<br />
+allocation_rule    $fill_up
+<br />
+control_slaves     TRUE
+<br />
+job_is_first_task  FALSE
+<br />
+urgency_slots      min
+<br />
+accounting_summary FALSE
+<br />
+<span id="received"><dfn>Received on</dfn> Thu Feb 27 2014 - 04:36:32 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2067.html#start2067">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2068.html" title="Next message in the list">Sergio Mafra: "Re:  SGE allocation rule"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2066.html" title="Previous message in the list">Dmitry Serenbrennikov: "writing plugins"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="2068.html" title="Next message in this discussion thread">Sergio Mafra: "Re:  SGE allocation rule"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="2068.html" title="Message sent in reply to this message">Sergio Mafra: "Re:  SGE allocation rule"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2067" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2067" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2067" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2067" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

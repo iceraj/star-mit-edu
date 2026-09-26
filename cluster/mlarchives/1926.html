@@ -1,0 +1,278 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Ryan Golhar ((no email))" />
+<meta name="Subject" content="Re:  sge node stops running jobs" />
+<title>starcluster.mbox.out: Re:  sge node stops running jobs</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Re:  sge node stops running jobs</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Re:  sge node stops running jobs</h1>
+<!-- received="Wed Oct 30 00:02:26 2013" -->
+<!-- isoreceived="20131030040226" -->
+<!-- sent="Wed, 30 Oct 2013 00:02:25 -0400" -->
+<!-- isosent="20131030040225" -->
+<!-- name="Ryan Golhar" -->
+<!-- email="(no email)" -->
+<!-- subject="Re:  sge node stops running jobs" -->
+<!-- id="CAFbjociTUV9P7RBoHp4Apqp4GyZPqVU6X9UgEzHDiuKHZFiYsQ_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- inreplyto="CAHwLALNGBPimgr9osbFsHd6u1w3Q++iCpK7PGBmHZL5BPhJyug_at_mail.gmail.com" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1926.html#start1926" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1926.html#options2">top</a>, <a href="1926.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1927.html" accesskey="d" title="Fernando Perez: &quot;Re:  limiting the number of ipengines started on each node?&quot;">Next message</a> ]
+[ <a href="1925.html" title="Rayson Ho: &quot;Re:  sge node stops running jobs&quot;">Previous message</a> ]
+[ <a href="1925.html" title="Rayson Ho: &quot;Re:  sge node stops running jobs&quot;">In reply to</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1926" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1926" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1926" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1926" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Ryan Golhar &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Wed, 30 Oct 2013 00:02:25 -0400</span><br />
+</address>
+<br />
+Didn't know they were NFS mounted.  All my nodes are m1.xlarge.  They
+<br />
+aren't doing any I/O over NFS, just local scratch space...ephemeral drives.
+<br />
+&nbsp;They do read some program files over NFS, but not much.  If it were an NFS
+<br />
+problem, I would suspect seeing an NFS error, or 'ls' hanging, but the
+<br />
+directory lists just fine and is empty. The fact that its NFS is weird and
+<br />
+doesn't fit the symptoms.  Maybe the mount got removed somehow and 'ls' is
+<br />
+showing the local directory?  Hmmm.  I'll have to investigate further next
+<br />
+time it happens.
+<br />
+<br /><br />On Tue, Oct 29, 2013 at 10:18 PM, Rayson Ho &lt;raysonlogin_at_gmail.com&gt; wrote:
+<br />
+<br /><em class="quotelev1">&gt; Since your mentioned that the entire /opt/sge6 directory is empty,
+</em><br />
+<em class="quotelev1">&gt; sounds like the NFS server (ie. StarCluster master) was not available
+</em><br />
+<em class="quotelev1">&gt; at some point?
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; What instance type are you using for the master?
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Note that by default /home &amp; /opt/sge6 are NFS mounts, are thus if the
+</em><br />
+<em class="quotelev1">&gt; nodes are doing lots of I/O, then it can cause issues (NFS doesn't
+</em><br />
+<em class="quotelev1">&gt; scale well, but 30 nodes should be OK unless there really is lots of
+</em><br />
+<em class="quotelev1">&gt; I/O traffic).
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; # mount
+</em><br />
+<em class="quotelev1">&gt; ...
+</em><br />
+<em class="quotelev1">&gt; master:/home on /home type nfs
+</em><br />
+<em class="quotelev1">&gt; (rw,user=root,nosuid,nodev,vers=3,addr=10.125.9.29)
+</em><br />
+<em class="quotelev1">&gt; master:/opt/sge6 on /opt/sge6 type nfs
+</em><br />
+<em class="quotelev1">&gt; (rw,user=root,nosuid,nodev,vers=3,addr=10.125.9.29)
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Rayson
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; ==================================================
+</em><br />
+<em class="quotelev1">&gt; Open Grid Scheduler - The Official Open Source Grid Engine
+</em><br />
+<em class="quotelev1">&gt; <a href="http://gridscheduler.sourceforge.net/">http://gridscheduler.sourceforge.net/</a>
+</em><br />
+<em class="quotelev1">&gt; <a href="http://gridscheduler.sourceforge.net/GridEngine/GridEngineCloud.html">http://gridscheduler.sourceforge.net/GridEngine/GridEngineCloud.html</a>
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; On Tue, Oct 29, 2013 at 8:43 PM, Ryan Golhar
+</em><br />
+<em class="quotelev1">&gt; &lt;ngsbioinformatics_at_gmail.com&gt; wrote:
+</em><br />
+<em class="quotelev2">&gt; &gt; Hi all - I came across a weird problem that I experience every once in a
+</em><br />
+<em class="quotelev2">&gt; &gt; while and recently more and more.  I've created a 30-node spot cluster
+</em><br />
+<em class="quotelev1">&gt; using
+</em><br />
+<em class="quotelev2">&gt; &gt; starcluster.  I started a bunch of jobs on all the nodes and sge shows
+</em><br />
+<em class="quotelev1">&gt; all
+</em><br />
+<em class="quotelev2">&gt; &gt; the jobs running.  I come back an hour or two later and check on the
+</em><br />
+<em class="quotelev1">&gt; cluster
+</em><br />
+<em class="quotelev2">&gt; &gt; and only half the nodes are listed as running jobs using qstat.  qhost
+</em><br />
+<em class="quotelev1">&gt; shows
+</em><br />
+<em class="quotelev2">&gt; &gt; the nodes as down.  I can log into the nodes and sure enough, sge_exec is
+</em><br />
+<em class="quotelev2">&gt; &gt; not running.  On some of the nodes I can start the service manually, on
+</em><br />
+<em class="quotelev2">&gt; &gt; others, the entire /opt/sge6 directory is empty.  I have no idea why this
+</em><br />
+<em class="quotelev2">&gt; &gt; would be the case, especially since they were running jobs to begin with.
+</em><br />
+<em class="quotelev2">&gt; &gt; Has anyone else seen?
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev2">&gt; &gt; _______________________________________________
+</em><br />
+<em class="quotelev2">&gt; &gt; StarCluster mailing list
+</em><br />
+<em class="quotelev2">&gt; &gt; StarCluster_at_mit.edu
+</em><br />
+<em class="quotelev2">&gt; &gt; <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<span id="received"><dfn>Received on</dfn> Wed Oct 30 2013 - 00:02:26 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1926.html#start1926">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1927.html" title="Next message in the list">Fernando Perez: "Re:  limiting the number of ipengines started on each node?"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1925.html" title="Previous message in the list">Rayson Ho: "Re:  sge node stops running jobs"</a></li>
+<li><dfn>In reply to</dfn>: <a href="1925.html" title="Message to which this message replies">Rayson Ho: "Re:  sge node stops running jobs"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1926" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1926" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1926" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1926" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

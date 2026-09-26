@@ -1,0 +1,2032 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="385J (Larour,)" />
+<meta name="Subject" content="Re:  EBS volume not mounting on restart (more logs)" />
+<title>starcluster.mbox.out: Re:  EBS volume not mounting on restart (more logs)</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Re:  EBS volume not mounting on restart (more logs)</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Re:  EBS volume not mounting on restart (more logs)</h1>
+<!-- received="Tue Oct  9 12:21:03 2012" -->
+<!-- isoreceived="20121009162103" -->
+<!-- sent="Tue, 9 Oct 2012 16:20:33 +0000" -->
+<!-- isosent="20121009162033" -->
+<!-- name="385J" -->
+<!-- email="Larour," -->
+<!-- subject="Re:  EBS volume not mounting on restart (more logs)" -->
+<!-- id="E64C26AD3EEF1C478A7F2F89E8E094D20DE655_at_ap-embx-sp10.RES.AD.JPL" -->
+<!-- charset="Windows-1252" -->
+<!-- inreplyto="CC990709.1573E%larour_at_jpl.nasa.gov" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1418.html#start1418" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1418.html#options2">top</a>, <a href="1418.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1419.html" accesskey="d" title="John St. John: &quot;Autocreate an NFS mounted volume at time of cluster launch&quot;">Next message</a> ]
+[ <a href="1417.html" title="Steve Heistand: &quot;bug report&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1418" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1418" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1418" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1418" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: 385J &lt;<a href="mailto:Larour%2C?Subject=Re%3A%20%20EBS%20volume%20not%20mounting%20on%20restart%20(more%20logs)">Larour,</a>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Tue, 9 Oct 2012 16:20:33 +0000</span><br />
+</address>
+<br />
+Dear all,
+<br />
+<br />I thought I would add the following debug logs to help debug my issue.
+<br />
+Different logs for each start, stop and restart phase are separated by  two lines:
+<br />
+<br />First log, when I run the command:
+<br />
+starcluster start issm
+<br />
+<br />-----------------------------------------------------------------------------------------------------------------------------------------------
+<br />
+-----------------------------------------------------------------------------------------------------------------------------------------------
+<br />
+<br /><br />2012-10-09 08:23:45,433 PID: 41555 config.py:551 - DEBUG - Loading config
+<br />
+2012-10-09 08:23:45,434 PID: 41555 config.py:118 - DEBUG - Loading file: /Users/larour/.starcluster/config
+<br />
+2012-10-09 08:23:50,995 PID: 41556 config.py:551 - DEBUG - Loading config
+<br />
+2012-10-09 08:23:50,995 PID: 41556 config.py:118 - DEBUG - Loading file: /Users/larour/.starcluster/config
+<br />
+2012-10-09 08:23:50,998 PID: 41556 awsutils.py:54 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'proxy_user': None, 'proxy_pass': None, 'proxy_port': None, 'proxy': None, 'is_secure': True, 'path': '/', 'region': RegionInfo:us-east-1, 'port': None}
+<br />
+2012-10-09 08:23:51,490 PID: 41556 start.py:176 - INFO - Using default cluster template: issm
+<br />
+2012-10-09 08:23:51,491 PID: 41556 cluster.py:1630 - INFO - Validating cluster template settings...
+<br />
+2012-10-09 08:23:52,839 PID: 41556 cluster.py:951 - DEBUG - Launch map: node001 (ami: ami-4583572c, type: cc2.8xlarge)...
+<br />
+2012-10-09 08:23:52,966 PID: 41556 cluster.py:1646 - INFO - Cluster template settings are valid
+<br />
+2012-10-09 08:23:52,967 PID: 41556 cluster.py:1460 - INFO - Starting cluster...
+<br />
+2012-10-09 08:23:52,967 PID: 41556 cluster.py:977 - INFO - Launching a 2-node cluster...
+<br />
+2012-10-09 08:23:52,967 PID: 41556 cluster.py:951 - DEBUG - Launch map: node001 (ami: ami-4583572c, type: cc2.8xlarge)...
+<br />
+2012-10-09 08:23:52,968 PID: 41556 cluster.py:1004 - DEBUG - Launching master (ami: ami-4583572c, type: cc2.8xlarge)
+<br />
+2012-10-09 08:23:52,968 PID: 41556 cluster.py:1004 - DEBUG - Launching node001 (ami: ami-4583572c, type: cc2.8xlarge)
+<br />
+2012-10-09 08:23:53,320 PID: 41556 awsutils.py:165 - INFO - Creating security group _at_sc-issm...
+<br />
+2012-10-09 08:23:56,152 PID: 41556 awsutils.py:273 - INFO - Creating placement group _at_sc-issm...
+<br />
+2012-10-09 08:23:57,974 PID: 41556 cluster.py:793 - INFO - Reservation:r-9de939fb
+<br />
+2012-10-09 08:23:57,975 PID: 41556 cluster.py:1267 - INFO - Waiting for cluster to come up... (updating every 10s)
+<br />
+2012-10-09 08:23:58,552 PID: 41556 cluster.py:672 - DEBUG - existing nodes: {}
+<br />
+2012-10-09 08:23:58,553 PID: 41556 cluster.py:680 - DEBUG - adding node i-321c5a4f to self._nodes list
+<br />
+2012-10-09 08:23:59,143 PID: 41556 cluster.py:680 - DEBUG - adding node i-2c1c5a51 to self._nodes list
+<br />
+2012-10-09 08:23:59,799 PID: 41556 cluster.py:688 - DEBUG - returning self._nodes = [&lt;Node: master (i-321c5a4f)&gt;, &lt;Node: node001 (i-2c1c5a51)&gt;]
+<br />
+2012-10-09 08:23:59,800 PID: 41556 cluster.py:1235 - INFO - Waiting for all nodes to be in a 'running' state...
+<br />
+2012-10-09 08:23:59,944 PID: 41556 cluster.py:672 - DEBUG - existing nodes: {u'i-2c1c5a51': &lt;Node: node001 (i-2c1c5a51)&gt;, u'i-321c5a4f': &lt;Node: master (i-321c5a4f)&gt;}
+<br />
+2012-10-09 08:23:59,944 PID: 41556 cluster.py:675 - DEBUG - updating existing node i-321c5a4f in self._nodes
+<br />
+2012-10-09 08:23:59,944 PID: 41556 cluster.py:675 - DEBUG - updating existing node i-2c1c5a51 in self._nodes
+<br />
+2012-10-09 08:23:59,944 PID: 41556 cluster.py:688 - DEBUG - returning self._nodes = [&lt;Node: master (i-321c5a4f)&gt;, &lt;Node: node001 (i-2c1c5a51)&gt;]
+<br />
+2012-10-09 08:24:10,081 PID: 41556 cluster.py:672 - DEBUG - existing nodes: {u'i-2c1c5a51': &lt;Node: node001 (i-2c1c5a51)&gt;, u'i-321c5a4f': &lt;Node: master (i-321c5a4f)&gt;}
+<br />
+2012-10-09 08:24:10,082 PID: 41556 cluster.py:675 - DEBUG - updating existing node i-321c5a4f in self._nodes
+<br />
+2012-10-09 08:24:10,082 PID: 41556 cluster.py:675 - DEBUG - updating existing node i-2c1c5a51 in self._nodes
+<br />
+2012-10-09 08:24:10,082 PID: 41556 cluster.py:688 - DEBUG - returning self._nodes = [&lt;Node: master (i-321c5a4f)&gt;, &lt;Node: node001 (i-2c1c5a51)&gt;]
+<br />
+2012-10-09 08:24:20,227 PID: 41556 cluster.py:672 - DEBUG - existing nodes: {u'i-2c1c5a51': &lt;Node: node001 (i-2c1c5a51)&gt;, u'i-321c5a4f': &lt;Node: master (i-321c5a4f)&gt;}
+<br />
+2012-10-09 08:24:20,227 PID: 41556 cluster.py:675 - DEBUG - updating existing node i-321c5a4f in self._nodes
+<br />
+2012-10-09 08:24:20,228 PID: 41556 cluster.py:675 - DEBUG - updating existing node i-2c1c5a51 in self._nodes
+<br />
+2012-10-09 08:24:20,228 PID: 41556 cluster.py:688 - DEBUG - returning self._nodes = [&lt;Node: master (i-321c5a4f)&gt;, &lt;Node: node001 (i-2c1c5a51)&gt;]
+<br />
+2012-10-09 08:24:30,389 PID: 41556 cluster.py:672 - DEBUG - existing nodes: {u'i-2c1c5a51': &lt;Node: node001 (i-2c1c5a51)&gt;, u'i-321c5a4f': &lt;Node: master (i-321c5a4f)&gt;}
+<br />
+2012-10-09 08:24:30,390 PID: 41556 cluster.py:675 - DEBUG - updating existing node i-321c5a4f in self._nodes
+<br />
+2012-10-09 08:24:30,390 PID: 41556 cluster.py:675 - DEBUG - updating existing node i-2c1c5a51 in self._nodes
+<br />
+2012-10-09 08:24:30,390 PID: 41556 cluster.py:688 - DEBUG - returning self._nodes = [&lt;Node: master (i-321c5a4f)&gt;, &lt;Node: node001 (i-2c1c5a51)&gt;]
+<br />
+2012-10-09 08:24:40,526 PID: 41556 cluster.py:672 - DEBUG - existing nodes: {u'i-2c1c5a51': &lt;Node: node001 (i-2c1c5a51)&gt;, u'i-321c5a4f': &lt;Node: master (i-321c5a4f)&gt;}
+<br />
+2012-10-09 08:24:40,526 PID: 41556 cluster.py:675 - DEBUG - updating existing node i-321c5a4f in self._nodes
+<br />
+2012-10-09 08:24:40,526 PID: 41556 cluster.py:675 - DEBUG - updating existing node i-2c1c5a51 in self._nodes
+<br />
+2012-10-09 08:24:40,527 PID: 41556 cluster.py:688 - DEBUG - returning self._nodes = [&lt;Node: master (i-321c5a4f)&gt;, &lt;Node: node001 (i-2c1c5a51)&gt;]
+<br />
+2012-10-09 08:24:50,658 PID: 41556 cluster.py:672 - DEBUG - existing nodes: {u'i-2c1c5a51': &lt;Node: node001 (i-2c1c5a51)&gt;, u'i-321c5a4f': &lt;Node: master (i-321c5a4f)&gt;}
+<br />
+2012-10-09 08:24:50,658 PID: 41556 cluster.py:675 - DEBUG - updating existing node i-321c5a4f in self._nodes
+<br />
+2012-10-09 08:24:50,658 PID: 41556 cluster.py:675 - DEBUG - updating existing node i-2c1c5a51 in self._nodes
+<br />
+2012-10-09 08:24:50,658 PID: 41556 cluster.py:688 - DEBUG - returning self._nodes = [&lt;Node: master (i-321c5a4f)&gt;, &lt;Node: node001 (i-2c1c5a51)&gt;]
+<br />
+2012-10-09 08:25:00,793 PID: 41556 cluster.py:672 - DEBUG - existing nodes: {u'i-2c1c5a51': &lt;Node: node001 (i-2c1c5a51)&gt;, u'i-321c5a4f': &lt;Node: master (i-321c5a4f)&gt;}
+<br />
+2012-10-09 08:25:00,793 PID: 41556 cluster.py:675 - DEBUG - updating existing node i-321c5a4f in self._nodes
+<br />
+2012-10-09 08:25:00,793 PID: 41556 cluster.py:675 - DEBUG - updating existing node i-2c1c5a51 in self._nodes
+<br />
+2012-10-09 08:25:00,793 PID: 41556 cluster.py:688 - DEBUG - returning self._nodes = [&lt;Node: master (i-321c5a4f)&gt;, &lt;Node: node001 (i-2c1c5a51)&gt;]
+<br />
+2012-10-09 08:25:10,980 PID: 41556 cluster.py:672 - DEBUG - existing nodes: {u'i-2c1c5a51': &lt;Node: node001 (i-2c1c5a51)&gt;, u'i-321c5a4f': &lt;Node: master (i-321c5a4f)&gt;}
+<br />
+2012-10-09 08:25:10,981 PID: 41556 cluster.py:675 - DEBUG - updating existing node i-321c5a4f in self._nodes
+<br />
+2012-10-09 08:25:10,981 PID: 41556 cluster.py:675 - DEBUG - updating existing node i-2c1c5a51 in self._nodes
+<br />
+2012-10-09 08:25:10,981 PID: 41556 cluster.py:688 - DEBUG - returning self._nodes = [&lt;Node: master (i-321c5a4f)&gt;, &lt;Node: node001 (i-2c1c5a51)&gt;]
+<br />
+2012-10-09 08:25:10,982 PID: 41556 cluster.py:1253 - INFO - Waiting for SSH to come up on all nodes...
+<br />
+2012-10-09 08:25:11,112 PID: 41556 cluster.py:672 - DEBUG - existing nodes: {u'i-2c1c5a51': &lt;Node: node001 (i-2c1c5a51)&gt;, u'i-321c5a4f': &lt;Node: master (i-321c5a4f)&gt;}
+<br />
+2012-10-09 08:25:11,112 PID: 41556 cluster.py:675 - DEBUG - updating existing node i-321c5a4f in self._nodes
+<br />
+2012-10-09 08:25:11,112 PID: 41556 cluster.py:675 - DEBUG - updating existing node i-2c1c5a51 in self._nodes
+<br />
+2012-10-09 08:25:11,112 PID: 41556 cluster.py:688 - DEBUG - returning self._nodes = [&lt;Node: master (i-321c5a4f)&gt;, &lt;Node: node001 (i-2c1c5a51)&gt;]
+<br />
+2012-10-09 08:25:11,115 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:25:11,262 PID: 41556 __init__.py:75 - DEBUG - loading private key /Users/larour/.ssh/ISSMStarCluster.rsa
+<br />
+2012-10-09 08:25:11,263 PID: 41556 __init__.py:167 - DEBUG - Using private key /Users/larour/.ssh/ISSMStarCluster.rsa (rsa)
+<br />
+2012-10-09 08:25:11,263 PID: 41556 __init__.py:97 - DEBUG - connecting to host ec2-23-23-41-97.compute-1.amazonaws.com on port 22 as user root
+<br />
+2012-10-09 08:25:11,603 PID: 41556 __init__.py:75 - DEBUG - loading private key /Users/larour/.ssh/ISSMStarCluster.rsa
+<br />
+2012-10-09 08:25:11,604 PID: 41556 __init__.py:167 - DEBUG - Using private key /Users/larour/.ssh/ISSMStarCluster.rsa (rsa)
+<br />
+2012-10-09 08:25:11,605 PID: 41556 __init__.py:97 - DEBUG - connecting to host ec2-23-20-180-11.compute-1.amazonaws.com on port 22 as user root
+<br />
+2012-10-09 08:25:12,117 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:25:13,119 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:25:14,119 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:25:15,121 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:25:16,123 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:25:17,124 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:25:18,125 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:25:19,127 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:25:20,129 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:25:21,130 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:25:22,132 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:25:23,133 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:25:24,134 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:25:25,135 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:25:26,136 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:25:27,137 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:25:28,138 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:25:29,139 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:25:30,140 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:25:31,142 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:25:32,143 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:25:33,144 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:25:34,146 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:25:35,148 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:25:36,148 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:25:37,150 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:25:38,151 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:25:39,152 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:25:40,154 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:25:41,155 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:25:42,157 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:25:43,158 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:25:44,160 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:25:45,161 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:25:46,162 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:25:47,164 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:25:48,165 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:25:49,166 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:25:50,168 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:25:51,169 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:25:51,492 PID: 41556 __init__.py:97 - DEBUG - connecting to host ec2-23-23-41-97.compute-1.amazonaws.com on port 22 as user root
+<br />
+2012-10-09 08:25:51,828 PID: 41556 __init__.py:97 - DEBUG - connecting to host ec2-23-20-180-11.compute-1.amazonaws.com on port 22 as user root
+<br />
+2012-10-09 08:25:52,170 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:25:53,172 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:25:54,173 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:25:55,175 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:25:56,177 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:25:57,177 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:25:58,178 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:25:59,179 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:26:00,181 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:26:01,181 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:26:01,699 PID: 41556 __init__.py:97 - DEBUG - connecting to host ec2-23-23-41-97.compute-1.amazonaws.com on port 22 as user root
+<br />
+2012-10-09 08:26:02,183 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:26:03,185 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:26:03,255 PID: 41556 __init__.py:97 - DEBUG - connecting to host ec2-23-20-180-11.compute-1.amazonaws.com on port 22 as user root
+<br />
+2012-10-09 08:26:04,186 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:26:05,188 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:26:06,189 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:26:07,190 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:26:08,192 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:26:09,194 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:26:10,195 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:26:11,197 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:26:11,910 PID: 41556 __init__.py:97 - DEBUG - connecting to host ec2-23-23-41-97.compute-1.amazonaws.com on port 22 as user root
+<br />
+2012-10-09 08:26:12,198 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:26:13,308 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:26:13,468 PID: 41556 __init__.py:97 - DEBUG - connecting to host ec2-23-20-180-11.compute-1.amazonaws.com on port 22 as user root
+<br />
+2012-10-09 08:26:14,236 PID: 41556 __init__.py:186 - DEBUG - creating sftp connection
+<br />
+2012-10-09 08:26:14,309 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:26:15,311 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:26:16,312 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:26:17,314 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:26:17,570 PID: 41556 __init__.py:186 - DEBUG - creating sftp connection
+<br />
+2012-10-09 08:26:18,315 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:26:19,316 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:26:20,317 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:26:21,319 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:26:22,320 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:26:23,321 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:26:24,323 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:26:25,324 PID: 41556 utils.py:97 - INFO - Waiting for cluster to come up took 2.456 mins
+<br />
+2012-10-09 08:26:25,325 PID: 41556 cluster.py:1487 - INFO - The master node is ec2-23-23-41-97.compute-1.amazonaws.com
+<br />
+2012-10-09 08:26:25,325 PID: 41556 cluster.py:1488 - INFO - Setting up the cluster...
+<br />
+2012-10-09 08:26:25,541 PID: 41556 cluster.py:1317 - INFO - Attaching volume vol-7d113b07 to master node on /dev/sdz ...
+<br />
+2012-10-09 08:26:25,813 PID: 41556 cluster.py:1319 - DEBUG - resp = attaching
+<br />
+2012-10-09 08:26:31,395 PID: 41556 cluster.py:672 - DEBUG - existing nodes: {u'i-2c1c5a51': &lt;Node: node001 (i-2c1c5a51)&gt;, u'i-321c5a4f': &lt;Node: master (i-321c5a4f)&gt;}
+<br />
+2012-10-09 08:26:31,395 PID: 41556 cluster.py:675 - DEBUG - updating existing node i-321c5a4f in self._nodes
+<br />
+2012-10-09 08:26:31,396 PID: 41556 cluster.py:675 - DEBUG - updating existing node i-2c1c5a51 in self._nodes
+<br />
+2012-10-09 08:26:31,396 PID: 41556 cluster.py:688 - DEBUG - returning self._nodes = [&lt;Node: master (i-321c5a4f)&gt;, &lt;Node: node001 (i-2c1c5a51)&gt;]
+<br />
+2012-10-09 08:26:31,396 PID: 41556 clustersetup.py:90 - INFO - Configuring hostnames...
+<br />
+2012-10-09 08:26:31,400 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:26:33,158 PID: 41556 clustersetup.py:283 - INFO - Mounting EBS volume vol-7d113b07 on /data...
+<br />
+2012-10-09 08:26:33,338 PID: 41556 __init__.py:539 - DEBUG - /dev/sda1 on / type ext4 (rw)
+<br />
+2012-10-09 08:26:33,339 PID: 41556 __init__.py:539 - DEBUG - proc on /proc type proc (rw,noexec,nosuid,nodev)
+<br />
+2012-10-09 08:26:33,340 PID: 41556 __init__.py:539 - DEBUG - sysfs on /sys type sysfs (rw,noexec,nosuid,nodev)
+<br />
+2012-10-09 08:26:33,340 PID: 41556 __init__.py:539 - DEBUG - fusectl on /sys/fs/fuse/connections type fusectl (rw)
+<br />
+2012-10-09 08:26:33,341 PID: 41556 __init__.py:539 - DEBUG - none on /sys/kernel/debug type debugfs (rw)
+<br />
+2012-10-09 08:26:33,341 PID: 41556 __init__.py:539 - DEBUG - none on /sys/kernel/security type securityfs (rw)
+<br />
+2012-10-09 08:26:33,341 PID: 41556 __init__.py:539 - DEBUG - udev on /dev type devtmpfs (rw,mode=0755)
+<br />
+2012-10-09 08:26:33,341 PID: 41556 __init__.py:539 - DEBUG - devpts on /dev/pts type devpts (rw,noexec,nosuid,gid=5,mode=0620)
+<br />
+2012-10-09 08:26:33,342 PID: 41556 __init__.py:539 - DEBUG - tmpfs on /run type tmpfs (rw,noexec,nosuid,size=10%,mode=0755)
+<br />
+2012-10-09 08:26:33,342 PID: 41556 __init__.py:539 - DEBUG - none on /run/lock type tmpfs (rw,noexec,nosuid,nodev,size=5242880)
+<br />
+2012-10-09 08:26:33,342 PID: 41556 __init__.py:539 - DEBUG - none on /run/shm type tmpfs (rw,nosuid,nodev)
+<br />
+2012-10-09 08:26:33,342 PID: 41556 __init__.py:539 - DEBUG - /dev/xvdb on /mnt type ext3 (rw)
+<br />
+2012-10-09 08:26:33,751 PID: 41556 __init__.py:284 - DEBUG - new /etc/fstab after removing regex ( /data ) matches:
+<br />
+LABEL=cloudimg-rootfs / ext4 defaults 0 0
+<br />
+/dev/xvdb /mnt auto defaults,nobootwait,comment=cloudconfig 0 2
+<br />
+<br />2012-10-09 08:26:35,765 PID: 41556 clustersetup.py:154 - INFO - Creating cluster user: None (uid: 1001, gid: 1001)
+<br />
+2012-10-09 08:26:35,765 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:26:36,067 PID: 41556 clustersetup.py:171 - DEBUG - user issm does not exist, creating...
+<br />
+2012-10-09 08:26:36,069 PID: 41556 clustersetup.py:171 - DEBUG - user issm does not exist, creating...
+<br />
+2012-10-09 08:26:36,768 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:26:37,769 PID: 41556 clustersetup.py:200 - INFO - Configuring scratch space for user(s): issm
+<br />
+2012-10-09 08:26:37,770 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:26:38,773 PID: 41556 clustersetup.py:209 - INFO - Configuring /etc/hosts on each node
+<br />
+2012-10-09 08:26:38,774 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:26:39,091 PID: 41556 __init__.py:284 - DEBUG - new /etc/hosts after removing regex (master|node001) matches:
+<br />
+127.0.0.1 ubuntu
+<br />
+<br /># The following lines are desirable for IPv6 capable hosts
+<br />
+::1 ip6-localhost ip6-loopback
+<br />
+fe00::0 ip6-localnet
+<br />
+ff00::0 ip6-mcastprefix
+<br />
+ff02::1 ip6-allnodes
+<br />
+ff02::2 ip6-allrouters
+<br />
+ff02::3 ip6-allhosts
+<br />
+# Added by cloud-init
+<br />
+127.0.1.1 ip-10-156-164-228.ec2.internal ip-10-156-164-228
+<br />
+<br />2012-10-09 08:26:39,131 PID: 41556 __init__.py:284 - DEBUG - new /etc/hosts after removing regex (master|node001) matches:
+<br />
+127.0.0.1 ubuntu
+<br />
+<br /># The following lines are desirable for IPv6 capable hosts
+<br />
+::1 ip6-localhost ip6-loopback
+<br />
+fe00::0 ip6-localnet
+<br />
+ff00::0 ip6-mcastprefix
+<br />
+ff02::1 ip6-allnodes
+<br />
+ff02::2 ip6-allrouters
+<br />
+ff02::3 ip6-allhosts
+<br />
+# Added by cloud-init
+<br />
+127.0.1.1 ip-10-156-165-180.ec2.internal ip-10-156-165-180
+<br />
+<br />2012-10-09 08:26:39,777 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:26:40,778 PID: 41556 node.py:616 - INFO - Starting NFS server on master
+<br />
+2012-10-09 08:26:40,963 PID: 41556 __init__.py:539 - DEBUG - Rather than invoking init scripts through /etc/init.d, use the service(8)
+<br />
+2012-10-09 08:26:40,964 PID: 41556 __init__.py:539 - DEBUG - utility, e.g. service portmap start
+<br />
+2012-10-09 08:26:40,964 PID: 41556 __init__.py:539 - DEBUG -
+<br />
+2012-10-09 08:26:40,964 PID: 41556 __init__.py:539 - DEBUG - Since the script you are attempting to invoke has been converted to an
+<br />
+2012-10-09 08:26:40,964 PID: 41556 __init__.py:539 - DEBUG - Upstart job, you may also use the start(8) utility, e.g. start portmap
+<br />
+2012-10-09 08:26:41,248 PID: 41556 __init__.py:536 - DEBUG - command 'source /etc/profile &amp;&amp; mount -t rpc_pipefs sunrpc /var/lib/nfs/rpc_pipefs/' failed with status 32
+<br />
+2012-10-09 08:26:41,249 PID: 41556 __init__.py:539 - DEBUG - mount: unknown filesystem type 'rpc_pipefs'
+<br />
+2012-10-09 08:26:41,913 PID: 41556 __init__.py:539 - DEBUG - * Exporting directories for NFS kernel daemon...
+<br />
+2012-10-09 08:26:41,914 PID: 41556 __init__.py:539 - DEBUG - ...done.
+<br />
+2012-10-09 08:26:41,915 PID: 41556 __init__.py:539 - DEBUG - * Starting NFS kernel daemon
+<br />
+2012-10-09 08:26:41,915 PID: 41556 __init__.py:539 - DEBUG - ...done.
+<br />
+2012-10-09 08:26:41,915 PID: 41556 __init__.py:539 - DEBUG - exportfs: scandir /etc/exports.d: No such file or directory
+<br />
+2012-10-09 08:26:41,916 PID: 41556 __init__.py:539 - DEBUG -
+<br />
+2012-10-09 08:26:42,198 PID: 41556 __init__.py:539 - DEBUG - exportfs: scandir /etc/exports.d: No such file or directory
+<br />
+2012-10-09 08:26:42,199 PID: 41556 __init__.py:539 - DEBUG -
+<br />
+2012-10-09 08:26:42,200 PID: 41556 node.py:587 - INFO - Configuring NFS exports path(s):
+<br />
+/home /data
+<br />
+2012-10-09 08:26:43,174 PID: 41556 __init__.py:539 - DEBUG - exportfs: scandir /etc/exports.d: No such file or directory
+<br />
+2012-10-09 08:26:43,175 PID: 41556 __init__.py:539 - DEBUG -
+<br />
+2012-10-09 08:26:43,175 PID: 41556 clustersetup.py:313 - INFO - Mounting all NFS export path(s) on 1 worker node(s)
+<br />
+2012-10-09 08:26:43,177 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:26:43,362 PID: 41556 __init__.py:539 - DEBUG - Rather than invoking init scripts through /etc/init.d, use the service(8)
+<br />
+2012-10-09 08:26:43,363 PID: 41556 __init__.py:539 - DEBUG - utility, e.g. service portmap start
+<br />
+2012-10-09 08:26:43,364 PID: 41556 __init__.py:539 - DEBUG -
+<br />
+2012-10-09 08:26:43,364 PID: 41556 __init__.py:539 - DEBUG - Since the script you are attempting to invoke has been converted to an
+<br />
+2012-10-09 08:26:43,364 PID: 41556 __init__.py:539 - DEBUG - Upstart job, you may also use the start(8) utility, e.g. start portmap
+<br />
+2012-10-09 08:26:43,647 PID: 41556 __init__.py:536 - DEBUG - command 'source /etc/profile &amp;&amp; mount -t devpts none /dev/pts' failed with status 32
+<br />
+2012-10-09 08:26:43,648 PID: 41556 __init__.py:539 - DEBUG - mount: none already mounted or /dev/pts busy
+<br />
+2012-10-09 08:26:43,649 PID: 41556 __init__.py:539 - DEBUG - mount: according to mtab, devpts is already mounted on /dev/pts
+<br />
+2012-10-09 08:26:43,931 PID: 41556 __init__.py:539 - DEBUG - /dev/sda1 on / type ext4 (rw)
+<br />
+2012-10-09 08:26:43,932 PID: 41556 __init__.py:539 - DEBUG - proc on /proc type proc (rw,noexec,nosuid,nodev)
+<br />
+2012-10-09 08:26:43,933 PID: 41556 __init__.py:539 - DEBUG - sysfs on /sys type sysfs (rw,noexec,nosuid,nodev)
+<br />
+2012-10-09 08:26:43,933 PID: 41556 __init__.py:539 - DEBUG - fusectl on /sys/fs/fuse/connections type fusectl (rw)
+<br />
+2012-10-09 08:26:43,933 PID: 41556 __init__.py:539 - DEBUG - none on /sys/kernel/debug type debugfs (rw)
+<br />
+2012-10-09 08:26:43,934 PID: 41556 __init__.py:539 - DEBUG - none on /sys/kernel/security type securityfs (rw)
+<br />
+2012-10-09 08:26:43,934 PID: 41556 __init__.py:539 - DEBUG - udev on /dev type devtmpfs (rw,mode=0755)
+<br />
+2012-10-09 08:26:43,934 PID: 41556 __init__.py:539 - DEBUG - devpts on /dev/pts type devpts (rw,noexec,nosuid,gid=5,mode=0620)
+<br />
+2012-10-09 08:26:43,934 PID: 41556 __init__.py:539 - DEBUG - tmpfs on /run type tmpfs (rw,noexec,nosuid,size=10%,mode=0755)
+<br />
+2012-10-09 08:26:43,935 PID: 41556 __init__.py:539 - DEBUG - none on /run/lock type tmpfs (rw,noexec,nosuid,nodev,size=5242880)
+<br />
+2012-10-09 08:26:43,935 PID: 41556 __init__.py:539 - DEBUG - none on /run/shm type tmpfs (rw,nosuid,nodev)
+<br />
+2012-10-09 08:26:43,935 PID: 41556 __init__.py:539 - DEBUG - /dev/xvdb on /mnt type ext3 (rw)
+<br />
+2012-10-09 08:26:44,179 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:26:44,348 PID: 41556 __init__.py:284 - DEBUG - new /etc/fstab after removing regex ( /home | /data ) matches:
+<br />
+LABEL=cloudimg-rootfs / ext4 defaults 0 0
+<br />
+/dev/xvdb /mnt auto defaults,nobootwait,comment=cloudconfig 0 2
+<br />
+<br />2012-10-09 08:26:45,181 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:26:46,183 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:26:47,185 PID: 41556 utils.py:97 - INFO - Setting up NFS took 0.107 mins
+<br />
+2012-10-09 08:26:47,185 PID: 41556 clustersetup.py:221 - INFO - Configuring passwordless ssh for root
+<br />
+2012-10-09 08:26:50,183 PID: 41556 node.py:456 - DEBUG - adding auth_key_contents
+<br />
+2012-10-09 08:26:54,980 PID: 41556 clustersetup.py:229 - INFO - Configuring passwordless ssh for issm
+<br />
+2012-10-09 08:26:57,369 PID: 41556 node.py:456 - DEBUG - adding auth_key_contents
+<br />
+2012-10-09 08:26:57,445 PID: 41556 node.py:464 - DEBUG - adding conn_pubkey_contents
+<br />
+2012-10-09 08:26:58,806 PID: 41556 threadpool.py:123 - INFO - Shutting down threads...
+<br />
+2012-10-09 08:26:58,810 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 3
+<br />
+2012-10-09 08:26:59,972 PID: 41556 cluster.py:672 - DEBUG - existing nodes: {u'i-2c1c5a51': &lt;Node: node001 (i-2c1c5a51)&gt;, u'i-321c5a4f': &lt;Node: master (i-321c5a4f)&gt;}
+<br />
+2012-10-09 08:26:59,972 PID: 41556 cluster.py:675 - DEBUG - updating existing node i-321c5a4f in self._nodes
+<br />
+2012-10-09 08:26:59,973 PID: 41556 cluster.py:675 - DEBUG - updating existing node i-2c1c5a51 in self._nodes
+<br />
+2012-10-09 08:26:59,973 PID: 41556 cluster.py:688 - DEBUG - returning self._nodes = [&lt;Node: master (i-321c5a4f)&gt;, &lt;Node: node001 (i-2c1c5a51)&gt;]
+<br />
+2012-10-09 08:27:00,049 PID: 41556 sge.py:127 - INFO - Configuring SGE...
+<br />
+2012-10-09 08:27:13,336 PID: 41556 node.py:587 - INFO - Configuring NFS exports path(s):
+<br />
+/opt/sge6
+<br />
+2012-10-09 08:27:14,234 PID: 41556 __init__.py:539 - DEBUG - exportfs: scandir /etc/exports.d: No such file or directory
+<br />
+2012-10-09 08:27:14,235 PID: 41556 __init__.py:539 - DEBUG -
+<br />
+2012-10-09 08:27:14,236 PID: 41556 clustersetup.py:313 - INFO - Mounting all NFS export path(s) on 1 worker node(s)
+<br />
+2012-10-09 08:27:14,240 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:27:14,425 PID: 41556 __init__.py:539 - DEBUG - Rather than invoking init scripts through /etc/init.d, use the service(8)
+<br />
+2012-10-09 08:27:14,425 PID: 41556 __init__.py:539 - DEBUG - utility, e.g. service portmap start
+<br />
+2012-10-09 08:27:14,426 PID: 41556 __init__.py:539 - DEBUG -
+<br />
+2012-10-09 08:27:14,427 PID: 41556 __init__.py:539 - DEBUG - Since the script you are attempting to invoke has been converted to an
+<br />
+2012-10-09 08:27:14,427 PID: 41556 __init__.py:539 - DEBUG - Upstart job, you may also use the start(8) utility, e.g. start portmap
+<br />
+2012-10-09 08:27:14,711 PID: 41556 __init__.py:536 - DEBUG - command 'source /etc/profile &amp;&amp; mount -t devpts none /dev/pts' failed with status 32
+<br />
+2012-10-09 08:27:14,711 PID: 41556 __init__.py:539 - DEBUG - mount: none already mounted or /dev/pts busy
+<br />
+2012-10-09 08:27:14,712 PID: 41556 __init__.py:539 - DEBUG - mount: according to mtab, devpts is already mounted on /dev/pts
+<br />
+2012-10-09 08:27:14,996 PID: 41556 __init__.py:539 - DEBUG - /dev/sda1 on / type ext4 (rw)
+<br />
+2012-10-09 08:27:14,997 PID: 41556 __init__.py:539 - DEBUG - proc on /proc type proc (rw,noexec,nosuid,nodev)
+<br />
+2012-10-09 08:27:14,998 PID: 41556 __init__.py:539 - DEBUG - sysfs on /sys type sysfs (rw,noexec,nosuid,nodev)
+<br />
+2012-10-09 08:27:14,998 PID: 41556 __init__.py:539 - DEBUG - fusectl on /sys/fs/fuse/connections type fusectl (rw)
+<br />
+2012-10-09 08:27:14,999 PID: 41556 __init__.py:539 - DEBUG - none on /sys/kernel/debug type debugfs (rw)
+<br />
+2012-10-09 08:27:14,999 PID: 41556 __init__.py:539 - DEBUG - none on /sys/kernel/security type securityfs (rw)
+<br />
+2012-10-09 08:27:14,999 PID: 41556 __init__.py:539 - DEBUG - udev on /dev type devtmpfs (rw,mode=0755)
+<br />
+2012-10-09 08:27:14,999 PID: 41556 __init__.py:539 - DEBUG - devpts on /dev/pts type devpts (rw,noexec,nosuid,gid=5,mode=0620)
+<br />
+2012-10-09 08:27:14,999 PID: 41556 __init__.py:539 - DEBUG - tmpfs on /run type tmpfs (rw,noexec,nosuid,size=10%,mode=0755)
+<br />
+2012-10-09 08:27:15,000 PID: 41556 __init__.py:539 - DEBUG - none on /run/lock type tmpfs (rw,noexec,nosuid,nodev,size=5242880)
+<br />
+2012-10-09 08:27:15,000 PID: 41556 __init__.py:539 - DEBUG - none on /run/shm type tmpfs (rw,nosuid,nodev)
+<br />
+2012-10-09 08:27:15,000 PID: 41556 __init__.py:539 - DEBUG - /dev/xvdb on /mnt type ext3 (rw)
+<br />
+2012-10-09 08:27:15,000 PID: 41556 __init__.py:539 - DEBUG - master:/home on /home type nfs (rw,nosuid,nodev,vers=3,addr=10.156.165.180,user=root)
+<br />
+2012-10-09 08:27:15,000 PID: 41556 __init__.py:539 - DEBUG - master:/data on /data type nfs (rw,nosuid,nodev,vers=3,addr=10.156.165.180,user=root)
+<br />
+2012-10-09 08:27:15,242 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:27:15,412 PID: 41556 __init__.py:284 - DEBUG - new /etc/fstab after removing regex ( /opt/sge6 ) matches:
+<br />
+LABEL=cloudimg-rootfs / ext4 defaults 0 0
+<br />
+/dev/xvdb /mnt auto defaults,nobootwait,comment=cloudconfig 0 2
+<br />
+master:/home /home nfs vers=3,user,rw,exec,noauto 0 0
+<br />
+master:/data /data nfs vers=3,user,rw,exec,noauto 0 0
+<br />
+<br />2012-10-09 08:27:16,243 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:27:17,245 PID: 41556 utils.py:97 - INFO - Setting up NFS took 0.065 mins
+<br />
+2012-10-09 08:27:17,546 PID: 41556 sge.py:100 - INFO - Installing Sun Grid Engine...
+<br />
+2012-10-09 08:27:23,016 PID: 41556 __init__.py:539 - DEBUG - Reading configuration from file ./ec2_sge.conf
+<br />
+2012-10-09 08:27:23,016 PID: 41556 __init__.py:539 - DEBUG - [H[2JInstall log can be found in: /opt/sge6/default/common/install_logs/qmaster_install_master_2012-10-09_15:27:17.log
+<br />
+2012-10-09 08:27:23,017 PID: 41556 __init__.py:539 - DEBUG - Install log can be found in: /opt/sge6/default/common/install_logs/execd_install_master_2012-10-09_15:27:19.log
+<br />
+2012-10-09 08:27:23,386 PID: 41556 __init__.py:539 - DEBUG - linux-x64
+<br />
+2012-10-09 08:27:23,835 PID: 41556 __init__.py:539 - DEBUG - root_at_master modified &quot;all.q&quot; in cluster queue list
+<br />
+2012-10-09 08:27:24,124 PID: 41556 __init__.py:539 - DEBUG - adminhost &quot;node001&quot; already exists
+<br />
+2012-10-09 08:27:24,413 PID: 41556 __init__.py:539 - DEBUG - submithost &quot;node001&quot; already exists
+<br />
+2012-10-09 08:27:24,414 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:27:24,605 PID: 41556 __init__.py:536 - DEBUG - command 'source /etc/profile &amp;&amp; pkill -9 sge' failed with status 1
+<br />
+2012-10-09 08:27:24,871 PID: 41556 __init__.py:536 - DEBUG - command 'source /etc/profile &amp;&amp; rm /etc/init.d/sge*' failed with status 1
+<br />
+2012-10-09 08:27:24,872 PID: 41556 __init__.py:539 - DEBUG - rm: cannot remove `/etc/init.d/sge*': No such file or directory
+<br />
+2012-10-09 08:27:25,246 PID: 41556 __init__.py:539 - DEBUG - linux-x64
+<br />
+2012-10-09 08:27:25,417 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:27:26,419 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:27:27,420 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:27:28,421 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:27:28,572 PID: 41556 __init__.py:539 - DEBUG - Reading configuration from file ./ec2_sge.conf
+<br />
+2012-10-09 08:27:28,573 PID: 41556 __init__.py:539 - DEBUG - [H[2JInstall log can be found in: /opt/sge6/default/common/install_logs/execd_install_node001_2012-10-09_15:27:25.log
+<br />
+2012-10-09 08:27:29,611 PID: 41556 sge.py:47 - INFO - Creating SGE parallel environment 'orte'
+<br />
+2012-10-09 08:27:29,612 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:27:29,795 PID: 41556 __init__.py:539 - DEBUG - 32
+<br />
+2012-10-09 08:27:29,879 PID: 41556 __init__.py:539 - DEBUG - 32
+<br />
+2012-10-09 08:27:31,029 PID: 41556 __init__.py:539 - DEBUG - root_at_master added &quot;orte&quot; to parallel environment list
+<br />
+2012-10-09 08:27:31,029 PID: 41556 sge.py:60 - INFO - Adding parallel environment 'orte' to queue 'all.q'
+<br />
+2012-10-09 08:27:31,326 PID: 41556 __init__.py:539 - DEBUG - Unable to find &quot;orte&quot; in &quot;pe_list&quot; of &quot;all.q&quot; - Adding new element.
+<br />
+2012-10-09 08:27:31,326 PID: 41556 __init__.py:539 - DEBUG -
+<br />
+2012-10-09 08:27:31,327 PID: 41556 __init__.py:539 - DEBUG - root_at_master modified &quot;all.q&quot; in cluster queue list
+<br />
+2012-10-09 08:27:31,328 PID: 41556 threadpool.py:123 - INFO - Shutting down threads...
+<br />
+2012-10-09 08:27:31,332 PID: 41556 threadpool.py:135 - DEBUG - unfinished_tasks = 5
+<br />
+2012-10-09 08:27:32,334 PID: 41556 utils.py:97 - INFO - Configuring cluster took 1.117 mins
+<br />
+2012-10-09 08:27:32,335 PID: 41556 utils.py:97 - INFO - Starting cluster took 3.656 mins
+<br />
+2012-10-09 08:27:32,335 PID: 41556 start.py:200 - INFO -
+<br />
+The cluster is now ready to use. To login to the master node as root, run:
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;$ starcluster sshmaster issm
+<br />
+<br />If you're having issues with the cluster you can reboot the instances and completely reconfigure the cluster from scratch using:
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;$ starcluster restart issm
+<br />
+<br />When you're finished using the cluster and wish to terminate it and stop paying for service:
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;$ starcluster terminate issm
+<br />
+<br />Alternatively, if the cluster uses EBS instances, you can use the 'stop' command to shutdown all nodes and put them into a 'stopped' state preserving the EBS volumes backing the nodes:
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;$ starcluster stop issm
+<br />
+<br />WARNING: Any data stored in ephemeral storage (usually /mnt) will be lost!
+<br />
+<br />You can activate a 'stopped' cluster by passing the -x option to the 'start' command:
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;$ starcluster start -x issm
+<br />
+<br />This will start all 'stopped' nodes and reconfigure the cluster.
+<br />
+<br />2012-10-09 08:27:48,456 PID: 41570 config.py:551 - DEBUG - Loading config
+<br />
+2012-10-09 08:27:48,456 PID: 41570 config.py:118 - DEBUG - Loading file: /Users/larour/.starcluster/config
+<br />
+2012-10-09 08:27:48,459 PID: 41570 awsutils.py:54 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'proxy_user': None, 'proxy_pass': None, 'proxy_port': None, 'proxy': None, 'is_secure': True, 'path': '/', 'region': RegionInfo:us-east-1, 'port': None}
+<br />
+2012-10-09 08:27:49,212 PID: 41570 cluster.py:672 - DEBUG - existing nodes: {}
+<br />
+2012-10-09 08:27:49,212 PID: 41570 cluster.py:680 - DEBUG - adding node i-321c5a4f to self._nodes list
+<br />
+2012-10-09 08:27:49,213 PID: 41570 cluster.py:680 - DEBUG - adding node i-2c1c5a51 to self._nodes list
+<br />
+2012-10-09 08:27:49,213 PID: 41570 cluster.py:688 - DEBUG - returning self._nodes = [&lt;Node: master (i-321c5a4f)&gt;, &lt;Node: node001 (i-2c1c5a51)&gt;]
+<br />
+2012-10-09 08:27:49,634 PID: 41570 cluster.py:672 - DEBUG - existing nodes: {u'i-2c1c5a51': &lt;Node: node001 (i-2c1c5a51)&gt;, u'i-321c5a4f': &lt;Node: master (i-321c5a4f)&gt;}
+<br />
+2012-10-09 08:27:49,635 PID: 41570 cluster.py:675 - DEBUG - updating existing node i-321c5a4f in self._nodes
+<br />
+2012-10-09 08:27:49,635 PID: 41570 cluster.py:675 - DEBUG - updating existing node i-2c1c5a51 in self._nodes
+<br />
+2012-10-09 08:27:49,635 PID: 41570 cluster.py:688 - DEBUG - returning self._nodes = [&lt;Node: master (i-321c5a4f)&gt;, &lt;Node: node001 (i-2c1c5a51)&gt;]
+<br />
+2012-10-09 08:27:49,880 PID: 41570 node.py:954 - DEBUG - Using native OpenSSH client
+<br />
+2012-10-09 08:27:49,880 PID: 41570 node.py:965 - DEBUG - ssh_cmd: ssh -i /Users/larour/.ssh/ISSMStarCluster.rsa issm_at_ec2-23-23-41-97.compute-1.amazonaws.com
+<br />
+<br /><br /><br /><br />Second  log, when I run the command:
+<br />
+starcluster stop issm
+<br />
+<br />-----------------------------------------------------------------------------------------------------------------------------------------------
+<br />
+-----------------------------------------------------------------------------------------------------------------------------------------------
+<br />
+<br />2012-10-09 08:36:34,609 PID: 41675 config.py:551 - DEBUG - Loading config
+<br />
+2012-10-09 08:36:34,609 PID: 41675 config.py:118 - DEBUG - Loading file: /Users/larour/.starcluster/config
+<br />
+2012-10-09 08:36:34,611 PID: 41675 awsutils.py:54 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'proxy_user': None, 'proxy_pass': None, 'proxy_port': None, 'proxy': None, 'is_secure': True, 'path': '/', 'region': RegionInfo:us-east-1, 'port': None}
+<br />
+2012-10-09 08:36:35,530 PID: 41675 cluster.py:672 - DEBUG - existing nodes: {}
+<br />
+2012-10-09 08:36:35,530 PID: 41675 cluster.py:680 - DEBUG - adding node i-321c5a4f to self._nodes list
+<br />
+2012-10-09 08:36:35,530 PID: 41675 cluster.py:680 - DEBUG - adding node i-2c1c5a51 to self._nodes list
+<br />
+2012-10-09 08:36:35,530 PID: 41675 cluster.py:688 - DEBUG - returning self._nodes = [&lt;Node: master (i-321c5a4f)&gt;, &lt;Node: node001 (i-2c1c5a51)&gt;]
+<br />
+2012-10-09 08:36:35,837 PID: 41675 cluster.py:672 - DEBUG - existing nodes: {u'i-2c1c5a51': &lt;Node: node001 (i-2c1c5a51)&gt;, u'i-321c5a4f': &lt;Node: master (i-321c5a4f)&gt;}
+<br />
+2012-10-09 08:36:35,837 PID: 41675 cluster.py:675 - DEBUG - updating existing node i-321c5a4f in self._nodes
+<br />
+2012-10-09 08:36:35,837 PID: 41675 cluster.py:675 - DEBUG - updating existing node i-2c1c5a51 in self._nodes
+<br />
+2012-10-09 08:36:35,838 PID: 41675 cluster.py:688 - DEBUG - returning self._nodes = [&lt;Node: master (i-321c5a4f)&gt;, &lt;Node: node001 (i-2c1c5a51)&gt;]
+<br />
+2012-10-09 08:36:35,984 PID: 41675 cluster.py:672 - DEBUG - existing nodes: {u'i-2c1c5a51': &lt;Node: node001 (i-2c1c5a51)&gt;, u'i-321c5a4f': &lt;Node: master (i-321c5a4f)&gt;}
+<br />
+2012-10-09 08:36:35,985 PID: 41675 cluster.py:675 - DEBUG - updating existing node i-321c5a4f in self._nodes
+<br />
+2012-10-09 08:36:35,985 PID: 41675 cluster.py:675 - DEBUG - updating existing node i-2c1c5a51 in self._nodes
+<br />
+2012-10-09 08:36:35,985 PID: 41675 cluster.py:688 - DEBUG - returning self._nodes = [&lt;Node: master (i-321c5a4f)&gt;, &lt;Node: node001 (i-2c1c5a51)&gt;]
+<br />
+2012-10-09 08:36:41,597 PID: 41675 cluster.py:672 - DEBUG - existing nodes: {u'i-2c1c5a51': &lt;Node: node001 (i-2c1c5a51)&gt;, u'i-321c5a4f': &lt;Node: master (i-321c5a4f)&gt;}
+<br />
+2012-10-09 08:36:41,598 PID: 41675 cluster.py:675 - DEBUG - updating existing node i-321c5a4f in self._nodes
+<br />
+2012-10-09 08:36:41,598 PID: 41675 cluster.py:675 - DEBUG - updating existing node i-2c1c5a51 in self._nodes
+<br />
+2012-10-09 08:36:41,598 PID: 41675 cluster.py:688 - DEBUG - returning self._nodes = [&lt;Node: master (i-321c5a4f)&gt;, &lt;Node: node001 (i-2c1c5a51)&gt;]
+<br />
+2012-10-09 08:36:41,736 PID: 41675 cluster.py:672 - DEBUG - existing nodes: {u'i-2c1c5a51': &lt;Node: node001 (i-2c1c5a51)&gt;, u'i-321c5a4f': &lt;Node: master (i-321c5a4f)&gt;}
+<br />
+2012-10-09 08:36:41,737 PID: 41675 cluster.py:675 - DEBUG - updating existing node i-321c5a4f in self._nodes
+<br />
+2012-10-09 08:36:41,737 PID: 41675 cluster.py:675 - DEBUG - updating existing node i-2c1c5a51 in self._nodes
+<br />
+2012-10-09 08:36:41,737 PID: 41675 cluster.py:688 - DEBUG - returning self._nodes = [&lt;Node: master (i-321c5a4f)&gt;, &lt;Node: node001 (i-2c1c5a51)&gt;]
+<br />
+2012-10-09 08:36:41,873 PID: 41675 cluster.py:672 - DEBUG - existing nodes: {u'i-2c1c5a51': &lt;Node: node001 (i-2c1c5a51)&gt;, u'i-321c5a4f': &lt;Node: master (i-321c5a4f)&gt;}
+<br />
+2012-10-09 08:36:41,874 PID: 41675 cluster.py:675 - DEBUG - updating existing node i-321c5a4f in self._nodes
+<br />
+2012-10-09 08:36:41,874 PID: 41675 cluster.py:675 - DEBUG - updating existing node i-2c1c5a51 in self._nodes
+<br />
+2012-10-09 08:36:41,874 PID: 41675 cluster.py:688 - DEBUG - returning self._nodes = [&lt;Node: master (i-321c5a4f)&gt;, &lt;Node: node001 (i-2c1c5a51)&gt;]
+<br />
+2012-10-09 08:36:42,016 PID: 41675 cluster.py:672 - DEBUG - existing nodes: {u'i-2c1c5a51': &lt;Node: node001 (i-2c1c5a51)&gt;, u'i-321c5a4f': &lt;Node: master (i-321c5a4f)&gt;}
+<br />
+2012-10-09 08:36:42,017 PID: 41675 cluster.py:675 - DEBUG - updating existing node i-321c5a4f in self._nodes
+<br />
+2012-10-09 08:36:42,017 PID: 41675 cluster.py:675 - DEBUG - updating existing node i-2c1c5a51 in self._nodes
+<br />
+2012-10-09 08:36:42,017 PID: 41675 cluster.py:688 - DEBUG - returning self._nodes = [&lt;Node: master (i-321c5a4f)&gt;, &lt;Node: node001 (i-2c1c5a51)&gt;]
+<br />
+2012-10-09 08:36:42,593 PID: 41675 node.py:772 - INFO - Detaching volume vol-7d113b07 from master
+<br />
+2012-10-09 08:36:42,809 PID: 41675 node.py:856 - INFO - Stopping node: master (i-321c5a4f)
+<br />
+2012-10-09 08:36:43,201 PID: 41675 node.py:856 - INFO - Stopping node: node001 (i-2c1c5a51)
+<br />
+2012-10-09 08:36:43,405 PID: 41675 stop.py:89 - WARNING - All non-spot, EBS-backed nodes are now in a 'stopped' state
+<br />
+2012-10-09 08:36:43,406 PID: 41675 stop.py:91 - WARNING - You can restart this cluster by passing -x to the 'start' command
+<br />
+2012-10-09 08:36:43,406 PID: 41675 stop.py:93 - WARNING - Use the 'terminate' command to *completely* terminate this cluster
+<br />
+<br /><br />Third  log, when I run the command:
+<br />
+starcluster start –x  issm
+<br />
+<br />-----------------------------------------------------------------------------------------------------------------------------------------------
+<br />
+-----------------------------------------------------------------------------------------------------------------------------------------------
+<br />
+<br />2012-10-09 08:41:14,080 PID: 41718 config.py:551 - DEBUG - Loading config
+<br />
+2012-10-09 08:41:14,080 PID: 41718 config.py:118 - DEBUG - Loading file: /Users/larour/.starcluster/config
+<br />
+2012-10-09 08:41:14,083 PID: 41718 awsutils.py:54 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'proxy_user': None, 'proxy_pass': None, 'proxy_port': None, 'proxy': None, 'is_secure': True, 'path': '/', 'region': RegionInfo:us-east-1, 'port': None}
+<br />
+2012-10-09 08:41:14,881 PID: 41718 cluster.py:672 - DEBUG - existing nodes: {}
+<br />
+2012-10-09 08:41:14,881 PID: 41718 cluster.py:680 - DEBUG - adding node i-321c5a4f to self._nodes list
+<br />
+2012-10-09 08:41:14,881 PID: 41718 cluster.py:680 - DEBUG - adding node i-2c1c5a51 to self._nodes list
+<br />
+2012-10-09 08:41:14,881 PID: 41718 cluster.py:688 - DEBUG - returning self._nodes = [&lt;Node: master (i-321c5a4f)&gt;, &lt;Node: node001 (i-2c1c5a51)&gt;]
+<br />
+2012-10-09 08:41:15,351 PID: 41718 cluster.py:672 - DEBUG - existing nodes: {u'i-2c1c5a51': &lt;Node: node001 (i-2c1c5a51)&gt;, u'i-321c5a4f': &lt;Node: master (i-321c5a4f)&gt;}
+<br />
+2012-10-09 08:41:15,351 PID: 41718 cluster.py:675 - DEBUG - updating existing node i-321c5a4f in self._nodes
+<br />
+2012-10-09 08:41:15,351 PID: 41718 cluster.py:675 - DEBUG - updating existing node i-2c1c5a51 in self._nodes
+<br />
+2012-10-09 08:41:15,352 PID: 41718 cluster.py:688 - DEBUG - returning self._nodes = [&lt;Node: master (i-321c5a4f)&gt;, &lt;Node: node001 (i-2c1c5a51)&gt;]
+<br />
+2012-10-09 08:41:15,352 PID: 41718 cluster.py:1611 - INFO - Validating existing instances...
+<br />
+2012-10-09 08:41:15,352 PID: 41718 cluster.py:1630 - INFO - Validating cluster template settings...
+<br />
+2012-10-09 08:41:16,062 PID: 41718 cluster.py:951 - DEBUG - Launch map: node001 (ami: ami-4583572c, type: cc2.8xlarge)...
+<br />
+2012-10-09 08:41:16,196 PID: 41718 cluster.py:1646 - INFO - Cluster template settings are valid
+<br />
+2012-10-09 08:41:16,196 PID: 41718 cluster.py:1460 - INFO - Starting cluster...
+<br />
+2012-10-09 08:41:16,348 PID: 41718 cluster.py:672 - DEBUG - existing nodes: {u'i-2c1c5a51': &lt;Node: node001 (i-2c1c5a51)&gt;, u'i-321c5a4f': &lt;Node: master (i-321c5a4f)&gt;}
+<br />
+2012-10-09 08:41:16,349 PID: 41718 cluster.py:675 - DEBUG - updating existing node i-321c5a4f in self._nodes
+<br />
+2012-10-09 08:41:16,349 PID: 41718 cluster.py:675 - DEBUG - updating existing node i-2c1c5a51 in self._nodes
+<br />
+2012-10-09 08:41:16,349 PID: 41718 cluster.py:688 - DEBUG - returning self._nodes = [&lt;Node: master (i-321c5a4f)&gt;, &lt;Node: node001 (i-2c1c5a51)&gt;]
+<br />
+2012-10-09 08:41:16,350 PID: 41718 cluster.py:1466 - INFO - Starting stopped node: node001
+<br />
+2012-10-09 08:41:17,675 PID: 41718 cluster.py:1267 - INFO - Waiting for cluster to come up... (updating every 10s)
+<br />
+2012-10-09 08:41:18,005 PID: 41718 cluster.py:672 - DEBUG - existing nodes: {u'i-2c1c5a51': &lt;Node: node001 (i-2c1c5a51)&gt;, u'i-321c5a4f': &lt;Node: master (i-321c5a4f)&gt;}
+<br />
+2012-10-09 08:41:18,005 PID: 41718 cluster.py:675 - DEBUG - updating existing node i-321c5a4f in self._nodes
+<br />
+2012-10-09 08:41:18,005 PID: 41718 cluster.py:675 - DEBUG - updating existing node i-2c1c5a51 in self._nodes
+<br />
+2012-10-09 08:41:18,005 PID: 41718 cluster.py:688 - DEBUG - returning self._nodes = [&lt;Node: master (i-321c5a4f)&gt;, &lt;Node: node001 (i-2c1c5a51)&gt;]
+<br />
+2012-10-09 08:41:18,006 PID: 41718 cluster.py:1235 - INFO - Waiting for all nodes to be in a 'running' state...
+<br />
+2012-10-09 08:41:18,144 PID: 41718 cluster.py:672 - DEBUG - existing nodes: {u'i-2c1c5a51': &lt;Node: node001 (i-2c1c5a51)&gt;, u'i-321c5a4f': &lt;Node: master (i-321c5a4f)&gt;}
+<br />
+2012-10-09 08:41:18,145 PID: 41718 cluster.py:675 - DEBUG - updating existing node i-321c5a4f in self._nodes
+<br />
+2012-10-09 08:41:18,145 PID: 41718 cluster.py:675 - DEBUG - updating existing node i-2c1c5a51 in self._nodes
+<br />
+2012-10-09 08:41:18,145 PID: 41718 cluster.py:688 - DEBUG - returning self._nodes = [&lt;Node: master (i-321c5a4f)&gt;, &lt;Node: node001 (i-2c1c5a51)&gt;]
+<br />
+2012-10-09 08:41:28,284 PID: 41718 cluster.py:672 - DEBUG - existing nodes: {u'i-2c1c5a51': &lt;Node: node001 (i-2c1c5a51)&gt;, u'i-321c5a4f': &lt;Node: master (i-321c5a4f)&gt;}
+<br />
+2012-10-09 08:41:28,284 PID: 41718 cluster.py:675 - DEBUG - updating existing node i-321c5a4f in self._nodes
+<br />
+2012-10-09 08:41:28,285 PID: 41718 cluster.py:675 - DEBUG - updating existing node i-2c1c5a51 in self._nodes
+<br />
+2012-10-09 08:41:28,285 PID: 41718 cluster.py:688 - DEBUG - returning self._nodes = [&lt;Node: master (i-321c5a4f)&gt;, &lt;Node: node001 (i-2c1c5a51)&gt;]
+<br />
+2012-10-09 08:41:38,430 PID: 41718 cluster.py:672 - DEBUG - existing nodes: {u'i-2c1c5a51': &lt;Node: node001 (i-2c1c5a51)&gt;, u'i-321c5a4f': &lt;Node: master (i-321c5a4f)&gt;}
+<br />
+2012-10-09 08:41:38,430 PID: 41718 cluster.py:675 - DEBUG - updating existing node i-321c5a4f in self._nodes
+<br />
+2012-10-09 08:41:38,430 PID: 41718 cluster.py:675 - DEBUG - updating existing node i-2c1c5a51 in self._nodes
+<br />
+2012-10-09 08:41:38,430 PID: 41718 cluster.py:688 - DEBUG - returning self._nodes = [&lt;Node: master (i-321c5a4f)&gt;, &lt;Node: node001 (i-2c1c5a51)&gt;]
+<br />
+2012-10-09 08:41:48,570 PID: 41718 cluster.py:672 - DEBUG - existing nodes: {u'i-2c1c5a51': &lt;Node: node001 (i-2c1c5a51)&gt;, u'i-321c5a4f': &lt;Node: master (i-321c5a4f)&gt;}
+<br />
+2012-10-09 08:41:48,570 PID: 41718 cluster.py:675 - DEBUG - updating existing node i-321c5a4f in self._nodes
+<br />
+2012-10-09 08:41:48,571 PID: 41718 cluster.py:675 - DEBUG - updating existing node i-2c1c5a51 in self._nodes
+<br />
+2012-10-09 08:41:48,571 PID: 41718 cluster.py:688 - DEBUG - returning self._nodes = [&lt;Node: master (i-321c5a4f)&gt;, &lt;Node: node001 (i-2c1c5a51)&gt;]
+<br />
+2012-10-09 08:41:58,714 PID: 41718 cluster.py:672 - DEBUG - existing nodes: {u'i-2c1c5a51': &lt;Node: node001 (i-2c1c5a51)&gt;, u'i-321c5a4f': &lt;Node: master (i-321c5a4f)&gt;}
+<br />
+2012-10-09 08:41:58,714 PID: 41718 cluster.py:675 - DEBUG - updating existing node i-321c5a4f in self._nodes
+<br />
+2012-10-09 08:41:58,714 PID: 41718 cluster.py:675 - DEBUG - updating existing node i-2c1c5a51 in self._nodes
+<br />
+2012-10-09 08:41:58,715 PID: 41718 cluster.py:688 - DEBUG - returning self._nodes = [&lt;Node: master (i-321c5a4f)&gt;, &lt;Node: node001 (i-2c1c5a51)&gt;]
+<br />
+2012-10-09 08:42:08,861 PID: 41718 cluster.py:672 - DEBUG - existing nodes: {u'i-2c1c5a51': &lt;Node: node001 (i-2c1c5a51)&gt;, u'i-321c5a4f': &lt;Node: master (i-321c5a4f)&gt;}
+<br />
+2012-10-09 08:42:08,861 PID: 41718 cluster.py:675 - DEBUG - updating existing node i-321c5a4f in self._nodes
+<br />
+2012-10-09 08:42:08,861 PID: 41718 cluster.py:675 - DEBUG - updating existing node i-2c1c5a51 in self._nodes
+<br />
+2012-10-09 08:42:08,862 PID: 41718 cluster.py:688 - DEBUG - returning self._nodes = [&lt;Node: master (i-321c5a4f)&gt;, &lt;Node: node001 (i-2c1c5a51)&gt;]
+<br />
+2012-10-09 08:42:19,006 PID: 41718 cluster.py:672 - DEBUG - existing nodes: {u'i-2c1c5a51': &lt;Node: node001 (i-2c1c5a51)&gt;, u'i-321c5a4f': &lt;Node: master (i-321c5a4f)&gt;}
+<br />
+2012-10-09 08:42:19,007 PID: 41718 cluster.py:675 - DEBUG - updating existing node i-321c5a4f in self._nodes
+<br />
+2012-10-09 08:42:19,007 PID: 41718 cluster.py:675 - DEBUG - updating existing node i-2c1c5a51 in self._nodes
+<br />
+2012-10-09 08:42:19,007 PID: 41718 cluster.py:688 - DEBUG - returning self._nodes = [&lt;Node: master (i-321c5a4f)&gt;, &lt;Node: node001 (i-2c1c5a51)&gt;]
+<br />
+2012-10-09 08:42:29,165 PID: 41718 cluster.py:672 - DEBUG - existing nodes: {u'i-2c1c5a51': &lt;Node: node001 (i-2c1c5a51)&gt;, u'i-321c5a4f': &lt;Node: master (i-321c5a4f)&gt;}
+<br />
+2012-10-09 08:42:29,166 PID: 41718 cluster.py:675 - DEBUG - updating existing node i-321c5a4f in self._nodes
+<br />
+2012-10-09 08:42:29,166 PID: 41718 cluster.py:675 - DEBUG - updating existing node i-2c1c5a51 in self._nodes
+<br />
+2012-10-09 08:42:29,166 PID: 41718 cluster.py:688 - DEBUG - returning self._nodes = [&lt;Node: master (i-321c5a4f)&gt;, &lt;Node: node001 (i-2c1c5a51)&gt;]
+<br />
+2012-10-09 08:42:39,416 PID: 41718 cluster.py:672 - DEBUG - existing nodes: {u'i-2c1c5a51': &lt;Node: node001 (i-2c1c5a51)&gt;, u'i-321c5a4f': &lt;Node: master (i-321c5a4f)&gt;}
+<br />
+2012-10-09 08:42:39,417 PID: 41718 cluster.py:675 - DEBUG - updating existing node i-321c5a4f in self._nodes
+<br />
+2012-10-09 08:42:39,417 PID: 41718 cluster.py:675 - DEBUG - updating existing node i-2c1c5a51 in self._nodes
+<br />
+2012-10-09 08:42:39,417 PID: 41718 cluster.py:688 - DEBUG - returning self._nodes = [&lt;Node: master (i-321c5a4f)&gt;, &lt;Node: node001 (i-2c1c5a51)&gt;]
+<br />
+2012-10-09 08:42:39,417 PID: 41718 cluster.py:1253 - INFO - Waiting for SSH to come up on all nodes...
+<br />
+2012-10-09 08:42:39,557 PID: 41718 cluster.py:672 - DEBUG - existing nodes: {u'i-2c1c5a51': &lt;Node: node001 (i-2c1c5a51)&gt;, u'i-321c5a4f': &lt;Node: master (i-321c5a4f)&gt;}
+<br />
+2012-10-09 08:42:39,558 PID: 41718 cluster.py:675 - DEBUG - updating existing node i-321c5a4f in self._nodes
+<br />
+2012-10-09 08:42:39,558 PID: 41718 cluster.py:675 - DEBUG - updating existing node i-2c1c5a51 in self._nodes
+<br />
+2012-10-09 08:42:39,558 PID: 41718 cluster.py:688 - DEBUG - returning self._nodes = [&lt;Node: master (i-321c5a4f)&gt;, &lt;Node: node001 (i-2c1c5a51)&gt;]
+<br />
+2012-10-09 08:42:39,561 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:42:39,771 PID: 41718 __init__.py:75 - DEBUG - loading private key /Users/larour/.ssh/ISSMStarCluster.rsa
+<br />
+2012-10-09 08:42:39,772 PID: 41718 __init__.py:167 - DEBUG - Using private key /Users/larour/.ssh/ISSMStarCluster.rsa (rsa)
+<br />
+2012-10-09 08:42:39,772 PID: 41718 __init__.py:97 - DEBUG - connecting to host ec2-54-242-1-177.compute-1.amazonaws.com on port 22 as user root
+<br />
+2012-10-09 08:42:40,028 PID: 41718 __init__.py:75 - DEBUG - loading private key /Users/larour/.ssh/ISSMStarCluster.rsa
+<br />
+2012-10-09 08:42:40,028 PID: 41718 __init__.py:167 - DEBUG - Using private key /Users/larour/.ssh/ISSMStarCluster.rsa (rsa)
+<br />
+2012-10-09 08:42:40,029 PID: 41718 __init__.py:97 - DEBUG - connecting to host ec2-107-20-8-165.compute-1.amazonaws.com on port 22 as user root
+<br />
+2012-10-09 08:42:40,582 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:42:41,583 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:42:41,811 PID: 41718 __init__.py:186 - DEBUG - creating sftp connection
+<br />
+2012-10-09 08:42:42,584 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:42:43,585 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:42:44,587 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:42:45,588 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:42:46,590 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:42:47,591 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:42:48,593 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:42:49,594 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:42:50,595 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:42:51,597 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:42:52,598 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:42:53,599 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:42:54,601 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:42:55,602 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:42:56,603 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:42:57,604 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:42:58,606 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:42:59,607 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:43:00,609 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:43:01,610 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:43:02,612 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:43:03,612 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:43:04,613 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:43:05,615 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:43:06,616 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:43:07,618 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:43:08,619 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:43:09,620 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:43:10,622 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:43:11,623 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:43:12,625 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:43:13,626 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:43:14,627 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:43:15,629 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:43:16,630 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:43:17,632 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:43:18,634 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:43:19,635 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:43:20,192 PID: 41718 __init__.py:97 - DEBUG - connecting to host ec2-107-20-8-165.compute-1.amazonaws.com on port 22 as user root
+<br />
+2012-10-09 08:43:20,637 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:43:21,309 PID: 41718 __init__.py:186 - DEBUG - creating sftp connection
+<br />
+2012-10-09 08:43:21,638 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:43:22,640 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:43:23,642 PID: 41718 utils.py:97 - INFO - Waiting for cluster to come up took 2.099 mins
+<br />
+2012-10-09 08:43:23,642 PID: 41718 cluster.py:1487 - INFO - The master node is ec2-54-242-1-177.compute-1.amazonaws.com
+<br />
+2012-10-09 08:43:23,643 PID: 41718 cluster.py:1488 - INFO - Setting up the cluster...
+<br />
+2012-10-09 08:43:23,782 PID: 41718 cluster.py:672 - DEBUG - existing nodes: {u'i-2c1c5a51': &lt;Node: node001 (i-2c1c5a51)&gt;, u'i-321c5a4f': &lt;Node: master (i-321c5a4f)&gt;}
+<br />
+2012-10-09 08:43:23,782 PID: 41718 cluster.py:675 - DEBUG - updating existing node i-321c5a4f in self._nodes
+<br />
+2012-10-09 08:43:23,783 PID: 41718 cluster.py:675 - DEBUG - updating existing node i-2c1c5a51 in self._nodes
+<br />
+2012-10-09 08:43:23,783 PID: 41718 cluster.py:688 - DEBUG - returning self._nodes = [&lt;Node: master (i-321c5a4f)&gt;, &lt;Node: node001 (i-2c1c5a51)&gt;]
+<br />
+2012-10-09 08:43:23,783 PID: 41718 clustersetup.py:90 - INFO - Configuring hostnames...
+<br />
+2012-10-09 08:43:23,786 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:43:25,620 PID: 41718 clustersetup.py:154 - INFO - Creating cluster user: None (uid: 1001, gid: 1001)
+<br />
+2012-10-09 08:43:25,620 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:43:25,927 PID: 41718 clustersetup.py:169 - DEBUG - user issm exists on node node001, no action
+<br />
+2012-10-09 08:43:25,929 PID: 41718 clustersetup.py:169 - DEBUG - user issm exists on node master, no action
+<br />
+2012-10-09 08:43:26,623 PID: 41718 clustersetup.py:200 - INFO - Configuring scratch space for user(s): issm
+<br />
+2012-10-09 08:43:26,624 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:43:27,627 PID: 41718 clustersetup.py:209 - INFO - Configuring /etc/hosts on each node
+<br />
+2012-10-09 08:43:27,629 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:43:27,935 PID: 41718 __init__.py:284 - DEBUG - new /etc/hosts after removing regex (master|node001) matches:
+<br />
+127.0.0.1 ubuntu
+<br />
+<br /># The following lines are desirable for IPv6 capable hosts
+<br />
+::1 ip6-localhost ip6-loopback
+<br />
+fe00::0 ip6-localnet
+<br />
+ff00::0 ip6-mcastprefix
+<br />
+ff02::1 ip6-allnodes
+<br />
+ff02::2 ip6-allrouters
+<br />
+ff02::3 ip6-allhosts
+<br />
+# Added by cloud-init
+<br />
+127.0.1.1 ip-10-156-163-60.ec2.internal ip-10-156-163-60
+<br />
+<br />2012-10-09 08:43:27,936 PID: 41718 __init__.py:284 - DEBUG - new /etc/hosts after removing regex (master|node001) matches:
+<br />
+127.0.0.1 ubuntu
+<br />
+<br /># The following lines are desirable for IPv6 capable hosts
+<br />
+::1 ip6-localhost ip6-loopback
+<br />
+fe00::0 ip6-localnet
+<br />
+ff00::0 ip6-mcastprefix
+<br />
+ff02::1 ip6-allnodes
+<br />
+ff02::2 ip6-allrouters
+<br />
+ff02::3 ip6-allhosts
+<br />
+# Added by cloud-init
+<br />
+127.0.1.1 ip-10-156-161-234.ec2.internal ip-10-156-161-234
+<br />
+<br />2012-10-09 08:43:28,632 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:43:29,634 PID: 41718 node.py:616 - INFO - Starting NFS server on master
+<br />
+2012-10-09 08:43:29,821 PID: 41718 __init__.py:539 - DEBUG - Rather than invoking init scripts through /etc/init.d, use the service(8)
+<br />
+2012-10-09 08:43:29,821 PID: 41718 __init__.py:539 - DEBUG - utility, e.g. service portmap start
+<br />
+2012-10-09 08:43:29,822 PID: 41718 __init__.py:539 - DEBUG -
+<br />
+2012-10-09 08:43:29,822 PID: 41718 __init__.py:539 - DEBUG - Since the script you are attempting to invoke has been converted to an
+<br />
+2012-10-09 08:43:29,822 PID: 41718 __init__.py:539 - DEBUG - Upstart job, you may also use the start(8) utility, e.g. start portmap
+<br />
+2012-10-09 08:43:30,106 PID: 41718 __init__.py:536 - DEBUG - command 'source /etc/profile &amp;&amp; mount -t rpc_pipefs sunrpc /var/lib/nfs/rpc_pipefs/' failed with status 32
+<br />
+2012-10-09 08:43:30,107 PID: 41718 __init__.py:539 - DEBUG - mount: sunrpc already mounted or /var/lib/nfs/rpc_pipefs/ busy
+<br />
+2012-10-09 08:43:30,108 PID: 41718 __init__.py:539 - DEBUG - mount: according to mtab, rpc_pipefs is already mounted on /var/lib/nfs/rpc_pipefs
+<br />
+2012-10-09 08:43:30,549 PID: 41718 __init__.py:539 - DEBUG - * Exporting directories for NFS kernel daemon...
+<br />
+2012-10-09 08:43:30,549 PID: 41718 __init__.py:539 - DEBUG - ...done.
+<br />
+2012-10-09 08:43:30,550 PID: 41718 __init__.py:539 - DEBUG - * Starting NFS kernel daemon
+<br />
+2012-10-09 08:43:30,551 PID: 41718 __init__.py:539 - DEBUG - ...done.
+<br />
+2012-10-09 08:43:30,552 PID: 41718 __init__.py:539 - DEBUG - exportfs: scandir /etc/exports.d: No such file or directory
+<br />
+2012-10-09 08:43:30,552 PID: 41718 __init__.py:539 - DEBUG -
+<br />
+2012-10-09 08:43:30,835 PID: 41718 __init__.py:539 - DEBUG - exportfs: scandir /etc/exports.d: No such file or directory
+<br />
+2012-10-09 08:43:30,835 PID: 41718 __init__.py:539 - DEBUG -
+<br />
+2012-10-09 08:43:30,836 PID: 41718 node.py:587 - INFO - Configuring NFS exports path(s):
+<br />
+/home
+<br />
+2012-10-09 08:43:31,672 PID: 41718 __init__.py:539 - DEBUG - exportfs: scandir /etc/exports.d: No such file or directory
+<br />
+2012-10-09 08:43:31,672 PID: 41718 __init__.py:539 - DEBUG -
+<br />
+2012-10-09 08:43:31,673 PID: 41718 clustersetup.py:313 - INFO - Mounting all NFS export path(s) on 1 worker node(s)
+<br />
+2012-10-09 08:43:31,674 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:43:31,861 PID: 41718 __init__.py:539 - DEBUG - Rather than invoking init scripts through /etc/init.d, use the service(8)
+<br />
+2012-10-09 08:43:31,862 PID: 41718 __init__.py:539 - DEBUG - utility, e.g. service portmap start
+<br />
+2012-10-09 08:43:31,863 PID: 41718 __init__.py:539 - DEBUG -
+<br />
+2012-10-09 08:43:31,863 PID: 41718 __init__.py:539 - DEBUG - Since the script you are attempting to invoke has been converted to an
+<br />
+2012-10-09 08:43:31,863 PID: 41718 __init__.py:539 - DEBUG - Upstart job, you may also use the start(8) utility, e.g. start portmap
+<br />
+2012-10-09 08:43:32,148 PID: 41718 __init__.py:536 - DEBUG - command 'source /etc/profile &amp;&amp; mount -t devpts none /dev/pts' failed with status 32
+<br />
+2012-10-09 08:43:32,149 PID: 41718 __init__.py:539 - DEBUG - mount: none already mounted or /dev/pts busy
+<br />
+2012-10-09 08:43:32,149 PID: 41718 __init__.py:539 - DEBUG - mount: according to mtab, devpts is already mounted on /dev/pts
+<br />
+2012-10-09 08:43:32,433 PID: 41718 __init__.py:539 - DEBUG - /dev/sda1 on / type ext4 (rw)
+<br />
+2012-10-09 08:43:32,434 PID: 41718 __init__.py:539 - DEBUG - proc on /proc type proc (rw,noexec,nosuid,nodev)
+<br />
+2012-10-09 08:43:32,435 PID: 41718 __init__.py:539 - DEBUG - sysfs on /sys type sysfs (rw,noexec,nosuid,nodev)
+<br />
+2012-10-09 08:43:32,435 PID: 41718 __init__.py:539 - DEBUG - fusectl on /sys/fs/fuse/connections type fusectl (rw)
+<br />
+2012-10-09 08:43:32,436 PID: 41718 __init__.py:539 - DEBUG - none on /sys/kernel/debug type debugfs (rw)
+<br />
+2012-10-09 08:43:32,436 PID: 41718 __init__.py:539 - DEBUG - none on /sys/kernel/security type securityfs (rw)
+<br />
+2012-10-09 08:43:32,436 PID: 41718 __init__.py:539 - DEBUG - udev on /dev type devtmpfs (rw,mode=0755)
+<br />
+2012-10-09 08:43:32,437 PID: 41718 __init__.py:539 - DEBUG - devpts on /dev/pts type devpts (rw,noexec,nosuid,gid=5,mode=0620)
+<br />
+2012-10-09 08:43:32,437 PID: 41718 __init__.py:539 - DEBUG - tmpfs on /run type tmpfs (rw,noexec,nosuid,size=10%,mode=0755)
+<br />
+2012-10-09 08:43:32,437 PID: 41718 __init__.py:539 - DEBUG - none on /run/lock type tmpfs (rw,noexec,nosuid,nodev,size=5242880)
+<br />
+2012-10-09 08:43:32,437 PID: 41718 __init__.py:539 - DEBUG - none on /run/shm type tmpfs (rw,nosuid,nodev)
+<br />
+2012-10-09 08:43:32,437 PID: 41718 __init__.py:539 - DEBUG - /dev/xvdb on /mnt type ext3 (rw)
+<br />
+2012-10-09 08:43:32,676 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:43:32,859 PID: 41718 __init__.py:284 - DEBUG - new /etc/fstab after removing regex ( /home ) matches:
+<br />
+LABEL=cloudimg-rootfs / ext4 defaults 0 0
+<br />
+/dev/xvdb /mnt auto defaults,nobootwait,comment=cloudconfig 0 2
+<br />
+master:/data /data nfs vers=3,user,rw,exec,noauto 0 0
+<br />
+master:/opt/sge6 /opt/sge6 nfs vers=3,user,rw,exec,noauto 0 0
+<br />
+<br />2012-10-09 08:43:33,678 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:43:34,680 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:43:35,681 PID: 41718 utils.py:97 - INFO - Setting up NFS took 0.101 mins
+<br />
+2012-10-09 08:43:35,682 PID: 41718 clustersetup.py:221 - INFO - Configuring passwordless ssh for root
+<br />
+2012-10-09 08:43:36,220 PID: 41718 node.py:427 - DEBUG - Using existing key: /root/.ssh/id_rsa
+<br />
+2012-10-09 08:43:38,854 PID: 41718 __init__.py:284 - DEBUG - new /root/.ssh/known_hosts after removing regex (node001|ip-10-156-161-234.ec2.internal|ip-10-156-161-234|ec2-107-20-8-165.compute-1.amazonaws.com) matches:
+<br />
+ip-10-156-164-228,10.156.164.228 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDSMA2ybkEu7KcSyPEqZ1tX0lGURtqY4f0rRk40gRt7VJncMJ2qQAPusPzxfmirUwKaYWamQr/z4K/TfP/qvBwknaP8HfR40conTlSDlEUHHpJ/ziky7ztQEPmH5UiMSdElJGZoGeUCOsVneuffuXQN0sQl/1OPd2KrFKn6YdAKD9lYxQKWuXEAFus7W98rj+1gjymavktpljX7SOtRyzxAVAVqeooCEco+aF1zSc5HCqS8sYcvgTUSGuhMjyYkoStxFEmHvdGYDBetxTfvUaya3r1TNgnuX2G7Bn5mcYmFUbfTGHW7uqjzf6HCm3Lzac0i0vLi/xKKtmwP1ceoanMd
+<br />
+ip-10-156-164-228.ec2.internal,10.156.164.228 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDSMA2ybkEu7KcSyPEqZ1tX0lGURtqY4f0rRk40gRt7VJncMJ2qQAPusPzxfmirUwKaYWamQr/z4K/TfP/qvBwknaP8HfR40conTlSDlEUHHpJ/ziky7ztQEPmH5UiMSdElJGZoGeUCOsVneuffuXQN0sQl/1OPd2KrFKn6YdAKD9lYxQKWuXEAFus7W98rj+1gjymavktpljX7SOtRyzxAVAVqeooCEco+aF1zSc5HCqS8sYcvgTUSGuhMjyYkoStxFEmHvdGYDBetxTfvUaya3r1TNgnuX2G7Bn5mcYmFUbfTGHW7uqjzf6HCm3Lzac0i0vLi/xKKtmwP1ceoanMd
+<br />
+ec2-23-20-180-11.compute-1.amazonaws.com,23.20.180.11 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDSMA2ybkEu7KcSyPEqZ1tX0lGURtqY4f0rRk40gRt7VJncMJ2qQAPusPzxfmirUwKaYWamQr/z4K/TfP/qvBwknaP8HfR40conTlSDlEUHHpJ/ziky7ztQEPmH5UiMSdElJGZoGeUCOsVneuffuXQN0sQl/1OPd2KrFKn6YdAKD9lYxQKWuXEAFus7W98rj+1gjymavktpljX7SOtRyzxAVAVqeooCEco+aF1zSc5HCqS8sYcvgTUSGuhMjyYkoStxFEmHvdGYDBetxTfvUaya3r1TNgnuX2G7Bn5mcYmFUbfTGHW7uqjzf6HCm3Lzac0i0vLi/xKKtmwP1ceoanMd
+<br />
+ip-10-156-165-180.ec2.internal,10.156.165.180 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC57A8tlD+3/LGz+ifzyHPYL4tQAZ85X+9kzlC10qfWs6isXZlb93fy4AAYWhINwYioadLdnVDhOkqzxaLSf8YDtSJnlYXHYdeS/ZOIhdCqFxchxW9gJFb5xSU30D567Xf4CpaPegtzaEpVfbdovIiLJgjIKYSf/7AoYv51XKjaurDh9CSQlsNhUbJdShQQzFIWXixfVkn+djPupqe2hwyR2Nj5+J3/+N10sg0KTxVO78Os2nyUVzg6Y8TRG8pFXiUnR4H6gJKiXwJrPB+YPIOJoqXK/5nZEa7qRh+L3BzkYbnqENLquSNWGQ3vuJls+dRQMGNKRL0z2J3i+b5sw+3t
+<br />
+ec2-23-23-41-97.compute-1.amazonaws.com,23.23.41.97 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC57A8tlD+3/LGz+ifzyHPYL4tQAZ85X+9kzlC10qfWs6isXZlb93fy4AAYWhINwYioadLdnVDhOkqzxaLSf8YDtSJnlYXHYdeS/ZOIhdCqFxchxW9gJFb5xSU30D567Xf4CpaPegtzaEpVfbdovIiLJgjIKYSf/7AoYv51XKjaurDh9CSQlsNhUbJdShQQzFIWXixfVkn+djPupqe2hwyR2Nj5+J3/+N10sg0KTxVO78Os2nyUVzg6Y8TRG8pFXiUnR4H6gJKiXwJrPB+YPIOJoqXK/5nZEa7qRh+L3BzkYbnqENLquSNWGQ3vuJls+dRQMGNKRL0z2J3i+b5sw+3t
+<br />
+master,10.156.165.180 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC57A8tlD+3/LGz+ifzyHPYL4tQAZ85X+9kzlC10qfWs6isXZlb93fy4AAYWhINwYioadLdnVDhOkqzxaLSf8YDtSJnlYXHYdeS/ZOIhdCqFxchxW9gJFb5xSU30D567Xf4CpaPegtzaEpVfbdovIiLJgjIKYSf/7AoYv51XKjaurDh9CSQlsNhUbJdShQQzFIWXixfVkn+djPupqe2hwyR2Nj5+J3/+N10sg0KTxVO78Os2nyUVzg6Y8TRG8pFXiUnR4H6gJKiXwJrPB+YPIOJoqXK/5nZEa7qRh+L3BzkYbnqENLquSNWGQ3vuJls+dRQMGNKRL0z2J3i+b5sw+3t
+<br />
+ip-10-156-165-180,10.156.165.180 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC57A8tlD+3/LGz+ifzyHPYL4tQAZ85X+9kzlC10qfWs6isXZlb93fy4AAYWhINwYioadLdnVDhOkqzxaLSf8YDtSJnlYXHYdeS/ZOIhdCqFxchxW9gJFb5xSU30D567Xf4CpaPegtzaEpVfbdovIiLJgjIKYSf/7AoYv51XKjaurDh9CSQlsNhUbJdShQQzFIWXixfVkn+djPupqe2hwyR2Nj5+J3/+N10sg0KTxVO78Os2nyUVzg6Y8TRG8pFXiUnR4H6gJKiXwJrPB+YPIOJoqXK/5nZEa7qRh+L3BzkYbnqENLquSNWGQ3vuJls+dRQMGNKRL0z2J3i+b5sw+3t
+<br />
+<br />2012-10-09 08:43:43,195 PID: 41718 clustersetup.py:229 - INFO - Configuring passwordless ssh for issm
+<br />
+2012-10-09 08:43:43,752 PID: 41718 node.py:427 - DEBUG - Using existing key: /home/issm/.ssh/id_rsa
+<br />
+2012-10-09 08:43:45,963 PID: 41718 __init__.py:284 - DEBUG - new /home/issm/.ssh/known_hosts after removing regex (node001|ip-10-156-161-234.ec2.internal|ip-10-156-161-234|ec2-107-20-8-165.compute-1.amazonaws.com|master|ip-10-156-163-60.ec2.internal|ip-10-156-163-60|ec2-54-242-1-177.compute-1.amazonaws.com) matches:
+<br />
+ip-10-156-164-228,10.156.164.228 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDSMA2ybkEu7KcSyPEqZ1tX0lGURtqY4f0rRk40gRt7VJncMJ2qQAPusPzxfmirUwKaYWamQr/z4K/TfP/qvBwknaP8HfR40conTlSDlEUHHpJ/ziky7ztQEPmH5UiMSdElJGZoGeUCOsVneuffuXQN0sQl/1OPd2KrFKn6YdAKD9lYxQKWuXEAFus7W98rj+1gjymavktpljX7SOtRyzxAVAVqeooCEco+aF1zSc5HCqS8sYcvgTUSGuhMjyYkoStxFEmHvdGYDBetxTfvUaya3r1TNgnuX2G7Bn5mcYmFUbfTGHW7uqjzf6HCm3Lzac0i0vLi/xKKtmwP1ceoanMd
+<br />
+ip-10-156-164-228.ec2.internal,10.156.164.228 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDSMA2ybkEu7KcSyPEqZ1tX0lGURtqY4f0rRk40gRt7VJncMJ2qQAPusPzxfmirUwKaYWamQr/z4K/TfP/qvBwknaP8HfR40conTlSDlEUHHpJ/ziky7ztQEPmH5UiMSdElJGZoGeUCOsVneuffuXQN0sQl/1OPd2KrFKn6YdAKD9lYxQKWuXEAFus7W98rj+1gjymavktpljX7SOtRyzxAVAVqeooCEco+aF1zSc5HCqS8sYcvgTUSGuhMjyYkoStxFEmHvdGYDBetxTfvUaya3r1TNgnuX2G7Bn5mcYmFUbfTGHW7uqjzf6HCm3Lzac0i0vLi/xKKtmwP1ceoanMd
+<br />
+ec2-23-20-180-11.compute-1.amazonaws.com,23.20.180.11 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDSMA2ybkEu7KcSyPEqZ1tX0lGURtqY4f0rRk40gRt7VJncMJ2qQAPusPzxfmirUwKaYWamQr/z4K/TfP/qvBwknaP8HfR40conTlSDlEUHHpJ/ziky7ztQEPmH5UiMSdElJGZoGeUCOsVneuffuXQN0sQl/1OPd2KrFKn6YdAKD9lYxQKWuXEAFus7W98rj+1gjymavktpljX7SOtRyzxAVAVqeooCEco+aF1zSc5HCqS8sYcvgTUSGuhMjyYkoStxFEmHvdGYDBetxTfvUaya3r1TNgnuX2G7Bn5mcYmFUbfTGHW7uqjzf6HCm3Lzac0i0vLi/xKKtmwP1ceoanMd
+<br />
+ip-10-156-165-180.ec2.internal,10.156.165.180 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC57A8tlD+3/LGz+ifzyHPYL4tQAZ85X+9kzlC10qfWs6isXZlb93fy4AAYWhINwYioadLdnVDhOkqzxaLSf8YDtSJnlYXHYdeS/ZOIhdCqFxchxW9gJFb5xSU30D567Xf4CpaPegtzaEpVfbdovIiLJgjIKYSf/7AoYv51XKjaurDh9CSQlsNhUbJdShQQzFIWXixfVkn+djPupqe2hwyR2Nj5+J3/+N10sg0KTxVO78Os2nyUVzg6Y8TRG8pFXiUnR4H6gJKiXwJrPB+YPIOJoqXK/5nZEa7qRh+L3BzkYbnqENLquSNWGQ3vuJls+dRQMGNKRL0z2J3i+b5sw+3t
+<br />
+ec2-23-23-41-97.compute-1.amazonaws.com,23.23.41.97 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC57A8tlD+3/LGz+ifzyHPYL4tQAZ85X+9kzlC10qfWs6isXZlb93fy4AAYWhINwYioadLdnVDhOkqzxaLSf8YDtSJnlYXHYdeS/ZOIhdCqFxchxW9gJFb5xSU30D567Xf4CpaPegtzaEpVfbdovIiLJgjIKYSf/7AoYv51XKjaurDh9CSQlsNhUbJdShQQzFIWXixfVkn+djPupqe2hwyR2Nj5+J3/+N10sg0KTxVO78Os2nyUVzg6Y8TRG8pFXiUnR4H6gJKiXwJrPB+YPIOJoqXK/5nZEa7qRh+L3BzkYbnqENLquSNWGQ3vuJls+dRQMGNKRL0z2J3i+b5sw+3t
+<br />
+ip-10-156-165-180,10.156.165.180 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC57A8tlD+3/LGz+ifzyHPYL4tQAZ85X+9kzlC10qfWs6isXZlb93fy4AAYWhINwYioadLdnVDhOkqzxaLSf8YDtSJnlYXHYdeS/ZOIhdCqFxchxW9gJFb5xSU30D567Xf4CpaPegtzaEpVfbdovIiLJgjIKYSf/7AoYv51XKjaurDh9CSQlsNhUbJdShQQzFIWXixfVkn+djPupqe2hwyR2Nj5+J3/+N10sg0KTxVO78Os2nyUVzg6Y8TRG8pFXiUnR4H6gJKiXwJrPB+YPIOJoqXK/5nZEa7qRh+L3BzkYbnqENLquSNWGQ3vuJls+dRQMGNKRL0z2J3i+b5sw+3t
+<br />
+<br />2012-10-09 08:43:46,966 PID: 41718 threadpool.py:123 - INFO - Shutting down threads...
+<br />
+2012-10-09 08:43:46,970 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:43:48,130 PID: 41718 cluster.py:672 - DEBUG - existing nodes: {u'i-2c1c5a51': &lt;Node: node001 (i-2c1c5a51)&gt;, u'i-321c5a4f': &lt;Node: master (i-321c5a4f)&gt;}
+<br />
+2012-10-09 08:43:48,131 PID: 41718 cluster.py:675 - DEBUG - updating existing node i-321c5a4f in self._nodes
+<br />
+2012-10-09 08:43:48,131 PID: 41718 cluster.py:675 - DEBUG - updating existing node i-2c1c5a51 in self._nodes
+<br />
+2012-10-09 08:43:48,131 PID: 41718 cluster.py:688 - DEBUG - returning self._nodes = [&lt;Node: master (i-321c5a4f)&gt;, &lt;Node: node001 (i-2c1c5a51)&gt;]
+<br />
+2012-10-09 08:43:48,208 PID: 41718 sge.py:127 - INFO - Configuring SGE...
+<br />
+2012-10-09 08:43:48,285 PID: 41718 node.py:587 - INFO - Configuring NFS exports path(s):
+<br />
+/opt/sge6
+<br />
+2012-10-09 08:43:49,006 PID: 41718 __init__.py:539 - DEBUG - exportfs: scandir /etc/exports.d: No such file or directory
+<br />
+2012-10-09 08:43:49,007 PID: 41718 __init__.py:539 - DEBUG -
+<br />
+2012-10-09 08:43:49,008 PID: 41718 clustersetup.py:313 - INFO - Mounting all NFS export path(s) on 1 worker node(s)
+<br />
+2012-10-09 08:43:49,013 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:43:49,199 PID: 41718 __init__.py:539 - DEBUG - Rather than invoking init scripts through /etc/init.d, use the service(8)
+<br />
+2012-10-09 08:43:49,200 PID: 41718 __init__.py:539 - DEBUG - utility, e.g. service portmap start
+<br />
+2012-10-09 08:43:49,200 PID: 41718 __init__.py:539 - DEBUG -
+<br />
+2012-10-09 08:43:49,200 PID: 41718 __init__.py:539 - DEBUG - Since the script you are attempting to invoke has been converted to an
+<br />
+2012-10-09 08:43:49,201 PID: 41718 __init__.py:539 - DEBUG - Upstart job, you may also use the start(8) utility, e.g. start portmap
+<br />
+2012-10-09 08:43:49,485 PID: 41718 __init__.py:536 - DEBUG - command 'source /etc/profile &amp;&amp; mount -t devpts none /dev/pts' failed with status 32
+<br />
+2012-10-09 08:43:49,486 PID: 41718 __init__.py:539 - DEBUG - mount: none already mounted or /dev/pts busy
+<br />
+2012-10-09 08:43:49,486 PID: 41718 __init__.py:539 - DEBUG - mount: according to mtab, devpts is already mounted on /dev/pts
+<br />
+2012-10-09 08:43:49,770 PID: 41718 __init__.py:539 - DEBUG - /dev/sda1 on / type ext4 (rw)
+<br />
+2012-10-09 08:43:49,770 PID: 41718 __init__.py:539 - DEBUG - proc on /proc type proc (rw,noexec,nosuid,nodev)
+<br />
+2012-10-09 08:43:49,771 PID: 41718 __init__.py:539 - DEBUG - sysfs on /sys type sysfs (rw,noexec,nosuid,nodev)
+<br />
+2012-10-09 08:43:49,771 PID: 41718 __init__.py:539 - DEBUG - fusectl on /sys/fs/fuse/connections type fusectl (rw)
+<br />
+2012-10-09 08:43:49,771 PID: 41718 __init__.py:539 - DEBUG - none on /sys/kernel/debug type debugfs (rw)
+<br />
+2012-10-09 08:43:49,772 PID: 41718 __init__.py:539 - DEBUG - none on /sys/kernel/security type securityfs (rw)
+<br />
+2012-10-09 08:43:49,772 PID: 41718 __init__.py:539 - DEBUG - udev on /dev type devtmpfs (rw,mode=0755)
+<br />
+2012-10-09 08:43:49,772 PID: 41718 __init__.py:539 - DEBUG - devpts on /dev/pts type devpts (rw,noexec,nosuid,gid=5,mode=0620)
+<br />
+2012-10-09 08:43:49,772 PID: 41718 __init__.py:539 - DEBUG - tmpfs on /run type tmpfs (rw,noexec,nosuid,size=10%,mode=0755)
+<br />
+2012-10-09 08:43:49,772 PID: 41718 __init__.py:539 - DEBUG - none on /run/lock type tmpfs (rw,noexec,nosuid,nodev,size=5242880)
+<br />
+2012-10-09 08:43:49,772 PID: 41718 __init__.py:539 - DEBUG - none on /run/shm type tmpfs (rw,nosuid,nodev)
+<br />
+2012-10-09 08:43:49,772 PID: 41718 __init__.py:539 - DEBUG - /dev/xvdb on /mnt type ext3 (rw)
+<br />
+2012-10-09 08:43:49,772 PID: 41718 __init__.py:539 - DEBUG - master:/home on /home type nfs (rw,nosuid,nodev,vers=3,addr=10.156.163.60,user=root)
+<br />
+2012-10-09 08:43:50,015 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:43:50,188 PID: 41718 __init__.py:284 - DEBUG - new /etc/fstab after removing regex ( /opt/sge6 ) matches:
+<br />
+LABEL=cloudimg-rootfs / ext4 defaults 0 0
+<br />
+/dev/xvdb /mnt auto defaults,nobootwait,comment=cloudconfig 0 2
+<br />
+master:/data /data nfs vers=3,user,rw,exec,noauto 0 0
+<br />
+master:/home /home nfs vers=3,user,rw,exec,noauto 0 0
+<br />
+<br />2012-10-09 08:43:51,017 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:43:52,018 PID: 41718 utils.py:97 - INFO - Setting up NFS took 0.062 mins
+<br />
+2012-10-09 08:43:52,149 PID: 41718 sge.py:88 - INFO - Removing previous SGE installation...
+<br />
+2012-10-09 08:43:52,694 PID: 41718 __init__.py:539 - DEBUG - exportfs: scandir /etc/exports.d: No such file or directory
+<br />
+2012-10-09 08:43:52,695 PID: 41718 __init__.py:539 - DEBUG -
+<br />
+2012-10-09 08:43:53,041 PID: 41718 sge.py:100 - INFO - Installing Sun Grid Engine...
+<br />
+2012-10-09 08:44:00,615 PID: 41718 __init__.py:539 - DEBUG - Reading configuration from file ./ec2_sge.conf
+<br />
+2012-10-09 08:44:00,616 PID: 41718 __init__.py:539 - DEBUG - [H[2JInstall log can be found in: /opt/sge6/default/common/install_logs/qmaster_install_master_2012-10-09_15:43:53.log
+<br />
+2012-10-09 08:44:00,617 PID: 41718 __init__.py:539 - DEBUG - Install log can be found in: /opt/sge6/default/common/install_logs/execd_install_master_2012-10-09_15:43:57.log
+<br />
+2012-10-09 08:44:00,990 PID: 41718 __init__.py:539 - DEBUG - linux-x64
+<br />
+2012-10-09 08:44:01,450 PID: 41718 __init__.py:539 - DEBUG - root_at_master modified &quot;all.q&quot; in cluster queue list
+<br />
+2012-10-09 08:44:01,727 PID: 41718 __init__.py:539 - DEBUG - adminhost &quot;node001&quot; already exists
+<br />
+2012-10-09 08:44:02,003 PID: 41718 __init__.py:539 - DEBUG - submithost &quot;node001&quot; already exists
+<br />
+2012-10-09 08:44:02,005 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:44:02,208 PID: 41718 __init__.py:536 - DEBUG - command 'source /etc/profile &amp;&amp; pkill -9 sge' failed with status 1
+<br />
+2012-10-09 08:44:02,493 PID: 41718 __init__.py:536 - DEBUG - command 'source /etc/profile &amp;&amp; rm /etc/init.d/sge*' failed with status 1
+<br />
+2012-10-09 08:44:02,494 PID: 41718 __init__.py:539 - DEBUG - rm: cannot remove `/etc/init.d/sge*': No such file or directory
+<br />
+2012-10-09 08:44:02,873 PID: 41718 __init__.py:539 - DEBUG - linux-x64
+<br />
+2012-10-09 08:44:03,007 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:44:04,009 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:44:05,009 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:44:06,011 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:44:07,013 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-10-09 08:44:07,131 PID: 41718 __init__.py:539 - DEBUG - Reading configuration from file ./ec2_sge.conf
+<br />
+2012-10-09 08:44:07,132 PID: 41718 __init__.py:539 - DEBUG - [H[2JInstall log can be found in: /opt/sge6/default/common/install_logs/execd_install_node001_2012-10-09_15:44:03.log
+<br />
+2012-10-09 08:44:08,204 PID: 41718 sge.py:47 - INFO - Creating SGE parallel environment 'orte'
+<br />
+2012-10-09 08:44:08,205 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-09 08:44:08,389 PID: 41718 __init__.py:539 - DEBUG - 32
+<br />
+2012-10-09 08:44:08,477 PID: 41718 __init__.py:539 - DEBUG - 32
+<br />
+2012-10-09 08:44:09,627 PID: 41718 __init__.py:539 - DEBUG - root_at_master added &quot;orte&quot; to parallel environment list
+<br />
+2012-10-09 08:44:09,627 PID: 41718 sge.py:60 - INFO - Adding parallel environment 'orte' to queue 'all.q'
+<br />
+2012-10-09 08:44:09,919 PID: 41718 __init__.py:539 - DEBUG - Unable to find &quot;orte&quot; in &quot;pe_list&quot; of &quot;all.q&quot; - Adding new element.
+<br />
+2012-10-09 08:44:09,920 PID: 41718 __init__.py:539 - DEBUG -
+<br />
+2012-10-09 08:44:09,921 PID: 41718 __init__.py:539 - DEBUG - root_at_master modified &quot;all.q&quot; in cluster queue list
+<br />
+2012-10-09 08:44:09,921 PID: 41718 threadpool.py:123 - INFO - Shutting down threads...
+<br />
+2012-10-09 08:44:09,924 PID: 41718 threadpool.py:135 - DEBUG - unfinished_tasks = 4
+<br />
+2012-10-09 08:44:10,926 PID: 41718 utils.py:97 - INFO - Configuring cluster took 0.788 mins
+<br />
+2012-10-09 08:44:10,926 PID: 41718 utils.py:97 - INFO - Starting cluster took 2.912 mins
+<br />
+2012-10-09 08:44:10,927 PID: 41718 start.py:200 - INFO -
+<br />
+The cluster is now ready to use. To login to the master node as root, run:
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;$ starcluster sshmaster issm
+<br />
+<br />If you're having issues with the cluster you can reboot the instances and completely reconfigure the cluster from scratch using:
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;$ starcluster restart issm
+<br />
+<br />When you're finished using the cluster and wish to terminate it and stop paying for service:
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;$ starcluster terminate issm
+<br />
+<br />Alternatively, if the cluster uses EBS instances, you can use the 'stop' command to shutdown all nodes and put them into a 'stopped' state preserving the EBS volumes backing the nodes:
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;$ starcluster stop issm
+<br />
+<br />WARNING: Any data stored in ephemeral storage (usually /mnt) will be lost!
+<br />
+<br />You can activate a 'stopped' cluster by passing the -x option to the 'start' command:
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;$ starcluster start -x issm
+<br />
+<br />This will start all 'stopped' nodes and reconfigure the cluster.
+<br />
+<br /><br /><br /><br /><br />-----------------------------------------------------------------------------------------------------------------------------------------------
+<br />
+-----------------------------------------------------------------------------------------------------------------------------------------------
+<br />
+<br />I hope this helps point out to the problem. Reading the 3rd log, I'm not sure why the device  /dev/xdvz
+<br />
+does not exist, and why the ebs volume is not being attached to.
+<br />
+<br /><br /><br />Thanks again for any help on this.
+<br />
+<br /><br />Eric L.
+<br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />From: JPL &lt;larour_at_jpl.nasa.gov&lt;mailto:larour_at_jpl.nasa.gov&gt;&gt;
+<br />
+Date: Mon, 8 Oct 2012 22:41:34 -0700
+<br />
+To: &lt;starcluster_at_mit.edu&lt;mailto:starcluster_at_mit.edu&gt;&gt;
+<br />
+Subject: EBS volume not mounting on restart
+<br />
+<br />Dear folks,
+<br />
+<br />I have the following problem while creating a cluster and mounting an ebs volume
+<br />
+on /data. Here is the config file part corresponding to my template:
+<br />
+<br />[cluster issm]
+<br />
+# change this to the name of one of the keypair sections defined above
+<br />
+KEYNAME = ISSMStarCluster
+<br />
+# number of ec2 instances to launch
+<br />
+CLUSTER_SIZE = 2
+<br />
+# create the following user on the cluster
+<br />
+CLUSTER_USER = sgeadmin
+<br />
+# optionally specify shell (defaults to bash)
+<br />
+# (options: tcsh, zsh, csh, bash, ksh)
+<br />
+CLUSTER_SHELL = bash
+<br />
+# AMI to use for cluster nodes. These AMIs are for the us-east-1 region.
+<br />
+# Use the 'listpublic' command to list StarCluster AMIs in other regions
+<br />
+# The base i386 StarCluster AMI is ami-899d49e0
+<br />
+# The base x86_64 StarCluster AMI is ami-999d49f0
+<br />
+# The base HVM StarCluster AMI is ami-4583572c
+<br />
+NODE_IMAGE_ID = ami-4583572c
+<br />
+# instance type for all cluster nodes
+<br />
+# (options: cg1.4xlarge, c1.xlarge, m1.small, c1.medium, m2.xlarge, t1.micro, cc1.4xlarge, m1.medium, cc2.8xlarge, m1.large, m1.xlarge, hi1.4xlarge, m2.4xlarge, m2.2xlarge)
+<br />
+NODE_INSTANCE_TYPE = cc2.8xlarge
+<br />
+# Uncomment to disable installing/configuring a queueing system on the
+<br />
+# cluster (SGE)
+<br />
+#DISABLE_QUEUE=True
+<br />
+# Uncomment to specify a different instance type for the master node (OPTIONAL)
+<br />
+# (defaults to NODE_INSTANCE_TYPE if not specified)
+<br />
+#MASTER_INSTANCE_TYPE = m1.small
+<br />
+# Uncomment to specify a separate AMI to use for the master node. (OPTIONAL)
+<br />
+# (defaults to NODE_IMAGE_ID if not specified)
+<br />
+#MASTER_IMAGE_ID = ami-899d49e0 (OPTIONAL)
+<br />
+# availability zone to launch the cluster in (OPTIONAL)
+<br />
+# (automatically determined based on volumes (if any) or
+<br />
+# selected by Amazon if not specified)
+<br />
+#AVAILABILITY_ZONE = us-east-1c
+<br />
+# list of volumes to attach to the master node (OPTIONAL)
+<br />
+# these volumes, if any, will be NFS shared to the worker nodes
+<br />
+# see &quot;Configuring EBS Volumes&quot; below on how to define volume sections
+<br />
+VOLUMES = issm
+<br />
+<br /># Sections starting with &quot;volume&quot; define your EBS volumes
+<br />
+[volume issm]
+<br />
+VOLUME_ID = vol-7d113b07
+<br />
+MOUNT_PATH = /data
+<br />
+<br /><br /><br />when I first start this cluster:
+<br />
+starcluster start issm, everything works perfectly.
+<br />
+<br />&nbsp;start issm
+<br />
+StarCluster - (<a href="http://web.mit.edu/starcluster">http://web.mit.edu/starcluster</a>) (v. 0.9999)
+<br />
+Software Tools for Academics and Researchers (STAR)
+<br />
+Please submit bug reports to starcluster_at_mit.edu&lt;mailto:starcluster_at_mit.edu&gt;
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Using default cluster template: issm
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Validating cluster template settings...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Cluster template settings are valid
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Starting cluster...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Launching a 2-node cluster...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Creating security group _at_sc-issm...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Creating placement group _at_sc-issm...
+</em><br />
+Reservation:r-e3538485
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for cluster to come up... (updating every 10s)
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for all nodes to be in a 'running' state...
+</em><br />
+2/2 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for SSH to come up on all nodes...
+</em><br />
+2/2 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for cluster to come up took 2.281 mins
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; The master node is ec2-107-22-25-149.compute-1.amazonaws.com
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Setting up the cluster...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Attaching volume vol-7d113b07 to master node on /dev/sdz ...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring hostnames...
+</em><br />
+2/2 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Mounting EBS volume vol-7d113b07 on /data...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Creating cluster user: None (uid: 1001, gid: 1001)
+</em><br />
+2/2 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring scratch space for user(s): sgeadmin
+</em><br />
+0/2 |                                                                  |   0%
+<br />
+<br /><br />2/2 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring /etc/hosts on each node
+</em><br />
+2/2 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Starting NFS server on master
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring NFS exports path(s):
+</em><br />
+/home /data
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Mounting all NFS export path(s) on 1 worker node(s)
+</em><br />
+1/1 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Setting up NFS took 0.152 mins
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring passwordless ssh for root
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring passwordless ssh for sgeadmin
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Shutting down threads...
+</em><br />
+20/20 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring SGE...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring NFS exports path(s):
+</em><br />
+/opt/sge6
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Mounting all NFS export path(s) on 1 worker node(s)
+</em><br />
+1/1 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Setting up NFS took 0.102 mins
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Installing Sun Grid Engine...
+</em><br />
+1/1 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Creating SGE parallel environment 'orte'
+</em><br />
+2/2 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Adding parallel environment 'orte' to queue 'all.q'
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Shutting down threads...
+</em><br />
+20/20 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring cluster took 1.506 mins
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Starting cluster took 3.877 mins
+</em><br />
+<br />The cluster is now ready to use. To login to the master node
+<br />
+as root, run:
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;$ starcluster sshmaster issm
+<br />
+<br /><br /><br />I checked, /data is correctly mounted on my ebs volume, everything fine.
+<br />
+Here is an frisk dump:
+<br />
+<br />root_at_master:/data# df
+<br />
+Filesystem           1K-blocks      Used Available Use% Mounted on
+<br />
+/dev/sda1              8246240   5386292   2441056  69% /
+<br />
+udev                  31263832         4  31263828   1% /dev
+<br />
+tmpfs                 12507188       220  12506968   1% /run
+<br />
+none                      5120         0      5120   0% /run/lock
+<br />
+none                  31267964         0  31267964   0% /run/shm
+<br />
+/dev/xvdb            866917368    205028 822675452   1% /mnt
+<br />
+/dev/xvdz            103212320    192268  97777172   1% /data
+<br />
+<br />the ebs volume I'm mounting is 100Gb in men, so everything checks out.
+<br />
+<br /><br />Now, if I stop the cluster, and start it again using the –x option, the cluster will boot
+<br />
+fine, but will not attach to the volume (won't attempt it at all) and will not even try
+<br />
+to mount /data. It's as though the [volumes] section of my config did not exist!
+<br />
+<br /><br />Here is the output of the starcluster start –x issm command:
+<br />
+<br />st start -c issm -x issm
+<br />
+StarCluster - (<a href="http://web.mit.edu/starcluster">http://web.mit.edu/starcluster</a>) (v. 0.9999)
+<br />
+Software Tools for Academics and Researchers (STAR)
+<br />
+Please submit bug reports to starcluster_at_mit.edu&lt;mailto:starcluster_at_mit.edu&gt;
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Validating existing instances...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Validating cluster template settings...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Cluster template settings are valid
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Starting cluster...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Starting stopped node: node001
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for cluster to come up... (updating every 10s)
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for all nodes to be in a 'running' state...
+</em><br />
+2/2 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for SSH to come up on all nodes...
+</em><br />
+2/2 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for cluster to come up took 1.780 mins
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; The master node is ec2-23-22-242-221.compute-1.amazonaws.com
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Setting up the cluster...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring hostnames...
+</em><br />
+2/2 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Creating cluster user: None (uid: 1001, gid: 1001)
+</em><br />
+2/2 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring scratch space for user(s): sgeadmin
+</em><br />
+2/2 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring /etc/hosts on each node
+</em><br />
+2/2 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Starting NFS server on master
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring NFS exports path(s):
+</em><br />
+/home
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Mounting all NFS export path(s) on 1 worker node(s)
+</em><br />
+1/1 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Setting up NFS took 0.106 mins
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring passwordless ssh for root
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring passwordless ssh for sgeadmin
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Shutting down threads...
+</em><br />
+20/20 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring SGE...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring NFS exports path(s):
+</em><br />
+/opt/sge6
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Mounting all NFS export path(s) on 1 worker node(s)
+</em><br />
+1/1 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Setting up NFS took 0.065 mins
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Removing previous SGE installation...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Installing Sun Grid Engine...
+</em><br />
+1/1 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Creating SGE parallel environment 'orte'
+</em><br />
+2/2 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Adding parallel environment 'orte' to queue 'all.q'
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Shutting down threads...
+</em><br />
+20/20 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring cluster took 0.846 mins
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Starting cluster took 2.647 mins
+</em><br />
+<br />The cluster is now ready to use. To login to the master node
+<br />
+as root, run:
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;$ starcluster sshmaster issm
+<br />
+<br /><br /><br /><br />As you can see, no attempt was made at attaching to the ebs volume, and mounting of
+<br />
+/data was not attempted! When I log in, there is no ebs volume device for /data either
+<br />
+<br /><br /><br /><br />Any help or pointers would be appreciated!
+<br />
+<br />Thanks in advance!
+<br />
+<br />Eric L.
+<br />
+<br />--------------------------------------------------------------------------
+<br />
+Dr. Eric Larour, Software Engineer III,
+<br />
+ISSM Task Manager  (<a href="http://issm.jpl.nasa.gov">http://issm.jpl.nasa.gov</a>&lt;<a href="http://issm.jpl.nasa.gov/">http://issm.jpl.nasa.gov/</a>&gt;)
+<br />
+Mechanical division, Propulsion Thermal and Materials Section, Applied Low Temperature Physics Group.
+<br />
+Jet Propulsion Laboratory.
+<br />
+MS 79-24, 4800 Oak Grove Drive, Pasadena CA 91109.
+<br />
+eric.larour_at_jpl.nasa.gov&lt;mailto:eric.larour_at_jpl.nasa.gov&gt;
+<br />
+<a href="http://issm.jpl.nasa.gov">http://issm.jpl.nasa.gov</a>&lt;<a href="http://issm.jpl.nasa.gov/">http://issm.jpl.nasa.gov/</a>&gt;
+<br />
+Tel: 1 818 393 2435.
+<br />
+&nbsp;--------------------------------------------------------------------------
+<br />
+<span id="received"><dfn>Received on</dfn> Tue Oct 09 2012 - 12:21:03 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1418.html#start1418">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1419.html" title="Next message in the list">John St. John: "Autocreate an NFS mounted volume at time of cluster launch"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1417.html" title="Previous message in the list">Steve Heistand: "bug report"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1418" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1418" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1418" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1418" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+---------- SYSTEM INFO ----------
+StarCluster: 0.94.3
+Python: 2.6.6 (r266:84292, Jun 18 2012, 09:57:52)  [GCC 4.4.6 20110731 (Red Hat 4.4.6-3)]
+Platform: Linux-2.6.32-220.4.2.el6.x86_64-x86_64-with-redhat-6.3-Carbon
+boto: 2.18.0
+paramiko: 1.12.0
+Crypto: 2.6.1
+
+---------- CRASH DETAILS ----------
+Command: starcluster rn w2b node010
+
+2013-12-31 21:30:07,152 PID: 26906 config.py:567 - DEBUG - Loading config
+2013-12-31 21:30:07,153 PID: 26906 config.py:138 - DEBUG - Loading file: /root/.starcluster/config
+2013-12-31 21:30:07,157 PID: 26906 config.py:138 - DEBUG - Loading file: /root/.starcluster/config
+2013-12-31 21:30:07,158 PID: 26906 config.py:138 - DEBUG - Loading file: /root/.starcluster/perms-vcl
+2013-12-31 21:30:07,158 PID: 26906 config.py:138 - DEBUG - Loading file: /root/.starcluster/perms-vfe
+2013-12-31 21:30:07,240 PID: 26906 awsutils.py:74 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'proxy_user': None, 'proxy_pass': None, 'proxy_port': None, 'proxy': None, 'is_secure': True, 'path': '/', 'region': RegionInfo:us-west-2, 'validate_certs': True, 'port': None}
+2013-12-31 21:30:07,556 PID: 26906 cluster.py:711 - DEBUG - existing nodes: {}
+2013-12-31 21:30:07,557 PID: 26906 cluster.py:719 - DEBUG - adding node i-c4b464f2 to self._nodes list
+2013-12-31 21:30:07,557 PID: 26906 cluster.py:719 - DEBUG - adding node i-9906fcaf to self._nodes list
+2013-12-31 21:30:07,557 PID: 26906 cluster.py:719 - DEBUG - adding node i-3b19e80d to self._nodes list
+2013-12-31 21:30:07,557 PID: 26906 cluster.py:719 - DEBUG - adding node i-20a94716 to self._nodes list
+2013-12-31 21:30:07,558 PID: 26906 cluster.py:719 - DEBUG - adding node i-86148bb0 to self._nodes list
+2013-12-31 21:30:07,563 PID: 26906 cluster.py:727 - DEBUG - returning self._nodes = [<Node: master (i-86148bb0)>, <Node: node001 (i-20a94716)>, <Node: node010 (i-3b19e80d)>, <Node: node011 (i-9906fcaf)>, <Node: node012 (i-c4b464f2)>]
+2013-12-31 21:30:07,988 PID: 26906 cluster.py:711 - DEBUG - existing nodes: {u'i-9906fcaf': <Node: node011 (i-9906fcaf)>, u'i-20a94716': <Node: node001 (i-20a94716)>, u'i-86148bb0': <Node: master (i-86148bb0)>, u'i-3b19e80d': <Node: node010 (i-3b19e80d)>, u'i-c4b464f2': <Node: node012 (i-c4b464f2)>}
+2013-12-31 21:30:07,989 PID: 26906 cluster.py:714 - DEBUG - updating existing node i-c4b464f2 in self._nodes
+2013-12-31 21:30:07,989 PID: 26906 cluster.py:714 - DEBUG - updating existing node i-9906fcaf in self._nodes
+2013-12-31 21:30:07,989 PID: 26906 cluster.py:714 - DEBUG - updating existing node i-3b19e80d in self._nodes
+2013-12-31 21:30:07,989 PID: 26906 cluster.py:714 - DEBUG - updating existing node i-20a94716 in self._nodes
+2013-12-31 21:30:07,990 PID: 26906 cluster.py:714 - DEBUG - updating existing node i-86148bb0 in self._nodes
+2013-12-31 21:30:07,990 PID: 26906 cluster.py:727 - DEBUG - returning self._nodes = [<Node: master (i-86148bb0)>, <Node: node001 (i-20a94716)>, <Node: node010 (i-3b19e80d)>, <Node: node011 (i-9906fcaf)>, <Node: node012 (i-c4b464f2)>]
+2013-12-31 21:30:08,096 PID: 26906 cluster.py:711 - DEBUG - existing nodes: {u'i-9906fcaf': <Node: node011 (i-9906fcaf)>, u'i-20a94716': <Node: node001 (i-20a94716)>, u'i-86148bb0': <Node: master (i-86148bb0)>, u'i-3b19e80d': <Node: node010 (i-3b19e80d)>, u'i-c4b464f2': <Node: node012 (i-c4b464f2)>}
+2013-12-31 21:30:08,096 PID: 26906 cluster.py:714 - DEBUG - updating existing node i-c4b464f2 in self._nodes
+2013-12-31 21:30:08,097 PID: 26906 cluster.py:714 - DEBUG - updating existing node i-9906fcaf in self._nodes
+2013-12-31 21:30:08,097 PID: 26906 cluster.py:714 - DEBUG - updating existing node i-3b19e80d in self._nodes
+2013-12-31 21:30:08,097 PID: 26906 cluster.py:714 - DEBUG - updating existing node i-20a94716 in self._nodes
+2013-12-31 21:30:08,097 PID: 26906 cluster.py:714 - DEBUG - updating existing node i-86148bb0 in self._nodes
+2013-12-31 21:30:08,098 PID: 26906 cluster.py:727 - DEBUG - returning self._nodes = [<Node: master (i-86148bb0)>, <Node: node001 (i-20a94716)>, <Node: node010 (i-3b19e80d)>, <Node: node011 (i-9906fcaf)>, <Node: node012 (i-c4b464f2)>]
+2013-12-31 21:30:08,103 PID: 26906 cluster.py:1571 - INFO - Running plugin ogsconfig.VIOGSConfigurator
+2013-12-31 21:30:08,103 PID: 26906 cluster.py:1575 - DEBUG - method on_remove_node not implemented by plugin ogsconfig.VIOGSConfigurator
+2013-12-31 21:30:08,198 PID: 26906 cluster.py:711 - DEBUG - existing nodes: {u'i-9906fcaf': <Node: node011 (i-9906fcaf)>, u'i-20a94716': <Node: node001 (i-20a94716)>, u'i-86148bb0': <Node: master (i-86148bb0)>, u'i-3b19e80d': <Node: node010 (i-3b19e80d)>, u'i-c4b464f2': <Node: node012 (i-c4b464f2)>}
+2013-12-31 21:30:08,198 PID: 26906 cluster.py:714 - DEBUG - updating existing node i-c4b464f2 in self._nodes
+2013-12-31 21:30:08,199 PID: 26906 cluster.py:714 - DEBUG - updating existing node i-9906fcaf in self._nodes
+2013-12-31 21:30:08,199 PID: 26906 cluster.py:714 - DEBUG - updating existing node i-3b19e80d in self._nodes
+2013-12-31 21:30:08,199 PID: 26906 cluster.py:714 - DEBUG - updating existing node i-20a94716 in self._nodes
+2013-12-31 21:30:08,199 PID: 26906 cluster.py:714 - DEBUG - updating existing node i-86148bb0 in self._nodes
+2013-12-31 21:30:08,199 PID: 26906 cluster.py:727 - DEBUG - returning self._nodes = [<Node: master (i-86148bb0)>, <Node: node001 (i-20a94716)>, <Node: node010 (i-3b19e80d)>, <Node: node011 (i-9906fcaf)>, <Node: node012 (i-c4b464f2)>]
+2013-12-31 21:30:08,200 PID: 26906 cluster.py:1571 - INFO - Running plugin starcluster.plugins.users.CreateUsers
+2013-12-31 21:30:08,200 PID: 26906 cluster.py:1575 - DEBUG - method on_remove_node not implemented by plugin starcluster.plugins.users.CreateUsers
+2013-12-31 21:30:08,374 PID: 26906 cluster.py:711 - DEBUG - existing nodes: {u'i-9906fcaf': <Node: node011 (i-9906fcaf)>, u'i-20a94716': <Node: node001 (i-20a94716)>, u'i-86148bb0': <Node: master (i-86148bb0)>, u'i-3b19e80d': <Node: node010 (i-3b19e80d)>, u'i-c4b464f2': <Node: node012 (i-c4b464f2)>}
+2013-12-31 21:30:08,375 PID: 26906 cluster.py:714 - DEBUG - updating existing node i-c4b464f2 in self._nodes
+2013-12-31 21:30:08,375 PID: 26906 cluster.py:714 - DEBUG - updating existing node i-9906fcaf in self._nodes
+2013-12-31 21:30:08,375 PID: 26906 cluster.py:714 - DEBUG - updating existing node i-3b19e80d in self._nodes
+2013-12-31 21:30:08,375 PID: 26906 cluster.py:714 - DEBUG - updating existing node i-20a94716 in self._nodes
+2013-12-31 21:30:08,375 PID: 26906 cluster.py:714 - DEBUG - updating existing node i-86148bb0 in self._nodes
+2013-12-31 21:30:08,376 PID: 26906 cluster.py:727 - DEBUG - returning self._nodes = [<Node: master (i-86148bb0)>, <Node: node001 (i-20a94716)>, <Node: node010 (i-3b19e80d)>, <Node: node011 (i-9906fcaf)>, <Node: node012 (i-c4b464f2)>]
+2013-12-31 21:30:08,376 PID: 26906 cluster.py:1571 - INFO - Running plugin starcluster.plugins.sge.SGEPlugin
+2013-12-31 21:30:08,376 PID: 26906 sge.py:171 - INFO - Removing node010 from SGE
+2013-12-31 21:30:08,377 PID: 26906 __init__.py:86 - DEBUG - loading private key /root/.ssh/lapuserkey-west.pem
+2013-12-31 21:30:08,377 PID: 26906 __init__.py:93 - DEBUG - specified key does not end in either rsa or dsa, trying both
+2013-12-31 21:30:08,378 PID: 26906 __init__.py:178 - DEBUG - Using private key /root/.ssh/lapuserkey-west.pem (rsa)
+2013-12-31 21:30:08,378 PID: 26906 __init__.py:108 - DEBUG - connecting to host ec2-54-244-79-153.us-west-2.compute.amazonaws.com on port 22 as user root
+2013-12-31 21:30:21,965 PID: 26906 __init__.py:197 - DEBUG - creating sftp connection
+2013-12-31 21:30:22,082 PID: 26906 __init__.py:538 - DEBUG - executing remote command: source /etc/profile && qconf -dattr hostgroup hostlist node010 @allhosts
+2013-12-31 21:30:22,216 PID: 26906 __init__.py:562 - DEBUG - output of 'source /etc/profile && qconf -dattr hostgroup hostlist node010 @allhosts':
+root@master modified "@allhosts" in host group list
+2013-12-31 21:30:22,282 PID: 26906 __init__.py:538 - DEBUG - executing remote command: source /etc/profile && qconf -purge queue slots all.q@node010
+2013-12-31 21:30:22,532 PID: 26906 __init__.py:562 - DEBUG - output of 'source /etc/profile && qconf -purge queue slots all.q@node010':
+root@master modified "all.q" in cluster queue list
+2013-12-31 21:30:22,633 PID: 26906 __init__.py:538 - DEBUG - executing remote command: source /etc/profile && qconf -dconf node010
+2013-12-31 21:30:22,769 PID: 26906 __init__.py:562 - DEBUG - output of 'source /etc/profile && qconf -dconf node010':
+root@master removed "node010" from configuration list
+2013-12-31 21:30:22,823 PID: 26906 __init__.py:538 - DEBUG - executing remote command: source /etc/profile && qconf -de node010
+2013-12-31 21:30:22,957 PID: 26906 __init__.py:562 - DEBUG - output of 'source /etc/profile && qconf -de node010':
+root@master removed "node010" from execution host list
+2013-12-31 21:30:22,957 PID: 26906 __init__.py:86 - DEBUG - loading private key /root/.ssh/lapuserkey-west.pem
+2013-12-31 21:30:22,957 PID: 26906 __init__.py:93 - DEBUG - specified key does not end in either rsa or dsa, trying both
+2013-12-31 21:30:22,958 PID: 26906 __init__.py:178 - DEBUG - Using private key /root/.ssh/lapuserkey-west.pem (rsa)
+2013-12-31 21:30:22,959 PID: 26906 __init__.py:108 - DEBUG - connecting to host ec2-54-202-252-44.us-west-2.compute.amazonaws.com on port 22 as user root
+2013-12-31 21:30:36,526 PID: 26906 __init__.py:197 - DEBUG - creating sftp connection
+2013-12-31 21:30:36,579 PID: 26906 __init__.py:538 - DEBUG - executing remote command: source /etc/profile && pkill -9 sge_execd
+2013-12-31 21:30:36,676 PID: 26906 __init__.py:562 - DEBUG - output of 'source /etc/profile && pkill -9 sge_execd':
+
+2013-12-31 21:30:36,824 PID: 26906 sge.py:61 - INFO - Updating SGE parallel environment 'orte'
+2013-12-31 21:30:36,873 PID: 26906 threadpool.py:168 - DEBUG - unfinished_tasks = 4
+2013-12-31 21:30:36,874 PID: 26906 __init__.py:86 - DEBUG - loading private key /root/.ssh/lapuserkey-west.pem
+2013-12-31 21:30:36,875 PID: 26906 __init__.py:93 - DEBUG - specified key does not end in either rsa or dsa, trying both
+2013-12-31 21:30:36,876 PID: 26906 __init__.py:86 - DEBUG - loading private key /root/.ssh/lapuserkey-west.pem
+2013-12-31 21:30:36,876 PID: 26906 __init__.py:93 - DEBUG - specified key does not end in either rsa or dsa, trying both
+2013-12-31 21:30:36,877 PID: 26906 __init__.py:178 - DEBUG - Using private key /root/.ssh/lapuserkey-west.pem (rsa)
+2013-12-31 21:30:36,877 PID: 26906 __init__.py:108 - DEBUG - connecting to host ec2-54-203-168-182.us-west-2.compute.amazonaws.com on port 22 as user root
+2013-12-31 21:30:36,878 PID: 26906 __init__.py:86 - DEBUG - loading private key /root/.ssh/lapuserkey-west.pem
+2013-12-31 21:30:36,878 PID: 26906 __init__.py:93 - DEBUG - specified key does not end in either rsa or dsa, trying both
+2013-12-31 21:30:36,879 PID: 26906 __init__.py:178 - DEBUG - Using private key /root/.ssh/lapuserkey-west.pem (rsa)
+2013-12-31 21:30:36,879 PID: 26906 __init__.py:108 - DEBUG - connecting to host ec2-54-203-200-50.us-west-2.compute.amazonaws.com on port 22 as user root
+2013-12-31 21:30:36,880 PID: 26906 __init__.py:538 - DEBUG - executing remote command: source /etc/profile && cat /proc/cpuinfo | grep processor | wc -l
+2013-12-31 21:30:36,880 PID: 26906 __init__.py:178 - DEBUG - Using private key /root/.ssh/lapuserkey-west.pem (rsa)
+2013-12-31 21:30:36,881 PID: 26906 __init__.py:108 - DEBUG - connecting to host ec2-50-112-68-130.us-west-2.compute.amazonaws.com on port 22 as user root
+2013-12-31 21:30:37,121 PID: 26906 __init__.py:562 - DEBUG - output of 'source /etc/profile && cat /proc/cpuinfo | grep processor | wc -l':
+2
+2013-12-31 21:30:59,755 PID: 26906 threadpool.py:168 - DEBUG - unfinished_tasks = 3
+2013-12-31 21:31:00,971 PID: 26906 threadpool.py:168 - DEBUG - unfinished_tasks = 2
+2013-12-31 21:31:01,165 PID: 26906 __init__.py:197 - DEBUG - creating sftp connection
+2013-12-31 21:31:01,173 PID: 26906 __init__.py:197 - DEBUG - creating sftp connection
+2013-12-31 21:31:01,231 PID: 26906 __init__.py:538 - DEBUG - executing remote command: source /etc/profile && cat /proc/cpuinfo | grep processor | wc -l
+2013-12-31 21:31:01,248 PID: 26906 __init__.py:538 - DEBUG - executing remote command: source /etc/profile && cat /proc/cpuinfo | grep processor | wc -l
+2013-12-31 21:31:01,347 PID: 26906 __init__.py:562 - DEBUG - output of 'source /etc/profile && cat /proc/cpuinfo | grep processor | wc -l':
+32
+2013-12-31 21:31:01,385 PID: 26906 __init__.py:562 - DEBUG - output of 'source /etc/profile && cat /proc/cpuinfo | grep processor | wc -l':
+1
+2013-12-31 21:31:01,973 PID: 26906 cluster.py:1581 - ERROR - Error occured while running plugin 'starcluster.plugins.sge.SGEPlugin':
+2013-12-31 21:31:01,973 PID: 26906 cli.py:284 - ERROR - error occurred in job (id=node012): failed to connect to host ec2-54-203-200-50.us-west-2.compute.amazonaws.com on port 22
+Traceback (most recent call last):
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.94.3-py2.6.egg/starcluster/threadpool.py", line 48, in run
+    job.run()
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.94.3-py2.6.egg/starcluster/threadpool.py", line 75, in run
+    r = self.method(*self.args, **self.kwargs)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.94.3-py2.6.egg/starcluster/plugins/sge.py", line 64, in <lambda>
+    num_processors = sum(self.pool.map(lambda n: n.num_processors, nodes,
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.94.3-py2.6.egg/starcluster/node.py", line 228, in num_processors
+    'cat /proc/cpuinfo | grep processor | wc -l')[0])
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.94.3-py2.6.egg/starcluster/sshutils/__init__.py", line 527, in execute
+    channel = self.transport.open_session()
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.94.3-py2.6.egg/starcluster/sshutils/__init__.py", line 147, in transport
+    port=self._port, timeout=self._timeout)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.94.3-py2.6.egg/starcluster/sshutils/__init__.py", line 114, in connect
+    raise exception.SSHConnectionError(host, port)
+SSHConnectionError: failed to connect to host ec2-54-203-200-50.us-west-2.compute.amazonaws.com on port 22
+
+StarCluster - (http://star.mit.edu/cluster) (v. 0.94.3)
+Software Tools for Academics and Researchers (STAR)
+Please submit bug reports to starcluster@mit.edu
+
+2/2 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%  
+!!! ERROR - ConcurrentTagAccess: The Tags for this Resource cannot be modified as they are currently being modified by another request. Please retry the request.
+Traceback (most recent call last):
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.94.3-py2.6.egg/starcluster/cli.py", line 274, in main
+    sc.execute(args)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.94.3-py2.6.egg/starcluster/commands/addnode.py", line 137, in execute
+    no_create=self.opts.no_create)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.94.3-py2.6.egg/starcluster/cluster.py", line 186, in add_nodes
+    no_create=no_create)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.94.3-py2.6.egg/starcluster/cluster.py", line 911, in add_nodes
+    self.wait_for_cluster(msg="Waiting for node(s) to come up...")
+  File "<string>", line 2, in wait_for_cluster
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.94.3-py2.6.egg/starcluster/utils.py", line 111, in wrap_f
+    res = func(*arg, **kargs)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.94.3-py2.6.egg/starcluster/cluster.py", line 1301, in wait_for_cluster
+    self.wait_for_running_instances()
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.94.3-py2.6.egg/starcluster/cluster.py", line 1256, in wait_for_running_instances
+    nodes = nodes or self.get_nodes_or_raise()
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.94.3-py2.6.egg/starcluster/cluster.py", line 731, in get_nodes_or_raise
+    nodes = self.nodes
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.94.3-py2.6.egg/starcluster/cluster.py", line 721, in nodes
+    if n.is_master():
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.94.3-py2.6.egg/starcluster/node.py", line 884, in is_master
+    return self.alias == "master"
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.94.3-py2.6.egg/starcluster/node.py", line 151, in alias
+    self.add_tag('alias', alias)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.94.3-py2.6.egg/starcluster/node.py", line 199, in add_tag
+    return self.instance.add_tag(key, value)
+  File "/usr/lib/python2.6/site-packages/boto-2.18.0-py2.6.egg/boto/ec2/ec2object.py", line 82, in add_tag
+    dry_run=dry_run
+  File "/usr/lib/python2.6/site-packages/boto-2.18.0-py2.6.egg/boto/ec2/connection.py", line 3996, in create_tags
+    return self.get_status('CreateTags', params, verb='POST')
+  File "/usr/lib/python2.6/site-packages/boto-2.18.0-py2.6.egg/boto/connection.py", line 1158, in get_status
+    raise self.ResponseError(response.status, response.reason, body)
+EC2ResponseError: EC2ResponseError: 400 Bad Request
+<?xml version="1.0" encoding="UTF-8"?>
+<Response><Errors><Error><Code>ConcurrentTagAccess</Code><Message>The Tags for this Resource cannot be modified as they are currently being modified by another request. Please retry the request.</Message></Error></Errors><RequestID>c9748418-2ce2-4926-b2d4-86a2ed5b7640</RequestID></Response>
+StarCluster - (http://star.mit.edu/cluster) (v. 0.94.3)
+Software Tools for Academics and Researchers (STAR)
+Please submit bug reports to starcluster@mit.edu
+
+2/2 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%  
+!!! ERROR - ConcurrentTagAccess: The Tags for this Resource cannot be modified as they are currently being modified by another request. Please retry the request.
+Traceback (most recent call last):
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.94.3-py2.6.egg/starcluster/cli.py", line 274, in main
+    sc.execute(args)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.94.3-py2.6.egg/starcluster/commands/addnode.py", line 137, in execute
+    no_create=self.opts.no_create)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.94.3-py2.6.egg/starcluster/cluster.py", line 186, in add_nodes
+    no_create=no_create)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.94.3-py2.6.egg/starcluster/cluster.py", line 911, in add_nodes
+    self.wait_for_cluster(msg="Waiting for node(s) to come up...")
+  File "<string>", line 2, in wait_for_cluster
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.94.3-py2.6.egg/starcluster/utils.py", line 111, in wrap_f
+    res = func(*arg, **kargs)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.94.3-py2.6.egg/starcluster/cluster.py", line 1301, in wait_for_cluster
+    self.wait_for_running_instances()
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.94.3-py2.6.egg/starcluster/cluster.py", line 1256, in wait_for_running_instances
+    nodes = nodes or self.get_nodes_or_raise()
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.94.3-py2.6.egg/starcluster/cluster.py", line 731, in get_nodes_or_raise
+    nodes = self.nodes
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.94.3-py2.6.egg/starcluster/cluster.py", line 721, in nodes
+    if n.is_master():
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.94.3-py2.6.egg/starcluster/node.py", line 884, in is_master
+    return self.alias == "master"
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.94.3-py2.6.egg/starcluster/node.py", line 153, in alias
+    self.add_tag('Name', alias)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.94.3-py2.6.egg/starcluster/node.py", line 199, in add_tag
+    return self.instance.add_tag(key, value)
+  File "/usr/lib/python2.6/site-packages/boto-2.18.0-py2.6.egg/boto/ec2/ec2object.py", line 82, in add_tag
+    dry_run=dry_run
+  File "/usr/lib/python2.6/site-packages/boto-2.18.0-py2.6.egg/boto/ec2/connection.py", line 3996, in create_tags
+    return self.get_status('CreateTags', params, verb='POST')
+  File "/usr/lib/python2.6/site-packages/boto-2.18.0-py2.6.egg/boto/connection.py", line 1158, in get_status
+    raise self.ResponseError(response.status, response.reason, body)
+EC2ResponseError: EC2ResponseError: 400 Bad Request
+<?xml version="1.0" encoding="UTF-8"?>
+<Response><Errors><Error><Code>ConcurrentTagAccess</Code><Message>The Tags for this Resource cannot be modified as they are currently being modified by another request. Please retry the request.</Message></Error></Errors><RequestID>190eeaaa-ea9d-4b0c-a4e9-3b5fad6e41da</RequestID></Response>
+StarCluster - (http://star.mit.edu/cluster) (v. 0.94.3)
+Software Tools for Academics and Researchers (STAR)
+Please submit bug reports to starcluster@mit.edu
+
+0/5 |                                                                  |   0%  4/5 |////////////////////////////////////////////////////              |  80%  5/5 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%  
+0/5 |                                                                  |   0%  0/5 |                                                                  |   0%  0/5 |                                                                  |   0%  0/5 |                                                                  |   0%  0/5 |                                                                  |   0%  0/5 |                                                                  |   0%  1/5 |-------------                                                     |  20%  4/5 |\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\              |  80%  4/5 |||||||||||||||||||||||||||||||||||||||||||||||||||||              |  80%  4/5 |////////////////////////////////////////////////////              |  80%  4/5 |----------------------------------------------------              |  80%  

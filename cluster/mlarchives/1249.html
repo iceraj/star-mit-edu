@@ -1,0 +1,204 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Rayson Ho ((no email))" />
+<meta name="Subject" content="New Grid Engine Hadoop Integration HOWTO" />
+<title>starcluster.mbox.out: New Grid Engine Hadoop Integration HOWTO</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">New Grid Engine Hadoop Integration HOWTO</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>New Grid Engine Hadoop Integration HOWTO</h1>
+<!-- received="Fri Jun  1 14:52:05 2012" -->
+<!-- isoreceived="20120601185205" -->
+<!-- sent="Fri, 1 Jun 2012 14:52:04 -0400" -->
+<!-- isosent="20120601185204" -->
+<!-- name="Rayson Ho" -->
+<!-- email="(no email)" -->
+<!-- subject="New Grid Engine Hadoop Integration HOWTO" -->
+<!-- id="CAHwLALOv4ZoDNAG-0wp_TU5duN7Xbq3R7LhyYJ1Y3awM6AB+gg_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1249.html#start1249" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1249.html#options2">top</a>, <a href="1249.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1250.html" accesskey="d" title="Paul McDonagh: &quot;Re:  New Grid Engine Hadoop Integration HOWTO&quot;">Next message</a> ]
+[ <a href="1248.html" title="Rayson Ho: &quot;Re:  Configuring number of map jobs per cluster node {Hadoop plugin}&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="1250.html" accesskey="t" title="Paul McDonagh: &quot;Re:  New Grid Engine Hadoop Integration HOWTO&quot;">Next in thread</a> ]
+ [ <a href="1249.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1249" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1249" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1249" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1249" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Rayson Ho &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Fri, 1 Jun 2012 14:52:04 -0400</span><br />
+</address>
+<br />
+If you are running Hadoop on StarCluster, you may also be interested
+<br />
+in this new method contributed by Prakashan Korambath of UCLA.
+<br />
+<br /><a href="http://gridscheduler.sourceforge.net/howto/GridEngineHadoop.html">http://gridscheduler.sourceforge.net/howto/GridEngineHadoop.html</a>
+<br />
+<br />The difference between the original SGE 6.2u5 method vs the new one is
+<br />
+that with Prakashan's approach, Grid Engine is used for resource
+<br />
+allocation, and the Hadoop job scheduler/Job Tracker is used to handle
+<br />
+all the MapReduce operations. A Hadoop cluster is created on demand
+<br />
+with Prakashan's approach, but in the original SGE 6.2u5 method Grid
+<br />
+Engine replaces the Hadoop job scheduler.
+<br />
+<br />As standard Grid Engine PEs are used in this new approach, one can
+<br />
+call &quot;qrsh -inherit&quot; and use Grid Engine's method to start Hadoop
+<br />
+services on remote nodes, and thus get full job control, job
+<br />
+accounting, and cleanup at terminate benefits like any other tight PE
+<br />
+jobs!
+<br />
+<br />Rayson
+<br />
+<br />================================
+<br />
+Open Grid Scheduler / Grid Engine
+<br />
+<a href="http://gridscheduler.sourceforge.net/">http://gridscheduler.sourceforge.net/</a>
+<br />
+<br />Scalable Grid Engine Support Program
+<br />
+<a href="http://www.scalablelogic.com/">http://www.scalablelogic.com/</a>
+<br />
+<span id="received"><dfn>Received on</dfn> Fri Jun 01 2012 - 14:52:05 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1249.html#start1249">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1250.html" title="Next message in the list">Paul McDonagh: "Re:  New Grid Engine Hadoop Integration HOWTO"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1248.html" title="Previous message in the list">Rayson Ho: "Re:  Configuring number of map jobs per cluster node {Hadoop plugin}"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1250.html" title="Next message in this discussion thread">Paul McDonagh: "Re:  New Grid Engine Hadoop Integration HOWTO"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1250.html" title="Message sent in reply to this message">Paul McDonagh: "Re:  New Grid Engine Hadoop Integration HOWTO"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1249" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1249" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1249" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1249" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

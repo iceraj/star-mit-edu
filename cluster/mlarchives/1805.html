@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Ryan Golhar ((no email))" />
+<meta name="Subject" content="Updating starcluster when spot instances go down" />
+<title>starcluster.mbox.out: Updating starcluster when spot instances go down</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Updating starcluster when spot instances go down</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Updating starcluster when spot instances go down</h1>
+<!-- received="Mon Jul 29 11:35:51 2013" -->
+<!-- isoreceived="20130729153551" -->
+<!-- sent="Mon, 29 Jul 2013 11:35:49 -0400" -->
+<!-- isosent="20130729153549" -->
+<!-- name="Ryan Golhar" -->
+<!-- email="(no email)" -->
+<!-- subject="Updating starcluster when spot instances go down" -->
+<!-- id="CAFbjocjh3Hzs9AiL7CA3999m4p9KJT+epDc_qQdiOD=9+DeVPQ_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1805.html#start1805" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1805.html#options2">top</a>, <a href="1805.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1806.html" accesskey="d" title="Hyungro Lee: &quot;Re:  Plan for Window Azure Virtual Machines?&quot;">Next message</a> ]
+[ <a href="1804.html" title="Jacob Barhak: &quot;Re:  Issues with using an EBS volume&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1805" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1805" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1805" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1805" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Ryan Golhar &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Mon, 29 Jul 2013 11:35:49 -0400</span><br />
+</address>
+<br />
+Hi all - So I've had on a few occasions nodes on my cluster get terminated
+<br />
+due to spikes in spot prices.  When this happens, if I try to readd nodes
+<br />
+to my cluster, SGE (and StarCluster) and confused....ie jobs are left in
+<br />
+the queue, nodes can't be added or perform nfs mounts, etc, etc.
+<br />
+<br />Right now, the only option I have is to re-create the cluster.  I think
+<br />
+this is overkill.  Is there a way, or would people find it beneficial, if
+<br />
+there was a command to sync starcluster with what nodes are actually
+<br />
+running and update config files on the master node?
+<br />
+<br />Ryan
+<br />
+<span id="received"><dfn>Received on</dfn> Mon Jul 29 2013 - 11:35:51 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1805.html#start1805">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1806.html" title="Next message in the list">Hyungro Lee: "Re:  Plan for Window Azure Virtual Machines?"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1804.html" title="Previous message in the list">Jacob Barhak: "Re:  Issues with using an EBS volume"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1805" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1805" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1805" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1805" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

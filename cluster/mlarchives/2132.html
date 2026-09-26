@@ -1,0 +1,231 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Rohan Sundar ((no email))" />
+<meta name="Subject" content="starcluster createkey problems" />
+<title>starcluster.mbox.out: starcluster createkey problems</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">starcluster createkey problems</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>starcluster createkey problems</h1>
+<!-- received="Sat Mar 29 12:36:23 2014" -->
+<!-- isoreceived="20140329163623" -->
+<!-- sent="Sat, 29 Mar 2014 22:06:17 +0530" -->
+<!-- isosent="20140329163617" -->
+<!-- name="Rohan Sundar" -->
+<!-- email="(no email)" -->
+<!-- subject="starcluster createkey problems" -->
+<!-- id="5336F681.30300_at_gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2132.html#start2132" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2132.html#options2">top</a>, <a href="2132.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2133.html" accesskey="d" title="Jacob Barhak: &quot;SGE slow with 50k+ jobs&quot;">Next message</a> ]
+[ <a href="2131.html" title="Rayson Ho: &quot;Re:  StarCluster Plugins&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2132" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2132" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2132" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2132" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Rohan Sundar &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Sat, 29 Mar 2014 22:06:17 +0530</span><br />
+</address>
+<br />
+Hi,
+<br />
+<br />I just installed the latest version of starcluster to set up a hadoop
+<br />
+cluster on amazon ec2, but I seem to have run into some problems. All of
+<br />
+the credentials I have provided in the configuration file is correct but
+<br />
+I still seem to be getting the following error message:
+<br />
+<br />!!! ERROR - SignatureDoesNotMatch: The request signature we calculated
+<br />
+does not match the signature you provided. Check your AWS Secret Access
+<br />
+Key and signing method. Consult the service documentation for details.
+<br />
+<br />Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/cli.py&quot;, line
+<br />
+274, in main
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;sc.execute(args)
+<br />
+<br />&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/starcluster/commands/createkey.py&quot;,
+<br />
+line 52, in execute
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;kp = self.ec2.create_keypair(name, output_file=ofile)
+<br />
+<br />&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/awsutils.py&quot;,
+<br />
+line 663, in create_keypair
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;kp = self.conn.create_key_pair(name)
+<br />
+<br />&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/boto/ec2/connection.py&quot;,
+<br />
+line 2819, in create_key_pair
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;return self.get_object('CreateKeyPair', params, KeyPair, verb='POST')
+<br />
+&nbsp;
+<br />
+File &quot;/usr/local/lib/python2.7/dist-packages/boto/connection.py&quot;, line
+<br />
+1177, in get_object
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;raise self.ResponseError(response.status, response.reason, body)
+<br />
+EC2ResponseError: EC2ResponseError: 403 Forbidden
+<br />
+<br />&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+<br />
+&lt;Response&gt;&lt;Errors&gt;&lt;Error&gt;&lt;Code&gt;SignatureDoesNotMatch&lt;/Code&gt;&lt;Message&gt;The
+<br />
+request signature we calculated does not match the signature you
+<br />
+provided. Check your AWS Secret Access Key and signing method. Consult
+<br />
+the service documentation for
+<br />
+details.&lt;/Message&gt;&lt;/Error&gt;&lt;/Errors&gt;&lt;RequestID&gt;0f18120f-f59e-4023-b7dc-a2dbc19f6e0d&lt;/RequestID&gt;&lt;/Response&gt;
+<br />
+<br />Any help would be greatly appreciated.
+<br />
+<br />Thank you,
+<br />
+<br />Rohan
+<br />
+<span id="received"><dfn>Received on</dfn> Sat Mar 29 2014 - 12:36:23 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2132.html#start2132">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2133.html" title="Next message in the list">Jacob Barhak: "SGE slow with 50k+ jobs"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2131.html" title="Previous message in the list">Rayson Ho: "Re:  StarCluster Plugins"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2132" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2132" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2132" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2132" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

@@ -1,0 +1,506 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Justin Riley ((no email))" />
+<meta name="Subject" content="Re:  Starcluster and elastic load balancing" />
+<title>starcluster.mbox.out: Re:  Starcluster and elastic load balancing</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Re:  Starcluster and elastic load balancing</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Re:  Starcluster and elastic load balancing</h1>
+<!-- received="Tue Apr 19 00:08:56 2011" -->
+<!-- isoreceived="20110419040856" -->
+<!-- sent="Tue, 19 Apr 2011 00:08:52 -0400" -->
+<!-- isosent="20110419040852" -->
+<!-- name="Justin Riley" -->
+<!-- email="(no email)" -->
+<!-- subject="Re:  Starcluster and elastic load balancing" -->
+<!-- id="05AAB7D6-1E2F-4D70-91A4-566793139BDB_at_gmail.com" -->
+<!-- charset="us-ascii" -->
+<!-- inreplyto="BANLkTi=bQnofanDzMwN4x8GffZrpmg6Tag_at_mail.gmail.com" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="0695.html#start695" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="0695.html#options2">top</a>, <a href="0695.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="0696.html" accesskey="d" title="Justin Riley: &quot;Re:  http proxy configuration&quot;">Next message</a> ]
+[ <a href="0694.html" title="Justin Riley: &quot;Re:  Saving a custom AMI&quot;">Previous message</a> ]
+[ <a href="0690.html" title="Joseph: &quot;Re:  Starcluster and elastic load balancing&quot;">In reply to</a> ]
+<!-- unextthread="start" -->
+[ <a href="0606.html" accesskey="t" title="Archie Russell: &quot;Re:  Starcluster and elastic load balancing&quot;">Next in thread</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg695" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg695" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg695" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg695" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Justin Riley &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Tue, 19 Apr 2011 00:08:52 -0400</span><br />
+</address>
+<br />
+Hi Joseph,
+<br />
+<br />Sorry for the delay. The ssh-keyscan issue could certainly have played a role in this issue assuming the size of the cluster was large enough, however, it's hard to tell. If you encounter this issue again when testing the latest code would you mind posting an issue on the github page and attaching the relevant logs?
+<br />
+<br />Thanks!
+<br />
+<br />~Justin
+<br />
+<br /><br />On Apr 11, 2011, at 12:16 PM, Kyeong Soo (Joseph) Kim wrote:
+<br />
+<br /><em class="quotelev1">&gt; Justin,
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Is this related to the ssh_keyscan problem which you mentioned in
+</em><br />
+<em class="quotelev1">&gt; another thread (regarding the node scalability)?
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Anyhow, I will give it a try with the latest code as soon as I am
+</em><br />
+<em class="quotelev1">&gt; ready for another round of simulation.
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Regards,
+</em><br />
+<em class="quotelev1">&gt; Joseph
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; On Wed, Apr 6, 2011 at 4:13 PM, Justin Riley &lt;justin.t.riley_at_gmail.com&gt; wrote:
+</em><br />
+<em class="quotelev2">&gt;&gt; Hi Joseph,
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; That's strange. This problem could be related to the fact that nodes
+</em><br />
+<em class="quotelev2">&gt;&gt; were failing to be added to SGE which might have thrown the load
+</em><br />
+<em class="quotelev2">&gt;&gt; balancer logic off... In any event would you mind testing the latest
+</em><br />
+<em class="quotelev2">&gt;&gt; code with the load balancer and see if this happens again?
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; Thanks!
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; ~Justin
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; On Tue, Mar 15, 2011 at 1:27 PM, Kyeong Soo (Joseph) Kim
+</em><br />
+<em class="quotelev2">&gt;&gt; &lt;kyeongsoo.kim_at_gmail.com&gt; wrote:
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Hi Rajat,
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; 
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; This is to report one strange behaviour I just encountered during the
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; use of StarCluster with your loadbalancer (LB).
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Below is the snippet of &quot;/etc/hosts&quot; file:
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; 
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; .......
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; 10.76.91.4 ip-10-76-91-4.ec2.internal ip-10-76-91-4 node016
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; 10.112.209.34 ip-10-112-209-34.ec2.internal ip-10-112-209-34 node016
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; .....
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; 
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; My cluster initially started with 10 nodes and I ran LB with maximum
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; node set to 20.
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; 
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; It seems that, in the middle of adding new nodes to the cluster, the
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; LB added a new node with a duplicate host name (i.e. node016) for
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; unknown reasons; I could see the 2nd &quot;node016&quot; instance through the
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; AWS mgmt. console, but found that it was not used by the SGE.
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Fortunately, manually terminating the node through the console didn't
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; affect the SGE and the already running jobs.
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; 
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; With Regards,
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Joseph
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; --
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Kyeong Soo (Joseph) Kim, Ph.D.
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Senior Lecturer in Networking
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Room 112, Digital Technium
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Multidisciplinary Nanotechnology Centre, College of Engineering
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Swansea University, Singleton Park, Swansea SA2 8PP, Wales UK
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; TEL: +44 (0)1792 602024
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; EMAIL: k.s.kim_at_swansea.ac.uk
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; HOME: <a href="http://iat-hnrl.swan.ac.uk/">http://iat-hnrl.swan.ac.uk/</a> (group)
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;             <a href="http://iat-hnrl.swan.ac.uk/~kks/">http://iat-hnrl.swan.ac.uk/~kks/</a> (personal)
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; 
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; 
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; On Mon, Jan 31, 2011 at 9:09 AM, Kyeong Soo (Joseph) Kim
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; &lt;kyeongsoo.kim_at_gmail.com&gt; wrote:
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; Hello Rajat,
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; I am very interested in your work on the elastic load balancing; I do
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; remember that you posted some graphs on early results in the past and that
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; you were working on your MSc thesis.
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; In fact, this new feature will be critical for my current research requiring
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; about 3~400 independent simulation runs and I do highly appreciate your
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; great contribution to the StarCluster.
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; By the way, I wonder whether you have published your work in any
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; conferences/journals yet.
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; Regards,
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; Joseph
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; --
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; Kyeong Soo (Joseph) Kim, Ph.D.
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; Senior Lecturer in Networking
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; Room 112, Digital Technium
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; Multidisciplinary Nanotechnology Centre, College of Engineering
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; Swansea University, Singleton Park, Swansea SA2 8PP, Wales UK
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; TEL: +44 (0)1792 602024
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; EMAIL: k.s.kim_at_swansea.ac.uk
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; HOME: <a href="http://iat-hnrl.swan.ac.uk/">http://iat-hnrl.swan.ac.uk/</a> (group)
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt;             <a href="http://iat-hnrl.swan.ac.uk/~kks/">http://iat-hnrl.swan.ac.uk/~kks/</a> (personal)
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; 
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; 
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; On Fri, Jan 28, 2011 at 6:31 PM, Rajat Banerjee &lt;rbanerj_at_fas.harvard.edu&gt;
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; wrote:
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; 
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; Hi Archie,
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; Yes, there is ELB built into the latest releases of StarCluster. I wrote
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; it, so feel free to write me (+ the list) with any questions.
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; The docs on
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; <a href="http://web.mit.edu/stardev/cluster/docs/index.html">http://web.mit.edu/stardev/cluster/docs/index.html</a>
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; haven't been updated in a while. There is a documentation page on
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; starcluster in the code base, see
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; /starcluster/StarCluster/docs/sphinx/load_balancer.rst
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; That doc should have all of the information you need, and is readable in
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; plain text.
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; Typically, this is how I fire up the load balancer:
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; starcluster bal &lt;cluster_tag&gt; -m &lt;MAX_NODES you want&gt; -n &lt;MIN_NODES you
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; want&gt;
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; It will poll the cluster every 60 seconds and make decisions. The
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; decisions are described in load_balancer.rst. There is a visualizer which
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; makes 6 graphs with matplotlib to show you how many nodes are working, how
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; many jobs are running, queued, avg load, etc, but the visualizer still needs
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; a little bit of work.
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; Hope that helps, and feel free to send back questions.
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; Rajat Banerjee
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; 
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; On Fri, Jan 28, 2011 at 12:29 PM, &lt;starcluster-request_at_mit.edu&gt; wrote:
+</em><br />
+<em class="quotelev2">&gt;&gt;&gt;&gt;&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt;&gt;&gt;&gt;&gt; Send StarCluster mailing list submissions to
+</em><br />
+<em class="quotelev2">&gt;&gt;&gt;&gt;&gt;&gt;        starcluster_at_mit.edu
+</em><br />
+<em class="quotelev2">&gt;&gt;&gt;&gt;&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt;&gt;&gt;&gt;&gt; To subscribe or unsubscribe via the World Wide Web, visit
+</em><br />
+<em class="quotelev2">&gt;&gt;&gt;&gt;&gt;&gt;        <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<em class="quotelev2">&gt;&gt;&gt;&gt;&gt;&gt; or, via email, send a message with subject or body 'help' to
+</em><br />
+<em class="quotelev2">&gt;&gt;&gt;&gt;&gt;&gt;        starcluster-request_at_mit.edu
+</em><br />
+<em class="quotelev2">&gt;&gt;&gt;&gt;&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt;&gt;&gt;&gt;&gt; You can reach the person managing the list at
+</em><br />
+<em class="quotelev2">&gt;&gt;&gt;&gt;&gt;&gt;        starcluster-owner_at_mit.edu
+</em><br />
+<em class="quotelev2">&gt;&gt;&gt;&gt;&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt;&gt;&gt;&gt;&gt; When replying, please edit your Subject line so it is more specific
+</em><br />
+<em class="quotelev2">&gt;&gt;&gt;&gt;&gt;&gt; than &quot;Re: Contents of StarCluster digest...&quot;
+</em><br />
+<em class="quotelev2">&gt;&gt;&gt;&gt;&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt;&gt;&gt;&gt;&gt; Today's Topics:
+</em><br />
+<em class="quotelev2">&gt;&gt;&gt;&gt;&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt;&gt;&gt;&gt;&gt;   1. Starcluster and elastic load balancing (Archie Russell)
+</em><br />
+<em class="quotelev2">&gt;&gt;&gt;&gt;&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt;&gt;&gt;&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt;&gt;&gt;&gt;&gt; ---------- Forwarded message ----------
+</em><br />
+<em class="quotelev2">&gt;&gt;&gt;&gt;&gt;&gt; From: Archie Russell &lt;archier_at_gmail.com&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;&gt;&gt;&gt;&gt; To: starcluster_at_mit.edu
+</em><br />
+<em class="quotelev2">&gt;&gt;&gt;&gt;&gt;&gt; Date: Thu, 27 Jan 2011 11:40:00 -0800
+</em><br />
+<em class="quotelev2">&gt;&gt;&gt;&gt;&gt;&gt; Subject: [StarCluster] Starcluster and elastic load balancing
+</em><br />
+<em class="quotelev2">&gt;&gt;&gt;&gt;&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt;&gt;&gt;&gt;&gt; Hi,
+</em><br />
+<em class="quotelev2">&gt;&gt;&gt;&gt;&gt;&gt; Online it says Starcluster has Elastic Load Balancing built into the
+</em><br />
+<em class="quotelev2">&gt;&gt;&gt;&gt;&gt;&gt; latest code
+</em><br />
+<em class="quotelev2">&gt;&gt;&gt;&gt;&gt;&gt; version at Github.     How would I go about using this?     How does
+</em><br />
+<em class="quotelev2">&gt;&gt;&gt;&gt;&gt;&gt; it work,  e.g.
+</em><br />
+<em class="quotelev2">&gt;&gt;&gt;&gt;&gt;&gt; when does it fire up new nodes and when does it shut them down?
+</em><br />
+<em class="quotelev2">&gt;&gt;&gt;&gt;&gt;&gt; Thanks,
+</em><br />
+<em class="quotelev2">&gt;&gt;&gt;&gt;&gt;&gt; Archie
+</em><br />
+<em class="quotelev2">&gt;&gt;&gt;&gt;&gt;&gt; _______________________________________________
+</em><br />
+<em class="quotelev2">&gt;&gt;&gt;&gt;&gt;&gt; StarCluster mailing list
+</em><br />
+<em class="quotelev2">&gt;&gt;&gt;&gt;&gt;&gt; StarCluster_at_mit.edu
+</em><br />
+<em class="quotelev2">&gt;&gt;&gt;&gt;&gt;&gt; <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<em class="quotelev2">&gt;&gt;&gt;&gt;&gt;&gt; 
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; 
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; 
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; 
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; _______________________________________________
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; StarCluster mailing list
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; StarCluster_at_mit.edu
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; 
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; 
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; 
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; 
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; _______________________________________________
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; StarCluster mailing list
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; StarCluster_at_mit.edu
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<span id="received"><dfn>Received on</dfn> Tue Apr 19 2011 - 00:08:56 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="0695.html#start695">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="0696.html" title="Next message in the list">Justin Riley: "Re:  http proxy configuration"</a></li>
+<li><dfn>Previous message</dfn>: <a href="0694.html" title="Previous message in the list">Justin Riley: "Re:  Saving a custom AMI"</a></li>
+<li><dfn>In reply to</dfn>: <a href="0690.html" title="Message to which this message replies">Joseph: "Re:  Starcluster and elastic load balancing"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="0606.html" title="Next message in this discussion thread">Archie Russell: "Re:  Starcluster and elastic load balancing"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg695" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg695" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg695" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg695" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

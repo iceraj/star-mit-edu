@@ -1,0 +1,452 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Lyn Gerner ((no email))" />
+<meta name="Subject" content="createvolume works / mount fails" />
+<title>starcluster.mbox.out: createvolume works / mount fails</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">createvolume works / mount fails</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>createvolume works / mount fails</h1>
+<!-- received="Tue Feb 12 16:50:20 2013" -->
+<!-- isoreceived="20130212215020" -->
+<!-- sent="Tue, 12 Feb 2013 13:50:19 -0800" -->
+<!-- isosent="20130212215019" -->
+<!-- name="Lyn Gerner" -->
+<!-- email="(no email)" -->
+<!-- subject="createvolume works / mount fails" -->
+<!-- id="CAD3e3Fb0jYN5Uxy3=uODkdkMSUSObac4L+xp4nUUWZ-x7_DbpA_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1649.html#start1649" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1649.html#options2">top</a>, <a href="1649.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1650.html" accesskey="d" title="Lyn Gerner: &quot;Re:  createvolume works / mount fails&quot;">Next message</a> ]
+[ <a href="1648.html" title="Kai Li: &quot;Re:  EBS volume failed to be mounted after reboot&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="1650.html" accesskey="t" title="Lyn Gerner: &quot;Re:  createvolume works / mount fails&quot;">Next in thread</a> ]
+ [ <a href="1649.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1649" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1649" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1649" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1649" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Lyn Gerner &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Tue, 12 Feb 2013 13:50:19 -0800</span><br />
+</address>
+<br />
+Hi All,
+<br />
+<br />I've been receiving an error, consistently, from multiple attempts to boot
+<br />
+a cluster that references an EBS volume that I've created w/&quot;starcluster
+<br />
+createvolume&quot;:
+<br />
+<br />Here is the output from the most recent createvolume; looks like everything
+<br />
+goes fine:
+<br />
+<br />.starcluster mary$ alias sc=starcluster
+<br />
+.starcluster mary$ sc createvolume --name=usrsharejobs-cv5g-use1c 5
+<br />
+us-east-1c
+<br />
+StarCluster - (<a href="http://web.mit.edu/starcluster">http://web.mit.edu/starcluster</a>) (v. 0.93.3)
+<br />
+Software Tools for Academics and Researchers (STAR)
+<br />
+Please submit bug reports to starcluster_at_mit.edu
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; No keypair specified, picking one from config...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Using keypair: lapuserkey
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Creating security group _at_sc-volumecreator...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; No instance in group _at_sc-volumecreator for zone us-east-1c, launching
+</em><br />
+one now.
+<br />
+Reservation:r-de9f8aa5
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for volume host to come up... (updating every 30s)
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for all nodes to be in a 'running' state...
+</em><br />
+1/1 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for SSH to come up on all nodes...
+</em><br />
+1/1 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for cluster to come up took 1.447 mins
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Checking for required remote commands...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Creating 5GB volume in zone us-east-1c
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; New volume id: vol-53600b22
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for new volume to become 'available'...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Attaching volume vol-53600b22 to instance i-6b714b1b...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Formatting volume...
+</em><br />
+Filesystem label=
+<br />
+OS type: Linux
+<br />
+Block size=4096 (log=2)
+<br />
+Fragment size=4096 (log=2)
+<br />
+Stride=0 blocks, Stripe width=0 blocks
+<br />
+327680 inodes, 1310720 blocks
+<br />
+65536 blocks (5.00%) reserved for the super user
+<br />
+First data block=0
+<br />
+Maximum filesystem blocks=1342177280
+<br />
+40 block groups
+<br />
+32768 blocks per group, 32768 fragments per group
+<br />
+8192 inodes per group
+<br />
+Superblock backups stored on blocks:
+<br />
+32768, 98304, 163840, 229376, 294912, 819200, 884736
+<br />
+<br />Writing inode tables: done
+<br />
+Creating journal (32768 blocks): done
+<br />
+Writing superblocks and filesystem accounting information: done
+<br />
+<br />This filesystem will be automatically checked every 33 mounts or
+<br />
+180 days, whichever comes first.  Use tune2fs -c or -i to override.
+<br />
+mke2fs 1.41.14 (22-Dec-2010)
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Leaving volume vol-53600b22 attached to instance i-6b714b1b
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Not terminating host instance i-6b714b1b
+</em><br />
+*** WARNING - There are still volume hosts running: i-6b714b1b
+<br />
+*** WARNING - Run 'starcluster terminate volumecreator' to terminate *all*
+<br />
+volume host instances once they're no longer needed
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Your new 5GB volume vol-53600b22 has been created successfully
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Creating volume took 1.871 mins
+</em><br />
+<br />.starcluster mary$ sc terminate volumecreator
+<br />
+StarCluster - (<a href="http://web.mit.edu/starcluster">http://web.mit.edu/starcluster</a>) (v. 0.93.3)
+<br />
+Software Tools for Academics and Researchers (STAR)
+<br />
+Please submit bug reports to starcluster_at_mit.edu
+<br />
+<br />Terminate EBS cluster volumecreator (y/n)? y
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Detaching volume vol-53600b22 from volhost-us-east-1c
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Terminating node: volhost-us-east-1c (i-6b714b1b)
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for cluster to terminate...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Removing _at_sc-volumecreator security group
+</em><br />
+<br />.starcluster mary$ sc listvolumes
+<br />
+&lt;snip&gt;
+<br />
+<br />volume_id: vol-53600b22
+<br />
+size: 5GB
+<br />
+status: available
+<br />
+availability_zone: us-east-1c
+<br />
+create_time: 2013-02-12 13:12:16
+<br />
+tags: Name=usrsharejobs-cv5g-use1c
+<br />
+<br />&lt;snip&gt;
+<br />
+<br />So here is the subsequent attempt to boot a cluster that tries to mount the
+<br />
+new EBS volume:
+<br />
+<br />.starcluster mary$ sc start -b 0.25 -i m1.small -I m1.small -c jobscluster
+<br />
+jobscluster
+<br />
+StarCluster - (<a href="http://web.mit.edu/starcluster">http://web.mit.edu/starcluster</a>) (v. 0.93.3)
+<br />
+Software Tools for Academics and Researchers (STAR)
+<br />
+Please submit bug reports to starcluster_at_mit.edu
+<br />
+<br />*** WARNING - ************************************************************
+<br />
+*** WARNING - SPOT INSTANCES ARE NOT GUARANTEED TO COME UP
+<br />
+*** WARNING -
+<br />
+*** WARNING - Spot instances can take a long time to come up and may not
+<br />
+*** WARNING - come up at all depending on the current AWS load and your
+<br />
+*** WARNING - max spot bid price.
+<br />
+*** WARNING -
+<br />
+*** WARNING - StarCluster will wait indefinitely until all instances (2)
+<br />
+*** WARNING - come up. If this takes too long, you can cancel the start
+<br />
+*** WARNING - command using CTRL-C. You can then resume the start command
+<br />
+*** WARNING - later on using the --no-create (-x) option:
+<br />
+*** WARNING -
+<br />
+*** WARNING -     $ starcluster start -x jobscluster
+<br />
+*** WARNING -
+<br />
+*** WARNING - This will use the existing spot instances launched
+<br />
+*** WARNING - previously and continue starting the cluster. If you don't
+<br />
+*** WARNING - wish to wait on the cluster any longer after pressing CTRL-C
+<br />
+*** WARNING - simply terminate the cluster using the 'terminate' command.
+<br />
+*** WARNING - ************************************************************
+<br />
+<br />*** WARNING - Waiting 5 seconds before continuing...
+<br />
+*** WARNING - Press CTRL-C to cancel...
+<br />
+5...4...3...2...1...
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Validating cluster template settings...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Cluster template settings are valid
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Starting cluster...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Launching a 2-node cluster...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Launching master node (ami: ami-4b9f0a22, type: m1.small)...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Creating security group _at_sc-jobscluster...
+</em><br />
+Reservation:r-ba8c99c1
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Launching node001 (ami: ami-4b9f0a22, type: m1.small)
+</em><br />
+SpotInstanceRequest:sir-a05ae014
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for cluster to come up... (updating every 30s)
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for open spot requests to become active...
+</em><br />
+1/1 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for all nodes to be in a 'running' state...
+</em><br />
+2/2 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for SSH to come up on all nodes...
+</em><br />
+2/2 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for cluster to come up took 6.245 mins
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; The master node is ec2-54-242-244-139.compute-1.amazonaws.com
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Setting up the cluster...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Attaching volume vol-53600b22 to master node on /dev/sdz ...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring hostnames...
+</em><br />
+2/2 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+*** WARNING - Cannot find device /dev/xvdz for volume vol-53600b22
+<br />
+*** WARNING - Not mounting vol-53600b22 on /usr/share/jobs
+<br />
+*** WARNING - This usually means there was a problem attaching the EBS
+<br />
+volume to the master node
+<br />
+&lt;snip&gt;
+<br />
+<br />So per the relevant, past email threads, I'm using the createvolume
+<br />
+command, and it still gives this error.  Also tried creating the volume
+<br />
+thru the AWS console; subsequent cluster boot fails at the same point w/the
+<br />
+same problem of not finding the device.
+<br />
+<br />I'll appreciate any suggestions.
+<br />
+<br />Thanks much,
+<br />
+Lyn
+<br />
+<span id="received"><dfn>Received on</dfn> Tue Feb 12 2013 - 16:50:20 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1649.html#start1649">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1650.html" title="Next message in the list">Lyn Gerner: "Re:  createvolume works / mount fails"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1648.html" title="Previous message in the list">Kai Li: "Re:  EBS volume failed to be mounted after reboot"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1650.html" title="Next message in this discussion thread">Lyn Gerner: "Re:  createvolume works / mount fails"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1650.html" title="Message sent in reply to this message">Lyn Gerner: "Re:  createvolume works / mount fails"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1649" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1649" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1649" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1649" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

@@ -1,0 +1,375 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Rayson Ho ((no email))" />
+<meta name="Subject" content="Re:  Fast shared or local storage? (Cedar McKay)" />
+<title>starcluster.mbox.out: Re:  Fast shared or local storage? (Cedar McKay)</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Re:  Fast shared or local storage? (Cedar McKay)</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Re:  Fast shared or local storage? (Cedar McKay)</h1>
+<!-- received="Wed May 14 17:35:07 2014" -->
+<!-- isoreceived="20140514213507" -->
+<!-- sent="Wed, 14 May 2014 17:35:04 -0400" -->
+<!-- isosent="20140514213504" -->
+<!-- name="Rayson Ho" -->
+<!-- email="(no email)" -->
+<!-- subject="Re:  Fast shared or local storage? (Cedar McKay)" -->
+<!-- id="CAHwLALP=AuUZRJrJew8U=MEuo-oKhd-8f+ihkph8ndK=TEQTzg_at_mail.gmail.com" -->
+<!-- charset="UTF-8" -->
+<!-- inreplyto="9DC32FD9-68B2-4A4F-9E32-6F0DCD03663F_at_wharton.upenn.edu" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2206.html#start2206" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2206.html#options2">top</a>, <a href="2206.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2207.html" accesskey="d" title="MacMullan, Hugh: &quot;Re:  Fast shared or local storage? (Cedar McKay)&quot;">Next message</a> ]
+[ <a href="2205.html" title="MacMullan, Hugh: &quot;Re:  Fast shared or local storage? (Cedar McKay)&quot;">Previous message</a> ]
+[ <a href="2205.html" title="MacMullan, Hugh: &quot;Re:  Fast shared or local storage? (Cedar McKay)&quot;">In reply to</a> ]
+<!-- unextthread="start" -->
+[ <a href="2207.html" accesskey="t" title="MacMullan, Hugh: &quot;Re:  Fast shared or local storage? (Cedar McKay)&quot;">Next in thread</a> ]
+ [ <a href="2206.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2206" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2206" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2206" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2206" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Rayson Ho &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Wed, 14 May 2014 17:35:04 -0400</span><br />
+</address>
+<br />
+The &quot;64GB limit&quot; in s3fs should only affect writes to S3, as AWS
+<br />
+limits 10,000 parts in a multipart upload operation, and s3fs by
+<br />
+default uses 10MB part size. Thus the max filesize is 100GB, but the
+<br />
+s3fs developers limit it to 64GB (they say it is a nicer number). That
+<br />
+code was removed from the latest git version, and the limit now is
+<br />
+10000 * multipart size (so if multipart_size is set to a larger number
+<br />
+than 10MB, then the max file size could be larger than 100GB).
+<br />
+<br />On the other hand, S3 supports concurrent reads from S3 via &quot;Range
+<br />
+GET&quot;s, which is what is used by s3fs. As S3 does not limit the number
+<br />
+of concurrent GETs, the 100GB limit shouldn't apply to reads from S3.
+<br />
+<br />Rayson
+<br />
+<br />==================================================
+<br />
+Open Grid Scheduler - The Official Open Source Grid Engine
+<br />
+<a href="http://gridscheduler.sourceforge.net/">http://gridscheduler.sourceforge.net/</a>
+<br />
+<a href="http://gridscheduler.sourceforge.net/GridEngine/GridEngineCloud.html">http://gridscheduler.sourceforge.net/GridEngine/GridEngineCloud.html</a>
+<br />
+<br /><br /><br /><br />On 5/13/14, MacMullan, Hugh &lt;hughmac_at_wharton.upenn.edu&gt; wrote:
+<br />
+<em class="quotelev1">&gt; I remember having to modify the s3fs source to handle files greater than ...
+</em><br />
+<em class="quotelev1">&gt; I think 64GB, FYI, in case that's important. If anyone runs into issues with
+</em><br />
+<em class="quotelev1">&gt; big files and s3fs, poke the code, or if you need further details (no idea
+</em><br />
+<em class="quotelev1">&gt; if that's still a problem), just let me know.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; -Hugh
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; On May 13, 2014, at 16:07, &quot;Cedar McKay&quot;
+</em><br />
+<em class="quotelev1">&gt; &lt;cmckay_at_uw.edu&lt;mailto:cmckay_at_uw&#46;<!--nospam-->edu&gt;&gt; wrote:
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Great, thanks for all the info guys. I ended up implementing mounting my
+</em><br />
+<em class="quotelev1">&gt; read only databases as an s3fs volume, then designating the ephemeral
+</em><br />
+<em class="quotelev1">&gt; storage as the cache. Hopefully this will give me the best of all worlds;
+</em><br />
+<em class="quotelev1">&gt; fast local storage, and lazy downloading.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; I haven't tested much yet, but If I have problems with this setup I'll
+</em><br />
+<em class="quotelev1">&gt; probably just skip the s3fs thing and just load the database straight onto
+</em><br />
+<em class="quotelev1">&gt; the ephemeral storage as you suggested.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; best,
+</em><br />
+<em class="quotelev1">&gt; Cedar
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; On May 12, 2014, at 2:12 PM, Steve Darnell
+</em><br />
+<em class="quotelev1">&gt; &lt;darnells_at_dnastar.com&lt;mailto:darnells_at_dnastar&#46;<!--nospam-->com&gt;&gt; wrote:
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Hi Cedar,
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; I completely agree with David. We routinely use blast in a software pipeline
+</em><br />
+<em class="quotelev1">&gt; build on top of EC2. We started by using an NFS share, but we are currently
+</em><br />
+<em class="quotelev1">&gt; transitioning to ephemeral storage.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Our plan is to put the nr database (and other file-based data libraries) on
+</em><br />
+<em class="quotelev1">&gt; local SSD ephemeral storage for each node in the cluster. You may want to
+</em><br />
+<em class="quotelev1">&gt; consider pre-packaging the compressed libraries on a custom StarCluster AMI,
+</em><br />
+<em class="quotelev1">&gt; then use a plug-in to mount ephemeral storage and decompress the blast
+</em><br />
+<em class="quotelev1">&gt; libraries into ephemeral storage. The avoids the download from S3 each time
+</em><br />
+<em class="quotelev1">&gt; you start a node, which added 10-20 minutes in our case. Plus, it eliminates
+</em><br />
+<em class="quotelev1">&gt; one more possible point of failure during cluster initialization. To us, it
+</em><br />
+<em class="quotelev1">&gt; is worth the extra cost of maintaining a custom AMI and the extra size of
+</em><br />
+<em class="quotelev1">&gt; the AMI itself.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Best regards,
+</em><br />
+<em class="quotelev1">&gt; Steve
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; From: starcluster-bounces_at_mit.edu&lt;mailto:starcluster-bounces_at_mit&#46;<!--nospam-->edu&gt;
+</em><br />
+<em class="quotelev1">&gt; [mailto:starcluster-bounces_at_mit.edu&lt;mailto:bounces_at_mit&#46;<!--nospam-->edu&gt;] On Behalf Of
+</em><br />
+<em class="quotelev1">&gt; David Stuebe
+</em><br />
+<em class="quotelev1">&gt; Sent: Friday, May 09, 2014 12:49 PM
+</em><br />
+<em class="quotelev1">&gt; To: starcluster_at_mit.edu&lt;mailto:starcluster_at_mit&#46;<!--nospam-->edu&gt;
+</em><br />
+<em class="quotelev1">&gt; Subject: Re: [StarCluster] Fast shared or local storage? (Cedar McKay)
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Hi Cedar
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Beware of using NFS – it may not be posix compliant in ways that seem minor
+</em><br />
+<em class="quotelev1">&gt; but have caused problems for HDF5 files. I don't know what the blast db file
+</em><br />
+<em class="quotelev1">&gt; structure is or how they organize their writes, but it can be a problem in
+</em><br />
+<em class="quotelev1">&gt; some circumstances.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; I really like the suggestions of using the ephemeral storage. I suggest you
+</em><br />
+<em class="quotelev1">&gt; create a plugin that moves the data to the drive from S3 on startup when you
+</em><br />
+<em class="quotelev1">&gt; add a node. That should be simpler than the on demand caching which although
+</em><br />
+<em class="quotelev1">&gt; elegant may take you some time to implement.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; David
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Thanks for the very useful reply. I think I'm going to go with the s3fs
+</em><br />
+<em class="quotelev1">&gt; option and cache to local ephemeral drives. A big blast database is split
+</em><br />
+<em class="quotelev1">&gt; into many parts, and I'm pretty sure that every file in a blast db isn't
+</em><br />
+<em class="quotelev1">&gt; read every time, so this way blasting can proceed immediately. The parts of
+</em><br />
+<em class="quotelev1">&gt; the blast database download from s3 on demand, and cached locally. If there
+</em><br />
+<em class="quotelev1">&gt; was much writing, I'd probably be reluctant to use this approach because the
+</em><br />
+<em class="quotelev1">&gt; s3 eventual consistency model seems to require tolerance of write fails at
+</em><br />
+<em class="quotelev1">&gt; the application level. I'll write my results to a shared nfs volume.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; I thought about mpiBlast and will probably explore it, but I read some
+</em><br />
+<em class="quotelev1">&gt; reports that it's xml output isn't exactly the same as the official NCBI
+</em><br />
+<em class="quotelev1">&gt; blast output, and may break biopython parsing. I haven't confirmed this, and
+</em><br />
+<em class="quotelev1">&gt; will probably compare the two techniques.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Thanks again!
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Cedar
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<span id="received"><dfn>Received on</dfn> Wed May 14 2014 - 17:35:07 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2206.html#start2206">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2207.html" title="Next message in the list">MacMullan, Hugh: "Re:  Fast shared or local storage? (Cedar McKay)"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2205.html" title="Previous message in the list">MacMullan, Hugh: "Re:  Fast shared or local storage? (Cedar McKay)"</a></li>
+<li><dfn>In reply to</dfn>: <a href="2205.html" title="Message to which this message replies">MacMullan, Hugh: "Re:  Fast shared or local storage? (Cedar McKay)"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="2207.html" title="Next message in this discussion thread">MacMullan, Hugh: "Re:  Fast shared or local storage? (Cedar McKay)"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="2207.html" title="Message sent in reply to this message">MacMullan, Hugh: "Re:  Fast shared or local storage? (Cedar McKay)"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2206" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2206" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2206" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2206" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

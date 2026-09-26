@@ -1,0 +1,439 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Austin Godber ((no email))" />
+<meta name="Subject" content="Re: [Starcluster] enlarge volume" />
+<title>starcluster.mbox.out: Re: [Starcluster] enlarge volume</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Re: [Starcluster] enlarge volume</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Re: [Starcluster] enlarge volume</h1>
+<!-- received="Thu Aug 12 20:31:07 2010" -->
+<!-- isoreceived="20100813003107" -->
+<!-- sent="Thu, 12 Aug 2010 20:31:04 -0400" -->
+<!-- isosent="20100813003104" -->
+<!-- name="Austin Godber" -->
+<!-- email="(no email)" -->
+<!-- subject="Re: [Starcluster] enlarge volume" -->
+<!-- id="4C649248.90105_at_uberhip.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- inreplyto="AANLkTim0e+6S3Rmq3UXYCkgvi=uF2DPcUYN6QnQ7SQ5=_at_mail.gmail.com" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="0352.html#start352" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="0352.html#options2">top</a>, <a href="0352.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="0353.html" accesskey="d" title="Austin Godber: &quot;Re: [Starcluster] enlarge volume&quot;">Next message</a> ]
+[ <a href="0351.html" title="Austin Godber: &quot;Re: [Starcluster] enlarge volume&quot;">Previous message</a> ]
+[ <a href="0350.html" title="Dan Yamins: &quot;Re: [Starcluster] enlarge volume&quot;">In reply to</a> ]
+<!-- unextthread="start" -->
+[ <a href="0355.html" accesskey="t" title="Justin Riley: &quot;Re: [Starcluster] enlarge volume&quot;">Next in thread</a> ]
+ [ <a href="0352.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg352" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg352" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg352" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg352" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Austin Godber &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 12 Aug 2010 20:31:04 -0400</span><br />
+</address>
+<br />
+Alright, I have it running, here's the short version, commands only, no 
+<br />
+output, run as root, disk is attached at /dev/sdf with one partition:
+<br />
+<br /><br />Check the filesystem (might want to use -f to force a real check)
+<br />
+# fsck /dev/sdf1
+<br />
+<br />Repartition with sfdisk, start at the first cylinder end at the last
+<br />
+# echo &quot;,,L&quot; | sfdisk /dev/sdf
+<br />
+<br />Resize the ext3 filesystem
+<br />
+# resize2fs /dev/sdf1
+<br />
+<br />Recheck the filesystem
+<br />
+# fsck -f /dev/sdf1
+<br />
+<br />Now mount and check that the data is there and the size is correct with 
+<br />
+df -h.
+<br />
+<br />Let me know if it works for you.
+<br />
+<br />- Austin
+<br />
+<br />Here is my verbose version, with output.
+<br />
+<br /># fsck /dev/sdf1
+<br />
+fsck from util-linux-ng 2.16
+<br />
+e2fsck 1.41.9 (22-Aug-2009)
+<br />
+/dev/sdf1: clean, 11/196608 files, 29901/785176 blocks
+<br />
+<br /># sfdisk -l /dev/sdf
+<br />
+<br />Disk /dev/sdf: 652 cylinders, 255 heads, 63 sectors/track
+<br />
+Units = cylinders of 8225280 bytes, blocks of 1024 bytes, counting from 0
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;Device Boot Start     End   #cyls    #blocks   Id  System
+<br />
+/dev/sdf1          0+    390     391-   3140707   83  Linux
+<br />
+/dev/sdf2          0       -       0          0    0  Empty
+<br />
+/dev/sdf3          0       -       0          0    0  Empty
+<br />
+/dev/sdf4          0       -       0          0    0  Empty
+<br />
+<br /><br /># echo &quot;,,L&quot; | sfdisk /dev/sdf
+<br />
+Checking that no-one is using this disk right now ...
+<br />
+OK
+<br />
+<br />Disk /dev/sdf: 652 cylinders, 255 heads, 63 sectors/track
+<br />
+Old situation:
+<br />
+Units = cylinders of 8225280 bytes, blocks of 1024 bytes, counting from 0
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;Device Boot Start     End   #cyls    #blocks   Id  System
+<br />
+/dev/sdf1          0+    390     391-   3140707   83  Linux
+<br />
+/dev/sdf2          0       -       0          0    0  Empty
+<br />
+/dev/sdf3          0       -       0          0    0  Empty
+<br />
+/dev/sdf4          0       -       0          0    0  Empty
+<br />
+New situation:
+<br />
+Units = cylinders of 8225280 bytes, blocks of 1024 bytes, counting from 0
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;Device Boot Start     End   #cyls    #blocks   Id  System
+<br />
+/dev/sdf1          0+    651     652-   5237189+  83  Linux
+<br />
+/dev/sdf2          0       -       0          0    0  Empty
+<br />
+/dev/sdf3          0       -       0          0    0  Empty
+<br />
+/dev/sdf4          0       -       0          0    0  Empty
+<br />
+Warning: no primary partition is marked bootable (active)
+<br />
+This does not matter for LILO, but the DOS MBR will not boot this disk.
+<br />
+Successfully wrote the new partition table
+<br />
+<br />Re-reading the partition table ...
+<br />
+<br />If you created or changed a DOS partition, /dev/foo7, say, then use dd(1)
+<br />
+to zero the first 512 bytes:  dd if=/dev/zero of=/dev/foo7 bs=512 count=1
+<br />
+(See fdisk(8).)
+<br />
+<br /><br /># resize2fs /dev/sdf1
+<br />
+resize2fs 1.41.9 (22-Aug-2009)
+<br />
+Resizing the filesystem on /dev/sdf1 to 1309297 (4k) blocks.
+<br />
+The filesystem on /dev/sdf1 is now 1309297 blocks long.
+<br />
+<br /># fsck -f /dev/sdf1
+<br />
+fsck from util-linux-ng 2.16
+<br />
+e2fsck 1.41.9 (22-Aug-2009)
+<br />
+Pass 1: Checking inodes, blocks, and sizes
+<br />
+Pass 2: Checking directory structure
+<br />
+Pass 3: Checking directory connectivity
+<br />
+Pass 4: Checking reference counts
+<br />
+Pass 5: Checking group summary information
+<br />
+/dev/sdf1: 11/327680 files (0.0% non-contiguous), 38511/1309297 blocks
+<br />
+<br /><br /><br /><br /><br /><br />On 08/12/2010 08:01 PM, Dan Yamins wrote:
+<br />
+<em class="quotelev1">&gt; Let me add one more thing to this thread:
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Even on ubuntu, even with my original volume, you can't do &quot;e2fsck&quot; of 
+</em><br />
+<em class="quotelev1">&gt; the &quot;device&quot; , e.g.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; $ e2fsck /dev/sdz
+</em><br />
+<em class="quotelev1">&gt; Couldn't find ext2 superblock, trying backup blocks...
+</em><br />
+<em class="quotelev1">&gt; e2fsck: Bad magic number in super-block while trying to open /dev/sdo
+</em><br />
+<em class="quotelev1">&gt; ...
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Is that to be expected?  In a number of tutorials on resizing EBS 
+</em><br />
+<em class="quotelev1">&gt; volumes, i have seen this done with the devices itself.  Is the reason 
+</em><br />
+<em class="quotelev1">&gt; this is failing because its a partitioned drive?
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; On Thu, Aug 12, 2010 at 6:43 PM, Dan Yamins &lt;dyamins_at_gmail.com 
+</em><br />
+<em class="quotelev1">&gt; &lt;mailto:dyamins_at_gmail.com&gt;&gt; wrote:
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;                 Do you have a snapshot?  I have used parted and
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;                 e2resizefs to expand an ext3 filesystem without trouble.
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;     So I'm trying parted on a new, clean volume created from the
+</em><br />
+<em class="quotelev1">&gt;     snapshot, attached to /dev/sdm  As I explained before, I can't do
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;     $ parted /dev/sdm
+</em><br />
+<em class="quotelev1">&gt;     [root_at_domU-12-31-39-0E-B2-61 ~]# parted /dev/sdm
+</em><br />
+<em class="quotelev1">&gt;     Error: Error initialising SCSI device /dev/sdm - Invalid argument
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;     AUstin, when you did this did you get that same error?
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;     I /CAN/ do parted on the path:
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;     $ parted /dev/sdm1
+</em><br />
+<em class="quotelev1">&gt;     GNU Parted 1.8.1
+</em><br />
+<em class="quotelev1">&gt;     Using /dev/sdm1
+</em><br />
+<em class="quotelev1">&gt;     Welcome to GNU Parted! Type 'help' to view a list of commands.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;     But then i get this error:
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;     (parted) resize 1 0 500GB
+</em><br />
+<em class="quotelev1">&gt;     Error: The location 500GB is outside of the device /dev/sdo1.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;     Which is course is true ...
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;     (parted) print
+</em><br />
+<em class="quotelev1">&gt;     Disk /dev/sdm1: 21.5GB
+</em><br />
+<em class="quotelev1">&gt;     Sector size (logical/physical): 512B/512B
+</em><br />
+<em class="quotelev1">&gt;     Partition Table: loop
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;     Number  Start   End     Size    File system  Flags
+</em><br />
+<em class="quotelev1">&gt;      1      0.00kB  21.5GB  21.5GB  ext3
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;     So I'm not sure where to go from here...
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;     Dan
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; _______________________________________________
+</em><br />
+<em class="quotelev1">&gt; Starcluster mailing list
+</em><br />
+<em class="quotelev1">&gt; Starcluster_at_mit.edu
+</em><br />
+<em class="quotelev1">&gt; <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<em class="quotelev1">&gt;    
+</em><br />
+<span id="received"><dfn>Received on</dfn> Thu Aug 12 2010 - 20:31:07 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="0352.html#start352">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="0353.html" title="Next message in the list">Austin Godber: "Re: [Starcluster] enlarge volume"</a></li>
+<li><dfn>Previous message</dfn>: <a href="0351.html" title="Previous message in the list">Austin Godber: "Re: [Starcluster] enlarge volume"</a></li>
+<li><dfn>In reply to</dfn>: <a href="0350.html" title="Message to which this message replies">Dan Yamins: "Re: [Starcluster] enlarge volume"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="0355.html" title="Next message in this discussion thread">Justin Riley: "Re: [Starcluster] enlarge volume"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="0355.html" title="Message sent in reply to this message">Justin Riley: "Re: [Starcluster] enlarge volume"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg352" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg352" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg352" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg352" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

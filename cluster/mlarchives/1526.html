@@ -1,0 +1,227 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Oppe, Thomas C ERDC-RDE-ITL-MS Contractor ((no email))" />
+<meta name="Subject" content="Re:  cluster launch (UNCLASSIFIED)" />
+<title>starcluster.mbox.out: Re:  cluster launch (UNCLASSIFIED)</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Re:  cluster launch (UNCLASSIFIED)</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Re:  cluster launch (UNCLASSIFIED)</h1>
+<!-- received="Mon Nov 26 22:29:38 2012" -->
+<!-- isoreceived="20121127032938" -->
+<!-- sent="Tue, 27 Nov 2012 03:29:34 +0000" -->
+<!-- isosent="20121127032934" -->
+<!-- name="Oppe, Thomas C ERDC-RDE-ITL-MS Contractor" -->
+<!-- email="(no email)" -->
+<!-- subject="Re:  cluster launch (UNCLASSIFIED)" -->
+<!-- id="1B6259370D5EFF488340E9D87BD0580AD9E371_at_MS-EX2VKS.erdc.dren.mil" -->
+<!-- charset="us-ascii" -->
+<!-- inreplyto="7770ca583dd.50b3d6f8_at_us.army.mil" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1526.html#start1526" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1526.html#options2">top</a>, <a href="1526.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1527.html" accesskey="d" title="Oppe, Thomas C ERDC-RDE-ITL-MS Contractor: &quot;Cannot install StarCluster (UNCLASSIFIED)&quot;">Next message</a> ]
+[ <a href="1525.html" title="Oppe, Thomas C ERDC-RDE-ITL-MS Contractor: &quot;Re:  Installing Intel compilers on Starcluster (UNCLASSIFIED)&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="1529.html" accesskey="t" title="Rayson Ho: &quot;Re:  cluster launch (UNCLASSIFIED)&quot;">Next in thread</a> ]
+ [ <a href="1526.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1526" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1526" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1526" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1526" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Oppe, Thomas C ERDC-RDE-ITL-MS Contractor &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Tue, 27 Nov 2012 03:29:34 +0000</span><br />
+</address>
+<br />
+Classification: UNCLASSIFIED
+<br />
+Caveats: FOUO
+<br />
+<br />Carrie,
+<br />
+<br />I'm including the &quot;starcluster_at_mit.edu&quot; mailing list in my response.  They seem very helpful.
+<br />
+<br />I've tried launching a cloud from the web site you mentioned, namely
+<br />
+<br /><a href="http://aws.typepad.com/aws/2011/11/next-generation-cluster-computing-on-amazon-ec2-the-cc2-instance-type.html">http://aws.typepad.com/aws/2011/11/next-generation-cluster-computing-on-amazon-ec2-the-cc2-instance-type.html</a>
+<br />
+<br />and hitting the &quot;Launch Stack&quot; button.  The blog seems to be a year old, written it seems prior to Supercomputing 2011, and I'm worried that the AMI (operating system) it uses is out-of-date or no longer supported by StarCluster.  From the blog, we apparently want a hardware-assisted virtualization (HVM) type AMI for a &quot;cc2.8xlarge&quot; HPC cluster.
+<br />
+<br />Another way, if we already have a cloud going as we do with our &quot;cluster&quot; instance, is to logon to &quot;cluster&quot;, verify that &quot;starcluster&quot; is installed in the home directory (it is), then move or rename any file named
+<br />
+<br />&nbsp;&nbsp;~/.starcluster/config
+<br />
+<br />to somewhere else or something else, and then do:
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;$ starcluster help
+<br />
+<br />to have StarCluster generate a supported &quot;~/.starcluster/config&quot; file.  We then edit it to supply our own key pair information, security credentials, EBS volume description, and any plugins.  I have tried to do that with the current &quot;config&quot; and &quot;config.bak&quot; files in that directory.  The web page for doing this is:
+<br />
+<br />&nbsp;&nbsp;<a href="../docs/latest/quickstart.html">/cluster/docs/latest/quickstart.html</a>
+<br />
+<br />I think it gives you a choice of four AMI's in the sample &quot;config&quot; file created.  We would want the 64-bit HVM choice I would guess.  The trouble is that when I have edited this file and do:
+<br />
+<br />&nbsp;&nbsp;&nbsp;$ starcluster start mycluster
+<br />
+<br />it says that &quot;master&quot; is not found.  I could not get beyond that point.
+<br />
+<br />Since the GNU compilers are free and MPICH2 is free, I am hoping that we can find plugins to bring in the latest GNU compilers (gcc, g++, and gfortran 4.7.2) and MPICH2.  Then we will have a choice of Intel vs. GNU for compilers and OpenMP vs. MPICH2 vs. Intel MPI for MPI, with the latter as the only choice with the Intel compilers.
+<br />
+<br />Tom Oppe
+<br />
+<br />-----Original Message-----
+<br />
+From: Leach, Carrie L Mrs CTR USA USACE USA [mailto:carrie.l.leach2.ctr_at_us.army.mil] 
+<br />
+Sent: Monday, November 26, 2012 8:54 PM
+<br />
+To: Oppe, Thomas C ERDC-ITL-MS Contractor
+<br />
+Subject: cluster launch (UNCLASSIFIED)
+<br />
+<br />UNCLASSIFIED
+<br />
+&nbsp;Hi, Tom. A quick question. I read through all your emails. I wanted to launch the cluster the same way you did. Did you use the launch button on <a href="http://aws.typepad.com/aws/2011/11/next-generation-cluster-computing-on-amazon-ec2-the-cc2-instance-type.html">http://aws.typepad.com/aws/2011/11/next-generation-cluster-computing-on-amazon-ec2-the-cc2-instance-type.html</a>
+<br />
+or did you find a template you liked and used that? 
+<br />
+Thanks.
+<br />
+-Carrie
+<br />
+UNCLASSIFIED
+<br />
+<br />Classification: UNCLASSIFIED
+<br />
+Caveats: FOUO
+<br />
+<span id="received"><dfn>Received on</dfn> Mon Nov 26 2012 - 22:29:38 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1526.html#start1526">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1527.html" title="Next message in the list">Oppe, Thomas C ERDC-RDE-ITL-MS Contractor: "Cannot install StarCluster (UNCLASSIFIED)"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1525.html" title="Previous message in the list">Oppe, Thomas C ERDC-RDE-ITL-MS Contractor: "Re:  Installing Intel compilers on Starcluster (UNCLASSIFIED)"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1529.html" title="Next message in this discussion thread">Rayson Ho: "Re:  cluster launch (UNCLASSIFIED)"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1529.html" title="Message sent in reply to this message">Rayson Ho: "Re:  cluster launch (UNCLASSIFIED)"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1526" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1526" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1526" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1526" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

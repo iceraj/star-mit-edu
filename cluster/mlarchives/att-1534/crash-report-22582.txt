@@ -1,0 +1,38 @@
+---------- CRASH DETAILS ----------
+COMMAND: starcluster ebsimage i-30e02f4e starcluster-base-scientific-linux-6.3-x86_64-LG
+2012-12-06 18:28:49,118 PID: 22582 config.py:551 - DEBUG - Loading config
+2012-12-06 18:28:49,118 PID: 22582 config.py:118 - DEBUG - Loading file: /home/prod/.starcluster/config
+2012-12-06 18:28:49,121 PID: 22582 awsutils.py:54 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'proxy_user': None, 'proxy_pass': None, 'proxy_port': None, 'proxy': None, 'is_secure': True, 'path': '/', 'region': None, 'port': None}
+2012-12-06 18:28:54,820 PID: 22582 __init__.py:75 - DEBUG - loading private key /home/prod/.ssh/mysckey.rsa
+2012-12-06 18:28:54,822 PID: 22582 __init__.py:167 - DEBUG - Using private key /home/prod/.ssh/mysckey.rsa (rsa)
+2012-12-06 18:28:54,823 PID: 22582 image.py:40 - INFO - Removing private data...
+2012-12-06 18:28:54,823 PID: 22582 __init__.py:97 - DEBUG - connecting to host ec2-50-16-66-39.compute-1.amazonaws.com on port 22 as user root
+2012-12-06 18:29:07,589 PID: 22582 __init__.py:186 - DEBUG - creating sftp connection
+2012-12-06 18:29:09,512 PID: 22582 image.py:225 - INFO - Creating EBS image...
+2012-12-06 18:29:09,763 PID: 22582 image.py:229 - INFO - Waiting for AMI ami-85b83bec to become available...
+2012-12-06 18:29:09,907 PID: 22582 image.py:214 - ERROR - Error occurred while creating image
+2012-12-06 18:29:09,924 PID: 22582 cli.py:287 - DEBUG - Traceback (most recent call last):
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/cli.py", line 255, in main
+    sc.execute(args)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/commands/ebsimage.py", line 69, in execute
+    **self.specified_options_dict)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/awsutils.py", line 768, in create_ebs_image
+    return icreator.create_image(size=root_vol_size)
+  File "<string>", line 2, in create_image
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/utils.py", line 87, in wrap_f
+    res = func(*arg, **kargs)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/image.py", line 211, in create_image
+    return self._create_image_from_ebs(size)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/image.py", line 231, in _create_image_from_ebs
+    snap = img.block_device_mapping['/dev/sda1'].snapshot_id
+KeyError: '/dev/sda1'
+
+---------- SYSTEM INFO ----------
+StarCluster: 0.9999
+Python: 2.6.6 (r266:84292, Sep 11 2012, 08:34:23)  [GCC 4.4.6 20120305 (Red Hat 4.4.6-4)]
+Platform: Linux-2.6.32-279.9.1.el6.x86_64-x86_64-with-centos-6.3-Final
+boto: 2.3.0
+ssh: 1.7.13
+Crypto: 2.6
+jinja2: 2.6
+decorator: 3.3.1

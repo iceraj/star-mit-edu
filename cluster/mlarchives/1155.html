@@ -1,0 +1,278 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Boris Fain ((no email))" />
+<meta name="Subject" content="condor plugin error" />
+<title>starcluster.mbox.out: condor plugin error</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">condor plugin error</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>condor plugin error</h1>
+<!-- received="Fri Apr 27 15:50:40 2012" -->
+<!-- isoreceived="20120427195040" -->
+<!-- sent="Fri, 27 Apr 2012 12:50:37 -0700" -->
+<!-- isosent="20120427195037" -->
+<!-- name="Boris Fain" -->
+<!-- email="(no email)" -->
+<!-- subject="condor plugin error" -->
+<!-- id="CAOxi5U4H71sj_wJQfyUj=sVBMSu+rXeeEi93AxBp5x9OCNPK2w_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1155.html#start1155" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1155.html#options2">top</a>, <a href="1155.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1156.html" accesskey="d" title="Justin Riley: &quot;Re:  R on StarCluster&quot;">Next message</a> ]
+[ <a href="1154.html" title="Hassan Mamdani: &quot;Citing star cluster&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="1157.html" accesskey="t" title="Justin Riley: &quot;Re:  condor plugin error&quot;">Next in thread</a> ]
+ [ <a href="1155.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1155" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1155" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1155" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1155" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Boris Fain &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Fri, 27 Apr 2012 12:50:37 -0700</span><br />
+</address>
+<br />
+Hi - I'm trying to run a condor plugin on a 2-node cluster. I'm
+<br />
+using ami-899d49e0 Ubuntu 10.04
+<br />
+Everything seems to be running very well - thank you all! except when I
+<br />
+execute the condor plugin.
+<br />
+The error is included below, any help is appreciated. I'm using OSX 10.6.8
+<br />
+and I used pip to upgrade
+<br />
+starcluster and all of its components. I'm using starcluster v. 0.93.3.
+<br />
+Thank you!
+<br />
+<br />2012-04-27 12:10:13,133 PID: 21189 cluster.py:1505 - INFO - Running plugin
+<br />
+condor
+<br />
+2012-04-27 12:10:13,133 PID: 21189 condor.py:24 - INFO - Setting up Condor
+<br />
+grid
+<br />
+2012-04-27 12:10:13,696 PID: 21189 condor.py:32 - INFO - Starting Condor
+<br />
+master
+<br />
+2012-04-27 12:10:13,804 PID: 21189 threadpool.py:123 - INFO - Shutting down
+<br />
+threads...
+<br />
+2012-04-27 12:10:13,807 PID: 21189 threadpool.py:135 - DEBUG -
+<br />
+unfinished_tasks = 2
+<br />
+2012-04-27 12:10:14,808 PID: 21189 cluster.py:1514 - ERROR - Error occurred
+<br />
+while running plugin 'condor':
+<br />
+2012-04-27 12:10:14,811 PID: 21189 cluster.py:1520 - DEBUG - Traceback
+<br />
+(most recent call last):
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Library/Python/2.6/site-packages/StarCluster-0.93.3-py2.6.egg/starcluster/cluster.py&quot;,
+<br />
+line 1506, in run_plugin
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;func(*args)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Library/Python/2.6/site-packages/StarCluster-0.93.3-py2.6.egg/starcluster/plugins/condor.py&quot;,
+<br />
+line 47, in run
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self._setup_condor()
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Library/Python/2.6/site-packages/StarCluster-0.93.3-py2.6.egg/starcluster/plugins/condor.py&quot;,
+<br />
+line 33, in _setup_condor
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self._add_condor_node(master)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Library/Python/2.6/site-packages/StarCluster-0.93.3-py2.6.egg/starcluster/plugins/condor.py&quot;,
+<br />
+line 12, in _add_condor_node
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;condorcfg = node.ssh.remote_file(CONDOR_CFG, 'w')
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Library/Python/2.6/site-packages/StarCluster-0.93.3-py2.6.egg/starcluster/sshutils/__init__.py&quot;,
+<br />
+line 296, in remote_file
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;rfile = self.sftp.open(file, mode)
+<br />
+&nbsp;&nbsp;File &quot;build/bdist.macosx-10.6-universal/egg/ssh/sftp_client.py&quot;, line
+<br />
+245, in open
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;t, msg = self._request(CMD_OPEN, filename, imode, attrblock)
+<br />
+&nbsp;&nbsp;File &quot;build/bdist.macosx-10.6-universal/egg/ssh/sftp_client.py&quot;, line
+<br />
+635, in _request
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;return self._read_response(num)
+<br />
+&nbsp;&nbsp;File &quot;build/bdist.macosx-10.6-universal/egg/ssh/sftp_client.py&quot;, line
+<br />
+682, in _read_response
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self._convert_status(msg)
+<br />
+&nbsp;&nbsp;File &quot;build/bdist.macosx-10.6-universal/egg/ssh/sftp_client.py&quot;, line
+<br />
+708, in _convert_status
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;raise IOError(errno.ENOENT, text)
+<br />
+IOError: [Errno 2] No such file
+<br />
+<br /><pre>
+-- 
+b.
+</pre>
+<span id="received"><dfn>Received on</dfn> Fri Apr 27 2012 - 15:50:40 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1155.html#start1155">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1156.html" title="Next message in the list">Justin Riley: "Re:  R on StarCluster"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1154.html" title="Previous message in the list">Hassan Mamdani: "Citing star cluster"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1157.html" title="Next message in this discussion thread">Justin Riley: "Re:  condor plugin error"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1157.html" title="Message sent in reply to this message">Justin Riley: "Re:  condor plugin error"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1155" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1155" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1155" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1155" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

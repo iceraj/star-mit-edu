@@ -1,0 +1,402 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Jacob Barhak ((no email))" />
+<meta name="Subject" content="Re:  SGE priorities and job dependency" />
+<title>starcluster.mbox.out: Re:  SGE priorities and job dependency</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Re:  SGE priorities and job dependency</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Re:  SGE priorities and job dependency</h1>
+<!-- received="Sat Sep  7 15:59:39 2013" -->
+<!-- isoreceived="20130907195939" -->
+<!-- sent="Sat, 7 Sep 2013 14:59:07 -0500" -->
+<!-- isosent="20130907195907" -->
+<!-- name="Jacob Barhak" -->
+<!-- email="(no email)" -->
+<!-- subject="Re:  SGE priorities and job dependency" -->
+<!-- id="D6A0B6B1-31AB-4621-B0C7-26CD8BB7BC61_at_gmail.com" -->
+<!-- charset="us-ascii" -->
+<!-- inreplyto="CAHwLALMiMkSDBTbT+NabEqiPgRVddDbY3hWut67V=77tEmxEyQ_at_mail.gmail.com" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1867.html#start1867" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1867.html#options2">top</a>, <a href="1867.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1868.html" accesskey="d" title="Alessandro Gagliardi: &quot;Security Groups&quot;">Next message</a> ]
+[ <a href="1866.html" title="Steve Heistand: &quot;Re deleting root volumes after termination&quot;">Previous message</a> ]
+[ <a href="1858.html" title="Rayson Ho: &quot;Re:  SGE priorities and job dependency&quot;">In reply to</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1867" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1867" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1867" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1867" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Jacob Barhak &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Sat, 7 Sep 2013 14:59:07 -0500</span><br />
+</address>
+<br />
+Thanks Rayson,
+<br />
+<br />This is good to know. 
+<br />
+<br />Can such array dependencies by extended to  a &quot;one after many&quot; dependency with multiple arrays. Something like:
+<br />
+<br />An element in Array B runs after corresponding elements in Arrays A1 and A2 have completed:
+<br />
+<br />A1[0] -&gt; B[0]
+<br />
+A2[0] -&gt; B[0]
+<br />
+<br />A1[1] -&gt; B[1]
+<br />
+A2[1] -&gt; B[1]
+<br />
+<br />And if possible, what is the advantage of using an array over using many single jobs? It this just an organization issue or is there real benefit such as improved performance? Are there restrictions?
+<br />
+<br />This is beyond the scope if the issue that was resolved, yet this makes an interesting discussion. 
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Jacob
+<br />
+<br /><br />Sent from my iPhone
+<br />
+<br />On Sep 4, 2013, at 10:50 AM, Rayson Ho &lt;raysonlogin_at_gmail.com&gt; wrote:
+<br />
+<br /><em class="quotelev1">&gt; Jacob,
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; BTW, do the first 50,000 jobs all run the same program and the only
+</em><br />
+<em class="quotelev1">&gt; difference between them is the input?? If so, all the first 50,000
+</em><br />
+<em class="quotelev1">&gt; jobs should be submitted as an array job, and then next 50,000 jobs
+</em><br />
+<em class="quotelev1">&gt; should be submitted as another array job. This way, you can even
+</em><br />
+<em class="quotelev1">&gt; define inter-array element dependencies such that:
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; a[0] -&gt; b[0]
+</em><br />
+<em class="quotelev1">&gt; a[1] -&gt; b[1]
+</em><br />
+<em class="quotelev1">&gt; ...
+</em><br />
+<em class="quotelev1">&gt; a[49999] -&gt; b[49999]
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Where a &amp; b are array jobs that each has 50000 tasks.
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Rayson
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; ==================================================
+</em><br />
+<em class="quotelev1">&gt; Open Grid Scheduler - The Official Open Source Grid Engine
+</em><br />
+<em class="quotelev1">&gt; <a href="http://gridscheduler.sourceforge.net/">http://gridscheduler.sourceforge.net/</a>
+</em><br />
+<em class="quotelev1">&gt; <a href="http://gridscheduler.sourceforge.net/GridEngine/GridEngineCloud.html">http://gridscheduler.sourceforge.net/GridEngine/GridEngineCloud.html</a>
+</em><br />
+<em class="quotelev1">&gt; ==================================================
+</em><br />
+<em class="quotelev1">&gt; Open Grid Scheduler - The Official Open Source Grid Engine
+</em><br />
+<em class="quotelev1">&gt; <a href="http://gridscheduler.sourceforge.net/">http://gridscheduler.sourceforge.net/</a>
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; On Tue, Sep 3, 2013 at 4:13 AM, Jacob Barhak &lt;jacob.barhak_at_gmail.com&gt; wrote:
+</em><br />
+<em class="quotelev2">&gt;&gt; Thanks Adam, for trying to help,
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; The option you pointed to was already used to define the dependency. Yet
+</em><br />
+<em class="quotelev2">&gt;&gt; what I was trying to do is a bit more complicated than that and had to do
+</em><br />
+<em class="quotelev2">&gt;&gt; with the job priority and the dependency.
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; In any case, the issue was resolved with the help of Lyn.
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; Here is a link to the resolution:
+</em><br />
+<em class="quotelev2">&gt;&gt; <a href="1848.html">/cluster/mlarchives/1848.html</a>
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; Never the less, thanks for your response.
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt;             Jacob
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; On Mon, Sep 2, 2013 at 8:45 PM, Adam &lt;adamnkraut_at_gmail.com&gt; wrote:
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; 
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Hi Jacob,
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; 
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Check out the -hold_jid option to qsub. This should do exactly what you
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; need.
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; 
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Best Regards,
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Adam
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; 
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; 
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; On Sun, Sep 1, 2013 at 3:19 AM, Jacob Barhak &lt;jacob.barhak_at_gmail.com&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; wrote:
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; 
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; Hello,
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; 
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; Does someone have experience with the SGE scheduler that comes with
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; StarCluster? Experienced enough to figure out how make a dependent job
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; launch before other jobs once its dependencies are gone?
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; 
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; I have been trying to give the dependent job a high priority, yet it
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; seems the scheduler ignores this and launches the jobs in FIFO order.
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; 
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; Here is a simplified description of my problem. Lets say I have 100k
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; jobs. The first 50k are generating files in a shared directory and the last
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; 50k are processing those files and deleting them.
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; 
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; Jobs 1-50000 are independent while job 50001 is dependent on job 50000
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; and job 50000+n is dependent on job n.
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; 
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; I tried lowering the priority of the first 50k jobs using qsub -p -100. I
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; was hoping to get the effect of job 1 completing and since job 50001
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; dependency was satisfied and has the highest priority then it would be
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; launched next. The idea is to perform cleanup of the file after each job -
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; otherwise too many files can accumulate in a shared directory and may slow
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; down the NFS I/O significantly - not to mention disk space.
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; 
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; However, I cannot get this behavior from SGE on a single test machine
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; outside StarCluster. So I assume this needs some special configuration.
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; 
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; I am trying to avoid the I/O bottleneck I experienced on the cloud due to
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; too many files in a shared directory.
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; 
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; Can someone help with this without changing the order if the jobs when
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; being launched?
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; 
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; I hope there is a simple one line / qsub option for this.
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; 
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt;       Jacob
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; 
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; 
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; 
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; Sent from my iPhone
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; _______________________________________________
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; StarCluster mailing list
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; StarCluster_at_mit.edu
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; _______________________________________________
+</em><br />
+<em class="quotelev2">&gt;&gt; StarCluster mailing list
+</em><br />
+<em class="quotelev2">&gt;&gt; StarCluster_at_mit.edu
+</em><br />
+<em class="quotelev2">&gt;&gt; <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<span id="received"><dfn>Received on</dfn> Sat Sep 07 2013 - 15:59:39 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1867.html#start1867">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1868.html" title="Next message in the list">Alessandro Gagliardi: "Security Groups"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1866.html" title="Previous message in the list">Steve Heistand: "Re deleting root volumes after termination"</a></li>
+<li><dfn>In reply to</dfn>: <a href="1858.html" title="Message to which this message replies">Rayson Ho: "Re:  SGE priorities and job dependency"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1867" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1867" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1867" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1867" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

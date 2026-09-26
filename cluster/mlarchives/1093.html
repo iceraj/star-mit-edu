@@ -1,0 +1,224 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Justin Riley ((no email))" />
+<meta name="Subject" content="Re:  check.py problem" />
+<title>starcluster.mbox.out: Re:  check.py problem</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Re:  check.py problem</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Re:  check.py problem</h1>
+<!-- received="Mon Feb 27 16:28:10 2012" -->
+<!-- isoreceived="20120227212810" -->
+<!-- sent="Mon, 27 Feb 2012 16:28:07 -0500" -->
+<!-- isosent="20120227212807" -->
+<!-- name="Justin Riley" -->
+<!-- email="(no email)" -->
+<!-- subject="Re:  check.py problem" -->
+<!-- id="4F4BF567.4080100_at_gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- inreplyto="CAKwNXqtLBapxCpPYH4aLn2x8SUWk52_y5inyshMYdR__p3_MTg_at_mail.gmail.com" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1093.html#start1093" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1093.html#options2">top</a>, <a href="1093.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1094.html" accesskey="d" title="Justin Riley: &quot;Re:  Help needed with running mpich2 plugin using starcluster&quot;">Next message</a> ]
+[ <a href="1092.html" title="Ron Chen: &quot;Re:  check.py problem&quot;">Previous message</a> ]
+[ <a href="1091.html" title="Robert Yu: &quot;check.py problem&quot;">In reply to</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1093" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1093" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1093" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1093" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Justin Riley &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Mon, 27 Feb 2012 16:28:07 -0500</span><br />
+</address>
+<br />
+Hi Robert,
+<br />
+<br />You're correct that you need to use git_at_github.com instead of
+<br />
+&lt;user&gt;_at_github.com. I fixed this on github.
+<br />
+<br />The error you show below indicates that you're not in the StarCluster
+<br />
+repo folder. After you run the 'git clone' command you need to run:
+<br />
+<br />$ cd StarCluster
+<br />
+<br />You should then be able to run ./check.py. Also, as mentioned in the
+<br />
+contribute doc, don't forget to install pep8 and pyflakes before running
+<br />
+the check.py script. You can install using:
+<br />
+<br />$ pip install pep8 pyflakes
+<br />
+<br />or
+<br />
+<br />$ easy_install pep8 pyflakes
+<br />
+<br />HTH,
+<br />
+<br />~Justin
+<br />
+<br />On 02/27/2012 12:04 PM, Robert Yu wrote:
+<br />
+<em class="quotelev1">&gt; Hi,
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; I followed the instructions here:
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt;   <a href="http://web.mit.edu/star/cluster/docs/latest/contribute.html?highlight=git">http://web.mit.edu/star/cluster/docs/latest/contribute.html?highlight=git</a>
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; I had to use &quot;git_at_github.com&quot; instead of &quot;&lt;user&gt;&#64;github&#46;<!--nospam-->com&quot; in order
+</em><br />
+<em class="quotelev1">&gt; for it to work:
+</em><br />
+<em class="quotelev1">&gt;   % git clone git_at_github.com:&lt;user&gt;/StarCluster.git starcluster
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; So far so good, until I tried running the check:
+</em><br />
+<em class="quotelev1">&gt;   % ./check.py
+</em><br />
+<em class="quotelev1">&gt; : No such file or directory
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Thanks,
+</em><br />
+<em class="quotelev1">&gt; Robert
+</em><br />
+<span id="received"><dfn>Received on</dfn> Mon Feb 27 2012 - 16:28:10 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1093.html#start1093">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1094.html" title="Next message in the list">Justin Riley: "Re:  Help needed with running mpich2 plugin using starcluster"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1092.html" title="Previous message in the list">Ron Chen: "Re:  check.py problem"</a></li>
+<li><dfn>In reply to</dfn>: <a href="1091.html" title="Message to which this message replies">Robert Yu: "check.py problem"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1093" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1093" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1093" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1093" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

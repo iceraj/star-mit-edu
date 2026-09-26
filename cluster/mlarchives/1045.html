@@ -1,0 +1,212 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Robert Yu ((no email))" />
+<meta name="Subject" content="how to run qmon?" />
+<title>starcluster.mbox.out: how to run qmon?</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">how to run qmon?</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>how to run qmon?</h1>
+<!-- received="Thu Feb 23 13:19:00 2012" -->
+<!-- isoreceived="20120223181900" -->
+<!-- sent="Thu, 23 Feb 2012 10:16:39 -0800" -->
+<!-- isosent="20120223181639" -->
+<!-- name="Robert Yu" -->
+<!-- email="(no email)" -->
+<!-- subject="how to run qmon?" -->
+<!-- id="CAKwNXqvSEgWmQTNPdkL97uyr72HGbD0EHA1F6kGTreyaLTb1EQ_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1045.html#start1045" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1045.html#options2">top</a>, <a href="1045.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1046.html" accesskey="d" title="Robert Yu: &quot;Re:  how to run qmon?&quot;">Next message</a> ]
+[ <a href="1044.html" title="Ron Chen: &quot;Re:  Eucalyptus Support&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="1046.html" accesskey="t" title="Robert Yu: &quot;Re:  how to run qmon?&quot;">Next in thread</a> ]
+ [ <a href="1045.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1045" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1045" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1045" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1045" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Robert Yu &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 23 Feb 2012 10:16:39 -0800</span><br />
+</address>
+<br />
+Hello,
+<br />
+<br />I am trying to run qmon from my desktop.  I have a couple of problems:
+<br />
+<br />1. How to pass &quot;-X&quot; option to &quot;starcluster sshmaster&quot; command?
+<br />
+<br />&nbsp;&nbsp;&nbsp;As a work-around, I am run ssh directly  (e.g. ssh -X sgeadmin_at_ec2...)
+<br />
+<br />2. qmon complains about missing fonts:
+<br />
+<br />sgeadmin_at_master:~$ qmon
+<br />
+Warning: Cannot convert string
+<br />
+&quot;-adobe-courier-medium-r-*--14-*-*-*-m-*-*-*&quot; to type FontStruct
+<br />
+Warning: Cannot convert string
+<br />
+&quot;-adobe-courier-bold-r-*--14-*-*-*-m-*-*-*&quot; to type FontStruct
+<br />
+Warning: Cannot convert string
+<br />
+&quot;-adobe-courier-medium-r-*--12-*-*-*-m-*-*-*&quot; to type FontStruct
+<br />
+X Error of failed request:  BadName (named color or font does not exist)
+<br />
+&nbsp;&nbsp;Major opcode of failed request:  45 (X_OpenFont)
+<br />
+&nbsp;&nbsp;Serial number of failed request:  759
+<br />
+&nbsp;&nbsp;Current serial number in output stream:  770
+<br />
+<br />&nbsp;&nbsp;&nbsp;I already have installed xfonts-base, xfonts-75dpi, and
+<br />
+xfonts-100dpi on my desktop (and also on the master.)
+<br />
+<br />Thanks.
+<br />
+<br /><pre>
+-- 
+Robert Yu, Member Technical Staff
+www.aditazz.com | robert.yu_at_aditazz.com
+1111 Bayhill Drive Suite 260 | San Bruno | CA 94066
+510.459.0216 | cell
+650.627.7357 | 650.492.7000 x1008 | work
+650.684.1149 | fax
+</pre>
+<span id="received"><dfn>Received on</dfn> Thu Feb 23 2012 - 13:19:00 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1045.html#start1045">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1046.html" title="Next message in the list">Robert Yu: "Re:  how to run qmon?"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1044.html" title="Previous message in the list">Ron Chen: "Re:  Eucalyptus Support"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1046.html" title="Next message in this discussion thread">Robert Yu: "Re:  how to run qmon?"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1046.html" title="Message sent in reply to this message">Robert Yu: "Re:  how to run qmon?"</a></li>
+<li><dfn>Reply</dfn>: <a href="1062.html" title="Message sent in reply to this message">Justin Riley: "Re:  how to run qmon?"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1045" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1045" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1045" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1045" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

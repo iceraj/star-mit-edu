@@ -1,0 +1,193 @@
+---------- SYSTEM INFO ----------
+StarCluster: 0.9999
+Python: 2.7.3 (default, Aug  1 2012, 05:14:39)  [GCC 4.6.3]
+Platform: Linux-3.2.0-36-generic-x86_64-with-Ubuntu-12.04-precise
+boto: 2.7.0
+paramiko: 1.9.0
+Crypto: 2.4.1
+
+---------- CRASH DETAILS ----------
+Command: starcluster start -b 0.30 mycluster
+
+2013-01-27 13:53:53,194 PID: 12766 config.py:548 - DEBUG - Loading config
+2013-01-27 13:53:53,194 PID: 12766 config.py:119 - DEBUG - Loading file: /home/guido/.starcluster/config
+2013-01-27 13:53:53,197 PID: 12766 awsutils.py:55 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'proxy_user': None, 'proxy_pass': None, 'proxy_port': None, 'proxy': None, 'is_secure': True, 'path': '/', 'region': None, 'port': None}
+2013-01-27 13:53:53,531 PID: 12766 start.py:179 - INFO - Using default cluster template: smallcluster
+2013-01-27 13:53:53,532 PID: 12766 base.py:139 - WARNING - ************************************************************
+SPOT INSTANCES ARE NOT GUARANTEED TO COME UP
+
+Spot instances can take a long time to come up and may not come up at all depending on the current AWS load and your max spot bid price.
+
+StarCluster will wait indefinitely until all instances (2) come up. If this takes too long, you can cancel the start command using CTRL-C. You can then resume the start command later on using the --no-create (-x) option:
+
+    $ starcluster start -x mycluster
+
+This will use the existing spot instances launched previously and continue starting the cluster. If you don't wish to wait on the cluster any longer after pressing CTRL-C simply terminate the cluster using the 'terminate' command.
+************************************************************
+2013-01-27 13:53:53,534 PID: 12766 base.py:143 - WARNING - Waiting 5 seconds before continuing...
+2013-01-27 13:53:53,535 PID: 12766 base.py:144 - WARNING - Press CTRL-C to cancel...
+2013-01-27 13:53:58,541 PID: 12766 cluster.py:1624 - INFO - Validating cluster template settings...
+2013-01-27 13:53:59,215 PID: 12766 cluster.py:949 - DEBUG - Launch map: node001 (ami: ami-eba83d82, type: c1.xlarge)...
+2013-01-27 13:53:59,237 PID: 12766 cluster.py:777 - DEBUG - Userdata size in KB: 0.56
+2013-01-27 13:53:59,237 PID: 12766 cluster.py:1641 - INFO - Cluster template settings are valid
+2013-01-27 13:53:59,237 PID: 12766 cluster.py:1462 - INFO - Starting cluster...
+2013-01-27 13:53:59,237 PID: 12766 cluster.py:975 - INFO - Launching a 2-node cluster...
+2013-01-27 13:53:59,237 PID: 12766 cluster.py:949 - DEBUG - Launch map: node001 (ami: ami-eba83d82, type: c1.xlarge)...
+2013-01-27 13:53:59,238 PID: 12766 cluster.py:1027 - INFO - Launching master node (ami: ami-eba83d82, type: c1.xlarge)...
+2013-01-27 13:53:59,324 PID: 12766 awsutils.py:164 - INFO - Creating security group @sc-mycluster...
+2013-01-27 13:54:01,325 PID: 12766 cluster.py:777 - DEBUG - Userdata size in KB: 0.57
+2013-01-27 13:54:02,132 PID: 12766 cluster.py:815 - INFO - Reservation:r-396df042
+2013-01-27 13:54:02,133 PID: 12766 cluster.py:949 - DEBUG - Launch map: node001 (ami: ami-eba83d82, type: c1.xlarge)...
+2013-01-27 13:54:02,133 PID: 12766 cluster.py:1047 - INFO - Launching node001 (ami: ami-eba83d82, type: c1.xlarge)
+2013-01-27 13:54:02,139 PID: 12766 cluster.py:777 - DEBUG - Userdata size in KB: 0.56
+2013-01-27 13:54:02,143 PID: 12766 cluster.py:777 - DEBUG - Userdata size in KB: 0.56
+2013-01-27 13:54:02,438 PID: 12766 cluster.py:815 - INFO - SpotInstanceRequest:sir-70d2a611
+2013-01-27 13:54:02,439 PID: 12766 cluster.py:1267 - INFO - Waiting for cluster to come up... (updating every 30s)
+2013-01-27 13:54:02,608 PID: 12766 cluster.py:1205 - INFO - Waiting for open spot requests to become active...
+2013-01-27 13:56:03,590 PID: 12766 cluster.py:687 - DEBUG - existing nodes: {}
+2013-01-27 13:56:03,591 PID: 12766 cluster.py:695 - DEBUG - adding node i-fc1ec98c to self._nodes list
+2013-01-27 13:56:04,199 PID: 12766 cluster.py:695 - DEBUG - adding node i-8c1ccbfc to self._nodes list
+2013-01-27 13:56:04,914 PID: 12766 cluster.py:703 - DEBUG - returning self._nodes = [<Node: master (i-fc1ec98c)>, <Node: node001 (i-8c1ccbfc)>]
+2013-01-27 13:56:04,914 PID: 12766 cluster.py:1235 - INFO - Waiting for all nodes to be in a 'running' state...
+2013-01-27 13:56:05,017 PID: 12766 cluster.py:687 - DEBUG - existing nodes: {u'i-fc1ec98c': <Node: master (i-fc1ec98c)>, u'i-8c1ccbfc': <Node: node001 (i-8c1ccbfc)>}
+2013-01-27 13:56:05,018 PID: 12766 cluster.py:690 - DEBUG - updating existing node i-fc1ec98c in self._nodes
+2013-01-27 13:56:05,018 PID: 12766 cluster.py:690 - DEBUG - updating existing node i-8c1ccbfc in self._nodes
+2013-01-27 13:56:05,018 PID: 12766 cluster.py:703 - DEBUG - returning self._nodes = [<Node: master (i-fc1ec98c)>, <Node: node001 (i-8c1ccbfc)>]
+2013-01-27 13:56:35,331 PID: 12766 cluster.py:687 - DEBUG - existing nodes: {u'i-fc1ec98c': <Node: master (i-fc1ec98c)>, u'i-8c1ccbfc': <Node: node001 (i-8c1ccbfc)>}
+2013-01-27 13:56:35,331 PID: 12766 cluster.py:690 - DEBUG - updating existing node i-fc1ec98c in self._nodes
+2013-01-27 13:56:35,332 PID: 12766 cluster.py:690 - DEBUG - updating existing node i-8c1ccbfc in self._nodes
+2013-01-27 13:56:35,332 PID: 12766 cluster.py:703 - DEBUG - returning self._nodes = [<Node: master (i-fc1ec98c)>, <Node: node001 (i-8c1ccbfc)>]
+2013-01-27 13:56:35,333 PID: 12766 cluster.py:1253 - INFO - Waiting for SSH to come up on all nodes...
+2013-01-27 13:56:35,435 PID: 12766 cluster.py:687 - DEBUG - existing nodes: {u'i-fc1ec98c': <Node: master (i-fc1ec98c)>, u'i-8c1ccbfc': <Node: node001 (i-8c1ccbfc)>}
+2013-01-27 13:56:35,436 PID: 12766 cluster.py:690 - DEBUG - updating existing node i-fc1ec98c in self._nodes
+2013-01-27 13:56:35,436 PID: 12766 cluster.py:690 - DEBUG - updating existing node i-8c1ccbfc in self._nodes
+2013-01-27 13:56:35,436 PID: 12766 cluster.py:703 - DEBUG - returning self._nodes = [<Node: master (i-fc1ec98c)>, <Node: node001 (i-8c1ccbfc)>]
+2013-01-27 13:56:35,444 PID: 12766 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2013-01-27 13:56:35,552 PID: 12766 __init__.py:69 - DEBUG - loading private key /home/guido/.ssh/starcluster.rsa
+2013-01-27 13:56:35,553 PID: 12766 __init__.py:161 - DEBUG - Using private key /home/guido/.ssh/starcluster.rsa (rsa)
+2013-01-27 13:56:35,554 PID: 12766 __init__.py:91 - DEBUG - connecting to host ec2-184-73-140-42.compute-1.amazonaws.com on port 22 as user root
+2013-01-27 13:56:35,824 PID: 12766 __init__.py:69 - DEBUG - loading private key /home/guido/.ssh/starcluster.rsa
+2013-01-27 13:56:35,826 PID: 12766 __init__.py:161 - DEBUG - Using private key /home/guido/.ssh/starcluster.rsa (rsa)
+2013-01-27 13:56:35,826 PID: 12766 __init__.py:91 - DEBUG - connecting to host ec2-23-22-62-217.compute-1.amazonaws.com on port 22 as user root
+2013-01-27 13:56:36,025 PID: 12766 __init__.py:180 - DEBUG - creating sftp connection
+2013-01-27 13:56:36,446 PID: 12766 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-01-27 13:56:37,448 PID: 12766 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-01-27 13:56:38,450 PID: 12766 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-01-27 13:56:39,452 PID: 12766 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-01-27 13:56:40,454 PID: 12766 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-01-27 13:56:41,455 PID: 12766 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-01-27 13:56:42,457 PID: 12766 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-01-27 13:56:43,458 PID: 12766 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-01-27 13:56:44,460 PID: 12766 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-01-27 13:56:45,462 PID: 12766 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-01-27 13:56:46,464 PID: 12766 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-01-27 13:56:47,466 PID: 12766 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-01-27 13:56:48,468 PID: 12766 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-01-27 13:56:49,469 PID: 12766 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-01-27 13:56:50,471 PID: 12766 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-01-27 13:56:51,473 PID: 12766 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-01-27 13:56:52,475 PID: 12766 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-01-27 13:56:53,477 PID: 12766 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-01-27 13:56:54,479 PID: 12766 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-01-27 13:56:55,480 PID: 12766 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-01-27 13:56:56,482 PID: 12766 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-01-27 13:56:57,484 PID: 12766 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-01-27 13:56:58,486 PID: 12766 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-01-27 13:56:59,487 PID: 12766 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-01-27 13:57:00,489 PID: 12766 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-01-27 13:57:01,491 PID: 12766 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-01-27 13:57:02,493 PID: 12766 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-01-27 13:57:03,494 PID: 12766 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-01-27 13:57:04,496 PID: 12766 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-01-27 13:57:05,498 PID: 12766 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-01-27 13:57:06,499 PID: 12766 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-01-27 13:57:07,501 PID: 12766 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-01-27 13:57:08,503 PID: 12766 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-01-27 13:57:09,505 PID: 12766 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-01-27 13:57:10,507 PID: 12766 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-01-27 13:57:11,508 PID: 12766 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-01-27 13:57:12,510 PID: 12766 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-01-27 13:57:13,102 PID: 12766 __init__.py:91 - DEBUG - connecting to host ec2-23-22-62-217.compute-1.amazonaws.com on port 22 as user root
+2013-01-27 13:57:13,512 PID: 12766 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2013-01-27 13:57:13,551 PID: 12766 __init__.py:180 - DEBUG - creating sftp connection
+2013-01-27 13:57:14,514 PID: 12766 utils.py:98 - INFO - Waiting for cluster to come up took 3.201 mins
+2013-01-27 13:57:14,514 PID: 12766 cluster.py:1489 - INFO - The master node is ec2-184-73-140-42.compute-1.amazonaws.com
+2013-01-27 13:57:14,515 PID: 12766 cluster.py:1490 - INFO - Configuring cluster...
+2013-01-27 13:57:14,745 PID: 12766 cluster.py:1317 - INFO - Attaching volume vol-11686f6f to master node on /dev/sdz ...
+2013-01-27 13:57:15,053 PID: 12766 cluster.py:1319 - DEBUG - resp = attaching
+2013-01-27 13:57:15,054 PID: 12766 awsutils.py:1026 - INFO - Waiting for vol-11686f6f to transition to: attached... 
+2013-01-27 13:57:23,046 PID: 12766 cluster.py:687 - DEBUG - existing nodes: {u'i-fc1ec98c': <Node: master (i-fc1ec98c)>, u'i-8c1ccbfc': <Node: node001 (i-8c1ccbfc)>}
+2013-01-27 13:57:23,047 PID: 12766 cluster.py:690 - DEBUG - updating existing node i-fc1ec98c in self._nodes
+2013-01-27 13:57:23,047 PID: 12766 cluster.py:690 - DEBUG - updating existing node i-8c1ccbfc in self._nodes
+2013-01-27 13:57:23,048 PID: 12766 cluster.py:703 - DEBUG - returning self._nodes = [<Node: master (i-fc1ec98c)>, <Node: node001 (i-8c1ccbfc)>]
+2013-01-27 13:57:23,048 PID: 12766 cluster.py:1535 - INFO - Running plugin starcluster.clustersetup.DefaultClusterSetup
+2013-01-27 13:57:23,048 PID: 12766 clustersetup.py:103 - INFO - Configuring hostnames...
+2013-01-27 13:57:23,061 PID: 12766 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2013-01-27 13:57:23,166 PID: 12766 __init__.py:521 - DEBUG - executing remote command: source /etc/profile && hostname -F /etc/hostname
+2013-01-27 13:57:23,166 PID: 12766 __init__.py:521 - DEBUG - executing remote command: source /etc/profile && hostname -F /etc/hostname
+2013-01-27 13:57:23,212 PID: 12766 __init__.py:545 - DEBUG - output of 'source /etc/profile && hostname -F /etc/hostname':
+
+2013-01-27 13:57:23,214 PID: 12766 __init__.py:545 - DEBUG - output of 'source /etc/profile && hostname -F /etc/hostname':
+
+2013-01-27 13:57:24,360 PID: 12766 clustersetup.py:297 - INFO - Mounting EBS volume vol-11686f6f on /home/guido/cesm...
+2013-01-27 13:57:24,393 PID: 12766 __init__.py:521 - DEBUG - executing remote command: source /etc/profile && mount
+2013-01-27 13:57:24,433 PID: 12766 __init__.py:545 - DEBUG - output of 'source /etc/profile && mount':
+/dev/xvda1 on / type ext4 (rw)
+proc on /proc type proc (rw,noexec,nosuid,nodev)
+sysfs on /sys type sysfs (rw,noexec,nosuid,nodev)
+none on /sys/fs/fuse/connections type fusectl (rw)
+none on /sys/kernel/debug type debugfs (rw)
+none on /sys/kernel/security type securityfs (rw)
+udev on /dev type devtmpfs (rw,mode=0755)
+devpts on /dev/pts type devpts (rw,noexec,nosuid,gid=5,mode=0620)
+tmpfs on /run type tmpfs (rw,noexec,nosuid,size=10%,mode=0755)
+none on /run/lock type tmpfs (rw,noexec,nosuid,nodev,size=5242880)
+none on /run/shm type tmpfs (rw,nosuid,nodev)
+/dev/xvdb1 on /mnt type ext3 (rw)
+rpc_pipefs on /run/rpc_pipefs type rpc_pipefs (rw)
+2013-01-27 13:57:24,597 PID: 12766 __init__.py:279 - DEBUG - new /etc/fstab after removing regex ( /home/guido/cesm ) matches:
+LABEL=cloudimg-rootfs	/	 ext4	defaults	0 0
+/dev/xvdb1	/mnt	auto	defaults,nobootwait,comment=cloudconfig	0	2
+
+2013-01-27 13:57:24,939 PID: 12766 __init__.py:521 - DEBUG - executing remote command: source /etc/profile && mount /home/guido/cesm
+2013-01-27 13:57:25,076 PID: 12766 __init__.py:545 - DEBUG - output of 'source /etc/profile && mount /home/guido/cesm':
+
+2013-01-27 13:57:25,180 PID: 12766 clustersetup.py:168 - INFO - Creating cluster user: guido (uid: 0, gid: 0)
+2013-01-27 13:57:25,182 PID: 12766 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2013-01-27 13:57:25,279 PID: 12766 clustersetup.py:179 - DEBUG - user root exists on master with same uid/gid as cluster user guido...removing user root
+2013-01-27 13:57:25,281 PID: 12766 clustersetup.py:179 - DEBUG - user root exists on node001 with same uid/gid as cluster user guido...removing user root
+2013-01-27 13:57:25,315 PID: 12766 __init__.py:521 - DEBUG - executing remote command: source /etc/profile && userdel root
+2013-01-27 13:57:25,315 PID: 12766 __init__.py:521 - DEBUG - executing remote command: source /etc/profile && userdel root
+2013-01-27 13:57:26,184 PID: 12766 cluster.py:1545 - ERROR - Error occured while running plugin 'starcluster.clustersetup.DefaultClusterSetup':
+2013-01-27 13:57:26,185 PID: 12766 cli.py:266 - ERROR - error occurred in job (id=master): remote command 'source /etc/profile && userdel root' failed with status 8:
+userdel: user root is currently logged in
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.9999-py2.7.egg/starcluster/threadpool.py", line 31, in run
+    job.run()
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.9999-py2.7.egg/starcluster/threadpool.py", line 58, in run
+    r = self.method(*self.args, **self.kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.9999-py2.7.egg/starcluster/clustersetup.py", line 180, in _add_user_to_node
+    node.remove_user(username)
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.9999-py2.7.egg/starcluster/node.py", line 595, in remove_user
+    self.ssh.execute('userdel %s' % name)
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.9999-py2.7.egg/starcluster/sshutils/__init__.py", line 538, in execute
+    msg, command, exit_status, out_str)
+RemoteCommandFailed: remote command 'source /etc/profile && userdel root' failed with status 8:
+userdel: user root is currently logged in
+
+error occurred in job (id=node001): remote command 'source /etc/profile && userdel root' failed with status 8:
+userdel: user root is currently logged in
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.9999-py2.7.egg/starcluster/threadpool.py", line 31, in run
+    job.run()
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.9999-py2.7.egg/starcluster/threadpool.py", line 58, in run
+    r = self.method(*self.args, **self.kwargs)
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.9999-py2.7.egg/starcluster/clustersetup.py", line 180, in _add_user_to_node
+    node.remove_user(username)
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.9999-py2.7.egg/starcluster/node.py", line 595, in remove_user
+    self.ssh.execute('userdel %s' % name)
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.9999-py2.7.egg/starcluster/sshutils/__init__.py", line 538, in execute
+    msg, command, exit_status, out_str)
+RemoteCommandFailed: remote command 'source /etc/profile && userdel root' failed with status 8:
+userdel: user root is currently logged in
+

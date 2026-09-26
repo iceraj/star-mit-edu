@@ -1,0 +1,202 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Andrea La Rizza ((no email))" />
+<meta name="Subject" content="using starcluster with a private AMI, ssh passwordless communication between nodes" />
+<title>starcluster.mbox.out: using starcluster with a private AMI, ssh passwordless communication between nodes</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">using starcluster with a private AMI, ssh passwordless communication between nodes</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>using starcluster with a private AMI, ssh passwordless communication between nodes</h1>
+<!-- received="Fri Apr 17 07:31:04 2015" -->
+<!-- isoreceived="20150417113104" -->
+<!-- sent="Fri, 17 Apr 2015 13:31:00 +0200" -->
+<!-- isosent="20150417113100" -->
+<!-- name="Andrea La Rizza" -->
+<!-- email="(no email)" -->
+<!-- subject="using starcluster with a private AMI, ssh passwordless communication between nodes" -->
+<!-- id="5530EEF4.3000602_at_alef.it" -->
+<!-- charset="iso-8859-15" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2602.html#start2602" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2602.html#options2">top</a>, <a href="2602.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2603.html" accesskey="d" title="Eduardo Gurgel Valente: &quot;Re:  using starcluster with a private AMI, ssh passwordless communication between nodes&quot;">Next message</a> ]
+[ <a href="2601.html" title="Ryan G: &quot;Re:  parallel ssh support?&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="2603.html" accesskey="t" title="Eduardo Gurgel Valente: &quot;Re:  using starcluster with a private AMI, ssh passwordless communication between nodes&quot;">Next in thread</a> ]
+ [ <a href="2602.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2602" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2602" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2602" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2602" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Andrea La Rizza &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Fri, 17 Apr 2015 13:31:00 +0200</span><br />
+</address>
+<br />
+I'm using starcluster to manage an MPI cluster for parallel scientific 
+<br />
+computation. I don't want to use the pre-installed OpenMPI environment 
+<br />
+since the executables ? have to use are compiled with Intel softwares. 
+<br />
+So I have my private CentOS AMI created from aws console with all the 
+<br />
+Intel environment pre-installed. The problem is that IntelMPI uses by 
+<br />
+default ssh connectivity without password authentication to make nodes 
+<br />
+communicate amoung them to work. I want to know if there is some 
+<br />
+feauture in the config starcluster file such that ssh connectivity intra 
+<br />
+nodes comes pre setted with rsa authentication. I have read that this 
+<br />
+feauture should be enabled by default with the sgeadmin user, but when i 
+<br />
+launch the cluster at a certain point I received this error:
+<br />
+<br />!! ERROR - Error occured while running plugin 
+<br />
+'starcluster.clustersetup.DefaultClusterSetup':
+<br />
+!!! ERROR - Cannot create user: (uid: 0, gid: 0). This is caused by
+<br />
+!!! ERROR - /home/ directory being owned by root. To fix this you'll
+<br />
+!!! ERROR - need to create a new AMI. Note that the instance is still
+<br />
+!!! ERROR - up.
+<br />
+and neither the user sgeadmin is created neither the /etc/hosts file is 
+<br />
+filled with the names and IPs of all nodes of the cluster.
+<br />
+<span id="received"><dfn>Received on</dfn> Fri Apr 17 2015 - 07:31:04 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2602.html#start2602">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2603.html" title="Next message in the list">Eduardo Gurgel Valente: "Re:  using starcluster with a private AMI, ssh passwordless communication between nodes"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2601.html" title="Previous message in the list">Ryan G: "Re:  parallel ssh support?"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="2603.html" title="Next message in this discussion thread">Eduardo Gurgel Valente: "Re:  using starcluster with a private AMI, ssh passwordless communication between nodes"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="2603.html" title="Message sent in reply to this message">Eduardo Gurgel Valente: "Re:  using starcluster with a private AMI, ssh passwordless communication between nodes"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2602" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2602" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2602" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2602" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

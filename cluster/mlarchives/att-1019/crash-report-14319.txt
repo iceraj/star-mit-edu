@@ -1,0 +1,35 @@
+---------- CRASH DETAILS ----------
+COMMAND: starcluster start -x test-meep
+2012-02-06 16:54:07,005 PID: 14319 config.py:551 - DEBUG - Loading config
+2012-02-06 16:54:07,005 PID: 14319 config.py:118 - DEBUG - Loading file: /exports/mpiuser/.starcluster/config
+2012-02-06 16:54:07,006 PID: 14319 config.py:118 - DEBUG - Loading file: /exports/mpiuser/.starcluster/config
+2012-02-06 16:54:07,006 PID: 14319 config.py:118 - DEBUG - Loading file: /exports/mpiuser/.starcluster/include/main
+2012-02-06 16:54:07,006 PID: 14319 config.py:118 - DEBUG - Loading file: /exports/mpiuser/.starcluster/include/awskeys
+2012-02-06 16:54:07,007 PID: 14319 config.py:118 - DEBUG - Loading file: /exports/mpiuser/.starcluster/include/clusters
+2012-02-06 16:54:07,010 PID: 14319 awsutils.py:54 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'proxy_user': None, 'proxy_pass': None, 'proxy_port': None, 'proxy': None, 'is_secure': True, 'path': '/', 'region': RegionInfo:eu-west-1, 'port': None}
+2012-02-06 16:54:07,475 PID: 14319 cluster.py:665 - DEBUG - existing nodes: {}
+2012-02-06 16:54:07,475 PID: 14319 cluster.py:673 - DEBUG - adding node i-9ef6b6d7 to self._nodes list
+2012-02-06 16:54:07,476 PID: 14319 cluster.py:673 - DEBUG - adding node i-e0f8b8a9 to self._nodes list
+2012-02-06 16:54:07,476 PID: 14319 cluster.py:673 - DEBUG - adding node i-20f9b969 to self._nodes list
+2012-02-06 16:54:07,476 PID: 14319 cluster.py:681 - DEBUG - returning self._nodes = [<Node: master (i-9ef6b6d7)>, <Node: node001 (i-e0f8b8a9)>, <Node: node002 (i-20f9b969)>]
+2012-02-06 16:54:07,476 PID: 14319 cluster.py:513 - INFO - Validating existing instances...
+2012-02-06 16:54:07,478 PID: 14319 cli.py:287 - DEBUG - Traceback (most recent call last):
+  File "/usr/local/lib/python2.6/dist-packages/StarCluster-0.93.1-py2.6.egg/starcluster/cli.py", line 255, in main
+    sc.execute(args)
+  File "/usr/local/lib/python2.6/dist-packages/StarCluster-0.93.1-py2.6.egg/starcluster/commands/start.py", line 193, in execute
+    validate_running=validate_running)
+  File "/usr/local/lib/python2.6/dist-packages/StarCluster-0.93.1-py2.6.egg/starcluster/cluster.py", line 1382, in start
+    self._validate_running_instances()
+  File "/usr/local/lib/python2.6/dist-packages/StarCluster-0.93.1-py2.6.egg/starcluster/cluster.py", line 517, in _validate_running_instances
+    itype, image = rlmap.get(node.alias)
+TypeError: 'NoneType' object is not iterable
+
+---------- SYSTEM INFO ----------
+StarCluster: 0.93.1
+Python: 2.6.5 (r265:79063, Apr 16 2010, 13:57:41)  [GCC 4.4.3]
+Platform: Linux-2.6.32-23-generic-x86_64-with-Ubuntu-10.04-lucid
+boto: 2.0
+paramiko: 1.7.7.1 (George)
+Crypto: 2.5
+jinja2: 2.5.5
+decorator: 3.3.1

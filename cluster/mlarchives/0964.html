@@ -1,0 +1,998 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Rayson Ho ((no email))" />
+<meta name="Subject" content="Re:  AWS instance runs out of memory and swaps" />
+<title>starcluster.mbox.out: Re:  AWS instance runs out of memory and swaps</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Re:  AWS instance runs out of memory and swaps</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Re:  AWS instance runs out of memory and swaps</h1>
+<!-- received="Thu Jan  5 15:05:17 2012" -->
+<!-- isoreceived="20120105200517" -->
+<!-- sent="Thu, 5 Jan 2012 12:05:15 -0800 (PST)" -->
+<!-- isosent="20120105200515" -->
+<!-- name="Rayson Ho" -->
+<!-- email="(no email)" -->
+<!-- subject="Re:  AWS instance runs out of memory and swaps" -->
+<!-- id="1325793915.70825.YahooMailNeo_at_web30606.mail.mud.yahoo.com" -->
+<!-- charset="iso-8859-1" -->
+<!-- inreplyto="4EDD6010.8030005_at_mit.edu" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="0964.html#start964" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="0964.html#options2">top</a>, <a href="0964.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="0965.html" accesskey="d" title="Rayson Ho: &quot;Re:  Using Starcluster with micro instances?&quot;">Next message</a> ]
+[ <a href="0963.html" title="Justin Riley: &quot;Re:  Trouble Migrating StarCluster from us-east-1 to us-west-1&quot;">Previous message</a> ]
+[ <a href="0919.html" title="Justin Riley: &quot;Re:  AWS instance runs out of memory and swaps&quot;">In reply to</a> ]
+<!-- unextthread="start" -->
+[ <a href="0921.html" accesskey="t" title="Rayson Ho: &quot;Re:  AWS instance runs out of memory and swaps&quot;">Next in thread</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg964" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg964" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg964" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg964" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Rayson Ho &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 5 Jan 2012 12:05:15 -0800 (PST)</span><br />
+</address>
+<br />
+Hi Justin,
+<br />
+<br />If you are not referring to the simple issue of qconf not in the PATH, then the real issue of &quot;AWS instances running out of memory &amp; swap&quot; has to do with Grid Engine's internal accounting, and how it debts the expected resource usage of each job on the nodes. I will write some docs related to this part of Grid Engine, so that users of Open Grid Scheduler/Grid Engine and StarCluster will benefit when they need to handle this kind of job scheduling.
+<br />
+<br />Rayson
+<br />
+<br />=================================
+<br />
+Open Grid Scheduler / Grid Engine
+<br />
+<a href="http://gridscheduler.sourceforge.net/">http://gridscheduler.sourceforge.net/</a>
+<br />
+<br />Scalable Grid Engine Support Program
+<br />
+<a href="http://www.scalablelogic.com/">http://www.scalablelogic.com/</a>
+<br />
+<br />________________________________
+<br />
+From: Justin Riley &lt;jtriley_at_MIT.EDU&gt;
+<br />
+To: Amirhossein Kiani &lt;amirhkiani_at_gmail.com&gt; 
+<br />
+Cc: Rayson Ho &lt;raysonlogin_at_yahoo.com&gt;; &quot;starcluster_at_mit&#46;<!--nospam-->edu&quot; &lt;starcluster_at_mit&#46;<!--nospam-->edu&gt; 
+<br />
+Sent: Monday, December 5, 2011 7:21 PM
+<br />
+Subject: Re: [StarCluster] AWS instance runs out of memory and swaps
+<br />
+<br />In any event, glad you got things working. Would you mind sharing the exact settings/procedures you used to fix the issue? This should probably be tunable from StarCluster...
+<br />
+<br />~Justin
+<br />
+<br /><br />On 12/5/11 6:16 PM, Amirhossein Kiani wrote:
+<br />
+<em class="quotelev1">&gt; Thanks Justin... I think the issue was I had &quot;sudo su&quot; 'ed on the instance and qconf was not on the roots path...
+</em><br />
+<em class="quotelev1">&gt; I teared down my cluster and creating a new one...
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; On Dec 5, 2011, at 3:13 PM, Justin Riley wrote:
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Amir,
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; qconf is included in the StarCluster AMIs so there must be
+</em><br />
+      some other
+<br />
+<em class="quotelev1">&gt; issue you're facing. Also, I wouldn't recommend installing
+</em><br />
+      the
+<br />
+<em class="quotelev1">&gt; gridengine packages from ubuntu as they're most likely not
+</em><br />
+      compatible
+<br />
+<em class="quotelev1">&gt; with StarCluster's bundled version in /opt/sge6 as you're
+</em><br />
+      seeing.
+<br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; With that said which AMI are you using and what does &quot;echo
+</em><br />
+      $PATH&quot; look
+<br />
+<em class="quotelev1">&gt; like when you login as root (via sshmaster)?
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; ~Justin
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; On 12/05/2011 06:07 PM, Amirhossein Kiani wrote:
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; So I tried this and couldn't run qconf because
+</em><br />
+      it was not
+<br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; installed. I then tried installing it using
+</em><br />
+      apt-get and specified
+<br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; default for the cell name and &quot;master&quot; for the
+</em><br />
+      master name which
+<br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; is the default for the SGE created using
+</em><br />
+      StarCluster.
+<br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; However now when I want to use qconf, it says:
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; root_at_master:/data/stanford/aligned# qconf
+</em><br />
+      -msconf error: commlib
+<br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; error: got select error (Connection refused)
+</em><br />
+      unable to send
+<br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; message to qmaster using port 6444 on host
+</em><br />
+      &quot;master&quot;: got send
+<br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; error
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; Any idea how i could configure it to work?
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; Many thanks, Amir
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; On Dec 5, 2011, at 1:52 PM, Rayson Ho wrote:
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt; Hi Amirhossein,
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt; I was working on a few other things, and I
+</em><br />
+      just saw your message
+<br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt; -- I have to spend less time on mailing list
+</em><br />
+      discussions these
+<br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt; days due to the number of things that I
+</em><br />
+      needed to develop and/or
+<br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt; fix, and I am also working on a new patch
+</em><br />
+      release of OGS/Grid
+<br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt; Engine 2011.11. Luckily, I just found the
+</em><br />
+      mail that exactly
+<br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt; solves the issue you are encountering:
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt; <a href="http://markmail.org/message/zdj5ebfrzhnadglf">http://markmail.org/message/zdj5ebfrzhnadglf</a>
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt; For more info, see the
+</em><br />
+      &quot;job_load_adjustments&quot; and
+<br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt; &quot;load_adjustment_decay_time&quot; parameters in
+</em><br />
+      the Grid Engine
+<br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt; manpage:
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;
+</em><br />
+<a href="http://gridscheduler.sourceforge.net/htmlman/htmlman5/sched_conf.html">http://gridscheduler.sourceforge.net/htmlman/htmlman5/sched_conf.html</a>
+<br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; Rayson
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt; ================================= Grid
+</em><br />
+      Engine / Open Grid
+<br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt; Scheduler
+</em><br />
+<a href="http://gridscheduler.sourceforge.net/">http://gridscheduler.sourceforge.net/</a>
+<br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt; Scalable Grid Engine Support Program
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt; <a href="http://www.scalablelogic.com/">http://www.scalablelogic.com/</a>
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt; ________________________________ From:
+</em><br />
+      Amirhossein Kiani
+<br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt; &lt;amirhkiani_at_gmail.com&gt; To: Rayson Ho &lt;raysonlogin_at_yahoo&#46;<!--nospam-->com&gt; Cc:
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt; Justin Riley &lt;justin.t.riley_at_gmail.com&gt;; &quot;starcluster_at_mit&#46;<!--nospam-->edu&quot;
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt; &lt;starcluster_at_mit.edu&gt; Sent: Friday, December 2, 2011 6:36 PM
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt; Subject: Re: [StarCluster] AWS instance runs
+</em><br />
+      out of memory and
+<br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt; swaps
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt; Dear Rayson,
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt; Did you have a chance to test your solution
+</em><br />
+      on this? Basically,
+<br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt; all I want is to prevent a job from running
+</em><br />
+      on an instance if it
+<br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt; does not have the memory required for the
+</em><br />
+      job.
+<br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt; I would very much appreciate your help!
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt; Many thanks, Amir
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt; On Nov 21, 2011, at 10:29 AM, Rayson Ho
+</em><br />
+      wrote:
+<br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt; Amir,
+</em><br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt; You can use qhost to list all the node
+</em><br />
+      and resources that each
+<br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt; node has.
+</em><br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt; I have an answer to the memory issue,
+</em><br />
+      but I have not have time
+<br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt; to properly type up a response and test
+</em><br />
+      it.
+<br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt; Rayson
+</em><br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt; ________________________________ From:
+</em><br />
+      Amirhossein Kiani
+<br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt; &lt;amirhkiani_at_gmail.com&gt; To: Justin Riley
+</em><br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt; &lt;justin.t.riley_at_gmail.com&gt; Cc: Rayson Ho
+</em><br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt; &lt;rayrayson_at_gmail.com&gt;; &quot;starcluster_at_mit&#46;<!--nospam-->edu&quot;
+</em><br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt; &lt;starcluster_at_mit.edu&gt; Sent: Monday, November 21, 2011 1:26 PM
+</em><br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt; Subject: Re: [StarCluster] AWS instance
+</em><br />
+      runs out of memory and
+<br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt; swaps
+</em><br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt; Hi Justin,
+</em><br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt; Many thanks for your reply. I don't have
+</em><br />
+      any issue with
+<br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt; multiple jobs running per node if there
+</em><br />
+      is enough memory for
+<br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt; them. But since I know about the nature
+</em><br />
+      of my jobs, I can
+<br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt; predict that only one per node should be
+</em><br />
+      running. How can I
+<br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt; see how much memory does SGE think each
+</em><br />
+      node have? Is there a
+<br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt; way to list that?
+</em><br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt; Regards, Amir
+</em><br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt; On Nov 21, 2011, at 8:18 AM, Justin
+</em><br />
+      Riley wrote:
+<br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;&gt;&gt;&gt;&gt; Hi Amir,
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;&gt;&gt;&gt;&gt; Sorry to hear you're still having
+</em><br />
+      issues. This is really
+<br />
+<em class="quotelev3">&gt; &gt;&gt;&gt;&gt;&gt;&gt; more of an SGE issue more than
+</em><br />
+      anything but perhaps Rayson
+<br />
+<em class="quotelev3">&gt; &gt;&gt;&gt;&gt;&gt;&gt; can give a better insight as to
+</em><br />
+      what's going on. It seems
+<br />
+<em class="quotelev3">&gt; &gt;&gt;&gt;&gt;&gt;&gt; you're using 23G nodes and 12GB
+</em><br />
+      jobs. Just for drill does
+<br />
+<em class="quotelev3">&gt; &gt;&gt;&gt;&gt;&gt;&gt; 'qhost' show each node having 23GB?
+</em><br />
+      Definitely seems like
+<br />
+<em class="quotelev3">&gt; &gt;&gt;&gt;&gt;&gt;&gt; there's a boundary issue here given
+</em><br />
+      that two of your jobs
+<br />
+<em class="quotelev3">&gt; &gt;&gt;&gt;&gt;&gt;&gt; together approaches the total memory
+</em><br />
+      of the machine (23GB).
+<br />
+<em class="quotelev3">&gt; &gt;&gt;&gt;&gt;&gt;&gt; Is it your goal only to have one job
+</em><br />
+      per
+<br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt; node?
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;&gt;&gt;&gt;&gt; ~Justin
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;&gt;&gt;&gt;&gt; On 11/16/2011 09:00 PM, Amirhossein
+</em><br />
+      Kiani wrote:
+<br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt; Dear all,
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt; I even wrote the queue
+</em><br />
+      submission script myself, adding
+<br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt; the
+</em><br />
+      mem_free=MEM_NEEDED,h_vmem=MEM_MAX parameter but
+<br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt; sometimes two jobs are randomly
+</em><br />
+      sent to one node that does
+<br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt; not have enough memory for two
+</em><br />
+      jobs and they start running.
+<br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt; I think the SGE should check on
+</em><br />
+      the instance memory and not
+<br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt; run multiple jobs on a machine
+</em><br />
+      when the memory requirement
+<br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt; for the jobs in total is above
+</em><br />
+      the memory available in the
+<br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt; node (or maybe there is a bug in
+</em><br />
+      the current check)
+<br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt; Amir
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt; On Nov 8, 2011, at 5:37 PM,
+</em><br />
+      Amirhossein Kiani wrote:
+<br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; Hi Justin,
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; I'm using a third-party tool
+</em><br />
+      to submit the jobs but I am
+<br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; setting the hard
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt; limit.
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; For all my jobs I have
+</em><br />
+      something like this for the job
+<br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; description:
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; [root_at_master test]# qstat -j
+</em><br />
+      1
+<br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+      ==============================================================
+<br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; job_number: 1
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; exec_file: job_scripts/1
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; submission_time: Tue Nov 8
+</em><br />
+      17:31:39 2011
+<br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; owner: root uid: 0 group:
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; root gid: 0
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt; sge_o_home: /root
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; sge_o_log_name: root
+</em><br />
+      sge_o_path:
+<br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+/home/apps/bin:/home/apps/vcftools_0.1.7/bin:/home/apps/tabix-0.2.5:/home/apps/BEDTools-Version-2.14.2/bin:/home/apps/samtools/bcftools:/home/apps/samtools:/home/apps/bwa-0.5.9:/home/apps/Python-2.7.2:/usr/lib/jvm/java-1.6.0-openjdk-1.6.0.0.x86_64/bin:/home/apps/sjm-1.0/bin:/home/apps/hugeseq/bin:/usr/lib64/openmpi/1.4-gcc/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/cuda/bin:/usr/local/cuda/computeprof/bin:/usr/local/cuda/open64/bin:/opt/sge6/bin/lx24-amd64:/root/bin
+<br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; sge_o_shell: /bin/bash
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; sge_o_workdir:
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt; /data/test
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; sge_o_host: master account:
+</em><br />
+      sge
+<br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; stderr_path_list:
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+      NONE:master:/data/log/SAMPLE.bin_aln-chr1_e111108173139.txt
+<br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; *hard resource_list: h_vmem=12000M*
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; mail_list: root_at_master
+</em><br />
+      notify: FALSE
+<br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; job_name:
+</em><br />
+      SAMPLE.bin_aln-chr1
+<br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; stdout_path_list:
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+      NONE:master:/data/log/SAMPLE.bin_aln-chr1_o111108173139.txt
+<br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; jobshare:
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt; 0
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; hard_queue_list: all.q
+</em><br />
+      env_list: job_args:
+<br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+      -c,/home/apps/hugeseq/bin/hugeseq_mod.sh bin_sam.sh chr1
+<br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; /data/chr1.bam
+</em><br />
+      /data/bwa_small.bam &amp;&amp;
+<br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+      /home/apps/hugeseq/bin/hugeseq_mod.sh sam_index.sh
+<br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; /data/chr1.bam script_file:
+</em><br />
+      /bin/sh
+<br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; verify_suitable_queues: 2
+</em><br />
+      scheduling info:
+<br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; (Collecting of scheduler job
+</em><br />
+      information is turned off)
+<br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; And I'm using the Cluster
+</em><br />
+      GPU Quadruple Extra Large
+<br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; instances which
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt; I
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; think has about 23G memory.
+</em><br />
+      The issue that I see is too
+<br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; many of the jobs are
+</em><br />
+      submitted. I guess I need to set
+<br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; the mem_free too? (the
+</em><br />
+      problem is the tool im using does
+<br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; not seem to have a way tot
+</em><br />
+      set that...)
+<br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; Many thanks, Amir
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; On Nov 8, 2011, at 5:47 AM,
+</em><br />
+      Justin Riley wrote:
+<br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt; Hi Amirhossein,
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt; Did you specify the memory usage
+</em><br />
+      in your job script or at
+<br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt; command line and what parameters
+</em><br />
+      did you use exactly?
+<br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt; Doing a quick search I believe
+</em><br />
+      that the following will
+<br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt; solve the problem although I
+</em><br />
+      haven't tested myself:
+<br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt; $ qsub -l
+</em><br />
+      mem_free=MEM_NEEDED,h_vmem=MEM_MAX yourjob.sh
+<br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt; Here, MEM_NEEDED and MEM_MAX are
+</em><br />
+      the lower and
+<br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt; upper bounds for your
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt; job's memory requirements.
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt; HTH,
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt; ~Justin
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt; On 7/22/64 2:59 PM, Amirhossein
+</em><br />
+      Kiani wrote:
+<br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; Dear Star Cluster users,
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; I'm using Star Cluster to
+</em><br />
+      set up an SGE and when I ran
+<br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; my job list,
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt; although I had specified the
+</em><br />
+      memory usage for each job, it
+<br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt; submitted too many jobs on my
+</em><br />
+      instance and my instance
+<br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt; started going out of memory and
+</em><br />
+      swapping.
+<br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; I wonder if anyone knows how
+</em><br />
+      I could tell the SGE the
+<br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; max memory to
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt; consider when submitting jobs to
+</em><br />
+      each node so that it
+<br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt; doesn't run the jobs if there is
+</em><br />
+      not enough memory
+<br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt; available on a node.
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; I'm using the Cluster GPU
+</em><br />
+      Quadruple Extra Large
+<br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; instances.
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; Many thanks, Amirhossein
+</em><br />
+      Kiani
+<br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+      _______________________________________________
+<br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt; StarCluster mailing list StarCluster_at_mit.edu
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;&gt;&gt;&gt;&gt; <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt;
+</em><br />
+      _______________________________________________ StarCluster
+<br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt; mailing list StarCluster_at_mit.edu
+</em><br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt; <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt; &gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; _______________________________________________
+</em><br />
+      StarCluster
+<br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; mailing list StarCluster_at_mit.edu
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<br />-----BEGIN PGP SIGNATURE-----
+<br />
+Version: GnuPG v1.4.11 (Darwin)
+<br />
+Comment: Using GnuPG with Mozilla - <a href="http://enigmail.mozdev.org/">http://enigmail.mozdev.org/</a>
+<br />
+<br />iEYEARECAAYFAk7dYA8ACgkQ4llAkMfDcrl3/gCfWl/niHCWOAmdAe9kRF5I6r//
+<br />
+bTQAnjM5LpXxNLrPX7Pr+lXlxkJTkBJN
+<br />
+=9p5j
+<br />
+-----END PGP SIGNATURE-----            
+<br />
+<span id="received"><dfn>Received on</dfn> Thu Jan 05 2012 - 15:05:17 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="0964.html#start964">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="0965.html" title="Next message in the list">Rayson Ho: "Re:  Using Starcluster with micro instances?"</a></li>
+<li><dfn>Previous message</dfn>: <a href="0963.html" title="Previous message in the list">Justin Riley: "Re:  Trouble Migrating StarCluster from us-east-1 to us-west-1"</a></li>
+<li><dfn>In reply to</dfn>: <a href="0919.html" title="Message to which this message replies">Justin Riley: "Re:  AWS instance runs out of memory and swaps"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="0921.html" title="Next message in this discussion thread">Rayson Ho: "Re:  AWS instance runs out of memory and swaps"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg964" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg964" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg964" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg964" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

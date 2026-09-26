@@ -1,0 +1,191 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Vladimir Trifonov ((no email))" />
+<meta name="Subject" content="crash-report-11478.txt" />
+<title>starcluster.mbox.out: crash-report-11478.txt</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">crash-report-11478.txt</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>crash-report-11478.txt</h1>
+<!-- received="Thu Jun 23 18:43:42 2016" -->
+<!-- isoreceived="20160623224342" -->
+<!-- sent="Thu, 23 Jun 2016 22:43:37 +0000" -->
+<!-- isosent="20160623224337" -->
+<!-- name="Vladimir Trifonov" -->
+<!-- email="(no email)" -->
+<!-- subject="crash-report-11478.txt" -->
+<!-- id="2A4D9439-6135-4D6A-804B-88F6AF505CE5_at_gnf.org" -->
+<!-- charset="utf-8" -->
+<!-- inreplyto="B310369F-1FE2-49D2-BDA2-0752A12471B5_at_gnf.org" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2817.html#start2817" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2817.html#options2">top</a>, <a href="2817.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2818.html" accesskey="d" title="Ryan G: &quot;Re:  Increase /tmp space&quot;">Next message</a> ]
+[ <a href="2816.html" title="Alex Lee: &quot;Increase /tmp space&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2817" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2817" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2817" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2817" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Vladimir Trifonov &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 23 Jun 2016 22:43:37 +0000</span><br />
+</address>
+<br />
+Hi,
+<br />
+
+<br />
+I just installed starcluster and am … trying to start a cluster. Unfortunately, &quot;startcluster start mycluster&quot; produced the attached crash report. The cluster afterwards is seemingly running. I can ssh into the master/node, although 'starcluster sshmaster/node’ logs in as root, not as sgeadmin. In fact, there is no sgeadmin in the created instance (although there is ubuntu). Also SGE does not seem to be installed because qstat returns (this is probably  a “problem” with the ami-04bedf34 that I am using)
+<br />
+
+<br />
+The program 'qstat' can be found in the following packages:
+<br />
+&nbsp;* gridengine-client
+<br />
+&nbsp;* slurm-llnl-torque
+<br />
+&nbsp;* torque-client
+<br />
+&nbsp;* torque-client-x11
+<br />
+
+<br />
+Thanks,
+<br />
+Vladimir
+<br />
+<br />
+<br /><div>
+<ul>
+<li>text/plain attachment: <a href="att-2817/crash-report-11478.txt">crash-report-11478.txt</a></li>
+</ul>
+<!-- attachment="crash-report-11478.txt" -->
+</div>
+<span id="received"><dfn>Received on</dfn> Thu Jun 23 2016 - 18:43:42 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2817.html#start2817">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2818.html" title="Next message in the list">Ryan G: "Re:  Increase /tmp space"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2816.html" title="Previous message in the list">Alex Lee: "Increase /tmp space"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2817" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2817" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2817" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2817" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

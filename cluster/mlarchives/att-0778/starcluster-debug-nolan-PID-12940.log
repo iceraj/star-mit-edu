@@ -1,0 +1,25 @@
+PID: 12940 config.py:515 - DEBUG - Loading config
+PID: 12940 config.py:108 - DEBUG - Loading file: /Users/nolan/.starcluster/config
+PID: 12940 config.py:515 - DEBUG - Loading config
+PID: 12940 config.py:108 - DEBUG - Loading file: /Users/nolan/.starcluster/config
+PID: 12940 awsutils.py:54 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'path': '/', 'region': RegionInfo:us-west-1, 'port': None, 'is_secure': True}
+PID: 12940 start.py:167 - INFO - Using default cluster template: smallcluster
+PID: 12940 cluster.py:1333 - INFO - Validating cluster template settings...
+PID: 12940 cli.py:177 - DEBUG - Traceback (most recent call last):
+  File "/Users/nolan/.virtualenv/test/lib/python2.7/site-packages/starcluster/cli.py", line 155, in main
+    sc.execute(args)
+  File "/Users/nolan/.virtualenv/test/lib/python2.7/site-packages/starcluster/commands/start.py", line 175, in execute
+    scluster._validate(validate_running=validate_running)
+  File "/Users/nolan/.virtualenv/test/lib/python2.7/site-packages/starcluster/cluster.py", line 1345, in _validate
+    self._validate_instance_types()
+  File "/Users/nolan/.virtualenv/test/lib/python2.7/site-packages/starcluster/cluster.py", line 1481, in _validate_instance_types
+    self.__check_platform(node_image_id, node_instance_type)
+  File "/Users/nolan/.virtualenv/test/lib/python2.7/site-packages/starcluster/cluster.py", line 1442, in __check_platform
+    image_is_hvm = (image.virtualization_type == "hvm")
+AttributeError: 'Image' object has no attribute 'virtualization_type'
+
+PID: 12940 cli.py:124 - ERROR - Oops! Looks like you've found a bug in StarCluster
+PID: 12940 cli.py:125 - ERROR - Debug file written to: /tmp/starcluster-debug-nolan.log
+PID: 12940 cli.py:126 - ERROR - Look for lines starting with PID: 12940
+PID: 12940 cli.py:127 - ERROR - Please submit this file, minus any private information,
+PID: 12940 cli.py:128 - ERROR - to starcluster@mit.edu

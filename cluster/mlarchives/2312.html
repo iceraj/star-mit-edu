@@ -1,0 +1,197 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="François-Michel L'Heureux ((no email))" />
+<meta name="Subject" content="New StarCluster features" />
+<title>starcluster.mbox.out: New StarCluster features</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">New StarCluster features</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>New StarCluster features</h1>
+<!-- received="Sat Jul 26 13:06:32 2014" -->
+<!-- isoreceived="20140726170632" -->
+<!-- sent="Sat, 26 Jul 2014 13:06:10 -0400" -->
+<!-- isosent="20140726170610" -->
+<!-- name="François-Michel L'Heureux" -->
+<!-- email="(no email)" -->
+<!-- subject="New StarCluster features" -->
+<!-- id="CAHY-btwSeYCzACz=394ZE5qpKfgVADh0Wi59RpG+8Oq9fL8qAA_at_mail.gmail.com" -->
+<!-- charset="UTF-8" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2312.html#start2312" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2312.html#options2">top</a>, <a href="2312.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2313.html" accesskey="d" title="Kristy Choi: &quot;StarCluster with AWS IAM Role&quot;">Next message</a> ]
+[ <a href="2311.html" title="Fran&#0231;ois-Michel L&#0039;Heureux: &quot;Re:  Starcluster - refresh to spot market price&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2312" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2312" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2312" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2312" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: François-Michel L'Heureux &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Sat, 26 Jul 2014 13:06:10 -0400</span><br />
+</address>
+<br />
+In the last two week's I've develop new features in our StarCluster
+<br />
+version. I think they might please some of you so I am sharing them.
+<br />
+<br /><br />&nbsp;&nbsp;&nbsp;- Store Config On master
+<br />
+&nbsp;&nbsp;&nbsp;&lt;<a href="https://github.com/datacratic/StarCluster/commit/4bc1938e6d7829b78295f065300e0cfbe04503f0">https://github.com/datacratic/StarCluster/commit/4bc1938e6d7829b78295f065300e0cfbe04503f0</a>&gt;
+<br />
+&nbsp;&nbsp;&nbsp;to allow easy cluster updates. -&gt; This commit contains the removal of our
+<br />
+&nbsp;&nbsp;&nbsp;previously existing option &quot;reloadconfig&quot;.
+<br />
+&nbsp;&nbsp;&nbsp;- Multiple DNS Support
+<br />
+&nbsp;&nbsp;&nbsp;&lt;<a href="https://github.com/datacratic/StarCluster/commit/0824e39c5d1fd6f5379a433cba575d808daee471">https://github.com/datacratic/StarCluster/commit/0824e39c5d1fd6f5379a433cba575d808daee471</a>&gt;
+<br />
+&nbsp;&nbsp;&nbsp;to allow biding in the cheapest zone when using spot instances.
+<br />
+&nbsp;&nbsp;&nbsp;- DNS Sufix
+<br />
+&nbsp;&nbsp;&nbsp;&lt;<a href="https://github.com/datacratic/StarCluster/commit/72f3bc5ddb028a675f49f3d792c74f6bd3cd1961">https://github.com/datacratic/StarCluster/commit/72f3bc5ddb028a675f49f3d792c74f6bd3cd1961</a>&gt;
+<br />
+&nbsp;&nbsp;&nbsp;just like dns-prefix, but sufix, to allow &quot;clean&quot; hostnames. If you name
+<br />
+&nbsp;&nbsp;&nbsp;your cluster &quot;mycluster.datacratic.com&quot;, you'll get nodes names &quot;
+<br />
+&nbsp;&nbsp;&nbsp;master.mycluster.datacratic.com&quot; and so on.
+<br />
+<br />And a bit of self promo, my dev log
+<br />
+&lt;<a href="http://blog.frank-mich.com/new-starcluster-features/">http://blog.frank-mich.com/new-starcluster-features/</a>&gt; about those 3
+<br />
+features.
+<br />
+<br />Cheers
+<br />
+Mich
+<br />
+<span id="received"><dfn>Received on</dfn> Sat Jul 26 2014 - 13:06:32 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2312.html#start2312">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2313.html" title="Next message in the list">Kristy Choi: "StarCluster with AWS IAM Role"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2311.html" title="Previous message in the list">Fran&#0231;ois-Michel L&#0039;Heureux: "Re:  Starcluster - refresh to spot market price"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2312" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2312" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2312" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2312" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

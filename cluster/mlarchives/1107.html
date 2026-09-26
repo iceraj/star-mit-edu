@@ -1,0 +1,193 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Michael Lachmann ((no email))" />
+<meta name="Subject" content="Creating a volume from a snapshot and mounting it" />
+<title>starcluster.mbox.out: Creating a volume from a snapshot and mounting it</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Creating a volume from a snapshot and mounting it</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Creating a volume from a snapshot and mounting it</h1>
+<!-- received="Fri Mar  9 12:04:47 2012" -->
+<!-- isoreceived="20120309170447" -->
+<!-- sent="Fri, 9 Mar 2012 18:04:26 +0100" -->
+<!-- isosent="20120309170426" -->
+<!-- name="Michael Lachmann" -->
+<!-- email="(no email)" -->
+<!-- subject="Creating a volume from a snapshot and mounting it" -->
+<!-- id="CACxwJKML34tq6U=W0za6b1UVvWWC=LCMqr51gcnXDDscnS8cEw_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1107.html#start1107" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1107.html#options2">top</a>, <a href="1107.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1108.html" accesskey="d" title="Adam Marsh: &quot;master node not in qstat&quot;">Next message</a> ]
+[ <a href="1106.html" title="Justin Riley: &quot;StarCluster 0.93.2 Released!&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1107" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1107" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1107" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1107" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Michael Lachmann &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Fri, 9 Mar 2012 18:04:26 +0100</span><br />
+</address>
+<br />
+Hi,
+<br />
+<br />If I understand correctly, to use a public dataset in the amazon cloud
+<br />
+you create your own personal volume and mount it.
+<br />
+You then pay for that volume for as long as it exists. Since public
+<br />
+datasets can be enormous, and your pay proportional to their size, it
+<br />
+is good to keep them mounted for as short as possible.
+<br />
+<br />So, it would be cool if you could tell Starcluster to create a volume
+<br />
+from a snapshot ID and mount it, and also tell it to unmount it and
+<br />
+delete it.
+<br />
+It would also be cool if in the configuration file you could say &quot;when
+<br />
+this cluster starts, create a volume from this snapshot, mount it, and
+<br />
+when the cluster terminates, delete the volume&quot;
+<br />
+<br />I could write a plugin to do it, but I couldn't see a handle to be
+<br />
+called on termination of the cluster. Can I add code to be called on
+<br />
+termination?
+<br />
+Is something like this possible already?
+<br />
+<br /><br />Thanks!
+<br />
+<span id="received"><dfn>Received on</dfn> Fri Mar 09 2012 - 12:04:47 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1107.html#start1107">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1108.html" title="Next message in the list">Adam Marsh: "master node not in qstat"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1106.html" title="Previous message in the list">Justin Riley: "StarCluster 0.93.2 Released!"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1107" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1107" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1107" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1107" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

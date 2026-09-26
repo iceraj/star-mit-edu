@@ -1,0 +1,318 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="MacMullan, Hugh ((no email))" />
+<meta name="Subject" content="Spot Instance Startup Failure (Bug?)" />
+<title>starcluster.mbox.out: Spot Instance Startup Failure (Bug?)</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Spot Instance Startup Failure (Bug?)</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Spot Instance Startup Failure (Bug?)</h1>
+<!-- received="Thu Apr 12 13:30:16 2012" -->
+<!-- isoreceived="20120412173016" -->
+<!-- sent="Thu, 12 Apr 2012 17:30:14 +0000" -->
+<!-- isosent="20120412173014" -->
+<!-- name="MacMullan, Hugh" -->
+<!-- email="(no email)" -->
+<!-- subject="Spot Instance Startup Failure (Bug?)" -->
+<!-- id="C35D2A9F0F1DBE47832D25035CA02DAB90A93A_at_GENO3.wharton.upenn.edu" -->
+<!-- charset="us-ascii" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1145.html#start1145" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1145.html#options2">top</a>, <a href="1145.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1146.html" accesskey="d" title="Boris Fain: &quot;condor plugin question&quot;">Next message</a> ]
+[ <a href="1144.html" title="Chi Chan: &quot;Re:  Local machine for development&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="1147.html" accesskey="t" title="Justin Riley: &quot;Re:  Spot Instance Startup Failure (Bug?)&quot;">Next in thread</a> ]
+ [ <a href="1145.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1145" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1145" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1145" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1145" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: MacMullan, Hugh &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 12 Apr 2012 17:30:14 +0000</span><br />
+</address>
+<br />
+Folks:
+<br />
+<br /><br /><br />First: any good way to search the archives? I tried various google strings to no good effect. I hate to duplicate effort/messages ...
+<br />
+<br /><br /><br />More importantly: A possible bug? Sometimes when starting SPOT_BID clusters (~30% of the time?) I'm seeing 'start' skip (apparently) &quot;Waiting for open spot requests to become active...&quot; and just process the master. When it works correctly, I see:
+<br />
+<br /><br /><br /><em class="quotelev3">&gt;&gt;&gt; Launching node001 (ami: ami-12b6477b, type: cc1.4xlarge)
+</em><br />
+<br />SpotInstanceRequest:sir-9f38a214
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Launching node002 (ami: ami-12b6477b, type: cc1.4xlarge)
+</em><br />
+<br />SpotInstanceRequest:sir-c4505a11
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Launching node003 (ami: ami-12b6477b, type: cc1.4xlarge)
+</em><br />
+<br />SpotInstanceRequest:sir-cbb32414
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Waiting for cluster to come up... (updating every 20s)
+</em><br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Waiting for open spot requests to become active...
+</em><br />
+<br />0/3 |                                                                  |   0%
+<br />
+<br /><br /><br />When it doesn't work correctly, I see the following, where it skips the highlighted section above and goes straight to 'Waiting for all nodes', and the count is /1 instead of /4 (or whatever the CLUSTER_SIZE is).
+<br />
+<br /><br /><br /># starcluster start -c spottest spottest
+<br />
+<br />StarCluster - (<a href="http://web.mit.edu/starcluster">http://web.mit.edu/starcluster</a>) (v. 0.93.3)
+<br />
+<br />Software Tools for Academics and Researchers (STAR)
+<br />
+<br />Please submit bug reports to starcluster_at_mit.edu
+<br />
+<br /><br /><br /><em class="quotelev3">&gt;&gt;&gt; Validating cluster template settings...
+</em><br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Cluster template settings are valid
+</em><br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Starting cluster...
+</em><br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Launching a 4-node cluster...
+</em><br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Launching master node (ami: ami-12b6477b, type: cc1.4xlarge)...
+</em><br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Creating security group _at_sc-spottest...
+</em><br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Opening tcp port range 22-22 for CIDR XXXXXXXXXX/22
+</em><br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Creating placement group _at_sc-spottest...
+</em><br />
+<br />Reservation:r-02fbac61
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Launching node001 (ami: ami-12b6477b, type: cc1.4xlarge)
+</em><br />
+<br />SpotInstanceRequest:sir-6cb0f014
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Launching node002 (ami: ami-12b6477b, type: cc1.4xlarge)
+</em><br />
+<br />SpotInstanceRequest:sir-b0ff9e11
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Launching node003 (ami: ami-12b6477b, type: cc1.4xlarge)
+</em><br />
+<br />SpotInstanceRequest:sir-2ef6f814
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Waiting for cluster to come up... (updating every 20s)
+</em><br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Waiting for all nodes to be in a 'running' state...
+</em><br />
+<br />1/1 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Waiting for SSH to come up on all nodes...
+</em><br />
+<br />1/1 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Waiting for cluster to come up took 3.547 mins
+</em><br />
+<br /><em class="quotelev3">&gt;&gt;&gt; The master node is ec2-184-72-156-11.compute-1.amazonaws.com
+</em><br />
+<br /><br /><br />I haven't tried this with anything but 'bigger' stuff (cc1 &amp; cc2), so don't know if that has any bearing on the situation. My config:
+<br />
+<br /><br /><br />[global]
+<br />
+<br />DEFAULT_TEMPLATE=Rcluster
+<br />
+<br />ENABLE_EXPERIMENTAL=True
+<br />
+<br />REFRESH_INTERVAL=20
+<br />
+<br /><br /><br />[aws info]
+<br />
+<br />AWS_ACCESS_KEY_ID = XXXXXXXXXXXX
+<br />
+<br />AWS_SECRET_ACCESS_KEY = XXXXXXXXXXXXX
+<br />
+<br />AWS_USER_ID = XXXXXXXXXXX
+<br />
+<br />EC2_CERT = XXXXXXXXXXX.pem
+<br />
+<br />EC2_PRIVATE_KEY = XXXXXXXXXXXXX.pem
+<br />
+<br /><br /><br />[key mykey]
+<br />
+<br />KEY_LOCATION=XXXXXXXXXXXXXXX.pem
+<br />
+<br /><br /><br />[cluster spottest]
+<br />
+<br />KEYNAME = mykey
+<br />
+<br />CLUSTER_SIZE = 4
+<br />
+<br />CLUSTER_USER = sgeadmin
+<br />
+<br />CLUSTER_SHELL = bash
+<br />
+<br />NODE_IMAGE_ID = ami-12b6477b
+<br />
+<br />NODE_INSTANCE_TYPE = cc1.4xlarge
+<br />
+<br />AVAILABILITY_ZONE = us-east-1c
+<br />
+<br />VOLUMES = Rlocal-spottest
+<br />
+<br />PLUGINS = setup-centos
+<br />
+<br />PERMISSIONS = ssh-local
+<br />
+<br />SPOT_BID = 1.50
+<br />
+<br /><br /><br />[volume Rlocal-spottest]
+<br />
+<br />VOLUME_ID = vol-XXXXXXXXXX
+<br />
+<br />MOUNT_PATH = /usr/local
+<br />
+<br /><br /><br />[plugin setup-centos]
+<br />
+<br />setup_class = setup-centos.PackageInstaller
+<br />
+<br />pkg_to_install = R
+<br />
+<br /><br /><br />[permission ssh-local]
+<br />
+<br />protocol = tcp
+<br />
+<br />from_port = 22
+<br />
+<br />to_port = 22
+<br />
+<br />cidr_ip = XXXXXXXXXXX/22
+<br />
+<br /><br /><br />This exact config works sometimes, other times not. Thanks for listening, or any advice you might have.
+<br />
+<br />-Hugh
+<br />
+<span id="received"><dfn>Received on</dfn> Thu Apr 12 2012 - 13:30:16 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1145.html#start1145">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1146.html" title="Next message in the list">Boris Fain: "condor plugin question"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1144.html" title="Previous message in the list">Chi Chan: "Re:  Local machine for development"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1147.html" title="Next message in this discussion thread">Justin Riley: "Re:  Spot Instance Startup Failure (Bug?)"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1147.html" title="Message sent in reply to this message">Justin Riley: "Re:  Spot Instance Startup Failure (Bug?)"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1145" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1145" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1145" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1145" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

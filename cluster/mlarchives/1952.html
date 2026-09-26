@@ -1,0 +1,339 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Daniel Polhamus ((no email))" />
+<meta name="Subject" content="Multiple node cluster problems" />
+<title>starcluster.mbox.out: Multiple node cluster problems</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Multiple node cluster problems</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Multiple node cluster problems</h1>
+<!-- received="Mon Nov 25 14:14:54 2013" -->
+<!-- isoreceived="20131125191454" -->
+<!-- sent="Mon, 25 Nov 2013 14:14:32 -0500" -->
+<!-- isosent="20131125191432" -->
+<!-- name="Daniel Polhamus" -->
+<!-- email="(no email)" -->
+<!-- subject="Multiple node cluster problems" -->
+<!-- id="CAGJuTd-6ZHSgma0Ypw9e3TbaC7XmjuevTZNH_Am27vhP3tapkQ_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1952.html#start1952" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1952.html#options2">top</a>, <a href="1952.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1953.html" accesskey="d" title="Syoyo Fujita: &quot;StarCluster AMI for New GPU instance?&quot;">Next message</a> ]
+[ <a href="1951.html" title="Sergio Mafra: &quot;Re:  MIT StarCluster and the new C3 instances&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="1958.html" accesskey="t" title="Joydeep Sen Sarma: &quot;Re:  Multiple node cluster problems&quot;">Next in thread</a> ]
+ [ <a href="1952.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1952" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1952" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1952" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1952" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Daniel Polhamus &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Mon, 25 Nov 2013 14:14:32 -0500</span><br />
+</address>
+<br />
+Hi all,
+<br />
+We're seeing issues with using clusters consisting of multiple nodes today.
+<br />
+&nbsp;Launch of clusters with &gt;=3 nodes fails, with report of being unable to
+<br />
+assign aliases to nodes other than &quot;master&quot;.  The same problem is seen with
+<br />
+addnode.  Adding one node is fine, but adding more than one gives the alias
+<br />
+problem again.  Terminating these clusters fails due to the missing alias
+<br />
+as well, you have to use the ec2toolkit to shut down the offending nodes
+<br />
+that were not named.
+<br />
+<br />I'm on the latest developmental version, and I've noticed that there's a
+<br />
+lot of gibberish in the node user data (as viewed through the web console)
+<br />
+as of today.
+<br />
+<br />Debug at the end, and thanks for the help.
+<br />
+<br />Dan
+<br />
+<br /><br /><em class="quotelev1">&gt; starcluster -d start -c testing brokenCluster -s 3
+</em><br />
+<br />...
+<br />
+...
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Waiting for all nodes to be in a 'running' state...
+</em><br />
+2013-11-25 14:13:06,323 cluster.py:734 - DEBUG - existing nodes: {}
+<br />
+2013-11-25 14:13:06,323 cluster.py:742 - DEBUG - adding node i-323f504f to
+<br />
+self._nodes list
+<br />
+2013-11-25 14:13:06,839 cluster.py:742 - DEBUG - adding node i-2c3f5051 to
+<br />
+self._nodes list
+<br />
+2013-11-25 14:13:07,001 node.py:147 - DEBUG - invalid aliases file in
+<br />
+user_data:
+<br />
+<br />3/3 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+!!! ERROR - instance i-2c3f5051 has no alias
+<br />
+2013-11-25 14:13:07,003 cli.py:301 - DEBUG - instance i-2c3f5051 has no
+<br />
+alias
+<br />
+Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Library/Python/2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/cli.py&quot;,
+<br />
+line 274, in main
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;sc.execute(args)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Library/Python/2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/commands/start.py&quot;,
+<br />
+line 220, in execute
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;validate_running=validate_running)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Library/Python/2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/cluster.py&quot;,
+<br />
+line 1534, in start
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;return self._start(create=create, create_only=create_only)
+<br />
+&nbsp;&nbsp;File &quot;&lt;string&gt;&quot;, line 2, in _start
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Library/Python/2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/utils.py&quot;,
+<br />
+line 111, in wrap_f
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;res = func(*arg, **kargs)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Library/Python/2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/cluster.py&quot;,
+<br />
+line 1557, in _start
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self.setup_cluster()
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Library/Python/2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/cluster.py&quot;,
+<br />
+line 1565, in setup_cluster
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self.wait_for_cluster()
+<br />
+&nbsp;&nbsp;File &quot;&lt;string&gt;&quot;, line 2, in wait_for_cluster
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Library/Python/2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/utils.py&quot;,
+<br />
+line 111, in wrap_f
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;res = func(*arg, **kargs)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Library/Python/2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/cluster.py&quot;,
+<br />
+line 1350, in wait_for_cluster
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self.wait_for_running_instances()
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Library/Python/2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/cluster.py&quot;,
+<br />
+line 1305, in wait_for_running_instances
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;nodes = nodes or self.get_nodes_or_raise()
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Library/Python/2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/cluster.py&quot;,
+<br />
+line 754, in get_nodes_or_raise
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;nodes = self.nodes
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Library/Python/2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/cluster.py&quot;,
+<br />
+line 744, in nodes
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;if n.is_master():
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Library/Python/2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/node.py&quot;,
+<br />
+line 898, in is_master
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;return self.alias == 'master' or self.alias.endswith(&quot;-master&quot;)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Library/Python/2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/node.py&quot;,
+<br />
+line 150, in alias
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&quot;instance %s has no alias&quot; % self.id)
+<br />
+BaseException: instance i-2c3f5051 has no alias
+<br />
+<br /><pre>
+-- 
+Daniel G Polhamus, PhD
+Metrum Research Group, LLC
+</pre>
+<span id="received"><dfn>Received on</dfn> Mon Nov 25 2013 - 14:14:54 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1952.html#start1952">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1953.html" title="Next message in the list">Syoyo Fujita: "StarCluster AMI for New GPU instance?"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1951.html" title="Previous message in the list">Sergio Mafra: "Re:  MIT StarCluster and the new C3 instances"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1958.html" title="Next message in this discussion thread">Joydeep Sen Sarma: "Re:  Multiple node cluster problems"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1958.html" title="Message sent in reply to this message">Joydeep Sen Sarma: "Re:  Multiple node cluster problems"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1952" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1952" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1952" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1952" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

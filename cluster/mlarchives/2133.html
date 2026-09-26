@@ -1,0 +1,196 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Jacob Barhak ((no email))" />
+<meta name="Subject" content="SGE slow with 50k+ jobs" />
+<title>starcluster.mbox.out: SGE slow with 50k+ jobs</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">SGE slow with 50k+ jobs</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>SGE slow with 50k+ jobs</h1>
+<!-- received="Sun Mar 30 02:37:48 2014" -->
+<!-- isoreceived="20140330063748" -->
+<!-- sent="Sun, 30 Mar 2014 01:37:45 -0500" -->
+<!-- isosent="20140330063745" -->
+<!-- name="Jacob Barhak" -->
+<!-- email="(no email)" -->
+<!-- subject="SGE slow with 50k+ jobs" -->
+<!-- id="F1F31D78-6FA9-4251-A6CB-97928D1BFD8F_at_gmail.com" -->
+<!-- charset="us-ascii" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2133.html#start2133" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2133.html#options2">top</a>, <a href="2133.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2134.html" accesskey="d" title="Chris Dagdigian: &quot;Re:  SGE slow with 50k+ jobs&quot;">Next message</a> ]
+[ <a href="2132.html" title="Rohan Sundar: &quot;starcluster createkey problems&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="2134.html" accesskey="t" title="Chris Dagdigian: &quot;Re:  SGE slow with 50k+ jobs&quot;">Next in thread</a> ]
+ [ <a href="2133.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2133" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2133" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2133" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2133" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Jacob Barhak &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Sun, 30 Mar 2014 01:37:45 -0500</span><br />
+</address>
+<br />
+Hi to SGE experts,
+<br />
+<br />This is less of a StarCluster specific issue. It is more of an SGE issue I encountered and was hoping someone here can help with. 
+<br />
+<br />My system runs many many smaller jobs - tens of thousands. When I need a rushed solution to reach a deadline I use StarCluster. However, if I have time, I run the simulations on a single 8 core machine that has SGE installed over Ubuntu 12.04. This machine is new and fast with SSD drive and freshly installed yet I am encountering issues. 
+<br />
+<br />1. When I launch about 70k jobs submitting a single new job to the queue takes a while - about a second or so, compared to fractions of a second when the queue is empty. 
+<br />
+<br />2. Deleting all the jobs from the queue using qdel -u username takes a long time. It reports about 24 deletes to the screen every few seconds - at this rate it will take hours to delete the entire queue. It is still deleting while I am writing these words. Way too much time. 
+<br />
+<br />3. The system was working ok for a few days yet now has trouble with qmaster. It report the following:
+<br />
+error: commlib error: got select error (connection refused) 
+<br />
+unable to send message to qmaster using port 6444 on host 'localhost': got send error. 
+<br />
+Also qmon reported cannot reach qmaster. I had to restart and suspend and disable the queue. 
+<br />
+<br />Note that qstat -j currently reports:
+<br />
+All queues dropped because of overload or full
+<br />
+<br />Note that I configured the schedule interval to 2 seconds since many of my jobs are so fast that even 2 seconds is very inefficient for them yet some are longer and memory consuming so I cannot allow more slots to launch too many jobs. 
+<br />
+<br />Am I overloading the system with too many jobs? What is the limit on a single strong machine? How will this scale when I run this on StarCluster?
+<br />
+<br />Any advice on how to efficiently handle many jobs, some of which are very short, will be appreciated. And I hope this interests the audience. 
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Jacob
+<br />
+<br />Sent from my iPhone
+<br />
+<span id="received"><dfn>Received on</dfn> Sun Mar 30 2014 - 02:37:48 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2133.html#start2133">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2134.html" title="Next message in the list">Chris Dagdigian: "Re:  SGE slow with 50k+ jobs"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2132.html" title="Previous message in the list">Rohan Sundar: "starcluster createkey problems"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="2134.html" title="Next message in this discussion thread">Chris Dagdigian: "Re:  SGE slow with 50k+ jobs"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="2134.html" title="Message sent in reply to this message">Chris Dagdigian: "Re:  SGE slow with 50k+ jobs"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2133" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2133" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2133" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2133" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

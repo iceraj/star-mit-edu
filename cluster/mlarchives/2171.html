@@ -1,0 +1,202 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Sergio Mafra ((no email))" />
+<meta name="Subject" content="Simple Web interface for StarCluster" />
+<title>starcluster.mbox.out: Simple Web interface for StarCluster</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Simple Web interface for StarCluster</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Simple Web interface for StarCluster</h1>
+<!-- received="Fri Apr 25 07:31:07 2014" -->
+<!-- isoreceived="20140425113107" -->
+<!-- sent="Fri, 25 Apr 2014 08:31:05 -0300" -->
+<!-- isosent="20140425113105" -->
+<!-- name="Sergio Mafra" -->
+<!-- email="(no email)" -->
+<!-- subject="Simple Web interface for StarCluster" -->
+<!-- id="CALxTZg7YODEUpczpVxHaYQzdRpF6Y66Zbif7G49FxfHveHmu=A_at_mail.gmail.com" -->
+<!-- charset="UTF-8" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2171.html#start2171" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2171.html#options2">top</a>, <a href="2171.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2172.html" accesskey="d" title="MacMullan, Hugh: &quot;Re:  Simple Web interface for StarCluster&quot;">Next message</a> ]
+[ <a href="2170.html" title="Stewart, Andrew: &quot;Re:  load balanced nodes accepting jobs before ready&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="2172.html" accesskey="t" title="MacMullan, Hugh: &quot;Re:  Simple Web interface for StarCluster&quot;">Next in thread</a> ]
+ [ <a href="2171.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2171" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2171" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2171" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2171" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Sergio Mafra &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Fri, 25 Apr 2014 08:31:05 -0300</span><br />
+</address>
+<br />
+Hi fellows,
+<br />
+<br />We use StarCluster for managing our clusters for running eletrical
+<br />
+engineering purporses. The engineers want to deploy the clusters in AWS by
+<br />
+themselves and we think that letting them access the StarCluster line
+<br />
+interface and modifying the config file for expandig/reducing the number of
+<br />
+nodes in a cluster could be dangerous and not so intuitive.
+<br />
+So, we decided to build a very simple web interface using Apache and PHP
+<br />
+aiming to read the config file, expose the clusters and letting them
+<br />
+increase or decrease the number of nodes among limits and starting or
+<br />
+terminating the cluster with the new parameters.
+<br />
+We are not expert in PHP and could be not the best tool, but it´s proven to
+<br />
+be a quick development. We will study other options like Python and Django
+<br />
+in the near future.
+<br />
+The question is: how to execute a command like &quot;starcluster start -c
+<br />
+cluster_template cluster_name in PHP? We are trying to use a command like
+<br />
+$output = shell_exec($shellCommand);where $shellCommand is &quot;starcluster
+<br />
+start -c ...&quot; but it doesn´t run like expected. Any ideas?
+<br />
+<br /><br />All best,
+<br />
+<br />Sergio
+<br />
+<span id="received"><dfn>Received on</dfn> Fri Apr 25 2014 - 07:31:07 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2171.html#start2171">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2172.html" title="Next message in the list">MacMullan, Hugh: "Re:  Simple Web interface for StarCluster"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2170.html" title="Previous message in the list">Stewart, Andrew: "Re:  load balanced nodes accepting jobs before ready"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="2172.html" title="Next message in this discussion thread">MacMullan, Hugh: "Re:  Simple Web interface for StarCluster"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="2172.html" title="Message sent in reply to this message">MacMullan, Hugh: "Re:  Simple Web interface for StarCluster"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2171" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2171" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2171" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2171" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

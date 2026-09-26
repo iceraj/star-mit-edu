@@ -1,0 +1,269 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Robert Chase ((no email))" />
+<meta name="Subject" content="SSL Error" />
+<title>starcluster.mbox.out: SSL Error</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">SSL Error</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>SSL Error</h1>
+<!-- received="Thu Dec 20 11:25:50 2012" -->
+<!-- isoreceived="20121220162550" -->
+<!-- sent="Thu, 20 Dec 2012 11:25:48 -0500" -->
+<!-- isosent="20121220162548" -->
+<!-- name="Robert Chase" -->
+<!-- email="(no email)" -->
+<!-- subject="SSL Error" -->
+<!-- id="CAGWAmzoRXFttjXL6m-z=ScJxo2LQxJpFgyHjByaE+aTYRWC8jw_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1571.html#start1571" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1571.html#options2">top</a>, <a href="1571.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1572.html" accesskey="d" title="Oppe, Thomas C ERDC-RDE-ITL-MS Contractor: &quot;Re:  Terminating a cluster does not remove its security group (UNCLASSIFIED)&quot;">Next message</a> ]
+[ <a href="1570.html" title="Dustin Machi: &quot;Re:  Terminating a cluster does not remove its security group (UNCLASSIFIED)&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1571" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1571" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1571" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1571" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Robert Chase &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 20 Dec 2012 11:25:48 -0500</span><br />
+</address>
+<br />
+Hello,
+<br />
+<br />I am working on a project to use Starcluster to interface with Eucalyptus.
+<br />
+I am able to reproduce the &quot;Failed to bind the following fields:&quot; error
+<br />
+using version 0.93 but when I try using the source code development version
+<br />
+I get the following error:
+<br />
+<br />StarCluster - (<a href="/cluster/">/cluster</a>) (v. 0.9999)
+<br />
+Software Tools for Academics and Researchers (STAR)
+<br />
+Please submit bug reports to starcluster_at_mit.edu
+<br />
+<br />!!! ERROR - Connection error:
+<br />
+Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/cli.py&quot;,
+<br />
+line 257, in main
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;sc.execute(args)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/commands/start.py&quot;,
+<br />
+line 147, in execute
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;load_plugins=create)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/cluster.py&quot;,
+<br />
+line 98, in get_cluster_or_none
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;return self.get_cluster(cluster_name, **kwargs)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/cluster.py&quot;,
+<br />
+line 45, in get_cluster
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;group = self.ec2.get_security_group(clname)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/awsutils.py&quot;,
+<br />
+line 217, in get_security_group
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;filters={'group-name': groupname})[0]
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/awsutils.py&quot;,
+<br />
+line 229, in get_security_groups
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;return self.conn.get_all_security_groups(filters=filters)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/lib/python2.6/site-packages/boto-2.6.0-py2.6.egg/boto/ec2/connection.py&quot;,
+<br />
+line 2200, in get_all_security_groups
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;[('item', SecurityGroup)], verb='POST')
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/lib/python2.6/site-packages/boto-2.6.0-py2.6.egg/boto/connection.py&quot;,
+<br />
+line 966, in get_list
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;response = self.make_request(action, params, path, verb)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/lib/python2.6/site-packages/boto-2.6.0-py2.6.egg/boto/connection.py&quot;,
+<br />
+line 952, in make_request
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;return self._mexe(http_request)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/lib/python2.6/site-packages/boto-2.6.0-py2.6.egg/boto/connection.py&quot;,
+<br />
+line 872, in _mexe
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;raise e
+<br />
+SSLError: [Errno 1] _ssl.c:490: error:14090086:SSL
+<br />
+routines:SSL3_GET_SERVER_CERTIFICATE:certificate verify failed
+<br />
+!!! ERROR - Check your internet connection?
+<br />
+<br />Any help would be greatly appreciated.
+<br />
+<br />-Rob
+<br />
+<span id="received"><dfn>Received on</dfn> Thu Dec 20 2012 - 11:25:50 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1571.html#start1571">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1572.html" title="Next message in the list">Oppe, Thomas C ERDC-RDE-ITL-MS Contractor: "Re:  Terminating a cluster does not remove its security group (UNCLASSIFIED)"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1570.html" title="Previous message in the list">Dustin Machi: "Re:  Terminating a cluster does not remove its security group (UNCLASSIFIED)"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1571" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1571" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1571" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1571" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

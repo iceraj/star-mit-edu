@@ -1,0 +1,191 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Dan Tenenbaum ((no email))" />
+<meta name="Subject" content="misc. issues getting started" />
+<title>starcluster.mbox.out: misc. issues getting started</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">misc. issues getting started</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>misc. issues getting started</h1>
+<!-- received="Thu May 29 13:57:10 2014" -->
+<!-- isoreceived="20140529175710" -->
+<!-- sent="Thu, 29 May 2014 10:57:07 -0700 (PDT)" -->
+<!-- isosent="20140529175707" -->
+<!-- name="Dan Tenenbaum" -->
+<!-- email="(no email)" -->
+<!-- subject="misc. issues getting started" -->
+<!-- id="1547284209.754268.1401386227059.JavaMail.root_at_fhcrc.org" -->
+<!-- charset="utf-8" -->
+<!-- inreplyto="1793834320.753722.1401385624140.JavaMail.root_at_fhcrc.org" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2231.html#start2231" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2231.html#options2">top</a>, <a href="2231.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2232.html" accesskey="d" title="Dan Tenenbaum: &quot;Re:  misc. issues getting started&quot;">Next message</a> ]
+[ <a href="2230.html" title="MacMullan, Hugh: &quot;Re:  minimal cost with loadbalance&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="2232.html" accesskey="t" title="Dan Tenenbaum: &quot;Re:  misc. issues getting started&quot;">Next in thread</a> ]
+ [ <a href="2231.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2231" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2231" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2231" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2231" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Dan Tenenbaum &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 29 May 2014 10:57:07 -0700 (PDT)</span><br />
+</address>
+<br />
+Hi,
+<br />
+<br />On the page <a href="../index.html">/cluster/</a> , the screencast is not visible if I use Chrome. It's visible if I use Safari. (This is on Mac OS X 10.9.2).
+<br />
+<br />The screencast may be a bit inaccurate or outdated:
+<br />
+<br />When I ssh to the master node of myfirstcluster as sgeadmin, and do
+<br />
+ssh node001 hostname
+<br />
+<br />instead of showing a &quot;domU....&quot; name, it just says &quot;node001&quot;.
+<br />
+<br />Also, the tab completion page (<a href="../docs/latest/manual/shell_completion.html">/cluster/docs/latest/manual/shell_completion.html</a>) has a fatal flaw; it does not tell you where the starcluster-completion.sh script is. I found it with a little googling (<a href="https://raw.githubusercontent.com/jtriley/StarCluster/develop/completion/starcluster-completion.sh">https://raw.githubusercontent.com/jtriley/StarCluster/develop/completion/starcluster-completion.sh</a>).
+<br />
+<br />However, it doesn't work:
+<br />
+<br />dtenenba_at_dhcp151128 ~$ source ~/.starcluster/starcluster-completion.sh 
+<br />
+dtenenba_at_dhcp151128 ~$ starcluster -- (I pressed tab twice here)
+<br />
+Display all 185 possibilities? (y or n)
+<br />
+<br />This is normal filesystem completion, not starcluster completion.
+<br />
+<br />Thanks.
+<br />
+<span id="received"><dfn>Received on</dfn> Thu May 29 2014 - 13:57:10 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2231.html#start2231">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2232.html" title="Next message in the list">Dan Tenenbaum: "Re:  misc. issues getting started"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2230.html" title="Previous message in the list">MacMullan, Hugh: "Re:  minimal cost with loadbalance"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="2232.html" title="Next message in this discussion thread">Dan Tenenbaum: "Re:  misc. issues getting started"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="2232.html" title="Message sent in reply to this message">Dan Tenenbaum: "Re:  misc. issues getting started"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2231" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2231" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2231" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2231" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

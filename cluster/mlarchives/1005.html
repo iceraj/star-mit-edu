@@ -1,0 +1,248 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Paolo Di Tommaso ((no email))" />
+<meta name="Subject" content="Error creating volume" />
+<title>starcluster.mbox.out: Error creating volume</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Error creating volume</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Error creating volume</h1>
+<!-- received="Tue Jan 24 12:10:48 2012" -->
+<!-- isoreceived="20120124171048" -->
+<!-- sent="Tue, 24 Jan 2012 18:10:42 +0100" -->
+<!-- isosent="20120124171042" -->
+<!-- name="Paolo Di Tommaso" -->
+<!-- email="(no email)" -->
+<!-- subject="Error creating volume" -->
+<!-- id="F30CB76F-CE0F-4621-B75A-401D8A75A85A_at_crg.eu" -->
+<!-- charset="us-ascii" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1005.html#start1005" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1005.html#options2">top</a>, <a href="1005.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1006.html" accesskey="d" title="Bob Tolbert: &quot;Re:  Adding users to the cluster&quot;">Next message</a> ]
+[ <a href="1004.html" title="Joydeep Sen Sarma: &quot;Re:  EC2 User data&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="1015.html" accesskey="t" title="Paolo Di Tommaso: &quot;Error creating volume (version 0.93.1)&quot;">Next in thread</a> ]
+ [ <a href="1005.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1005" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1005" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1005" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1005" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Paolo Di Tommaso &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Tue, 24 Jan 2012 18:10:42 +0100</span><br />
+</address>
+<br />
+Dear all,
+<br />
+<br />When I try to create an new volume using the createvolume command I get the following error:
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Formatting volume...
+</em><br />
+mke2fs 1.41.14 (22-Dec-2010)
+<br />
+mkfs.ext3: No such file or directory while trying to determine filesystem size
+<br />
+!!! ERROR - command 'mkfs.ext3 -F /dev/sdz' failed with status 1
+<br />
+<br /><br />Despite that the command itself does not terminate with an error (below the complete trace).
+<br />
+<br />But when I try to start a cluster instance using that volume, it will not be attached.
+<br />
+<br /><br />Is this a bug or I'm missing something  ?
+<br />
+<br /><br />Thank you,
+<br />
+Paolo
+<br />
+<br /><br /><br /><br /><br /><br />$ starcluster createvolume --tag=lab-soft 10 us-east-1d
+<br />
+StarCluster - (<a href="http://web.mit.edu/starcluster">http://web.mit.edu/starcluster</a>) (v. 0.93.1)
+<br />
+Software Tools for Academics and Researchers (STAR)
+<br />
+Please submit bug reports to starcluster_at_mit.edu&lt;mailto:starcluster_at_mit.edu&gt;
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; No keypair specified, picking one from config...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Using keypair: maquito
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Creating security group _at_sc-volumecreator...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; No instance in group _at_sc-volumecreator for zone us-east-1d, launching one now.
+</em><br />
+Reservation:r-537e6232
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for volume host to come up... (updating every 30s)
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for all nodes to be in a 'running' state...
+</em><br />
+1/1 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for SSH to come up on all nodes...
+</em><br />
+1/1 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for cluster to come up took 1.277 mins
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Checking for required remote commands...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Creating 10GB volume in zone us-east-1d
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; New volume id: vol-afa9a2c2
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for new volume to become 'available'...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Adding volume tag: lab-soft
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Attaching volume vol-afa9a2c2 to instance i-1faa407a...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Formatting volume...
+</em><br />
+mke2fs 1.41.14 (22-Dec-2010)
+<br />
+<br />mkfs.ext3: No such file or directory while trying to determine filesystem size
+<br />
+<br />!!! ERROR - command 'mkfs.ext3 -F /dev/sdz' failed with status 1
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Leaving volume vol-afa9a2c2 attached to instance i-1faa407a
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Not terminating host instance i-1faa407a
+</em><br />
+*** WARNING - There are still volume hosts running: i-1faa407a
+<br />
+*** WARNING - Run 'starcluster terminate volumecreator' to terminate *all* volume host instances once they're no longer needed
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Your new 10GB volume vol-afa9a2c2 has been created successfully
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Creating volume took 1.777 mins
+</em><br />
+<span id="received"><dfn>Received on</dfn> Tue Jan 24 2012 - 12:10:48 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1005.html#start1005">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1006.html" title="Next message in the list">Bob Tolbert: "Re:  Adding users to the cluster"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1004.html" title="Previous message in the list">Joydeep Sen Sarma: "Re:  EC2 User data"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1015.html" title="Next message in this discussion thread">Paolo Di Tommaso: "Error creating volume (version 0.93.1)"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1015.html" title="Message sent in reply to this message">Paolo Di Tommaso: "Error creating volume (version 0.93.1)"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1005" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1005" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1005" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1005" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Izhar Wallach ((no email))" />
+<meta name="Subject" content="Can't start a cluster in a region other than the default (N.Virginia)." />
+<title>starcluster.mbox.out: Can't start a cluster in a region other than the default (N.Virginia).</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Can't start a cluster in a region other than the default (N.Virginia).</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Can't start a cluster in a region other than the default (N.Virginia).</h1>
+<!-- received="Tue Jun 25 15:20:11 2013" -->
+<!-- isoreceived="20130625192011" -->
+<!-- sent="Tue, 25 Jun 2013 15:19:38 -0400" -->
+<!-- isosent="20130625191938" -->
+<!-- name="Izhar Wallach" -->
+<!-- email="(no email)" -->
+<!-- subject="Can't start a cluster in a region other than the default (N.Virginia)." -->
+<!-- id="CAPB6KwCqFrDLtBe9ULh80dXx_QzSr8RFdhpmWEG2hywmQ1tc+g_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1754.html#start1754" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1754.html#options2">top</a>, <a href="1754.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1755.html" accesskey="d" title="Dmitry Grudzinskiy: &quot;New stable versions coming soon?&quot;">Next message</a> ]
+[ <a href="1753.html" title="Suchindra Sandhu: &quot;Restarting bad nodes&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1754" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1754" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1754" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1754" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Izhar Wallach &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Tue, 25 Jun 2013 15:19:38 -0400</span><br />
+</address>
+<br />
+Hello,
+<br />
+<br />I'm trying to start a 2-node cluster in the us-west-2 region and the
+<br />
+initialization does not go beyond the &quot;waiting for instances to activate&quot;
+<br />
+stage. I can see that the instances are up and running through the EC2 web
+<br />
+console (and I can login to them directly). When I'm using the default east
+<br />
+region everything works well.
+<br />
+<br />I'm using the latest startcluster version from Git. I first tried to use
+<br />
+the latest stable version (0.93.3) but got errors regarding &quot;Invalid
+<br />
+security group description. Valid
+<br />
+descriptions are limited to 255 characters...&quot; (again, just when trying to
+<br />
+use a region other than the default).
+<br />
+<br />Below is the output of the start command:
+<br />
+izharw_at_izharw-VirtualBox:~/Desktop/EC2$ starcluster -r us-west-2 start test
+<br />
+StarCluster - (<a href="/cluster/">/cluster</a>) (v. 0.9999)
+<br />
+Software Tools for Academics and Researchers (STAR)
+<br />
+Please submit bug reports to starcluster_at_mit.edu
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Using default cluster template: smallcluster
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Validating cluster template settings...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Cluster template settings are valid
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Starting cluster...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Launching a 2-node cluster...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Creating security group _at_sc-test...
+</em><br />
+Reservation:r-58cb656d
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for cluster to come up... (updating every 30s)
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for instances to activate...|^
+</em><br />
+<br />And these are the entries of my configuration file:
+<br />
+[global]
+<br />
+DEFAULT_TEMPLATE=smallcluster
+<br />
+[aws info]
+<br />
+AWS_ACCESS_KEY_ID = XXXXXXXXXXXXXXXXXX
+<br />
+AWS_SECRET_ACCESS_KEY = XXXXXXXXXXXXXXXXXXX
+<br />
+AWS_USER_ID = XXXXXXXXXXXXXX
+<br />
+AWS_REGION_NAME = us-west-2
+<br />
+AWS_REGION_HOST = ec2.us-west-2.amazonaws.com
+<br />
+[key oregon]
+<br />
+KEY_LOCATION=~/Desktop/EC2/oregon.rsa
+<br />
+[cluster smallcluster]
+<br />
+KEYNAME = oregon
+<br />
+CLUSTER_SIZE = 2
+<br />
+CLUSTER_USER = sgeadmin
+<br />
+CLUSTER_SHELL = bash
+<br />
+NODE_IMAGE_ID = ami-706afe40
+<br />
+NODE_INSTANCE_TYPE = t1.micro
+<br />
+MASTER_INSTANCE_TYPE = t1.micro
+<br />
+PERMISSIONS = ssh
+<br />
+[permission ssh]
+<br />
+PROTOCOL = TCP
+<br />
+FROM_PORT = 22
+<br />
+TO_PORT = 22
+<br />
+<br />Any suggestion of what am I doing wrong?
+<br />
+<br />Thanks,
+<br />
+Izhar
+<br />
+<span id="received"><dfn>Received on</dfn> Tue Jun 25 2013 - 15:20:11 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1754.html#start1754">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1755.html" title="Next message in the list">Dmitry Grudzinskiy: "New stable versions coming soon?"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1753.html" title="Previous message in the list">Suchindra Sandhu: "Restarting bad nodes"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1754" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1754" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1754" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1754" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

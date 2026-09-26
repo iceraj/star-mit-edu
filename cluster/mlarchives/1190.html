@@ -1,0 +1,279 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Manal Helal ((no email))" />
+<meta name="Subject" content="newbie problems" />
+<title>starcluster.mbox.out: newbie problems</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">newbie problems</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>newbie problems</h1>
+<!-- received="Wed May 16 12:23:26 2012" -->
+<!-- isoreceived="20120516162326" -->
+<!-- sent="Thu, 17 May 2012 02:22:44 +1000" -->
+<!-- isosent="20120516162244" -->
+<!-- name="Manal Helal" -->
+<!-- email="(no email)" -->
+<!-- subject="newbie problems" -->
+<!-- id="CAJoGsQ0rJ7dmiePks3vb0U4JOZG=C2mOCB4E3MvT16StYgY_wg_at_mail.gmail.com" -->
+<!-- charset="windows-1252" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1190.html#start1190" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1190.html#options2">top</a>, <a href="1190.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1191.html" accesskey="d" title="Justin Riley: &quot;Re:  How to setup a cluster using cc2.8xlarge?&quot;">Next message</a> ]
+[ <a href="1189.html" title="Harry Timtschenko: &quot;How to setup a cluster using cc2.8xlarge?&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1190" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1190" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1190" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1190" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Manal Helal &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 17 May 2012 02:22:44 +1000</span><br />
+</address>
+<br />
+Hello,
+<br />
+<br />I am new to starcluster, and probably to AWS generally, and have a few
+<br />
+issues before I start a cluster and incur cost,
+<br />
+<br />I am trying to run a graphics processing packages on the GPU cluster
+<br />
+instance, and will need to download VisualSFM, meshlab, ffmpeg before I
+<br />
+start. I will start only one instance in the region us-east-1 from the
+<br />
+instance type &quot;cg1.4xlarge&quot; using the image id &quot;ami-999d49f0&quot; which
+<br />
+is starcluster-base-ubuntu-11.10-x86_64 (EBS). I am not sure if this image
+<br />
+already has EBS volume mounted in it
+<br />
+<br />I am planning that once I start the cluster, I download what I need using
+<br />
+wget, and apt-get to install and configure all dependencies to the GPU
+<br />
+cluster hardware. I am afraid I have a long list of dependencies, but with
+<br />
+lapack and CUDA already installed in the image, I hope I won't suffer the
+<br />
+way I suffered to get these packages on my local machine.
+<br />
+<br />I will run the program on one dataset, and time that, and terminate the
+<br />
+cluster.
+<br />
+<br />My questions are:
+<br />
+<br />1. Is EBS already attached to this image, or do I need to attach it using
+<br />
+the config file? I tried to uncomment the sections in the config file, and
+<br />
+I ended up with this error:
+<br />
+<br /><br />!!! ERROR - volume 'sfmdata
+<br />
+[volume sfmdata]
+<br />
+VOLUME_ID = vol-c999999
+<br />
+MOUNT_PATH = /home' not defined in config
+<br />
+<br />So having an ebs already in the ubunto image I am using doesn't require
+<br />
+further editing in the config file, nor using the command:
+<br />
+<br />starcluster ebsimage i-9999999 my-new-image
+<br />
+<br />if so, where is the already exising ebs mounted?
+<br />
+<br /><br />2. Is having the base AMI defined in the config file, instance type and
+<br />
+number of instances (cluster size), and region, …. etc in the config file,
+<br />
+and the previous point become clear as EBS is already included in this
+<br />
+image or need to be defined in the config file, do I start the cluster by
+<br />
+this command:
+<br />
+<br />starcluster start imagehost
+<br />
+<br />or as a full command as defined in this page:
+<br />
+<br /><a href="http://web.mit.edu/star/cluster/docs/latest/manual/create_new_ami.html">http://web.mit.edu/star/cluster/docs/latest/manual/create_new_ami.html</a>
+<br />
+<br />such as:
+<br />
+<br />starcluster start -o -s 1 -i &lt;INSTANCE-TYPE&gt; -n &lt;BASE-AMI-ID&gt; imagehost
+<br />
+<br />then create a new EBS using:
+<br />
+<br />starcluster ebsimage i-9999999 my-new-image
+<br />
+<br />3. After I do further installs in the image, I need to download the image
+<br />
+before I terminate to be able to use it again, without paying for the ebs
+<br />
+storage by stopping the cluster (not terminating). I need to download the
+<br />
+image, and terminate the cluster, so that I don't pay for anything (cluster
+<br />
+or ebs storage) until I am ready to run again. I see the downloadimage
+<br />
+&nbsp;command and not sure how to use it, I couldn't find help about it, except
+<br />
+the command line help:
+<br />
+<br />starcluster downloadimage [options] &lt;image_id&gt; &lt;destination_directory&gt;
+<br />
+<br />&nbsp;is the image_id here is the same one I started from, which
+<br />
+is &quot;ami-999d49f0&quot; in my case, or is it the one I customised and is
+<br />
+currently running? Does the image take a new image_id once it is running
+<br />
+for a specific user? if so, do I get this from my console manager on the
+<br />
+AWS website?
+<br />
+<br />4. After knowing how to download the image, I will need the command to
+<br />
+start a new cluster using the image I have stored on my local disk. I think
+<br />
+I have seen something to install from an image to the cluster
+<br />
+<br />I really appreciate if you can shed some light, so that I can resume
+<br />
+testing, I am totally lost at the moment,
+<br />
+<br />Thank you very much for your support,
+<br />
+Manal
+<br />
+<span id="received"><dfn>Received on</dfn> Wed May 16 2012 - 12:23:26 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1190.html#start1190">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1191.html" title="Next message in the list">Justin Riley: "Re:  How to setup a cluster using cc2.8xlarge?"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1189.html" title="Previous message in the list">Harry Timtschenko: "How to setup a cluster using cc2.8xlarge?"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1190" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1190" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1190" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1190" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

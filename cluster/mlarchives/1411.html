@@ -1,0 +1,247 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Jesse Lu ((no email))" />
+<meta name="Subject" content="Problem adding spot request nodes when using load balancer" />
+<title>starcluster.mbox.out: Problem adding spot request nodes when using load balancer</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Problem adding spot request nodes when using load balancer</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Problem adding spot request nodes when using load balancer</h1>
+<!-- received="Tue Sep 18 19:09:27 2012" -->
+<!-- isoreceived="20120918230927" -->
+<!-- sent="Tue, 18 Sep 2012 16:09:26 -0700" -->
+<!-- isosent="20120918230926" -->
+<!-- name="Jesse Lu" -->
+<!-- email="(no email)" -->
+<!-- subject="Problem adding spot request nodes when using load balancer" -->
+<!-- id="CALEq6ym5ATLVsMJo0eOE7PHUYzpZW2gKC8vnW3Nebmj+K919NA_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1411.html#start1411" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1411.html#options2">top</a>, <a href="1411.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1412.html" accesskey="d" title="Justin Riley: &quot;Re:  Problem with AMI creation&quot;">Next message</a> ]
+[ <a href="1410.html" title="Matthew Johnson: &quot;crash report: in client.py, cfg[&#0039;url&#0039;] -&#0062; KeyError&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1411" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1411" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1411" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1411" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Jesse Lu &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Tue, 18 Sep 2012 16:09:26 -0700</span><br />
+</address>
+<br />
+Here is my load balancer output
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Plotting stats to directory: /home/ubuntu/.starcluster/sge/m-1
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Loading full job history
+</em><br />
+Execution hosts: 1
+<br />
+Queued jobs: 29
+<br />
+Oldest queued job: 2012-09-18 21:39:16
+<br />
+Avg job duration: 600 secs
+<br />
+Avg job wait time: 1501 secs
+<br />
+Last cluster modification time: 2012-09-18 22:46:52
+<br />
+<em class="quotelev3">&gt;&gt;&gt; A job has been waiting for 4060 sec, longer than max 900
+</em><br />
+*** WARNING - Adding 1 nodes at 2012-09-18 22:46:56.804876
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Launching node(s): node003
+</em><br />
+SpotInstanceRequest:sir-450d5211
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for node(s) to come up... (updating every 15s)
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for all nodes to be in a 'running' state...
+</em><br />
+3/3 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for SSH to come up on all nodes...
+</em><br />
+3/3 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for cluster to come up took 0.039 mins
+</em><br />
+!!! ERROR - Failed to add new host
+<br />
+Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/home/ubuntu/maxwell_control/local/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/balancers/sge/__init__.py&quot;,
+<br />
+line 675, in _eval_add_node
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self._cm.add_nodes(self._cluster.cluster_tag, need_to_add)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/home/ubuntu/maxwell_control/local/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/cluster.py&quot;,
+<br />
+line 160, in add_nodes
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;no_create=no_create)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/home/ubuntu/maxwell_control/local/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/cluster.py&quot;,
+<br />
+line 823, in add_nodes
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;node = self.get_node_by_alias(alias)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/home/ubuntu/maxwell_control/local/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/cluster.py&quot;,
+<br />
+line 689, in get_node_by_alias
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;raise exception.InstanceDoesNotExist(alias, label='node')
+<br />
+InstanceDoesNotExist: node 'node003' does not exist
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Done making graphs.
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Sleeping...(looping again in 30 secs)
+</em><br />
+<br /><br />Any ideas? Thanks in advance,
+<br />
+<br />Jesse
+<br />
+<span id="received"><dfn>Received on</dfn> Tue Sep 18 2012 - 19:09:27 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1411.html#start1411">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1412.html" title="Next message in the list">Justin Riley: "Re:  Problem with AMI creation"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1410.html" title="Previous message in the list">Matthew Johnson: "crash report: in client.py, cfg[&#0039;url&#0039;] -&#0062; KeyError"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1411" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1411" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1411" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1411" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

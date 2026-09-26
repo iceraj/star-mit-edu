@@ -1,0 +1,536 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Jennifer Staab ((no email))" />
+<meta name="Subject" content="StarCluster Development VPC-Starclusters - possible bug relating to &quot;Tag Value exceeds 255 characters&quot;...." />
+<title>starcluster.mbox.out: StarCluster Development VPC-Starclusters - possible bug relating to &quot;Tag Value exceeds 255 characters&quot;....</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">StarCluster Development VPC-Starclusters - possible bug relating to &quot;Tag Value exceeds 255 characters&quot;....</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>StarCluster Development VPC-Starclusters - possible bug relating to &quot;Tag Value exceeds 255 characters&quot;....</h1>
+<!-- received="Tue Dec 10 11:23:23 2013" -->
+<!-- isoreceived="20131210162323" -->
+<!-- sent="Tue, 10 Dec 2013 11:23:19 -0500" -->
+<!-- isosent="20131210162319" -->
+<!-- name="Jennifer Staab" -->
+<!-- email="(no email)" -->
+<!-- subject="StarCluster Development VPC-Starclusters - possible bug relating to &quot;Tag Value exceeds 255 characters&quot;...." -->
+<!-- id="CABiDiYsiji0h1OJJcqkCZZe+bXM4HKGYm5PxG2BGgUY4XR8pGw_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1974.html#start1974" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1974.html#options2">top</a>, <a href="1974.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1975.html" accesskey="d" title="Michael Shamberger: &quot;(no subject)&quot;">Next message</a> ]
+[ <a href="1973.html" title="Sergio Mafra: &quot;Re:  MIT StarCluster and the new C3 instances&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="1986.html" accesskey="t" title="Justin Riley: &quot;Re:  StarCluster Development VPC-Starclusters - possible bug relating to &#0034;Tag Value exceeds 255 characters&#0034;....&quot;">Next in thread</a> ]
+ [ <a href="1974.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1974" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1974" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1974" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1974" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Jennifer Staab &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Tue, 10 Dec 2013 11:23:19 -0500</span><br />
+</address>
+<br />
+I have had limited success getting Starcluster to successfully launch a
+<br />
+cluster with EC2-VPC nodes under the development version (0.9999). Using a
+<br />
+certain AMI I can easily launch a Starcluster cluster with EC2-VPC nodes,
+<br />
+but using a different AMI it fails to launch.  I do set the config
+<br />
+variables &quot;VPC_ID&quot; and &quot;SUBNET_ID&quot; and the only difference between the two
+<br />
+cluster templates is the AMI that is used.
+<br />
+<br />Both AMIs used successfully launch a Starcluster cluster with EC2-classic
+<br />
+nodes.  The only noted difference between the AMIs is that the one that
+<br />
+successfully launches a Starcluster cluster with VPC-EC2 nodes is a private
+<br />
+AMI that is &quot;shared&quot; with the account that I am running my VPC within.  The
+<br />
+AMI that doesn't work with Starcluster-VPC is one that is private AMI
+<br />
+&quot;owned&quot; by the account I am running my VPC within.
+<br />
+<br />I believe the error I am getting has something to do with the Tags,
+<br />
+specifically the &quot;_at_sc-core&quot; tag's value being beyond 255 characters, but I
+<br />
+could be wrong.  Below I have included an example of the successful launch,
+<br />
+the failed launch (including error message), and the listed clusters after
+<br />
+both commands.
+<br />
+<br />Any suggestions on how to address this issue would be greatly appreciated.
+<br />
+<br />Thanks in advance for the help,
+<br />
+<br />-Jennifer
+<br />
+<br />-------------------------------------------------------------------------------------------------
+<br />
+------ Below is what it looks like when I have a successful launch ---
+<br />
+-------------------------------------------------------------------------------------------------
+<br />
+(starcluster)root_at_xxxxxxxxxxx:~# starcluster start -c testvpcA vpcA
+<br />
+StarCluster - (<a href="/cluster/">/cluster</a>) (v. 0.9999)
+<br />
+Software Tools for Academics and Researchers (STAR)
+<br />
+Please submit bug reports to starcluster_at_mit.edu
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Validating cluster template settings...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Cluster template settings are valid
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Starting cluster...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Launching a 1-node cluster...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Creating security group _at_sc-vpcA...
+</em><br />
+Reservation:r-2843fa4e
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for cluster to come up... (updating every 30s)
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for all nodes to be in a 'running' state...
+</em><br />
+1/1 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for SSH to come up on all nodes...
+</em><br />
+1/1 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for cluster to come up took 1.574 mins
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; The master node is
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring cluster...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Running plugin starcluster.clustersetup.DefaultClusterSetup
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring hostnames...
+</em><br />
+1/1 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Creating cluster user: sgeadmin (uid: 1007, gid: 1000)
+</em><br />
+1/1 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring scratch space for user(s): sgeadmin
+</em><br />
+1/1 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring /etc/hosts on each node
+</em><br />
+1/1 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Starting NFS server on master
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Setting up NFS took 0.113 mins
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring passwordless ssh for root
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring passwordless ssh for sgeadmin
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Running plugin starcluster.plugins.sge.SGEPlugin
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring SGE...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Setting up NFS took 0.000 mins
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Removing previous SGE installation...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Installing Sun Grid Engine...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Creating SGE parallel environment 'orte'
+</em><br />
+1/1 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Adding parallel environment 'orte' to queue 'all.q'
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring cluster took 0.679 mins
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Starting cluster took 2.307 mins
+</em><br />
+<br />The cluster is now ready to use. To login to the master node
+<br />
+as root, run:
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;$ starcluster sshmaster vpcA
+<br />
+<br />If you're having issues with the cluster you can reboot the
+<br />
+instances and completely reconfigure the cluster from
+<br />
+scratch using:
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;$ starcluster restart vpcA
+<br />
+<br />When you're finished using the cluster and wish to terminate
+<br />
+it and stop paying for service:
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;$ starcluster terminate vpcA
+<br />
+<br />Alternatively, if the cluster uses EBS instances, you can
+<br />
+use the 'stop' command to shutdown all nodes and put them
+<br />
+into a 'stopped' state preserving the EBS volumes backing
+<br />
+the nodes:
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;$ starcluster stop vpcA
+<br />
+<br />WARNING: Any data stored in ephemeral storage (usually /mnt)
+<br />
+will be lost!
+<br />
+<br />You can activate a 'stopped' cluster by passing the -x
+<br />
+option to the 'start' command:
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;$ starcluster start -x vpcA
+<br />
+<br />This will start all 'stopped' nodes and reconfigure the
+<br />
+cluster.
+<br />
+-------------------------------------------------------------------------------------------------
+<br />
+------ Below is what it looks like when I have a FAILED launch ---
+<br />
+-------------------------------------------------------------------------------------------------
+<br />
+(starcluster)root_at_xxxxxxxxxxx:~# starcluster start -c testvpcB vpcB
+<br />
+StarCluster - (<a href="/cluster/">/cluster</a>) (v. 0.9999)
+<br />
+Software Tools for Academics and Researchers (STAR)
+<br />
+Please submit bug reports to starcluster_at_mit.edu
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Validating cluster template settings...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Cluster template settings are valid
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Starting cluster...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Launching a 1-node cluster...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Creating security group _at_sc-vpcB...
+</em><br />
+!!! ERROR - InvalidParameterValue: Tag value exceeds the maximum length of
+<br />
+255 characters
+<br />
+Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File &quot;/root/.virtualenvs/starcluster/starcluster/starcluster/cli.py&quot;,
+<br />
+line 274, in main
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;sc.execute(args)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/root/.virtualenvs/starcluster/starcluster/starcluster/commands/start.py&quot;,
+<br />
+line 220, in execute
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;validate_running=validate_running)
+<br />
+&nbsp;&nbsp;File &quot;/root/.virtualenvs/starcluster/starcluster/starcluster/cluster.py&quot;,
+<br />
+line 1537, in start
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;return self._start(create=create, create_only=create_only)
+<br />
+&nbsp;&nbsp;File &quot;&lt;string&gt;&quot;, line 2, in _start
+<br />
+&nbsp;&nbsp;File &quot;/root/.virtualenvs/starcluster/starcluster/starcluster/utils.py&quot;,
+<br />
+line 111, in wrap_f
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;res = func(*arg, **kargs)
+<br />
+&nbsp;&nbsp;File &quot;/root/.virtualenvs/starcluster/starcluster/starcluster/cluster.py&quot;,
+<br />
+line 1552, in _start
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self.create_cluster()
+<br />
+&nbsp;&nbsp;File &quot;/root/.virtualenvs/starcluster/starcluster/starcluster/cluster.py&quot;,
+<br />
+line 1066, in create_cluster
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self._create_flat_rate_cluster()
+<br />
+&nbsp;&nbsp;File &quot;/root/.virtualenvs/starcluster/starcluster/starcluster/cluster.py&quot;,
+<br />
+line 1091, in _create_flat_rate_cluster
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;force_flat=True)[0]
+<br />
+&nbsp;&nbsp;File &quot;/root/.virtualenvs/starcluster/starcluster/starcluster/cluster.py&quot;,
+<br />
+line 859, in create_nodes
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;cluster_sg = self.cluster_group.name
+<br />
+&nbsp;&nbsp;File &quot;/root/.virtualenvs/starcluster/starcluster/starcluster/cluster.py&quot;,
+<br />
+line 657, in cluster_group
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self._add_tags_to_sg(sg)
+<br />
+&nbsp;&nbsp;File &quot;/root/.virtualenvs/starcluster/starcluster/starcluster/cluster.py&quot;,
+<br />
+line 698, in _add_tags_to_sg
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;sg.add_tag(static.CORE_TAG, core_settings)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/root/.virtualenvs/starcluster/local/lib/python2.7/site-packages/boto-2.19.0-py2.7.egg/boto/ec2/ec2object.py&quot;,
+<br />
+line 82, in add_tag
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;dry_run=dry_run
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/root/.virtualenvs/starcluster/local/lib/python2.7/site-packages/boto-2.19.0-py2.7.egg/boto/ec2/connection.py&quot;,
+<br />
+line 4026, in create_tags
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;return self.get_status('CreateTags', params, verb='POST')
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/root/.virtualenvs/starcluster/local/lib/python2.7/site-packages/boto-2.19.0-py2.7.egg/boto/connection.py&quot;,
+<br />
+line 1158, in get_status
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;raise self.ResponseError(response.status, response.reason, body)
+<br />
+EC2ResponseError: EC2ResponseError: 400 Bad Request
+<br />
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+<br />
+&lt;Response&gt;&lt;Errors&gt;&lt;Error&gt;&lt;Code&gt;InvalidParameterValue&lt;/Code&gt;&lt;Message&gt;Tag
+<br />
+value exceeds the maximum length of 255
+<br />
+characters&lt;/Message&gt;&lt;/Error&gt;&lt;/Errors&gt;&lt;RequestID&gt;1f589605-8f30-472d-8989-22ea120aea14&lt;/RequestID&gt;&lt;/Response&gt;
+<br />
+<br />-----------------------------------------------------------------------------------------------------------------
+<br />
+------ When if FAILS it creates only a security group see &quot;listclusters&quot;
+<br />
+below ---
+<br />
+-----------------------------------------------------------------------------------------------------------------
+<br />
+(starcluster)root_at_xxxxxxxxxxx:~# starcluster listclusters
+<br />
+StarCluster - (<a href="/cluster/">/cluster</a>) (v. 0.9999)
+<br />
+Software Tools for Academics and Researchers (STAR)
+<br />
+Please submit bug reports to starcluster_at_mit.edu
+<br />
+<br />-------------------------------
+<br />
+vpcB (security group: _at_sc-vpcB)
+<br />
+-------------------------------
+<br />
+Launch time: N/A
+<br />
+Uptime: N/A
+<br />
+Zone: N/A
+<br />
+Keypair: N/A
+<br />
+EBS volumes: N/A
+<br />
+Cluster nodes: N/A
+<br />
+<br />-------------------------------
+<br />
+vpcA (security group: _at_sc-vpcA)
+<br />
+-------------------------------
+<br />
+Launch time: 2013-12-10 14:39:36
+<br />
+Uptime: 0 days, 00:04:23
+<br />
+Zone: us-east-1b
+<br />
+Keypair: Starcluster_VPC
+<br />
+EBS volumes: N/A
+<br />
+Cluster nodes:
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;master running i-1d745b65 10.0.0.138
+<br />
+Total nodes: 1
+<br />
+<br />(starcluster)root_at_xxxxxxxxxxx:~#
+<br />
+<span id="received"><dfn>Received on</dfn> Tue Dec 10 2013 - 11:23:23 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1974.html#start1974">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1975.html" title="Next message in the list">Michael Shamberger: "(no subject)"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1973.html" title="Previous message in the list">Sergio Mafra: "Re:  MIT StarCluster and the new C3 instances"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1986.html" title="Next message in this discussion thread">Justin Riley: "Re:  StarCluster Development VPC-Starclusters - possible bug relating to &#0034;Tag Value exceeds 255 characters&#0034;...."</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1986.html" title="Message sent in reply to this message">Justin Riley: "Re:  StarCluster Development VPC-Starclusters - possible bug relating to &#0034;Tag Value exceeds 255 characters&#0034;...."</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1974" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1974" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1974" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1974" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Chris Diehl ((no email))" />
+<meta name="Subject" content="rmate on StarCluster EC2 instance" />
+<title>starcluster.mbox.out: rmate on StarCluster EC2 instance</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">rmate on StarCluster EC2 instance</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>rmate on StarCluster EC2 instance</h1>
+<!-- received="Fri Jan 23 19:25:51 2015" -->
+<!-- isoreceived="20150124002551" -->
+<!-- sent="Fri, 23 Jan 2015 16:25:30 -0800" -->
+<!-- isosent="20150124002530" -->
+<!-- name="Chris Diehl" -->
+<!-- email="(no email)" -->
+<!-- subject="rmate on StarCluster EC2 instance" -->
+<!-- id="CABYryNB7XiN+9GDWxu5cFCPg4E-r7+AfGCA4u9ZXtUWz3wgfXA_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2533.html#start2533" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2533.html#options2">top</a>, <a href="2533.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2534.html" accesskey="d" title="Rayson Ho: &quot;Re:  request of new features of starcluster&quot;">Next message</a> ]
+[ <a href="2532.html" title="Avner May: &quot;Re:  Question about star cluster AMIs&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2533" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2533" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2533" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2533" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Chris Diehl &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Fri, 23 Jan 2015 16:25:30 -0800</span><br />
+</address>
+<br />
+Hi All,
+<br />
+<br />This afternoon, I tried configuring StarCluster to allow me to use rmate to
+<br />
+edit text files remotely using TextMate. In principle, it seems all I need
+<br />
+to do is to open up port 52698 and run rmate on the EC2 instance to fire up
+<br />
+TextMate locally on my machine. Adding the following security group
+<br />
+permission doesn't seem to be enough to get the job done
+<br />
+<br />[permission textmate]
+<br />
+IP_PROTOCOL = tcp
+<br />
+FROM_PORT = 52698
+<br />
+TO_PORT = 52698
+<br />
+<br />as I'm seeing the following:
+<br />
+/var/lib/gems/1.9.1/gems/rmate-1.5.7/bin/rmate:157:in `initialize':
+<br />
+Connection refused - connect(2) (Errno::ECONNREFUSED)
+<br />
+from /var/lib/gems/1.9.1/gems/rmate-1.5.7/bin/rmate:157:in `new'
+<br />
+from /var/lib/gems/1.9.1/gems/rmate-1.5.7/bin/rmate:157:in
+<br />
+`connect_and_handle_cmds'
+<br />
+from /var/lib/gems/1.9.1/gems/rmate-1.5.7/bin/rmate:207:in `block in &lt;top
+<br />
+(required)&gt;'
+<br />
+from /var/lib/gems/1.9.1/gems/rmate-1.5.7/bin/rmate:206:in `fork'
+<br />
+from /var/lib/gems/1.9.1/gems/rmate-1.5.7/bin/rmate:206:in `&lt;top
+<br />
+(required)&gt;'
+<br />
+from /usr/local/bin/rmate:23:in `load'
+<br />
+from /usr/local/bin/rmate:23:in `&lt;main&gt;'
+<br />
+<br />Curious if anyone else on the list is using rmate on their StarCluster
+<br />
+instances and can advise how to properly configure for its use. Appreciate
+<br />
+any feedback!
+<br />
+<br />More on rmate: <a href="http://erniemiller.org/2011/12/12/textmate-2-rmate-awesome/">http://erniemiller.org/2011/12/12/textmate-2-rmate-awesome/</a>
+<br />
+<br />Cheers,
+<br />
+<br />Chris
+<br />
+<span id="received"><dfn>Received on</dfn> Fri Jan 23 2015 - 19:25:51 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2533.html#start2533">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2534.html" title="Next message in the list">Rayson Ho: "Re:  request of new features of starcluster"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2532.html" title="Previous message in the list">Avner May: "Re:  Question about star cluster AMIs"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2533" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2533" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2533" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2533" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

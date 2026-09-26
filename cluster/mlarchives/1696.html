@@ -1,0 +1,189 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Mauro Brunato ((no email))" />
+<meta name="Subject" content="Permissions for UDP port ranges: undocumented protocol line" />
+<title>starcluster.mbox.out: Permissions for UDP port ranges: undocumented protocol line</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Permissions for UDP port ranges: undocumented protocol line</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Permissions for UDP port ranges: undocumented protocol line</h1>
+<!-- received="Thu Mar 14 09:51:05 2013" -->
+<!-- isoreceived="20130314135105" -->
+<!-- sent="Thu, 14 Mar 2013 14:51:01 +0100" -->
+<!-- isosent="20130314135101" -->
+<!-- name="Mauro Brunato" -->
+<!-- email="(no email)" -->
+<!-- subject="Permissions for UDP port ranges: undocumented protocol line" -->
+<!-- id="58F08BD4-51C4-4E47-A4D8-0578E6C67787_at_lionsolver.com" -->
+<!-- charset="us-ascii" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1696.html#start1696" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1696.html#options2">top</a>, <a href="1696.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1697.html" accesskey="d" title="Yevgeny Popkov: &quot;starcluster (potential) bug report&quot;">Next message</a> ]
+[ <a href="1695.html" title="Stephen How: &quot;can I remove a pending node?&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1696" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1696" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1696" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1696" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Mauro Brunato &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 14 Mar 2013 14:51:01 +0100</span><br />
+</address>
+<br />
+Hi,
+<br />
+<br />is it possible to open UDP port ranges in the &quot;permission&quot; section? Alternatively, is it possible to refer to an existing security group rather than creating one on the spot?
+<br />
+<br />I'm asking because some example config files actually contain a &quot;protocol=&quot; line with the indication that it can be tcp, udp, or icmp. However, I inserted the following lines in my config file (only relevant lines shown):
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[permission myudprange]
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;protocol = udp
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from_port = 54274
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to_port = 54275
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[cluster smallcluster]
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;permissions = myudprange
+<br />
+<br />But when I start the cluster the log says:
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Creating security group _at_sc-mycluster...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Opening tcp port range 54274-54275 for CIDR 0.0.0.0/0
+</em><br />
+<br />And indeed the security group created for the cluster refers to TCP rather than UDP.
+<br />
+<br />Thank you,
+<br />
+<br />&nbsp;&nbsp;Mauro.
+<br />
+<span id="received"><dfn>Received on</dfn> Thu Mar 14 2013 - 09:51:05 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1696.html#start1696">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1697.html" title="Next message in the list">Yevgeny Popkov: "starcluster (potential) bug report"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1695.html" title="Previous message in the list">Stephen How: "can I remove a pending node?"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1696" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1696" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1696" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1696" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

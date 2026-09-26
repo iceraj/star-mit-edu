@@ -1,0 +1,342 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Matthew Guthmiller ((no email))" />
+<meta name="Subject" content="Crash Reports" />
+<title>starcluster.mbox.out: Crash Reports</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Crash Reports</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Crash Reports</h1>
+<!-- received="Mon Mar 11 04:25:12 2013" -->
+<!-- isoreceived="20130311082512" -->
+<!-- sent="Mon, 11 Mar 2013 03:25:04 -0500" -->
+<!-- isosent="20130311082504" -->
+<!-- name="Matthew Guthmiller" -->
+<!-- email="(no email)" -->
+<!-- subject="Crash Reports" -->
+<!-- id="1BA91301-818D-4137-88D1-AF8B2F720442_at_mattguthmiller.com" -->
+<!-- charset="us-ascii" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1693.html#start1693" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1693.html#options2">top</a>, <a href="1693.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1694.html" accesskey="d" title="Lyn Gerner: &quot;Error Restarting Stopped Cluster&quot;">Next message</a> ]
+[ <a href="1692.html" title="Lyn Gerner: &quot;Re:  ELB: Failing to Add Spot-Bid Instances&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1693" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1693" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1693" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1693" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Matthew Guthmiller &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Mon, 11 Mar 2013 03:25:04 -0500</span><br />
+</address>
+<br />
+Two crash reports for you:
+<br />
+<br /><br />
+---------- CRASH DETAILS ----------
+<br />
+COMMAND: starcluster get closes /results /Users/matt/Dropbox/Financial Analysis/results/1
+<br />
+2013-03-11 03:20:57,198 PID: 90241 config.py:551 - DEBUG - Loading config
+<br />
+2013-03-11 03:20:57,198 PID: 90241 config.py:118 - DEBUG - Loading file: /Users/matt/.starcluster/config
+<br />
+2013-03-11 03:20:57,203 PID: 90241 awsutils.py:54 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'proxy_user': None, 'proxy_pass': None, 'proxy_port': None, 'proxy': None, 'is_secure': True, 'path': '/', 'region': None, 'port': None}
+<br />
+2013-03-11 03:20:58,680 PID: 90241 cluster.py:664 - DEBUG - existing nodes: {}
+<br />
+2013-03-11 03:20:58,680 PID: 90241 cluster.py:672 - DEBUG - adding node i-becdd5cd to self._nodes list
+<br />
+2013-03-11 03:20:58,680 PID: 90241 cluster.py:672 - DEBUG - adding node i-bccdd5cf to self._nodes list
+<br />
+2013-03-11 03:20:58,680 PID: 90241 cluster.py:672 - DEBUG - adding node i-a2cdd5d1 to self._nodes list
+<br />
+2013-03-11 03:20:58,680 PID: 90241 cluster.py:672 - DEBUG - adding node i-a6cdd5d5 to self._nodes list
+<br />
+2013-03-11 03:20:58,680 PID: 90241 cluster.py:672 - DEBUG - adding node i-a0cdd5d3 to self._nodes list
+<br />
+2013-03-11 03:20:58,680 PID: 90241 cluster.py:672 - DEBUG - adding node i-a4cdd5d7 to self._nodes list
+<br />
+2013-03-11 03:20:58,681 PID: 90241 cluster.py:672 - DEBUG - adding node i-aacdd5d9 to self._nodes list
+<br />
+2013-03-11 03:20:58,681 PID: 90241 cluster.py:672 - DEBUG - adding node i-a8cdd5db to self._nodes list
+<br />
+2013-03-11 03:20:58,681 PID: 90241 cluster.py:680 - DEBUG - returning self._nodes = [&lt;Node: master (i-a8cdd5db)&gt;, &lt;Node: node001 (i-a4cdd5d7)&gt;, &lt;Node: node002 (i-a2cdd5d1)&gt;, &lt;Node: node003 (i-becdd5cd)&gt;, &lt;Node: node004 (i-a6cdd5d5)&gt;, &lt;Node: node005 (i-bccdd5cf)&gt;, &lt;Node: node006 (i-a0cdd5d3)&gt;, &lt;Node: node007 (i-aacdd5d9)&gt;]
+<br />
+2013-03-11 03:20:58,681 PID: 90241 __init__.py:75 - DEBUG - loading private key /Users/matt/.ssh/starkey.rsa
+<br />
+2013-03-11 03:20:58,681 PID: 90241 __init__.py:167 - DEBUG - Using private key /Users/matt/.ssh/starkey.rsa (rsa)
+<br />
+2013-03-11 03:20:58,682 PID: 90241 __init__.py:186 - DEBUG - creating sftp connection
+<br />
+2013-03-11 03:20:58,682 PID: 90241 __init__.py:97 - DEBUG - connecting to host ec2-50-16-0-151.compute-1.amazonaws.com on port 22 as user root
+<br />
+2013-03-11 03:20:59,763 PID: 90241 __init__.py:186 - DEBUG - creating sftp connection
+<br />
+2013-03-11 03:21:00,583 PID: 90241 __init__.py:194 - DEBUG - creating scp connection
+<br />
+2013-03-11 03:21:00,876 PID: 90241 cli.py:287 - DEBUG - Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File &quot;/Library/Python/2.7/site-packages/StarCluster-0.93.3-py2.7.egg/starcluster/cli.py&quot;, line 255, in main
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;sc.execute(args)
+<br />
+&nbsp;&nbsp;File &quot;/Library/Python/2.7/site-packages/StarCluster-0.93.3-py2.7.egg/starcluster/commands/get.py&quot;, line 51, in execute
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;node.ssh.get(rpaths, lpath)
+<br />
+&nbsp;&nbsp;File &quot;/Library/Python/2.7/site-packages/StarCluster-0.93.3-py2.7.egg/starcluster/sshutils/__init__.py&quot;, line 431, in get
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self.scp.get(remotepaths, localpath, recursive=recursive)
+<br />
+&nbsp;&nbsp;File &quot;/Library/Python/2.7/site-packages/StarCluster-0.93.3-py2.7.egg/starcluster/sshutils/scp.py&quot;, line 141, in get
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self._recv_all()
+<br />
+&nbsp;&nbsp;File &quot;/Library/Python/2.7/site-packages/StarCluster-0.93.3-py2.7.egg/starcluster/sshutils/scp.py&quot;, line 247, in _recv_all
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;command[code](msg[1:])
+<br />
+&nbsp;&nbsp;File &quot;/Library/Python/2.7/site-packages/StarCluster-0.93.3-py2.7.egg/starcluster/sshutils/scp.py&quot;, line 338, in _recv_pushd
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self.channel.send('\x01' + e[0])
+<br />
+TypeError: cannot concatenate 'str' and 'int' objects
+<br />
+<br />---------- SYSTEM INFO ----------
+<br />
+StarCluster: 0.93.3
+<br />
+Python: 2.7.2 (default, Jun 20 2012, 16:23:33)  [GCC 4.2.1 Compatible Apple Clang 4.0 (tags/Apple/clang-418.0.60)]
+<br />
+Platform: Darwin-12.2.1-x86_64-i386-64bit
+<br />
+boto: 2.3.0
+<br />
+ssh: 1.7.13
+<br />
+Crypto: 2.6
+<br />
+jinja2: 2.6
+<br />
+decorator: 3.3.1
+<br />
+<br /><br />
+---------- CRASH DETAILS ----------
+<br />
+COMMAND: starcluster get closes /results /Users/matt/Dropbox/Financial Analysis/results/1
+<br />
+2013-03-11 03:21:17,641 PID: 90247 config.py:551 - DEBUG - Loading config
+<br />
+2013-03-11 03:21:17,641 PID: 90247 config.py:118 - DEBUG - Loading file: /Users/matt/.starcluster/config
+<br />
+2013-03-11 03:21:17,646 PID: 90247 awsutils.py:54 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'proxy_user': None, 'proxy_pass': None, 'proxy_port': None, 'proxy': None, 'is_secure': True, 'path': '/', 'region': None, 'port': None}
+<br />
+2013-03-11 03:21:18,657 PID: 90247 cluster.py:664 - DEBUG - existing nodes: {}
+<br />
+2013-03-11 03:21:18,657 PID: 90247 cluster.py:672 - DEBUG - adding node i-becdd5cd to self._nodes list
+<br />
+2013-03-11 03:21:18,657 PID: 90247 cluster.py:672 - DEBUG - adding node i-bccdd5cf to self._nodes list
+<br />
+2013-03-11 03:21:18,657 PID: 90247 cluster.py:672 - DEBUG - adding node i-a2cdd5d1 to self._nodes list
+<br />
+2013-03-11 03:21:18,657 PID: 90247 cluster.py:672 - DEBUG - adding node i-a6cdd5d5 to self._nodes list
+<br />
+2013-03-11 03:21:18,657 PID: 90247 cluster.py:672 - DEBUG - adding node i-a0cdd5d3 to self._nodes list
+<br />
+2013-03-11 03:21:18,658 PID: 90247 cluster.py:672 - DEBUG - adding node i-a4cdd5d7 to self._nodes list
+<br />
+2013-03-11 03:21:18,658 PID: 90247 cluster.py:672 - DEBUG - adding node i-aacdd5d9 to self._nodes list
+<br />
+2013-03-11 03:21:18,658 PID: 90247 cluster.py:672 - DEBUG - adding node i-a8cdd5db to self._nodes list
+<br />
+2013-03-11 03:21:18,658 PID: 90247 cluster.py:680 - DEBUG - returning self._nodes = [&lt;Node: master (i-a8cdd5db)&gt;, &lt;Node: node001 (i-a4cdd5d7)&gt;, &lt;Node: node002 (i-a2cdd5d1)&gt;, &lt;Node: node003 (i-becdd5cd)&gt;, &lt;Node: node004 (i-a6cdd5d5)&gt;, &lt;Node: node005 (i-bccdd5cf)&gt;, &lt;Node: node006 (i-a0cdd5d3)&gt;, &lt;Node: node007 (i-aacdd5d9)&gt;]
+<br />
+2013-03-11 03:21:18,658 PID: 90247 __init__.py:75 - DEBUG - loading private key /Users/matt/.ssh/starkey.rsa
+<br />
+2013-03-11 03:21:18,659 PID: 90247 __init__.py:167 - DEBUG - Using private key /Users/matt/.ssh/starkey.rsa (rsa)
+<br />
+2013-03-11 03:21:18,659 PID: 90247 __init__.py:186 - DEBUG - creating sftp connection
+<br />
+2013-03-11 03:21:18,659 PID: 90247 __init__.py:97 - DEBUG - connecting to host ec2-50-16-0-151.compute-1.amazonaws.com on port 22 as user root
+<br />
+2013-03-11 03:21:19,363 PID: 90247 __init__.py:186 - DEBUG - creating sftp connection
+<br />
+2013-03-11 03:21:20,226 PID: 90247 __init__.py:194 - DEBUG - creating scp connection
+<br />
+2013-03-11 03:21:20,517 PID: 90247 cli.py:287 - DEBUG - Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File &quot;/Library/Python/2.7/site-packages/StarCluster-0.93.3-py2.7.egg/starcluster/cli.py&quot;, line 255, in main
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;sc.execute(args)
+<br />
+&nbsp;&nbsp;File &quot;/Library/Python/2.7/site-packages/StarCluster-0.93.3-py2.7.egg/starcluster/commands/get.py&quot;, line 51, in execute
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;node.ssh.get(rpaths, lpath)
+<br />
+&nbsp;&nbsp;File &quot;/Library/Python/2.7/site-packages/StarCluster-0.93.3-py2.7.egg/starcluster/sshutils/__init__.py&quot;, line 431, in get
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self.scp.get(remotepaths, localpath, recursive=recursive)
+<br />
+&nbsp;&nbsp;File &quot;/Library/Python/2.7/site-packages/StarCluster-0.93.3-py2.7.egg/starcluster/sshutils/scp.py&quot;, line 141, in get
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self._recv_all()
+<br />
+&nbsp;&nbsp;File &quot;/Library/Python/2.7/site-packages/StarCluster-0.93.3-py2.7.egg/starcluster/sshutils/scp.py&quot;, line 247, in _recv_all
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;command[code](msg[1:])
+<br />
+&nbsp;&nbsp;File &quot;/Library/Python/2.7/site-packages/StarCluster-0.93.3-py2.7.egg/starcluster/sshutils/scp.py&quot;, line 338, in _recv_pushd
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self.channel.send('\x01' + e[0])
+<br />
+TypeError: cannot concatenate 'str' and 'int' objects
+<br />
+<br />---------- SYSTEM INFO ----------
+<br />
+StarCluster: 0.93.3
+<br />
+Python: 2.7.2 (default, Jun 20 2012, 16:23:33)  [GCC 4.2.1 Compatible Apple Clang 4.0 (tags/Apple/clang-418.0.60)]
+<br />
+Platform: Darwin-12.2.1-x86_64-i386-64bit
+<br />
+boto: 2.3.0
+<br />
+ssh: 1.7.13
+<br />
+Crypto: 2.6
+<br />
+jinja2: 2.6
+<br />
+decorator: 3.3.1
+<br />
+<br /><br />
+<br /><br />Matt
+<br />
+<span id="received"><dfn>Received on</dfn> Mon Mar 11 2013 - 04:25:12 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1693.html#start1693">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1694.html" title="Next message in the list">Lyn Gerner: "Error Restarting Stopped Cluster"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1692.html" title="Previous message in the list">Lyn Gerner: "Re:  ELB: Failing to Add Spot-Bid Instances"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1693" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1693" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1693" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1693" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

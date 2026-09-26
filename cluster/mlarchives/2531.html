@@ -1,0 +1,249 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Avner May ((no email))" />
+<meta name="Subject" content="Question about star cluster AMIs" />
+<title>starcluster.mbox.out: Question about star cluster AMIs</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Question about star cluster AMIs</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Question about star cluster AMIs</h1>
+<!-- received="Thu Jan 22 13:05:11 2015" -->
+<!-- isoreceived="20150122180511" -->
+<!-- sent="Thu, 22 Jan 2015 13:04:48 -0500" -->
+<!-- isosent="20150122180448" -->
+<!-- name="Avner May" -->
+<!-- email="(no email)" -->
+<!-- subject="Question about star cluster AMIs" -->
+<!-- id="CALkg49wGuheEHMBewWVerfXyvz52=yEQt0OKr9S23X_pvojKsw_at_mail.gmail.com" -->
+<!-- charset="UTF-8" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2531.html#start2531" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2531.html#options2">top</a>, <a href="2531.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2532.html" accesskey="d" title="Avner May: &quot;Re:  Question about star cluster AMIs&quot;">Next message</a> ]
+[ <a href="2530.html" title="Jennifer Staab: &quot;Re:  building an ami corrupts the original reference machine?&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2531" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2531" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2531" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2531" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Avner May &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 22 Jan 2015 13:04:48 -0500</span><br />
+</address>
+<br />
+Hi all,
+<br />
+<br />I'm a new star cluster user, and a new member to this list.  Not sure what
+<br />
+the etiquette is for emailing the list.
+<br />
+<br />I have the following question:  When I perform &quot;starcluster listpublic&quot;, I
+<br />
+see a list of AMI's (see command output below).  However, I have no idea
+<br />
+how each of these AMIs is configured.  For example, I need GPU support for
+<br />
+my work, so I would like my AMI to have CUDA pre-installed, and for it to
+<br />
+support being launched with the AWS GPU instances (eg, &quot;g2.2xlarge&quot;).
+<br />
+Where can I get detailed information about each of these AMI's??
+<br />
+<br />Thanks so much,
+<br />
+Avner
+<br />
+<br />=============================
+<br />
+C:\Windows\system32&gt;starcluster listpublic
+<br />
+StarCluster - (<a href="/cluster/">/cluster</a>) (v. 0.95.6)
+<br />
+Software Tools for Academics and Researchers (STAR)
+<br />
+Please submit bug reports to starcluster_at_mit.edu
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Listing all public StarCluster images...
+</em><br />
+<br />32bit Images:
+<br />
+-------------
+<br />
+[0] ami-9bf9c9f2 us-east-1 starcluster-base-ubuntu-13.04-x86 (EBS)
+<br />
+[1] ami-7c5c3915 us-east-1 starcluster-base-ubuntu-12.04-x86 (EBS)
+<br />
+[2] ami-899d49e0 us-east-1 starcluster-base-ubuntu-11.10-x86 (EBS)
+<br />
+[3] ami-8cf913e5 us-east-1 starcluster-base-ubuntu-10.04-x86-rc3
+<br />
+[4] ami-d1c42db8 us-east-1 starcluster-base-ubuntu-9.10-x86-rc8
+<br />
+<br />64bit Images:
+<br />
+--------------
+<br />
+[0] ami-3393a45a us-east-1 starcluster-base-ubuntu-13.04-x86_64 (EBS)
+<br />
+[1] ami-6b211202 us-east-1 starcluster-base-ubuntu-13.04-x86_64-hvm
+<br />
+(HVM-EBS)
+<br />
+[2] ami-52a0c53b us-east-1 starcluster-base-ubuntu-12.04-x86_64-hvm
+<br />
+(HVM-EBS)
+<br />
+[3] ami-765b3e1f us-east-1 starcluster-base-ubuntu-12.04-x86_64 (EBS)
+<br />
+[4] ami-4583572c us-east-1 starcluster-base-ubuntu-11.10-x86_64-hvm
+<br />
+(HVM-EBS)
+<br />
+[5] ami-999d49f0 us-east-1 starcluster-base-ubuntu-11.10-x86_64 (EBS)
+<br />
+[6] ami-0af31963 us-east-1 starcluster-base-ubuntu-10.04-x86_64-rc1
+<br />
+[7] ami-2faa7346 us-east-1 starcluster-base-ubuntu-10.04-x86_64-qiime-1.4.0
+<br />
+(EBS)
+<br />
+[8] ami-8852a0e1 us-east-1 starcluster-base-ubuntu-10.04-x86_64-hadoop
+<br />
+[9] ami-a5c42dcc us-east-1 starcluster-base-ubuntu-9.10-x86_64-rc4
+<br />
+[10] ami-06a75a6f us-east-1
+<br />
+starcluster-base-centos-5.4-x86_64-ebs-hvm-gpu-hadoop-rc2 (HVM-EBS)
+<br />
+[11] ami-12b6477b us-east-1
+<br />
+starcluster-base-centos-5.4-x86_64-ebs-hvm-gpu-rc2 (HVM-EBS)
+<br />
+<br />total images: 17
+<br />
+<span id="received"><dfn>Received on</dfn> Thu Jan 22 2015 - 13:05:11 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2531.html#start2531">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2532.html" title="Next message in the list">Avner May: "Re:  Question about star cluster AMIs"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2530.html" title="Previous message in the list">Jennifer Staab: "Re:  building an ami corrupts the original reference machine?"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2531" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2531" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2531" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2531" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

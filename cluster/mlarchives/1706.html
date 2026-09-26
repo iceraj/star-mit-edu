@@ -1,0 +1,354 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Jerry Lee, GW/US ((no email))" />
+<meta name="Subject" content="Unable to mount ebs volume" />
+<title>starcluster.mbox.out: Unable to mount ebs volume</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Unable to mount ebs volume</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Unable to mount ebs volume</h1>
+<!-- received="Mon Apr 15 18:11:41 2013" -->
+<!-- isoreceived="20130415221141" -->
+<!-- sent="Mon, 15 Apr 2013 17:11:38 -0500" -->
+<!-- isosent="20130415221138" -->
+<!-- name="Jerry Lee, GW/US" -->
+<!-- email="(no email)" -->
+<!-- subject="Unable to mount ebs volume" -->
+<!-- id="8C6B6C7289B1624FBB4AC941B7157B5805D627F2_at_GWMAIL01.local.genewiz.com" -->
+<!-- charset="us-ascii" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1706.html#start1706" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1706.html#options2">top</a>, <a href="1706.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1707.html" accesskey="d" title="Sergio Mafra: &quot;LoadBalance&quot;">Next message</a> ]
+[ <a href="1705.html" title="Nick Robison: &quot;StarCluster Plugin errors&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="1709.html" accesskey="t" title="Steve Darnell: &quot;Re:  Unable to mount ebs volume&quot;">Next in thread</a> ]
+ [ <a href="1706.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1706" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1706" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1706" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1706" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Jerry Lee, GW/US &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Mon, 15 Apr 2013 17:11:38 -0500</span><br />
+</address>
+<br />
+Hi,
+<br />
+<br />&nbsp;
+<br />
+<br />I am a beginner of using the StarCluster. I created a ebs volme via
+<br />
+Amazon AWS and configure it on the config file to use it for my cluster,
+<br />
+but no matter what I do, it doesn't automatically mount the ebs volume
+<br />
+onto the cluster. Please help.
+<br />
+<br />&nbsp;
+<br />
+<br />[cluster jerrycluster]
+<br />
+<br />EXTENDS = smallcluster
+<br />
+<br />VOLUMES = testdata
+<br />
+<br />&nbsp;
+<br />
+<br />[volume testdata]
+<br />
+<br />VOLUME_ID=vol-a0fe24f9
+<br />
+<br />MOUNT_PATH=/data
+<br />
+<br />&nbsp;
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Waiting for cluster to come up... (updating every 30s)
+</em><br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Waiting for instances to activate...
+</em><br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Waiting for all nodes to be in a 'running' state...
+</em><br />
+<br />2/2 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Waiting for SSH to come up on all nodes...
+</em><br />
+<br />2/2 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Waiting for cluster to come up took 1.847 mins
+</em><br />
+<br /><em class="quotelev3">&gt;&gt;&gt; The master node is ec2-54-234-229-206.compute-1.amazonaws.com
+</em><br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Setting up the cluster...
+</em><br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Configuring hostnames...
+</em><br />
+<br />2/2 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Creating cluster user: None (uid: 1001, gid: 1001)
+</em><br />
+<br />2/2 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Configuring scratch space for user(s): sgeadmin
+</em><br />
+<br />2/2 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Configuring /etc/hosts on each node
+</em><br />
+<br />2/2 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Starting NFS server on master
+</em><br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Configuring NFS exports path(s):
+</em><br />
+<br />/home
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Mounting all NFS export path(s) on 1 worker node(s)
+</em><br />
+<br />1/1 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Setting up NFS took 0.073 mins
+</em><br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Configuring passwordless ssh for root
+</em><br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Configuring passwordless ssh for sgeadmin
+</em><br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Shutting down threads...
+</em><br />
+<br />20/20 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Configuring SGE...
+</em><br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Configuring NFS exports path(s):
+</em><br />
+<br />/opt/sge6
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Mounting all NFS export path(s) on 1 worker node(s)
+</em><br />
+<br />1/1 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Setting up NFS took 0.020 mins
+</em><br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Installing Sun Grid Engine...
+</em><br />
+<br />1/1 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Creating SGE parallel environment 'orte'
+</em><br />
+<br />2/2 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Adding parallel environment 'orte' to queue 'all.q'
+</em><br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Shutting down threads...
+</em><br />
+<br />20/20 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Configuring cluster took 1.325 mins
+</em><br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Starting cluster took 3.197 mins
+</em><br />
+<br />&nbsp;
+<br />
+<br />&nbsp;
+<br />
+<br />Thanks,
+<br />
+<br />&nbsp;
+<br />
+<br />Jerry Lee
+<br />
+<br />&nbsp;
+<br />
+<br />Jerry Lee
+<br />
+<br />Assistant Manager of Global Infrastructure
+<br />
+<br />GENEWIZ Inc.
+<br />
+<br />40 Cragwood Road. Suite 201
+<br />
+<br />South Plainfield, NJ 07080
+<br />
+<br />Phone: 908-222-0711 ext. 3379
+<br />
+<br />Fax: 908-333-4511 
+<br />
+<br />jerry.lee_at_genewiz.com &lt;mailto:jerry.lee_at_genewiz.com&gt; 
+<br />
+<br />www.genewiz.com &lt;<a href="http://www.genewiz.com/">http://www.genewiz.com/</a>&gt; 
+<br />
+<br />&nbsp;
+<br />
+<br />This electronic message, including its attachments, is confidential and
+<br />
+proprietary and is solely for the intended recipient.  If you are not
+<br />
+the intended recipient, this message was sent to you in error and you
+<br />
+are hereby advised that any review, disclosure, copying, distribution or
+<br />
+use of this message or any of the information included in this message
+<br />
+by you is unauthorized and strictly prohibited.  If you have received
+<br />
+this message in error, please immediately notify the sender by reply to
+<br />
+this message and permanently delete all copies of this message and its
+<br />
+attachments in your possession.  Thank you for your cooperation.
+<br />
+<br />&nbsp;
+<br />
+<span id="received"><dfn>Received on</dfn> Mon Apr 15 2013 - 18:11:41 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1706.html#start1706">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1707.html" title="Next message in the list">Sergio Mafra: "LoadBalance"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1705.html" title="Previous message in the list">Nick Robison: "StarCluster Plugin errors"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1709.html" title="Next message in this discussion thread">Steve Darnell: "Re:  Unable to mount ebs volume"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1709.html" title="Message sent in reply to this message">Steve Darnell: "Re:  Unable to mount ebs volume"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1706" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1706" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1706" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1706" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

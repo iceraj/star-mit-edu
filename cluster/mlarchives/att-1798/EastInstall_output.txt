@@ -1,0 +1,31 @@
+Searching for starcluster
+Reading http://pypi.python.org/simple/starcluster/
+Best match: StarCluster 0.94
+Downloading https://pypi.python.org/packages/source/S/StarCluster/StarCluster-0.
+94.tar.gz#md5=982f59fde2a32b4bc059a497f5c0a0b7
+Processing StarCluster-0.94.tar.gz
+Writing c:\users\work\appdata\local\temp\easy_install-sjw5fb\StarCluster-0.94\se
+tup.cfg
+Running StarCluster-0.94\setup.py -q bdist_egg --dist-dir c:\users\work\appdata\
+local\temp\easy_install-sjw5fb\StarCluster-0.94\egg-dist-tmp-evwvtx
+Adding starcluster 0.94 to easy-install.pth file
+Installing starcluster-script.py script to C:\Python27\Scripts
+Installing starcluster.exe script to C:\Python27\Scripts
+Installing starcluster.exe.manifest script to C:\Python27\Scripts
+
+Installed c:\python27\lib\site-packages\starcluster-0.94-py2.7.egg
+Processing dependencies for starcluster
+Searching for optcomplete>=1.2-devel
+Reading http://pypi.python.org/simple/optcomplete/
+Best match: optcomplete 1.2-devel
+Downloading https://pypi.python.org/packages/source/o/optcomplete/optcomplete-1.
+2-devel.tar.gz#md5=6392cd0a7154b3394004d5ad9d913d59
+Processing optcomplete-1.2-devel.tar.gz
+Writing c:\users\work\appdata\local\temp\easy_install-0ntpff\optcomplete-1.2-dev
+el\setup.cfg
+Running optcomplete-1.2-devel\setup.py -q bdist_egg --dist-dir c:\users\work\app
+data\local\temp\easy_install-0ntpff\optcomplete-1.2-devel\egg-dist-tmp-nhgcph
+zip_safe flag not set; analyzing archive contents...
+No eggs found in c:\users\work\appdata\local\temp\easy_install-0ntpff\optcomplet
+e-1.2-devel\egg-dist-tmp-nhgcph (setup script problem?)
+error: Could not find required distribution optcomplete>=1.2-devel

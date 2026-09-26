@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Jascha Sohl-Dickstein ((no email))" />
+<meta name="Subject" content="bug report, startup failed on EC2" />
+<title>starcluster.mbox.out: bug report, startup failed on EC2</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">bug report, startup failed on EC2</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>bug report, startup failed on EC2</h1>
+<!-- received="Sat Aug  3 19:19:54 2013" -->
+<!-- isoreceived="20130803231954" -->
+<!-- sent="Sat, 3 Aug 2013 16:19:51 -0700" -->
+<!-- isosent="20130803231951" -->
+<!-- name="Jascha Sohl-Dickstein" -->
+<!-- email="(no email)" -->
+<!-- subject="bug report, startup failed on EC2" -->
+<!-- id="F5CD33E4-C300-4562-88C9-0EFE76D2F996_at_stanford.edu" -->
+<!-- charset="us-ascii" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1813.html#start1813" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1813.html#options2">top</a>, <a href="1813.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1814.html" accesskey="d" title="Jascha Sohl-Dickstein: &quot;Re:  bug report, startup failed on EC2&quot;">Next message</a> ]
+[ <a href="1812.html" title="Blanchette, Marco: &quot;Re:  Tophat run on a 2-node cluster&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="1814.html" accesskey="t" title="Jascha Sohl-Dickstein: &quot;Re:  bug report, startup failed on EC2&quot;">Next in thread</a> ]
+ [ <a href="1813.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1813" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1813" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1813" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1813" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Jascha Sohl-Dickstein &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Sat, 3 Aug 2013 16:19:51 -0700</span><br />
+</address>
+<br />
+I am getting an error every time I try to start a starcluster on Amazon EC2.  I've started clusters successfully in the past (most recently, 2 or 3 days ago) using an identical command and configuration, so I'm not sure what might have changed.  The error message asks me to forward the crash report to this list, so here it is!  The mailing list only accepts messages smaller than 40K, but the crash report is available at <a href="https://www.dropbox.com/s/3tiwkz6tivfax2v/crash-report-10470.txt">https://www.dropbox.com/s/3tiwkz6tivfax2v/crash-report-10470.txt</a>  .
+<br />
+<br /><em class="quotelev1">&gt;From the error message -- it may be failing to find psutil, and then skipping the rest of the setup process?  I don't know why psutil would suddenly be unavailable.  If I sshmaster into the cluster after the failed start ipython.parallel is not configured properly, so for my purposes at least the error is fatal.  Any help would be greatly appreciated!  I can provide more information if needed.
+</em><br />
+<br />Thanks,
+<br />
+Jascha
+<br />
+<span id="received"><dfn>Received on</dfn> Sat Aug 03 2013 - 19:19:54 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1813.html#start1813">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1814.html" title="Next message in the list">Jascha Sohl-Dickstein: "Re:  bug report, startup failed on EC2"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1812.html" title="Previous message in the list">Blanchette, Marco: "Re:  Tophat run on a 2-node cluster"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1814.html" title="Next message in this discussion thread">Jascha Sohl-Dickstein: "Re:  bug report, startup failed on EC2"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1814.html" title="Message sent in reply to this message">Jascha Sohl-Dickstein: "Re:  bug report, startup failed on EC2"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1813" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1813" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1813" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1813" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

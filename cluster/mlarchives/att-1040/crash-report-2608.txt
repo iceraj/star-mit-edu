@@ -1,0 +1,122 @@
+---------- CRASH DETAILS ----------
+COMMAND: starcluster start ncluster
+2012-02-22 16:06:54,374 PID: 2608 config.py:551 - DEBUG - Loading config
+2012-02-22 16:06:54,375 PID: 2608 config.py:118 - DEBUG - Loading file: /home/ryu/.starcluster/config
+2012-02-22 16:06:54,379 PID: 2608 awsutils.py:54 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'proxy_user': None, 'proxy_pass': None, 'proxy_port': None, 'proxy': None, 'is_secure': True, 'path': '/', 'region': RegionInfo:us-west-1, 'port': None}
+2012-02-22 16:06:54,516 PID: 2608 start.py:176 - INFO - Using default cluster template: smallcluster
+2012-02-22 16:06:54,517 PID: 2608 cluster.py:1515 - INFO - Validating cluster template settings...
+2012-02-22 16:06:54,976 PID: 2608 cluster.py:909 - DEBUG - Launch map: node001 (ami: ami-21abf264, type: m1.large)...
+2012-02-22 16:06:54,977 PID: 2608 cluster.py:1530 - INFO - Cluster template settings are valid
+2012-02-22 16:06:54,978 PID: 2608 cluster.py:1406 - INFO - Starting cluster...
+2012-02-22 16:06:54,978 PID: 2608 cluster.py:935 - INFO - Launching a 2-node cluster...
+2012-02-22 16:06:54,979 PID: 2608 cluster.py:909 - DEBUG - Launch map: node001 (ami: ami-21abf264, type: m1.large)...
+2012-02-22 16:06:54,979 PID: 2608 cluster.py:962 - DEBUG - Launching master (ami: ami-21abf264, type: m1.large)
+2012-02-22 16:06:54,980 PID: 2608 cluster.py:962 - DEBUG - Launching node001 (ami: ami-21abf264, type: m1.large)
+2012-02-22 16:06:55,050 PID: 2608 awsutils.py:165 - INFO - Creating security group @sc-ncluster...
+2012-02-22 16:06:56,740 PID: 2608 cluster.py:773 - INFO - Reservation:r-d5e38c92
+2012-02-22 16:06:56,741 PID: 2608 cluster.py:1218 - INFO - Waiting for cluster to come up... (updating every 30s)
+2012-02-22 16:06:56,920 PID: 2608 cluster.py:665 - DEBUG - existing nodes: {}
+2012-02-22 16:06:56,921 PID: 2608 cluster.py:673 - DEBUG - adding node i-87d7ebc0 to self._nodes list
+2012-02-22 16:06:57,162 PID: 2608 cluster.py:673 - DEBUG - adding node i-85d7ebc2 to self._nodes list
+2012-02-22 16:06:57,463 PID: 2608 cluster.py:681 - DEBUG - returning self._nodes = [<Node: master (i-87d7ebc0)>, <Node: node001 (i-85d7ebc2)>]
+2012-02-22 16:06:57,464 PID: 2608 cluster.py:1176 - INFO - Waiting for all nodes to be in a 'running' state...
+2012-02-22 16:06:57,554 PID: 2608 cluster.py:665 - DEBUG - existing nodes: {u'i-85d7ebc2': <Node: node001 (i-85d7ebc2)>, u'i-87d7ebc0': <Node: master (i-87d7ebc0)>}
+2012-02-22 16:06:57,561 PID: 2608 cluster.py:668 - DEBUG - updating existing node i-87d7ebc0 in self._nodes
+2012-02-22 16:06:57,561 PID: 2608 cluster.py:668 - DEBUG - updating existing node i-85d7ebc2 in self._nodes
+2012-02-22 16:06:57,562 PID: 2608 cluster.py:681 - DEBUG - returning self._nodes = [<Node: master (i-87d7ebc0)>, <Node: node001 (i-85d7ebc2)>]
+2012-02-22 16:07:27,737 PID: 2608 cluster.py:665 - DEBUG - existing nodes: {u'i-85d7ebc2': <Node: node001 (i-85d7ebc2)>, u'i-87d7ebc0': <Node: master (i-87d7ebc0)>}
+2012-02-22 16:07:27,746 PID: 2608 cluster.py:668 - DEBUG - updating existing node i-87d7ebc0 in self._nodes
+2012-02-22 16:07:27,747 PID: 2608 cluster.py:668 - DEBUG - updating existing node i-85d7ebc2 in self._nodes
+2012-02-22 16:07:27,748 PID: 2608 cluster.py:681 - DEBUG - returning self._nodes = [<Node: master (i-87d7ebc0)>, <Node: node001 (i-85d7ebc2)>]
+2012-02-22 16:07:27,749 PID: 2608 cluster.py:1194 - INFO - Waiting for SSH to come up on all nodes...
+2012-02-22 16:07:27,834 PID: 2608 cluster.py:665 - DEBUG - existing nodes: {u'i-85d7ebc2': <Node: node001 (i-85d7ebc2)>, u'i-87d7ebc0': <Node: master (i-87d7ebc0)>}
+2012-02-22 16:07:27,835 PID: 2608 cluster.py:668 - DEBUG - updating existing node i-87d7ebc0 in self._nodes
+2012-02-22 16:07:27,835 PID: 2608 cluster.py:668 - DEBUG - updating existing node i-85d7ebc2 in self._nodes
+2012-02-22 16:07:27,836 PID: 2608 cluster.py:681 - DEBUG - returning self._nodes = [<Node: master (i-87d7ebc0)>, <Node: node001 (i-85d7ebc2)>]
+2012-02-22 16:07:27,947 PID: 2608 ssh.py:75 - DEBUG - loading private key /home/ryu/.ssh/starcluster.rsa-west
+2012-02-22 16:07:27,949 PID: 2608 ssh.py:160 - DEBUG - Using private key /home/ryu/.ssh/starcluster.rsa-west (rsa)
+2012-02-22 16:07:27,950 PID: 2608 ssh.py:97 - DEBUG - connecting to host ec2-184-169-245-52.us-west-1.compute.amazonaws.com on port 22 as user root
+2012-02-22 16:07:31,243 PID: 2608 ssh.py:75 - DEBUG - loading private key /home/ryu/.ssh/starcluster.rsa-west
+2012-02-22 16:07:31,245 PID: 2608 ssh.py:160 - DEBUG - Using private key /home/ryu/.ssh/starcluster.rsa-west (rsa)
+2012-02-22 16:07:31,245 PID: 2608 ssh.py:97 - DEBUG - connecting to host ec2-184-169-243-241.us-west-1.compute.amazonaws.com on port 22 as user root
+2012-02-22 16:08:04,398 PID: 2608 cluster.py:665 - DEBUG - existing nodes: {u'i-85d7ebc2': <Node: node001 (i-85d7ebc2)>, u'i-87d7ebc0': <Node: master (i-87d7ebc0)>}
+2012-02-22 16:08:04,398 PID: 2608 cluster.py:668 - DEBUG - updating existing node i-87d7ebc0 in self._nodes
+2012-02-22 16:08:04,399 PID: 2608 cluster.py:668 - DEBUG - updating existing node i-85d7ebc2 in self._nodes
+2012-02-22 16:08:04,399 PID: 2608 cluster.py:681 - DEBUG - returning self._nodes = [<Node: master (i-87d7ebc0)>, <Node: node001 (i-85d7ebc2)>]
+2012-02-22 16:08:04,465 PID: 2608 ssh.py:97 - DEBUG - connecting to host ec2-184-169-245-52.us-west-1.compute.amazonaws.com on port 22 as user root
+2012-02-22 16:08:04,538 PID: 2608 ssh.py:97 - DEBUG - connecting to host ec2-184-169-243-241.us-west-1.compute.amazonaws.com on port 22 as user root
+2012-02-22 16:08:34,648 PID: 2608 cluster.py:665 - DEBUG - existing nodes: {u'i-85d7ebc2': <Node: node001 (i-85d7ebc2)>, u'i-87d7ebc0': <Node: master (i-87d7ebc0)>}
+2012-02-22 16:08:34,649 PID: 2608 cluster.py:668 - DEBUG - updating existing node i-87d7ebc0 in self._nodes
+2012-02-22 16:08:34,649 PID: 2608 cluster.py:668 - DEBUG - updating existing node i-85d7ebc2 in self._nodes
+2012-02-22 16:08:34,650 PID: 2608 cluster.py:681 - DEBUG - returning self._nodes = [<Node: master (i-87d7ebc0)>, <Node: node001 (i-85d7ebc2)>]
+2012-02-22 16:08:34,751 PID: 2608 ssh.py:97 - DEBUG - connecting to host ec2-184-169-245-52.us-west-1.compute.amazonaws.com on port 22 as user root
+2012-02-22 16:08:35,338 PID: 2608 ssh.py:97 - DEBUG - connecting to host ec2-184-169-243-241.us-west-1.compute.amazonaws.com on port 22 as user root
+2012-02-22 16:08:35,740 PID: 2608 utils.py:89 - INFO - Waiting for cluster to come up took 1.650 mins
+2012-02-22 16:08:35,745 PID: 2608 cluster.py:1433 - INFO - The master node is ec2-184-169-245-52.us-west-1.compute.amazonaws.com
+2012-02-22 16:08:35,745 PID: 2608 cluster.py:1434 - INFO - Setting up the cluster...
+2012-02-22 16:08:35,822 PID: 2608 cluster.py:665 - DEBUG - existing nodes: {u'i-85d7ebc2': <Node: node001 (i-85d7ebc2)>, u'i-87d7ebc0': <Node: master (i-87d7ebc0)>}
+2012-02-22 16:08:35,823 PID: 2608 cluster.py:668 - DEBUG - updating existing node i-87d7ebc0 in self._nodes
+2012-02-22 16:08:35,824 PID: 2608 cluster.py:668 - DEBUG - updating existing node i-85d7ebc2 in self._nodes
+2012-02-22 16:08:35,824 PID: 2608 cluster.py:681 - DEBUG - returning self._nodes = [<Node: master (i-87d7ebc0)>, <Node: node001 (i-85d7ebc2)>]
+2012-02-22 16:08:35,825 PID: 2608 clustersetup.py:94 - INFO - Configuring hostnames...
+2012-02-22 16:08:35,831 PID: 2608 ssh.py:179 - DEBUG - creating sftp connection
+2012-02-22 16:08:35,831 PID: 2608 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-02-22 16:08:35,831 PID: 2608 ssh.py:179 - DEBUG - creating sftp connection
+2012-02-22 16:08:36,839 PID: 2608 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-02-22 16:08:37,849 PID: 2608 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-02-22 16:08:38,858 PID: 2608 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-02-22 16:08:39,868 PID: 2608 threadpool.py:123 - INFO - Shutting down threads...
+2012-02-22 16:08:39,871 PID: 2608 threadpool.py:135 - DEBUG - unfinished_tasks = 5
+2012-02-22 16:08:40,877 PID: 2608 cli.py:266 - DEBUG - error occurred in job (id=master): Garbage packet received
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.6/dist-packages/StarCluster-0.93.1-py2.6.egg/starcluster/threadpool.py", line 31, in run
+    job.run()
+  File "/usr/local/lib/python2.6/dist-packages/StarCluster-0.93.1-py2.6.egg/starcluster/threadpool.py", line 58, in run
+    r = self.method(*self.args, **self.kwargs)
+  File "/usr/local/lib/python2.6/dist-packages/StarCluster-0.93.1-py2.6.egg/starcluster/node.py", line 678, in set_hostname
+    hostname_file = self.ssh.remote_file("/etc/hostname", "w")
+  File "/usr/local/lib/python2.6/dist-packages/StarCluster-0.93.1-py2.6.egg/starcluster/ssh.py", line 290, in remote_file
+    rfile = self.sftp.open(file, mode)
+  File "/usr/local/lib/python2.6/dist-packages/StarCluster-0.93.1-py2.6.egg/starcluster/ssh.py", line 180, in sftp
+    self._sftp = paramiko.SFTPClient.from_transport(self.transport)
+  File "/usr/local/lib/python2.6/dist-packages/paramiko-1.7.7.1-py2.6.egg/paramiko/sftp_client.py", line 106, in from_transport
+    return cls(chan)
+  File "/usr/local/lib/python2.6/dist-packages/paramiko-1.7.7.1-py2.6.egg/paramiko/sftp_client.py", line 87, in __init__
+    server_version = self._send_version()
+  File "/usr/local/lib/python2.6/dist-packages/paramiko-1.7.7.1-py2.6.egg/paramiko/sftp.py", line 108, in _send_version
+    t, data = self._read_packet()
+  File "/usr/local/lib/python2.6/dist-packages/paramiko-1.7.7.1-py2.6.egg/paramiko/sftp.py", line 179, in _read_packet
+    raise SFTPError('Garbage packet received')
+SFTPError: Garbage packet received
+
+error occurred in job (id=node001): Garbage packet received
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.6/dist-packages/StarCluster-0.93.1-py2.6.egg/starcluster/threadpool.py", line 31, in run
+    job.run()
+  File "/usr/local/lib/python2.6/dist-packages/StarCluster-0.93.1-py2.6.egg/starcluster/threadpool.py", line 58, in run
+    r = self.method(*self.args, **self.kwargs)
+  File "/usr/local/lib/python2.6/dist-packages/StarCluster-0.93.1-py2.6.egg/starcluster/node.py", line 678, in set_hostname
+    hostname_file = self.ssh.remote_file("/etc/hostname", "w")
+  File "/usr/local/lib/python2.6/dist-packages/StarCluster-0.93.1-py2.6.egg/starcluster/ssh.py", line 290, in remote_file
+    rfile = self.sftp.open(file, mode)
+  File "/usr/local/lib/python2.6/dist-packages/StarCluster-0.93.1-py2.6.egg/starcluster/ssh.py", line 180, in sftp
+    self._sftp = paramiko.SFTPClient.from_transport(self.transport)
+  File "/usr/local/lib/python2.6/dist-packages/paramiko-1.7.7.1-py2.6.egg/paramiko/sftp_client.py", line 106, in from_transport
+    return cls(chan)
+  File "/usr/local/lib/python2.6/dist-packages/paramiko-1.7.7.1-py2.6.egg/paramiko/sftp_client.py", line 87, in __init__
+    server_version = self._send_version()
+  File "/usr/local/lib/python2.6/dist-packages/paramiko-1.7.7.1-py2.6.egg/paramiko/sftp.py", line 108, in _send_version
+    t, data = self._read_packet()
+  File "/usr/local/lib/python2.6/dist-packages/paramiko-1.7.7.1-py2.6.egg/paramiko/sftp.py", line 179, in _read_packet
+    raise SFTPError('Garbage packet received')
+SFTPError: Garbage packet received
+
+---------- SYSTEM INFO ----------
+StarCluster: 0.93.1
+Python: 2.6.5 (r265:79063, Apr 16 2010, 13:57:41)  [GCC 4.4.3]
+Platform: Linux-2.6.32-316-ec2-x86_64-with-Ubuntu-10.04-lucid
+boto: 2.0
+paramiko: 1.7.7.1 (George)
+Crypto: 2.5
+jinja2: 2.5.5
+decorator: 3.3.1

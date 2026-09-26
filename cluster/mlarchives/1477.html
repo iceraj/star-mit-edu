@@ -1,0 +1,239 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Greg Caporaso ((no email))" />
+<meta name="Subject" content="should i be able to add users to a cluster with the CreateUsers plugin?" />
+<title>starcluster.mbox.out: should i be able to add users to a cluster with the CreateUsers plugin?</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">should i be able to add users to a cluster with the CreateUsers plugin?</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>should i be able to add users to a cluster with the CreateUsers plugin?</h1>
+<!-- received="Fri Oct 26 14:08:31 2012" -->
+<!-- isoreceived="20121026180831" -->
+<!-- sent="Fri, 26 Oct 2012 11:07:50 -0700" -->
+<!-- isosent="20121026180750" -->
+<!-- name="Greg Caporaso" -->
+<!-- email="(no email)" -->
+<!-- subject="should i be able to add users to a cluster with the CreateUsers plugin?" -->
+<!-- id="CAA5FJMcPFty_RmXmmZUHcdeMnLGAR3_ggTLJ_ovpuYknAeJdWA_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1477.html#start1477" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1477.html#options2">top</a>, <a href="1477.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1478.html" accesskey="d" title="Ashish Jain: &quot;Help : Possibly incorrect configuration&quot;">Next message</a> ]
+[ <a href="1476.html" title="Greg Caporaso: &quot;Re:  determining what version of StarCluster was used to create a cluster&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1477" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1477" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1477" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1477" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Greg Caporaso &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Fri, 26 Oct 2012 11:07:50 -0700</span><br />
+</address>
+<br />
+Hi,
+<br />
+Is it possible to add users to a currently-running cluster using
+<br />
+CreateUsers? My use case is that I have a cluster running for a class
+<br />
+that I'm teaching this semester, and each student has a login on that
+<br />
+cluster. I have a few users I'd like to add (recent additions who are
+<br />
+sitting in on the class), but I don't want to terminate the cluster
+<br />
+start a new one causing the existing users to lose their
+<br />
+configuration, etc. (in hindsight, I should have mounted an EBS volume
+<br />
+as scratch space, but I'll do that next time).
+<br />
+<br />So far what I've tried is to create a new cluster plugin configuration:
+<br />
+<br />[plugin createusers.bio599.fall2012.round2]
+<br />
+setup_class = starcluster.plugins.users.CreateUsers
+<br />
+download_keys = True
+<br />
+usernames = ss977, rr538, hhh34, mjg95
+<br />
+<br />and run that as follows:
+<br />
+<br />starcluster -c ~/.starcluster/config-nau rp
+<br />
+createusers.bio599.fall2012.round2 bio599.cluster
+<br />
+<br />which fails with the following error message:
+<br />
+<br />StarCluster - (<a href="http://web.mit.edu/starcluster">http://web.mit.edu/starcluster</a>) (v. 0.9999)
+<br />
+Software Tools for Academics and Researchers (STAR)
+<br />
+Please submit bug reports to starcluster_at_mit.edu
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Running plugin createusers.bio599.fall2012.round2
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Creating 4 cluster users
+</em><br />
+1/1 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring passwordless ssh for 4 cluster users
+</em><br />
+!!! ERROR - Error occurred while running plugin
+<br />
+'createusers.bio599.fall2012.round2':
+<br />
+Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File &quot;/Users/caporaso/.virtualenvs/starcluster-old/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/cluster.py&quot;,
+<br />
+line 1503, in run_plugin
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;func(*args)
+<br />
+&nbsp;&nbsp;File &quot;/Users/caporaso/.virtualenvs/starcluster-old/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/plugins/users.py&quot;,
+<br />
+line 65, in run
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;auth_conn_key=True)
+<br />
+&nbsp;&nbsp;File &quot;/Users/caporaso/.virtualenvs/starcluster-old/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/node.py&quot;,
+<br />
+line 404, in generate_key_for_user
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;home_folder = user.pw_dir
+<br />
+AttributeError: 'NoneType' object has no attribute 'pw_dir'
+<br />
+<br /><br />Thanks for any help!
+<br />
+Greg
+<br />
+<span id="received"><dfn>Received on</dfn> Fri Oct 26 2012 - 14:08:31 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1477.html#start1477">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1478.html" title="Next message in the list">Ashish Jain: "Help : Possibly incorrect configuration"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1476.html" title="Previous message in the list">Greg Caporaso: "Re:  determining what version of StarCluster was used to create a cluster"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1477" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1477" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1477" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1477" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

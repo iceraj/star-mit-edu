@@ -1,0 +1,755 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Rajat Banerjee ((no email))" />
+<meta name="Subject" content="Re:  StarCluster Digest, Vol 44, Issue 5" />
+<title>starcluster.mbox.out: Re:  StarCluster Digest, Vol 44, Issue 5</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Re:  StarCluster Digest, Vol 44, Issue 5</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Re:  StarCluster Digest, Vol 44, Issue 5</h1>
+<!-- received="Tue Apr 30 13:19:08 2013" -->
+<!-- isoreceived="20130430171908" -->
+<!-- sent="Tue, 30 Apr 2013 13:18:47 -0400" -->
+<!-- isosent="20130430171847" -->
+<!-- name="Rajat Banerjee" -->
+<!-- email="(no email)" -->
+<!-- subject="Re:  StarCluster Digest, Vol 44, Issue 5" -->
+<!-- id="CAAEsPueUeXAVZhmMede5FfUmF3ergkP6H+MAm0ymUyndHFV_oQ_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- inreplyto="mailman.994.1367340204.18986.starcluster_at_mit.edu" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1708.html#start1708" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1708.html#options2">top</a>, <a href="1708.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1709.html" accesskey="d" title="Steve Darnell: &quot;Re:  Unable to mount ebs volume&quot;">Next message</a> ]
+[ <a href="1707.html" title="Sergio Mafra: &quot;LoadBalance&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="1715.html" accesskey="t" title="Rajat Banerjee: &quot;Re:  StarCluster Digest, Vol 44, Issue 5&quot;">Next in thread</a> ]
+ [ <a href="1708.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1708" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1708" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1708" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1708" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Rajat Banerjee &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Tue, 30 Apr 2013 13:18:47 -0400</span><br />
+</address>
+<br />
+Sergio,
+<br />
+I looked at the code that is causing your problems. It's this line:
+<br />
+<br />return datetime.datetime.strptime(str, &quot;%a %b %d %H:%M:%S UTC %Y&quot;)
+<br />
+<br />where 'str' is the output of the *remote* call to date. My mac returns this:
+<br />
+rbanerjee:~/starcluster/StarCluster/starcluster/balancers/sge $ date
+<br />
+Tue Apr 30 13:12:44 EDT 2013
+<br />
+<br />Which looks like it would time format OK. One oddity is that your time
+<br />
+format is returning PDT when UTC is expected:
+<br />
+<br />ValueError: time data 'Tue Apr 30 07:01:35 PDT 2013' does not match format
+<br />
+'%a %b %d %H:%M:%S UTC %Y'
+<br />
+<br />Not sure what's causing the problems since it looks mostly right, but feel
+<br />
+free to tweak the time setting in the code in
+<br />
+starcluster/balancers/sge/__init__.py line 466 to make the pattern match
+<br />
+yours. Do you know why your time zone may be set differently than other AWS
+<br />
+instances we've used? Custom images?
+<br />
+Best,
+<br />
+Rajat
+<br />
+<br /><br /><br /><br />On Tue, Apr 30, 2013 at 12:43 PM, &lt;starcluster-request_at_mit.edu&gt; wrote:
+<br />
+<br /><em class="quotelev1">&gt; Send StarCluster mailing list submissions to
+</em><br />
+<em class="quotelev1">&gt;         starcluster_at_mit.edu
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; To subscribe or unsubscribe via the World Wide Web, visit
+</em><br />
+<em class="quotelev1">&gt;         <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<em class="quotelev1">&gt; or, via email, send a message with subject or body 'help' to
+</em><br />
+<em class="quotelev1">&gt;         starcluster-request_at_mit.edu
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; You can reach the person managing the list at
+</em><br />
+<em class="quotelev1">&gt;         starcluster-owner_at_mit.edu
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; When replying, please edit your Subject line so it is more specific
+</em><br />
+<em class="quotelev1">&gt; than &quot;Re: Contents of StarCluster digest...&quot;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Today's Topics:
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;    1. Unable to mount ebs volume (Jerry Lee, GW/US)
+</em><br />
+<em class="quotelev1">&gt;    2. LoadBalance (Sergio Mafra)
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; ---------- Forwarded message ----------
+</em><br />
+<em class="quotelev1">&gt; From: &quot;Jerry Lee, GW/US&quot; &lt;Jerry.Lee_at_genewiz.com&gt;
+</em><br />
+<em class="quotelev1">&gt; To: &lt;starcluster_at_mit.edu&gt;
+</em><br />
+<em class="quotelev1">&gt; Cc:
+</em><br />
+<em class="quotelev1">&gt; Date: Mon, 15 Apr 2013 17:11:38 -0500
+</em><br />
+<em class="quotelev1">&gt; Subject: [StarCluster] Unable to mount ebs volume
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Hi,****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; ** **
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; I am a beginner of using the StarCluster. I created a ebs volme via Amazon
+</em><br />
+<em class="quotelev1">&gt; AWS and configure it on the config file to use it for my cluster, but no
+</em><br />
+<em class="quotelev1">&gt; matter what I do, it doesn't automatically mount the ebs volume onto the
+</em><br />
+<em class="quotelev1">&gt; cluster. Please help.****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; ** **
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; [cluster jerrycluster]****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; EXTENDS = smallcluster****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; VOLUMES = testdata****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; ** **
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; [volume testdata]****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; VOLUME_ID=vol-a0fe24f9****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; MOUNT_PATH=/data****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; ** **
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; Waiting for cluster to come up... (updating every 30s)****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; Waiting for instances to activate...****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; Waiting for all nodes to be in a 'running' state...****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; 2/2 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+</em><br />
+<em class="quotelev1">&gt; 100%****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; Waiting for SSH to come up on all nodes...****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; 2/2 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+</em><br />
+<em class="quotelev1">&gt; 100%****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; Waiting for cluster to come up took 1.847 mins****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; The master node is ec2-54-234-229-206.compute-1.amazonaws.com****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; Setting up the cluster...****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; Configuring hostnames...****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; 2/2 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+</em><br />
+<em class="quotelev1">&gt; 100%****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; Creating cluster user: None (uid: 1001, gid: 1001)****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; 2/2 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+</em><br />
+<em class="quotelev1">&gt; 100%****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; Configuring scratch space for user(s): sgeadmin****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; 2/2 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+</em><br />
+<em class="quotelev1">&gt; 100%****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; Configuring /etc/hosts on each node****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; 2/2 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+</em><br />
+<em class="quotelev1">&gt; 100%****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; Starting NFS server on master****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; Configuring NFS exports path(s):****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; /home****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; Mounting all NFS export path(s) on 1 worker node(s)****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; 1/1 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+</em><br />
+<em class="quotelev1">&gt; 100%****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; Setting up NFS took 0.073 mins****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; Configuring passwordless ssh for root****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; Configuring passwordless ssh for sgeadmin****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; Shutting down threads...****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; 20/20 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+</em><br />
+<em class="quotelev1">&gt; 100%****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; Configuring SGE...****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; Configuring NFS exports path(s):****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; /opt/sge6****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; Mounting all NFS export path(s) on 1 worker node(s)****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; 1/1 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+</em><br />
+<em class="quotelev1">&gt; 100%****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; Setting up NFS took 0.020 mins****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; Installing Sun Grid Engine...****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; 1/1 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+</em><br />
+<em class="quotelev1">&gt; 100%****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; Creating SGE parallel environment 'orte'****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; 2/2 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+</em><br />
+<em class="quotelev1">&gt; 100%****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; Adding parallel environment 'orte' to queue 'all.q'****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; Shutting down threads...****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; 20/20 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+</em><br />
+<em class="quotelev1">&gt; 100%****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; Configuring cluster took 1.325 mins****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; Starting cluster took 3.197 mins****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; ** **
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; ** **
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Thanks,****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; ** **
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Jerry Lee****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; ** **
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Jerry Lee****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Assistant Manager of Global Infrastructure****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; GENEWIZ Inc.****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; 40 Cragwood Road. Suite 201****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; South Plainfield, NJ 07080****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Phone: 908-222-0711 ext. 3379****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Fax: 908-333-4511 ****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; jerry.lee_at_genewiz.com****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; www.genewiz.com****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;  ****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; This electronic message, including its attachments, is confidential and
+</em><br />
+<em class="quotelev1">&gt; proprietary and is solely for the intended recipient.  If you are not the
+</em><br />
+<em class="quotelev1">&gt; intended recipient, this message was sent to you in error and you are
+</em><br />
+<em class="quotelev1">&gt; hereby advised that any review, disclosure, copying, distribution or use of
+</em><br />
+<em class="quotelev1">&gt; this message or any of the information included in this message by you is
+</em><br />
+<em class="quotelev1">&gt; unauthorized and strictly prohibited.  If you have received this message in
+</em><br />
+<em class="quotelev1">&gt; error, please immediately notify the sender by reply to this message and
+</em><br />
+<em class="quotelev1">&gt; permanently delete all copies of this message and its attachments in your
+</em><br />
+<em class="quotelev1">&gt; possession.  Thank you for your cooperation.****
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; ** **
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; ---------- Forwarded message ----------
+</em><br />
+<em class="quotelev1">&gt; From: Sergio Mafra &lt;sergiohmafra_at_gmail.com&gt;
+</em><br />
+<em class="quotelev1">&gt; To: &quot;starcluster_at_mit.edu&quot; &lt;starcluster_at_mit.edu&gt;
+</em><br />
+<em class="quotelev1">&gt; Cc:
+</em><br />
+<em class="quotelev1">&gt; Date: Tue, 30 Apr 2013 11:05:45 -0300
+</em><br />
+<em class="quotelev1">&gt; Subject: [StarCluster] LoadBalance
+</em><br />
+<em class="quotelev1">&gt; Hi fellows,
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; I�m testing StarCluster version 0.999 and so far so good.
+</em><br />
+<em class="quotelev1">&gt; one thing that isn�t working is loadbalance. This is what I get:
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; ubuntu_at_domU-12-31-39-02-19-36:~$ starcluster loadbalance newcam
+</em><br />
+<em class="quotelev1">&gt; StarCluster - (<a href="/cluster/">/cluster</a>) (v. 0.9999)
+</em><br />
+<em class="quotelev1">&gt; Software Tools for Academics and Researchers (STAR)
+</em><br />
+<em class="quotelev1">&gt; Please submit bug reports to starcluster_at_mit.edu
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; Starting load balancer (Use ctrl-c to exit)
+</em><br />
+<em class="quotelev1">&gt; Maximum cluster size: 3
+</em><br />
+<em class="quotelev1">&gt;  Minimum cluster size: 1
+</em><br />
+<em class="quotelev1">&gt; Cluster growth rate: 1 nodes/iteration
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; *** WARNING - Failed to retrieve stats (1/5):
+</em><br />
+<em class="quotelev1">&gt; Traceback (most recent call last):
+</em><br />
+<em class="quotelev1">&gt;   File
+</em><br />
+<em class="quotelev1">&gt; &quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.9999-py2.7.egg/starcluster/balancers/sge/__init__.py&quot;,
+</em><br />
+<em class="quotelev1">&gt; line 515, in get_stats
+</em><br />
+<em class="quotelev1">&gt;     self.stat = self._get_stats()
+</em><br />
+<em class="quotelev1">&gt;   File
+</em><br />
+<em class="quotelev1">&gt; &quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.9999-py2.7.egg/starcluster/balancers/sge/__init__.py&quot;,
+</em><br />
+<em class="quotelev1">&gt; line 487, in _get_stats
+</em><br />
+<em class="quotelev1">&gt;     now = self.get_remote_time()
+</em><br />
+<em class="quotelev1">&gt;   File
+</em><br />
+<em class="quotelev1">&gt; &quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.9999-py2.7.egg/starcluster/balancers/sge/__init__.py&quot;,
+</em><br />
+<em class="quotelev1">&gt; line 466, in get_remote_time
+</em><br />
+<em class="quotelev1">&gt;     return datetime.datetime.strptime(str, &quot;%a %b %d %H:%M:%S UTC %Y&quot;)
+</em><br />
+<em class="quotelev1">&gt;   File &quot;/usr/lib/python2.7/_strptime.py&quot;, line 325, in _strptime
+</em><br />
+<em class="quotelev1">&gt;     (data_string, format))
+</em><br />
+<em class="quotelev1">&gt; ValueError: time data 'Tue Apr 30 07:01:35 PDT 2013' does not match format
+</em><br />
+<em class="quotelev1">&gt; '%a %b %d %H:%M:%S UTC %Y'
+</em><br />
+<em class="quotelev1">&gt; *** WARNING - Retrying in 60s
+</em><br />
+<em class="quotelev1">&gt; ^CTraceback (most recent call last):
+</em><br />
+<em class="quotelev1">&gt;   File &quot;/usr/local/bin/starcluster&quot;, line 9, in &lt;module&gt;
+</em><br />
+<em class="quotelev1">&gt;     load_entry_point('StarCluster==0.9999', 'console_scripts',
+</em><br />
+<em class="quotelev1">&gt; 'starcluster')()
+</em><br />
+<em class="quotelev1">&gt;   File
+</em><br />
+<em class="quotelev1">&gt; &quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.9999-py2.7.egg/starcluster/cli.py&quot;,
+</em><br />
+<em class="quotelev1">&gt; line 313, in main
+</em><br />
+<em class="quotelev1">&gt;     StarClusterCLI().main()
+</em><br />
+<em class="quotelev1">&gt;   File
+</em><br />
+<em class="quotelev1">&gt; &quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.9999-py2.7.egg/starcluster/cli.py&quot;,
+</em><br />
+<em class="quotelev1">&gt; line 257, in main
+</em><br />
+<em class="quotelev1">&gt;     sc.execute(args)
+</em><br />
+<em class="quotelev1">&gt;   File
+</em><br />
+<em class="quotelev1">&gt; &quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.9999-py2.7.egg/starcluster/commands/loadbalance.py&quot;,
+</em><br />
+<em class="quotelev1">&gt; line 90, in execute
+</em><br />
+<em class="quotelev1">&gt;     lb.run(cluster)
+</em><br />
+<em class="quotelev1">&gt;   File
+</em><br />
+<em class="quotelev1">&gt; &quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.9999-py2.7.egg/starcluster/balancers/sge/__init__.py&quot;,
+</em><br />
+<em class="quotelev1">&gt; line 576, in run
+</em><br />
+<em class="quotelev1">&gt;     self.get_stats()
+</em><br />
+<em class="quotelev1">&gt;   File &quot;&lt;string&gt;&quot;, line 2, in get_stats
+</em><br />
+<em class="quotelev1">&gt;   File
+</em><br />
+<em class="quotelev1">&gt; &quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.9999-py2.7.egg/starcluster/utils.py&quot;,
+</em><br />
+<em class="quotelev1">&gt; line 92, in wrap_f
+</em><br />
+<em class="quotelev1">&gt;     res = func(*arg, **kargs)
+</em><br />
+<em class="quotelev1">&gt;   File
+</em><br />
+<em class="quotelev1">&gt; &quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.9999-py2.7.egg/starcluster/balancers/sge/__init__.py&quot;,
+</em><br />
+<em class="quotelev1">&gt; line 521, in get_stats
+</em><br />
+<em class="quotelev1">&gt;     time.sleep(self.polling_interval)
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Any ideas?
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; All Best,
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Sergio
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; _______________________________________________
+</em><br />
+<em class="quotelev1">&gt; StarCluster mailing list
+</em><br />
+<em class="quotelev1">&gt; StarCluster_at_mit.edu
+</em><br />
+<em class="quotelev1">&gt; <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<span id="received"><dfn>Received on</dfn> Tue Apr 30 2013 - 13:19:08 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1708.html#start1708">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1709.html" title="Next message in the list">Steve Darnell: "Re:  Unable to mount ebs volume"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1707.html" title="Previous message in the list">Sergio Mafra: "LoadBalance"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1715.html" title="Next message in this discussion thread">Rajat Banerjee: "Re:  StarCluster Digest, Vol 44, Issue 5"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Maybe reply</dfn>: <a href="1715.html" title="Message sent in reply to this message">Rajat Banerjee: "Re:  StarCluster Digest, Vol 44, Issue 5"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1708" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1708" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1708" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1708" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

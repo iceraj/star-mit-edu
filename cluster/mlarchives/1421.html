@@ -1,0 +1,203 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Olivier Grisel ((no email))" />
+<meta name="Subject" content="IPython cluster plugin questions and suggested improvements" />
+<title>starcluster.mbox.out: IPython cluster plugin questions and suggested improvements</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">IPython cluster plugin questions and suggested improvements</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>IPython cluster plugin questions and suggested improvements</h1>
+<!-- received="Tue Oct 16 05:55:28 2012" -->
+<!-- isoreceived="20121016095528" -->
+<!-- sent="Tue, 16 Oct 2012 11:55:00 +0200" -->
+<!-- isosent="20121016095500" -->
+<!-- name="Olivier Grisel" -->
+<!-- email="(no email)" -->
+<!-- subject="IPython cluster plugin questions and suggested improvements" -->
+<!-- id="CAFvE7K4YbMrZN+1QDxGPFB4aY=OMdNqMUSjsoBfF1OoiYELW8g_at_mail.gmail.com" -->
+<!-- charset="UTF-8" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1421.html#start1421" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1421.html#options2">top</a>, <a href="1421.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1422.html" accesskey="d" title="John St. John: &quot;Starcluster SGE usage&quot;">Next message</a> ]
+[ <a href="1420.html" title="Brian Pratt: &quot;fix for trouble mounting a volume&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="1429.html" accesskey="t" title="Justin Riley: &quot;Re:  IPython cluster plugin questions and suggested improvements&quot;">Next in thread</a> ]
+ [ <a href="1421.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1421" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1421" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1421" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1421" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Olivier Grisel &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Tue, 16 Oct 2012 11:55:00 +0200</span><br />
+</address>
+<br />
+Hi,
+<br />
+<br />I have a couple of questions for the ipcluster plugin:
+<br />
+<br />1- Is there an (dev) 64bit AMI with the latest stable release of
+<br />
+IPython (0.13) instead of 0.12?
+<br />
+2- Would it be possible to extend the ipcluster plugin to have the
+<br />
+nodes install the dev version of ipython instead of the system version
+<br />
+on startup? For instance by cloning a tag or a specific branch
+<br />
+(master) of the IPython github repo.
+<br />
+3- Would be possible to make ipcluster not use SGE for engine
+<br />
+configuration and only use ssh instead, for instance as documented in
+<br />
+this very short blog post:
+<br />
+<a href="http://graal.ift.ulaval.ca/jeanfrancisroy/2012/09/27/using-ipython-for-parallel-computing/">http://graal.ift.ulaval.ca/jeanfrancisroy/2012/09/27/using-ipython-for-parallel-computing/</a>
+<br />
+The goal would be to speedup cluster startup by skipping the SGE
+<br />
+setup.
+<br />
+<br />If you think 2 and 3 are desirable contributions for the project I can
+<br />
+work on 2 pull requests for those.
+<br />
+<br />Best,
+<br />
+<br /><pre>
+-- 
+Olivier
+<a href="http://twitter.com/ogrisel">http://twitter.com/ogrisel</a> - <a href="http://github.com/ogrisel">http://github.com/ogrisel</a>
+</pre>
+<span id="received"><dfn>Received on</dfn> Tue Oct 16 2012 - 05:55:28 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1421.html#start1421">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1422.html" title="Next message in the list">John St. John: "Starcluster SGE usage"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1420.html" title="Previous message in the list">Brian Pratt: "fix for trouble mounting a volume"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1429.html" title="Next message in this discussion thread">Justin Riley: "Re:  IPython cluster plugin questions and suggested improvements"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1429.html" title="Message sent in reply to this message">Justin Riley: "Re:  IPython cluster plugin questions and suggested improvements"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1421" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1421" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1421" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1421" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

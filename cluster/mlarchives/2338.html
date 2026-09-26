@@ -1,0 +1,225 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Stephen Smith ((no email))" />
+<meta name="Subject" content="SSHMaster Connection Reset" />
+<title>starcluster.mbox.out: SSHMaster Connection Reset</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">SSHMaster Connection Reset</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>SSHMaster Connection Reset</h1>
+<!-- received="Tue Sep  9 15:10:11 2014" -->
+<!-- isoreceived="20140909191011" -->
+<!-- sent="Tue, 9 Sep 2014 15:10:08 -0400" -->
+<!-- isosent="20140909191008" -->
+<!-- name="Stephen Smith" -->
+<!-- email="(no email)" -->
+<!-- subject="SSHMaster Connection Reset" -->
+<!-- id="OFE656A07A.F68764EF-ON85257D4E.0065B740-85257D4E.00694CC1_at_electrolux.se" -->
+<!-- charset="US-ASCII" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2338.html#start2338" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2338.html#options2">top</a>, <a href="2338.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2339.html" accesskey="d" title="Ramon Ramirez-Linan: &quot;sending file to all nodes&quot;">Next message</a> ]
+[ <a href="2337.html" title="Jin Yu: &quot;Re:  New improvement: Streaming Add Node&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2338" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2338" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2338" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2338" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Stephen Smith &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Tue, 9 Sep 2014 15:10:08 -0400</span><br />
+</address>
+<br />
+Hello,
+<br />
+<br />I am relatively new to StarCluster and EC2, though I have been able to 
+<br />
+successfully configure an AMI based on the StarCluster HVM Ubuntu v13 
+<br />
+image and have upgraded it to 14.04 LTS.  With this I have been able to 
+<br />
+successfully launch a small test cluster of 2 nodes:
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Configuring cluster took 1.848 mins
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Starting cluster took 3.567 mins
+</em><br />
+<br />The cluster is now ready to use. To login to the master node
+<br />
+as root, run:
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;$ starcluster sshmaster smallcluster
+<br />
+<br />Though when I go to ssh into the master in order to access the cluster, I 
+<br />
+get the following error: 
+<br />
+<br />stephen_at_GTC-Charlotte-Ubuntu:~/.ssh$ starcluster sshmaster smallcluster
+<br />
+StarCluster - (<a href="/cluster/">/cluster</a>) (v. 0.95.5)
+<br />
+Software Tools for Academics and Researchers (STAR)
+<br />
+Please submit bug reports to starcluster_at_mit.edu
+<br />
+<br />Read from socket failed: Connection reset by peer
+<br />
+<br />I don't quite understand the cause, though I suspect it is a permission 
+<br />
+error.  I am using a key that I generated through &quot;starcluster createkey&quot;. 
+<br />
+&nbsp;Is there something in the configuration file that I'm missing?  Thanks in 
+<br />
+advance.
+<br />
+<br />Best Regards,
+<br />
+Stephen
+<br />
+<br /><br />=======================================================================
+<br />
+This e-mail and any attachments may contain information which is
+<br />
+confidential, privileged, proprietary or otherwise protected by law.
+<br />
+The information is solely intended for the named addressee (or a person
+<br />
+responsible for delivering it to the addressee).  If you are not the
+<br />
+intended recipient of this message, you are not authorized to read,
+<br />
+print, retain, copy or disseminate this message or any part of it.
+<br />
+If you have received this e-mail in error, please notify the sender
+<br />
+immediately by return e-mail and delete it from your computer.
+<br />
+=----==-====-=======-============-====================-==================== 
+<br />
+<span id="received"><dfn>Received on</dfn> Tue Sep 09 2014 - 15:10:11 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2338.html#start2338">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2339.html" title="Next message in the list">Ramon Ramirez-Linan: "sending file to all nodes"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2337.html" title="Previous message in the list">Jin Yu: "Re:  New improvement: Streaming Add Node"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2338" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2338" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2338" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2338" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

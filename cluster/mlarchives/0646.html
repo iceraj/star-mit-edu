@@ -1,0 +1,258 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Justin Riley ((no email))" />
+<meta name="Subject" content="Re:  loadbalancer race condition with plugin.on_add_node()" />
+<title>starcluster.mbox.out: Re:  loadbalancer race condition with plugin.on_add_node()</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Re:  loadbalancer race condition with plugin.on_add_node()</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Re:  loadbalancer race condition with plugin.on_add_node()</h1>
+<!-- received="Tue Mar 15 17:58:37 2011" -->
+<!-- isoreceived="20110315215837" -->
+<!-- sent="Tue, 15 Mar 2011 17:58:14 -0400" -->
+<!-- isosent="20110315215814" -->
+<!-- name="Justin Riley" -->
+<!-- email="(no email)" -->
+<!-- subject="Re:  loadbalancer race condition with plugin.on_add_node()" -->
+<!-- id="4D7FE0F6.1060400_at_mit.edu" -->
+<!-- charset="ISO-8859-1" -->
+<!-- inreplyto="AANLkTinx07=J-T24rAS6vTr6m2PA5-5kMzEhn1ZL2cVD_at_mail.gmail.com" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="0646.html#start646" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="0646.html#options2">top</a>, <a href="0646.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="0647.html" accesskey="d" title="Joseph: &quot;Re:  Large cluster (125 nodes) launch failure&quot;">Next message</a> ]
+[ <a href="0645.html" title="Joseph: &quot;Re:  ERROR - &#0034;Incorrect padding&#0034; in listclusters command (github version)&quot;">Previous message</a> ]
+[ <a href="0623.html" title="Jeff White: &quot;loadbalancer race condition with plugin.on_add_node()&quot;">In reply to</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg646" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg646" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg646" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg646" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Justin Riley &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Tue, 15 Mar 2011 17:58:14 -0400</span><br />
+</address>
+<br />
+-----BEGIN PGP SIGNED MESSAGE-----
+<br />
+Hash: SHA1
+<br />
+<br />Hi Jeff,
+<br />
+<br />My apologies for the delay. I agree there should be a way to execute a
+<br />
+plugin before a node is added to SGE, however, I think there are also
+<br />
+valid use cases for wanting to be able to run after SGE has been
+<br />
+configured. For instance a plugin may need to submit new jobs/cleanup
+<br />
+old jobs or inspect the current state of the queue. Fortunately there's
+<br />
+a solution that meets both needs and does not require adding more plugin
+<br />
+'hooks'.
+<br />
+<br />I've had requests in the past for an option to disable SGE altogether
+<br />
+which I've implemented in the latest github code (see
+<br />
+<a href="http://mailman.mit.edu/pipermail/starcluster/2010-December/000578.html">http://mailman.mit.edu/pipermail/starcluster/2010-December/000578.html</a>).
+<br />
+I'm working now to extract the SGE-related code into a completely
+<br />
+separate plugin that, for now, gets executed by StarCluster by default
+<br />
+unless disable_queue=True in the config. This helps to gradually migrate
+<br />
+SGE to a plugin given that some folks still expect it to be there
+<br />
+out-of-the-box.
+<br />
+<br />With SGE as a plugin you could then completely control the order like so:
+<br />
+<br />[plugin SGE]
+<br />
+setup_class = starcluster.plugins.sge.SGEPlugin
+<br />
+<br />[cluster smallcluster]
+<br />
+...
+<br />
+# this line tells StarCluster not to configure SGE by default
+<br />
+disable_queue = True
+<br />
+# now add your plugins, including SGE, in the order you want executed
+<br />
+plugins = myplugfirst, SGE, myotherplugin
+<br />
+<br />Does this make sense? I'll send an update to the list once the SGE code
+<br />
+has been converted to a plugin on github...
+<br />
+<br />~Justin
+<br />
+<br />On 02/21/2011 02:50 PM, Jeff White wrote:
+<br />
+<em class="quotelev1">&gt; I believe there is a race condition when nodes are added via the
+</em><br />
+<em class="quotelev1">&gt; loadbalancer. The configured plugins are run after the new node is added
+</em><br />
+<em class="quotelev1">&gt; to SGE. The issue is our plugin needs to do some setup on the new node
+</em><br />
+<em class="quotelev1">&gt; before jobs get submitted to the new node. It would be better if plugins
+</em><br />
+<em class="quotelev1">&gt; were run before the node is available to run jobs. If there is a use
+</em><br />
+<em class="quotelev1">&gt; case for running a plugin after the node is added to SGE, then more
+</em><br />
+<em class="quotelev1">&gt; hooks should be added, e.g. on_add_node_before_sge(),
+</em><br />
+<em class="quotelev1">&gt; on_add_node_after_sge().
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; jeff
+</em><br />
+<br />-----BEGIN PGP SIGNATURE-----
+<br />
+Version: GnuPG v2.0.17 (GNU/Linux)
+<br />
+Comment: Using GnuPG with Mozilla - <a href="http://enigmail.mozdev.org/">http://enigmail.mozdev.org/</a>
+<br />
+<br />iEYEARECAAYFAk1/4PYACgkQ4llAkMfDcrmzKQCgkuB/0a9//pQ77iKZW25jcQHO
+<br />
+8ogAn2GZc8JGG6ZGeZuPMu4jZd97YOi1
+<br />
+=o3GS
+<br />
+-----END PGP SIGNATURE-----
+<br />
+<span id="received"><dfn>Received on</dfn> Tue Mar 15 2011 - 17:58:37 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="0646.html#start646">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="0647.html" title="Next message in the list">Joseph: "Re:  Large cluster (125 nodes) launch failure"</a></li>
+<li><dfn>Previous message</dfn>: <a href="0645.html" title="Previous message in the list">Joseph: "Re:  ERROR - &#0034;Incorrect padding&#0034; in listclusters command (github version)"</a></li>
+<li><dfn>In reply to</dfn>: <a href="0623.html" title="Message to which this message replies">Jeff White: "loadbalancer race condition with plugin.on_add_node()"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg646" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg646" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg646" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg646" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

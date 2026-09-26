@@ -1,0 +1,592 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Avner May ((no email))" />
+<meta name="Subject" content="Error creating/deleting security groups" />
+<title>starcluster.mbox.out: Error creating/deleting security groups</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Error creating/deleting security groups</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Error creating/deleting security groups</h1>
+<!-- received="Tue Feb 24 16:56:06 2015" -->
+<!-- isoreceived="20150224215606" -->
+<!-- sent="Tue, 24 Feb 2015 16:55:43 -0500" -->
+<!-- isosent="20150224215543" -->
+<!-- name="Avner May" -->
+<!-- email="(no email)" -->
+<!-- subject="Error creating/deleting security groups" -->
+<!-- id="CALkg49zQfyg4EtCbmvp9YBhzJq=XPWRnWg2ZZwC-G9JrzyJo2w_at_mail.gmail.com" -->
+<!-- charset="UTF-8" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2558.html#start2558" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2558.html#options2">top</a>, <a href="2558.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2559.html" accesskey="d" title="Avner May: &quot;Re:  Error creating/deleting security groups&quot;">Next message</a> ]
+[ <a href="2557.html" title="Ying Sonia Ting: &quot;Many jobs stuck in &#0034;t state&#0034;&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="2559.html" accesskey="t" title="Avner May: &quot;Re:  Error creating/deleting security groups&quot;">Next in thread</a> ]
+ [ <a href="2558.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2558" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2558" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2558" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2558" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Avner May &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Tue, 24 Feb 2015 16:55:43 -0500</span><br />
+</address>
+<br />
+Hi all,
+<br />
+<br />I'm getting the errors below when I try to start a cluster, or
+<br />
+listclusters.  This all started after I terminated a cluster.  I got an
+<br />
+error during termination, so it told me to use the &quot;-f&quot; flag to force
+<br />
+termination.  I did that, but it was taking a very long time to erase the
+<br />
+security group.  So I interrupted the &quot;terminate -f&quot; command, and I've been
+<br />
+having issues ever since.  Basically, if I try to start a cluster, it is
+<br />
+taking forever in the step where it says &quot;waiting for a security group
+<br />
+_at_sc-cluster-name&quot; (I've been waiting like 20+ minutes for a cluster to
+<br />
+start...).  It then generally gives me some error like the one below.  It
+<br />
+also fails in the &quot;listclusters&quot; command.  At the heart of this there seem
+<br />
+to be issues in the &quot;*get_all_security_groups*&quot; and &quot;*create_security_group*&quot;
+<br />
+functions in &quot;C:\Python27\lib\site-packages\boto\ec2\connection.py&quot;.  Any
+<br />
+idea what might be going on?  Help would be very appreciated, as this is
+<br />
+totally blocking my progress on my work.
+<br />
+<br />Thanks a lot,
+<br />
+Avner
+<br />
+<br />*C:\Windows\system32&gt;starcluster start babel*
+<br />
+*StarCluster - (<a href="/cluster/">/cluster</a> &lt;<a href="/cluster/">/cluster</a>&gt;)
+<br />
+(v. 0.95.6)*
+<br />
+*Software Tools for Academics and Researchers (STAR)*
+<br />
+*Please submit bug reports to starcluster_at_mit.edu &lt;starcluster_at_mit.edu&gt;*
+<br />
+<br />*&gt;&gt;&gt; Using default cluster template: main*
+<br />
+*&gt;&gt;&gt; Validating cluster template settings...*
+<br />
+*&gt;&gt;&gt; Cluster template settings are valid*
+<br />
+*&gt;&gt;&gt; Starting cluster...*
+<br />
+*&gt;&gt;&gt; Launching a 20-node cluster...*
+<br />
+*&gt;&gt;&gt; Creating security group _at_sc-babel...*
+<br />
+*&gt;&gt;&gt; Waiting for security group _at_sc-babel...*
+<br />
+*!!! ERROR - InternalError: An internal error has occurred*
+<br />
+*Traceback (most recent call last):*
+<br />
+*  File
+<br />
+&quot;C:\Python27\lib\site-packages\starcluster-0.95.6-py2.7.egg\starcluster\cli.py&quot;,
+<br />
+line 274, in main*
+<br />
+*    sc.execute(args)*
+<br />
+*  File
+<br />
+&quot;C:\Python27\lib\site-packages\starcluster-0.95.6-py2.7.egg\starcluster\commands\start.py&quot;,
+<br />
+line 244, in execute*
+<br />
+*    validate_running=validate_running)*
+<br />
+*  File
+<br />
+&quot;C:\Python27\lib\site-packages\starcluster-0.95.6-py2.7.egg\starcluster\cluster.py&quot;,
+<br />
+line 1628, in start*
+<br />
+*    return self._start(create=create, create_only=create_only)*
+<br />
+*  File &quot;&lt;string&gt;&quot;, line 2, in _start*
+<br />
+*  File
+<br />
+&quot;C:\Python27\lib\site-packages\starcluster-0.95.6-py2.7.egg\starcluster\utils.py&quot;,
+<br />
+line 112, in wrap_f*
+<br />
+*    res = func(*arg, **kargs)*
+<br />
+*  File
+<br />
+&quot;C:\Python27\lib\site-packages\starcluster-0.95.6-py2.7.egg\starcluster\cluster.py&quot;,
+<br />
+line 1643, in _start*
+<br />
+*    self.create_cluster()*
+<br />
+*  File
+<br />
+&quot;C:\Python27\lib\site-packages\starcluster-0.95.6-py2.7.egg\starcluster\cluster.py&quot;,
+<br />
+line 1163, in create_cluster*
+<br />
+*    self._create_flat_rate_cluster()*
+<br />
+*  File
+<br />
+&quot;C:\Python27\lib\site-packages\starcluster-0.95.6-py2.7.egg\starcluster\cluster.py&quot;,
+<br />
+line 1185, in _create_flat_rate_cluster*
+<br />
+*    force_flat=True)[0]*
+<br />
+*  File
+<br />
+&quot;C:\Python27\lib\site-packages\starcluster-0.95.6-py2.7.egg\starcluster\cluster.py&quot;,
+<br />
+line 926, in create_nodes*
+<br />
+*    cluster_sg = self.cluster_group.name &lt;<a href="http://self.cluster_group.name">http://self.cluster_group.name</a>&gt;*
+<br />
+*  File
+<br />
+&quot;C:\Python27\lib\site-packages\starcluster-0.95.6-py2.7.egg\starcluster\cluster.py&quot;,
+<br />
+line 655, in cluster_group*
+<br />
+*    vpc_id=vpc_id)*
+<br />
+*  File
+<br />
+&quot;C:\Python27\lib\site-packages\starcluster-0.95.6-py2.7.egg\starcluster\awsutils.py&quot;,
+<br />
+line 300, in create_group*
+<br />
+*    while not self.get_group_or_none(name):*
+<br />
+*  File
+<br />
+&quot;C:\Python27\lib\site-packages\starcluster-0.95.6-py2.7.egg\starcluster\awsutils.py&quot;,
+<br />
+line 333, in get_group_or_none*
+<br />
+*    return self.get_security_group(name)*
+<br />
+*  File
+<br />
+&quot;C:\Python27\lib\site-packages\starcluster-0.95.6-py2.7.egg\starcluster\awsutils.py&quot;,
+<br />
+line 357, in get_security_group*
+<br />
+*    filters={'group-name': groupname})[0]*
+<br />
+*  File
+<br />
+&quot;C:\Python27\lib\site-packages\starcluster-0.95.6-py2.7.egg\starcluster\awsutils.py&quot;,
+<br />
+line 369, in get_security_groups*
+<br />
+*    return self.conn.get_all_security_groups(filters=filters)*
+<br />
+*  File &quot;C:\Python27\lib\site-packages\boto\ec2\connection.py&quot;, line 2968,
+<br />
+in get_all_security_groups*
+<br />
+*    [('item', SecurityGroup)], verb='POST')*
+<br />
+*  File &quot;C:\Python27\lib\site-packages\boto\connection.py&quot;, line 1169, in
+<br />
+get_list*
+<br />
+*    response = self.make_request(action, params, path, verb)*
+<br />
+*  File &quot;C:\Python27\lib\site-packages\boto\connection.py&quot;, line 1115, in
+<br />
+make_request*
+<br />
+*    return self._mexe(http_request)*
+<br />
+*  File &quot;C:\Python27\lib\site-packages\boto\connection.py&quot;, line 1027, in
+<br />
+_mexe*
+<br />
+*    raise BotoServerError(response.status, response.reason, body)*
+<br />
+*BotoServerError: BotoServerError: 500 Internal Server Error*
+<br />
+*&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;*
+<br />
+*&lt;Response&gt;&lt;Errors&gt;&lt;Error&gt;&lt;Code&gt;InternalError&lt;/Code&gt;&lt;Message&gt;An internal
+<br />
+error has
+<br />
+occurred&lt;/Message&gt;&lt;/Error&gt;&lt;/Errors&gt;&lt;RequestID&gt;808ce646-9203-412f-8fa*
+<br />
+*9-0d994e74e418&lt;/RequestID&gt;&lt;/Response&gt;*
+<br />
+<br />I am also seeing the following error
+<br />
+*C:\Windows\system32&gt;starcluster listclusters*
+<br />
+*StarCluster - (<a href="/cluster/">/cluster</a> &lt;<a href="/cluster/">/cluster</a>&gt;)
+<br />
+(v. 0.95.6)*
+<br />
+*Software Tools for Academics and Researchers (STAR)*
+<br />
+*Please submit bug reports to starcluster_at_mit.edu &lt;starcluster_at_mit.edu&gt;*
+<br />
+<br />*!!! ERROR - InternalError: An internal error has occurred*
+<br />
+*Traceback (most recent call last):*
+<br />
+*  File
+<br />
+&quot;C:\Python27\lib\site-packages\starcluster-0.95.6-py2.7.egg\starcluster\cli.py&quot;,
+<br />
+line 274, in main*
+<br />
+*    sc.execute(args)*
+<br />
+*  File
+<br />
+&quot;C:\Python27\lib\site-packages\starcluster-0.95.6-py2.7.egg\starcluster\commands\listclusters.py&quot;,
+<br />
+line 36, in execute*
+<br />
+*    show_ssh_status=self.opts.show_ssh_status)*
+<br />
+*  File
+<br />
+&quot;C:\Python27\lib\site-packages\starcluster-0.95.6-py2.7.egg\starcluster\cluster.py&quot;,
+<br />
+line 280, in list_clusters*
+<br />
+*    cluster_groups = self.get_cluster_security_groups()*
+<br />
+*  File
+<br />
+&quot;C:\Python27\lib\site-packages\starcluster-0.95.6-py2.7.egg\starcluster\cluster.py&quot;,
+<br />
+line 253, in get_cluster_security_groups*
+<br />
+*    sgs = self.ec2.get_security_groups(filters={'group-name': glob})*
+<br />
+*  File
+<br />
+&quot;C:\Python27\lib\site-packages\starcluster-0.95.6-py2.7.egg\starcluster\awsutils.py&quot;,
+<br />
+line 369, in get_security_groups*
+<br />
+*    return self.conn.get_all_security_groups(filters=filters)*
+<br />
+*  File &quot;C:\Python27\lib\site-packages\boto\ec2\connection.py&quot;, line 2968,
+<br />
+in get_all_security_groups*
+<br />
+*    [('item', SecurityGroup)], verb='POST')*
+<br />
+*  File &quot;C:\Python27\lib\site-packages\boto\connection.py&quot;, line 1169, in
+<br />
+get_list*
+<br />
+*    response = self.make_request(action, params, path, verb)*
+<br />
+*  File &quot;C:\Python27\lib\site-packages\boto\connection.py&quot;, line 1115, in
+<br />
+make_request*
+<br />
+*    return self._mexe(http_request)*
+<br />
+*  File &quot;C:\Python27\lib\site-packages\boto\connection.py&quot;, line 1027, in
+<br />
+_mexe*
+<br />
+*    raise BotoServerError(response.status, response.reason, body)*
+<br />
+*BotoServerError: BotoServerError: 500 Internal Server Error*
+<br />
+*&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;*
+<br />
+*&lt;Response&gt;&lt;Errors&gt;&lt;Error&gt;&lt;Code&gt;InternalError&lt;/Code&gt;&lt;Message&gt;An internal
+<br />
+error has
+<br />
+occurred&lt;/Message&gt;&lt;/Error&gt;&lt;/Errors&gt;&lt;RequestID&gt;c18d1a11-a6a6-4a8d-a74*
+<br />
+*2-f3f69b593189&lt;/RequestID&gt;&lt;/Response&gt;*
+<br />
+<br />I also got this error recently:
+<br />
+*C:\Windows\system32&gt;starcluster start babel2*
+<br />
+*StarCluster - (<a href="/cluster/">/cluster</a> &lt;<a href="/cluster/">/cluster</a>&gt;)
+<br />
+(v. 0.95.6)*
+<br />
+*Software Tools for Academics and Researchers (STAR)*
+<br />
+*Please submit bug reports to starcluster_at_mit.edu &lt;starcluster_at_mit.edu&gt;*
+<br />
+<br />*&gt;&gt;&gt; Using default cluster template: main*
+<br />
+*&gt;&gt;&gt; Validating cluster template settings...*
+<br />
+*&gt;&gt;&gt; Cluster template settings are valid*
+<br />
+*&gt;&gt;&gt; Starting cluster...*
+<br />
+*&gt;&gt;&gt; Launching a 20-node cluster...*
+<br />
+*&gt;&gt;&gt; Creating security group _at_sc-babel2...*
+<br />
+*!!! ERROR - VPCIdNotSpecified: No default VPC for this user*
+<br />
+*Traceback (most recent call last):*
+<br />
+*  File
+<br />
+&quot;C:\Python27\lib\site-packages\starcluster-0.95.6-py2.7.egg\starcluster\cli.py&quot;,
+<br />
+line 274, in main*
+<br />
+*    sc.execute(args)*
+<br />
+*  File
+<br />
+&quot;C:\Python27\lib\site-packages\starcluster-0.95.6-py2.7.egg\starcluster\commands\start.py&quot;,
+<br />
+line 244, in execute*
+<br />
+*    validate_running=validate_running)*
+<br />
+*  File
+<br />
+&quot;C:\Python27\lib\site-packages\starcluster-0.95.6-py2.7.egg\starcluster\cluster.py&quot;,
+<br />
+line 1628, in start*
+<br />
+*    return self._start(create=create, create_only=create_only)*
+<br />
+*  File &quot;&lt;string&gt;&quot;, line 2, in _start*
+<br />
+*  File
+<br />
+&quot;C:\Python27\lib\site-packages\starcluster-0.95.6-py2.7.egg\starcluster\utils.py&quot;,
+<br />
+line 112, in wrap_f*
+<br />
+*    res = func(*arg, **kargs)*
+<br />
+*  File
+<br />
+&quot;C:\Python27\lib\site-packages\starcluster-0.95.6-py2.7.egg\starcluster\cluster.py&quot;,
+<br />
+line 1643, in _start*
+<br />
+*    self.create_cluster()*
+<br />
+*  File
+<br />
+&quot;C:\Python27\lib\site-packages\starcluster-0.95.6-py2.7.egg\starcluster\cluster.py&quot;,
+<br />
+line 1163, in create_cluster*
+<br />
+*    self._create_flat_rate_cluster()*
+<br />
+*  File
+<br />
+&quot;C:\Python27\lib\site-packages\starcluster-0.95.6-py2.7.egg\starcluster\cluster.py&quot;,
+<br />
+line 1185, in _create_flat_rate_cluster*
+<br />
+*    force_flat=True)[0]*
+<br />
+*  File
+<br />
+&quot;C:\Python27\lib\site-packages\starcluster-0.95.6-py2.7.egg\starcluster\cluster.py&quot;,
+<br />
+line 926, in create_nodes*
+<br />
+*    cluster_sg = self.cluster_group.name &lt;<a href="http://self.cluster_group.name">http://self.cluster_group.name</a>&gt;*
+<br />
+*  File
+<br />
+&quot;C:\Python27\lib\site-packages\starcluster-0.95.6-py2.7.egg\starcluster\cluster.py&quot;,
+<br />
+line 655, in cluster_group*
+<br />
+*    vpc_id=vpc_id)*
+<br />
+*  File
+<br />
+&quot;C:\Python27\lib\site-packages\starcluster-0.95.6-py2.7.egg\starcluster\awsutils.py&quot;,
+<br />
+line 296, in create_group*
+<br />
+*    sg = self.conn.create_security_group(name, description, vpc_id=vpc_id)*
+<br />
+*  File &quot;C:\Python27\lib\site-packages\boto\ec2\connection.py&quot;, line 3003,
+<br />
+in create_security_group*
+<br />
+*    SecurityGroup, verb='POST')*
+<br />
+*  File &quot;C:\Python27\lib\site-packages\boto\connection.py&quot;, line 1207, in
+<br />
+get_object*
+<br />
+*    raise self.ResponseError(response.status, response.reason, body)*
+<br />
+*EC2ResponseError: EC2ResponseError: 400 Bad Request*
+<br />
+*&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;*
+<br />
+*&lt;Response&gt;&lt;Errors&gt;&lt;Error&gt;&lt;Code&gt;VPCIdNotSpecified&lt;/Code&gt;&lt;Message&gt;No default
+<br />
+VPC for this user&lt;/Message&gt;&lt;/Error&gt;&lt;/Errors&gt;&lt;RequestID&gt;8884b8a7-ad31-4ca9-8*
+<br />
+*37a-2d5982dbda43&lt;/RequestID&gt;&lt;/Response&gt;*
+<br />
+<span id="received"><dfn>Received on</dfn> Tue Feb 24 2015 - 16:56:06 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2558.html#start2558">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2559.html" title="Next message in the list">Avner May: "Re:  Error creating/deleting security groups"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2557.html" title="Previous message in the list">Ying Sonia Ting: "Many jobs stuck in &#0034;t state&#0034;"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="2559.html" title="Next message in this discussion thread">Avner May: "Re:  Error creating/deleting security groups"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="2559.html" title="Message sent in reply to this message">Avner May: "Re:  Error creating/deleting security groups"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2558" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2558" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2558" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2558" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

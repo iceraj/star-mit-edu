@@ -1,0 +1,235 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Mark Spillman ((no email))" />
+<meta name="Subject" content="Unable to listpublic or interact with clusters" />
+<title>starcluster.mbox.out: Unable to listpublic or interact with clusters</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Unable to listpublic or interact with clusters</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Unable to listpublic or interact with clusters</h1>
+<!-- received="Thu Mar 31 09:32:53 2016" -->
+<!-- isoreceived="20160331133253" -->
+<!-- sent="Thu, 31 Mar 2016 15:32:51 +0200" -->
+<!-- isosent="20160331133251" -->
+<!-- name="Mark Spillman" -->
+<!-- email="(no email)" -->
+<!-- subject="Unable to listpublic or interact with clusters" -->
+<!-- id="CAF4fwa9NwSHFLGCciyT+fzMs1sJZjbP44M6RyUVPfXUgbmeKWg_at_mail.gmail.com" -->
+<!-- charset="UTF-8" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2778.html#start2778" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2778.html#options2">top</a>, <a href="2778.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2779.html" accesskey="d" title="Rajat Banerjee: &quot;Re:  Is StarCluster still under active development?&quot;">Next message</a> ]
+[ <a href="2777.html" title="Fran&#0231;ois-Michel L&#0039;Heureux: &quot;Re:  Is StarCluster still under active development? (Tony Robinson)&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2778" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2778" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2778" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2778" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Mark Spillman &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 31 Mar 2016 15:32:51 +0200</span><br />
+</address>
+<br />
+Dear all,
+<br />
+<br />Having some difficulty in getting StarCluster configured correctly on a new
+<br />
+machine. Would someone be able to help? This is the error message I am
+<br />
+getting:
+<br />
+<br />&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;
+<br />
+<br />C:\Users\Mark&gt;starcluster listpublic
+<br />
+<br />StarCluster - (<a href="/cluster/">/cluster</a>) (v. 0.95.6) Software Tools for
+<br />
+Academics and Researchers (STAR) Please submit bug reports to
+<br />
+starcluster_at_mit.edu
+<br />
+<br /><br /><br />!!! ERROR - Connection error:
+<br />
+<br />Traceback (most recent call last):
+<br />
+<br />&nbsp;&nbsp;&nbsp;File &quot;c:\python27\lib\site-packages\starcluster\cli.py&quot;, line 274, in
+<br />
+main
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sc.execute(args)
+<br />
+<br />&nbsp;&nbsp;&nbsp;File
+<br />
+<br />&quot;c:\python27\lib\site-packages\starcluster\commands\listpublic.py&quot;, line
+<br />
+30, in execute
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.ec2.list_starcluster_public_images()
+<br />
+<br />&nbsp;&nbsp;&nbsp;File &quot;c:\python27\lib\site-packages\starcluster\awsutils.py&quot;, line 956,
+<br />
+in lis t_starcluster_public_images
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;images = self.conn.get_all_images(owners=[static.STARCLUSTER_OWNER_ID])
+<br />
+<br />&nbsp;&nbsp;&nbsp;File &quot;c:\python27\lib\site-packages\boto\ec2\connection.py&quot;, line 189,
+<br />
+in get_ all_images
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[('item', Image)], verb='POST')
+<br />
+<br />&nbsp;&nbsp;&nbsp;File &quot;c:\python27\lib\site-packages\boto\connection.py&quot;, line 1170, in
+<br />
+get_lis t
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;response = self.make_request(action, params, path, verb)
+<br />
+<br />&nbsp;&nbsp;&nbsp;File &quot;c:\python27\lib\site-packages\boto\connection.py&quot;, line 1116, in
+<br />
+make_re quest
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return self._mexe(http_request)
+<br />
+<br />&nbsp;&nbsp;&nbsp;File &quot;c:\python27\lib\site-packages\boto\connection.py&quot;, line 1030, in
+<br />
+_mexe
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;raise ex
+<br />
+<br />error: [Errno 10061] No connection could be made because the target machine
+<br />
+acti vely refused it !!! ERROR - Check your internet connection?
+<br />
+<br /><br />&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;
+<br />
+<br />Many thanks,
+<br />
+<br /><br /><br />Mark
+<br />
+<span id="received"><dfn>Received on</dfn> Thu Mar 31 2016 - 09:32:53 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2778.html#start2778">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2779.html" title="Next message in the list">Rajat Banerjee: "Re:  Is StarCluster still under active development?"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2777.html" title="Previous message in the list">Fran&#0231;ois-Michel L&#0039;Heureux: "Re:  Is StarCluster still under active development? (Tony Robinson)"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2778" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2778" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2778" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2778" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

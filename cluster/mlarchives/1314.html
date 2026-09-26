@@ -1,0 +1,270 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Mrinal Zalpuri ((no email))" />
+<meta name="Subject" content="Problem using StarCluster command in shell scripts" />
+<title>starcluster.mbox.out: Problem using StarCluster command in shell scripts</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Problem using StarCluster command in shell scripts</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Problem using StarCluster command in shell scripts</h1>
+<!-- received="Sat Jul  7 09:53:19 2012" -->
+<!-- isoreceived="20120707135319" -->
+<!-- sent="Sat, 7 Jul 2012 19:23:00 +0530" -->
+<!-- isosent="20120707135300" -->
+<!-- name="Mrinal Zalpuri" -->
+<!-- email="(no email)" -->
+<!-- subject="Problem using StarCluster command in shell scripts" -->
+<!-- id="000001cd5c47$de88e7c0$9b9ab740$_at_com" -->
+<!-- charset="us-ascii" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1314.html#start1314" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1314.html#options2">top</a>, <a href="1314.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1315.html" accesskey="d" title="David Erickson: &quot;Loadbalance and setup plugins&quot;">Next message</a> ]
+[ <a href="1313.html" title="Yousun Ko: &quot;Connection time out on `starcluter start &#0060;cluster id&#0062;&#0039;&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="1322.html" accesskey="t" title="Justin Riley: &quot;Re:  Problem using StarCluster command in shell scripts&quot;">Next in thread</a> ]
+ [ <a href="1314.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1314" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1314" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1314" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1314" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Mrinal Zalpuri &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Sat, 7 Jul 2012 19:23:00 +0530</span><br />
+</address>
+<br />
+Hello,
+<br />
+<br />&nbsp;
+<br />
+<br />I am facing some issue when using starcluster commands from shell sripts. I
+<br />
+a shell script test.sh which has this code
+<br />
+<br />*************
+<br />
+<br />#!/bin/sh -xv
+<br />
+<br />&nbsp;
+<br />
+<br />cmd=&quot;mkdir -p /usr/local/test_lpapp&quot;
+<br />
+<br />args=&quot;&quot;
+<br />
+<br />starcluster sshmaster scsmallcluster \'$cmd $args\'
+<br />
+<br />************
+<br />
+<br />&nbsp;
+<br />
+<br />When I run this on command prompt, I am getting this error
+<br />
+<br />*****************
+<br />
+<br />#!/bin/sh -xv
+<br />
+<br />&nbsp;
+<br />
+<br />cmd=&quot;mkdir -p /usr/local/test_lpapp&quot;
+<br />
+<br />+ cmd=mkdir -p /usr/local/test_lpapp
+<br />
+<br />args=&quot;&quot;
+<br />
+<br />+ args=
+<br />
+<br />starcluster sshmaster scsmallcluster \'$cmd $args\'
+<br />
+<br />+ starcluster sshmaster scsmallcluster 'mkdir -p /usr/local/test_lpapp '
+<br />
+<br />StarCluster - (<a href="http://web.mit.edu/starcluster">http://web.mit.edu/starcluster</a>) (v. 0.93.3)
+<br />
+<br />Software Tools for Academics and Researchers (STAR)
+<br />
+<br />Please submit bug reports to starcluster_at_mit.edu
+<br />
+<br />&nbsp;
+<br />
+<br />Usage: sshmaster [options] &lt;cluster&gt; [&lt;remote-command&gt;]
+<br />
+<br />&nbsp;
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;SSH to a cluster's master node
+<br />
+<br />&nbsp;
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;Example:
+<br />
+<br />&nbsp;
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$ sshmaster mycluster
+<br />
+<br />&nbsp;
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;You can also execute commands without directly logging in:
+<br />
+<br />&nbsp;
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$ starcluster sshmaster mycluster 'cat /etc/hosts'
+<br />
+<br />&nbsp;
+<br />
+<br />starcluster: error: no such option: -p
+<br />
+<br />***************
+<br />
+<br />But if I run starcluster sshmaster scsmallcluster 'mkdir -p
+<br />
+/usr/local/test_lpapp ' directly from the command prompt it works. Also if I
+<br />
+remove everything else and just keep this command in my script then also it
+<br />
+works. But when creating this command using arguments/variables it created
+<br />
+problem
+<br />
+<br />&nbsp;
+<br />
+<br />&nbsp;
+<br />
+<br />Any help would be appreciated
+<br />
+<br />&nbsp;
+<br />
+<br />best regards
+<br />
+<br />&nbsp;
+<br />
+<br />Mrinal Zalpuri
+<br />
+<br />&nbsp;
+<br />
+<span id="received"><dfn>Received on</dfn> Sat Jul 07 2012 - 09:53:19 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1314.html#start1314">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1315.html" title="Next message in the list">David Erickson: "Loadbalance and setup plugins"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1313.html" title="Previous message in the list">Yousun Ko: "Connection time out on `starcluter start &#0060;cluster id&#0062;&#0039;"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1322.html" title="Next message in this discussion thread">Justin Riley: "Re:  Problem using StarCluster command in shell scripts"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1322.html" title="Message sent in reply to this message">Justin Riley: "Re:  Problem using StarCluster command in shell scripts"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1314" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1314" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1314" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1314" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

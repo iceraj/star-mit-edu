@@ -1,0 +1,318 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Emilia Vynnycky ((no email))" />
+<meta name="Subject" content="bug report for updated Starcluster release 0.94.3 - Windows 7" />
+<title>starcluster.mbox.out: bug report for updated Starcluster release 0.94.3 - Windows 7</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">bug report for updated Starcluster release 0.94.3 - Windows 7</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>bug report for updated Starcluster release 0.94.3 - Windows 7</h1>
+<!-- received="Wed Nov 27 07:34:43 2013" -->
+<!-- isoreceived="20131127123443" -->
+<!-- sent="Wed, 27 Nov 2013 12:34:37 +0000" -->
+<!-- isosent="20131127123437" -->
+<!-- name="Emilia Vynnycky" -->
+<!-- email="(no email)" -->
+<!-- subject="bug report for updated Starcluster release 0.94.3 - Windows 7" -->
+<!-- id="5295E6DD020000B000023CD6_at_smtp-b.lshtm.ac.uk" -->
+<!-- charset="US-ASCII" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1959.html#start1959" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1959.html#options2">top</a>, <a href="1959.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1960.html" accesskey="d" title="Sergio Mafra: &quot;Re:  MIT StarCluster and the new C3 instances&quot;">Next message</a> ]
+[ <a href="1958.html" title="Joydeep Sen Sarma: &quot;Re:  Multiple node cluster problems&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="1984.html" accesskey="t" title="Justin Riley: &quot;Re:  bug report for updated Starcluster release 0.94.3 - Windows 7&quot;">Next in thread</a> ]
+ [ <a href="1959.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1959" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1959" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1959" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1959" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Emilia Vynnycky &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Wed, 27 Nov 2013 12:34:37 +0000</span><br />
+</address>
+<br />
+Hello 
+<br />
+I've just installed the updated version of Starcluster (version 0.94.3).
+<br />
+&nbsp;
+<br />
+However, when I tried to access the cluster that I had set up in the previous version, I received the following bug report.  Could someone advise on what I should do please?   The cluster had been terminated before I ran this.
+<br />
+&nbsp;
+<br />
+In case it's relevant, I'm running this under Windows 7 and following previous problems (see posting dated 14/11/13), I used the command pip install starcluster to install the latest version. 
+<br />
+&nbsp;
+<br />
+Thanks in advance
+<br />
+&nbsp;
+<br />
+Emilia
+<br />
+&nbsp;
+<br />
+---------- SYSTEM INFO ----------
+<br />
+StarCluster: 0.94.2
+<br />
+Python: 2.7.5 (default, May 15 2013, 22:43:36) [MSC v.1500 32 bit (Intel)]
+<br />
+Platform: Windows-7-6.1.7601-SP1
+<br />
+boto: 2.18.0
+<br />
+paramiko: 1.12.0
+<br />
+Crypto: 2.6
+<br />
+&nbsp;
+<br />
+---------- CRASH DETAILS ----------
+<br />
+Command: starcluster-script.py start thibela-build
+<br />
+&nbsp;
+<br />
+2013-11-27 12:20:43,398 PID: 8868 config.py:567 - DEBUG - Loading config
+<br />
+2013-11-27 12:20:43,413 PID: 8868 config.py:138 - DEBUG - Loading file: C:\Users\user\.starcluster\config
+<br />
+2013-11-27 12:20:43,430 PID: 8868 awsutils.py:74 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'proxy_user': None, 'proxy_pass': None, 'proxy_port': None, 'proxy': None, 'is_secure': True, 'path': '/', 'region': None, 'validate_certs': True, 'port': None}
+<br />
+2013-11-27 12:20:45,539 PID: 8868 start.py:197 - INFO - Using default cluster template: smallcluster
+<br />
+2013-11-27 12:20:45,539 PID: 8868 cluster.py:1660 - INFO - Validating cluster template settings...
+<br />
+2013-11-27 12:20:47,316 PID: 8868 cluster.py:982 - DEBUG - Launch map: node001 (ami: ami-9b9ebaf2, type: m1.small)...
+<br />
+2013-11-27 12:20:47,316 PID: 8868 cluster.py:982 - DEBUG - Launch map: node001 (ami: ami-9b9ebaf2, type: m1.small)...
+<br />
+2013-11-27 12:20:47,365 PID: 8868 cluster.py:801 - DEBUG - Userdata size in KB: 0.54
+<br />
+2013-11-27 12:20:47,365 PID: 8868 cluster.py:1677 - INFO - Cluster template settings are valid
+<br />
+2013-11-27 12:20:47,365 PID: 8868 cluster.py:1498 - INFO - Starting cluster...
+<br />
+2013-11-27 12:20:47,365 PID: 8868 cluster.py:1008 - INFO - Launching a 2-node cluster...
+<br />
+2013-11-27 12:20:47,367 PID: 8868 cluster.py:982 - DEBUG - Launch map: node001 (ami: ami-9b9ebaf2, type: m1.small)...
+<br />
+2013-11-27 12:20:47,367 PID: 8868 cluster.py:1036 - DEBUG - Launching master (ami: ami-9b9ebaf2, type: m1.small)
+<br />
+2013-11-27 12:20:47,367 PID: 8868 cluster.py:1036 - DEBUG - Launching node001 (ami: ami-9b9ebaf2, type: m1.small)
+<br />
+2013-11-27 12:20:47,551 PID: 8868 awsutils.py:247 - INFO - Creating security group _at_sc-thibela-build...
+<br />
+2013-11-27 12:20:50,388 PID: 8868 cluster.py:801 - DEBUG - Userdata size in KB: 0.55
+<br />
+2013-11-27 12:20:51,003 PID: 8868 awsutils.py:432 - DEBUG - Forcing delete_on_termination for AMI: ami-9b9ebaf2
+<br />
+2013-11-27 12:20:51,959 PID: 8868 cluster.py:847 - INFO - Reservation:r-a44340dd
+<br />
+2013-11-27 12:20:51,959 PID: 8868 utils.py:624 - INFO - Waiting for instances to propagate...
+<br />
+2013-11-27 12:20:53,334 PID: 8868 cluster.py:1298 - INFO - Waiting for cluster to come up... (updating every 30s)
+<br />
+2013-11-27 12:20:53,561 PID: 8868 cluster.py:1255 - INFO - Waiting for all nodes to be in a 'running' state...
+<br />
+2013-11-27 12:20:53,971 PID: 8868 cluster.py:711 - DEBUG - existing nodes: {}
+<br />
+2013-11-27 12:20:53,971 PID: 8868 cluster.py:719 - DEBUG - adding node i-da130da1 to self._nodes list
+<br />
+2013-11-27 12:20:54,890 PID: 8868 cluster.py:719 - DEBUG - adding node i-c4130dbf to self._nodes list
+<br />
+2013-11-27 12:20:55,198 PID: 8868 cli.py:307 - ERROR - Unhandled exception occured
+<br />
+Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File &quot;C:\Python27\lib\site-packages\starcluster-0.94.2-py2.7.egg\starcluster\cli.py&quot;, line 274, in main
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;sc.execute(args)
+<br />
+&nbsp;&nbsp;File &quot;C:\Python27\lib\site-packages\starcluster-0.94.2-py2.7.egg\starcluster\commands\start.py&quot;, line 215, in execute
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;validate_running=validate_running)
+<br />
+&nbsp;&nbsp;File &quot;C:\Python27\lib\site-packages\starcluster-0.94.2-py2.7.egg\starcluster\cluster.py&quot;, line 1485, in start
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;return self._start(create=create, create_only=create_only)
+<br />
+&nbsp;&nbsp;File &quot;&lt;string&gt;&quot;, line 2, in _start
+<br />
+&nbsp;&nbsp;File &quot;C:\Python27\lib\site-packages\starcluster-0.94.2-py2.7.egg\starcluster\utils.py&quot;, line 111, in wrap_f
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;res = func(*arg, **kargs)
+<br />
+&nbsp;&nbsp;File &quot;C:\Python27\lib\site-packages\starcluster-0.94.2-py2.7.egg\starcluster\cluster.py&quot;, line 1508, in _start
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self.setup_cluster()
+<br />
+&nbsp;&nbsp;File &quot;C:\Python27\lib\site-packages\starcluster-0.94.2-py2.7.egg\starcluster\cluster.py&quot;, line 1516, in setup_cluster
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self.wait_for_cluster()
+<br />
+&nbsp;&nbsp;File &quot;&lt;string&gt;&quot;, line 2, in wait_for_cluster
+<br />
+&nbsp;&nbsp;File &quot;C:\Python27\lib\site-packages\starcluster-0.94.2-py2.7.egg\starcluster\utils.py&quot;, line 111, in wrap_f
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;res = func(*arg, **kargs)
+<br />
+&nbsp;&nbsp;File &quot;C:\Python27\lib\site-packages\starcluster-0.94.2-py2.7.egg\starcluster\cluster.py&quot;, line 1301, in wait_for_cluster
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self.wait_for_running_instances()
+<br />
+&nbsp;&nbsp;File &quot;C:\Python27\lib\site-packages\starcluster-0.94.2-py2.7.egg\starcluster\cluster.py&quot;, line 1256, in wait_for_running_instances
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;nodes = nodes or self.get_nodes_or_raise()
+<br />
+&nbsp;&nbsp;File &quot;C:\Python27\lib\site-packages\starcluster-0.94.2-py2.7.egg\starcluster\cluster.py&quot;, line 731, in get_nodes_or_raise
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;nodes = self.nodes
+<br />
+&nbsp;&nbsp;File &quot;C:\Python27\lib\site-packages\starcluster-0.94.2-py2.7.egg\starcluster\cluster.py&quot;, line 721, in nodes
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;if n.is_master():
+<br />
+&nbsp;&nbsp;File &quot;C:\Python27\lib\site-packages\starcluster-0.94.2-py2.7.egg\starcluster\node.py&quot;, line 884, in is_master
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;return self.alias == &quot;master&quot;
+<br />
+&nbsp;&nbsp;File &quot;C:\Python27\lib\site-packages\starcluster-0.94.2-py2.7.egg\starcluster\node.py&quot;, line 140, in alias
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;aliases = aliasestxt.splitlines()[2:]
+<br />
+AttributeError: 'NoneType' object has no attribute 'splitlines'
+<br />
+<span id="received"><dfn>Received on</dfn> Wed Nov 27 2013 - 07:34:43 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1959.html#start1959">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1960.html" title="Next message in the list">Sergio Mafra: "Re:  MIT StarCluster and the new C3 instances"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1958.html" title="Previous message in the list">Joydeep Sen Sarma: "Re:  Multiple node cluster problems"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1984.html" title="Next message in this discussion thread">Justin Riley: "Re:  bug report for updated Starcluster release 0.94.3 - Windows 7"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1984.html" title="Message sent in reply to this message">Justin Riley: "Re:  bug report for updated Starcluster release 0.94.3 - Windows 7"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1959" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1959" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1959" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1959" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Rajat Banerjee ((no email))" />
+<meta name="Subject" content="Re:  commlib error" />
+<title>starcluster.mbox.out: Re:  commlib error</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Re:  commlib error</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Re:  commlib error</h1>
+<!-- received="Tue Sep 23 09:33:55 2014" -->
+<!-- isoreceived="20140923133355" -->
+<!-- sent="Tue, 23 Sep 2014 09:33:33 -0400" -->
+<!-- isosent="20140923133333" -->
+<!-- name="Rajat Banerjee" -->
+<!-- email="(no email)" -->
+<!-- subject="Re:  commlib error" -->
+<!-- id="CAAEsPucbmkKY4vr0GugyEMVe-b0BO9LJSuRonwWWiYbvpeMPcw_at_mail.gmail.com" -->
+<!-- charset="UTF-8" -->
+<!-- inreplyto="EC9907C17615C4408F71DDC2F0482B8553E1989F_at_OC11EXPO24.exchange.mit.edu" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2368.html#start2368" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2368.html#options2">top</a>, <a href="2368.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2369.html" accesskey="d" title="Amanda Joy Kedaigle: &quot;FW:  commlib error&quot;">Next message</a> ]
+[ <a href="2367.html" title="Amanda Joy Kedaigle: &quot;commlib error&quot;">Previous message</a> ]
+[ <a href="2367.html" title="Amanda Joy Kedaigle: &quot;commlib error&quot;">In reply to</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2368" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2368" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2368" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2368" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Rajat Banerjee &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Tue, 23 Sep 2014 09:33:33 -0400</span><br />
+</address>
+<br />
+Hi Amanda,
+<br />
+It looks like you cannot communicate with the master node anymore. The
+<br />
+error message is because starcluster failed to execute a simple 'source
+<br />
+/etc/profile/' command with a 'connection refused' error.
+<br />
+<br />Can you paste us the output of the following two commands:
+<br />
+<br /><em class="quotelev1">&gt; starcluster listclusters (should list status of all your active clusters
+</em><br />
+and running nodes)
+<br />
+<br /><em class="quotelev1">&gt; starcluster sshmaster &lt;your cluster name&gt; (i'm expecting this to fail)
+</em><br />
+<br />Raj
+<br />
+<br />On Mon, Sep 22, 2014 at 5:13 PM, Amanda Joy Kedaigle &lt;mandyjoy_at_mit.edu&gt;
+<br />
+wrote:
+<br />
+<br /><em class="quotelev1">&gt;  Hi,
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; I am trying to run starcluster's loadbalancer to keep only one node
+</em><br />
+<em class="quotelev1">&gt; running until jobs are submitted to the cluster. I know it's an
+</em><br />
+<em class="quotelev1">&gt; experimental feature, but I'm wondering if anyone has run into this error
+</em><br />
+<em class="quotelev1">&gt; before, or has any suggestions. The cluster has been whittled down to 1
+</em><br />
+<em class="quotelev1">&gt; node after a weekend of inactivity, and now it seems that when jobs are
+</em><br />
+<em class="quotelev1">&gt; submitted to the queue, instead of adding nodes, SGE fails.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; Loading full job history
+</em><br />
+<em class="quotelev1">&gt; *** WARNING - Failed to retrieve stats (1/5):
+</em><br />
+<em class="quotelev1">&gt; Traceback (most recent call last):
+</em><br />
+<em class="quotelev1">&gt;   File
+</em><br />
+<em class="quotelev1">&gt; &quot;/net/dorsal/apps/python2.7/lib/python2.7/site-packages/StarCluster-0.95.5-py2.7.egg/starcluster/balancers/sge/__init__.py&quot;,
+</em><br />
+<em class="quotelev1">&gt; line 552, in get_stats
+</em><br />
+<em class="quotelev1">&gt;     return self._get_stats()
+</em><br />
+<em class="quotelev1">&gt;   File
+</em><br />
+<em class="quotelev1">&gt; &quot;/net/dorsal/apps/python2.7/lib/python2.7/site-packages/StarCluster-0.95.5-py2.7.egg/starcluster/balancers/sge/__init__.py&quot;,
+</em><br />
+<em class="quotelev1">&gt; line 522, in _get_stats
+</em><br />
+<em class="quotelev1">&gt;     qhostxml = '\n'.join(master.ssh.execute('qhost -xml'))
+</em><br />
+<em class="quotelev1">&gt;   File
+</em><br />
+<em class="quotelev1">&gt; &quot;/net/dorsal/apps/python2.7/lib/python2.7/site-packages/StarCluster-0.95.5-py2.7.egg/starcluster/sshutils.py&quot;,
+</em><br />
+<em class="quotelev1">&gt; line 578, in execute
+</em><br />
+<em class="quotelev1">&gt;     msg, command, exit_status, out_str)
+</em><br />
+<em class="quotelev1">&gt; RemoteCommandFailed: remote command 'source /etc/profile &amp;&amp; qhost -xml'
+</em><br />
+<em class="quotelev1">&gt; failed with status 1:
+</em><br />
+<em class="quotelev1">&gt; error: commlib error: got select error (Connection refused)
+</em><br />
+<em class="quotelev1">&gt; error: unable to send message to qmaster using port 63231 on host
+</em><br />
+<em class="quotelev1">&gt; &quot;master&quot;: got send error
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Thanks for any help!
+</em><br />
+<em class="quotelev1">&gt; Amanda
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; _______________________________________________
+</em><br />
+<em class="quotelev1">&gt; StarCluster mailing list
+</em><br />
+<em class="quotelev1">&gt; StarCluster_at_mit.edu
+</em><br />
+<em class="quotelev1">&gt; <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<span id="received"><dfn>Received on</dfn> Tue Sep 23 2014 - 09:33:55 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2368.html#start2368">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2369.html" title="Next message in the list">Amanda Joy Kedaigle: "FW:  commlib error"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2367.html" title="Previous message in the list">Amanda Joy Kedaigle: "commlib error"</a></li>
+<li><dfn>In reply to</dfn>: <a href="2367.html" title="Message to which this message replies">Amanda Joy Kedaigle: "commlib error"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2368" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2368" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2368" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2368" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

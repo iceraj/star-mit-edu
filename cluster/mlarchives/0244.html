@@ -1,0 +1,448 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Justin Riley ((no email))" />
+<meta name="Subject" content="Re: [Starcluster] can't start an m1.large 64 bit ubuntu cluster" />
+<title>starcluster.mbox.out: Re: [Starcluster] can't start an m1.large 64 bit ubuntu cluster</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Re: [Starcluster] can't start an m1.large 64 bit ubuntu cluster</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Re: [Starcluster] can't start an m1.large 64 bit ubuntu cluster</h1>
+<!-- received="Fri Jun  4 13:21:49 2010" -->
+<!-- isoreceived="20100604172149" -->
+<!-- sent="Fri, 04 Jun 2010 13:21:30 -0400" -->
+<!-- isosent="20100604172130" -->
+<!-- name="Justin Riley" -->
+<!-- email="(no email)" -->
+<!-- subject="Re: [Starcluster] can't start an m1.large 64 bit ubuntu cluster" -->
+<!-- id="4C09361A.8090500_at_mit.edu" -->
+<!-- charset="ISO-8859-1" -->
+<!-- inreplyto="20100603194851.1575447579_at_smtp.johnshopkins.edu" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="0244.html#start244" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="0244.html#options2">top</a>, <a href="0244.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="0245.html" accesskey="d" title="Rajat Banerjee: &quot;[Starcluster] Getting involved in Dev&quot;">Next message</a> ]
+[ <a href="0243.html" title="Dean Snyder: &quot;[Starcluster] can&#0039;t start an m1.large 64 bit ubuntu cluster&quot;">Previous message</a> ]
+[ <a href="0243.html" title="Dean Snyder: &quot;[Starcluster] can&#0039;t start an m1.large 64 bit ubuntu cluster&quot;">In reply to</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg244" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg244" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg244" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg244" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Justin Riley &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Fri, 04 Jun 2010 13:21:30 -0400</span><br />
+</address>
+<br />
+-----BEGIN PGP SIGNED MESSAGE-----
+<br />
+Hash: SHA1
+<br />
+<br />Hi Dean,
+<br />
+<br />Sorry to hear you're having issues. From the error output:
+<br />
+<br />&quot;We currently do not have sufficient m1.large capacity in
+<br />
+the Availability Zone you requested (us-east-1c). Our system will be
+<br />
+working on provisioning additional capacity. You can currently get
+<br />
+m1.large capacity by not specifying an Availability Zone in your request
+<br />
+or choosing us-east-1d, us-east-1a, us-east-1b. &quot;
+<br />
+<br />This means that the us-east-1c zone didn't have enough resources to
+<br />
+fulfill your request and hence the error. I need to handle these errors
+<br />
+better so that it's more clear to users when they happen. Thanks for
+<br />
+submitting the debug file this will help me to do that.
+<br />
+<br />With that said, do you have an AVAILABILITY_ZONE setting in your cluster
+<br />
+template in the config? If so, try commenting that out and starting the
+<br />
+cluster again. If not, unfortunately for the time being you'll just have
+<br />
+to try again until the zone has capacity again.
+<br />
+<br />This problem uncovers a bigger issue which is that the StarCluster
+<br />
+images are only available in the us-east-1 zone. StarCluster let's
+<br />
+Amazon choose the zone to launch the cluster in if you do not specify
+<br />
+the AVAILABILITY_ZONE setting. However, given that the StarCluster
+<br />
+images are only available in us-east-1 Amazon always chooses us-east-1
+<br />
+which is a problem for anyone not in the east coast and also overloads
+<br />
+us-east-1. I'm working on replicating the 32bit/64bit images in all
+<br />
+availability zones to resolve this issue.
+<br />
+<br />However, I believe rebundling a new image from the StarCluster images
+<br />
+using StarCluster's &quot;createimage&quot; command should place your new image in
+<br />
+a local availability zone (ie us-west-1 if you're closer to the west
+<br />
+region) as opposed to always us-east-1.
+<br />
+<br /><em class="quotelev1">&gt; I need to create a custom ami based on your ami-a5c42dcc image, but
+</em><br />
+<em class="quotelev1">&gt; starting fails with the following error output:
+</em><br />
+<br />To create a new image you do not need to start a new cluster with
+<br />
+StarCluster. In fact it is recommended not to create a new AMI from a
+<br />
+currently running instance started by StarCluster. The software *should*
+<br />
+warn you when you're attempting to do so. Instead, launch a single
+<br />
+instance of the StarCluster AMI using ElasticFox or the AWS management
+<br />
+console, login and customize the instance, and then use starcluster's
+<br />
+createimage command to create a new AMI. You can then use this new AMI
+<br />
+in your cluster template. See here for more details:
+<br />
+<br /><a href="http://web.mit.edu/stardev/cluster/docs/create_new_ami.html">http://web.mit.edu/stardev/cluster/docs/create_new_ami.html</a>
+<br />
+<br />Hope that helps,
+<br />
+<br />~Justin
+<br />
+<br />P.S. Would you mind joining the mailing list? Thanks!
+<br />
+<br /><br /><br /><br />On 06/03/2010 03:48 PM, Dean Snyder wrote:
+<br />
+<em class="quotelev1">&gt; I need to create a custom ami based on your ami-a5c42dcc image, but
+</em><br />
+<em class="quotelev1">&gt; starting fails with the following error output:
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; config.py:281 - DEBUG - Loading config
+</em><br />
+<em class="quotelev1">&gt; config.py:99 - DEBUG - Loading file: /Users/dean/.starcluster/config
+</em><br />
+<em class="quotelev1">&gt; config.py:210 - DEBUG - partition setting not specified. Defaulting to 1
+</em><br />
+<em class="quotelev1">&gt; cli.py:213 - INFO - Using default cluster template: smallcluster
+</em><br />
+<em class="quotelev1">&gt; awsutils.py:47 - DEBUG - creating self._conn w/ connection_authenticator
+</em><br />
+<em class="quotelev1">&gt; kwargs = {'path': '/', 'region': None, 'port': None, 'is_secure': True}
+</em><br />
+<em class="quotelev1">&gt; cli.py:228 - INFO - Validating cluster template settings...
+</em><br />
+<em class="quotelev1">&gt; awsutils.py:47 - DEBUG - creating self._conn w/ connection_authenticator
+</em><br />
+<em class="quotelev1">&gt; kwargs = {'path': '/', 'region': None, 'port': None, 'is_secure': True}
+</em><br />
+<em class="quotelev1">&gt; cli.py:230 - INFO - Cluster template settings are valid
+</em><br />
+<em class="quotelev1">&gt; cluster.py:677 - INFO - Starting cluster...
+</em><br />
+<em class="quotelev1">&gt; cluster.py:578 - INFO - Launching a 2-node cluster...
+</em><br />
+<em class="quotelev1">&gt; cluster.py:583 - INFO - Launching master node...
+</em><br />
+<em class="quotelev1">&gt; cluster.py:584 - INFO - Master AMI: ami-a5c42dcc
+</em><br />
+<em class="quotelev1">&gt; awsutils.py:108 - INFO - Creating security group _at_sc-cidrcluster...
+</em><br />
+<em class="quotelev1">&gt; cluster.py:605 - INFO - Launching worker nodes...
+</em><br />
+<em class="quotelev1">&gt; cluster.py:606 - INFO - Node AMI: ami-a5c42dcc
+</em><br />
+<em class="quotelev1">&gt; cli.py:1096 - DEBUG - Traceback (most recent call last):
+</em><br />
+<em class="quotelev1">&gt;   File &quot;build/bdist.macosx-10.6-universal/egg/starcluster/cli.py&quot;, line
+</em><br />
+<em class="quotelev1">&gt; 1075, in main
+</em><br />
+<em class="quotelev1">&gt;     sc.execute(args)
+</em><br />
+<em class="quotelev1">&gt;   File &quot;build/bdist.macosx-10.6-universal/egg/starcluster/cli.py&quot;, line
+</em><br />
+<em class="quotelev1">&gt; 239, in execute
+</em><br />
+<em class="quotelev1">&gt;     scluster.start(create=not self.opts.no_create)
+</em><br />
+<em class="quotelev1">&gt;   File &quot;build/bdist.macosx-10.6-universal/egg/starcluster/utils.py&quot;,
+</em><br />
+<em class="quotelev1">&gt; line 27, in wrapper
+</em><br />
+<em class="quotelev1">&gt;     res = func(*arg, **kargs)
+</em><br />
+<em class="quotelev1">&gt;   File &quot;build/bdist.macosx-10.6-universal/egg/starcluster/cluster.py&quot;,
+</em><br />
+<em class="quotelev1">&gt; line 679, in start
+</em><br />
+<em class="quotelev1">&gt;     self.create_cluster()
+</em><br />
+<em class="quotelev1">&gt;   File &quot;build/bdist.macosx-10.6-universal/egg/starcluster/cluster.py&quot;,
+</em><br />
+<em class="quotelev1">&gt; line 617, in create_cluster
+</em><br />
+<em class="quotelev1">&gt;     placement=zone)
+</em><br />
+<em class="quotelev1">&gt;   File &quot;build/bdist.macosx-10.6-universal/egg/starcluster/cluster.py&quot;,
+</em><br />
+<em class="quotelev1">&gt; line 575, in run_instances
+</em><br />
+<em class="quotelev1">&gt;     placement=placement)
+</em><br />
+<em class="quotelev1">&gt;   File &quot;build/bdist.macosx-10.6-universal/egg/starcluster/awsutils.py&quot;,
+</em><br />
+<em class="quotelev1">&gt; line 161, in run_instances
+</em><br />
+<em class="quotelev1">&gt;     placement=placement)
+</em><br />
+<em class="quotelev1">&gt;   File &quot;/Library/Python/2.6/site-packages/boto-1.9b-py2.6.egg/boto/ec2/
+</em><br />
+<em class="quotelev1">&gt; connection.py&quot;, line 463, in run_instances
+</em><br />
+<em class="quotelev1">&gt;     return self.get_object('RunInstances', params, Reservation, verb='POST')
+</em><br />
+<em class="quotelev1">&gt;   File &quot;/Library/Python/2.6/site-packages/boto-1.9b-py2.6.egg/boto/
+</em><br />
+<em class="quotelev1">&gt; connection.py&quot;, line 620, in get_object
+</em><br />
+<em class="quotelev1">&gt;     response = self.make_request(action, params, path, verb)
+</em><br />
+<em class="quotelev1">&gt;   File &quot;/Library/Python/2.6/site-packages/boto-1.9b-py2.6.egg/boto/
+</em><br />
+<em class="quotelev1">&gt; connection.py&quot;, line 591, in make_request
+</em><br />
+<em class="quotelev1">&gt;     headers=headers)
+</em><br />
+<em class="quotelev1">&gt;   File &quot;/Library/Python/2.6/site-packages/boto-1.9b-py2.6.egg/boto/
+</em><br />
+<em class="quotelev1">&gt; connection.py&quot;, line 459, in make_request
+</em><br />
+<em class="quotelev1">&gt;     return self._mexe(method, path, data, headers, host, sender)
+</em><br />
+<em class="quotelev1">&gt;   File &quot;/Library/Python/2.6/site-packages/boto-1.9b-py2.6.egg/boto/
+</em><br />
+<em class="quotelev1">&gt; connection.py&quot;, line 435, in _mexe
+</em><br />
+<em class="quotelev1">&gt;     raise BotoServerError(response.status, response.reason, body)
+</em><br />
+<em class="quotelev1">&gt; BotoServerError: BotoServerError: 500 Internal Server Error
+</em><br />
+<em class="quotelev1">&gt; &lt;?xml version=&quot;1.0&quot;?&gt;
+</em><br />
+<em class="quotelev1">&gt; &lt;Response&gt;&lt;Errors&gt;&lt;Error&gt;&lt;Code&gt;InsufficientInstanceCapacity&lt;/
+</em><br />
+<em class="quotelev1">&gt; Code&gt;&lt;Message&gt;We currently do not have sufficient m1.large capacity in
+</em><br />
+<em class="quotelev1">&gt; the Availability Zone you requested (us-east-1c). Our system will be
+</em><br />
+<em class="quotelev1">&gt; working on provisioning additional capacity. You can currently get
+</em><br />
+<em class="quotelev1">&gt; m1.large capacity by not specifying an Availability Zone in your request
+</em><br />
+<em class="quotelev1">&gt; or choosing us-east-1d, us-east-1a, us-east-1b.&lt;/Message&gt;&lt;/Error&gt;&lt;/
+</em><br />
+<em class="quotelev1">&gt; Errors&gt;&lt;RequestID&gt;33860e59-186d-4fec-a8fa-dae188ca0a0b&lt;/RequestID&gt;&lt;/Response&gt;
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; cli.py:1098 - ERROR - Oops! Looks like you've found a bug in StarCluster
+</em><br />
+<em class="quotelev1">&gt; cli.py:1099 - ERROR - Debug file written to: /var/folders/Su/Su
+</em><br />
+<em class="quotelev1">&gt; +FAzOUGKCkPaVlRRfiyE+++TI/-Tmp-/starcluster-debug.log
+</em><br />
+<em class="quotelev1">&gt; cli.py:1100 - ERROR - Please submit this file, minus any private information,
+</em><br />
+<em class="quotelev1">&gt; cli.py:1101 - ERROR - to starcluster_at_mit.edu
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; What do I need to do to get this to work?
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Thanks,
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Dean A. Snyder
+</em><br />
+<em class="quotelev1">&gt; Senior Programmer/Analyst
+</em><br />
+<em class="quotelev1">&gt; Center for Inherited Disease Research (CIDR)
+</em><br />
+<em class="quotelev1">&gt; Johns Hopkins School of Medicine
+</em><br />
+<em class="quotelev1">&gt; Bayview Research Campus
+</em><br />
+<em class="quotelev1">&gt; 333 Cassell Dr, Triad Bldg, Suite 2000
+</em><br />
+<em class="quotelev1">&gt; Baltimore, MD 21224
+</em><br />
+<em class="quotelev1">&gt; cell:717 668-3048 office:410-550-4629
+</em><br />
+<em class="quotelev1">&gt; www.cidr.jhmi.edu
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; _______________________________________________
+</em><br />
+<em class="quotelev1">&gt; Starcluster mailing list
+</em><br />
+<em class="quotelev1">&gt; Starcluster_at_mit.edu
+</em><br />
+<em class="quotelev1">&gt; <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<br />-----BEGIN PGP SIGNATURE-----
+<br />
+Version: GnuPG v2.0.14 (GNU/Linux)
+<br />
+Comment: Using GnuPG with Mozilla - <a href="http://enigmail.mozdev.org/">http://enigmail.mozdev.org/</a>
+<br />
+<br />iEYEARECAAYFAkwJNhoACgkQ4llAkMfDcrn7YACffsSuaz8pjCgUdNbS8iMHGMhO
+<br />
+V7cAn0l8CO9brJiYLqt8s3VhuIixAWBy
+<br />
+=b9zW
+<br />
+-----END PGP SIGNATURE-----
+<br />
+<span id="received"><dfn>Received on</dfn> Fri Jun 04 2010 - 13:21:49 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="0244.html#start244">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="0245.html" title="Next message in the list">Rajat Banerjee: "[Starcluster] Getting involved in Dev"</a></li>
+<li><dfn>Previous message</dfn>: <a href="0243.html" title="Previous message in the list">Dean Snyder: "[Starcluster] can&#0039;t start an m1.large 64 bit ubuntu cluster"</a></li>
+<li><dfn>In reply to</dfn>: <a href="0243.html" title="Message to which this message replies">Dean Snyder: "[Starcluster] can&#0039;t start an m1.large 64 bit ubuntu cluster"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg244" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg244" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg244" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg244" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

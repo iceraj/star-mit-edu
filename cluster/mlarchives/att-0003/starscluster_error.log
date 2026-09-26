@@ -1,0 +1,48 @@
+(start_cluster_env)gorban@ws:~$ starcluster -s
+/home/gorban/Temp/start_cluster_env/lib/python2.6/site-packages/pycrypto-2.0.1-py2.6-linux-x86_64.egg/Crypto/Hash/SHA.py:6: DeprecationWarning: the sha module is deprecated; use the hashlib module instead
+/home/gorban/Temp/start_cluster_env/lib/python2.6/site-packages/pycrypto-2.0.1-py2.6-linux-x86_64.egg/Crypto/Hash/MD5.py:6: DeprecationWarning: the md5 module is deprecated; use hashlib instead
+
+StarCluster - (http://web.mit.edu/starcluster)
+Author: justin.t.riley@gmail.com
+Please submit bug reports to starcluster@mit.edu 
+    
+>>> Starting cluster...
+>>> Launching a 2-node cluster...
+>>> Launching master node...
+>>> MASTER AMI: ami-0330d16a
+RESERVATION	r-207f7349	544951775195	default
+INSTANCE	i-17519f7f	ami-0330d16a			pending	ec2-keypair	0		m1.small	2009-09-18T14:24:01.000Z	us-east-1a	aki-a71cf9ce	ari-a51cf9cc
+>>> Launching worker nodes...
+>>> NODE AMI: ami-0330d16a
+RESERVATION	r-227f734b	544951775195	default
+INSTANCE	i-e9519f81	ami-0330d16a			pending	ec2-keypair	0		m1.small	2009-09-18T14:24:03.000Z	us-east-1a	aki-a71cf9ce	ari-a51cf9cc
+>>> Waiting for cluster to start... 
+>>> Attaching volume to master node...
+>>> The master node is ec2-174-129-7-1.compute-1.amazonaws.com
+>>> Setting up the cluster...
+ssh.py:66 - WARNING - specified key does not end in either rsa or dsa, trying both
+>>> Using private key /home/gorban/.ec2/ec2-keypair.pem (rsa)
+ssh.py:66 - WARNING - specified key does not end in either rsa or dsa, trying both
+>>> Using private key /home/gorban/.ec2/ec2-keypair.pem (rsa)
+
+
+
+Traceback (most recent call last):
+  File "/home/gorban/Temp/start_cluster_env/bin/starcluster", line 5, in <module>
+    pkg_resources.run_script('StarCluster==0.90', 'starcluster')
+  File "/home/gorban/Temp/start_cluster_env/lib/python2.6/site-packages/setuptools-0.6c9-py2.6.egg/pkg_resources.py", line 448, in run_script
+    self.require(requires)[0].run_script(script_name, ns)
+  File "/home/gorban/Temp/start_cluster_env/lib/python2.6/site-packages/setuptools-0.6c9-py2.6.egg/pkg_resources.py", line 1173, in run_script
+    exec script_code in namespace, namespace
+  File "/home/gorban/Temp/start_cluster_env/lib/python2.6/site-packages/StarCluster-0.90-py2.6.egg/EGG-INFO/scripts/starcluster", line 100, in <module>
+    
+  File "/home/gorban/Temp/start_cluster_env/lib/python2.6/site-packages/StarCluster-0.90-py2.6.egg/EGG-INFO/scripts/starcluster", line 71, in main
+    
+  File "build/bdist.linux-x86_64/egg/starcluster/ec2utils.py", line 27, in wrapper
+  File "build/bdist.linux-x86_64/egg/starcluster/ec2utils.py", line 321, in start_cluster
+  File "build/bdist.linux-x86_64/egg/starcluster/ec2utils.py", line 285, in get_nodes
+  File "build/bdist.linux-x86_64/egg/starcluster/ssh.py", line 50, in __init__
+  File "build/bdist.linux-x86_64/egg/paramiko/transport.py", line 289, in __init__
+  File "<string>", line 1, in connect
+socket.error: [Errno 110] Connection timed out
+Exception AttributeError: "'Connection' object has no attribute '_tranport_live'" in <bound method Connection.__del__ of <starcluster.ssh.Connection object at 0x16b3610>> ignored

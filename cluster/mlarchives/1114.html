@@ -1,0 +1,215 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="C. Titus Brown ((no email))" />
+<meta name="Subject" content="Adding security group permissions" />
+<title>starcluster.mbox.out: Adding security group permissions</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Adding security group permissions</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Adding security group permissions</h1>
+<!-- received="Mon Mar 12 22:01:18 2012" -->
+<!-- isoreceived="20120313020118" -->
+<!-- sent="Mon, 12 Mar 2012 22:01:11 -0400" -->
+<!-- isosent="20120313020111" -->
+<!-- name="C. Titus Brown" -->
+<!-- email="(no email)" -->
+<!-- subject="Adding security group permissions" -->
+<!-- id="A46B96F6-C76D-43DF-9BB7-5C60D6D865AA_at_msu.edu" -->
+<!-- charset="us-ascii" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1114.html#start1114" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1114.html#options2">top</a>, <a href="1114.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1115.html" accesskey="d" title="Justin Riley: &quot;Re:  Adding security group permissions&quot;">Next message</a> ]
+[ <a href="1113.html" title="Justin Riley: &quot;Re:  master node not in qstat&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="1115.html" accesskey="t" title="Justin Riley: &quot;Re:  Adding security group permissions&quot;">Next in thread</a> ]
+ [ <a href="1114.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1114" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1114" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1114" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1114" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: C. Titus Brown &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Mon, 12 Mar 2012 22:01:11 -0400</span><br />
+</address>
+<br />
+Hi all,
+<br />
+<br />thanks for Starcluster!  Truly awesome.
+<br />
+<br />I'm running into a slight security group problem with 0.93.1 that I don't understand.
+<br />
+<br />I was using starcluster start to start an EBS AMI, and everything seemed to be working fine -- it would start up &amp; I would be able to ssh into it with 'sshmaster'.
+<br />
+<br />Then I wanted to add https to the security group permissions on startup, so I modified my '[cluster smallcluster]' config settings to include
+<br />
+<br />PERMISSIONS = ssh, https
+<br />
+<br />and then added
+<br />
+<br /><pre>
+---
+[permission ssh]
+protocol=tcp
+from_port=22
+to_port=22
+[permission https]
+protocol=tcp
+from_port=443
+to_port=443
+---
+at the bottom of the config file.
+This worked partially: https was now allowed.  But ssh wasn't any more!
+I can disable https and enable ssh on start by commenting out PERMISSIONS; or disable ssh and enable https by uncommenting PERMISSIONS.
+Any thoughts?  I have verified that the security settings on Amazon match the behavior (that is, no SSH port added when PERMISSIONS is uncommented, etc.)
+thanks,
+--titus
+The output, with PERMISSIONS uncommented:
+&gt;&gt;&gt; Using default cluster template: smallcluster
+&gt;&gt;&gt; Validating cluster template settings...
+&gt;&gt;&gt; Cluster template settings are valid
+&gt;&gt;&gt; Starting cluster...
+&gt;&gt;&gt; Launching a 1-node cluster...
+&gt;&gt;&gt; Creating security group _at_sc-test2...
+&gt;&gt;&gt; Opening tcp port range 443-443 for CIDR 0.0.0.0/0
+Reservation:r-e5fbe185
+&gt;&gt;&gt; Starting cluster took 0.033 mins
+The output, with PERMISSIONS commented out:
+&gt;&gt;&gt; Using default cluster template: smallcluster
+&gt;&gt;&gt; Validating cluster template settings...
+&gt;&gt;&gt; Cluster template settings are valid
+&gt;&gt;&gt; Starting cluster...
+&gt;&gt;&gt; Launching a 1-node cluster...
+&gt;&gt;&gt; Creating security group _at_sc-test...
+Reservation:r-49fae029
+&gt;&gt;&gt; Starting cluster took 0.029 mins
+</pre>
+<span id="received"><dfn>Received on</dfn> Mon Mar 12 2012 - 22:01:18 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1114.html#start1114">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1115.html" title="Next message in the list">Justin Riley: "Re:  Adding security group permissions"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1113.html" title="Previous message in the list">Justin Riley: "Re:  master node not in qstat"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1115.html" title="Next message in this discussion thread">Justin Riley: "Re:  Adding security group permissions"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1115.html" title="Message sent in reply to this message">Justin Riley: "Re:  Adding security group permissions"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1114" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1114" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1114" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1114" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

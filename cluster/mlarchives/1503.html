@@ -1,0 +1,465 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Alessandro Gagliardi ((no email))" />
+<meta name="Subject" content="Saving and Restoring State" />
+<title>starcluster.mbox.out: Saving and Restoring State</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Saving and Restoring State</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Saving and Restoring State</h1>
+<!-- received="Fri Nov 16 13:08:48 2012" -->
+<!-- isoreceived="20121116180848" -->
+<!-- sent="Fri, 16 Nov 2012 10:08:26 -0800" -->
+<!-- isosent="20121116180826" -->
+<!-- name="Alessandro Gagliardi" -->
+<!-- email="(no email)" -->
+<!-- subject="Saving and Restoring State" -->
+<!-- id="CAAB3BBKbAVdBvcQBqkeXBt2t5ycw=PVNL6r2AhrqqCW8NfYFZQ_at_mail.gmail.com" -->
+<!-- charset="windows-1252" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1503.html#start1503" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1503.html#options2">top</a>, <a href="1503.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1504.html" accesskey="d" title="Justin Riley: &quot;Re:  Waiting for JSON connector file...&quot;">Next message</a> ]
+[ <a href="1502.html" title="Efstathiadis, Efstratios: &quot;error in running starcluster commands&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1503" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1503" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1503" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1503" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Alessandro Gagliardi &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Fri, 16 Nov 2012 10:08:26 -0800</span><br />
+</address>
+<br />
+Excellent. I'll try that. Thanks!
+<br />
+<br /><br />On Fri, Nov 16, 2012 at 9:47 AM, Don MacMillen &lt;macd_at_nimbic.com&gt; wrote:
+<br />
+<br /><em class="quotelev1">&gt; Hi Alessandro,
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; For your use case you might consider making your own customized ami.
+</em><br />
+<em class="quotelev1">&gt; Once you have one up and running you can use StarCluster's ebscreate
+</em><br />
+<em class="quotelev1">&gt; command to do this.  Then just put the new ami id into the config file.
+</em><br />
+<em class="quotelev1">&gt; From the docs:
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; $ starcluster ebsimage -h
+</em><br />
+<em class="quotelev1">&gt; StarCluster - (<a href="http://web.mit.edu/starcluster">http://web.mit.edu/starcluster</a>) (v. 0.93.3)
+</em><br />
+<em class="quotelev1">&gt; Software Tools for Academics and Researchers (STAR)
+</em><br />
+<em class="quotelev1">&gt; Please submit bug reports to starcluster_at_mit.edu
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Usage: ebsimage [options] &lt;instance-id&gt; &lt;image_name&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;     Create a new EBS image (AMI) from a running EC2 instance
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;     Example:
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;         $ starcluster ebsimage i-999999 my-new-image-ebs
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;     NOTE: It should now be safe to create an image from an instance
+</em><br />
+<em class="quotelev1">&gt; launched by
+</em><br />
+<em class="quotelev1">&gt;     StarCluster. If you have issues please submit a bug report to the
+</em><br />
+<em class="quotelev1">&gt; mailing
+</em><br />
+<em class="quotelev1">&gt;     list.
+</em><br />
+<em class="quotelev1">&gt; ...
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Now while you have made your life easier with this, there is always the
+</em><br />
+<em class="quotelev1">&gt; danger that
+</em><br />
+<em class="quotelev1">&gt; you delete the image and/or forget the recipe.  As long as you don't have
+</em><br />
+<em class="quotelev1">&gt; a bunch of
+</em><br />
+<em class="quotelev1">&gt; different instance types, or have very complex image build recipes, this
+</em><br />
+<em class="quotelev1">&gt; is mostly OK.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Don
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; On Wed, Nov 14, 2012 at 12:07 PM, Alessandro Gagliardi &lt;
+</em><br />
+<em class="quotelev1">&gt; alessandro_at_path.com&gt; wrote:
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; So it sounds like anything using the StarCluster 11.10 AMIs should be
+</em><br />
+<em class="quotelev2">&gt;&gt; EBS-backed automatically (so long as I'm not using spot instances, which
+</em><br />
+<em class="quotelev2">&gt;&gt; I'm not) and so should be able to be started after being stopped (with the
+</em><br />
+<em class="quotelev2">&gt;&gt; -x) flag.
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; If that's the case, then it doesn't answer my original question of why,
+</em><br />
+<em class="quotelev2">&gt;&gt; when I tried starting my cluster after stopping it, it got stuck on Waiting
+</em><br />
+<em class="quotelev2">&gt;&gt; for JSON connector file.../.
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; I'd really like to solve this problem as I only need to use these
+</em><br />
+<em class="quotelev2">&gt;&gt; clusters about 1/4 of the week, but it takes me almost a full day to
+</em><br />
+<em class="quotelev2">&gt;&gt; configure them the way I want (with installing IPython 0.14 and Pandas and
+</em><br />
+<em class="quotelev2">&gt;&gt; RPy and all that) so I can't just spin up a new one every time I need it.
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; On Wed, Nov 14, 2012 at 11:44 AM, Justin Riley &lt;jtriley_at_mit.edu&gt; wrote:
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; -----BEGIN PGP SIGNED MESSAGE-----
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Hash: SHA1
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Hi Alessandro,
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Yes you can only stop an EBS-backed cluster. With that said any
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; cluster started with EBS-backed AMIs is stoppable provided it's not a
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; spot cluster. The latest StarCluster 11.10 AMIs are EBS-backed so if
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; you're using them with on-demand instances you can stop your cluster
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; using the 'stop' command and then restart them later on using:
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; $ starcluster start -x your_stopped_cluster
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; HTH,
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; ~Justin
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; On 11/08/2012 07:37 PM, Alessandro Gagliardi wrote:
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt; &gt; I think the problem is that I can only start a stopped StarCluster
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt; &gt; if it's EBS-backed. (At least, that's what it looks like from
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt; &gt; reading
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt; &gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; <a href="../docs/latest/manual/launch.html#stopping-an-ebs-backed-cluster">/cluster/docs/latest/manual/launch.html#stopping-an-ebs-backed-cluster</a>
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; .)
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt; &gt;
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt; &gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; But how do I make it EBS-backed? (Sadly, searching the documentation for
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt; &gt; ebs-backed
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt; &gt; &lt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; <a href="../docs/latest/search.html?q=ebs-backed&amp;check_keywords=yes&amp;area=default">/cluster/docs/latest/search.html?q=ebs-backed&amp;check_keywords=yes&amp;area=default</a>
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt; &gt;
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt; &gt;
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt; &gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; yields no results.)
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt; &gt;
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt; &gt; Thank you in advance, -Alessandro
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt; &gt;
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt; &gt;
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt; &gt; On Wed, Oct 31, 2012 at 1:51 PM, Alessandro Gagliardi
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt; &gt; &lt;alessandro_at_path.com &lt;mailto:alessandro_at_path.com&gt;&gt; wrote:
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt; &gt;
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt; &gt; Hello folks,
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt; &gt;
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt; &gt; I stopped my StarCluster (after successfully using it with IPython
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt; &gt; 0.14) and when I tried starting it up again the next day, it hangs
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt; &gt; at this point:
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt; &gt;
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt; &gt; !!! ERROR - command 'source /etc/profile &amp;&amp; ipcluster start --n=37
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt; &gt; --delay=5 --daemonize' failed with status 10
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; &gt;&gt;&gt;&gt; Waiting for JSON connector file.../
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt; &gt;
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt; &gt; Any idea why and what (if anything) I can do about it?
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt; &gt;
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt; &gt; Thanks, -Alessandro
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt; &gt;
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt; &gt;
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt; &gt;
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt; &gt;
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt; &gt; -- Alessandro Gagliardi �  � alessandro_at_path.com
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt; &gt; &lt;mailto:alessandro_at_path.com&gt;
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt; &gt;
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt; &gt;
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt; &gt; _______________________________________________ StarCluster mailing
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt; &gt; list StarCluster_at_mit.edu
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt; &gt; <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt; &gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; -----BEGIN PGP SIGNATURE-----
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Version: GnuPG v2.0.19 (GNU/Linux)
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Comment: Using GnuPG with Mozilla - <a href="http://www.enigmail.net/">http://www.enigmail.net/</a>
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; iEYEARECAAYFAlCj9KEACgkQ4llAkMfDcrlE/wCeMebO/XJv9IGNgeVidngQYn2J
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; dCUAn2D9oHS+C/dfNN44ToRqcqDHBO1g
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; =L/JA
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; -----END PGP SIGNATURE-----
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; --
+</em><br />
+<em class="quotelev2">&gt;&gt; Alessandro Gagliardi �  � alessandro_at_path.com
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; _______________________________________________
+</em><br />
+<em class="quotelev2">&gt;&gt; StarCluster mailing list
+</em><br />
+<em class="quotelev2">&gt;&gt; StarCluster_at_mit.edu
+</em><br />
+<em class="quotelev2">&gt;&gt; <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<br /><br /><pre>
+-- 
+Alessandro Gagliardi �  � alessandro_at_path.com
+</pre>
+<span id="received"><dfn>Received on</dfn> Fri Nov 16 2012 - 13:08:48 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1503.html#start1503">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1504.html" title="Next message in the list">Justin Riley: "Re:  Waiting for JSON connector file..."</a></li>
+<li><dfn>Previous message</dfn>: <a href="1502.html" title="Previous message in the list">Efstathiadis, Efstratios: "error in running starcluster commands"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1503" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1503" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1503" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1503" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

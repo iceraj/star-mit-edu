@@ -1,0 +1,202 @@
+---------- SYSTEM INFO ----------
+StarCluster: 0.95.6
+Python: 2.7.12 |Anaconda 4.1.1 (64-bit)| (default, Jun 29 2016, 11:07:13) [MSC v.1500 64 bit (AMD64)]
+Platform: Windows-8.1-6.3.9600
+boto: 2.40.0
+paramiko: 2.0.2
+Crypto: 2.6.1
+
+---------- CRASH DETAILS ----------
+Command: starcluster start -s 5 -i m3.medium qe_test1
+
+2016-09-06 13:31:36,423 PID: 15864 config.py:567 - DEBUG - Loading config
+2016-09-06 13:31:36,423 PID: 15864 config.py:138 - DEBUG - Loading file: C:\Users\fred\.starcluster\config
+2016-09-06 13:31:36,426 PID: 15864 awsutils.py:75 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'proxy_user': None, 'proxy_pass': None, 'proxy_port': None, 'proxy': None, 'is_secure': True, 'path': '/', 'region': None, 'validate_certs': True, 'port': None}
+2016-09-06 13:31:36,996 PID: 15864 start.py:224 - INFO - Using default cluster template: smallcluster
+2016-09-06 13:31:36,997 PID: 15864 staticip_plugin.py:8 - DEBUG - elasticip = 52.202.103.227
+2016-09-06 13:31:36,997 PID: 15864 cluster.py:1803 - INFO - Validating cluster template settings...
+2016-09-06 13:31:37,334 PID: 15864 sshutils.py:860 - DEBUG - rsa private key fingerprint (C:\Users\fred/.starcluster/mykey.rsa): xxxxxxxxxxxxxxxxxxxx
+2016-09-06 13:31:37,427 PID: 15864 cluster.py:759 - DEBUG - existing nodes: {}
+2016-09-06 13:31:37,427 PID: 15864 cluster.py:775 - DEBUG - returning self._nodes = []
+2016-09-06 13:31:37,572 PID: 15864 cluster.py:1130 - DEBUG - Launch map: node001 (ami: ami-70ee2d1d, type: m3.medium)...
+2016-09-06 13:31:37,572 PID: 15864 cluster.py:1130 - DEBUG - Launch map: node002 (ami: ami-70ee2d1d, type: m3.medium)...
+2016-09-06 13:31:37,572 PID: 15864 cluster.py:1130 - DEBUG - Launch map: node003 (ami: ami-70ee2d1d, type: m3.medium)...
+2016-09-06 13:31:37,572 PID: 15864 cluster.py:1130 - DEBUG - Launch map: node004 (ami: ami-70ee2d1d, type: m3.medium)...
+2016-09-06 13:31:37,576 PID: 15864 cluster.py:911 - DEBUG - Userdata size in KB: 0.59
+2016-09-06 13:31:37,576 PID: 15864 cluster.py:1821 - INFO - Cluster template settings are valid
+2016-09-06 13:31:37,576 PID: 15864 cluster.py:1641 - INFO - Starting cluster...
+2016-09-06 13:31:37,576 PID: 15864 cluster.py:1157 - INFO - Launching a 5-node cluster...
+2016-09-06 13:31:37,576 PID: 15864 cluster.py:1130 - DEBUG - Launch map: node001 (ami: ami-70ee2d1d, type: m3.medium)...
+2016-09-06 13:31:37,576 PID: 15864 cluster.py:1130 - DEBUG - Launch map: node002 (ami: ami-70ee2d1d, type: m3.medium)...
+2016-09-06 13:31:37,576 PID: 15864 cluster.py:1130 - DEBUG - Launch map: node003 (ami: ami-70ee2d1d, type: m3.medium)...
+2016-09-06 13:31:37,576 PID: 15864 cluster.py:1130 - DEBUG - Launch map: node004 (ami: ami-70ee2d1d, type: m3.medium)...
+2016-09-06 13:31:37,576 PID: 15864 cluster.py:1182 - DEBUG - Launching master (ami: ami-70ee2d1d, type: m3.medium)
+2016-09-06 13:31:37,576 PID: 15864 cluster.py:1182 - DEBUG - Launching node001 (ami: ami-70ee2d1d, type: m3.medium)
+2016-09-06 13:31:37,576 PID: 15864 cluster.py:1182 - DEBUG - Launching node002 (ami: ami-70ee2d1d, type: m3.medium)
+2016-09-06 13:31:37,578 PID: 15864 cluster.py:1182 - DEBUG - Launching node003 (ami: ami-70ee2d1d, type: m3.medium)
+2016-09-06 13:31:37,578 PID: 15864 cluster.py:1182 - DEBUG - Launching node004 (ami: ami-70ee2d1d, type: m3.medium)
+2016-09-06 13:31:37,635 PID: 15864 awsutils.py:295 - INFO - Creating security group @sc-qe_test1...
+2016-09-06 13:31:38,937 PID: 15864 cluster.py:672 - INFO - Opening tcp port range 8989-8989 for CIDR 0.0.0.0/0
+2016-09-06 13:31:39,142 PID: 15864 cluster.py:911 - DEBUG - Userdata size in KB: 0.59
+2016-09-06 13:31:39,516 PID: 15864 cluster.py:759 - DEBUG - existing nodes: {}
+2016-09-06 13:31:39,516 PID: 15864 cluster.py:775 - DEBUG - returning self._nodes = []
+2016-09-06 13:31:39,578 PID: 15864 awsutils.py:495 - DEBUG - Forcing delete_on_termination for AMI: ami-70ee2d1d
+2016-09-06 13:31:40,453 PID: 15864 cluster.py:968 - INFO - Reservation:r-0c4a1acbb5597e45d
+2016-09-06 13:31:40,453 PID: 15864 awsutils.py:557 - INFO - Waiting for instances to propagate...
+2016-09-06 13:31:40,552 PID: 15864 awsutils.py:569 - DEBUG - 0: only 0/5 instances have propagated - sleeping...
+2016-09-06 13:31:45,789 PID: 15864 cluster.py:1442 - INFO - Waiting for cluster to come up... (updating every 30s)
+2016-09-06 13:31:46,056 PID: 15864 cluster.py:1399 - INFO - Waiting for all nodes to be in a 'running' state...
+2016-09-06 13:31:46,265 PID: 15864 cluster.py:759 - DEBUG - existing nodes: {}
+2016-09-06 13:31:46,265 PID: 15864 cluster.py:767 - DEBUG - adding node i-0b51fc28af51cde09 to self._nodes list
+2016-09-06 13:31:46,737 PID: 15864 cluster.py:767 - DEBUG - adding node i-01e0079f4f3bbb77a to self._nodes list
+2016-09-06 13:31:47,063 PID: 15864 cluster.py:767 - DEBUG - adding node i-0c10386e1b696c83e to self._nodes list
+2016-09-06 13:31:47,375 PID: 15864 cluster.py:767 - DEBUG - adding node i-0c6f8aab47598acb3 to self._nodes list
+2016-09-06 13:31:48,717 PID: 15864 cluster.py:767 - DEBUG - adding node i-0db3c348331d366ab to self._nodes list
+2016-09-06 13:31:49,217 PID: 15864 cluster.py:775 - DEBUG - returning self._nodes = [<Node: master (i-0db3c348331d366ab)>, <Node: node001 (i-0c6f8aab47598acb3)>, <Node: node002 (i-01e0079f4f3bbb77a)>, <Node: node003 (i-0b51fc28af51cde09)>, <Node: node004 (i-0c10386e1b696c83e)>]
+2016-09-06 13:32:20,398 PID: 15864 cluster.py:759 - DEBUG - existing nodes: {u'i-0db3c348331d366ab': <Node: master (i-0db3c348331d366ab)>, u'i-0c6f8aab47598acb3': <Node: node001 (i-0c6f8aab47598acb3)>, u'i-0b51fc28af51cde09': <Node: node003 (i-0b51fc28af51cde09)>, u'i-01e0079f4f3bbb77a': <Node: node002 (i-01e0079f4f3bbb77a)>, u'i-0c10386e1b696c83e': <Node: node004 (i-0c10386e1b696c83e)>}
+2016-09-06 13:32:20,398 PID: 15864 cluster.py:762 - DEBUG - updating existing node i-0b51fc28af51cde09 in self._nodes
+2016-09-06 13:32:20,398 PID: 15864 cluster.py:762 - DEBUG - updating existing node i-01e0079f4f3bbb77a in self._nodes
+2016-09-06 13:32:20,398 PID: 15864 cluster.py:762 - DEBUG - updating existing node i-0c10386e1b696c83e in self._nodes
+2016-09-06 13:32:20,398 PID: 15864 cluster.py:762 - DEBUG - updating existing node i-0c6f8aab47598acb3 in self._nodes
+2016-09-06 13:32:20,398 PID: 15864 cluster.py:762 - DEBUG - updating existing node i-0db3c348331d366ab in self._nodes
+2016-09-06 13:32:20,398 PID: 15864 cluster.py:775 - DEBUG - returning self._nodes = [<Node: master (i-0db3c348331d366ab)>, <Node: node001 (i-0c6f8aab47598acb3)>, <Node: node002 (i-01e0079f4f3bbb77a)>, <Node: node003 (i-0b51fc28af51cde09)>, <Node: node004 (i-0c10386e1b696c83e)>]
+2016-09-06 13:32:20,398 PID: 15864 cluster.py:1427 - INFO - Waiting for SSH to come up on all nodes...
+2016-09-06 13:32:20,654 PID: 15864 cluster.py:759 - DEBUG - existing nodes: {u'i-0db3c348331d366ab': <Node: master (i-0db3c348331d366ab)>, u'i-0c6f8aab47598acb3': <Node: node001 (i-0c6f8aab47598acb3)>, u'i-0b51fc28af51cde09': <Node: node003 (i-0b51fc28af51cde09)>, u'i-01e0079f4f3bbb77a': <Node: node002 (i-01e0079f4f3bbb77a)>, u'i-0c10386e1b696c83e': <Node: node004 (i-0c10386e1b696c83e)>}
+2016-09-06 13:32:20,654 PID: 15864 cluster.py:762 - DEBUG - updating existing node i-0b51fc28af51cde09 in self._nodes
+2016-09-06 13:32:20,654 PID: 15864 cluster.py:762 - DEBUG - updating existing node i-01e0079f4f3bbb77a in self._nodes
+2016-09-06 13:32:20,654 PID: 15864 cluster.py:762 - DEBUG - updating existing node i-0c10386e1b696c83e in self._nodes
+2016-09-06 13:32:20,654 PID: 15864 cluster.py:762 - DEBUG - updating existing node i-0c6f8aab47598acb3 in self._nodes
+2016-09-06 13:32:20,654 PID: 15864 cluster.py:762 - DEBUG - updating existing node i-0db3c348331d366ab in self._nodes
+2016-09-06 13:32:20,654 PID: 15864 cluster.py:775 - DEBUG - returning self._nodes = [<Node: master (i-0db3c348331d366ab)>, <Node: node001 (i-0c6f8aab47598acb3)>, <Node: node002 (i-01e0079f4f3bbb77a)>, <Node: node003 (i-0b51fc28af51cde09)>, <Node: node004 (i-0c10386e1b696c83e)>]
+2016-09-06 13:32:20,660 PID: 15864 threadpool.py:168 - DEBUG - unfinished_tasks = 5
+2016-09-06 13:32:20,779 PID: 15864 sshutils.py:87 - DEBUG - loading private key C:\Users\fred/.starcluster/mykey.rsa
+2016-09-06 13:32:20,861 PID: 15864 sshutils.py:185 - DEBUG - Using private key C:\Users\fred/.starcluster/mykey.rsa (RSA)
+2016-09-06 13:32:20,861 PID: 15864 sshutils.py:112 - DEBUG - connecting to host ec2-52-91-49-90.compute-1.amazonaws.com on port 22 as user root
+2016-09-06 13:32:20,898 PID: 15864 sshutils.py:87 - DEBUG - loading private key C:\Users\fred/.starcluster/mykey.rsa
+2016-09-06 13:32:20,901 PID: 15864 sshutils.py:185 - DEBUG - Using private key C:\Users\fred/.starcluster/mykey.rsa (RSA)
+2016-09-06 13:32:20,903 PID: 15864 sshutils.py:112 - DEBUG - connecting to host ec2-54-204-113-27.compute-1.amazonaws.com on port 22 as user root
+2016-09-06 13:32:20,907 PID: 15864 sshutils.py:87 - DEBUG - loading private key C:\Users\fred/.starcluster/mykey.rsa
+2016-09-06 13:32:20,908 PID: 15864 sshutils.py:87 - DEBUG - loading private key C:\Users\fred/.starcluster/mykey.rsa
+2016-09-06 13:32:20,910 PID: 15864 sshutils.py:87 - DEBUG - loading private key C:\Users\fred/.starcluster/mykey.rsa
+2016-09-06 13:32:20,911 PID: 15864 sshutils.py:185 - DEBUG - Using private key C:\Users\fred/.starcluster/mykey.rsa (RSA)
+2016-09-06 13:32:20,911 PID: 15864 sshutils.py:185 - DEBUG - Using private key C:\Users\fred/.starcluster/mykey.rsa (RSA)
+2016-09-06 13:32:20,911 PID: 15864 sshutils.py:112 - DEBUG - connecting to host ec2-54-173-184-91.compute-1.amazonaws.com on port 22 as user root
+2016-09-06 13:32:20,911 PID: 15864 sshutils.py:112 - DEBUG - connecting to host ec2-54-174-103-182.compute-1.amazonaws.com on port 22 as user root
+2016-09-06 13:32:20,911 PID: 15864 sshutils.py:185 - DEBUG - Using private key C:\Users\fred/.starcluster/mykey.rsa (RSA)
+2016-09-06 13:32:20,911 PID: 15864 sshutils.py:112 - DEBUG - connecting to host ec2-54-152-211-157.compute-1.amazonaws.com on port 22 as user root
+2016-09-06 13:32:21,661 PID: 15864 threadpool.py:168 - DEBUG - unfinished_tasks = 5
+2016-09-06 13:32:22,661 PID: 15864 threadpool.py:168 - DEBUG - unfinished_tasks = 5
+2016-09-06 13:32:23,663 PID: 15864 threadpool.py:168 - DEBUG - unfinished_tasks = 5
+2016-09-06 13:32:24,663 PID: 15864 threadpool.py:168 - DEBUG - unfinished_tasks = 5
+2016-09-06 13:32:25,664 PID: 15864 threadpool.py:168 - DEBUG - unfinished_tasks = 5
+2016-09-06 13:32:26,664 PID: 15864 threadpool.py:168 - DEBUG - unfinished_tasks = 5
+2016-09-06 13:32:27,664 PID: 15864 threadpool.py:168 - DEBUG - unfinished_tasks = 5
+2016-09-06 13:32:28,664 PID: 15864 threadpool.py:168 - DEBUG - unfinished_tasks = 5
+2016-09-06 13:32:29,664 PID: 15864 threadpool.py:168 - DEBUG - unfinished_tasks = 5
+2016-09-06 13:32:30,665 PID: 15864 threadpool.py:168 - DEBUG - unfinished_tasks = 5
+2016-09-06 13:32:31,665 PID: 15864 threadpool.py:168 - DEBUG - unfinished_tasks = 5
+2016-09-06 13:32:32,665 PID: 15864 threadpool.py:168 - DEBUG - unfinished_tasks = 5
+2016-09-06 13:32:33,667 PID: 15864 threadpool.py:168 - DEBUG - unfinished_tasks = 5
+2016-09-06 13:32:34,667 PID: 15864 threadpool.py:168 - DEBUG - unfinished_tasks = 5
+2016-09-06 13:32:35,667 PID: 15864 threadpool.py:168 - DEBUG - unfinished_tasks = 5
+2016-09-06 13:32:36,667 PID: 15864 threadpool.py:168 - DEBUG - unfinished_tasks = 5
+2016-09-06 13:32:37,668 PID: 15864 threadpool.py:168 - DEBUG - unfinished_tasks = 5
+2016-09-06 13:32:38,668 PID: 15864 threadpool.py:168 - DEBUG - unfinished_tasks = 5
+2016-09-06 13:32:39,668 PID: 15864 threadpool.py:168 - DEBUG - unfinished_tasks = 5
+2016-09-06 13:32:40,668 PID: 15864 threadpool.py:168 - DEBUG - unfinished_tasks = 5
+2016-09-06 13:32:41,670 PID: 15864 threadpool.py:168 - DEBUG - unfinished_tasks = 5
+2016-09-06 13:32:42,670 PID: 15864 threadpool.py:168 - DEBUG - unfinished_tasks = 5
+2016-09-06 13:32:43,671 PID: 15864 threadpool.py:168 - DEBUG - unfinished_tasks = 5
+2016-09-06 13:32:44,671 PID: 15864 threadpool.py:168 - DEBUG - unfinished_tasks = 5
+2016-09-06 13:32:45,671 PID: 15864 threadpool.py:168 - DEBUG - unfinished_tasks = 5
+2016-09-06 13:32:46,671 PID: 15864 threadpool.py:168 - DEBUG - unfinished_tasks = 5
+2016-09-06 13:32:47,673 PID: 15864 threadpool.py:168 - DEBUG - unfinished_tasks = 5
+2016-09-06 13:32:48,673 PID: 15864 threadpool.py:168 - DEBUG - unfinished_tasks = 5
+2016-09-06 13:32:49,674 PID: 15864 threadpool.py:168 - DEBUG - unfinished_tasks = 5
+2016-09-06 13:32:50,674 PID: 15864 threadpool.py:168 - DEBUG - unfinished_tasks = 5
+2016-09-06 13:32:51,674 PID: 15864 threadpool.py:168 - DEBUG - unfinished_tasks = 5
+2016-09-06 13:32:52,595 PID: 15864 sshutils.py:112 - DEBUG - connecting to host ec2-54-204-113-27.compute-1.amazonaws.com on port 22 as user root
+2016-09-06 13:32:52,661 PID: 15864 sshutils.py:112 - DEBUG - connecting to host ec2-54-152-211-157.compute-1.amazonaws.com on port 22 as user root
+2016-09-06 13:32:52,676 PID: 15864 threadpool.py:168 - DEBUG - unfinished_tasks = 5
+2016-09-06 13:32:52,717 PID: 15864 sshutils.py:112 - DEBUG - connecting to host ec2-54-174-103-182.compute-1.amazonaws.com on port 22 as user root
+2016-09-06 13:32:53,092 PID: 15864 sshutils.py:112 - DEBUG - connecting to host ec2-52-91-49-90.compute-1.amazonaws.com on port 22 as user root
+2016-09-06 13:32:53,460 PID: 15864 sshutils.py:204 - DEBUG - creating sftp connection
+2016-09-06 13:32:53,493 PID: 15864 sshutils.py:204 - DEBUG - creating sftp connection
+2016-09-06 13:32:53,509 PID: 15864 sshutils.py:204 - DEBUG - creating sftp connection
+2016-09-06 13:32:53,676 PID: 15864 threadpool.py:168 - DEBUG - unfinished_tasks = 5
+2016-09-06 13:32:53,687 PID: 15864 sshutils.py:204 - DEBUG - creating sftp connection
+2016-09-06 13:32:54,677 PID: 15864 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2016-09-06 13:32:55,677 PID: 15864 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2016-09-06 13:32:56,677 PID: 15864 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2016-09-06 13:32:57,677 PID: 15864 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2016-09-06 13:32:58,680 PID: 15864 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2016-09-06 13:32:59,680 PID: 15864 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2016-09-06 13:33:00,345 PID: 15864 sshutils.py:112 - DEBUG - connecting to host ec2-54-173-184-91.compute-1.amazonaws.com on port 22 as user root
+2016-09-06 13:33:00,680 PID: 15864 threadpool.py:168 - DEBUG - unfinished_tasks = 1
+2016-09-06 13:33:00,805 PID: 15864 sshutils.py:204 - DEBUG - creating sftp connection
+2016-09-06 13:33:01,681 PID: 15864 utils.py:118 - INFO - Waiting for cluster to come up took 1.265 mins
+2016-09-06 13:33:01,681 PID: 15864 cluster.py:1668 - INFO - The master node is ec2-52-91-49-90.compute-1.amazonaws.com
+2016-09-06 13:33:01,681 PID: 15864 cluster.py:1669 - INFO - Configuring cluster...
+2016-09-06 13:33:02,767 PID: 15864 cluster.py:759 - DEBUG - existing nodes: {u'i-0db3c348331d366ab': <Node: master (i-0db3c348331d366ab)>, u'i-0c6f8aab47598acb3': <Node: node001 (i-0c6f8aab47598acb3)>, u'i-0b51fc28af51cde09': <Node: node003 (i-0b51fc28af51cde09)>, u'i-01e0079f4f3bbb77a': <Node: node002 (i-01e0079f4f3bbb77a)>, u'i-0c10386e1b696c83e': <Node: node004 (i-0c10386e1b696c83e)>}
+2016-09-06 13:33:02,769 PID: 15864 cluster.py:762 - DEBUG - updating existing node i-0b51fc28af51cde09 in self._nodes
+2016-09-06 13:33:02,769 PID: 15864 cluster.py:762 - DEBUG - updating existing node i-01e0079f4f3bbb77a in self._nodes
+2016-09-06 13:33:02,769 PID: 15864 cluster.py:762 - DEBUG - updating existing node i-0c10386e1b696c83e in self._nodes
+2016-09-06 13:33:02,769 PID: 15864 cluster.py:762 - DEBUG - updating existing node i-0c6f8aab47598acb3 in self._nodes
+2016-09-06 13:33:02,769 PID: 15864 cluster.py:762 - DEBUG - updating existing node i-0db3c348331d366ab in self._nodes
+2016-09-06 13:33:02,769 PID: 15864 cluster.py:775 - DEBUG - returning self._nodes = [<Node: master (i-0db3c348331d366ab)>, <Node: node001 (i-0c6f8aab47598acb3)>, <Node: node002 (i-01e0079f4f3bbb77a)>, <Node: node003 (i-0b51fc28af51cde09)>, <Node: node004 (i-0c10386e1b696c83e)>]
+2016-09-06 13:33:02,769 PID: 15864 cluster.py:1714 - INFO - Running plugin starcluster.clustersetup.DefaultClusterSetup
+2016-09-06 13:33:02,769 PID: 15864 clustersetup.py:121 - INFO - Configuring hostnames...
+2016-09-06 13:33:02,775 PID: 15864 threadpool.py:168 - DEBUG - unfinished_tasks = 5
+2016-09-06 13:33:02,888 PID: 15864 sshutils.py:562 - DEBUG - executing remote command: source /etc/profile && hostname -F /etc/hostname
+2016-09-06 13:33:02,891 PID: 15864 sshutils.py:562 - DEBUG - executing remote command: source /etc/profile && hostname -F /etc/hostname
+2016-09-06 13:33:02,894 PID: 15864 sshutils.py:562 - DEBUG - executing remote command: source /etc/profile && hostname -F /etc/hostname
+2016-09-06 13:33:02,894 PID: 15864 sshutils.py:562 - DEBUG - executing remote command: source /etc/profile && hostname -F /etc/hostname
+2016-09-06 13:33:02,894 PID: 15864 sshutils.py:562 - DEBUG - executing remote command: source /etc/profile && hostname -F /etc/hostname
+2016-09-06 13:33:03,069 PID: 15864 sshutils.py:586 - DEBUG - output of 'source /etc/profile && hostname -F /etc/hostname':
+
+2016-09-06 13:33:03,084 PID: 15864 sshutils.py:586 - DEBUG - output of 'source /etc/profile && hostname -F /etc/hostname':
+
+2016-09-06 13:33:03,118 PID: 15864 sshutils.py:586 - DEBUG - output of 'source /etc/profile && hostname -F /etc/hostname':
+
+2016-09-06 13:33:03,142 PID: 15864 sshutils.py:586 - DEBUG - output of 'source /etc/profile && hostname -F /etc/hostname':
+
+2016-09-06 13:33:03,184 PID: 15864 sshutils.py:586 - DEBUG - output of 'source /etc/profile && hostname -F /etc/hostname':
+
+2016-09-06 13:33:03,776 PID: 15864 cluster.py:1724 - ERROR - Error occured while running plugin 'starcluster.clustersetup.DefaultClusterSetup':
+2016-09-06 13:33:03,776 PID: 15864 cli.py:307 - ERROR - Unhandled exception occured
+Traceback (most recent call last):
+  File "c:\continuum\anaconda2\lib\site-packages\starcluster\cli.py", line 274, in main
+    sc.execute(args)
+  File "c:\continuum\anaconda2\lib\site-packages\starcluster\commands\start.py", line 244, in execute
+    validate_running=validate_running)
+  File "c:\continuum\anaconda2\lib\site-packages\starcluster\cluster.py", line 1628, in start
+    return self._start(create=create, create_only=create_only)
+  File "<decorator-gen-18>", line 2, in _start
+  File "c:\continuum\anaconda2\lib\site-packages\starcluster\utils.py", line 112, in wrap_f
+    res = func(*arg, **kargs)
+  File "c:\continuum\anaconda2\lib\site-packages\starcluster\cluster.py", line 1651, in _start
+    self.setup_cluster()
+  File "c:\continuum\anaconda2\lib\site-packages\starcluster\cluster.py", line 1660, in setup_cluster
+    self._setup_cluster()
+  File "<decorator-gen-20>", line 2, in _setup_cluster
+  File "c:\continuum\anaconda2\lib\site-packages\starcluster\utils.py", line 112, in wrap_f
+    res = func(*arg, **kargs)
+  File "c:\continuum\anaconda2\lib\site-packages\starcluster\cluster.py", line 1672, in _setup_cluster
+    self.run_plugins()
+  File "c:\continuum\anaconda2\lib\site-packages\starcluster\cluster.py", line 1690, in run_plugins
+    self.run_plugin(plug, method_name=method_name, node=node)
+  File "c:\continuum\anaconda2\lib\site-packages\starcluster\cluster.py", line 1715, in run_plugin
+    func(*args)
+  File "c:\continuum\anaconda2\lib\site-packages\starcluster\clustersetup.py", line 377, in run
+    self._setup_hostnames()
+  File "c:\continuum\anaconda2\lib\site-packages\starcluster\clustersetup.py", line 124, in _setup_hostnames
+    self.pool.wait(numtasks=len(nodes))
+  File "c:\continuum\anaconda2\lib\site-packages\starcluster\threadpool.py", line 171, in wait
+    pbar.finish()
+  File "c:\continuum\anaconda2\lib\site-packages\starcluster\progressbar.py", line 348, in finish
+    super(ProgressBar, self).finish()
+  File "c:\continuum\anaconda2\lib\site-packages\starcluster\progressbar.py", line 262, in finish
+    self.update(self.maxval)
+  File "c:\continuum\anaconda2\lib\site-packages\starcluster\progressbar.py", line 344, in update
+    self.fd.write(self._format_line() + term)
+IOError: [Errno 9] Bad file descriptor

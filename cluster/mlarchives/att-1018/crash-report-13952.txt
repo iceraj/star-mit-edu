@@ -1,0 +1,43 @@
+---------- CRASH DETAILS ----------
+COMMAND: starcluster start toto
+2012-02-06 16:19:27,430 PID: 13952 config.py:551 - DEBUG - Loading config
+2012-02-06 16:19:27,431 PID: 13952 config.py:118 - DEBUG - Loading file: /exports/mpiuser/.starcluster/config
+2012-02-06 16:19:27,431 PID: 13952 config.py:118 - DEBUG - Loading file: /exports/mpiuser/.starcluster/config
+2012-02-06 16:19:27,431 PID: 13952 config.py:118 - DEBUG - Loading file: /exports/mpiuser/.starcluster/include/main
+2012-02-06 16:19:27,432 PID: 13952 config.py:118 - DEBUG - Loading file: /exports/mpiuser/.starcluster/include/awskeys
+2012-02-06 16:19:27,432 PID: 13952 config.py:118 - DEBUG - Loading file: /exports/mpiuser/.starcluster/include/clusters
+2012-02-06 16:19:27,435 PID: 13952 awsutils.py:54 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'proxy_user': None, 'proxy_pass': None, 'proxy_port': None, 'proxy': None, 'is_secure': True, 'path': '/', 'region': RegionInfo:eu-west-1, 'port': None}
+2012-02-06 16:19:27,904 PID: 13952 start.py:176 - INFO - Using default cluster template: smallcluster
+2012-02-06 16:19:27,905 PID: 13952 cluster.py:1515 - INFO - Validating cluster template settings...
+2012-02-06 16:19:28,179 PID: 13952 cli.py:287 - DEBUG - Traceback (most recent call last):
+  File "/usr/local/lib/python2.6/dist-packages/StarCluster-0.93.1-py2.6.egg/starcluster/cli.py", line 255, in main
+    sc.execute(args)
+  File "/usr/local/lib/python2.6/dist-packages/StarCluster-0.93.1-py2.6.egg/starcluster/commands/start.py", line 193, in execute
+    validate_running=validate_running)
+  File "/usr/local/lib/python2.6/dist-packages/StarCluster-0.93.1-py2.6.egg/starcluster/cluster.py", line 1388, in start
+    self._validate()
+  File "/usr/local/lib/python2.6/dist-packages/StarCluster-0.93.1-py2.6.egg/starcluster/cluster.py", line 1523, in _validate
+    self._validate_keypair()
+  File "/usr/local/lib/python2.6/dist-packages/StarCluster-0.93.1-py2.6.egg/starcluster/cluster.py", line 1853, in _validate_keypair
+    localfingerprint = ssh.get_private_rsa_fingerprint(key_location)
+  File "/usr/local/lib/python2.6/dist-packages/StarCluster-0.93.1-py2.6.egg/starcluster/ssh.py", line 789, in get_private_rsa_fingerprint
+    k = RSAKey.from_private_key_file(key_location)
+  File "/usr/local/lib/python2.6/dist-packages/paramiko-1.7.7.1-py2.6.egg/paramiko/pkey.py", line 198, in from_private_key_file
+    key = cls(filename=filename, password=password)
+  File "/usr/local/lib/python2.6/dist-packages/paramiko-1.7.7.1-py2.6.egg/paramiko/rsakey.py", line 51, in __init__
+    self._from_private_key_file(filename, password)
+  File "/usr/local/lib/python2.6/dist-packages/paramiko-1.7.7.1-py2.6.egg/paramiko/rsakey.py", line 163, in _from_private_key_file
+    data = self._read_private_key_file('RSA', filename, password)
+  File "/usr/local/lib/python2.6/dist-packages/paramiko-1.7.7.1-py2.6.egg/paramiko/pkey.py", line 279, in _read_private_key_file
+    f = open(filename, 'r')
+IOError: [Errno 13] Permission denied: '/exports/mpiuser/.ssh/gsg-keypair-eu-west.pem'
+
+---------- SYSTEM INFO ----------
+StarCluster: 0.93.1
+Python: 2.6.5 (r265:79063, Apr 16 2010, 13:57:41)  [GCC 4.4.3]
+Platform: Linux-2.6.32-23-generic-x86_64-with-Ubuntu-10.04-lucid
+boto: 2.0
+paramiko: 1.7.7.1 (George)
+Crypto: 2.5
+jinja2: 2.5.5
+decorator: 3.3.1

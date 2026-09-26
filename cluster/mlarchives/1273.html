@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Robert Yu ((no email))" />
+<meta name="Subject" content="sshfs to access volumes" />
+<title>starcluster.mbox.out: sshfs to access volumes</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">sshfs to access volumes</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>sshfs to access volumes</h1>
+<!-- received="Thu Jun  7 23:43:26 2012" -->
+<!-- isoreceived="20120608034326" -->
+<!-- sent="Thu, 7 Jun 2012 20:42:54 -0700" -->
+<!-- isosent="20120608034254" -->
+<!-- name="Robert Yu" -->
+<!-- email="(no email)" -->
+<!-- subject="sshfs to access volumes" -->
+<!-- id="CAKwNXquKAohi6rbrQ9EE9ds=y3=tHiOXPUbpWAFOUt=mJRdRGA_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1273.html#start1273" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1273.html#options2">top</a>, <a href="1273.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1274.html" accesskey="d" title="Ron Chen: &quot;StarCluster CloudFormation template&quot;">Next message</a> ]
+[ <a href="1272.html" title="Manal Helal: &quot;dealing with EBS volumes&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="1350.html" accesskey="t" title="Justin Riley: &quot;Re:  sshfs to access volumes&quot;">Next in thread</a> ]
+ [ <a href="1273.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1273" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1273" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1273" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1273" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Robert Yu &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 7 Jun 2012 20:42:54 -0700</span><br />
+</address>
+<br />
+Hello,
+<br />
+<br />I thought I'd pass along this method to access a volume you have attached
+<br />
+to the master node (and shared with all slave nodes) from any machine.  To
+<br />
+me this was easier than having the master node do the setup and collecting
+<br />
+of results.  I prefer to keep the master as a pure submit host.
+<br />
+<br />I am using ubuntu 10.04.
+<br />
+<br />1.  Iinstall sshfs
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;% sudo apt-get install sshfs
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;% modprobe fuse
+<br />
+<br />2. Run sshfs:
+<br />
+<br />&nbsp;&nbsp;&nbsp;% mkdir &lt;mount_point&gt;
+<br />
+&nbsp;&nbsp;&nbsp;% sshfs -o ssh_command=&quot;ssh -i /full/path/to/your/private/RSA/key&quot;
+<br />
+&lt;user&gt;_at_&lt;aws IP addresss&gt;:/&lt;volume&gt; &lt;mount_point&gt;
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;Example:
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;% mkdir ./results
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;% sshfs -o ssh_command=&quot;ssh i $PWD/id_rsa.key&quot;
+<br />
+sgeadmin_at_ec2-01-23-45-678.us-west-1.compute.amazonaws.com:/results ./results
+<br />
+<br />To unmount, do:
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;% fusermont -u &lt;mount_point&gt;
+<br />
+<br /><pre>
+-- 
+Robert Yu, Member Technical Staff
+www.aditazz.com | robert.yu_at_aditazz.com
+1111 Bayhill Drive Suite 260 | San Bruno | CA 94066
+510.459.0216 | cell
+650.627.7357 | 650.492.7000 x1008 | work
+650.684.1149 | fax
+</pre>
+<span id="received"><dfn>Received on</dfn> Thu Jun 07 2012 - 23:43:26 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1273.html#start1273">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1274.html" title="Next message in the list">Ron Chen: "StarCluster CloudFormation template"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1272.html" title="Previous message in the list">Manal Helal: "dealing with EBS volumes"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1350.html" title="Next message in this discussion thread">Justin Riley: "Re:  sshfs to access volumes"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1350.html" title="Message sent in reply to this message">Justin Riley: "Re:  sshfs to access volumes"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1273" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1273" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1273" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1273" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

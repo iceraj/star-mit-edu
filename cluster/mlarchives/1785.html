@@ -1,0 +1,574 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Jacob Barhak ((no email))" />
+<meta name="Subject" content="Re:  Star cluster issues when running MIST over the cloud" />
+<title>starcluster.mbox.out: Re:  Star cluster issues when running MIST over the cloud</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Re:  Star cluster issues when running MIST over the cloud</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Re:  Star cluster issues when running MIST over the cloud</h1>
+<!-- received="Wed Jul 24 06:05:42 2013" -->
+<!-- isoreceived="20130724100542" -->
+<!-- sent="Wed, 24 Jul 2013 05:05:37 -0500" -->
+<!-- isosent="20130724100537" -->
+<!-- name="Jacob Barhak" -->
+<!-- email="(no email)" -->
+<!-- subject="Re:  Star cluster issues when running MIST over the cloud" -->
+<!-- id="CAM_y+3SP8mHbDYzQ50t6N_sqBTi63tv6eonGu07O=s60JxVyEg_at_mail.gmail.com" -->
+<!-- charset="UTF-8" -->
+<!-- inreplyto="CAHwLALPkArGzsDo=mSU6v8iNbN5H5dwjnK6Y69Yghyh1BAiRNQ_at_mail.gmail.com" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1785.html#start1785" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1785.html#options2">top</a>, <a href="1785.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1786.html" accesskey="d" title="Rayson Ho: &quot;Re:  Star cluster issues when running MIST over the cloud&quot;">Next message</a> ]
+[ <a href="1784.html" title="Rayson Ho: &quot;Re:  Star cluster issues when running MIST over the cloud&quot;">Previous message</a> ]
+[ <a href="1784.html" title="Rayson Ho: &quot;Re:  Star cluster issues when running MIST over the cloud&quot;">In reply to</a> ]
+<!-- unextthread="start" -->
+[ <a href="1786.html" accesskey="t" title="Rayson Ho: &quot;Re:  Star cluster issues when running MIST over the cloud&quot;">Next in thread</a> ]
+ [ <a href="1785.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1785" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1785" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1785" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1785" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Jacob Barhak &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Wed, 24 Jul 2013 05:05:37 -0500</span><br />
+</address>
+<br />
+Thanks Again Rayson,
+<br />
+<br />Yet even with your generous help I am still stuck. Perhaps you can look at
+<br />
+what I am doing and correct me.
+<br />
+<br />I tried running the commands you suggested to reconfigure the scheduler and
+<br />
+it seems the system hangs on me.
+<br />
+<br />Here is what I did:
+<br />
+<br />1. Created a 1 node cluster.
+<br />
+2. Copied the configuration file to my machine using:
+<br />
+&nbsp;starcluster get myscluster /opt/sge6/default/common/sched_configuration .
+<br />
+3. Modified line 12 in sched_configuration to read
+<br />
+schedd_job_info TRUE
+<br />
+4. Copied the modified sched_configuration file to the default local
+<br />
+directory on the cluster using:
+<br />
+starcluster put mycluster sched_configuration .
+<br />
+5. run the configuration command you suggested:
+<br />
+starcluster sshmaster mycluster &quot;qconf -msconf sched_configuration&quot;
+<br />
+<br />The system hangs in the last stage and does not return unless I press
+<br />
+control break - even control C does not work. I waited a few minutes then
+<br />
+terminated the cluster. I double checked this behavior using the -u root
+<br />
+argument when running the commands to ensure root privileges.
+<br />
+<br />I am using a windows 7 machine to issue those commands. I use the PythonXY
+<br />
+distribution and installed starcluster using easy_install. I am providing
+<br />
+this information to see if there is anything wrong with my system
+<br />
+compatibility-wise.
+<br />
+<br />I am attaching the configuration file and the transcript.
+<br />
+<br />I am getting funny characters and it seems the qconf command I issued does
+<br />
+not recognize the change in schedd_job_info.
+<br />
+<br />Is there any other way I can find out what the problem is - If you recall I
+<br />
+am trying to figure out why jobs in the queue are not dispatched to run and
+<br />
+keep waiting forever. This happens after a few hundred jobs I am sending.
+<br />
+<br />I hope you could find time to look at this once more, or perhaps someone
+<br />
+else can help.
+<br />
+<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Jacob
+<br />
+<br /><br /><br /><br />On Tue, Jul 23, 2013 at 6:44 PM, Rayson Ho &lt;raysonlogin_at_gmail.com&gt; wrote:
+<br />
+<br /><em class="quotelev1">&gt; On Tue, Jul 23, 2013 at 2:08 AM, Jacob Barhak &lt;jacob.barhak_at_gmail.com&gt;
+</em><br />
+<em class="quotelev1">&gt; wrote:
+</em><br />
+<em class="quotelev2">&gt; &gt; The second issue, however, is reproducible. I just tried again a 20 node
+</em><br />
+<em class="quotelev2">&gt; &gt; cluster.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Yes, it will always be reproducible and only can start 20 on-demand
+</em><br />
+<em class="quotelev1">&gt; instances in a region. Again, you need to fill out the &quot;Request to
+</em><br />
+<em class="quotelev1">&gt; Increase Amazon EC2 Instance Limit&quot; form if you want more than 20:
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; <a href="https://aws.amazon.com/contact-us/ec2-request/">https://aws.amazon.com/contact-us/ec2-request/</a>
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev2">&gt; &gt; This time I posted 2497 jobs to the queue - each about 1 minute long. The
+</em><br />
+<em class="quotelev2">&gt; &gt; system stopped sending jobs the queue about half point. There were 1310
+</em><br />
+<em class="quotelev1">&gt; jobs
+</em><br />
+<em class="quotelev2">&gt; &gt; in the queue when the system stopped sending more jobs.
+</em><br />
+<em class="quotelev2">&gt; &gt; When running &quot;qstat -j&quot; the system provided the following answer:
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev2">&gt; &gt; scheduling info:            (Collecting of scheduler job information is
+</em><br />
+<em class="quotelev2">&gt; &gt; turned off)
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; That's my fault -- I forgot to point out that the scheduler info is
+</em><br />
+<em class="quotelev1">&gt; off by default, and you need to run &quot;qconf -msconf&quot;, and change the
+</em><br />
+<em class="quotelev1">&gt; parameter &quot;schedd_job_info&quot; to true. See:
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; <a href="http://gridscheduler.sourceforge.net/htmlman/htmlman5/sched_conf.html">http://gridscheduler.sourceforge.net/htmlman/htmlman5/sched_conf.html</a>
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Rayson
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; ==================================================
+</em><br />
+<em class="quotelev1">&gt; Open Grid Scheduler - The Official Open Source Grid Engine
+</em><br />
+<em class="quotelev1">&gt; <a href="http://gridscheduler.sourceforge.net/">http://gridscheduler.sourceforge.net/</a>
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev2">&gt; &gt; I am not familiar with the error messages, yet it seems I need to enable
+</em><br />
+<em class="quotelev2">&gt; &gt; something that is turned off. If there is quick obvious solution for this
+</em><br />
+<em class="quotelev2">&gt; &gt; please let me know what to do, otherwise are there any other diagnostics
+</em><br />
+<em class="quotelev2">&gt; &gt; tools I can use?
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev2">&gt; &gt; Again, thanks for the quick reply and I hope this is an easy fix.
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev2">&gt; &gt;            Jacob
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev2">&gt; &gt; On Mon, Jul 22, 2013 at 2:51 PM, Rayson Ho &lt;raysonlogin_at_gmail.com&gt;
+</em><br />
+<em class="quotelev1">&gt; wrote:
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; On Sun, Jul 21, 2013 at 1:40 AM, Jacob Barhak &lt;jacob.barhak_at_gmail.com&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; wrote:
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; 1. Sometime starcluster is unable to properly connect the instances on
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; the
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; start command and cannot mount /home. It happened once when I asked
+</em><br />
+<em class="quotelev1">&gt; for
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; 5
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; m1.small machines and when I terminated this cluster and started again
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; things went fine. Is this intermittent due to cloud traffic or is
+</em><br />
+<em class="quotelev1">&gt; this a
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; bug? Is there a way for me to check why?
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; Can be a problem with the actual hardware - can you ssh into the node
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; and manually mount /home by hand next time you encounter this issue
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; and see if you can reproduce it when run interactively?
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; 2.  After launching 20 c1.xlarge machines and running about 2500 jobs,
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; each
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; about 5 minutes long, I encountered a problem after and hour or so. It
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; seems
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; that SGE stopped sending jobs from to the queue to the instances. No
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; error
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; was found and the queue showed about 850 pending jobs. This did not
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; change
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; for a while and I could not find any failure with qstat or qhost. No
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; jobs
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; were running on any nodes and I waited a while for these to start
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; without
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; success. I tried the same thing again after a few hours and it seems
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; that
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; the cluster stops sending jobs from the queue after about 1600 jobs
+</em><br />
+<em class="quotelev1">&gt; have
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; been submitted. This does not happen when SGE is installed on a single
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; Ubuntu machine I have at home. I am trying to figure out what is
+</em><br />
+<em class="quotelev1">&gt; wrong.
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; Did
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; you impose some limit on the number of jobs? Can this be fixed? I
+</em><br />
+<em class="quotelev1">&gt; really
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; need to submit many jobs - tens of thousands jobs in my full runs.
+</em><br />
+<em class="quotelev1">&gt; This
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; one
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; was relatively small and still did not pass.
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; Looks like SGE thinks that the nodes are down or in alarm or error
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; state? To find out why SGE thinks there are no nodes available, run:
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; qstat -j
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; 3. I tried to start Star Cluster with 50 nodes and got an error about
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; exceeding a quota of 20. Is it your quota or Amazon quota? Are there
+</em><br />
+<em class="quotelev1">&gt; any
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; other restrictions I should be aware of at the beginning? Also after
+</em><br />
+<em class="quotelev1">&gt; the
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; system is unable start the cluster it thinks it is still running and a
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; terminate command is needed before another start can be issued - even
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; though
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; nothing got started.
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; It's Amazon's quota. 50 is considered small by AWS standard, and they
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; can give it to you almost right away... You need to request AWS to
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; give you a higher limit:
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; <a href="https://aws.amazon.com/contact-us/ec2-request/">https://aws.amazon.com/contact-us/ec2-request/</a>
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; Note that last year we requested for 10,000 nodes and the whole
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; process took less than 1 day:
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev1">&gt; <a href="http://blogs.scalablelogic.com/2012/11/running-10000-node-grid-engine-cluster.html">http://blogs.scalablelogic.com/2012/11/running-10000-node-grid-engine-cluster.html</a>
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; Rayson
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; ==================================================
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; Open Grid Scheduler - The Official Open Source Grid Engine
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt; <a href="http://gridscheduler.sourceforge.net/">http://gridscheduler.sourceforge.net/</a>
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev3">&gt; &gt;&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; This all happened on us-west-2 with the help of star cluster 0.93.3
+</em><br />
+<em class="quotelev1">&gt; and
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; the
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; Anaconda AMI - ami-a4d64194
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; Here is some more information on what I am doing to help you answer
+</em><br />
+<em class="quotelev1">&gt; the
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; above.
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; I am running Monte Carlo simulations to simulate chronic disease
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; progression. I am using MIST to run over the cloud:
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt;
+</em><br />
+<em class="quotelev1">&gt; <a href="https://github.com/scipy/scipy2013_talks/blob/master/talks/jacob_barhak/readme.md">https://github.com/scipy/scipy2013_talks/blob/master/talks/jacob_barhak/readme.md</a>
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; The Reference Model is what I am running using MIST:
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; <a href="http://youtu.be/7qxPSgINaD8">http://youtu.be/7qxPSgINaD8</a>
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; I am launching many simulations in parallel and it takes me days on a
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; single
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; 8 core machine. The cloud allows me to cut down this time to hours.
+</em><br />
+<em class="quotelev1">&gt; This
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; is
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; why star cluster is so useful. In the past I did this over other
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; clusters
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; yet the cloud is still new to me.
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; I will appreciate any recommendations I can get from you to improve
+</em><br />
+<em class="quotelev1">&gt; the
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt; &gt; behaviors I am experiencing.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; <a href="http://commons.wikimedia.org/wiki/User:Raysonho">http://commons.wikimedia.org/wiki/User:Raysonho</a>
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<br /><br />
+<br /><div>
+<ul>
+<li>text/plain attachment: <a href="att-1785/StarClusterTranscript.txt">StarClusterTranscript.txt</a></li>
+</ul>
+<!-- attachment="StarClusterTranscript.txt" -->
+<ul>
+<li>application/octet-stream attachment: <a href="/cluster/mlarchives/att-1785/sched_configuration">sched_configuration</a></li>
+</ul>
+<!-- attachment="sched_configuration" -->
+</div>
+<span id="received"><dfn>Received on</dfn> Wed Jul 24 2013 - 06:05:42 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1785.html#start1785">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1786.html" title="Next message in the list">Rayson Ho: "Re:  Star cluster issues when running MIST over the cloud"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1784.html" title="Previous message in the list">Rayson Ho: "Re:  Star cluster issues when running MIST over the cloud"</a></li>
+<li><dfn>In reply to</dfn>: <a href="1784.html" title="Message to which this message replies">Rayson Ho: "Re:  Star cluster issues when running MIST over the cloud"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1786.html" title="Next message in this discussion thread">Rayson Ho: "Re:  Star cluster issues when running MIST over the cloud"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1786.html" title="Message sent in reply to this message">Rayson Ho: "Re:  Star cluster issues when running MIST over the cloud"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1785" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1785" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1785" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1785" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

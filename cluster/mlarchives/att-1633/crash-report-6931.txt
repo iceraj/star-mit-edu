@@ -1,0 +1,49 @@
+---------- CRASH DETAILS ----------
+COMMAND: starcluster resizevolume -H i-6fb4d01e vol-87d06df9 500
+2013-01-19 09:08:46,640 PID: 6931 config.py:551 - DEBUG - Loading config
+2013-01-19 09:08:46,641 PID: 6931 config.py:118 - DEBUG - Loading file: /home/drausin/.starcluster/config
+2013-01-19 09:08:46,648 PID: 6931 awsutils.py:54 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'proxy_user': None, 'proxy_pass': None, 'proxy_port': None, 'proxy': None, 'is_secure': True, 'path': '/', 'region': None, 'port': None}
+2013-01-19 09:08:47,098 PID: 6931 volume.py:62 - INFO - Using specified host instance i-6fb4d01e
+2013-01-19 09:08:47,098 PID: 6931 cluster.py:1140 - INFO - Waiting for instance i-6fb4d01e to come up...
+2013-01-19 09:08:47,197 PID: 6931 __init__.py:75 - DEBUG - loading private key /home/drausin/.ssh/SC_key.rsa
+2013-01-19 09:08:47,198 PID: 6931 __init__.py:167 - DEBUG - Using private key /home/drausin/.ssh/SC_key.rsa (rsa)
+2013-01-19 09:08:47,198 PID: 6931 __init__.py:97 - DEBUG - connecting to host ec2-107-20-41-108.compute-1.amazonaws.com on port 22 as user root
+2013-01-19 09:08:47,598 PID: 6931 __init__.py:186 - DEBUG - creating sftp connection
+2013-01-19 09:08:49,169 PID: 6931 volume.py:187 - INFO - Checking for required remote commands...
+2013-01-19 09:08:49,280 PID: 6931 __init__.py:543 - DEBUG - /sbin/resize2fs
+2013-01-19 09:08:49,281 PID: 6931 awsutils.py:1019 - INFO - Creating snapshot of volume: vol-87d06df9
+2013-01-19 09:08:49,560 PID: 6931 awsutils.py:1002 - INFO - Waiting for snapshot to complete: snap-88a505c6
+2013-01-19 12:27:15,271 PID: 6931 volume.py:95 - INFO - Creating 500GB volume in zone us-east-1d from snapshot snap-88a505c6
+2013-01-19 12:27:16,227 PID: 6931 volume.py:97 - INFO - New volume id: vol-074c0379
+2013-01-19 12:27:16,228 PID: 6931 cluster.py:1140 - INFO - Waiting for new volume to become 'available'...
+2013-01-19 12:27:22,359 PID: 6931 cluster.py:1140 - INFO - Attaching volume vol-074c0379 to instance i-6fb4d01e...
+2013-01-19 12:43:34,090 PID: 6931 cli.py:287 - DEBUG - Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.93.3-py2.7.egg/starcluster/cli.py", line 255, in main
+    sc.execute(args)
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.93.3-py2.7.egg/starcluster/commands/resizevolume.py", line 86, in execute
+    new_volid = vc.resize(vol, size, dest_zone=self.opts.dest_zone)
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.93.3-py2.7.egg/starcluster/volume.py", line 316, in resize
+    device = self._get_volume_device()
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.93.3-py2.7.egg/starcluster/volume.py", line 117, in _get_volume_device
+    if inst.ssh.path_exists(dev):
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.93.3-py2.7.egg/starcluster/sshutils/__init__.py", line 306, in path_exists
+    self.stat(path)
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.93.3-py2.7.egg/starcluster/sshutils/__init__.py", line 371, in stat
+    return self.sftp.stat(path)
+  File "/usr/local/lib/python2.7/dist-packages/ssh-1.7.13-py2.7.egg/ssh/sftp_client.py", line 337, in stat
+    t, msg = self._request(CMD_STAT, path)
+  File "/usr/local/lib/python2.7/dist-packages/ssh-1.7.13-py2.7.egg/ssh/sftp_client.py", line 635, in _request
+    return self._read_response(num)
+  File "/usr/local/lib/python2.7/dist-packages/ssh-1.7.13-py2.7.egg/ssh/sftp_client.py", line 667, in _read_response
+    raise SSHException('Server connection dropped: %s' % (str(e),))
+SSHException: Server connection dropped: 
+
+---------- SYSTEM INFO ----------
+StarCluster: 0.93.3
+Python: 2.7.3 (default, Aug  1 2012, 05:14:39)  [GCC 4.6.3]
+Platform: Linux-3.2.0-34-generic-x86_64-with-Ubuntu-12.04-precise
+boto: 2.3.0
+ssh: 1.7.13
+Crypto: 2.4.1
+jinja2: 2.6
+decorator: 3.3.1

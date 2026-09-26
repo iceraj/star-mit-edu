@@ -1,0 +1,1082 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Wayne Delport ((no email))" />
+<meta name="Subject" content="remove and add node errors" />
+<title>starcluster.mbox.out: remove and add node errors</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">remove and add node errors</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>remove and add node errors</h1>
+<!-- received="Thu May 10 15:15:10 2012" -->
+<!-- isoreceived="20120510191510" -->
+<!-- sent="Thu, 10 May 2012 12:15:05 -0700" -->
+<!-- isosent="20120510191505" -->
+<!-- name="Wayne Delport" -->
+<!-- email="(no email)" -->
+<!-- subject="remove and add node errors" -->
+<!-- id="B7802CBB-4C5C-489C-95ED-1C0D48BD0597_at_prognosysbio.com" -->
+<!-- charset="us-ascii" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1180.html#start1180" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1180.html#options2">top</a>, <a href="1180.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1181.html" accesskey="d" title="Scott Le Grand: &quot;Add/Remove Node Errors&quot;">Next message</a> ]
+[ <a href="1179.html" title="Sergio Mafra: &quot;StarCluster on CentOS&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1180" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1180" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1180" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1180" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Wayne Delport &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 10 May 2012 12:15:05 -0700</span><br />
+</address>
+<br />
+Hi Justin, 
+<br />
+<br />I'm dynamically resizing a cluster using the addnode and remove node and errors are frequently thrown. I then have to manually remove the node from /etc/hosts and also manually terminate the node in the AWS console. The attached bug report was generated from 0.93.1, but I'm seeing the same errors with 0.93.3. it looks to be an SSH authentication failure when accessing nodes, presumably to edit /etc/hosts?
+<br />
+<br />thanks ./w
+<br />
+<br /><br />
+---------- CRASH DETAILS ----------
+<br />
+COMMAND: starcluster -c mycluster.config rn mycluster node028
+<br />
+2012-05-04 21:05:34,033 PID: 17610 config.py:551 - DEBUG - Loading config
+<br />
+2012-05-04 21:05:34,033 PID: 17610 config.py:118 - DEBUG - Loading file: mycluster.config
+<br />
+2012-05-04 21:05:34,057 PID: 17610 awsutils.py:54 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'proxy_user': None, 'proxy_pass': None, 'proxy_port': None, 'proxy': None, 'is_secure': True, 'path': '/', 'region': None, 'port': None}
+<br />
+2012-05-04 21:05:34,454 PID: 17610 cluster.py:665 - DEBUG - existing nodes: {}
+<br />
+2012-05-04 21:05:34,454 PID: 17610 cluster.py:673 - DEBUG - adding node i-c532d0a3 to self._nodes list
+<br />
+2012-05-04 21:05:34,454 PID: 17610 cluster.py:673 - DEBUG - adding node i-35749853 to self._nodes list
+<br />
+2012-05-04 21:05:34,454 PID: 17610 cluster.py:673 - DEBUG - adding node i-33749855 to self._nodes list
+<br />
+2012-05-04 21:05:34,455 PID: 17610 cluster.py:673 - DEBUG - adding node i-31749857 to self._nodes list
+<br />
+2012-05-04 21:05:34,474 PID: 17610 cluster.py:673 - DEBUG - adding node i-3f749859 to self._nodes list
+<br />
+2012-05-04 21:05:34,474 PID: 17610 cluster.py:673 - DEBUG - adding node i-3d74985b to self._nodes list
+<br />
+2012-05-04 21:05:34,475 PID: 17610 cluster.py:673 - DEBUG - adding node i-3b74985d to self._nodes list
+<br />
+2012-05-04 21:05:34,475 PID: 17610 cluster.py:673 - DEBUG - adding node i-3974985f to self._nodes list
+<br />
+2012-05-04 21:05:34,475 PID: 17610 cluster.py:673 - DEBUG - adding node i-07749861 to self._nodes list
+<br />
+2012-05-04 21:05:34,475 PID: 17610 cluster.py:673 - DEBUG - adding node i-05749863 to self._nodes list
+<br />
+2012-05-04 21:05:34,475 PID: 17610 cluster.py:673 - DEBUG - adding node i-03749865 to self._nodes list
+<br />
+2012-05-04 21:05:34,475 PID: 17610 cluster.py:673 - DEBUG - adding node i-01749867 to self._nodes list
+<br />
+2012-05-04 21:05:34,476 PID: 17610 cluster.py:673 - DEBUG - adding node i-0f749869 to self._nodes list
+<br />
+2012-05-04 21:05:34,476 PID: 17610 cluster.py:673 - DEBUG - adding node i-0d74986b to self._nodes list
+<br />
+2012-05-04 21:05:34,476 PID: 17610 cluster.py:673 - DEBUG - adding node i-0b74986d to self._nodes list
+<br />
+2012-05-04 21:05:34,476 PID: 17610 cluster.py:673 - DEBUG - adding node i-0974986f to self._nodes list
+<br />
+2012-05-04 21:05:34,476 PID: 17610 cluster.py:673 - DEBUG - adding node i-17749871 to self._nodes list
+<br />
+2012-05-04 21:05:34,476 PID: 17610 cluster.py:673 - DEBUG - adding node i-15749873 to self._nodes list
+<br />
+2012-05-04 21:05:34,476 PID: 17610 cluster.py:673 - DEBUG - adding node i-13749875 to self._nodes list
+<br />
+2012-05-04 21:05:34,477 PID: 17610 cluster.py:673 - DEBUG - adding node i-11749877 to self._nodes list
+<br />
+2012-05-04 21:05:34,477 PID: 17610 cluster.py:673 - DEBUG - adding node i-1f749879 to self._nodes list
+<br />
+2012-05-04 21:05:34,477 PID: 17610 cluster.py:673 - DEBUG - adding node i-1d74987b to self._nodes list
+<br />
+2012-05-04 21:05:34,477 PID: 17610 cluster.py:673 - DEBUG - adding node i-1b74987d to self._nodes list
+<br />
+2012-05-04 21:05:34,477 PID: 17610 cluster.py:673 - DEBUG - adding node i-1974987f to self._nodes list
+<br />
+2012-05-04 21:05:34,478 PID: 17610 cluster.py:673 - DEBUG - adding node i-e7749881 to self._nodes list
+<br />
+2012-05-04 21:05:34,478 PID: 17610 cluster.py:673 - DEBUG - adding node i-e5749883 to self._nodes list
+<br />
+2012-05-04 21:05:34,478 PID: 17610 cluster.py:673 - DEBUG - adding node i-e3749885 to self._nodes list
+<br />
+2012-05-04 21:05:34,478 PID: 17610 cluster.py:673 - DEBUG - adding node i-e1749887 to self._nodes list
+<br />
+2012-05-04 21:05:34,478 PID: 17610 cluster.py:673 - DEBUG - adding node i-ef749889 to self._nodes list
+<br />
+2012-05-04 21:05:34,478 PID: 17610 cluster.py:681 - DEBUG - returning self._nodes = [&lt;Node: master (i-c532d0a3)&gt;, &lt;Node: node001 (i-35749853)&gt;, &lt;Node: node002 (i-33749855)&gt;, &lt;Node: node003 (i-31749857)&gt;, &lt;Node: node004 (i-3f749859)&gt;, &lt;Node: node005 (i-3d74985b)&gt;, &lt;Node: node006 (i-3b74985d)&gt;, &lt;Node: node007 (i-3974985f)&gt;, &lt;Node: node008 (i-07749861)&gt;, &lt;Node: node009 (i-05749863)&gt;, &lt;Node: node010 (i-03749865)&gt;, &lt;Node: node011 (i-01749867)&gt;, &lt;Node: node012 (i-0f749869)&gt;, &lt;Node: node013 (i-0d74986b)&gt;, &lt;Node: node014 (i-0b74986d)&gt;, &lt;Node: node015 (i-0974986f)&gt;, &lt;Node: node016 (i-17749871)&gt;, &lt;Node: node017 (i-15749873)&gt;, &lt;Node: node018 (i-13749875)&gt;, &lt;Node: node019 (i-11749877)&gt;, &lt;Node: node020 (i-1f749879)&gt;, &lt;Node: node021 (i-1d74987b)&gt;, &lt;Node: node022 (i-1b74987d)&gt;, &lt;Node: node023 (i-1974987f)&gt;, &lt;Node: node024 (i-e7749881)&gt;, &lt;Node: node025 (i-e5749883)&gt;, &lt;Node: node026 (i-e3749885)&gt;, &lt;Node: node027 (i-e1749887)&gt;, &lt;Node: node028 (i-ef749889)&gt;]
+<br />
+2012-05-04 21:05:34,554 PID: 17610 cluster.py:665 - DEBUG - existing nodes: {u'i-35749853': &lt;Node: node001 (i-35749853)&gt;, u'i-33749855': &lt;Node: node002 (i-33749855)&gt;, u'i-07749861': &lt;Node: node008 (i-07749861)&gt;, u'i-0974986f': &lt;Node: node015 (i-0974986f)&gt;, u'i-ef749889': &lt;Node: node028 (i-ef749889)&gt;, u'i-c532d0a3': &lt;Node: master (i-c532d0a3)&gt;, u'i-0b74986d': &lt;Node: node014 (i-0b74986d)&gt;, u'i-e3749885': &lt;Node: node026 (i-e3749885)&gt;, u'i-1b74987d': &lt;Node: node022 (i-1b74987d)&gt;, u'i-0d74986b': &lt;Node: node013 (i-0d74986b)&gt;, u'i-e1749887': &lt;Node: node027 (i-e1749887)&gt;, u'i-1f749879': &lt;Node: node020 (i-1f749879)&gt;, u'i-3d74985b': &lt;Node: node005 (i-3d74985b)&gt;, u'i-3974985f': &lt;Node: node007 (i-3974985f)&gt;, u'i-15749873': &lt;Node: node017 (i-15749873)&gt;, u'i-3b74985d': &lt;Node: node006 (i-3b74985d)&gt;, u'i-11749877': &lt;Node: node019 (i-11749877)&gt;, u'i-1d74987b': &lt;Node: node021 (i-1d74987b)&gt;, u'i-1974987f': &lt;Node: node023 (i-1974987f)&gt;, u'i-05749863': &lt;Node: node009 (i-05749863)&gt;, u'i-17749871': &lt;Node: node016 (i-17749871)&gt;, u'i-3f749859': &lt;Node: node004 (i-3f749859)&gt;, u'i-e5749883': &lt;Node: node025 (i-e5749883)&gt;, u'i-13749875': &lt;Node: node018 (i-13749875)&gt;, u'i-0f749869': &lt;Node: node012 (i-0f749869)&gt;, u'i-31749857': &lt;Node: node003 (i-31749857)&gt;, u'i-01749867': &lt;Node: node011 (i-01749867)&gt;, u'i-03749865': &lt;Node: node010 (i-03749865)&gt;, u'i-e7749881': &lt;Node: node024 (i-e7749881)&gt;}
+<br />
+2012-05-04 21:05:34,554 PID: 17610 cluster.py:668 - DEBUG - updating existing node i-c532d0a3 in self._nodes
+<br />
+2012-05-04 21:05:34,554 PID: 17610 cluster.py:668 - DEBUG - updating existing node i-35749853 in self._nodes
+<br />
+2012-05-04 21:05:34,554 PID: 17610 cluster.py:668 - DEBUG - updating existing node i-33749855 in self._nodes
+<br />
+2012-05-04 21:05:34,554 PID: 17610 cluster.py:668 - DEBUG - updating existing node i-31749857 in self._nodes
+<br />
+2012-05-04 21:05:34,554 PID: 17610 cluster.py:668 - DEBUG - updating existing node i-3f749859 in self._nodes
+<br />
+2012-05-04 21:05:34,554 PID: 17610 cluster.py:668 - DEBUG - updating existing node i-3d74985b in self._nodes
+<br />
+2012-05-04 21:05:34,555 PID: 17610 cluster.py:668 - DEBUG - updating existing node i-3b74985d in self._nodes
+<br />
+2012-05-04 21:05:34,555 PID: 17610 cluster.py:668 - DEBUG - updating existing node i-3974985f in self._nodes
+<br />
+2012-05-04 21:05:34,555 PID: 17610 cluster.py:668 - DEBUG - updating existing node i-07749861 in self._nodes
+<br />
+2012-05-04 21:05:34,555 PID: 17610 cluster.py:668 - DEBUG - updating existing node i-05749863 in self._nodes
+<br />
+2012-05-04 21:05:34,555 PID: 17610 cluster.py:668 - DEBUG - updating existing node i-03749865 in self._nodes
+<br />
+2012-05-04 21:05:34,555 PID: 17610 cluster.py:668 - DEBUG - updating existing node i-01749867 in self._nodes
+<br />
+2012-05-04 21:05:34,555 PID: 17610 cluster.py:668 - DEBUG - updating existing node i-0f749869 in self._nodes
+<br />
+2012-05-04 21:05:34,556 PID: 17610 cluster.py:668 - DEBUG - updating existing node i-0d74986b in self._nodes
+<br />
+2012-05-04 21:05:34,556 PID: 17610 cluster.py:668 - DEBUG - updating existing node i-0b74986d in self._nodes
+<br />
+2012-05-04 21:05:34,556 PID: 17610 cluster.py:668 - DEBUG - updating existing node i-0974986f in self._nodes
+<br />
+2012-05-04 21:05:34,556 PID: 17610 cluster.py:668 - DEBUG - updating existing node i-17749871 in self._nodes
+<br />
+2012-05-04 21:05:34,556 PID: 17610 cluster.py:668 - DEBUG - updating existing node i-15749873 in self._nodes
+<br />
+2012-05-04 21:05:34,556 PID: 17610 cluster.py:668 - DEBUG - updating existing node i-13749875 in self._nodes
+<br />
+2012-05-04 21:05:34,556 PID: 17610 cluster.py:668 - DEBUG - updating existing node i-11749877 in self._nodes
+<br />
+2012-05-04 21:05:34,557 PID: 17610 cluster.py:668 - DEBUG - updating existing node i-1f749879 in self._nodes
+<br />
+2012-05-04 21:05:34,557 PID: 17610 cluster.py:668 - DEBUG - updating existing node i-1d74987b in self._nodes
+<br />
+2012-05-04 21:05:34,557 PID: 17610 cluster.py:668 - DEBUG - updating existing node i-1b74987d in self._nodes
+<br />
+2012-05-04 21:05:34,557 PID: 17610 cluster.py:668 - DEBUG - updating existing node i-1974987f in self._nodes
+<br />
+2012-05-04 21:05:34,557 PID: 17610 cluster.py:668 - DEBUG - updating existing node i-e7749881 in self._nodes
+<br />
+2012-05-04 21:05:34,557 PID: 17610 cluster.py:668 - DEBUG - updating existing node i-e5749883 in self._nodes
+<br />
+2012-05-04 21:05:34,557 PID: 17610 cluster.py:668 - DEBUG - updating existing node i-e3749885 in self._nodes
+<br />
+2012-05-04 21:05:34,557 PID: 17610 cluster.py:668 - DEBUG - updating existing node i-e1749887 in self._nodes
+<br />
+2012-05-04 21:05:34,558 PID: 17610 cluster.py:668 - DEBUG - updating existing node i-ef749889 in self._nodes
+<br />
+2012-05-04 21:05:34,558 PID: 17610 cluster.py:681 - DEBUG - returning self._nodes = [&lt;Node: master (i-c532d0a3)&gt;, &lt;Node: node001 (i-35749853)&gt;, &lt;Node: node002 (i-33749855)&gt;, &lt;Node: node003 (i-31749857)&gt;, &lt;Node: node004 (i-3f749859)&gt;, &lt;Node: node005 (i-3d74985b)&gt;, &lt;Node: node006 (i-3b74985d)&gt;, &lt;Node: node007 (i-3974985f)&gt;, &lt;Node: node008 (i-07749861)&gt;, &lt;Node: node009 (i-05749863)&gt;, &lt;Node: node010 (i-03749865)&gt;, &lt;Node: node011 (i-01749867)&gt;, &lt;Node: node012 (i-0f749869)&gt;, &lt;Node: node013 (i-0d74986b)&gt;, &lt;Node: node014 (i-0b74986d)&gt;, &lt;Node: node015 (i-0974986f)&gt;, &lt;Node: node016 (i-17749871)&gt;, &lt;Node: node017 (i-15749873)&gt;, &lt;Node: node018 (i-13749875)&gt;, &lt;Node: node019 (i-11749877)&gt;, &lt;Node: node020 (i-1f749879)&gt;, &lt;Node: node021 (i-1d74987b)&gt;, &lt;Node: node022 (i-1b74987d)&gt;, &lt;Node: node023 (i-1974987f)&gt;, &lt;Node: node024 (i-e7749881)&gt;, &lt;Node: node025 (i-e5749883)&gt;, &lt;Node: node026 (i-e3749885)&gt;, &lt;Node: node027 (i-e1749887)&gt;, &lt;Node: node028 (i-ef749889)&gt;]
+<br />
+2012-05-04 21:05:34,558 PID: 17610 clustersetup.py:496 - INFO - Removing node node028 (i-ef749889)...
+<br />
+2012-05-04 21:05:34,558 PID: 17610 clustersetup.py:498 - INFO - Removing node028 from SGE
+<br />
+2012-05-04 21:05:34,559 PID: 17610 ssh.py:75 - DEBUG - loading private key /vol/sites/shared/ssh/mycluster.rsa
+<br />
+2012-05-04 21:05:34,559 PID: 17610 ssh.py:160 - DEBUG - Using private key /vol/sites/shared/ssh/mycluster.rsa (rsa)
+<br />
+2012-05-04 21:05:34,559 PID: 17610 ssh.py:97 - DEBUG - connecting to host ec2-107-20-104-139.compute-1.amazonaws.com on port 22 as user root
+<br />
+2012-05-04 21:05:47,013 PID: 17610 ssh.py:179 - DEBUG - creating sftp connection
+<br />
+2012-05-04 21:05:47,868 PID: 17610 ssh.py:536 - DEBUG - root_at_master modified &quot;&#64;allhosts&quot; in host group list
+<br />
+2012-05-04 21:05:48,024 PID: 17610 ssh.py:536 - DEBUG - root_at_master modified &quot;all.q&quot; in cluster queue list
+<br />
+2012-05-04 21:05:48,104 PID: 17610 ssh.py:536 - DEBUG - root_at_master removed &quot;node028&quot; from configuration list
+<br />
+2012-05-04 21:05:48,183 PID: 17610 ssh.py:536 - DEBUG - root_at_master removed &quot;node028&quot; from execution host list
+<br />
+2012-05-04 21:05:48,183 PID: 17610 ssh.py:75 - DEBUG - loading private key /vol/sites/shared/ssh/mycluster.rsa
+<br />
+2012-05-04 21:05:48,184 PID: 17610 ssh.py:160 - DEBUG - Using private key /vol/sites/shared/ssh/mycluster.rsa (rsa)
+<br />
+2012-05-04 21:05:48,184 PID: 17610 ssh.py:97 - DEBUG - connecting to host ec2-50-16-114-124.compute-1.amazonaws.com on port 22 as user root
+<br />
+2012-05-04 21:06:03,597 PID: 17610 clustersetup.py:348 - INFO - Updating SGE parallel environment 'orte'
+<br />
+2012-05-04 21:06:03,601 PID: 17610 ssh.py:75 - DEBUG - loading private key /vol/sites/shared/ssh/mycluster.rsa
+<br />
+2012-05-04 21:06:03,602 PID: 17610 ssh.py:160 - DEBUG - Using private key /vol/sites/shared/ssh/mycluster.rsa (rsa)
+<br />
+2012-05-04 21:06:03,602 PID: 17610 ssh.py:97 - DEBUG - connecting to host ec2-184-72-178-185.compute-1.amazonaws.com on port 22 as user root
+<br />
+2012-05-04 21:06:03,602 PID: 17610 ssh.py:75 - DEBUG - loading private key /vol/sites/shared/ssh/mycluster.rsa
+<br />
+2012-05-04 21:06:03,603 PID: 17610 ssh.py:160 - DEBUG - Using private key /vol/sites/shared/ssh/mycluster.rsa (rsa)
+<br />
+2012-05-04 21:06:03,603 PID: 17610 ssh.py:97 - DEBUG - connecting to host ec2-23-20-152-32.compute-1.amazonaws.com on port 22 as user root
+<br />
+2012-05-04 21:06:03,603 PID: 17610 ssh.py:75 - DEBUG - loading private key /vol/sites/shared/ssh/mycluster.rsa
+<br />
+2012-05-04 21:06:03,604 PID: 17610 ssh.py:160 - DEBUG - Using private key /vol/sites/shared/ssh/mycluster.rsa (rsa)
+<br />
+2012-05-04 21:06:03,604 PID: 17610 ssh.py:97 - DEBUG - connecting to host ec2-174-129-82-72.compute-1.amazonaws.com on port 22 as user root
+<br />
+2012-05-04 21:06:03,605 PID: 17610 ssh.py:75 - DEBUG - loading private key /vol/sites/shared/ssh/mycluster.rsa
+<br />
+2012-05-04 21:06:03,605 PID: 17610 ssh.py:160 - DEBUG - Using private key /vol/sites/shared/ssh/mycluster.rsa (rsa)
+<br />
+2012-05-04 21:06:03,605 PID: 17610 ssh.py:97 - DEBUG - connecting to host ec2-184-72-80-161.compute-1.amazonaws.com on port 22 as user root
+<br />
+2012-05-04 21:06:03,606 PID: 17610 ssh.py:75 - DEBUG - loading private key /vol/sites/shared/ssh/mycluster.rsa
+<br />
+2012-05-04 21:06:03,630 PID: 17610 ssh.py:75 - DEBUG - loading private key /vol/sites/shared/ssh/mycluster.rsa
+<br />
+2012-05-04 21:06:03,631 PID: 17610 ssh.py:160 - DEBUG - Using private key /vol/sites/shared/ssh/mycluster.rsa (rsa)
+<br />
+2012-05-04 21:06:03,631 PID: 17610 ssh.py:97 - DEBUG - connecting to host ec2-107-22-132-97.compute-1.amazonaws.com on port 22 as user root
+<br />
+2012-05-04 21:06:03,632 PID: 17610 ssh.py:75 - DEBUG - loading private key /vol/sites/shared/ssh/mycluster.rsa
+<br />
+2012-05-04 21:06:03,632 PID: 17610 ssh.py:160 - DEBUG - Using private key /vol/sites/shared/ssh/mycluster.rsa (rsa)
+<br />
+2012-05-04 21:06:03,635 PID: 17610 ssh.py:97 - DEBUG - connecting to host ec2-174-129-141-34.compute-1.amazonaws.com on port 22 as user root
+<br />
+2012-05-04 21:06:03,633 PID: 17610 ssh.py:75 - DEBUG - loading private key /vol/sites/shared/ssh/mycluster.rsa
+<br />
+2012-05-04 21:06:03,636 PID: 17610 ssh.py:160 - DEBUG - Using private key /vol/sites/shared/ssh/mycluster.rsa (rsa)
+<br />
+2012-05-04 21:06:03,633 PID: 17610 threadpool.py:135 - DEBUG - unfinished_tasks = 28
+<br />
+2012-05-04 21:06:03,633 PID: 17610 ssh.py:75 - DEBUG - loading private key /vol/sites/shared/ssh/mycluster.rsa
+<br />
+2012-05-04 21:06:03,634 PID: 17610 ssh.py:75 - DEBUG - loading private key /vol/sites/shared/ssh/mycluster.rsa
+<br />
+2012-05-04 21:06:03,634 PID: 17610 ssh.py:75 - DEBUG - loading private key /vol/sites/shared/ssh/mycluster.rsa
+<br />
+2012-05-04 21:06:03,634 PID: 17610 ssh.py:75 - DEBUG - loading private key /vol/sites/shared/ssh/mycluster.rsa
+<br />
+2012-05-04 21:06:03,634 PID: 17610 ssh.py:75 - DEBUG - loading private key /vol/sites/shared/ssh/mycluster.rsa
+<br />
+2012-05-04 21:06:03,634 PID: 17610 ssh.py:75 - DEBUG - loading private key /vol/sites/shared/ssh/mycluster.rsa
+<br />
+2012-05-04 21:06:03,635 PID: 17610 ssh.py:75 - DEBUG - loading private key /vol/sites/shared/ssh/mycluster.rsa
+<br />
+2012-05-04 21:06:03,659 PID: 17610 ssh.py:160 - DEBUG - Using private key /vol/sites/shared/ssh/mycluster.rsa (rsa)
+<br />
+2012-05-04 21:06:03,659 PID: 17610 ssh.py:97 - DEBUG - connecting to host ec2-174-129-128-158.compute-1.amazonaws.com on port 22 as user root
+<br />
+2012-05-04 21:06:03,635 PID: 17610 ssh.py:75 - DEBUG - loading private key /vol/sites/shared/ssh/mycluster.rsa
+<br />
+2012-05-04 21:06:03,660 PID: 17610 ssh.py:160 - DEBUG - Using private key /vol/sites/shared/ssh/mycluster.rsa (rsa)
+<br />
+2012-05-04 21:06:03,660 PID: 17610 ssh.py:97 - DEBUG - connecting to host ec2-23-22-1-205.compute-1.amazonaws.com on port 22 as user root
+<br />
+2012-05-04 21:06:03,635 PID: 17610 ssh.py:75 - DEBUG - loading private key /vol/sites/shared/ssh/mycluster.rsa
+<br />
+2012-05-04 21:06:03,633 PID: 17610 ssh.py:75 - DEBUG - loading private key /vol/sites/shared/ssh/mycluster.rsa
+<br />
+2012-05-04 21:06:03,662 PID: 17610 ssh.py:160 - DEBUG - Using private key /vol/sites/shared/ssh/mycluster.rsa (rsa)
+<br />
+2012-05-04 21:06:03,662 PID: 17610 ssh.py:97 - DEBUG - connecting to host ec2-23-20-76-33.compute-1.amazonaws.com on port 22 as user root
+<br />
+2012-05-04 21:06:03,638 PID: 17610 ssh.py:160 - DEBUG - Using private key /vol/sites/shared/ssh/mycluster.rsa (rsa)
+<br />
+2012-05-04 21:06:03,663 PID: 17610 ssh.py:97 - DEBUG - connecting to host ec2-23-20-184-64.compute-1.amazonaws.com on port 22 as user root
+<br />
+2012-05-04 21:06:03,633 PID: 17610 ssh.py:75 - DEBUG - loading private key /vol/sites/shared/ssh/mycluster.rsa
+<br />
+2012-05-04 21:06:03,664 PID: 17610 ssh.py:160 - DEBUG - Using private key /vol/sites/shared/ssh/mycluster.rsa (rsa)
+<br />
+2012-05-04 21:06:03,664 PID: 17610 ssh.py:97 - DEBUG - connecting to host ec2-50-19-31-63.compute-1.amazonaws.com on port 22 as user root
+<br />
+2012-05-04 21:06:03,636 PID: 17610 ssh.py:97 - DEBUG - connecting to host ec2-174-129-46-13.compute-1.amazonaws.com on port 22 as user root
+<br />
+2012-05-04 21:06:03,640 PID: 17610 ssh.py:160 - DEBUG - Using private key /vol/sites/shared/ssh/mycluster.rsa (rsa)
+<br />
+2012-05-04 21:06:03,664 PID: 17610 ssh.py:97 - DEBUG - connecting to host ec2-50-16-154-247.compute-1.amazonaws.com on port 22 as user root
+<br />
+2012-05-04 21:06:03,637 PID: 17610 ssh.py:160 - DEBUG - Using private key /vol/sites/shared/ssh/mycluster.rsa (rsa)
+<br />
+2012-05-04 21:06:03,665 PID: 17610 ssh.py:97 - DEBUG - connecting to host ec2-107-21-141-210.compute-1.amazonaws.com on port 22 as user root
+<br />
+2012-05-04 21:06:03,639 PID: 17610 ssh.py:160 - DEBUG - Using private key /vol/sites/shared/ssh/mycluster.rsa (rsa)
+<br />
+2012-05-04 21:06:03,665 PID: 17610 ssh.py:97 - DEBUG - connecting to host ec2-174-129-158-44.compute-1.amazonaws.com on port 22 as user root
+<br />
+2012-05-04 21:06:03,639 PID: 17610 ssh.py:160 - DEBUG - Using private key /vol/sites/shared/ssh/mycluster.rsa (rsa)
+<br />
+2012-05-04 21:06:03,665 PID: 17610 ssh.py:97 - DEBUG - connecting to host ec2-23-20-38-132.compute-1.amazonaws.com on port 22 as user root
+<br />
+2012-05-04 21:06:03,658 PID: 17610 ssh.py:160 - DEBUG - Using private key /vol/sites/shared/ssh/mycluster.rsa (rsa)
+<br />
+2012-05-04 21:06:03,666 PID: 17610 ssh.py:97 - DEBUG - connecting to host ec2-23-22-28-250.compute-1.amazonaws.com on port 22 as user root
+<br />
+2012-05-04 21:06:03,661 PID: 17610 ssh.py:160 - DEBUG - Using private key /vol/sites/shared/ssh/mycluster.rsa (rsa)
+<br />
+2012-05-04 21:06:03,666 PID: 17610 ssh.py:97 - DEBUG - connecting to host ec2-23-20-118-235.compute-1.amazonaws.com on port 22 as user root
+<br />
+2012-05-04 21:06:03,677 PID: 17610 ssh.py:160 - DEBUG - Using private key /vol/sites/shared/ssh/mycluster.rsa (rsa)
+<br />
+2012-05-04 21:06:03,683 PID: 17610 ssh.py:536 - DEBUG - 8
+<br />
+2012-05-04 21:06:03,685 PID: 17610 ssh.py:75 - DEBUG - loading private key /vol/sites/shared/ssh/mycluster.rsa
+<br />
+2012-05-04 21:06:03,685 PID: 17610 ssh.py:160 - DEBUG - Using private key /vol/sites/shared/ssh/mycluster.rsa (rsa)
+<br />
+2012-05-04 21:06:03,685 PID: 17610 ssh.py:97 - DEBUG - connecting to host ec2-184-73-14-134.compute-1.amazonaws.com on port 22 as user root
+<br />
+2012-05-04 21:06:03,686 PID: 17610 ssh.py:97 - DEBUG - connecting to host ec2-50-17-70-72.compute-1.amazonaws.com on port 22 as user root
+<br />
+2012-05-04 21:06:05,032 PID: 17610 threadpool.py:135 - DEBUG - unfinished_tasks = 27
+<br />
+2012-05-04 21:06:53,674 PID: 17610 threadpool.py:135 - DEBUG - unfinished_tasks = 27
+<br />
+2012-05-04 21:07:13,497 PID: 17610 threadpool.py:135 - DEBUG - unfinished_tasks = 27
+<br />
+2012-05-04 21:07:35,363 PID: 17610 threadpool.py:135 - DEBUG - unfinished_tasks = 27
+<br />
+2012-05-04 21:08:08,902 PID: 17610 threadpool.py:135 - DEBUG - unfinished_tasks = 27
+<br />
+2012-05-04 21:08:13,154 PID: 17610 ssh.py:75 - DEBUG - loading private key /vol/sites/shared/ssh/mycluster.rsa
+<br />
+2012-05-04 21:08:13,646 PID: 17610 ssh.py:75 - DEBUG - loading private key /vol/sites/shared/ssh/mycluster.rsa
+<br />
+2012-05-04 21:08:13,647 PID: 17610 ssh.py:160 - DEBUG - Using private key /vol/sites/shared/ssh/mycluster.rsa (rsa)
+<br />
+2012-05-04 21:08:13,647 PID: 17610 ssh.py:97 - DEBUG - connecting to host ec2-23-22-14-9.compute-1.amazonaws.com on port 22 as user root
+<br />
+2012-05-04 21:08:13,937 PID: 17610 ssh.py:160 - DEBUG - Using private key /vol/sites/shared/ssh/mycluster.rsa (rsa)
+<br />
+2012-05-04 21:08:16,725 PID: 17610 ssh.py:97 - DEBUG - connecting to host ec2-107-22-99-46.compute-1.amazonaws.com on port 22 as user root
+<br />
+2012-05-04 21:08:16,533 PID: 17610 ssh.py:75 - DEBUG - loading private key /vol/sites/shared/ssh/mycluster.rsa
+<br />
+2012-05-04 21:08:16,726 PID: 17610 ssh.py:160 - DEBUG - Using private key /vol/sites/shared/ssh/mycluster.rsa (rsa)
+<br />
+2012-05-04 21:08:16,727 PID: 17610 ssh.py:97 - DEBUG - connecting to host ec2-107-21-149-111.compute-1.amazonaws.com on port 22 as user root
+<br />
+2012-05-04 21:08:16,727 PID: 17610 threadpool.py:135 - DEBUG - unfinished_tasks = 24
+<br />
+2012-05-04 21:08:16,732 PID: 17610 ssh.py:75 - DEBUG - loading private key /vol/sites/shared/ssh/mycluster.rsa
+<br />
+2012-05-04 21:08:17,719 PID: 17610 ssh.py:75 - DEBUG - loading private key /vol/sites/shared/ssh/mycluster.rsa
+<br />
+2012-05-04 21:08:17,720 PID: 17610 ssh.py:160 - DEBUG - Using private key /vol/sites/shared/ssh/mycluster.rsa (rsa)
+<br />
+2012-05-04 21:08:17,720 PID: 17610 ssh.py:97 - DEBUG - connecting to host ec2-174-129-113-38.compute-1.amazonaws.com on port 22 as user root
+<br />
+2012-05-04 21:08:17,721 PID: 17610 ssh.py:75 - DEBUG - loading private key /vol/sites/shared/ssh/mycluster.rsa
+<br />
+2012-05-04 21:08:25,659 PID: 17610 ssh.py:160 - DEBUG - Using private key /vol/sites/shared/ssh/mycluster.rsa (rsa)
+<br />
+2012-05-04 21:08:25,660 PID: 17610 ssh.py:97 - DEBUG - connecting to host ec2-107-21-190-97.compute-1.amazonaws.com on port 22 as user root
+<br />
+2012-05-04 21:08:25,660 PID: 17610 ssh.py:536 - DEBUG - 8
+<br />
+2012-05-04 21:08:17,721 PID: 17610 ssh.py:160 - DEBUG - Using private key /vol/sites/shared/ssh/mycluster.rsa (rsa)
+<br />
+2012-05-04 21:08:25,660 PID: 17610 ssh.py:97 - DEBUG - connecting to host ec2-50-17-144-100.compute-1.amazonaws.com on port 22 as user root
+<br />
+2012-05-04 21:08:25,661 PID: 17610 ssh.py:536 - DEBUG - 8
+<br />
+2012-05-04 21:08:25,662 PID: 17610 threadpool.py:135 - DEBUG - unfinished_tasks = 12
+<br />
+2012-05-04 21:08:17,722 PID: 17610 ssh.py:75 - DEBUG - loading private key /vol/sites/shared/ssh/mycluster.rsa
+<br />
+2012-05-04 21:08:25,664 PID: 17610 ssh.py:160 - DEBUG - Using private key /vol/sites/shared/ssh/mycluster.rsa (rsa)
+<br />
+2012-05-04 21:08:25,664 PID: 17610 ssh.py:97 - DEBUG - connecting to host ec2-184-73-69-75.compute-1.amazonaws.com on port 22 as user root
+<br />
+2012-05-04 21:08:25,745 PID: 17610 ssh.py:536 - DEBUG - 8
+<br />
+2012-05-04 21:08:31,193 PID: 17610 threadpool.py:135 - DEBUG - unfinished_tasks = 9
+<br />
+2012-05-04 21:08:37,036 PID: 17610 threadpool.py:135 - DEBUG - unfinished_tasks = 9
+<br />
+2012-05-04 21:08:59,527 PID: 17610 threadpool.py:135 - DEBUG - unfinished_tasks = 9
+<br />
+2012-05-04 21:09:26,072 PID: 17610 ssh.py:536 - DEBUG - 8
+<br />
+2012-05-04 21:09:29,940 PID: 17610 threadpool.py:135 - DEBUG - unfinished_tasks = 8
+<br />
+2012-05-04 21:09:39,433 PID: 17610 ssh.py:536 - DEBUG - 8
+<br />
+2012-05-04 21:09:40,449 PID: 17610 threadpool.py:135 - DEBUG - unfinished_tasks = 7
+<br />
+2012-05-04 21:09:46,765 PID: 17610 threadpool.py:135 - DEBUG - unfinished_tasks = 7
+<br />
+2012-05-04 21:09:46,977 PID: 17610 ssh.py:536 - DEBUG - 8
+<br />
+2012-05-04 21:09:47,766 PID: 17610 threadpool.py:135 - DEBUG - unfinished_tasks = 6
+<br />
+2012-05-04 21:09:48,767 PID: 17610 threadpool.py:135 - DEBUG - unfinished_tasks = 6
+<br />
+2012-05-04 21:09:49,019 PID: 17610 ssh.py:536 - DEBUG - 8
+<br />
+2012-05-04 21:09:49,235 PID: 17610 ssh.py:536 - DEBUG - 8
+<br />
+2012-05-04 21:09:49,768 PID: 17610 threadpool.py:135 - DEBUG - unfinished_tasks = 4
+<br />
+2012-05-04 21:09:49,794 PID: 17610 ssh.py:536 - DEBUG - 8
+<br />
+2012-05-04 21:09:49,829 PID: 17610 ssh.py:536 - DEBUG - 8
+<br />
+2012-05-04 21:09:50,770 PID: 17610 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-05-04 21:09:50,943 PID: 17610 ssh.py:536 - DEBUG - 8
+<br />
+2012-05-04 21:09:51,771 PID: 17610 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+<br />
+2012-05-04 21:09:52,545 PID: 17610 ssh.py:536 - DEBUG - 8
+<br />
+2012-05-04 21:09:52,806 PID: 17610 cli.py:266 - DEBUG - error occurred in job (id=-1276658832): failed to connect to host ec2-50-16-154-247.compute-1.amazonaws.com on port 22
+<br />
+Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/threadpool.py&quot;, line 31, in run
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;job.run()
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/threadpool.py&quot;, line 58, in run
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;r = self.method(*self.args, **self.kwargs)
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/clustersetup.py&quot;, line 351, in &lt;lambda&gt;
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;num_processors = sum(self.pool.map(lambda n: n.num_processors, nodes))
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/node.py&quot;, line 169, in num_processors
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;'cat /proc/cpuinfo | grep processor | wc -l')[0])
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/ssh.py&quot;, line 512, in execute
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;channel = self.transport.open_session()
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/ssh.py&quot;, line 129, in transport
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;port=self._port, timeout=self._timeout)
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/ssh.py&quot;, line 115, in connect
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;raise exception.SSHConnectionError(host, port)
+<br />
+SSHConnectionError: failed to connect to host ec2-50-16-154-247.compute-1.amazonaws.com on port 22
+<br />
+<br />error occurred in job (id=-1343800464): failed to connect to host ec2-174-129-141-34.compute-1.amazonaws.com on port 22
+<br />
+Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/threadpool.py&quot;, line 31, in run
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;job.run()
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/threadpool.py&quot;, line 58, in run
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;r = self.method(*self.args, **self.kwargs)
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/clustersetup.py&quot;, line 351, in &lt;lambda&gt;
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;num_processors = sum(self.pool.map(lambda n: n.num_processors, nodes))
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/node.py&quot;, line 169, in num_processors
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;'cat /proc/cpuinfo | grep processor | wc -l')[0])
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/ssh.py&quot;, line 512, in execute
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;channel = self.transport.open_session()
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/ssh.py&quot;, line 129, in transport
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;port=self._port, timeout=self._timeout)
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/ssh.py&quot;, line 115, in connect
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;raise exception.SSHConnectionError(host, port)
+<br />
+SSHConnectionError: failed to connect to host ec2-174-129-141-34.compute-1.amazonaws.com on port 22
+<br />
+<br />error occurred in job (id=-1259873424): failed to connect to host ec2-23-20-38-132.compute-1.amazonaws.com on port 22
+<br />
+Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/threadpool.py&quot;, line 31, in run
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;job.run()
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/threadpool.py&quot;, line 58, in run
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;r = self.method(*self.args, **self.kwargs)
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/clustersetup.py&quot;, line 351, in &lt;lambda&gt;
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;num_processors = sum(self.pool.map(lambda n: n.num_processors, nodes))
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/node.py&quot;, line 169, in num_processors
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;'cat /proc/cpuinfo | grep processor | wc -l')[0])
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/ssh.py&quot;, line 512, in execute
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;channel = self.transport.open_session()
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/ssh.py&quot;, line 129, in transport
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;port=self._port, timeout=self._timeout)
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/ssh.py&quot;, line 115, in connect
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;raise exception.SSHConnectionError(host, port)
+<br />
+SSHConnectionError: failed to connect to host ec2-23-20-38-132.compute-1.amazonaws.com on port 22
+<br />
+<br />error occurred in job (id=-1368978576): failed to connect to host ec2-50-17-70-72.compute-1.amazonaws.com on port 22
+<br />
+Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/threadpool.py&quot;, line 31, in run
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;job.run()
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/threadpool.py&quot;, line 58, in run
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;r = self.method(*self.args, **self.kwargs)
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/clustersetup.py&quot;, line 351, in &lt;lambda&gt;
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;num_processors = sum(self.pool.map(lambda n: n.num_processors, nodes))
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/node.py&quot;, line 169, in num_processors
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;'cat /proc/cpuinfo | grep processor | wc -l')[0])
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/ssh.py&quot;, line 512, in execute
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;channel = self.transport.open_session()
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/ssh.py&quot;, line 129, in transport
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;port=self._port, timeout=self._timeout)
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/ssh.py&quot;, line 115, in connect
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;raise exception.SSHConnectionError(host, port)
+<br />
+SSHConnectionError: failed to connect to host ec2-50-17-70-72.compute-1.amazonaws.com on port 22
+<br />
+<br />error occurred in job (id=-1327015056): failed to authenticate to host ec2-174-129-46-13.compute-1.amazonaws.com as user root
+<br />
+Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/threadpool.py&quot;, line 31, in run
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;job.run()
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/threadpool.py&quot;, line 58, in run
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;r = self.method(*self.args, **self.kwargs)
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/clustersetup.py&quot;, line 351, in &lt;lambda&gt;
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;num_processors = sum(self.pool.map(lambda n: n.num_processors, nodes))
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/node.py&quot;, line 169, in num_processors
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;'cat /proc/cpuinfo | grep processor | wc -l')[0])
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/ssh.py&quot;, line 512, in execute
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;channel = self.transport.open_session()
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/ssh.py&quot;, line 129, in transport
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;port=self._port, timeout=self._timeout)
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/ssh.py&quot;, line 108, in connect
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;raise exception.SSHAuthException(username, host)
+<br />
+SSHAuthException: failed to authenticate to host ec2-174-129-46-13.compute-1.amazonaws.com as user root
+<br />
+<br />error occurred in job (id=-1301836944): failed to authenticate to host ec2-23-20-152-32.compute-1.amazonaws.com as user root
+<br />
+Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/threadpool.py&quot;, line 31, in run
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;job.run()
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/threadpool.py&quot;, line 58, in run
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;r = self.method(*self.args, **self.kwargs)
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/clustersetup.py&quot;, line 351, in &lt;lambda&gt;
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;num_processors = sum(self.pool.map(lambda n: n.num_processors, nodes))
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/node.py&quot;, line 169, in num_processors
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;'cat /proc/cpuinfo | grep processor | wc -l')[0])
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/ssh.py&quot;, line 512, in execute
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;channel = self.transport.open_session()
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/ssh.py&quot;, line 129, in transport
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;port=self._port, timeout=self._timeout)
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/ssh.py&quot;, line 108, in connect
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;raise exception.SSHAuthException(username, host)
+<br />
+SSHAuthException: failed to authenticate to host ec2-23-20-152-32.compute-1.amazonaws.com as user root
+<br />
+<br />error occurred in job (id=-1243088016): failed to authenticate to host ec2-184-73-14-134.compute-1.amazonaws.com as user root
+<br />
+Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/threadpool.py&quot;, line 31, in run
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;job.run()
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/threadpool.py&quot;, line 58, in run
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;r = self.method(*self.args, **self.kwargs)
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/clustersetup.py&quot;, line 351, in &lt;lambda&gt;
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;num_processors = sum(self.pool.map(lambda n: n.num_processors, nodes))
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/node.py&quot;, line 169, in num_processors
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;'cat /proc/cpuinfo | grep processor | wc -l')[0])
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/ssh.py&quot;, line 512, in execute
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;channel = self.transport.open_session()
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/ssh.py&quot;, line 129, in transport
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;port=self._port, timeout=self._timeout)
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/ssh.py&quot;, line 108, in connect
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;raise exception.SSHAuthException(username, host)
+<br />
+SSHAuthException: failed to authenticate to host ec2-184-73-14-134.compute-1.amazonaws.com as user root
+<br />
+<br />error occurred in job (id=-1318622352): failed to authenticate to host ec2-23-22-1-205.compute-1.amazonaws.com as user root
+<br />
+Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/threadpool.py&quot;, line 31, in run
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;job.run()
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/threadpool.py&quot;, line 58, in run
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;r = self.method(*self.args, **self.kwargs)
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/clustersetup.py&quot;, line 351, in &lt;lambda&gt;
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;num_processors = sum(self.pool.map(lambda n: n.num_processors, nodes))
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/node.py&quot;, line 169, in num_processors
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;'cat /proc/cpuinfo | grep processor | wc -l')[0])
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/ssh.py&quot;, line 512, in execute
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;channel = self.transport.open_session()
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/ssh.py&quot;, line 129, in transport
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;port=self._port, timeout=self._timeout)
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/ssh.py&quot;, line 108, in connect
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;raise exception.SSHAuthException(username, host)
+<br />
+SSHAuthException: failed to authenticate to host ec2-23-22-1-205.compute-1.amazonaws.com as user root
+<br />
+<br />error occurred in job (id=-1377371280): failed to authenticate to host ec2-107-21-141-210.compute-1.amazonaws.com as user root
+<br />
+Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/threadpool.py&quot;, line 31, in run
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;job.run()
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/threadpool.py&quot;, line 58, in run
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;r = self.method(*self.args, **self.kwargs)
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/clustersetup.py&quot;, line 351, in &lt;lambda&gt;
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;num_processors = sum(self.pool.map(lambda n: n.num_processors, nodes))
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/node.py&quot;, line 169, in num_processors
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;'cat /proc/cpuinfo | grep processor | wc -l')[0])
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/ssh.py&quot;, line 512, in execute
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;channel = self.transport.open_session()
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/ssh.py&quot;, line 129, in transport
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;port=self._port, timeout=self._timeout)
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/ssh.py&quot;, line 108, in connect
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;raise exception.SSHAuthException(username, host)
+<br />
+SSHAuthException: failed to authenticate to host ec2-107-21-141-210.compute-1.amazonaws.com as user root
+<br />
+<br />error occurred in job (id=-1268266128): failed to authenticate to host ec2-174-129-158-44.compute-1.amazonaws.com as user root
+<br />
+Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/threadpool.py&quot;, line 31, in run
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;job.run()
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/threadpool.py&quot;, line 58, in run
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;r = self.method(*self.args, **self.kwargs)
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/clustersetup.py&quot;, line 351, in &lt;lambda&gt;
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;num_processors = sum(self.pool.map(lambda n: n.num_processors, nodes))
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/node.py&quot;, line 169, in num_processors
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;'cat /proc/cpuinfo | grep processor | wc -l')[0])
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/ssh.py&quot;, line 512, in execute
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;channel = self.transport.open_session()
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/ssh.py&quot;, line 129, in transport
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;port=self._port, timeout=self._timeout)
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/ssh.py&quot;, line 108, in connect
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;raise exception.SSHAuthException(username, host)
+<br />
+SSHAuthException: failed to authenticate to host ec2-174-129-158-44.compute-1.amazonaws.com as user root
+<br />
+<br />error occurred in job (id=-1385763984): failed to authenticate to host ec2-23-20-76-33.compute-1.amazonaws.com as user root
+<br />
+Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/threadpool.py&quot;, line 31, in run
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;job.run()
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/threadpool.py&quot;, line 58, in run
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;r = self.method(*self.args, **self.kwargs)
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/clustersetup.py&quot;, line 351, in &lt;lambda&gt;
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;num_processors = sum(self.pool.map(lambda n: n.num_processors, nodes))
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/node.py&quot;, line 169, in num_processors
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;'cat /proc/cpuinfo | grep processor | wc -l')[0])
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/ssh.py&quot;, line 512, in execute
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;channel = self.transport.open_session()
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/ssh.py&quot;, line 129, in transport
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;port=self._port, timeout=self._timeout)
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/ssh.py&quot;, line 108, in connect
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;raise exception.SSHAuthException(username, host)
+<br />
+SSHAuthException: failed to authenticate to host ec2-23-20-76-33.compute-1.amazonaws.com as user root
+<br />
+<br />error occurred in job (id=-1394156688): failed to authenticate to host ec2-174-129-128-158.compute-1.amazonaws.com as user root
+<br />
+Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/threadpool.py&quot;, line 31, in run
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;job.run()
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/threadpool.py&quot;, line 58, in run
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;r = self.method(*self.args, **self.kwargs)
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/clustersetup.py&quot;, line 351, in &lt;lambda&gt;
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;num_processors = sum(self.pool.map(lambda n: n.num_processors, nodes))
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/node.py&quot;, line 169, in num_processors
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;'cat /proc/cpuinfo | grep processor | wc -l')[0])
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/ssh.py&quot;, line 512, in execute
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;channel = self.transport.open_session()
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/ssh.py&quot;, line 129, in transport
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;port=self._port, timeout=self._timeout)
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/ssh.py&quot;, line 108, in connect
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;raise exception.SSHAuthException(username, host)
+<br />
+SSHAuthException: failed to authenticate to host ec2-174-129-128-158.compute-1.amazonaws.com as user root
+<br />
+<br />error occurred in job (id=-1310229648): failed to authenticate to host ec2-23-20-118-235.compute-1.amazonaws.com as user root
+<br />
+Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/threadpool.py&quot;, line 31, in run
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;job.run()
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/threadpool.py&quot;, line 58, in run
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;r = self.method(*self.args, **self.kwargs)
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/clustersetup.py&quot;, line 351, in &lt;lambda&gt;
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;num_processors = sum(self.pool.map(lambda n: n.num_processors, nodes))
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/node.py&quot;, line 169, in num_processors
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;'cat /proc/cpuinfo | grep processor | wc -l')[0])
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/ssh.py&quot;, line 512, in execute
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;channel = self.transport.open_session()
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/ssh.py&quot;, line 129, in transport
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;port=self._port, timeout=self._timeout)
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/ssh.py&quot;, line 108, in connect
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;raise exception.SSHAuthException(username, host)
+<br />
+SSHAuthException: failed to authenticate to host ec2-23-20-118-235.compute-1.amazonaws.com as user root
+<br />
+<br />error occurred in job (id=-1285051536): failed to authenticate to host ec2-107-22-132-97.compute-1.amazonaws.com as user root
+<br />
+Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/threadpool.py&quot;, line 31, in run
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;job.run()
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/threadpool.py&quot;, line 58, in run
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;r = self.method(*self.args, **self.kwargs)
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/clustersetup.py&quot;, line 351, in &lt;lambda&gt;
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;num_processors = sum(self.pool.map(lambda n: n.num_processors, nodes))
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/node.py&quot;, line 169, in num_processors
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;'cat /proc/cpuinfo | grep processor | wc -l')[0])
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/ssh.py&quot;, line 512, in execute
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;channel = self.transport.open_session()
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/ssh.py&quot;, line 129, in transport
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;port=self._port, timeout=self._timeout)
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/ssh.py&quot;, line 108, in connect
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;raise exception.SSHAuthException(username, host)
+<br />
+SSHAuthException: failed to authenticate to host ec2-107-22-132-97.compute-1.amazonaws.com as user root
+<br />
+<br />error occurred in job (id=-1335407760): failed to authenticate to host ec2-174-129-82-72.compute-1.amazonaws.com as user root
+<br />
+Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/threadpool.py&quot;, line 31, in run
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;job.run()
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/threadpool.py&quot;, line 58, in run
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;r = self.method(*self.args, **self.kwargs)
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/clustersetup.py&quot;, line 351, in &lt;lambda&gt;
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;num_processors = sum(self.pool.map(lambda n: n.num_processors, nodes))
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/node.py&quot;, line 169, in num_processors
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;'cat /proc/cpuinfo | grep processor | wc -l')[0])
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/ssh.py&quot;, line 512, in execute
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;channel = self.transport.open_session()
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/ssh.py&quot;, line 129, in transport
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;port=self._port, timeout=self._timeout)
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/starcluster/ssh.py&quot;, line 108, in connect
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;raise exception.SSHAuthException(username, host)
+<br />
+SSHAuthException: failed to authenticate to host ec2-174-129-82-72.compute-1.amazonaws.com as user root
+<br />
+<br />---------- SYSTEM INFO ----------
+<br />
+StarCluster: 0.93.1
+<br />
+Python: 2.7.2+ (default, Oct  4 2011, 20:03:08)  [GCC 4.6.1]
+<br />
+Platform: Linux-3.0.0-14-virtual-i686-with-Ubuntu-11.10-oneiric
+<br />
+boto: 2.0
+<br />
+paramiko: 1.7.7.1 (George)
+<br />
+Crypto: 2.5
+<br />
+jinja2: 2.5.5
+<br />
+decorator: 3.3.1
+<br />
+<span id="received"><dfn>Received on</dfn> Thu May 10 2012 - 15:15:10 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1180.html#start1180">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1181.html" title="Next message in the list">Scott Le Grand: "Add/Remove Node Errors"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1179.html" title="Previous message in the list">Sergio Mafra: "StarCluster on CentOS"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1180" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1180" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1180" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1180" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

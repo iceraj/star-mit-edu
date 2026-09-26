@@ -1,0 +1,255 @@
+---------- CRASH DETAILS ----------
+COMMAND: starcluster start -c largecluster-spot largeCluster-spot
+2012-11-17 19:01:47,031 PID: 7254 config.py:551 - DEBUG - Loading config
+2012-11-17 19:01:47,122 PID: 7254 config.py:118 - DEBUG - Loading file: /Users/nehalecky/.starcluster/config
+2012-11-17 19:01:47,130 PID: 7254 awsutils.py:54 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'proxy_user': None, 'proxy_pass': None, 'proxy_port': None, 'proxy': None, 'is_secure': True, 'path': '/', 'region': RegionInfo:us-west-1, 'port': None}
+2012-11-17 19:01:47,351 PID: 7254 utils.py:464 - DEBUG - nargs = 2
+2012-11-17 19:01:47,351 PID: 7254 utils.py:465 - DEBUG - ndefaults = 2
+2012-11-17 19:01:47,351 PID: 7254 utils.py:466 - DEBUG - nrequired = 0
+2012-11-17 19:01:47,351 PID: 7254 utils.py:467 - DEBUG - args = []
+2012-11-17 19:01:47,351 PID: 7254 utils.py:468 - DEBUG - kwargs = ['enable_notebook', 'notebook_passwd']
+2012-11-17 19:01:47,351 PID: 7254 utils.py:469 - DEBUG - defaults = (False, None)
+2012-11-17 19:01:47,352 PID: 7254 cluster.py:500 - DEBUG - config_args = []
+2012-11-17 19:01:47,352 PID: 7254 cluster.py:509 - DEBUG - config_kwargs = {'enable_notebook': 'True', 'notebook_passwd': 'six0one'}
+2012-11-17 19:01:47,352 PID: 7254 cluster.py:1539 - INFO - Validating cluster template settings...
+2012-11-17 19:01:48,229 PID: 7254 cluster.py:926 - DEBUG - Launch map: node001 (ami: ami-0c614049, type: c1.xlarge)...
+2012-11-17 19:01:48,229 PID: 7254 cluster.py:1555 - INFO - Cluster template settings are valid
+2012-11-17 19:01:48,229 PID: 7254 cluster.py:1427 - INFO - Starting cluster...
+2012-11-17 19:01:48,230 PID: 7254 cluster.py:952 - INFO - Launching a 2-node cluster...
+2012-11-17 19:01:48,230 PID: 7254 cluster.py:926 - DEBUG - Launch map: node001 (ami: ami-0c614049, type: c1.xlarge)...
+2012-11-17 19:01:48,230 PID: 7254 cluster.py:1004 - INFO - Launching master node (ami: ami-0c614049, type: m1.small)...
+2012-11-17 19:01:48,297 PID: 7254 awsutils.py:165 - INFO - Creating security group @sc-largeCluster-spot...
+2012-11-17 19:01:50,019 PID: 7254 cluster.py:772 - INFO - Reservation:r-77aa9731
+2012-11-17 19:01:50,019 PID: 7254 cluster.py:926 - DEBUG - Launch map: node001 (ami: ami-0c614049, type: c1.xlarge)...
+2012-11-17 19:01:50,019 PID: 7254 cluster.py:1024 - INFO - Launching node001 (ami: ami-0c614049, type: c1.xlarge)
+2012-11-17 19:01:50,148 PID: 7254 cluster.py:772 - INFO - SpotInstanceRequest:sir-20d22406
+2012-11-17 19:01:50,148 PID: 7254 cluster.py:1235 - INFO - Waiting for cluster to come up... (updating every 30s)
+2012-11-17 19:01:50,248 PID: 7254 cluster.py:1165 - INFO - Waiting for open spot requests to become active...
+2012-11-17 19:03:50,797 PID: 7254 cluster.py:664 - DEBUG - existing nodes: {}
+2012-11-17 19:03:50,797 PID: 7254 cluster.py:672 - DEBUG - adding node i-b2910eeb to self._nodes list
+2012-11-17 19:03:51,283 PID: 7254 cluster.py:672 - DEBUG - adding node i-28900f71 to self._nodes list
+2012-11-17 19:03:51,752 PID: 7254 cluster.py:680 - DEBUG - returning self._nodes = [<Node: master (i-b2910eeb)>, <Node: node001 (i-28900f71)>]
+2012-11-17 19:03:51,752 PID: 7254 cluster.py:1193 - INFO - Waiting for all nodes to be in a 'running' state...
+2012-11-17 19:03:51,882 PID: 7254 cluster.py:664 - DEBUG - existing nodes: {u'i-b2910eeb': <Node: master (i-b2910eeb)>, u'i-28900f71': <Node: node001 (i-28900f71)>}
+2012-11-17 19:03:51,883 PID: 7254 cluster.py:667 - DEBUG - updating existing node i-b2910eeb in self._nodes
+2012-11-17 19:03:51,883 PID: 7254 cluster.py:667 - DEBUG - updating existing node i-28900f71 in self._nodes
+2012-11-17 19:03:51,883 PID: 7254 cluster.py:680 - DEBUG - returning self._nodes = [<Node: master (i-b2910eeb)>, <Node: node001 (i-28900f71)>]
+2012-11-17 19:04:21,988 PID: 7254 cluster.py:664 - DEBUG - existing nodes: {u'i-b2910eeb': <Node: master (i-b2910eeb)>, u'i-28900f71': <Node: node001 (i-28900f71)>}
+2012-11-17 19:04:21,988 PID: 7254 cluster.py:667 - DEBUG - updating existing node i-b2910eeb in self._nodes
+2012-11-17 19:04:21,989 PID: 7254 cluster.py:667 - DEBUG - updating existing node i-28900f71 in self._nodes
+2012-11-17 19:04:21,989 PID: 7254 cluster.py:680 - DEBUG - returning self._nodes = [<Node: master (i-b2910eeb)>, <Node: node001 (i-28900f71)>]
+2012-11-17 19:04:21,989 PID: 7254 cluster.py:1211 - INFO - Waiting for SSH to come up on all nodes...
+2012-11-17 19:04:22,087 PID: 7254 cluster.py:664 - DEBUG - existing nodes: {u'i-b2910eeb': <Node: master (i-b2910eeb)>, u'i-28900f71': <Node: node001 (i-28900f71)>}
+2012-11-17 19:04:22,088 PID: 7254 cluster.py:667 - DEBUG - updating existing node i-b2910eeb in self._nodes
+2012-11-17 19:04:22,088 PID: 7254 cluster.py:667 - DEBUG - updating existing node i-28900f71 in self._nodes
+2012-11-17 19:04:22,088 PID: 7254 cluster.py:680 - DEBUG - returning self._nodes = [<Node: master (i-b2910eeb)>, <Node: node001 (i-28900f71)>]
+2012-11-17 19:04:22,195 PID: 7254 __init__.py:75 - DEBUG - loading private key /Users/nehalecky/.ssh/ec2-West-CA.rsa
+2012-11-17 19:04:22,196 PID: 7254 __init__.py:167 - DEBUG - Using private key /Users/nehalecky/.ssh/ec2-West-CA.rsa (rsa)
+2012-11-17 19:04:22,196 PID: 7254 __init__.py:97 - DEBUG - connecting to host ec2-54-241-127-180.us-west-1.compute.amazonaws.com on port 22 as user root
+2012-11-17 19:04:22,820 PID: 7254 __init__.py:186 - DEBUG - creating sftp connection
+2012-11-17 19:04:24,000 PID: 7254 __init__.py:75 - DEBUG - loading private key /Users/nehalecky/.ssh/ec2-West-CA.rsa
+2012-11-17 19:04:24,001 PID: 7254 __init__.py:167 - DEBUG - Using private key /Users/nehalecky/.ssh/ec2-West-CA.rsa (rsa)
+2012-11-17 19:04:24,001 PID: 7254 __init__.py:97 - DEBUG - connecting to host ec2-184-72-5-250.us-west-1.compute.amazonaws.com on port 22 as user root
+2012-11-17 19:04:54,295 PID: 7254 cluster.py:664 - DEBUG - existing nodes: {u'i-b2910eeb': <Node: master (i-b2910eeb)>, u'i-28900f71': <Node: node001 (i-28900f71)>}
+2012-11-17 19:04:54,296 PID: 7254 cluster.py:667 - DEBUG - updating existing node i-b2910eeb in self._nodes
+2012-11-17 19:04:54,296 PID: 7254 cluster.py:667 - DEBUG - updating existing node i-28900f71 in self._nodes
+2012-11-17 19:04:54,296 PID: 7254 cluster.py:680 - DEBUG - returning self._nodes = [<Node: master (i-b2910eeb)>, <Node: node001 (i-28900f71)>]
+2012-11-17 19:04:54,466 PID: 7254 __init__.py:97 - DEBUG - connecting to host ec2-184-72-5-250.us-west-1.compute.amazonaws.com on port 22 as user root
+2012-11-17 19:04:55,094 PID: 7254 __init__.py:186 - DEBUG - creating sftp connection
+2012-11-17 19:04:55,566 PID: 7254 utils.py:93 - INFO - Waiting for cluster to come up took 3.090 mins
+2012-11-17 19:04:55,567 PID: 7254 cluster.py:1454 - INFO - The master node is ec2-54-241-127-180.us-west-1.compute.amazonaws.com
+2012-11-17 19:04:55,567 PID: 7254 cluster.py:1455 - INFO - Setting up the cluster...
+2012-11-17 19:04:55,670 PID: 7254 cluster.py:1285 - INFO - Attaching volume vol-08697726 to master node on /dev/sdz ...
+2012-11-17 19:04:55,870 PID: 7254 cluster.py:1287 - DEBUG - resp = attaching
+2012-11-17 19:05:06,560 PID: 7254 cluster.py:664 - DEBUG - existing nodes: {u'i-b2910eeb': <Node: master (i-b2910eeb)>, u'i-28900f71': <Node: node001 (i-28900f71)>}
+2012-11-17 19:05:06,561 PID: 7254 cluster.py:667 - DEBUG - updating existing node i-b2910eeb in self._nodes
+2012-11-17 19:05:06,561 PID: 7254 cluster.py:667 - DEBUG - updating existing node i-28900f71 in self._nodes
+2012-11-17 19:05:06,561 PID: 7254 cluster.py:680 - DEBUG - returning self._nodes = [<Node: master (i-b2910eeb)>, <Node: node001 (i-28900f71)>]
+2012-11-17 19:05:06,561 PID: 7254 clustersetup.py:90 - INFO - Configuring hostnames...
+2012-11-17 19:05:06,566 PID: 7254 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-11-17 19:05:07,889 PID: 7254 clustersetup.py:283 - INFO - Mounting EBS volume vol-08697726 on /home...
+2012-11-17 19:05:07,965 PID: 7254 __init__.py:543 - DEBUG - /dev/xvda1 on / type ext4 (rw)
+2012-11-17 19:05:07,965 PID: 7254 __init__.py:543 - DEBUG - proc on /proc type proc (rw,noexec,nosuid,nodev)
+2012-11-17 19:05:07,965 PID: 7254 __init__.py:543 - DEBUG - sysfs on /sys type sysfs (rw,noexec,nosuid,nodev)
+2012-11-17 19:05:07,966 PID: 7254 __init__.py:543 - DEBUG - fusectl on /sys/fs/fuse/connections type fusectl (rw)
+2012-11-17 19:05:07,966 PID: 7254 __init__.py:543 - DEBUG - none on /sys/kernel/debug type debugfs (rw)
+2012-11-17 19:05:07,967 PID: 7254 __init__.py:543 - DEBUG - none on /sys/kernel/security type securityfs (rw)
+2012-11-17 19:05:07,967 PID: 7254 __init__.py:543 - DEBUG - udev on /dev type devtmpfs (rw,mode=0755)
+2012-11-17 19:05:07,967 PID: 7254 __init__.py:543 - DEBUG - devpts on /dev/pts type devpts (rw,noexec,nosuid,gid=5,mode=0620)
+2012-11-17 19:05:07,967 PID: 7254 __init__.py:543 - DEBUG - tmpfs on /run type tmpfs (rw,noexec,nosuid,size=10%,mode=0755)
+2012-11-17 19:05:07,967 PID: 7254 __init__.py:543 - DEBUG - none on /run/lock type tmpfs (rw,noexec,nosuid,nodev,size=5242880)
+2012-11-17 19:05:07,967 PID: 7254 __init__.py:543 - DEBUG - none on /run/shm type tmpfs (rw,nosuid,nodev)
+2012-11-17 19:05:07,967 PID: 7254 __init__.py:543 - DEBUG - /dev/xvdb1 on /mnt type ext3 (rw)
+2012-11-17 19:05:07,968 PID: 7254 __init__.py:543 - DEBUG - rpc_pipefs on /var/lib/nfs/rpc_pipefs type rpc_pipefs (rw)
+2012-11-17 19:05:08,117 PID: 7254 __init__.py:284 - DEBUG - new /etc/fstab after removing regex ( /home ) matches:
+LABEL=cloudimg-rootfs	/	 ext4	defaults	0 0
+/dev/xvdb1	/mnt	auto	defaults,nobootwait,comment=cloudconfig	0	2
+/dev/xvda3	none	swap	sw,comment=cloudconfig	0	0
+
+2012-11-17 19:05:08,823 PID: 7254 clustersetup.py:154 - INFO - Creating cluster user: None (uid: 1002, gid: 1002)
+2012-11-17 19:05:08,823 PID: 7254 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-11-17 19:05:08,923 PID: 7254 clustersetup.py:171 - DEBUG - user sgeadmin does not exist, creating...
+2012-11-17 19:05:08,925 PID: 7254 clustersetup.py:171 - DEBUG - user sgeadmin does not exist, creating...
+2012-11-17 19:05:08,990 PID: 7254 __init__.py:538 - ERROR - command 'groupadd -o -g 1002 sgeadmin' failed with status 9
+2012-11-17 19:05:08,990 PID: 7254 __init__.py:543 - DEBUG - groupadd: group 'sgeadmin' already exists
+2012-11-17 19:05:08,997 PID: 7254 __init__.py:538 - ERROR - command 'groupadd -o -g 1002 sgeadmin' failed with status 9
+2012-11-17 19:05:08,998 PID: 7254 __init__.py:543 - DEBUG - groupadd: group 'sgeadmin' already exists
+2012-11-17 19:05:09,112 PID: 7254 __init__.py:538 - ERROR - command 'useradd -o -u 1002 -g 1002 -s `which bash` -m sgeadmin' failed with status 6
+2012-11-17 19:05:09,113 PID: 7254 __init__.py:543 - DEBUG - useradd: group '1002' does not exist
+2012-11-17 19:05:09,141 PID: 7254 __init__.py:538 - ERROR - command 'useradd -o -u 1002 -g 1002 -s `which bash` -m sgeadmin' failed with status 6
+2012-11-17 19:05:09,142 PID: 7254 __init__.py:543 - DEBUG - useradd: group '1002' does not exist
+2012-11-17 19:05:09,825 PID: 7254 clustersetup.py:200 - INFO - Configuring scratch space for user(s): sgeadmin
+2012-11-17 19:05:09,828 PID: 7254 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-11-17 19:05:10,830 PID: 7254 clustersetup.py:209 - INFO - Configuring /etc/hosts on each node
+2012-11-17 19:05:10,830 PID: 7254 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-11-17 19:05:10,920 PID: 7254 __init__.py:284 - DEBUG - new /etc/hosts after removing regex (master|node001) matches:
+127.0.0.1 ubuntu
+
+# The following lines are desirable for IPv6 capable hosts
+::1 ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+ff02::3 ip6-allhosts
+# Added by cloud-init
+127.0.1.1	ip-10-223-2-92.us-west-1.compute.internal ip-10-223-2-92
+
+2012-11-17 19:05:10,931 PID: 7254 __init__.py:284 - DEBUG - new /etc/hosts after removing regex (master|node001) matches:
+127.0.0.1 ubuntu
+
+# The following lines are desirable for IPv6 capable hosts
+::1 ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+ff02::3 ip6-allhosts
+# Added by cloud-init
+127.0.1.1	ip-10-196-3-176.us-west-1.compute.internal ip-10-196-3-176
+
+2012-11-17 19:05:11,832 PID: 7254 node.py:606 - INFO - Starting NFS server on master
+2012-11-17 19:05:11,909 PID: 7254 __init__.py:543 - DEBUG - Rather than invoking init scripts through /etc/init.d, use the service(8)
+2012-11-17 19:05:11,909 PID: 7254 __init__.py:543 - DEBUG - utility, e.g. service portmap start
+2012-11-17 19:05:11,909 PID: 7254 __init__.py:543 - DEBUG - 
+2012-11-17 19:05:11,909 PID: 7254 __init__.py:543 - DEBUG - Since the script you are attempting to invoke has been converted to an
+2012-11-17 19:05:11,910 PID: 7254 __init__.py:543 - DEBUG - Upstart job, you may also use the start(8) utility, e.g. start portmap
+2012-11-17 19:05:12,042 PID: 7254 __init__.py:540 - DEBUG - command 'mount -t rpc_pipefs sunrpc /var/lib/nfs/rpc_pipefs/' failed with status 32
+2012-11-17 19:05:12,043 PID: 7254 __init__.py:543 - DEBUG - mount: sunrpc already mounted or /var/lib/nfs/rpc_pipefs/ busy
+2012-11-17 19:05:12,043 PID: 7254 __init__.py:543 - DEBUG - mount: according to mtab, rpc_pipefs is already mounted on /var/lib/nfs/rpc_pipefs
+2012-11-17 19:05:13,184 PID: 7254 __init__.py:543 - DEBUG - * Exporting directories for NFS kernel daemon...
+2012-11-17 19:05:13,185 PID: 7254 __init__.py:543 - DEBUG - ...done.
+2012-11-17 19:05:13,185 PID: 7254 __init__.py:543 - DEBUG - * Starting NFS kernel daemon
+2012-11-17 19:05:13,185 PID: 7254 __init__.py:543 - DEBUG - ...done.
+2012-11-17 19:05:13,185 PID: 7254 __init__.py:543 - DEBUG - exportfs: scandir /etc/exports.d: No such file or directory
+2012-11-17 19:05:13,185 PID: 7254 __init__.py:543 - DEBUG - 
+2012-11-17 19:05:13,319 PID: 7254 __init__.py:543 - DEBUG - exportfs: scandir /etc/exports.d: No such file or directory
+2012-11-17 19:05:13,319 PID: 7254 __init__.py:543 - DEBUG - 
+2012-11-17 19:05:13,319 PID: 7254 node.py:577 - INFO - Configuring NFS exports path(s):
+/home
+2012-11-17 19:05:13,611 PID: 7254 __init__.py:543 - DEBUG - exportfs: scandir /etc/exports.d: No such file or directory
+2012-11-17 19:05:13,611 PID: 7254 __init__.py:543 - DEBUG - 
+2012-11-17 19:05:13,611 PID: 7254 clustersetup.py:313 - INFO - Mounting all NFS export path(s) on 1 worker node(s)
+2012-11-17 19:05:13,611 PID: 7254 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2012-11-17 19:05:13,691 PID: 7254 __init__.py:543 - DEBUG - Rather than invoking init scripts through /etc/init.d, use the service(8)
+2012-11-17 19:05:13,691 PID: 7254 __init__.py:543 - DEBUG - utility, e.g. service portmap start
+2012-11-17 19:05:13,691 PID: 7254 __init__.py:543 - DEBUG - 
+2012-11-17 19:05:13,691 PID: 7254 __init__.py:543 - DEBUG - Since the script you are attempting to invoke has been converted to an
+2012-11-17 19:05:13,692 PID: 7254 __init__.py:543 - DEBUG - Upstart job, you may also use the start(8) utility, e.g. start portmap
+2012-11-17 19:05:13,832 PID: 7254 __init__.py:540 - DEBUG - command 'mount -t devpts none /dev/pts' failed with status 32
+2012-11-17 19:05:13,832 PID: 7254 __init__.py:543 - DEBUG - mount: none already mounted or /dev/pts busy
+2012-11-17 19:05:13,832 PID: 7254 __init__.py:543 - DEBUG - mount: according to mtab, devpts is already mounted on /dev/pts
+2012-11-17 19:05:13,968 PID: 7254 __init__.py:543 - DEBUG - /dev/xvda1 on / type ext4 (rw)
+2012-11-17 19:05:13,968 PID: 7254 __init__.py:543 - DEBUG - proc on /proc type proc (rw,noexec,nosuid,nodev)
+2012-11-17 19:05:13,968 PID: 7254 __init__.py:543 - DEBUG - sysfs on /sys type sysfs (rw,noexec,nosuid,nodev)
+2012-11-17 19:05:13,968 PID: 7254 __init__.py:543 - DEBUG - fusectl on /sys/fs/fuse/connections type fusectl (rw)
+2012-11-17 19:05:13,968 PID: 7254 __init__.py:543 - DEBUG - none on /sys/kernel/debug type debugfs (rw)
+2012-11-17 19:05:13,969 PID: 7254 __init__.py:543 - DEBUG - none on /sys/kernel/security type securityfs (rw)
+2012-11-17 19:05:13,969 PID: 7254 __init__.py:543 - DEBUG - udev on /dev type devtmpfs (rw,mode=0755)
+2012-11-17 19:05:13,969 PID: 7254 __init__.py:543 - DEBUG - devpts on /dev/pts type devpts (rw,noexec,nosuid,gid=5,mode=0620)
+2012-11-17 19:05:13,969 PID: 7254 __init__.py:543 - DEBUG - tmpfs on /run type tmpfs (rw,noexec,nosuid,size=10%,mode=0755)
+2012-11-17 19:05:13,969 PID: 7254 __init__.py:543 - DEBUG - none on /run/lock type tmpfs (rw,noexec,nosuid,nodev,size=5242880)
+2012-11-17 19:05:13,970 PID: 7254 __init__.py:543 - DEBUG - none on /run/shm type tmpfs (rw,nosuid,nodev)
+2012-11-17 19:05:13,971 PID: 7254 __init__.py:543 - DEBUG - /dev/xvdb1 on /mnt type ext3 (rw)
+2012-11-17 19:05:13,971 PID: 7254 __init__.py:543 - DEBUG - rpc_pipefs on /var/lib/nfs/rpc_pipefs type rpc_pipefs (rw)
+2012-11-17 19:05:14,130 PID: 7254 __init__.py:284 - DEBUG - new /etc/fstab after removing regex ( /home ) matches:
+LABEL=cloudimg-rootfs	/	 ext4	defaults	0 0
+/dev/xvdb1	/mnt	auto	defaults,nobootwait,comment=cloudconfig	0	2
+
+2012-11-17 19:05:14,613 PID: 7254 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2012-11-17 19:05:15,615 PID: 7254 utils.py:93 - INFO - Setting up NFS took 0.063 mins
+2012-11-17 19:05:15,615 PID: 7254 clustersetup.py:221 - INFO - Configuring passwordless ssh for root
+2012-11-17 19:05:15,810 PID: 7254 node.py:417 - DEBUG - Using existing key: /root/.ssh/id_rsa
+2012-11-17 19:05:16,733 PID: 7254 __init__.py:284 - DEBUG - new /root/.ssh/known_hosts after removing regex (node001|ip-10-196-3-176.us-west-1.compute.internal|ip-10-196-3-176|ec2-184-72-5-250.us-west-1.compute.amazonaws.com) matches:
+ip-10-174-15-230.us-west-1.compute.internal,10.174.15.230 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCqYAlXWScTIK1hJYWf35VQfPQNRmDPqni4Fnz7wHeUr5rRuwmcvIBxuEKRTEJ1Wk00dwI8Omfe6nmUl1Vy0HpPrsPROgm0rqzVZkS7a/3rSU3zmja9G0l9/hJ9v9wLXDn46uayymyTp7MjPqgnbnMJknUPK8UMXPVpRsatkE/34maGd+wrQsLkzSaB0P8NqupB00I1T8K/mglhsY/zfZG+jEmfreWGoEEEYPGo4LhVawMb6bmVUJVKeEvS5dtvHx2IAZ2/cLoKDKyUlm7c5+AbB0t9URBW1A/eek4RwldljmLZIh4BtphFUW4aUhuWZe3r/ArglzaKTiFwRk8Yy/GB
+ec2-184-72-3-66.us-west-1.compute.amazonaws.com,184.72.3.66 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCqYAlXWScTIK1hJYWf35VQfPQNRmDPqni4Fnz7wHeUr5rRuwmcvIBxuEKRTEJ1Wk00dwI8Omfe6nmUl1Vy0HpPrsPROgm0rqzVZkS7a/3rSU3zmja9G0l9/hJ9v9wLXDn46uayymyTp7MjPqgnbnMJknUPK8UMXPVpRsatkE/34maGd+wrQsLkzSaB0P8NqupB00I1T8K/mglhsY/zfZG+jEmfreWGoEEEYPGo4LhVawMb6bmVUJVKeEvS5dtvHx2IAZ2/cLoKDKyUlm7c5+AbB0t9URBW1A/eek4RwldljmLZIh4BtphFUW4aUhuWZe3r/ArglzaKTiFwRk8Yy/GB
+master,10.174.15.230 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCqYAlXWScTIK1hJYWf35VQfPQNRmDPqni4Fnz7wHeUr5rRuwmcvIBxuEKRTEJ1Wk00dwI8Omfe6nmUl1Vy0HpPrsPROgm0rqzVZkS7a/3rSU3zmja9G0l9/hJ9v9wLXDn46uayymyTp7MjPqgnbnMJknUPK8UMXPVpRsatkE/34maGd+wrQsLkzSaB0P8NqupB00I1T8K/mglhsY/zfZG+jEmfreWGoEEEYPGo4LhVawMb6bmVUJVKeEvS5dtvHx2IAZ2/cLoKDKyUlm7c5+AbB0t9URBW1A/eek4RwldljmLZIh4BtphFUW4aUhuWZe3r/ArglzaKTiFwRk8Yy/GB
+ip-10-174-15-230,10.174.15.230 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCqYAlXWScTIK1hJYWf35VQfPQNRmDPqni4Fnz7wHeUr5rRuwmcvIBxuEKRTEJ1Wk00dwI8Omfe6nmUl1Vy0HpPrsPROgm0rqzVZkS7a/3rSU3zmja9G0l9/hJ9v9wLXDn46uayymyTp7MjPqgnbnMJknUPK8UMXPVpRsatkE/34maGd+wrQsLkzSaB0P8NqupB00I1T8K/mglhsY/zfZG+jEmfreWGoEEEYPGo4LhVawMb6bmVUJVKeEvS5dtvHx2IAZ2/cLoKDKyUlm7c5+AbB0t9URBW1A/eek4RwldljmLZIh4BtphFUW4aUhuWZe3r/ArglzaKTiFwRk8Yy/GB
+ip-10-171-15-9,10.171.15.9 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCqYAlXWScTIK1hJYWf35VQfPQNRmDPqni4Fnz7wHeUr5rRuwmcvIBxuEKRTEJ1Wk00dwI8Omfe6nmUl1Vy0HpPrsPROgm0rqzVZkS7a/3rSU3zmja9G0l9/hJ9v9wLXDn46uayymyTp7MjPqgnbnMJknUPK8UMXPVpRsatkE/34maGd+wrQsLkzSaB0P8NqupB00I1T8K/mglhsY/zfZG+jEmfreWGoEEEYPGo4LhVawMb6bmVUJVKeEvS5dtvHx2IAZ2/cLoKDKyUlm7c5+AbB0t9URBW1A/eek4RwldljmLZIh4BtphFUW4aUhuWZe3r/ArglzaKTiFwRk8Yy/GB
+ec2-204-236-166-219.us-west-1.compute.amazonaws.com,204.236.166.219 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCqYAlXWScTIK1hJYWf35VQfPQNRmDPqni4Fnz7wHeUr5rRuwmcvIBxuEKRTEJ1Wk00dwI8Omfe6nmUl1Vy0HpPrsPROgm0rqzVZkS7a/3rSU3zmja9G0l9/hJ9v9wLXDn46uayymyTp7MjPqgnbnMJknUPK8UMXPVpRsatkE/34maGd+wrQsLkzSaB0P8NqupB00I1T8K/mglhsY/zfZG+jEmfreWGoEEEYPGo4LhVawMb6bmVUJVKeEvS5dtvHx2IAZ2/cLoKDKyUlm7c5+AbB0t9URBW1A/eek4RwldljmLZIh4BtphFUW4aUhuWZe3r/ArglzaKTiFwRk8Yy/GB
+master,10.171.15.9 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCqYAlXWScTIK1hJYWf35VQfPQNRmDPqni4Fnz7wHeUr5rRuwmcvIBxuEKRTEJ1Wk00dwI8Omfe6nmUl1Vy0HpPrsPROgm0rqzVZkS7a/3rSU3zmja9G0l9/hJ9v9wLXDn46uayymyTp7MjPqgnbnMJknUPK8UMXPVpRsatkE/34maGd+wrQsLkzSaB0P8NqupB00I1T8K/mglhsY/zfZG+jEmfreWGoEEEYPGo4LhVawMb6bmVUJVKeEvS5dtvHx2IAZ2/cLoKDKyUlm7c5+AbB0t9URBW1A/eek4RwldljmLZIh4BtphFUW4aUhuWZe3r/ArglzaKTiFwRk8Yy/GB
+ip-10-171-15-9.us-west-1.compute.internal,10.171.15.9 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCqYAlXWScTIK1hJYWf35VQfPQNRmDPqni4Fnz7wHeUr5rRuwmcvIBxuEKRTEJ1Wk00dwI8Omfe6nmUl1Vy0HpPrsPROgm0rqzVZkS7a/3rSU3zmja9G0l9/hJ9v9wLXDn46uayymyTp7MjPqgnbnMJknUPK8UMXPVpRsatkE/34maGd+wrQsLkzSaB0P8NqupB00I1T8K/mglhsY/zfZG+jEmfreWGoEEEYPGo4LhVawMb6bmVUJVKeEvS5dtvHx2IAZ2/cLoKDKyUlm7c5+AbB0t9URBW1A/eek4RwldljmLZIh4BtphFUW4aUhuWZe3r/ArglzaKTiFwRk8Yy/GB
+ip-10-170-243-201.us-west-1.compute.internal,10.170.243.201 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDh27hlwsEzGlrDuB9B+n0GGgfj2gT7l2rphZXxz/pjYEQulN6RZZaeANs36++/2nrB9SJy8ecYyMJvS6pdpGAnOkpq8YTyN76n6smheUXKHtE2JQap8nZcLeKZnxY6FnscDdx3J/nwaBxn5KsTkc7x5kBTx94BW8pXoIFGf3pKTqvkLBFC0rgbE7jyeEDCWZEPljC2QMncQPaDrW/k1G5uUJirntjyDXe2Wbo0zcOmSx3T5G5V+9jkq8up7rfp4TAjcuC5b5k9Y5Spx9FjnHeBnnnf7/iQHYePzMqJuVdHUHDhJRiQOSxfprircRYwR7/wQr3EShCP3SuoPzV7kuc3
+ec2-204-236-177-91.us-west-1.compute.amazonaws.com,204.236.177.91 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDh27hlwsEzGlrDuB9B+n0GGgfj2gT7l2rphZXxz/pjYEQulN6RZZaeANs36++/2nrB9SJy8ecYyMJvS6pdpGAnOkpq8YTyN76n6smheUXKHtE2JQap8nZcLeKZnxY6FnscDdx3J/nwaBxn5KsTkc7x5kBTx94BW8pXoIFGf3pKTqvkLBFC0rgbE7jyeEDCWZEPljC2QMncQPaDrW/k1G5uUJirntjyDXe2Wbo0zcOmSx3T5G5V+9jkq8up7rfp4TAjcuC5b5k9Y5Spx9FjnHeBnnnf7/iQHYePzMqJuVdHUHDhJRiQOSxfprircRYwR7/wQr3EShCP3SuoPzV7kuc3
+ip-10-170-243-201,10.170.243.201 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDh27hlwsEzGlrDuB9B+n0GGgfj2gT7l2rphZXxz/pjYEQulN6RZZaeANs36++/2nrB9SJy8ecYyMJvS6pdpGAnOkpq8YTyN76n6smheUXKHtE2JQap8nZcLeKZnxY6FnscDdx3J/nwaBxn5KsTkc7x5kBTx94BW8pXoIFGf3pKTqvkLBFC0rgbE7jyeEDCWZEPljC2QMncQPaDrW/k1G5uUJirntjyDXe2Wbo0zcOmSx3T5G5V+9jkq8up7rfp4TAjcuC5b5k9Y5Spx9FjnHeBnnnf7/iQHYePzMqJuVdHUHDhJRiQOSxfprircRYwR7/wQr3EShCP3SuoPzV7kuc3
+ec2-204-236-186-170.us-west-1.compute.amazonaws.com,204.236.186.170 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDEpFd5/aTGEt7J059NyUCBcGRKnFeUmudQcniX1whpBRHOdLJjIZd8/rvplhVQKTUJ3FaYTStE1/v5LMEz5mbxVRQRbNDT7fz/3UQk0X5qMR1Hq+qDuy20MGwbF3DGZPtK34XMZ0j2hWipqgTguTX6QUq6tUUMwr9Gue+M0Dok4XLtbRZdTxJ19cCmNy1tfQX8s8myLhRwZifMiAKs6yy9PXPU7qqmRg5DJdHcc3SiaMa+uRGqzkkNhIGBHSVyG7IFktkFDUUNi5C5EC0CDxogLNI7b7Lh0Sf4KRD09bDJ2r79ZLQxOVPOs+S+oOsXGVSiwKUzz3tK+EAsPbDXabVZ
+ip-10-171-89-213,10.171.89.213 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDEpFd5/aTGEt7J059NyUCBcGRKnFeUmudQcniX1whpBRHOdLJjIZd8/rvplhVQKTUJ3FaYTStE1/v5LMEz5mbxVRQRbNDT7fz/3UQk0X5qMR1Hq+qDuy20MGwbF3DGZPtK34XMZ0j2hWipqgTguTX6QUq6tUUMwr9Gue+M0Dok4XLtbRZdTxJ19cCmNy1tfQX8s8myLhRwZifMiAKs6yy9PXPU7qqmRg5DJdHcc3SiaMa+uRGqzkkNhIGBHSVyG7IFktkFDUUNi5C5EC0CDxogLNI7b7Lh0Sf4KRD09bDJ2r79ZLQxOVPOs+S+oOsXGVSiwKUzz3tK+EAsPbDXabVZ
+ip-10-171-89-213.us-west-1.compute.internal,10.171.89.213 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDEpFd5/aTGEt7J059NyUCBcGRKnFeUmudQcniX1whpBRHOdLJjIZd8/rvplhVQKTUJ3FaYTStE1/v5LMEz5mbxVRQRbNDT7fz/3UQk0X5qMR1Hq+qDuy20MGwbF3DGZPtK34XMZ0j2hWipqgTguTX6QUq6tUUMwr9Gue+M0Dok4XLtbRZdTxJ19cCmNy1tfQX8s8myLhRwZifMiAKs6yy9PXPU7qqmRg5DJdHcc3SiaMa+uRGqzkkNhIGBHSVyG7IFktkFDUUNi5C5EC0CDxogLNI7b7Lh0Sf4KRD09bDJ2r79ZLQxOVPOs+S+oOsXGVSiwKUzz3tK+EAsPbDXabVZ
+master,10.171.89.213 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDEpFd5/aTGEt7J059NyUCBcGRKnFeUmudQcniX1whpBRHOdLJjIZd8/rvplhVQKTUJ3FaYTStE1/v5LMEz5mbxVRQRbNDT7fz/3UQk0X5qMR1Hq+qDuy20MGwbF3DGZPtK34XMZ0j2hWipqgTguTX6QUq6tUUMwr9Gue+M0Dok4XLtbRZdTxJ19cCmNy1tfQX8s8myLhRwZifMiAKs6yy9PXPU7qqmRg5DJdHcc3SiaMa+uRGqzkkNhIGBHSVyG7IFktkFDUUNi5C5EC0CDxogLNI7b7Lh0Sf4KRD09bDJ2r79ZLQxOVPOs+S+oOsXGVSiwKUzz3tK+EAsPbDXabVZ
+ip-10-172-49-193,10.172.49.193 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDh27hlwsEzGlrDuB9B+n0GGgfj2gT7l2rphZXxz/pjYEQulN6RZZaeANs36++/2nrB9SJy8ecYyMJvS6pdpGAnOkpq8YTyN76n6smheUXKHtE2JQap8nZcLeKZnxY6FnscDdx3J/nwaBxn5KsTkc7x5kBTx94BW8pXoIFGf3pKTqvkLBFC0rgbE7jyeEDCWZEPljC2QMncQPaDrW/k1G5uUJirntjyDXe2Wbo0zcOmSx3T5G5V+9jkq8up7rfp4TAjcuC5b5k9Y5Spx9FjnHeBnnnf7/iQHYePzMqJuVdHUHDhJRiQOSxfprircRYwR7/wQr3EShCP3SuoPzV7kuc3
+ec2-54-241-90-101.us-west-1.compute.amazonaws.com,54.241.90.101 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDh27hlwsEzGlrDuB9B+n0GGgfj2gT7l2rphZXxz/pjYEQulN6RZZaeANs36++/2nrB9SJy8ecYyMJvS6pdpGAnOkpq8YTyN76n6smheUXKHtE2JQap8nZcLeKZnxY6FnscDdx3J/nwaBxn5KsTkc7x5kBTx94BW8pXoIFGf3pKTqvkLBFC0rgbE7jyeEDCWZEPljC2QMncQPaDrW/k1G5uUJirntjyDXe2Wbo0zcOmSx3T5G5V+9jkq8up7rfp4TAjcuC5b5k9Y5Spx9FjnHeBnnnf7/iQHYePzMqJuVdHUHDhJRiQOSxfprircRYwR7/wQr3EShCP3SuoPzV7kuc3
+ip-10-172-49-193.us-west-1.compute.internal,10.172.49.193 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDh27hlwsEzGlrDuB9B+n0GGgfj2gT7l2rphZXxz/pjYEQulN6RZZaeANs36++/2nrB9SJy8ecYyMJvS6pdpGAnOkpq8YTyN76n6smheUXKHtE2JQap8nZcLeKZnxY6FnscDdx3J/nwaBxn5KsTkc7x5kBTx94BW8pXoIFGf3pKTqvkLBFC0rgbE7jyeEDCWZEPljC2QMncQPaDrW/k1G5uUJirntjyDXe2Wbo0zcOmSx3T5G5V+9jkq8up7rfp4TAjcuC5b5k9Y5Spx9FjnHeBnnnf7/iQHYePzMqJuVdHUHDhJRiQOSxfprircRYwR7/wQr3EShCP3SuoPzV7kuc3
+ip-10-172-154-164,10.172.154.164 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDEpFd5/aTGEt7J059NyUCBcGRKnFeUmudQcniX1whpBRHOdLJjIZd8/rvplhVQKTUJ3FaYTStE1/v5LMEz5mbxVRQRbNDT7fz/3UQk0X5qMR1Hq+qDuy20MGwbF3DGZPtK34XMZ0j2hWipqgTguTX6QUq6tUUMwr9Gue+M0Dok4XLtbRZdTxJ19cCmNy1tfQX8s8myLhRwZifMiAKs6yy9PXPU7qqmRg5DJdHcc3SiaMa+uRGqzkkNhIGBHSVyG7IFktkFDUUNi5C5EC0CDxogLNI7b7Lh0Sf4KRD09bDJ2r79ZLQxOVPOs+S+oOsXGVSiwKUzz3tK+EAsPbDXabVZ
+ip-10-172-154-164.us-west-1.compute.internal,10.172.154.164 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDEpFd5/aTGEt7J059NyUCBcGRKnFeUmudQcniX1whpBRHOdLJjIZd8/rvplhVQKTUJ3FaYTStE1/v5LMEz5mbxVRQRbNDT7fz/3UQk0X5qMR1Hq+qDuy20MGwbF3DGZPtK34XMZ0j2hWipqgTguTX6QUq6tUUMwr9Gue+M0Dok4XLtbRZdTxJ19cCmNy1tfQX8s8myLhRwZifMiAKs6yy9PXPU7qqmRg5DJdHcc3SiaMa+uRGqzkkNhIGBHSVyG7IFktkFDUUNi5C5EC0CDxogLNI7b7Lh0Sf4KRD09bDJ2r79ZLQxOVPOs+S+oOsXGVSiwKUzz3tK+EAsPbDXabVZ
+master,10.172.154.164 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDEpFd5/aTGEt7J059NyUCBcGRKnFeUmudQcniX1whpBRHOdLJjIZd8/rvplhVQKTUJ3FaYTStE1/v5LMEz5mbxVRQRbNDT7fz/3UQk0X5qMR1Hq+qDuy20MGwbF3DGZPtK34XMZ0j2hWipqgTguTX6QUq6tUUMwr9Gue+M0Dok4XLtbRZdTxJ19cCmNy1tfQX8s8myLhRwZifMiAKs6yy9PXPU7qqmRg5DJdHcc3SiaMa+uRGqzkkNhIGBHSVyG7IFktkFDUUNi5C5EC0CDxogLNI7b7Lh0Sf4KRD09bDJ2r79ZLQxOVPOs+S+oOsXGVSiwKUzz3tK+EAsPbDXabVZ
+ec2-54-241-109-36.us-west-1.compute.amazonaws.com,54.241.109.36 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDEpFd5/aTGEt7J059NyUCBcGRKnFeUmudQcniX1whpBRHOdLJjIZd8/rvplhVQKTUJ3FaYTStE1/v5LMEz5mbxVRQRbNDT7fz/3UQk0X5qMR1Hq+qDuy20MGwbF3DGZPtK34XMZ0j2hWipqgTguTX6QUq6tUUMwr9Gue+M0Dok4XLtbRZdTxJ19cCmNy1tfQX8s8myLhRwZifMiAKs6yy9PXPU7qqmRg5DJdHcc3SiaMa+uRGqzkkNhIGBHSVyG7IFktkFDUUNi5C5EC0CDxogLNI7b7Lh0Sf4KRD09bDJ2r79ZLQxOVPOs+S+oOsXGVSiwKUzz3tK+EAsPbDXabVZ
+
+2012-11-17 19:05:18,714 PID: 7254 clustersetup.py:229 - INFO - Configuring passwordless ssh for sgeadmin
+2012-11-17 19:05:18,852 PID: 7254 threadpool.py:123 - INFO - Shutting down threads...
+2012-11-17 19:05:18,853 PID: 7254 threadpool.py:135 - DEBUG - unfinished_tasks = 19
+2012-11-17 19:05:20,004 PID: 7254 cli.py:287 - DEBUG - Traceback (most recent call last):
+  File "/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/starcluster/cli.py", line 255, in main
+    sc.execute(args)
+  File "/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/starcluster/commands/start.py", line 194, in execute
+    validate_running=validate_running)
+  File "/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/starcluster/cluster.py", line 1414, in start
+    return self._start(create=create, create_only=create_only)
+  File "<string>", line 2, in _start
+  File "/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/starcluster/utils.py", line 87, in wrap_f
+    res = func(*arg, **kargs)
+  File "/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/starcluster/cluster.py", line 1437, in _start
+    self.setup_cluster()
+  File "/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/starcluster/cluster.py", line 1446, in setup_cluster
+    self._setup_cluster()
+  File "<string>", line 2, in _setup_cluster
+  File "/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/starcluster/utils.py", line 87, in wrap_f
+    res = func(*arg, **kargs)
+  File "/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/starcluster/cluster.py", line 1460, in _setup_cluster
+    self.cluster_shell, self.volumes)
+  File "/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/starcluster/clustersetup.py", line 350, in run
+    self._setup_passwordless_ssh()
+  File "/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/starcluster/clustersetup.py", line 231, in _setup_passwordless_ssh
+    auth_conn_key=True)
+  File "/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/starcluster/node.py", line 411, in generate_key_for_user
+    self.ssh.mkdir(ssh_folder)
+  File "/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/starcluster/sshutils/__init__.py", line 245, in mkdir
+    return self.sftp.mkdir(path, mode)
+  File "/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/ssh/sftp_client.py", line 303, in mkdir
+    self._request(CMD_MKDIR, path, attr)
+  File "/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/ssh/sftp_client.py", line 635, in _request
+    return self._read_response(num)
+  File "/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/ssh/sftp_client.py", line 682, in _read_response
+    self._convert_status(msg)
+  File "/opt/local/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/ssh/sftp_client.py", line 708, in _convert_status
+    raise IOError(errno.ENOENT, text)
+IOError: [Errno 2] No such file
+
+---------- SYSTEM INFO ----------
+StarCluster: 0.93.3
+Python: 2.7.3 (default, Oct  3 2012, 16:48:49)  [GCC 4.2.1 Compatible Apple Clang 4.1 ((tags/Apple/clang-421.11.65))]
+Platform: Darwin-12.2.0-x86_64-i386-64bit
+boto: 2.3.0
+ssh: 1.7.13
+Crypto: 2.6
+jinja2: 2.6
+decorator: 3.3.1

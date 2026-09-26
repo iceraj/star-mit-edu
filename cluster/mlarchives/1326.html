@@ -1,0 +1,265 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Zachary Harris ((no email))" />
+<meta name="Subject" content="Noteworthy Nitpicks on 0.93.3" />
+<title>starcluster.mbox.out: Noteworthy Nitpicks on 0.93.3</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Noteworthy Nitpicks on 0.93.3</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Noteworthy Nitpicks on 0.93.3</h1>
+<!-- received="Wed Jul 25 11:39:12 2012" -->
+<!-- isoreceived="20120725153912" -->
+<!-- sent="Wed, 25 Jul 2012 11:39:06 -0400" -->
+<!-- isosent="20120725153906" -->
+<!-- name="Zachary Harris" -->
+<!-- email="(no email)" -->
+<!-- subject="Noteworthy Nitpicks on 0.93.3" -->
+<!-- id="BLU0-SMTP45329B3756A65345E52032AA6C30_at_phx.gbl" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1326.html#start1326" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1326.html#options2">top</a>, <a href="1326.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1327.html" accesskey="d" title="Chris Diehl: &quot;Using DRMAA on StarCluster&quot;">Next message</a> ]
+[ <a href="1325.html" title="Napolitano, Diane: &quot;Re:  No handlers could be found for logger &#0034;ssh.transport&#0034;&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1326" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1326" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1326" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1326" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Zachary Harris &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Wed, 25 Jul 2012 11:39:06 -0400</span><br />
+</address>
+<br />
+1) Typo: the help for the '-n' option in the 'get' command should say
+<br />
+&quot;Transfer files *from* NODE&quot; rather than &quot;to NODE&quot;.
+<br />
+<br />2) I don't know about other Starcluster AMI's, but at least ami-4583572c
+<br />
+has *both* openmpi and mpich2 installed, with /etc/alternatives set up
+<br />
+to point to openmpi as the default. I presume the inclusion of both is
+<br />
+intentional, but it can cause some problems, or at least confusion,
+<br />
+because the documentation for the MPICH2 Plugin says, &quot;By default
+<br />
+StarCluster includes OpenMPI. However, for either performance or
+<br />
+compatibility reasons, you may wish to use MPICH2 which provides an
+<br />
+alternate MPI implementation. The MPICH2 plugin will install and
+<br />
+configure MPICH2 on your clusters&quot;
+<br />
+(<a href="http://web.mit.edu/star/cluster/docs/latest/plugins/mpich2.html">http://web.mit.edu/star/cluster/docs/latest/plugins/mpich2.html</a>). One
+<br />
+would easily assume from this documentation that the default state of
+<br />
+the AMI does *not* include an installation of MPICH2 at all, when in
+<br />
+fact MPICH2 actually is *installed*, it is just not configured to be the
+<br />
+dominant binary called from the command line.
+<br />
+&nbsp;&nbsp;What happened to me was that I was running some software (CADO-NFS for
+<br />
+integer factorization) which has its own internal mechanism for
+<br />
+detecting which brand of MPI is being used. When the perl code found
+<br />
+that /usr/bin/mpich2version existed on the system, it assumed (quite
+<br />
+understandably so) that /usr/bin/mpiexec would be MPICH2, but in reality
+<br />
+/usr/bin/mpiexec was pointing to /usr/bin/mpiexec.openmpi. This caused
+<br />
+the factorization software to crash because it was setting up a faulty
+<br />
+command line using MPICH2-specific flags. Since I intentionally had NOT
+<br />
+activated the mpich2 plugin in the Starcluster config file, it took me
+<br />
+several minutes of confusion to get sorted out what was going on (I
+<br />
+fixed the problem simply by purging mpich2). I have reported this &quot;bug&quot;
+<br />
+to the developers of the factorization software itself, but thought that
+<br />
+you guys also might want to take note of the apparent discrepancy
+<br />
+between the docs and the installation.
+<br />
+<br />3) Please add &quot;localhost&quot; to the ssh known_host list for all accounts
+<br />
+set up on all nodes, unless there is some reason not to.
+<br />
+<br />4) Also on the topic of ssh configuration: shouldn't the directory
+<br />
+/home/$CLUSTER_USER/.ssh belong to CLUSTER_USER himself? From what I
+<br />
+have seen, the present setup makes the files *inside* .ssh/ owned by
+<br />
+CLUSTER_USER, but this directory itself belongs to root, which forces an
+<br />
+extra step of work if I want to set up an ssh config file for CLUSTER_USER.
+<br />
+<br />5) The help for the sshnode command claims the ability to use
+<br />
+&quot;shorthand&quot;, such that the user can call
+<br />
+starcluster sn mycluster 1 instead of starcluster sn mycluster node001.
+<br />
+However, while the longhand command in this example works just fine for
+<br />
+me, if I try the abbreviated version I get &quot;!!! ERROR - node '1' does
+<br />
+not exist&quot;.
+<br />
+<br />&nbsp;&nbsp;I'll be glad to supply more details if any of the above are specific
+<br />
+to me rather than general issues.
+<br />
+<br />&nbsp;&nbsp;Finally, thanks and congrats on a great product (nitpicks aside).
+<br />
+Starcluster gets an awful lot done from a profoundly simple interface,
+<br />
+with clear and nicely presented documentation, so that I can focus on my
+<br />
+interest area of actually *running* my programs rather than on the
+<br />
+mechanics of setting up clusters in order to be able to run them. I see
+<br />
+that a lot of folks are using Starcluster for biological applications,
+<br />
+etc., and as a mathematician I would testify that Starcluster is an
+<br />
+important tool to have in the arsenal for factoring large numbers as well!
+<br />
+<span id="received"><dfn>Received on</dfn> Wed Jul 25 2012 - 11:39:12 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1326.html#start1326">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1327.html" title="Next message in the list">Chris Diehl: "Using DRMAA on StarCluster"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1325.html" title="Previous message in the list">Napolitano, Diane: "Re:  No handlers could be found for logger &#0034;ssh.transport&#0034;"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1326" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1326" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1326" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1326" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

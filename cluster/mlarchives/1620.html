@@ -1,0 +1,523 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Lyn Gerner ((no email))" />
+<meta name="Subject" content="adding nodes to an existing cluster of a different instance type" />
+<title>starcluster.mbox.out: adding nodes to an existing cluster of a different instance type</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">adding nodes to an existing cluster of a different instance type</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>adding nodes to an existing cluster of a different instance type</h1>
+<!-- received="Thu Jan 24 13:00:03 2013" -->
+<!-- isoreceived="20130124180003" -->
+<!-- sent="Thu, 24 Jan 2013 10:00:02 -0800" -->
+<!-- isosent="20130124180002" -->
+<!-- name="Lyn Gerner" -->
+<!-- email="(no email)" -->
+<!-- subject="adding nodes to an existing cluster of a different instance type" -->
+<!-- id="CAD3e3FYWKmBXdDgQm4yvi0B9oTk3oSzCvW8sFP10ZRjnjQmebA_at_mail.gmail.com" -->
+<!-- charset="windows-1252" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1620.html#start1620" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1620.html#options2">top</a>, <a href="1620.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1621.html" accesskey="d" title="Greg Caporaso: &quot;!!! ERROR - Incorrect fingerprint for key_location&quot;">Next message</a> ]
+[ <a href="1619.html" title="MacMullan, Hugh: &quot;Re:  Amazon AMI 64-bit Ubuntu 11 HVM-EBS for eu-west-1 region&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1620" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1620" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1620" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1620" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Lyn Gerner &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 24 Jan 2013 10:00:02 -0800</span><br />
+</address>
+<br />
+Hi Ryan,
+<br />
+<br />I experimented with addnode a while back:
+<br />
+<br />1) Couldn't add an on-demand instance to a cluster initiated w/spot-bid
+<br />
+instances.
+<br />
+<br />2) *Could* add a spot-bid instance to a cluster initiated w/on-demand
+<br />
+instances.
+<br />
+<br />3) addnode command in any case will add whatever instance type you specify
+<br />
+with &quot;-I&quot;, so you can run heterogeneously amongst the compute hosts (with
+<br />
+each instance potentially having a different bid price).
+<br />
+<br />Cheers,
+<br />
+Lyn
+<br />
+<br />---------- Forwarded message ----------
+<br />
+From: Ryan Golhar &lt;ngsbioinformatics_at_gmail.com&gt;
+<br />
+To: starcluster_at_mit.edu
+<br />
+Cc:
+<br />
+Date: Thu, 24 Jan 2013 12:39:47 -0500
+<br />
+Subject: [StarCluster] adding nodes to an existing cluster of a different
+<br />
+instance type
+<br />
+Is it possible to add a node to a running cluster that is different from
+<br />
+the instance type in the config file?    I didn't see anything in the docs
+<br />
+<br /><br />---------- Forwarded message ----------
+<br />
+From: &quot;MacMullan, Hugh&quot; &lt;hughmac_at_wharton.upenn.edu&gt;
+<br />
+To: &quot;'Ed Morris'&quot; &lt;ecm200_at_gmail.com&gt;
+<br />
+Cc: &quot;'starcluster_at_mit.edu'&quot; &lt;starcluster_at_mit.edu&gt;
+<br />
+Date: Thu, 24 Jan 2013 17:40:56 +0000
+<br />
+Subject: Re: [StarCluster] Amazon AMI 64-bit Ubuntu 11 HVM-EBS for
+<br />
+eu-west-1 region
+<br />
+<br />Hi Ed:****
+<br />
+<br />** **
+<br />
+<br />Woohoo, great news!****
+<br />
+<br />** **
+<br />
+<br />Lincoln Stein, maintainer of the VM::EC2 Perl module, has added HVM copy
+<br />
+functionality to his (already pretty awesome) module! The module includes
+<br />
+the Perl script migrate-ebs-image.pl, which makes copies a breeze.****
+<br />
+<br />** **
+<br />
+<br />I just tested it with a copy of a Scientific Linux 6.3 HVM StarCluster
+<br />
+image that I use frequently. Here’s the output:****
+<br />
+<br />** **
+<br />
+<br /># migrate-ebs-image.pl --from us-east-1 --to eu-west-1 ami-XXXXXXXXX****
+<br />
+<br />[info] Scanning for existing staging servers and volumes in
+<br />
+<a href="http://ec2.us-east-1.amazonaws.com">http://ec2.us-east-1.amazonaws.com</a>.****
+<br />
+<br />[info] Scanning for existing staging servers and volumes in
+<br />
+<a href="http://ec2.eu-west-1.amazonaws.com">http://ec2.eu-west-1.amazonaws.com</a>.****
+<br />
+<br />[info]    Gathering information about image ami-XXXXXXXXX.****
+<br />
+<br />[info]    Copying EBS volumes attached to this image (this may take a long
+<br />
+time).****
+<br />
+<br />[info]       Copying snapshot snap-XXXXXXXX from us-east-1 to eu-west-1...**
+<br />
+**
+<br />
+<br />[info]       ...new snapshot = snap-XXXXXXXXXX; status = pending****
+<br />
+<br />[info]    Waiting for all snapshots to complete. This may take a long time.*
+<br />
+***
+<br />
+<br />An image named 'starcluster-base-scientific-linux-6.3-x86_64-hvm-005'
+<br />
+already exists in destination region. Renamed to
+<br />
+'starcluster-base-scientific-linux-6.3-x86_64-hvm-005-d88a4dfe' *ß** I
+<br />
+REALLY LIKE THIS!!!*****
+<br />
+<br />[info]    Registering snapshot in destination with the equivalent of:****
+<br />
+<br />[info]    ec2-register -n
+<br />
+'starcluster-base-scientific-linux-6.3-x86_64-hvm-005-XXXXX' -d 'Image
+<br />
+created _at_ 201301202215' -a x86_64 --kernel '' --ramdisk ''
+<br />
+--root-device-name /dev/sda1 -b /dev/sda1=snap-XXXXXXXXXXX:false:standard***
+<br />
+*
+<br />
+<br />[info]       Searching for a suitable HVM image in destination region****
+<br />
+<br />[info]       ...Found ami-011b1975 (suse-sles-11-sp2-hvm-v1.01.x86_64)****
+<br />
+<br />[info]       Launching an HVM staging server in the target region.
+<br />
+Heuristically choosing instance type of 'cc2.8xlarge' for this type of HVM..
+<br />
+****
+<br />
+<br />[info]       Waiting for instance to become ready.****
+<br />
+<br />[info]       Stopping instance temporarily to swap root volumes.****
+<br />
+<br />[info]       Detaching original root volume...****
+<br />
+<br />[info]       Creating and attaching new root volume..****
+<br />
+<br />[info]       Creating image in destination region...****
+<br />
+<br />[info]       Terminating the staging server****
+<br />
+<br />New snapshot is now located in eu-west-1 under ami-XXXXXXXXX.****
+<br />
+<br />** **
+<br />
+<br />No muss, no fuss. As you can see, it has to launch a cc2.8xlarge to do the
+<br />
+copy, so it’ll cost you to do the transfer. It’s currently in the
+<br />
+hvm-migrate alpha GIT tree:****
+<br />
+<br />** **
+<br />
+<br /><a href="https://github.com/lstein/LibVM-EC2-Perl/tree/hvm-migrate">https://github.com/lstein/LibVM-EC2-Perl/tree/hvm-migrate</a>****
+<br />
+<br />** **
+<br />
+<br />He’ll be publishing to CPAN today or tomorrow after Windows AMI testing. It
+<br />
+will be VM::EC2 1.23 on CPAN.****
+<br />
+<br />** **
+<br />
+<br />So there you go.****
+<br />
+<br />** **
+<br />
+<br />-Hugh****
+<br />
+<br />** **
+<br />
+<br />** **
+<br />
+<br />*From:* Ed Morris [mailto:ecm200_at_gmail.com]
+<br />
+*Sent:* Friday, January 18, 2013 12:43 PM
+<br />
+*To:* MacMullan, Hugh
+<br />
+*Cc:* starcluster_at_mit.edu
+<br />
+*Subject:* Re: [StarCluster] Amazon AMI 64-bit Ubuntu 11 HVM-EBS for
+<br />
+eu-west-1 region****
+<br />
+<br />** **
+<br />
+<br />** **
+<br />
+<br />Hi Hugh.****
+<br />
+<br />** **
+<br />
+<br />Thanks for that, much appreciated.****
+<br />
+<br />** **
+<br />
+<br />I tried using the &quot;snapshot&quot; route, which allows you to transfer snapshots
+<br />
+between regions through the AWS web console (AWS documentation
+<br />
+here&lt;<a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html</a>&gt;),
+<br />
+but so far I have had no luck with regards to that. I started an instance
+<br />
+with the US-EAST-1 Ubuntu 11.10 x86_64 HVM AMI (not through Star Cluster),
+<br />
+and then created a snap shot of the root volume. I then transferred the
+<br />
+snapshot to EU-WEST-1 region and converted that into an AMI. One issue I
+<br />
+had, and have still not solved, was the &quot;kernel ID&quot; specification which was
+<br />
+needed during the creation of the AMI from the snap shot. I could not find
+<br />
+the kernel ID for the AMI in question, even though other flavours of Star
+<br />
+Cluster AMI's did have associated Kernel IDs.  I came unstuck when I tried
+<br />
+to execute the AMI that I had transferred from the US-EAST-1 region to
+<br />
+EU-WEST-1 region, and I was told by StarCluster that the AMI was not HVM,
+<br />
+and therefore could not be executed on the CC2.8xlarge instance type. I am
+<br />
+positive that I am using the correct AMI which is HVM supported, as this is
+<br />
+currently the only HVM supported AMI that's available, and it's only
+<br />
+available in US-EAST-1.****
+<br />
+<br />** **
+<br />
+<br />I plan to try something slightly different, by creating a custom AMI using
+<br />
+the StarCluster tools, and then creating a snap shot from that AMI, and
+<br />
+transferring that. But again I may come up against the Kernel ID issue,
+<br />
+which I still don't know how to solve.****
+<br />
+<br />** **
+<br />
+<br />However some good news, I have read in a number of places on the web that
+<br />
+Amazon are developing a tool for transferring AMI's the same way you can
+<br />
+now transfer snap shots, and can be undertaken through the AWS console. I
+<br />
+haven't managed to find when this is expected to be implemented though.****
+<br />
+<br />** **
+<br />
+<br />There is also this that I found (Ylastic &lt;<a href="http://ylastic.com/features.html">http://ylastic.com/features.html</a>&gt;),
+<br />
+which amongst a lot of things, appears to suggest that it can migrate EBS
+<br />
+AMI's from region to region.****
+<br />
+<br />** **
+<br />
+<br />** **
+<br />
+<br />On 18 January 2013 18:16, MacMullan, Hugh &lt;hughmac_at_wharton.upenn.edu&gt; wrote:
+<br />
+****
+<br />
+<br />Hi Ed:****
+<br />
+<br />&nbsp;****
+<br />
+<br />I have no EU AMIs, but I’ve been curious about the second question you
+<br />
+have: what’s the ‘easy’ way to transfer AMIs? I poked around a bit today,
+<br />
+and it looks like ‘migrate-ebs-image.pl’, part of the VM::EC2 Perl module,
+<br />
+is a good solution … *except* that it converts my HVM AMIs to PV. Argh! J***
+<br />
+*
+<br />
+<br />&nbsp;****
+<br />
+<br />I’ve got a query in with the developer (Lincoln Stein) about HVM copies.
+<br />
+I’ll let you know what I discover.****
+<br />
+<br />&nbsp;****
+<br />
+<br />That said, if others have other *easy* ways to transfer AMIs … I’m all ears
+<br />
+too!****
+<br />
+<br />&nbsp;****
+<br />
+<br />-Hugh****
+<br />
+<br />&nbsp;****
+<br />
+<br />&nbsp;****
+<br />
+<br />*From:* starcluster-bounces_at_mit.edu [mailto:starcluster-bounces_at_mit.edu] *On
+<br />
+Behalf Of *Ed Morris
+<br />
+*Sent:* Friday, January 18, 2013 5:26 AM
+<br />
+*To:* starcluster_at_mit.edu
+<br />
+*Subject:* [StarCluster] Amazon AMI 64-bit Ubuntu 11 HVM-EBS for eu-west-1
+<br />
+region****
+<br />
+<br />&nbsp;****
+<br />
+<br />Hi.****
+<br />
+<br />&nbsp;****
+<br />
+<br />Does anyone know if there is an AMI available using HVM version of Ubuntu
+<br />
+for the cc8.xlarge compute node for starcluster in the eu-west-1 region?****
+<br />
+<br />&nbsp;****
+<br />
+<br />I have been quite happily using the AMI ami-4583572c us-east-1
+<br />
+starcluster-base-ubuntu-11.10-x86_64-hvm (HVM-EBS) on the us-east region,
+<br />
+but couldn't find any HVM versions in the eu region.****
+<br />
+<br />&nbsp;****
+<br />
+<br />Any ideas? Can the HVM-EBS be easily transferred to the eu region?****
+<br />
+<br />&nbsp;****
+<br />
+<br />Ed.
+<br />
+****
+<br />
+<br />&nbsp;****
+<br />
+<br /><pre>
+-- 
+Ed Morris
+------------------------------------------------
+email: ecm200_at_gmail.com
+phone: ****
+****
+** **
+-- 
+Ed Morris
+------------------------------------------------
+email: ecm200_at_gmail.com
+phone: ****
+_______________________________________________
+StarCluster mailing list
+StarCluster_at_mit.edu
+<a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</pre>
+<span id="received"><dfn>Received on</dfn> Thu Jan 24 2013 - 13:00:03 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1620.html#start1620">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1621.html" title="Next message in the list">Greg Caporaso: "!!! ERROR - Incorrect fingerprint for key_location"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1619.html" title="Previous message in the list">MacMullan, Hugh: "Re:  Amazon AMI 64-bit Ubuntu 11 HVM-EBS for eu-west-1 region"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1620" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1620" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1620" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1620" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

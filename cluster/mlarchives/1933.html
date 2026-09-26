@@ -1,0 +1,400 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Milton Pividori ((no email))" />
+<meta name="Subject" content="Fwd:  Recover cluster after an error when starting" />
+<title>starcluster.mbox.out: Fwd:  Recover cluster after an error when starting</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Fwd:  Recover cluster after an error when starting</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Fwd:  Recover cluster after an error when starting</h1>
+<!-- received="Tue Nov  5 12:04:18 2013" -->
+<!-- isoreceived="20131105170418" -->
+<!-- sent="Tue, 5 Nov 2013 15:03:55 -0200" -->
+<!-- isosent="20131105170355" -->
+<!-- name="Milton Pividori" -->
+<!-- email="(no email)" -->
+<!-- subject="Fwd:  Recover cluster after an error when starting" -->
+<!-- id="CADk_myja_ETBB_xnZeR2YSxxZMcmY1qZNw4aDgeeYmOkC8KgiQ_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- inreplyto="CADk_myiKo3fU_a1dwC2L7UX3ryrB7a8L-ihptNWmHqK8=PfYuw_at_mail.gmail.com" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1933.html#start1933" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1933.html#options2">top</a>, <a href="1933.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1934.html" accesskey="d" title="Del Munkhbaatar: &quot;Take a short survey to get amazon gift card&quot;">Next message</a> ]
+[ <a href="1932.html" title="MacMullan, Hugh: &quot;Re:  Recover cluster after an error when starting&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1933" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1933" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1933" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1933" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Milton Pividori &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Tue, 5 Nov 2013 15:03:55 -0200</span><br />
+</address>
+<br />
+Sorry, I forgot to include the list.
+<br />
+<br />---------- Forwarded message ----------
+<br />
+From: Milton Pividori &lt;miltondp_at_gmail.com&gt;
+<br />
+Date: 2013/11/5
+<br />
+Subject: Re: [StarCluster] Recover cluster after an error when starting
+<br />
+To: &quot;MacMullan, Hugh&quot; &lt;hughmac_at_wharton.upenn.edu&gt;
+<br />
+<br /><br />Thank you Hugh, I just discovered what &quot;restart&quot; does. I will try it next
+<br />
+time.
+<br />
+<br />However, what I did now was to increase the timeout for mount in the
+<br />
+file starcluster/node.py, in the mount_nfs_shares function, line 725 (I am
+<br />
+using StarCluster 0.94.2). I added the option &quot;timeo=20&quot;, and it worked.
+<br />
+<br />Maybe it would be good to have a &quot;timeout&quot; option in the config file.
+<br />
+<br />Thank you again!
+<br />
+<br /><br />2013/11/5 MacMullan, Hugh &lt;hughmac_at_wharton.upenn.edu&gt;
+<br />
+<br />&nbsp;&nbsp;Hi Milton:
+<br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; I would generally do a restart (starcluster restart mycluster).
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; -Hugh
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; *From:* starcluster-bounces_at_mit.edu [mailto:starcluster-bounces_at_mit.edu] *On
+</em><br />
+<em class="quotelev1">&gt; Behalf Of *Milton Pividori
+</em><br />
+<em class="quotelev1">&gt; *Sent:* Tuesday, November 05, 2013 11:50 AM
+</em><br />
+<em class="quotelev1">&gt; *To:* starcluster_at_mit.edu
+</em><br />
+<em class="quotelev1">&gt; *Subject:* [StarCluster] Recover cluster after an error when starting
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Hi all,
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; I am a new user of StarCluster. First of all, thank you for this great
+</em><br />
+<em class="quotelev1">&gt; software!
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; My question is about how to recover a cluster when there was an error in
+</em><br />
+<em class="quotelev1">&gt; starting it. After I ran &quot;starcluster start mycluster&quot; I got a timeout
+</em><br />
+<em class="quotelev1">&gt; error when mounting the /home directory (EBS volume). Is it possible to run
+</em><br />
+<em class="quotelev1">&gt; the plugin again? In this case, I think the plugin is
+</em><br />
+<em class="quotelev1">&gt; &quot;starcluster.clustersetup.DefaultClusterSetup&quot;.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; This is the last part of the error I get (the cluster size is 10 with
+</em><br />
+<em class="quotelev1">&gt; t1.micro):
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; Starting NFS server on master
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; Configuring NFS exports path(s):
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; /home
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev4">&gt; &gt;&gt;&gt; Mounting all NFS export path(s) on 9 worker node(s)
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; 9/9 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+</em><br />
+<em class="quotelev1">&gt; 100%
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; !!! ERROR - Error occured while running plugin
+</em><br />
+<em class="quotelev1">&gt; 'starcluster.clustersetup.DefaultClusterSetup':
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; !!! ERROR - error occurred in job (id=node009): remote command 'source
+</em><br />
+<em class="quotelev1">&gt; /etc/profile &amp;&amp; mount /home' failed with status 32:
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; mount.nfs: mount to NFS server 'master:/home' failed: timed out, giving up
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Traceback (most recent call last):
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;   File
+</em><br />
+<em class="quotelev1">&gt; &quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.94.2-py2.7.egg/starcluster/threadpool.py&quot;,
+</em><br />
+<em class="quotelev1">&gt; line 48, in run
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;     job.run()
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;   File
+</em><br />
+<em class="quotelev1">&gt; &quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.94.2-py2.7.egg/starcluster/threadpool.py&quot;,
+</em><br />
+<em class="quotelev1">&gt; line 75, in run
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;     r = self.method(*self.args, **self.kwargs)
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;   File
+</em><br />
+<em class="quotelev1">&gt; &quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.94.2-py2.7.egg/starcluster/node.py&quot;,
+</em><br />
+<em class="quotelev1">&gt; line 731, in mount_nfs_shares
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;     self.ssh.execute('mount %s' % path)
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;   File
+</em><br />
+<em class="quotelev1">&gt; &quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.94.2-py2.7.egg/starcluster/sshutils/__init__.py&quot;,
+</em><br />
+<em class="quotelev1">&gt; line 555, in execute
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;     msg, command, exit_status, out_str)
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; RemoteCommandFailed: remote command 'source /etc/profile &amp;&amp; mount /home'
+</em><br />
+<em class="quotelev1">&gt; failed with status 32:
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; mount.nfs: mount to NFS server 'master:/home' failed: timed out, giving up
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Thank you!
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; --
+</em><br />
+<em class="quotelev1">&gt; Milton Pividori
+</em><br />
+<em class="quotelev1">&gt; Blog: www.miltonpividori.com.ar
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<br /><br /><br /><pre>
+-- 
+Milton Pividori
+Blog: www.miltonpividori.com.ar
+-- 
+Milton Pividori
+Blog: www.miltonpividori.com.ar
+</pre>
+<span id="received"><dfn>Received on</dfn> Tue Nov 05 2013 - 12:04:18 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1933.html#start1933">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1934.html" title="Next message in the list">Del Munkhbaatar: "Take a short survey to get amazon gift card"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1932.html" title="Previous message in the list">MacMullan, Hugh: "Re:  Recover cluster after an error when starting"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1933" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1933" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1933" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1933" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

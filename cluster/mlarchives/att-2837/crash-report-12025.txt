@@ -1,0 +1,42 @@
+---------- SYSTEM INFO ----------
+StarCluster: 0.95.6
+Python: 2.6.6 (r266:84292, Nov 21 2013, 12:39:37)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-3)]
+Platform: Linux-2.6.32-431.5.1.el6.x86_64-x86_64-with-redhat-6.5-Carbon
+boto: 2.27.0
+paramiko: 1.15.1
+Crypto: 2.6.1
+
+---------- CRASH DETAILS ----------
+Command: starcluster -c ~/.starcluster/config addnode -i ami-xxxxxxxx -I c3.2xlarge --num-nodes=-2 2.0
+
+2016-11-05 01:55:28,557 PID: 12025 config.py:567 - DEBUG - Loading config
+2016-11-05 01:55:28,557 PID: 12025 config.py:138 - DEBUG - Loading file: /root/.starcluster/config
+2016-11-05 01:55:28,560 PID: 12025 config.py:138 - DEBUG - Loading file: /root/.starcluster/config
+2016-11-05 01:55:28,560 PID: 12025 config.py:138 - DEBUG - Loading file: /root/.starcluster/perms-vcl
+2016-11-05 01:55:28,561 PID: 12025 config.py:138 - DEBUG - Loading file: /root/.starcluster/perms-vfe
+2016-11-05 01:55:28,577 PID: 12025 awsutils.py:75 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'proxy_user': None, 'proxy_pass': None, 'proxy_port': None, 'proxy': None, 'is_secure': True, 'path': '/', 'region': RegionInfo:us-west-2, 'validate_certs': True, 'port': None}
+2016-11-05 01:55:28,862 PID: 12025 cluster.py:759 - DEBUG - existing nodes: {}
+2016-11-05 01:55:28,862 PID: 12025 cluster.py:767 - DEBUG - adding node i-fa2fd126 to self._nodes list
+2016-11-05 01:55:28,862 PID: 12025 cluster.py:767 - DEBUG - adding node i-672dd3bb to self._nodes list
+2016-11-05 01:55:28,862 PID: 12025 cluster.py:775 - DEBUG - returning self._nodes = [<Node: master (i-fa2fd126)>, <Node: node001 (i-672dd3bb)>]
+2016-11-05 01:55:28,963 PID: 12025 sshutils.py:860 - DEBUG - rsa private key fingerprint (/root/.ssh/XXXXXXXX.pem): 43:58:9f:17:23:96:f3:8f:f9:65:c6:95:dc:95:bc:5d:9b:a3:55:dd
+2016-11-05 01:55:29,060 PID: 12025 cluster.py:759 - DEBUG - existing nodes: {u'i-672dd3bb': <Node: node001 (i-672dd3bb)>, u'i-fa2fd126': <Node: master (i-fa2fd126)>}
+2016-11-05 01:55:29,060 PID: 12025 cluster.py:762 - DEBUG - updating existing node i-fa2fd126 in self._nodes
+2016-11-05 01:55:29,060 PID: 12025 cluster.py:762 - DEBUG - updating existing node i-672dd3bb in self._nodes
+2016-11-05 01:55:29,060 PID: 12025 cluster.py:775 - DEBUG - returning self._nodes = [<Node: master (i-fa2fd126)>, <Node: node001 (i-672dd3bb)>]
+2016-11-05 01:55:29,117 PID: 12025 cluster.py:759 - DEBUG - existing nodes: {u'i-672dd3bb': <Node: node001 (i-672dd3bb)>, u'i-fa2fd126': <Node: master (i-fa2fd126)>}
+2016-11-05 01:55:29,117 PID: 12025 cluster.py:762 - DEBUG - updating existing node i-fa2fd126 in self._nodes
+2016-11-05 01:55:29,117 PID: 12025 cluster.py:762 - DEBUG - updating existing node i-672dd3bb in self._nodes
+2016-11-05 01:55:29,118 PID: 12025 cluster.py:775 - DEBUG - returning self._nodes = [<Node: master (i-fa2fd126)>, <Node: node001 (i-672dd3bb)>]
+2016-11-05 01:55:29,118 PID: 12025 cluster.py:983 - DEBUG - Highest node number is 1. choosing 2.
+2016-11-05 01:55:29,118 PID: 12025 cli.py:307 - ERROR - Unhandled exception occured
+Traceback (most recent call last):
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.95.6-py2.6.egg/starcluster/cli.py", line 274, in main
+    sc.execute(args)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.95.6-py2.6.egg/starcluster/commands/addnode.py", line 128, in execute
+    no_create=self.opts.no_create)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.95.6-py2.6.egg/starcluster/cluster.py", line 189, in add_nodes
+    no_create=no_create)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.95.6-py2.6.egg/starcluster/cluster.py", line 1014, in add_nodes
+    assert len(aliases) == num_nodes
+AssertionError

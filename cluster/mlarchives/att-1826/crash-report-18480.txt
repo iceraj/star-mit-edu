@@ -1,0 +1,46 @@
+---------- SYSTEM INFO ----------
+StarCluster: 0.9999
+Python: 2.7.3 (default, Apr 10 2013, 06:20:15)  [GCC 4.6.3]
+Platform: Linux-3.5.0-37-generic-x86_64-with-Ubuntu-12.04-precise
+boto: 2.10.0
+paramiko: 1.11.0
+Crypto: 2.4.1
+
+---------- CRASH DETAILS ----------
+Command: starcluster an -n 3 mycluster
+
+2013-08-16 13:09:58,237 PID: 18480 config.py:567 - DEBUG - Loading config
+2013-08-16 13:09:58,238 PID: 18480 config.py:138 - DEBUG - Loading file: /home/kli/.starcluster/config
+2013-08-16 13:09:58,240 PID: 18480 config.py:138 - DEBUG - Loading file: /home/kli/.starcluster/config
+2013-08-16 13:09:58,240 PID: 18480 config.py:138 - DEBUG - Loading file: /home/kli/.starcluster/awscreds
+2013-08-16 13:09:58,244 PID: 18480 awsutils.py:74 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'proxy_user': None, 'proxy_pass': None, 'proxy_port': None, 'proxy': None, 'is_secure': True, 'path': '/', 'region': None, 'validate_certs': True, 'port': None}
+2013-08-16 13:09:59,921 PID: 18480 cluster.py:710 - DEBUG - existing nodes: {}
+2013-08-16 13:09:59,921 PID: 18480 cluster.py:718 - DEBUG - adding node i-6196a80e to self._nodes list
+2013-08-16 13:09:59,922 PID: 18480 cluster.py:726 - DEBUG - returning self._nodes = [<Node: master (i-6196a80e)>]
+2013-08-16 13:10:00,521 PID: 18480 cluster.py:2038 - WARNING - Unable to validate imported keypair fingerprint...
+2013-08-16 13:10:00,800 PID: 18480 cluster.py:710 - DEBUG - existing nodes: {u'i-6196a80e': <Node: master (i-6196a80e)>}
+2013-08-16 13:10:00,800 PID: 18480 cluster.py:713 - DEBUG - updating existing node i-6196a80e in self._nodes
+2013-08-16 13:10:00,800 PID: 18480 cluster.py:726 - DEBUG - returning self._nodes = [<Node: master (i-6196a80e)>]
+2013-08-16 13:10:01,056 PID: 18480 cluster.py:710 - DEBUG - existing nodes: {u'i-6196a80e': <Node: master (i-6196a80e)>}
+2013-08-16 13:10:01,056 PID: 18480 cluster.py:713 - DEBUG - updating existing node i-6196a80e in self._nodes
+2013-08-16 13:10:01,057 PID: 18480 cluster.py:726 - DEBUG - returning self._nodes = [<Node: master (i-6196a80e)>]
+2013-08-16 13:10:01,057 PID: 18480 cluster.py:859 - DEBUG - Highest node number is 0. choosing 1.
+2013-08-16 13:10:01,057 PID: 18480 cluster.py:901 - INFO - Launching node(s): node001, node002, node003
+2013-08-16 13:10:01,060 PID: 18480 cluster.py:800 - DEBUG - Userdata size in KB: 0.71
+2013-08-16 13:10:01,571 PID: 18480 cluster.py:800 - DEBUG - Userdata size in KB: 0.70
+2013-08-16 13:10:02,448 PID: 18480 cluster.py:800 - DEBUG - Userdata size in KB: 0.71
+2013-08-16 13:10:03,088 PID: 18480 cluster.py:800 - DEBUG - Userdata size in KB: 0.70
+2013-08-16 13:10:03,713 PID: 18480 cluster.py:846 - INFO - SpotInstanceRequest:sir-02158834
+2013-08-16 13:10:03,713 PID: 18480 cluster.py:846 - INFO - SpotInstanceRequest:sir-beb63e32
+2013-08-16 13:10:03,714 PID: 18480 cluster.py:846 - INFO - SpotInstanceRequest:sir-205afc35
+2013-08-16 13:10:03,714 PID: 18480 cli.py:307 - ERROR - Unhandled exception occured
+Traceback (most recent call last):
+  File "/home/kli/.local/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/cli.py", line 274, in main
+    sc.execute(args)
+  File "/home/kli/.local/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/commands/addnode.py", line 137, in execute
+    no_create=self.opts.no_create)
+  File "/home/kli/.local/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/cluster.py", line 185, in add_nodes
+    no_create=no_create)
+  File "/home/kli/.local/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/cluster.py", line 909, in add_nodes
+    self.ec2.wait_for_propagation(instances=resp[0].instances)
+AttributeError: 'SpotInstanceRequest' object has no attribute 'instances'

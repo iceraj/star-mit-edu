@@ -1,0 +1,342 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Steve Heistand ((no email))" />
+<meta name="Subject" content="post wedge cleanup" />
+<title>starcluster.mbox.out: post wedge cleanup</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">post wedge cleanup</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>post wedge cleanup</h1>
+<!-- received="Mon Sep 16 15:22:46 2013" -->
+<!-- isoreceived="20130916192246" -->
+<!-- sent="Mon, 16 Sep 2013 12:22:41 -0700" -->
+<!-- isosent="20130916192241" -->
+<!-- name="Steve Heistand" -->
+<!-- email="(no email)" -->
+<!-- subject="post wedge cleanup" -->
+<!-- id="52375A81.8070405_at_nasa.gov" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1873.html#start1873" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1873.html#options2">top</a>, <a href="1873.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1874.html" accesskey="d" title="Ryan Golhar: &quot;SGE on StarCluster&quot;">Next message</a> ]
+[ <a href="1872.html" title="Ryan Golhar: &quot;Re:  tag instances and volumes&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="1891.html" accesskey="t" title="Alex Gaudio: &quot;Re:  post wedge cleanup&quot;">Next in thread</a> ]
+ [ <a href="1873.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1873" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1873" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1873" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1873" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Steve Heistand &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Mon, 16 Sep 2013 12:22:41 -0700</span><br />
+</address>
+<br />
+-----BEGIN PGP SIGNED MESSAGE-----
+<br />
+Hash: SHA1
+<br />
+<br />hi folks,
+<br />
+<br />so Im playing around with the VPC version of starcluster and in the process have
+<br />
+gotten things a little wedged. Errors pop up in the start process that I fix
+<br />
+but at some point a cluster got up enough to be &quot;alive&quot; but not really working.
+<br />
+I had to clean things up via the AWS console and now I cant clean up what
+<br />
+starcluster thinks is going on.:
+<br />
+<br /># starcluster listclusters
+<br />
+StarCluster - (<a href="/cluster/">/cluster</a>) (v. 0.94)
+<br />
+Software Tools for Academics and Researchers (STAR)
+<br />
+Please submit bug reports to starcluster_at_mit.edu
+<br />
+<br />*** WARNING - Setting 'EC2_PRIVATE_KEY' from environment...
+<br />
+*** WARNING - Setting 'EC2_CERT' from environment...
+<br />
+- ----------------------------
+<br />
+hos (security group: sc-hos)
+<br />
+- ----------------------------
+<br />
+Launch time: N/A
+<br />
+Uptime: N/A
+<br />
+Zone: N/A
+<br />
+Keypair: N/A
+<br />
+EBS volumes: N/A
+<br />
+!!! ERROR - InvalidPermission.NotFound: The specified rule does not exist in this
+<br />
+security group.
+<br />
+Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.94-py2.7.egg/starcluster/cli.py&quot;,
+<br />
+line 274, in main
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;sc.execute(args)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.94-py2.7.egg/starcluster/commands/listclusters.py&quot;,
+<br />
+line 36, in execute
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;show_ssh_status=self.opts.show_ssh_status)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.94-py2.7.egg/starcluster/cluster.py&quot;,
+<br />
+line 331, in list_clusters
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;spot_reqs = cl.spot_requests
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.94-py2.7.egg/starcluster/cluster.py&quot;,
+<br />
+line 777, in spot_requests
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;filters = {'launch.group-id': self.cluster_group.id,
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.94-py2.7.egg/starcluster/cluster.py&quot;,
+<br />
+line 684, in cluster_group
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;static.WORLD_CIDRIP)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/boto-2.9.9-py2.7.egg/boto/ec2/securitygroup.py&quot;,
+<br />
+line 222, in revoke
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;src_group_group_id)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/boto-2.9.9-py2.7.egg/boto/ec2/connection.py&quot;,
+<br />
+line 2634, in revoke_security_group
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;params, verb='POST')
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/lib/python2.7/dist-packages/boto-2.9.9-py2.7.egg/boto/connection.py&quot;,
+<br />
+line 1115, in get_status
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;raise self.ResponseError(response.status, response.reason, body)
+<br />
+EC2ResponseError: EC2ResponseError: 400 Bad Request
+<br />
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+<br />
+&lt;Response&gt;&lt;Errors&gt;&lt;Error&gt;&lt;Code&gt;InvalidPermission.NotFound&lt;/Code&gt;&lt;Message&gt;The specified
+<br />
+rule does not exist in this security
+<br />
+group.&lt;/Message&gt;&lt;/Error&gt;&lt;/Errors&gt;&lt;RequestID&gt;d4d51a6a-cb7d-471f-b1aa-54a4ceb35ede&lt;/RequestID&gt;&lt;/Response&gt;
+<br />
+<br /><br />is there a database that can be modified to clean up the exists of this bad cluster?
+<br />
+or some such method of cleaning things up?
+<br />
+<br />the startcluster terminate -f cluster_name also fails in various and exciting ways.
+<br />
+<br />thanks
+<br />
+<br />s
+<br />
+<br />- -- 
+<br />
+************************************************************************
+<br />
+&nbsp;Steve Heistand                          NASA Ames Research Center
+<br />
+&nbsp;email: steve.heistand_at_nasa.gov          Steve Heistand/Mail Stop 258-6
+<br />
+&nbsp;ph: (650) 604-4369                      Bldg. 258, Rm. 232-5
+<br />
+&nbsp;Scientific &amp; HPC Application            P.O. Box 1
+<br />
+&nbsp;Development/Optimization                Moffett Field, CA 94035-0001
+<br />
+************************************************************************
+<br />
+&nbsp;&quot;Any opinions expressed are those of our alien overlords, not my own.&quot;
+<br />
+<br /># For Remedy                        #
+<br />
+#Action: Resolve                    #	
+<br />
+#Resolution: Resolved               #
+<br />
+#Reason: No Further Action Required #
+<br />
+#Tier1:	User Code                   #
+<br />
+#Tier2:	Other                       #
+<br />
+#Tier3:	Assistance                  #
+<br />
+#Notification: None                 #
+<br />
+-----BEGIN PGP SIGNATURE-----
+<br />
+Version: GnuPG v2.0.14 (GNU/Linux)
+<br />
+<br />iEYEARECAAYFAlI3WoEACgkQoBCTJSAkVrF0gACg4uiExQ5N4hJfFP+RfyvVRbRB
+<br />
+BxsAoIAHX33knuzEkEeat7JeL7pTNPYC
+<br />
+=yNt6
+<br />
+-----END PGP SIGNATURE-----
+<br />
+<span id="received"><dfn>Received on</dfn> Mon Sep 16 2013 - 15:22:46 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1873.html#start1873">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1874.html" title="Next message in the list">Ryan Golhar: "SGE on StarCluster"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1872.html" title="Previous message in the list">Ryan Golhar: "Re:  tag instances and volumes"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1891.html" title="Next message in this discussion thread">Alex Gaudio: "Re:  post wedge cleanup"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1891.html" title="Message sent in reply to this message">Alex Gaudio: "Re:  post wedge cleanup"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1873" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1873" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1873" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1873" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

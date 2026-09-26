@@ -1,0 +1,195 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Dan Tenenbaum ((no email))" />
+<meta name="Subject" content="problem modifying starcluster AMI - ubuntu password change does not persist" />
+<title>starcluster.mbox.out: problem modifying starcluster AMI - ubuntu password change does not persist</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">problem modifying starcluster AMI - ubuntu password change does not persist</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>problem modifying starcluster AMI - ubuntu password change does not persist</h1>
+<!-- received="Tue Jun 17 15:17:07 2014" -->
+<!-- isoreceived="20140617191707" -->
+<!-- sent="Tue, 17 Jun 2014 12:17:03 -0700 (PDT)" -->
+<!-- isosent="20140617191703" -->
+<!-- name="Dan Tenenbaum" -->
+<!-- email="(no email)" -->
+<!-- subject="problem modifying starcluster AMI - ubuntu password change does not persist" -->
+<!-- id="1373115256.86667.1403032623341.JavaMail.root_at_fhcrc.org" -->
+<!-- charset="utf-8" -->
+<!-- inreplyto="1779991311.86420.1403031989609.JavaMail.root_at_fhcrc.org" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2264.html#start2264" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2264.html#options2">top</a>, <a href="2264.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2265.html" accesskey="d" title="Rayson Ho: &quot;Re:  problem modifying starcluster AMI - ubuntu password change does not persist&quot;">Next message</a> ]
+[ <a href="2263.html" title="Dan Tenenbaum: &quot;Re:  security group [permission] section not being incorporated into security group&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="2265.html" accesskey="t" title="Rayson Ho: &quot;Re:  problem modifying starcluster AMI - ubuntu password change does not persist&quot;">Next in thread</a> ]
+ [ <a href="2264.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2264" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2264" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2264" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2264" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Dan Tenenbaum &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Tue, 17 Jun 2014 12:17:03 -0700 (PDT)</span><br />
+</address>
+<br />
+Hello,
+<br />
+<br />This might sound like an EC2 question that has nothing to do with starcluster, and in fact I have asked it on some AWS forums (there've been no answers). However, I have never encountered this problem before until I started modifying a starcluster AMI, so I wonder if it is related to what's on that AMI.
+<br />
+<br />I made a custom AMI based on the starcluster AMI ami-3393a45a (us-east-1 starcluster-base-ubuntu-13.04-x86_64 (EBS))).
+<br />
+<br />I installed a bunch of additional software and I also set the password of the ubuntu user to (let's say) 'foobar'.
+<br />
+<br />The reason I did that is that I installed a web app that uses unix usernames and passwords for authentication. So I needed the ubuntu user to have a known password.
+<br />
+<br />I then made a new image based on my running instance. Then I started a new instance from that image.
+<br />
+I ssh'd to that instance as the ubuntu user and typed 'passwd'. I was prompted for my existing password and entered 'foobar'. I then got:
+<br />
+<br />passwd: Authentication token manipulation error
+<br />
+passwd: password unchanged
+<br />
+<br />This tells me that the password for ubuntu is not 'foobar'.
+<br />
+<br />Another way to test this is to try 'su - ubuntu'. This prompts for the password, I enter 'foobar' and it says &quot;su: Authentication failure&quot;.
+<br />
+<br />So...in a nutshell, when I change the ubuntu password, this change does not survive the process of creating a new AMI.
+<br />
+<br />Could this be due to the way the starcluster AMI is configured? Is there some script that runs when it boots that re-sets that password? I'm not passing any user-data when I start the instance.....(I also tried a crontab _at_reboot job that changes the password and that didn't work either....so maybe whatever is messing me up is happening after that job is run).
+<br />
+<br />Thanks,
+<br />
+Dan
+<br />
+<span id="received"><dfn>Received on</dfn> Tue Jun 17 2014 - 15:17:07 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2264.html#start2264">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2265.html" title="Next message in the list">Rayson Ho: "Re:  problem modifying starcluster AMI - ubuntu password change does not persist"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2263.html" title="Previous message in the list">Dan Tenenbaum: "Re:  security group [permission] section not being incorporated into security group"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="2265.html" title="Next message in this discussion thread">Rayson Ho: "Re:  problem modifying starcluster AMI - ubuntu password change does not persist"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="2265.html" title="Message sent in reply to this message">Rayson Ho: "Re:  problem modifying starcluster AMI - ubuntu password change does not persist"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2264" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2264" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2264" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2264" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

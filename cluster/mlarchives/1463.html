@@ -1,0 +1,255 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Alessandro Gagliardi ((no email))" />
+<meta name="Subject" content="Can no longer connect to IPython clusters from a remote notebook" />
+<title>starcluster.mbox.out: Can no longer connect to IPython clusters from a remote notebook</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Can no longer connect to IPython clusters from a remote notebook</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Can no longer connect to IPython clusters from a remote notebook</h1>
+<!-- received="Thu Oct 25 15:51:07 2012" -->
+<!-- isoreceived="20121025195107" -->
+<!-- sent="Thu, 25 Oct 2012 12:50:46 -0700" -->
+<!-- isosent="20121025195046" -->
+<!-- name="Alessandro Gagliardi" -->
+<!-- email="(no email)" -->
+<!-- subject="Can no longer connect to IPython clusters from a remote notebook" -->
+<!-- id="CAAB3BBKZfEq-SvGFCrjRn0Vr1V1OaOW9VtPnSvG0r-Qa3zR41A_at_mail.gmail.com" -->
+<!-- charset="US-ASCII" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1463.html#start1463" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1463.html#options2">top</a>, <a href="1463.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1464.html" accesskey="d" title="MinRK: &quot;Re:  Can no longer connect to IPython clusters from a remote notebook&quot;">Next message</a> ]
+[ <a href="1462.html" title="Toby Ealden: &quot;problem creating volume&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="1464.html" accesskey="t" title="MinRK: &quot;Re:  Can no longer connect to IPython clusters from a remote notebook&quot;">Next in thread</a> ]
+ [ <a href="1463.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1463" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1463" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1463" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1463" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Alessandro Gagliardi &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 25 Oct 2012 12:50:46 -0700</span><br />
+</address>
+<br />
+I had been able to run IPython Notebook locally and connect to StarCluster
+<br />
+using:
+<br />
+rc =
+<br />
+Client('/home/alessandro/.starcluster/ipcluster/myfourthcluster-us-west-1.json',
+<br />
+sshkey='/home/alessandro/.ssh/path-ops.pem', packer='pickle')
+<br />
+I upgraded IPython from 0.12 to 0.13 and it worked for the most part,
+<br />
+though I had some trouble at times, so following the advice at
+<br />
+<a href="https://github.com/ipython/ipython/issues/2171">https://github.com/ipython/ipython/issues/2171</a> I upgraded to 0.14. After
+<br />
+restarting myfourthcluster I was no longer able to connect. I was still
+<br />
+running 0.13 locally and was able to generate the attached crash report. I
+<br />
+noticed that my local copy of IPython was looking for a &quot;url&quot; field in the
+<br />
+JSON file which now looks like:
+<br />
+{
+<br />
+&nbsp;&nbsp;&quot;control&quot;: XXXXX,
+<br />
+&nbsp;&nbsp;&quot;task&quot;: XXXXX,
+<br />
+&nbsp;&nbsp;&quot;notification&quot;: XXXXX,
+<br />
+&nbsp;&nbsp;&quot;exec_key&quot;: &quot;XXXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX&quot;,
+<br />
+&nbsp;&nbsp;&quot;task_scheme&quot;: &quot;leastload&quot;,
+<br />
+&nbsp;&nbsp;&quot;mux&quot;: XXXXX,
+<br />
+&nbsp;&nbsp;&quot;iopub&quot;: XXXXX,
+<br />
+&nbsp;&nbsp;&quot;ssh&quot;: &quot;sgeadmin_at_ec2-XX-XX-XX-XX.us-west-1.compute.amazonaws.com&quot;,
+<br />
+&nbsp;&nbsp;&quot;registration&quot;: XXXXX,
+<br />
+&nbsp;&nbsp;&quot;interface&quot;: &quot;tcp://XX.XX.XX.XX&quot;,
+<br />
+&nbsp;&nbsp;&quot;pack&quot;: &quot;pickle&quot;,
+<br />
+&nbsp;&nbsp;&quot;unpack&quot;: &quot;pickle&quot;,
+<br />
+&nbsp;&nbsp;&quot;location&quot;: &quot;XX.XX.XX.XX&quot;
+<br />
+}
+<br />
+I noticed that a JSON file I had for an older instance looked quite
+<br />
+different:
+<br />
+{
+<br />
+&nbsp;&nbsp;&quot;url&quot;: &quot;tcp:///XX.XX.XX.XX:XXXXX&quot;,
+<br />
+&nbsp;&nbsp;&quot;exec_key&quot;: XXXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX,
+<br />
+&nbsp;&nbsp;&quot;ssh&quot;: &quot;sgeadmin_at_ec2-XX-XX-XX-XX.us-west-1.compute.amazonaws.com&quot;,
+<br />
+&nbsp;&nbsp;&quot;location&quot;: &quot;XX.XX.XX.XX&quot;
+<br />
+}
+<br />
+I tried adding a &quot;url&quot; field but could not figure out what to fill it with.
+<br />
+I then figured that the problem could be because of a mismatch between 0.13
+<br />
+on my local machine and 0.14 remotely, so I upgraded.
+<br />
+Now when I try the above Client command, it hangs indefinitely.
+<br />
+<br />Please help!
+<br />
+<br />Thank you,
+<br />
+-Alessandro
+<br />
+<br /><br />
+<br /><div>
+<ul>
+<li>text/plain attachment: <a href="att-1463/crash-report-24105.txt">crash-report-24105.txt</a></li>
+</ul>
+<!-- attachment="crash-report-24105.txt" -->
+</div>
+<span id="received"><dfn>Received on</dfn> Thu Oct 25 2012 - 15:51:07 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1463.html#start1463">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1464.html" title="Next message in the list">MinRK: "Re:  Can no longer connect to IPython clusters from a remote notebook"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1462.html" title="Previous message in the list">Toby Ealden: "problem creating volume"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1464.html" title="Next message in this discussion thread">MinRK: "Re:  Can no longer connect to IPython clusters from a remote notebook"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1464.html" title="Message sent in reply to this message">MinRK: "Re:  Can no longer connect to IPython clusters from a remote notebook"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1463" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1463" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1463" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1463" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

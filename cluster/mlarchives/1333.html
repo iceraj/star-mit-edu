@@ -1,0 +1,224 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Erik Gafni ((no email))" />
+<meta name="Subject" content="Re:  Star cluster not creating instances on Amazon's East Region" />
+<title>starcluster.mbox.out: Re:  Star cluster not creating instances on Amazon's East Region</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Re:  Star cluster not creating instances on Amazon's East Region</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Re:  Star cluster not creating instances on Amazon's East Region</h1>
+<!-- received="Tue Jul 31 13:20:32 2012" -->
+<!-- isoreceived="20120731172032" -->
+<!-- sent="Tue, 31 Jul 2012 13:20:30 -0400" -->
+<!-- isosent="20120731172030" -->
+<!-- name="Erik Gafni" -->
+<!-- email="(no email)" -->
+<!-- subject="Re:  Star cluster not creating instances on Amazon's East Region" -->
+<!-- id="CAAJKUjLYB_k4845bbHQ84W-6ZLPHx-jANOuWCfGpdti5C2df4Q_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- inreplyto="50179E51.6080601_at_sicadinc.com" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1333.html#start1333" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1333.html#options2">top</a>, <a href="1333.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1334.html" accesskey="d" title="Justin Riley: &quot;Re:  shout out to StarCluster&quot;">Next message</a> ]
+[ <a href="1332.html" title="Justin Riley: &quot;Re:  Using DRMAA on StarCluster&quot;">Previous message</a> ]
+[ <a href="1331.html" title="Ramit Bhardwaj: &quot;Star cluster not creating instances on Amazon&#0039;s East Region&quot;">In reply to</a> ]
+<!-- unextthread="start" -->
+[ <a href="1335.html" accesskey="t" title="Justin Riley: &quot;Re:  Star cluster not creating instances on Amazon&#0039;s East Region&quot;">Next in thread</a> ]
+ [ <a href="1333.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1333" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1333" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1333" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1333" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Erik Gafni &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Tue, 31 Jul 2012 13:20:30 -0400</span><br />
+</address>
+<br />
+It looks like that AWS region is at capacity and physically out of those
+<br />
+instance types.  Either try different instance types or switch regions.
+<br />
+<br />On Tue, Jul 31, 2012 at 4:58 AM, Ramit Bhardwaj &lt;ramit.bhardwaj_at_sicadinc.com
+<br />
+<em class="quotelev1">&gt; wrote:
+</em><br />
+<br /><em class="quotelev1">&gt; Hello,
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; We are using 'Star cluster' for creating clusters on Amazon Cloud. But
+</em><br />
+<em class="quotelev1">&gt; off late, we are seeing the following error in our logs when we try to
+</em><br />
+<em class="quotelev1">&gt; create a cluster on the US-East region:
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; &quot;!!! ERROR - Unsupported: The requested Availability Zone is currently
+</em><br />
+<em class="quotelev1">&gt; constrained and we are no longer accepting new customer requests for
+</em><br />
+<em class="quotelev1">&gt; t1/m1/c1/m2 instance types. Please retry your request by not specifying
+</em><br />
+<em class="quotelev1">&gt; an Availability Zone or choosing us-east-1a, us-east-1d, us-east-1c.&quot;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Is there anything that we are missing here? The exact setup was working
+</em><br />
+<em class="quotelev1">&gt; perfectly till last month. We are seeing this problem since last one month.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Also, in the forums i did not see anyone reporting this issue. Are there
+</em><br />
+<em class="quotelev1">&gt; any changes to any policy or something? Please advice.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Best Regards
+</em><br />
+<em class="quotelev1">&gt; Ramit
+</em><br />
+<em class="quotelev1">&gt; _______________________________________________
+</em><br />
+<em class="quotelev1">&gt; StarCluster mailing list
+</em><br />
+<em class="quotelev1">&gt; StarCluster_at_mit.edu
+</em><br />
+<em class="quotelev1">&gt; <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<span id="received"><dfn>Received on</dfn> Tue Jul 31 2012 - 13:20:32 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1333.html#start1333">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1334.html" title="Next message in the list">Justin Riley: "Re:  shout out to StarCluster"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1332.html" title="Previous message in the list">Justin Riley: "Re:  Using DRMAA on StarCluster"</a></li>
+<li><dfn>In reply to</dfn>: <a href="1331.html" title="Message to which this message replies">Ramit Bhardwaj: "Star cluster not creating instances on Amazon&#0039;s East Region"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1335.html" title="Next message in this discussion thread">Justin Riley: "Re:  Star cluster not creating instances on Amazon&#0039;s East Region"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1335.html" title="Message sent in reply to this message">Justin Riley: "Re:  Star cluster not creating instances on Amazon&#0039;s East Region"</a></li>
+<li><dfn>Reply</dfn>: <a href="1336.html" title="Message sent in reply to this message">Ramit Bhardwaj: "Re:  Star cluster not creating instances on Amazon&#0039;s East Region"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1333" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1333" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1333" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1333" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

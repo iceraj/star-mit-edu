@@ -1,0 +1,53 @@
+---------- SYSTEM INFO ----------
+StarCluster: 0.9999
+Python: 2.6.8 (unknown, Sep 17 2012, 03:13:50)  [GCC 4.6.2 20111027 (Red Hat 4.6.2-1)]
+Platform: Linux-3.2.21-1.32.6.amzn1.x86_64-x86_64-with-glibc2.2.5
+boto: 2.6.0
+paramiko: 1.9.0
+Crypto: 2.6
+
+---------- CRASH DETAILS ----------
+Command: starcluster resizevolume -H i-9470b6ea vol-7cbb7f03 512
+
+2012-12-07 05:27:43,735 PID: 14424 config.py:551 - DEBUG - Loading config
+2012-12-07 05:27:43,735 PID: 14424 config.py:120 - DEBUG - Loading file: /home/ec2-user/.starcluster/config
+2012-12-07 05:27:43,738 PID: 14424 awsutils.py:55 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'proxy_user': None, 'proxy_pass': None, 'proxy_port': None, 'proxy': None, 'is_secure': True, 'path': '/', 'region': None, 'port': None}
+2012-12-07 05:27:44,095 PID: 14424 volume.py:62 - INFO - Using specified host instance i-9470b6ea
+2012-12-07 05:27:44,096 PID: 14424 cluster.py:1131 - INFO - Waiting for instance i-9470b6ea to come up...
+2012-12-07 05:27:44,158 PID: 14424 __init__.py:67 - DEBUG - loading private key /home/ec2-user/.ssh/rsa-11702
+2012-12-07 05:27:44,159 PID: 14424 __init__.py:159 - DEBUG - Using private key /home/ec2-user/.ssh/rsa-11702 (rsa)
+2012-12-07 05:27:44,159 PID: 14424 __init__.py:89 - DEBUG - connecting to host ec2-184-72-64-63.compute-1.amazonaws.com on port 22 as user root
+2012-12-07 05:27:45,596 PID: 14424 __init__.py:178 - DEBUG - creating sftp connection
+2012-12-07 05:27:46,810 PID: 14424 volume.py:180 - INFO - Checking for required remote commands...
+2012-12-07 05:27:46,814 PID: 14424 __init__.py:519 - DEBUG - executing remote command: source /etc/profile && which resize2fs
+2012-12-07 05:27:46,955 PID: 14424 __init__.py:543 - DEBUG - output of 'source /etc/profile && which resize2fs':
+/sbin/resize2fs
+2012-12-07 05:27:46,959 PID: 14424 __init__.py:519 - DEBUG - executing remote command: source /etc/profile && which e2fsck
+2012-12-07 05:27:47,092 PID: 14424 __init__.py:543 - DEBUG - output of 'source /etc/profile && which e2fsck':
+/sbin/e2fsck
+2012-12-07 05:27:47,092 PID: 14424 awsutils.py:1052 - INFO - Creating snapshot of volume: vol-7cbb7f03
+2012-12-07 05:27:47,382 PID: 14424 awsutils.py:1032 - INFO - Waiting for snapshot to complete: snap-a2b181e9
+2012-12-07 10:44:05,306 PID: 14424 volume.py:100 - INFO - New snapshot id: snap-a2b181e9
+2012-12-07 10:44:05,306 PID: 14424 awsutils.py:677 - INFO - Creating 512GB volume in zone us-east-1a from snapshot snap-a2b181e9
+2012-12-07 10:44:06,739 PID: 14424 volume.py:94 - INFO - New volume id: vol-1e35fe61
+2012-12-07 10:44:06,739 PID: 14424 awsutils.py:1012 - INFO - Waiting for vol-1e35fe61 to become 'available'...
+2012-12-07 10:44:07,834 PID: 14424 volume.py:126 - INFO - Attaching volume vol-1e35fe61 to instance i-9470b6ea...
+2012-12-07 10:44:08,024 PID: 14424 awsutils.py:1020 - INFO - Waiting for vol-1e35fe61 to transition to: attached... 
+2012-12-07 10:44:19,656 PID: 14424 volume.py:332 - INFO - No partitions found, resizing entire device
+2012-12-07 10:44:19,656 PID: 14424 volume.py:342 - INFO - Running e2fsck on new volume
+2012-12-07 10:44:19,660 PID: 14424 __init__.py:519 - DEBUG - executing remote command: source /etc/profile && e2fsck -y -f /dev/sdx
+2012-12-07 11:14:51,325 PID: 14424 volume.py:349 - ERROR - Failed to resize volume vol-7cbb7f03
+2012-12-07 11:14:51,325 PID: 14424 volume.py:256 - ERROR - Detaching and deleting *new* volume: vol-1e35fe61
+2012-12-07 11:14:51,643 PID: 14424 awsutils.py:1012 - INFO - Waiting for vol-1e35fe61 to become 'available'...
+2012-12-07 11:15:10,146 PID: 14424 cli.py:288 - ERROR - Unhandled exception occured
+Traceback (most recent call last):
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/cli.py", line 257, in main
+    sc.execute(args)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/commands/resizevolume.py", line 86, in execute
+    new_volid = vc.resize(vol, size, dest_zone=self.opts.dest_zone)
+  File "<string>", line 2, in resize
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/utils.py", line 91, in wrap_f
+    res = func(*arg, **kargs)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/volume.py", line 355, in resize
+    log_func = log.info if self._volume else log.error
+AttributeError: 'VolumeCreator' object has no attribute '_volume'

@@ -1,0 +1,214 @@
+---------- CRASH DETAILS ----------
+COMMAND: starcluster start testcluster
+2012-10-05 09:42:08,001 PID: 7136 config.py:551 - DEBUG - Loading config
+2012-10-05 09:42:08,001 PID: 7136 config.py:118 - DEBUG - Loading file: /u/wk/sheistan/.starcluster/config
+2012-10-05 09:42:08,003 PID: 7136 awsutils.py:54 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'proxy_user': None, 'proxy_pass': None, 'proxy_port': None, 'proxy': None, 'is_secure': True, 'path': '/', 'region': None, 'port': None}
+2012-10-05 09:42:09,132 PID: 7136 start.py:176 - INFO - Using default cluster template: testcluster
+2012-10-05 09:42:09,133 PID: 7136 cluster.py:1630 - INFO - Validating cluster template settings...
+2012-10-05 09:42:11,979 PID: 7136 cluster.py:951 - DEBUG - Launch map: node001 (ami: ami-2fad1146, type: cc1.4xlarge)...
+2012-10-05 09:42:12,199 PID: 7136 cluster.py:1646 - INFO - Cluster template settings are valid
+2012-10-05 09:42:12,200 PID: 7136 cluster.py:1460 - INFO - Starting cluster...
+2012-10-05 09:42:12,200 PID: 7136 cluster.py:977 - INFO - Launching a 2-node cluster...
+2012-10-05 09:42:12,201 PID: 7136 cluster.py:951 - DEBUG - Launch map: node001 (ami: ami-2fad1146, type: cc1.4xlarge)...
+2012-10-05 09:42:12,201 PID: 7136 cluster.py:1004 - DEBUG - Launching master (ami: ami-2fad1146, type: cc1.4xlarge)
+2012-10-05 09:42:12,201 PID: 7136 cluster.py:1004 - DEBUG - Launching node001 (ami: ami-2fad1146, type: cc1.4xlarge)
+2012-10-05 09:42:12,455 PID: 7136 awsutils.py:165 - INFO - Creating security group @sc-testcluster...
+2012-10-05 09:42:15,649 PID: 7136 awsutils.py:273 - INFO - Creating placement group @sc-testcluster...
+2012-10-05 09:42:18,540 PID: 7136 cluster.py:793 - INFO - Reservation:r-2a36c94c
+2012-10-05 09:42:18,541 PID: 7136 cluster.py:1267 - INFO - Waiting for cluster to come up... (updating every 30s)
+2012-10-05 09:42:19,135 PID: 7136 cluster.py:672 - DEBUG - existing nodes: {}
+2012-10-05 09:42:19,136 PID: 7136 cluster.py:680 - DEBUG - adding node i-dd6df5a0 to self._nodes list
+2012-10-05 09:42:20,079 PID: 7136 cluster.py:680 - DEBUG - adding node i-df6df5a2 to self._nodes list
+2012-10-05 09:42:21,119 PID: 7136 cluster.py:688 - DEBUG - returning self._nodes = [<Node: master (i-dd6df5a0)>, <Node: node001 (i-df6df5a2)>]
+2012-10-05 09:42:21,120 PID: 7136 cluster.py:1235 - INFO - Waiting for all nodes to be in a 'running' state...
+2012-10-05 09:42:21,357 PID: 7136 cluster.py:672 - DEBUG - existing nodes: {u'i-df6df5a2': <Node: node001 (i-df6df5a2)>, u'i-dd6df5a0': <Node: master (i-dd6df5a0)>}
+2012-10-05 09:42:21,357 PID: 7136 cluster.py:675 - DEBUG - updating existing node i-dd6df5a0 in self._nodes
+2012-10-05 09:42:21,358 PID: 7136 cluster.py:675 - DEBUG - updating existing node i-df6df5a2 in self._nodes
+2012-10-05 09:42:21,358 PID: 7136 cluster.py:688 - DEBUG - returning self._nodes = [<Node: master (i-dd6df5a0)>, <Node: node001 (i-df6df5a2)>]
+2012-10-05 09:42:51,693 PID: 7136 cluster.py:672 - DEBUG - existing nodes: {u'i-df6df5a2': <Node: node001 (i-df6df5a2)>, u'i-dd6df5a0': <Node: master (i-dd6df5a0)>}
+2012-10-05 09:42:51,693 PID: 7136 cluster.py:675 - DEBUG - updating existing node i-dd6df5a0 in self._nodes
+2012-10-05 09:42:51,694 PID: 7136 cluster.py:675 - DEBUG - updating existing node i-df6df5a2 in self._nodes
+2012-10-05 09:42:51,694 PID: 7136 cluster.py:688 - DEBUG - returning self._nodes = [<Node: master (i-dd6df5a0)>, <Node: node001 (i-df6df5a2)>]
+2012-10-05 09:42:51,694 PID: 7136 cluster.py:1253 - INFO - Waiting for SSH to come up on all nodes...
+2012-10-05 09:42:51,926 PID: 7136 cluster.py:672 - DEBUG - existing nodes: {u'i-df6df5a2': <Node: node001 (i-df6df5a2)>, u'i-dd6df5a0': <Node: master (i-dd6df5a0)>}
+2012-10-05 09:42:51,926 PID: 7136 cluster.py:675 - DEBUG - updating existing node i-dd6df5a0 in self._nodes
+2012-10-05 09:42:51,927 PID: 7136 cluster.py:675 - DEBUG - updating existing node i-df6df5a2 in self._nodes
+2012-10-05 09:42:51,927 PID: 7136 cluster.py:688 - DEBUG - returning self._nodes = [<Node: master (i-dd6df5a0)>, <Node: node001 (i-df6df5a2)>]
+2012-10-05 09:42:51,950 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:42:52,189 PID: 7136 __init__.py:75 - DEBUG - loading private key /u/wk/sheistan/.ssh/amazon/scicon_ec2.pem
+2012-10-05 09:42:52,190 PID: 7136 __init__.py:82 - DEBUG - specified key does not end in either rsa or dsa, trying both
+2012-10-05 09:42:52,191 PID: 7136 __init__.py:167 - DEBUG - Using private key /u/wk/sheistan/.ssh/amazon/scicon_ec2.pem (rsa)
+2012-10-05 09:42:52,191 PID: 7136 __init__.py:97 - DEBUG - connecting to host ec2-184-72-149-42.compute-1.amazonaws.com on port 22 as user root
+2012-10-05 09:42:52,672 PID: 7136 __init__.py:75 - DEBUG - loading private key /u/wk/sheistan/.ssh/amazon/scicon_ec2.pem
+2012-10-05 09:42:52,672 PID: 7136 __init__.py:82 - DEBUG - specified key does not end in either rsa or dsa, trying both
+2012-10-05 09:42:52,674 PID: 7136 __init__.py:167 - DEBUG - Using private key /u/wk/sheistan/.ssh/amazon/scicon_ec2.pem (rsa)
+2012-10-05 09:42:52,674 PID: 7136 __init__.py:97 - DEBUG - connecting to host ec2-23-22-71-46.compute-1.amazonaws.com on port 22 as user root
+2012-10-05 09:42:52,951 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:42:53,952 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:42:54,954 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:42:55,955 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:42:56,957 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:42:57,959 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:42:58,960 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:42:59,962 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:00,964 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:01,965 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:02,967 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:03,969 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:04,970 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:05,972 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:06,974 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:07,974 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:08,975 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:09,976 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:10,978 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:11,980 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:12,981 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:13,983 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:14,985 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:15,986 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:16,988 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:17,990 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:18,991 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:19,993 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:20,995 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:21,996 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:22,998 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:23,999 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:25,001 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:26,003 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:27,004 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:28,006 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:29,008 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:30,009 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:31,010 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:32,012 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:33,013 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:34,015 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:35,016 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:36,018 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:37,020 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:38,021 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:39,023 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:40,024 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:41,026 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:42,027 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:43,029 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:44,030 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:45,032 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:46,033 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:47,035 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:48,037 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:49,038 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:50,039 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:51,040 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:52,042 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:52,643 PID: 7136 __init__.py:97 - DEBUG - connecting to host ec2-184-72-149-42.compute-1.amazonaws.com on port 22 as user root
+2012-10-05 09:43:53,043 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:53,172 PID: 7136 __init__.py:97 - DEBUG - connecting to host ec2-23-22-71-46.compute-1.amazonaws.com on port 22 as user root
+2012-10-05 09:43:54,045 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:55,047 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:56,048 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:57,050 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:58,052 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:43:59,053 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:44:00,055 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:44:01,056 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:44:02,058 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:44:03,060 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:44:04,061 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:44:05,063 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:44:06,064 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:44:07,065 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:44:08,067 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:44:09,069 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:44:10,070 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:44:11,072 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:44:12,074 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:44:13,075 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:44:14,077 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:44:15,078 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:44:16,080 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:44:17,081 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:44:18,083 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:44:19,084 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:44:20,086 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:44:21,087 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:44:22,089 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:44:23,090 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:44:24,092 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:44:25,093 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:44:26,095 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:44:26,603 PID: 7136 __init__.py:97 - DEBUG - connecting to host ec2-23-22-71-46.compute-1.amazonaws.com on port 22 as user root
+2012-10-05 09:44:27,096 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:44:27,931 PID: 7136 __init__.py:186 - DEBUG - creating sftp connection
+2012-10-05 09:44:28,098 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:44:29,100 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:44:29,978 PID: 7136 __init__.py:97 - DEBUG - connecting to host ec2-184-72-149-42.compute-1.amazonaws.com on port 22 as user root
+2012-10-05 09:44:30,101 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:44:31,203 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2012-10-05 09:44:31,302 PID: 7136 __init__.py:186 - DEBUG - creating sftp connection
+2012-10-05 09:44:32,204 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2012-10-05 09:44:33,205 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2012-10-05 09:44:34,207 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 1
+2012-10-05 09:44:35,208 PID: 7136 utils.py:97 - INFO - Waiting for cluster to come up took 2.278 mins
+2012-10-05 09:44:35,209 PID: 7136 cluster.py:1487 - INFO - The master node is ec2-23-22-71-46.compute-1.amazonaws.com
+2012-10-05 09:44:35,209 PID: 7136 cluster.py:1488 - INFO - Setting up the cluster...
+2012-10-05 09:44:35,579 PID: 7136 cluster.py:1317 - INFO - Attaching volume vol-21ec2b41 to master node on /dev/sdz ...
+2012-10-05 09:44:35,970 PID: 7136 cluster.py:1319 - DEBUG - resp = attaching
+2012-10-05 09:44:41,962 PID: 7136 cluster.py:1317 - INFO - Attaching volume vol-1f09c57f to master node on /dev/sdy ...
+2012-10-05 09:44:42,281 PID: 7136 cluster.py:1319 - DEBUG - resp = attaching
+2012-10-05 09:44:48,385 PID: 7136 cluster.py:1317 - INFO - Attaching volume vol-f112d491 to master node on /dev/sdx ...
+2012-10-05 09:44:48,687 PID: 7136 cluster.py:1319 - DEBUG - resp = attaching
+2012-10-05 09:47:32,174 PID: 7136 cluster.py:672 - DEBUG - existing nodes: {u'i-df6df5a2': <Node: node001 (i-df6df5a2)>, u'i-dd6df5a0': <Node: master (i-dd6df5a0)>}
+2012-10-05 09:47:32,174 PID: 7136 cluster.py:675 - DEBUG - updating existing node i-dd6df5a0 in self._nodes
+2012-10-05 09:47:32,174 PID: 7136 cluster.py:675 - DEBUG - updating existing node i-df6df5a2 in self._nodes
+2012-10-05 09:47:32,175 PID: 7136 cluster.py:688 - DEBUG - returning self._nodes = [<Node: master (i-dd6df5a0)>, <Node: node001 (i-df6df5a2)>]
+2012-10-05 09:47:32,175 PID: 7136 clustersetup.py:90 - INFO - Configuring hostnames...
+2012-10-05 09:47:32,219 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-10-05 09:47:32,707 PID: 7136 __init__.py:534 - ERROR - command 'source /etc/profile && hostname -F /etc/hostname' failed with status 1
+2012-10-05 09:47:32,708 PID: 7136 __init__.py:539 - DEBUG - if: Expression Syntax.
+2012-10-05 09:47:32,744 PID: 7136 __init__.py:534 - ERROR - command 'source /etc/profile && hostname -F /etc/hostname' failed with status 1
+2012-10-05 09:47:32,745 PID: 7136 __init__.py:539 - DEBUG - if: Expression Syntax.
+2012-10-05 09:47:34,169 PID: 7136 clustersetup.py:283 - INFO - Mounting EBS volume vol-21ec2b41 on /opt...
+2012-10-05 09:47:34,423 PID: 7136 __init__.py:534 - ERROR - command 'source /etc/profile && mount' failed with status 1
+2012-10-05 09:47:34,425 PID: 7136 __init__.py:539 - DEBUG - if: Expression Syntax.
+2012-10-05 09:47:34,425 PID: 7136 threadpool.py:123 - INFO - Shutting down threads...
+2012-10-05 09:47:34,431 PID: 7136 threadpool.py:135 - DEBUG - unfinished_tasks = 0
+2012-10-05 09:47:35,433 PID: 7136 cli.py:286 - ERROR - Unhandled exception occured
+Traceback (most recent call last):
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/cli.py", line 255, in main
+    sc.execute(args)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/commands/start.py", line 194, in execute
+    validate_running=validate_running)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/cluster.py", line 1447, in start
+    return self._start(create=create, create_only=create_only)
+  File "<string>", line 2, in _start
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/utils.py", line 91, in wrap_f
+    res = func(*arg, **kargs)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/cluster.py", line 1470, in _start
+    self.setup_cluster()
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/cluster.py", line 1479, in setup_cluster
+    self._setup_cluster()
+  File "<string>", line 2, in _setup_cluster
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/utils.py", line 91, in wrap_f
+    res = func(*arg, **kargs)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/cluster.py", line 1494, in _setup_cluster
+    self.cluster_shell, self.volumes)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/clustersetup.py", line 345, in run
+    self._setup_ebs_volumes()
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/clustersetup.py", line 284, in _setup_ebs_volumes
+    mount_map = self._master.get_mount_map()
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/node.py", line 663, in get_mount_map
+    dev, on_label, path, type_label, fstype, options = line.split()
+ValueError: need more than 3 values to unpack
+---------- SYSTEM INFO ----------
+StarCluster: 0.9999
+Python: 2.6.6 (r266:84292, Aug 28 2012, 10:55:56)  [GCC 4.4.6 20120305 (Red Hat 4.4.6-4)]
+Platform: Linux-2.6.32-279.5.2.el6.x86_64-x86_64-with-redhat-6.3-Santiago
+boto: 2.6.0
+ssh: 1.7.14
+Crypto: 2.6
+jinja2: 2.6
+decorator: 3.3.3
+

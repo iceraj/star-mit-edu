@@ -1,0 +1,171 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="John Lilley ((no email))" />
+<meta name="Subject" content="createvolume ami" />
+<title>starcluster.mbox.out: createvolume ami</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">createvolume ami</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>createvolume ami</h1>
+<!-- received="Thu Dec 13 19:30:23 2012" -->
+<!-- isoreceived="20121214003023" -->
+<!-- sent="Thu, 13 Dec 2012 16:30:20 -0800" -->
+<!-- isosent="20121214003020" -->
+<!-- name="John Lilley" -->
+<!-- email="(no email)" -->
+<!-- subject="createvolume ami" -->
+<!-- id="A5C9D48F-7888-4BDF-B093-F8E700F9A583_at_caltech.edu" -->
+<!-- charset="us-ascii" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1548.html#start1548" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1548.html#options2">top</a>, <a href="1548.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1549.html" accesskey="d" title="Niels van Galen Last: &quot;problem creating a new ami&quot;">Next message</a> ]
+[ <a href="1547.html" title="Sergio Mafra: &quot;NCAR Community Atmosphere model&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1548" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1548" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1548" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1548" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: John Lilley &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 13 Dec 2012 16:30:20 -0800</span><br />
+</address>
+<br />
+Hi,
+<br />
+<br />is startclusters 'createvolume' hard coded for the default east coast AMI? It seems to be trying to use ami-899d49e0 even though i have NODE_IMAGE_ID = ami-3f5c027a (west coast ami). for now i manually created and formatted the extra ebs volume and it mounts fine but it would be convenient to use the starcluster command. perhaps I am doing something wrong.
+<br />
+<br />[Thu Dec 13 16:14:35 johnbot_at_pong:~ ] $ starcluster createvolume --name=allmydata 1 us-west-1c
+<br />
+<br />!!! ERROR - failed to create new volume
+<br />
+!!! ERROR - image ami-899d49e0 does not exist
+<br />
+<br />John
+<br />
+<span id="received"><dfn>Received on</dfn> Thu Dec 13 2012 - 19:30:23 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1548.html#start1548">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1549.html" title="Next message in the list">Niels van Galen Last: "problem creating a new ami"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1547.html" title="Previous message in the list">Sergio Mafra: "NCAR Community Atmosphere model"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1548" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1548" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1548" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1548" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+---------- SYSTEM INFO ----------
+StarCluster: 0.95.5
+Python: 2.7.3 (default, Feb 27 2014, 19:58:35)  [GCC 4.6.3]
+Platform: Linux-3.2.0-61-generic-x86_64-with-Ubuntu-12.04-precise
+boto: 2.27.0
+paramiko: 1.13.0
+Crypto: 2.6.1
+
+---------- CRASH DETAILS ----------
+Command: starcluster resizevolume 
+
+2014-05-04 14:58:31,010 PID: 11592 config.py:567 - DEBUG - Loading config
+2014-05-04 14:58:31,011 PID: 11592 config.py:138 - DEBUG - Loading file: /home/torstein/.starcluster/config
+2014-05-04 14:58:31,014 PID: 11592 awsutils.py:75 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'proxy_user': None, 'proxy_pass': None, 'proxy_port': None, 'proxy': None, 'is_secure': True, 'path': '/', 'region': RegionInfo:eu-west-1, 'validate_certs': True, 'port': None}
+2014-05-04 14:58:31,334 PID: 11592 createvolume.py:91 - INFO - No keypair specified, picking one from config...
+2014-05-04 14:58:31,451 PID: 11592 createvolume.py:97 - INFO - Using keypair: 
+2014-05-04 14:58:31,721 PID: 11592 cluster.py:759 - DEBUG - existing nodes: {}
+2014-05-04 14:58:31,721 PID: 11592 cluster.py:775 - DEBUG - returning self._nodes = []
+2014-05-04 14:58:39,236 PID: 11592 volume.py:367 - ERROR - Failed to resize volume 
+2014-05-04 14:58:39,237 PID: 11592 cli.py:307 - ERROR - Unhandled exception occured
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.95.5-py2.7.egg/starcluster/cli.py", line 274, in main
+    sc.execute(args)
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.95.5-py2.7.egg/starcluster/commands/resizevolume.py", line 103, in execute
+    new_volid = vc.resize(vol, size, dest_zone=self.opts.dest_zone)
+  File "<string>", line 2, in resize
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.95.5-py2.7.egg/starcluster/utils.py", line 112, in wrap_f
+    res = func(*arg, **kargs)
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.95.5-py2.7.egg/starcluster/volume.py", line 371, in resize
+    snap = self._snapshot
+AttributeError: 'VolumeCreator' object has no attribute '_snapshot'

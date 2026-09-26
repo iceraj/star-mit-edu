@@ -1,0 +1,208 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Jian Feng ((no email))" />
+<meta name="Subject" content="request of new features of starcluster" />
+<title>starcluster.mbox.out: request of new features of starcluster</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">request of new features of starcluster</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>request of new features of starcluster</h1>
+<!-- received="Tue Jan  6 15:52:47 2015" -->
+<!-- isoreceived="20150106205247" -->
+<!-- sent="Tue, 6 Jan 2015 12:52:45 -0800" -->
+<!-- isosent="20150106205245" -->
+<!-- name="Jian Feng" -->
+<!-- email="(no email)" -->
+<!-- subject="request of new features of starcluster" -->
+<!-- id="CAE4c_UFGfroyGUuVDj=GC-+v_nzkhvLH73viNqasruxHvnVFYw_at_mail.gmail.com" -->
+<!-- charset="UTF-8" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2515.html#start2515" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2515.html#options2">top</a>, <a href="2515.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2516.html" accesskey="d" title="Jacob Barhak: &quot;StarCluster added to the list of tools in the IMAG wiki&quot;">Next message</a> ]
+[ <a href="2514.html" title="Marie Wong: &quot;dns_prefix &#0038; put&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="2522.html" accesskey="t" title="Rayson Ho: &quot;Re:  request of new features of starcluster&quot;">Next in thread</a> ]
+ [ <a href="2515.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2515" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2515" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2515" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2515" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Jian Feng &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Tue, 6 Jan 2015 12:52:45 -0800</span><br />
+</address>
+<br />
+Dear StarCluster devs,
+<br />
+<br />As a loyal starcluster user, I am wondering if it's ok for me to submit a
+<br />
+feature request to meet needs of more people and businesses.  I'd like to
+<br />
+see
+<br />
+<br />1. security group separated from cluster creation. In AWS the sg and
+<br />
+instances are two totally independent things. Security group and live
+<br />
+without any instances. This is convenient because we'd like to reuse the
+<br />
+security group for different clusters. This is especially true when we need
+<br />
+to fine tune the security rules for different type of work. In my case, I
+<br />
+need my starcluster cluster to access the production cluster data. So I
+<br />
+will have to change the production security group rules every time I create
+<br />
+a new star cluster. This is not efficient and not easy to be fully
+<br />
+automated.
+<br />
+&nbsp;&nbsp;It's totally fine to keep the current setting but give people an option
+<br />
+to reuse an existing security group.
+<br />
+<br />2. local ebs disk storage for each node. I see a great amount applications
+<br />
+have this needs. This is crucial for any distributed persistent data
+<br />
+storage.
+<br />
+<br />I understand that starcluster is open source so people can tailor it to
+<br />
+their own needs. The thing is some functionalities can help people to
+<br />
+improve productivity a lot so they might be worth adding.
+<br />
+<br />Thanks!
+<br />
+<span id="received"><dfn>Received on</dfn> Tue Jan 06 2015 - 15:52:47 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2515.html#start2515">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2516.html" title="Next message in the list">Jacob Barhak: "StarCluster added to the list of tools in the IMAG wiki"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2514.html" title="Previous message in the list">Marie Wong: "dns_prefix &#0038; put"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="2522.html" title="Next message in this discussion thread">Rayson Ho: "Re:  request of new features of starcluster"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="2522.html" title="Message sent in reply to this message">Rayson Ho: "Re:  request of new features of starcluster"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2515" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2515" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2515" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2515" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+---------- SYSTEM INFO ----------
+StarCluster: 0.95.6
+Python: 2.7.3 (default, Mar 13 2014, 11:03:55)  [GCC 4.7.2]
+Platform: Linux-3.2.0-4-amd64-x86_64-with-debian-7.8
+boto: 2.38.0
+paramiko: 1.15.2
+Crypto: 2.6
+
+---------- CRASH DETAILS ----------
+Command: starcluster resizevolume vol-300354f3 1024
+
+2015-11-19 11:45:53,606 PID: 31809 config.py:567 - DEBUG - Loading config
+2015-11-19 11:45:53,607 PID: 31809 config.py:138 - DEBUG - Loading file: /home/ldelcano/.starcluster/config
+2015-11-19 11:45:53,611 PID: 31809 awsutils.py:75 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'proxy_user': None, 'proxy_pass': None, 'proxy_port': None, 'proxy': None, 'is_secure': True, 'path': '/', 'region': RegionInfo:eu-west-1, 'validate_certs': True, 'port': None}
+2015-11-19 11:45:54,049 PID: 31809 createvolume.py:91 - INFO - No keypair specified, picking one from config...
+2015-11-19 11:45:54,132 PID: 31809 createvolume.py:97 - INFO - Using keypair: aws-key
+2015-11-19 11:45:54,290 PID: 31809 cluster.py:759 - DEBUG - existing nodes: {}
+2015-11-19 11:45:54,291 PID: 31809 cluster.py:775 - DEBUG - returning self._nodes = []
+2015-11-19 11:45:54,554 PID: 31809 volume.py:367 - ERROR - Failed to resize volume vol-300354f3
+2015-11-19 11:45:54,555 PID: 31809 cli.py:307 - ERROR - Unhandled exception occured
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.95.6-py2.7.egg/starcluster/cli.py", line 274, in main
+    sc.execute(args)
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.95.6-py2.7.egg/starcluster/commands/resizevolume.py", line 103, in execute
+    new_volid = vc.resize(vol, size, dest_zone=self.opts.dest_zone)
+  File "<string>", line 2, in resize
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.95.6-py2.7.egg/starcluster/utils.py", line 112, in wrap_f
+    res = func(*arg, **kargs)
+  File "/usr/local/lib/python2.7/dist-packages/StarCluster-0.95.6-py2.7.egg/starcluster/volume.py", line 371, in resize
+    snap = self._snapshot
+AttributeError: 'VolumeCreator' object has no attribute '_snapshot'

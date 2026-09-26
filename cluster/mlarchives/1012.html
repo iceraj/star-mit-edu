@@ -1,0 +1,205 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Dustin Machi ((no email))" />
+<meta name="Subject" content="Loadbalancer issues" />
+<title>starcluster.mbox.out: Loadbalancer issues</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Loadbalancer issues</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Loadbalancer issues</h1>
+<!-- received="Thu Jan 26 12:15:49 2012" -->
+<!-- isoreceived="20120126171549" -->
+<!-- sent="Thu, 26 Jan 2012 12:15:40 -0500" -->
+<!-- isosent="20120126171540" -->
+<!-- name="Dustin Machi" -->
+<!-- email="(no email)" -->
+<!-- subject="Loadbalancer issues" -->
+<!-- id="535322A2-A97C-4FAC-A7A3-30A03B807705_at_vbi.vt.edu" -->
+<!-- charset="us-ascii" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1012.html#start1012" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1012.html#options2">top</a>, <a href="1012.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1013.html" accesskey="d" title="liang cheng: &quot;HVM image&quot;">Next message</a> ]
+[ <a href="1011.html" title="Dustin Machi: &quot;Re:  problem with extending cluster templates&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1012" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1012" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1012" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1012" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Dustin Machi &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 26 Jan 2012 12:15:40 -0500</span><br />
+</address>
+<br />
+Hi,
+<br />
+<br />Im having a couple issues with my load balancer, that I'm not sure about.  My cluster doesn't seem to be expanding despite jobs being in queue for hours (making me skeptical of the statistics reported by the balancer).  Secondly, when running for a long time the load balancer seems to crash with an internal error:
+<br />
+<br />!!! ERROR - InternalError: An internal error has occurred
+<br />
+StarCluster - (<a href="http://web.mit.edu/starcluster">http://web.mit.edu/starcluster</a>) (v. 0.93)
+<br />
+Software Tools for Academics and Researchers (STAR)
+<br />
+Please submit bug reports to starcluster_at_mit.edu
+<br />
+<br /><br />I'm running the balancer like this:
+<br />
+<br />nohup starcluster  bal rnaseq -d  -i 60 -m 20 -n 2 -w 300 -s 0 -l 5000 &gt;&gt; loadbalancer.rnaseq.log 2&gt;&amp;1 &amp;
+<br />
+<br />The logged output generally looks like:
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Loading full job history
+</em><br />
+Cluster size: 2
+<br />
+Queued jobs: 2
+<br />
+Oldest queued job: 2012-01-25 07:48:40
+<br />
+Avg job duration: 489 secs
+<br />
+Avg job wait time: 782 secs
+<br />
+Last cluster modification time: 2012-01-25 06:11:23
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Sleeping...(looping again in 60 secs)
+</em><br />
+<br /><br />Neither of those avg job durations or wait times are particularly close to reality, but that could just be because not enough data has been collected yet.  
+<br />
+<br />I didn't think it would be relevant, because as I understand the balancer setup it monitors whether things are in the queue not whether there are slots available, but I will mention that I made a modification to the sge setup for the master node.  It is an m1.xlarge (4 core) instance, but I modified the qconf to only allow 2 slots to be allocated.  Therefore, many (most) of the queued jobs, which request 4 cores, are unable to execute on the head node.  Often this means that there are queued jobs despite being 2 slots available for execution on that head node.  If the loadbalancer is looking at the wait time of queued jobs and in no way using available slots, this shouldnt' matter.  I assume it doesn't, and am just mentioning it here in case my assumption is wrong. :)
+<br />
+<br />Lastly, if I manually add nodes to the cluster, it will shrink them down to the minimum as time passes as expected.
+<br />
+<br />Does anyone have any thoughts on what I'm doing wrong here?
+<br />
+<br />Thanks,
+<br />
+Dustin
+<br />
+<span id="received"><dfn>Received on</dfn> Thu Jan 26 2012 - 12:15:49 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1012.html#start1012">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1013.html" title="Next message in the list">liang cheng: "HVM image"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1011.html" title="Previous message in the list">Dustin Machi: "Re:  problem with extending cluster templates"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1012" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1012" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1012" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1012" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

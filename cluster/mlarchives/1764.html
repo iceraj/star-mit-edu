@@ -1,0 +1,368 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Ryan Golhar ((no email))" />
+<meta name="Subject" content="loadbalance" />
+<title>starcluster.mbox.out: loadbalance</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">loadbalance</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>loadbalance</h1>
+<!-- received="Tue Jul  2 09:59:23 2013" -->
+<!-- isoreceived="20130702135923" -->
+<!-- sent="Tue, 2 Jul 2013 09:59:22 -0400" -->
+<!-- isosent="20130702135922" -->
+<!-- name="Ryan Golhar" -->
+<!-- email="(no email)" -->
+<!-- subject="loadbalance" -->
+<!-- id="CAFbjocjr98O4xcSs2xw6imzjLK2wWENhA4OCnJc+JbCf73zY_A_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1764.html#start1764" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1764.html#options2">top</a>, <a href="1764.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1765.html" accesskey="d" title="Ryan Golhar: &quot;Re:  loadbalance&quot;">Next message</a> ]
+[ <a href="1763.html" title="Rayson Ho: &quot;Re:  Starcluster for Google Compute Engine?&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="1765.html" accesskey="t" title="Ryan Golhar: &quot;Re:  loadbalance&quot;">Next in thread</a> ]
+ [ <a href="1764.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1764" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1764" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1764" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1764" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Ryan Golhar &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Tue, 2 Jul 2013 09:59:22 -0400</span><br />
+</address>
+<br />
+Hi all - I'm running the latest version of starcluster from github and
+<br />
+using the loadbalance feature.  I have 10 jobs in the queue, with 1 running.
+<br />
+<br />starcluster just tried adding a node and failed as follows:
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Loading full job history
+</em><br />
+Execution hosts: 1
+<br />
+Queued jobs: 10
+<br />
+Oldest queued job: 2013-07-02 13:33:29
+<br />
+Avg job duration: 179 secs
+<br />
+Avg job wait time: 119 secs
+<br />
+Last cluster modification time: 2013-07-02 13:36:42
+<br />
+<em class="quotelev3">&gt;&gt;&gt; A job has been waiting for 923 sec, longer than max 900
+</em><br />
+*** WARNING - Adding 1 nodes at 2013-07-02 13:48:52.123504
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Launching node(s): node001
+</em><br />
+SpotInstanceRequest:sir-0c581634
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for node(s) to come up... (updating every 30s)
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for all nodes to be in a 'running' state...
+</em><br />
+1/1 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for SSH to come up on all nodes...
+</em><br />
+1/1 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for cluster to come up took 0.021 mins
+</em><br />
+!!! ERROR - Failed to add new host
+<br />
+Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/balancers/sge/__init__.py&quot;,
+<br />
+line 666, in _eval_add_node
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self._cluster.add_nodes(need_to_add)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/cluster.py&quot;,
+<br />
+line 888, in add_nodes
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;node = self.get_node_by_alias(alias)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/cluster.py&quot;,
+<br />
+line 732, in get_node_by_alias
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;raise exception.InstanceDoesNotExist(alias, label='node')
+<br />
+InstanceDoesNotExist: node 'node001' does not exist
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Sleeping...(looping again in 60 secs)
+</em><br />
+<br /><br />It looks like the node never came up:
+<br />
+<br />[ec2-user_at_ip-10-28-206-211 ~]$ starcluster listclusters
+<br />
+StarCluster - (<a href="/cluster/">/cluster</a>) (v. 0.9999)
+<br />
+Software Tools for Academics and Researchers (STAR)
+<br />
+Please submit bug reports to starcluster_at_mit.edu
+<br />
+<br />-------------------------------------------
+<br />
+ngscluster (security group: _at_sc-ngscluster)
+<br />
+-------------------------------------------
+<br />
+Launch time: 2013-07-02 13:05:52
+<br />
+Uptime: 0 days, 00:45:07
+<br />
+Zone: us-east-1a
+<br />
+Keypair: aws_starcluster_keypair
+<br />
+Spot requests: 1 open
+<br />
+Cluster nodes:
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;master running i-65a6f305 ec2-50-19-10-231.compute-1.amazonaws.com
+<br />
+Total nodes: 1
+<br />
+<br /><br />I thought this might be a spot history pricing problem, but my max price is
+<br />
+higher than the avg price.  Now when I try to rerun loadbalance, I get the
+<br />
+error:
+<br />
+<br />[ec2-user_at_ip-10-28-206-211 ~]$ starcluster loadbalance -m 20 ngscluster
+<br />
+StarCluster - (<a href="/cluster/">/cluster</a>) (v. 0.9999)
+<br />
+Software Tools for Academics and Researchers (STAR)
+<br />
+Please submit bug reports to starcluster_at_mit.edu
+<br />
+<br />!!! ERROR - cluster ngscluster is not running
+<br />
+<br />However listclusters says its running (and surprisingly node001 is there
+<br />
+too):
+<br />
+<br />[ec2-user_at_ip-10-28-206-211 ~]$ starcluster listclusters
+<br />
+StarCluster - (<a href="/cluster/">/cluster</a>) (v. 0.9999)
+<br />
+Software Tools for Academics and Researchers (STAR)
+<br />
+Please submit bug reports to starcluster_at_mit.edu
+<br />
+<br />-------------------------------------------
+<br />
+ngscluster (security group: _at_sc-ngscluster)
+<br />
+-------------------------------------------
+<br />
+Launch time: 2013-07-02 13:05:52
+<br />
+Uptime: 0 days, 00:50:33
+<br />
+Zone: us-east-1a
+<br />
+Keypair: aws_starcluster_keypair
+<br />
+EBS volumes:
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;vol-b46254c9 on master:/dev/sdz (status: attached)
+<br />
+Spot requests: 1 active
+<br />
+Cluster nodes:
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;master running i-65a6f305 ec2-50-19-10-231.compute-1.amazonaws.com
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;node001 running i-c5886faa
+<br />
+ec2-107-21-176-10.compute-1.amazonaws.com(spot sir-0c581634)
+<br />
+Total nodes: 2
+<br />
+<br />qhost on the cluster doesn't see node001, so I tried to remove the node
+<br />
+&nbsp;with removenode.
+<br />
+<br />[ec2-user_at_ip-10-28-206-211 ~]$ starcluster removenode ngscluster node001
+<br />
+StarCluster - (<a href="/cluster/">/cluster</a>) (v. 0.9999)
+<br />
+Software Tools for Academics and Researchers (STAR)
+<br />
+Please submit bug reports to starcluster_at_mit.edu
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Running plugin setupuserenv.SetupUserEnvironment
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Running plugin starcluster.plugins.users.CreateUsers
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Running plugin starcluster.plugins.sge.SGEPlugin
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Removing node001 from SGE
+</em><br />
+!!! ERROR - Error occured while running plugin
+<br />
+'starcluster.plugins.sge.SGEPlugin':
+<br />
+!!! ERROR - remote command 'source /etc/profile &amp;&amp; qconf -dconf node001'
+<br />
+!!! ERROR - failed with status 1:
+<br />
+!!! ERROR - can't resolve hostname &quot;node001&quot;
+<br />
+!!! ERROR - can't delete configuration &quot;node001&quot; from list:
+<br />
+!!! ERROR - configuration does not exist
+<br />
+<br /><br />How do I get starcluster back in a working state?  I *just* started this
+<br />
+cluster...
+<br />
+<span id="received"><dfn>Received on</dfn> Tue Jul 02 2013 - 09:59:23 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1764.html#start1764">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1765.html" title="Next message in the list">Ryan Golhar: "Re:  loadbalance"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1763.html" title="Previous message in the list">Rayson Ho: "Re:  Starcluster for Google Compute Engine?"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1765.html" title="Next message in this discussion thread">Ryan Golhar: "Re:  loadbalance"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1765.html" title="Message sent in reply to this message">Ryan Golhar: "Re:  loadbalance"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1764" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1764" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1764" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1764" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

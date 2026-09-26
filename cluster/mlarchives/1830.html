@@ -1,0 +1,396 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Sergio Mafra ((no email))" />
+<meta name="Subject" content="Fwd:  Fwd: Integration of MPICH2 plugin with SGE" />
+<title>starcluster.mbox.out: Fwd:  Fwd: Integration of MPICH2 plugin with SGE</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Fwd:  Fwd: Integration of MPICH2 plugin with SGE</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Fwd:  Fwd: Integration of MPICH2 plugin with SGE</h1>
+<!-- received="Mon Aug 19 14:48:00 2013" -->
+<!-- isoreceived="20130819184800" -->
+<!-- sent="Mon, 19 Aug 2013 15:47:55 -0300" -->
+<!-- isosent="20130819184755" -->
+<!-- name="Sergio Mafra" -->
+<!-- email="(no email)" -->
+<!-- subject="Fwd:  Fwd: Integration of MPICH2 plugin with SGE" -->
+<!-- id="CALxTZg4v6+MzAaYmh_4kZny=JxjJb2nfS0oHe2U-pmEmVPOF6g_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- inreplyto="CALxTZg5kpxcy7XxdfAbuo+CqBsvar-sg+wDxkDMV3SS_iskxEw_at_mail.gmail.com" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1830.html#start1830" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1830.html#options2">top</a>, <a href="1830.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1831.html" accesskey="d" title="Sergio Mafra: &quot;Re:  Integration of MPICH2 plugin with SGE&quot;">Next message</a> ]
+[ <a href="1829.html" title="Hyokun Yun: &quot;Re:  Fwd: Integration of MPICH2 plugin with SGE&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1830" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1830" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1830" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1830" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Sergio Mafra &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Mon, 19 Aug 2013 15:47:55 -0300</span><br />
+</address>
+<br />
+---------- Forwarded message ----------
+<br />
+From: Sergio Mafra &lt;sergiohmafra_at_gmail.com&gt;
+<br />
+Date: Mon, Aug 19, 2013 at 3:47 PM
+<br />
+Subject: Re: [StarCluster] Fwd: Integration of MPICH2 plugin with SGE
+<br />
+To: Hyokun Yun &lt;yun3_at_purdue.edu&gt;
+<br />
+<br /><br />Hi Hyokun,
+<br />
+<br />Here we go:
+<br />
+<br />1. This indicates, that you application tries to use a node in the cluster,
+<br />
+which wasn't granted to this job by OGE.
+<br />
+2. OGE works well but I guess that this is more for OpenMPI (the default
+<br />
+MPI of StarCluster)... Which version of MPICH2 are you using? Is it the
+<br />
+last one.. 1.4? Did you compile your app using this version?
+<br />
+3. MIT StarCluster has changed the default allocation strategy from
+<br />
+$round_robin to $fill_up on this last release.
+<br />
+4. The only thing that can be related to the AMI is the Mpich2 version.
+<br />
+<br />All best,
+<br />
+<br />Sergio
+<br />
+<br /><br />On Mon, Aug 19, 2013 at 3:10 PM, Hyokun Yun &lt;yun3_at_purdue.edu&gt; wrote:
+<br />
+<br /><em class="quotelev1">&gt; Sergio,
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Thanks for the advice!
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; I have read the document, but why would daemons reject the task if it is
+</em><br />
+<em class="quotelev1">&gt; configured $fill_up?
+</em><br />
+<em class="quotelev1">&gt; Shouldn't OGE work for both choices?  The document doesn't say I should
+</em><br />
+<em class="quotelev1">&gt; not use $fill_up.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; I think I gave $round_robin a try, but I will try once again and let you
+</em><br />
+<em class="quotelev1">&gt; know whether I had success.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Also, is it possible that this is a problem specific to the AMI I am using?
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Best,
+</em><br />
+<em class="quotelev1">&gt; Hyokun Yun
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; On Mon, Aug 19, 2013 at 10:38 AM, Sergio Mafra &lt;sergiohmafra_at_gmail.com&gt;wrote:
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; Hi Hyokun,
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; I�m a user of MPICH2 and OGE.
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; It seems that you�re using $fill_up instead of $round_robin. If so, try
+</em><br />
+<em class="quotelev2">&gt;&gt; to change it to $round_robin with $ qconf -mp orte
+</em><br />
+<em class="quotelev2">&gt;&gt; You can learn more here:
+</em><br />
+<em class="quotelev2">&gt;&gt; <a href="../docs/latest/plugins/sge.html#using-the-plugin">/cluster/docs/latest/plugins/sge.html#using-the-plugin</a>
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; Let me know if this help you.
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; All best.
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; Sergio
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; On Mon, Aug 19, 2013 at 1:53 AM, Hyokun Yun &lt;yun3_at_purdue.edu&gt; wrote:
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Dear starcluster users,
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; I am experiencing a problem using MPICH2 plugin with SGE.
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; I am using the following image: ami-52a0c53b which uses Ubuntu 12.04
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; When I use mpich2 plugin, it seems like mpich2 and SGE are not tightly
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; integrated: when I execute my script using qsub, I get the following error
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; message.
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; error: executing task of job 1 failed: execution daemon on host
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; &quot;node001&quot; didn't accept task
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; error: executing task of job 1 failed: execution daemon on host
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; &quot;node002&quot; didn't accept task
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; error: executing task of job 1 failed: execution daemon on host
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; &quot;node003&quot; didn't accept task
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; error: executing task of job 1 failed: execution daemon on host
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; &quot;nodef004&quot; didn't accept task
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; It runs fine when I simply execute 'mpirun' myself, instead of relying
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; on SGE.
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Also, the same script runs fine as well when I use OpenMPI instead of
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; MPICH2.  That's why I suspect it is MPICH2 &amp; SGE integration issue.
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; The problem is that I need multi-thread support, and it is by default
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; disabled in OpenMPI.  I also prefer to use MPICH2 instead of OpenMPI.
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; I was able to reproduce the problem when I restarted the cluster from
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; scratch.  Would any of you please take a look on the problem by trying the
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; same image with MPICH2 plugin?
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Thanks,
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Hyokun Yun
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; _______________________________________________
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; StarCluster mailing list
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; StarCluster_at_mit.edu
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; _______________________________________________
+</em><br />
+<em class="quotelev2">&gt;&gt; StarCluster mailing list
+</em><br />
+<em class="quotelev2">&gt;&gt; StarCluster_at_mit.edu
+</em><br />
+<em class="quotelev2">&gt;&gt; <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; --
+</em><br />
+<em class="quotelev1">&gt; *Hyokun Yun *( <a href="http://www.stat.purdue.edu/~yun3">http://www.stat.purdue.edu/~yun3</a> )
+</em><br />
+<em class="quotelev1">&gt; Ph.D Candidate
+</em><br />
+<em class="quotelev1">&gt; Department of Statistics
+</em><br />
+<em class="quotelev1">&gt; Purdue University
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<span id="received"><dfn>Received on</dfn> Mon Aug 19 2013 - 14:48:00 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1830.html#start1830">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1831.html" title="Next message in the list">Sergio Mafra: "Re:  Integration of MPICH2 plugin with SGE"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1829.html" title="Previous message in the list">Hyokun Yun: "Re:  Fwd: Integration of MPICH2 plugin with SGE"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1830" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1830" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1830" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1830" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

@@ -1,0 +1,522 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Sergio Mafra ((no email))" />
+<meta name="Subject" content="Re:  Integration of MPICH2 plugin with SGE" />
+<title>starcluster.mbox.out: Re:  Integration of MPICH2 plugin with SGE</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Re:  Integration of MPICH2 plugin with SGE</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Re:  Integration of MPICH2 plugin with SGE</h1>
+<!-- received="Tue Aug 20 08:44:15 2013" -->
+<!-- isoreceived="20130820124415" -->
+<!-- sent="Tue, 20 Aug 2013 09:38:57 -0300" -->
+<!-- isosent="20130820123857" -->
+<!-- name="Sergio Mafra" -->
+<!-- email="(no email)" -->
+<!-- subject="Re:  Integration of MPICH2 plugin with SGE" -->
+<!-- id="CALxTZg6GReEyZM60902W-WDWOW2Eu7JLV44JzEywxDwKM4_p5g_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- inreplyto="CALO9H5ys9wLoX_RHKYQXuU1oMs-Cfr9KnnYZNKBetou+qccfcA_at_mail.gmail.com" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1835.html#start1835" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1835.html#options2">top</a>, <a href="1835.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1836.html" accesskey="d" title="Manuel J. Torres: &quot;Error Mounting EBS Volume&quot;">Next message</a> ]
+[ <a href="1834.html" title="Hyokun Yun: &quot;Re:  Integration of MPICH2 plugin with SGE&quot;">Previous message</a> ]
+[ <a href="1834.html" title="Hyokun Yun: &quot;Re:  Integration of MPICH2 plugin with SGE&quot;">In reply to</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1835" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1835" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1835" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1835" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Sergio Mafra &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Tue, 20 Aug 2013 09:38:57 -0300</span><br />
+</address>
+<br />
+Hi Hyokun,
+<br />
+<br />Try this in order to submit your job:
+<br />
+<br />$ qsub -N ttt -V -b y -cwd -pe orte 4 mpirun -np 4 executable_name
+<br />
+<br />PS: See that mpich2 has to receive the same nodes number that orte.
+<br />
+<br />All best,
+<br />
+<br /><br />Sergio
+<br />
+<br /><br /><br />On Mon, Aug 19, 2013 at 9:01 PM, Hyokun Yun &lt;yun3_at_purdue.edu&gt; wrote:
+<br />
+<br /><em class="quotelev1">&gt; Sergio,
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Thanks for the pointer! I will try to contact them as well.
+</em><br />
+<em class="quotelev1">&gt; However, my setting is pretty much vanilla starcluster except I installed
+</em><br />
+<em class="quotelev1">&gt; gcc-4.7 and boost packages,
+</em><br />
+<em class="quotelev1">&gt; so I consider it more of a starcluster issue than an OGE issue. I believe
+</em><br />
+<em class="quotelev1">&gt; my problem should be
+</em><br />
+<em class="quotelev1">&gt; reproducible by others who are using the same ami and mpich2 plugin.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Regarding your earlier message: I am using mpich2 1.4.1, and compiled the
+</em><br />
+<em class="quotelev1">&gt; software using it.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Actually when I ran qconf -mp orte, it was set as $round_robin instead of
+</em><br />
+<em class="quotelev1">&gt; $fill_up by default.
+</em><br />
+<em class="quotelev1">&gt; I just re-created the cluster to confirm this.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; I am using starcluster 0.93.3, with ami ami-52a0c53b (Ubuntu 12.04), on
+</em><br />
+<em class="quotelev1">&gt; cc2.8xlarge machines.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Below is how my qsub file looks like:
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; !/bin/csh
+</em><br />
+<em class="quotelev1">&gt; #$ -cwd
+</em><br />
+<em class="quotelev1">&gt; #$ -pe orte 4
+</em><br />
+<em class="quotelev1">&gt; #$ -N ttt
+</em><br />
+<em class="quotelev1">&gt; #$ -e ../auto_output/ttt.err
+</em><br />
+<em class="quotelev1">&gt; #$ -o ../auto_output/ttt.out
+</em><br />
+<em class="quotelev1">&gt; mpirun executable_name &gt; ../auto_logs/ttt.txt
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Below is what I get from mpirun --version
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; HYDRA build details:
+</em><br />
+<em class="quotelev1">&gt;     Version:                                 1.4.1
+</em><br />
+<em class="quotelev1">&gt;     Release Date:                            Wed Aug 24 14:40:04 CDT 2011
+</em><br />
+<em class="quotelev1">&gt;     CC:                              gcc -D_FORTIFY_SOURCE=2
+</em><br />
+<em class="quotelev1">&gt;  -Wl,-Bsymbolic-functions -Wl,-z,relro
+</em><br />
+<em class="quotelev1">&gt;     CXX:                             c++ -D_FORTIFY_SOURCE=2
+</em><br />
+<em class="quotelev1">&gt;  -Wl,-Bsymbolic-functions -Wl,-z,relro
+</em><br />
+<em class="quotelev1">&gt;     F77:                             gfortran  -Wl,-Bsymbolic-functions
+</em><br />
+<em class="quotelev1">&gt; -Wl,-z,relro
+</em><br />
+<em class="quotelev1">&gt;     F90:                             gfortran  -Wl,-Bsymbolic-functions
+</em><br />
+<em class="quotelev1">&gt; -Wl,-z,relro
+</em><br />
+<em class="quotelev1">&gt;     Configure options:                       '--build=x86_64-linux-gnu'
+</em><br />
+<em class="quotelev1">&gt; '--includedir=${prefix}/include' '--mandir=${prefix}/share/man'
+</em><br />
+<em class="quotelev1">&gt; '--infodir=${prefix}/share/info' '--sysconfdir=/etc' '--localstatedir=/var'
+</em><br />
+<em class="quotelev1">&gt; '--libexecdir=${prefix}/lib/mpich2' '--srcdir=.'
+</em><br />
+<em class="quotelev1">&gt; '--disable-maintainer-mode' '--disable-dependency-tracking'
+</em><br />
+<em class="quotelev1">&gt; '--disable-silent-rules' '--enable-shared' '--prefix=/usr' '--enable-fc'
+</em><br />
+<em class="quotelev1">&gt; '--disable-rpath' '--sysconfdir=/etc/mpich2'
+</em><br />
+<em class="quotelev1">&gt; '--includedir=/usr/include/mpich2' '--docdir=/usr/share/doc/mpich2'
+</em><br />
+<em class="quotelev1">&gt; '--with-hwloc-prefix=system' '--enable-checkpointing'
+</em><br />
+<em class="quotelev1">&gt; '--with-hydra-ckpointlib=blcr' 'build_alias=x86_64-linux-gnu'
+</em><br />
+<em class="quotelev1">&gt; 'MPICH2LIB_CFLAGS=-g -O2 -fstack-protector --param=ssp-buffer-size=4
+</em><br />
+<em class="quotelev1">&gt; -Wformat -Wformat-security -g -O2 -fstack-protector
+</em><br />
+<em class="quotelev1">&gt; --param=ssp-buffer-size=4 -Wformat -Wformat-security
+</em><br />
+<em class="quotelev1">&gt; -Werror=format-security -Wall' 'MPICH2LIB_CXXFLAGS=-g -O2 -fstack-protector
+</em><br />
+<em class="quotelev1">&gt; --param=ssp-buffer-size=4 -Wformat -Wformat-security -g -O2
+</em><br />
+<em class="quotelev1">&gt; -fstack-protector --param=ssp-buffer-size=4 -Wformat -Wformat-security
+</em><br />
+<em class="quotelev1">&gt; -Werror=format-security -Wall' 'MPICH2LIB_FFLAGS=-g -O2'
+</em><br />
+<em class="quotelev1">&gt; 'MPICH2LIB_FCFLAGS=' 'LDFLAGS=-Wl,-Bsymbolic-functions -Wl,-z,relro '
+</em><br />
+<em class="quotelev1">&gt; 'CPPFLAGS=-D_FORTIFY_SOURCE=2 -I/build/buildd/mpich2-1.4.1/src/mpl/include
+</em><br />
+<em class="quotelev1">&gt; -I/build/buildd/mpich2-1.4.1/src/mpl/include
+</em><br />
+<em class="quotelev1">&gt; -I/build/buildd/mpich2-1.4.1/src/openpa/src
+</em><br />
+<em class="quotelev1">&gt; -I/build/buildd/mpich2-1.4.1/src/openpa/src
+</em><br />
+<em class="quotelev1">&gt; -I/build/buildd/mpich2-1.4.1/src/mpid/ch3/include
+</em><br />
+<em class="quotelev1">&gt; -I/build/buildd/mpich2-1.4.1/src/mpid/ch3/include
+</em><br />
+<em class="quotelev1">&gt; -I/build/buildd/mpich2-1.4.1/src/mpid/common/datatype
+</em><br />
+<em class="quotelev1">&gt; -I/build/buildd/mpich2-1.4.1/src/mpid/common/datatype
+</em><br />
+<em class="quotelev1">&gt; -I/build/buildd/mpich2-1.4.1/src/mpid/common/locks
+</em><br />
+<em class="quotelev1">&gt; -I/build/buildd/mpich2-1.4.1/src/mpid/common/locks
+</em><br />
+<em class="quotelev1">&gt; -I/build/buildd/mpich2-1.4.1/src/mpid/ch3/channels/nemesis/include
+</em><br />
+<em class="quotelev1">&gt; -I/build/buildd/mpich2-1.4.1/src/mpid/ch3/channels/nemesis/include
+</em><br />
+<em class="quotelev1">&gt; -I/build/buildd/mpich2-1.4.1/src/mpid/ch3/channels/nemesis/nemesis/include
+</em><br />
+<em class="quotelev1">&gt; -I/build/buildd/mpich2-1.4.1/src/mpid/ch3/channels/nemesis/nemesis/include
+</em><br />
+<em class="quotelev1">&gt; -I/build/buildd/mpich2-1.4.1/src/mpid/ch3/channels/nemesis/nemesis/utils/monitor
+</em><br />
+<em class="quotelev1">&gt; -I/build/buildd/mpich2-1.4.1/src/mpid/ch3/channels/nemesis/nemesis/utils/monitor
+</em><br />
+<em class="quotelev1">&gt; -I/build/buildd/mpich2-1.4.1/src/util/wrappers
+</em><br />
+<em class="quotelev1">&gt; -I/build/buildd/mpich2-1.4.1/src/util/wrappers' 'FFLAGS= -g -O2 -O2'
+</em><br />
+<em class="quotelev1">&gt; 'FC=gfortran' 'CFLAGS= -g -O2 -fstack-protector --param=ssp-buffer-size=4
+</em><br />
+<em class="quotelev1">&gt; -Wformat -Wformat-security -g -O2 -fstack-protector
+</em><br />
+<em class="quotelev1">&gt; --param=ssp-buffer-size=4 -Wformat -Wformat-security
+</em><br />
+<em class="quotelev1">&gt; -Werror=format-security -Wall -O2' 'CXXFLAGS= -g -O2 -fstack-protector
+</em><br />
+<em class="quotelev1">&gt; --param=ssp-buffer-size=4 -Wformat -Wformat-security -g -O2
+</em><br />
+<em class="quotelev1">&gt; -fstack-protector --param=ssp-buffer-size=4 -Wformat -Wformat-security
+</em><br />
+<em class="quotelev1">&gt; -Werror=format-security -Wall -O2' '--disable-option-checking' 'CC=gcc'
+</em><br />
+<em class="quotelev1">&gt; 'LIBS=-lrt -lcr -lpthread '
+</em><br />
+<em class="quotelev1">&gt;     Process Manager:                         pmi
+</em><br />
+<em class="quotelev1">&gt;     Launchers available:                      ssh rsh fork slurm ll lsf
+</em><br />
+<em class="quotelev1">&gt; sge manual persist
+</em><br />
+<em class="quotelev1">&gt;     Topology libraries available:              hwloc plpa
+</em><br />
+<em class="quotelev1">&gt;     Resource management kernels available:    user slurm ll lsf sge pbs
+</em><br />
+<em class="quotelev1">&gt;     Checkpointing libraries available:        blcr
+</em><br />
+<em class="quotelev1">&gt;     Demux engines available:                  poll select
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Thanks,
+</em><br />
+<em class="quotelev1">&gt; Hyokun Yun
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; On Mon, Aug 19, 2013 at 11:52 AM, Sergio Mafra &lt;sergiohmafra_at_gmail.com&gt;wrote:
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; Hyokun,
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; Other source that you can take advantage of is this forum dedicated to
+</em><br />
+<em class="quotelev2">&gt;&gt; OGE: <a href="http://gridengine.org/blog/2011/01/27/gridengine-users-mailing-list/">http://gridengine.org/blog/2011/01/27/gridengine-users-mailing-list/</a>
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; All best,
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; Sergio
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; On Mon, Aug 19, 2013 at 1:53 AM, Hyokun Yun &lt;yun3_at_purdue.edu&gt; wrote:
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Dear starcluster users,
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; I am experiencing a problem using MPICH2 plugin with SGE.
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; I am using the following image: ami-52a0c53b which uses Ubuntu 12.04
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; When I use mpich2 plugin, it seems like mpich2 and SGE are not tightly
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; integrated: when I execute my script using qsub, I get the following error
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; message.
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; error: executing task of job 1 failed: execution daemon on host
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; &quot;node001&quot; didn't accept task
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; error: executing task of job 1 failed: execution daemon on host
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; &quot;node002&quot; didn't accept task
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; error: executing task of job 1 failed: execution daemon on host
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; &quot;node003&quot; didn't accept task
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; error: executing task of job 1 failed: execution daemon on host
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; &quot;nodef004&quot; didn't accept task
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; It runs fine when I simply execute 'mpirun' myself, instead of relying
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; on SGE.
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Also, the same script runs fine as well when I use OpenMPI instead of
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; MPICH2.  That's why I suspect it is MPICH2 &amp; SGE integration issue.
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; The problem is that I need multi-thread support, and it is by default
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; disabled in OpenMPI.  I also prefer to use MPICH2 instead of OpenMPI.
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; I was able to reproduce the problem when I restarted the cluster from
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; scratch.  Would any of you please take a look on the problem by trying the
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; same image with MPICH2 plugin?
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Thanks,
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Hyokun Yun
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; _______________________________________________
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; StarCluster mailing list
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; StarCluster_at_mit.edu
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; --
+</em><br />
+<em class="quotelev1">&gt; *Hyokun Yun *( <a href="http://www.stat.purdue.edu/~yun3">http://www.stat.purdue.edu/~yun3</a> )
+</em><br />
+<em class="quotelev1">&gt; Ph.D Candidate
+</em><br />
+<em class="quotelev1">&gt; Department of Statistics
+</em><br />
+<em class="quotelev1">&gt; Purdue University
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<span id="received"><dfn>Received on</dfn> Tue Aug 20 2013 - 08:44:15 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1835.html#start1835">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1836.html" title="Next message in the list">Manuel J. Torres: "Error Mounting EBS Volume"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1834.html" title="Previous message in the list">Hyokun Yun: "Re:  Integration of MPICH2 plugin with SGE"</a></li>
+<li><dfn>In reply to</dfn>: <a href="1834.html" title="Message to which this message replies">Hyokun Yun: "Re:  Integration of MPICH2 plugin with SGE"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1835" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1835" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1835" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1835" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

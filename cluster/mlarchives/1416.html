@@ -1,0 +1,373 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Shpungin, Joseph ((no email))" />
+<meta name="Subject" content="Bug report" />
+<title>starcluster.mbox.out: Bug report</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Bug report</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Bug report</h1>
+<!-- received="Thu Oct  4 13:25:41 2012" -->
+<!-- isoreceived="20121004172541" -->
+<!-- sent="Thu, 4 Oct 2012 13:25:36 -0400" -->
+<!-- isosent="20121004172536" -->
+<!-- name="Shpungin, Joseph" -->
+<!-- email="(no email)" -->
+<!-- subject="Bug report" -->
+<!-- id="7D1F91B22CE7924A812B0158AAB2B66443C8C3CDA9_at_USCTMXP51013.merck.com" -->
+<!-- charset="us-ascii" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1416.html#start1416" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1416.html#options2">top</a>, <a href="1416.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1417.html" accesskey="d" title="Steve Heistand: &quot;bug report&quot;">Next message</a> ]
+[ <a href="1415.html" title="Thadeus Burgess: &quot;Bug with config file for AWS&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1416" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1416" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1416" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1416" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Shpungin, Joseph &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 4 Oct 2012 13:25:36 -0400</span><br />
+</address>
+<br />
+Hi,
+<br />
+My name is Joe Shpungin.
+<br />
+I attempted to use StarCluster to launch a test cluster but the attempt failed with the following log.  Could you please let me know what went wrong?
+<br />
+<br />---------- CRASH DETAILS ----------
+<br />
+COMMAND: starcluster start CLUSTER1 --bid 0.20
+<br />
+2012-10-04 17:06:20,903 PID: 23118 config.py:551 - DEBUG - Loading config
+<br />
+2012-10-04 17:06:20,903 PID: 23118 config.py:118 - DEBUG - Loading file: /home/ec2-user/.starcluster/config
+<br />
+2012-10-04 17:06:20,907 PID: 23118 awsutils.py:54 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'proxy_user': None, 'proxy_pass': None, 'proxy_port': None, 'proxy': None, 'is_secure': True, 'path': '/', 'region': None, 'port': None}
+<br />
+2012-10-04 17:06:21,025 PID: 23118 start.py:176 - INFO - Using default cluster template: smallcluster
+<br />
+2012-10-04 17:06:21,025 PID: 23118 base.py:147 - WARNING - ************************************************************
+<br />
+2012-10-04 17:06:21,029 PID: 23118 base.py:151 - WARNING - Waiting 5 seconds before continuing...
+<br />
+2012-10-04 17:06:21,029 PID: 23118 base.py:152 - WARNING - Press CTRL-C to cancel...
+<br />
+2012-10-04 17:06:26,036 PID: 23118 cluster.py:1539 - INFO - Validating cluster template settings...
+<br />
+2012-10-04 17:06:26,376 PID: 23118 cluster.py:926 - DEBUG - Launch map: node001 (ami: ami-899d49e0, type: m1.small)...
+<br />
+2012-10-04 17:06:26,376 PID: 23118 cluster.py:1555 - INFO - Cluster template settings are valid
+<br />
+2012-10-04 17:06:26,377 PID: 23118 cluster.py:1427 - INFO - Starting cluster...
+<br />
+2012-10-04 17:06:26,377 PID: 23118 cluster.py:952 - INFO - Launching a 2-node cluster...
+<br />
+2012-10-04 17:06:26,377 PID: 23118 cluster.py:926 - DEBUG - Launch map: node001 (ami: ami-899d49e0, type: m1.small)...
+<br />
+2012-10-04 17:06:26,378 PID: 23118 cluster.py:1004 - INFO - Launching master node (ami: ami-899d49e0, type: m1.small)...
+<br />
+2012-10-04 17:06:26,442 PID: 23118 awsutils.py:165 - INFO - Creating security group _at_sc-CLUSTER1...
+<br />
+2012-10-04 17:06:28,001 PID: 23118 cluster.py:772 - INFO - Reservation:r-26ce3940
+<br />
+2012-10-04 17:06:28,002 PID: 23118 cluster.py:926 - DEBUG - Launch map: node001 (ami: ami-899d49e0, type: m1.small)...
+<br />
+2012-10-04 17:06:28,002 PID: 23118 cluster.py:1024 - INFO - Launching node001 (ami: ami-899d49e0, type: m1.small)
+<br />
+2012-10-04 17:06:28,151 PID: 23118 cluster.py:772 - INFO - SpotInstanceRequest:sir-8fd42811
+<br />
+2012-10-04 17:06:28,151 PID: 23118 cluster.py:1235 - INFO - Waiting for cluster to come up... (updating every 30s)
+<br />
+2012-10-04 17:06:28,543 PID: 23118 cluster.py:664 - DEBUG - existing nodes: {}
+<br />
+2012-10-04 17:06:28,543 PID: 23118 cluster.py:672 - DEBUG - adding node i-a5a334d8 to self._nodes list
+<br />
+2012-10-04 17:06:29,877 PID: 23118 cluster.py:680 - DEBUG - returning self._nodes = [&lt;Node: master (i-a5a334d8)&gt;]
+<br />
+2012-10-04 17:06:29,877 PID: 23118 cluster.py:1193 - INFO - Waiting for all nodes to be in a 'running' state...
+<br />
+2012-10-04 17:06:29,963 PID: 23118 cluster.py:664 - DEBUG - existing nodes: {u'i-a5a334d8': &lt;Node: master (i-a5a334d8)&gt;}
+<br />
+2012-10-04 17:06:29,963 PID: 23118 cluster.py:667 - DEBUG - updating existing node i-a5a334d8 in self._nodes
+<br />
+2012-10-04 17:06:29,964 PID: 23118 cluster.py:680 - DEBUG - returning self._nodes = [&lt;Node: master (i-a5a334d8)&gt;]
+<br />
+2012-10-04 17:07:00,172 PID: 23118 cluster.py:664 - DEBUG - existing nodes: {u'i-a5a334d8': &lt;Node: master (i-a5a334d8)&gt;}
+<br />
+2012-10-04 17:07:00,173 PID: 23118 cluster.py:667 - DEBUG - updating existing node i-a5a334d8 in self._nodes
+<br />
+2012-10-04 17:07:00,173 PID: 23118 cluster.py:680 - DEBUG - returning self._nodes = [&lt;Node: master (i-a5a334d8)&gt;]
+<br />
+2012-10-04 17:07:00,173 PID: 23118 cluster.py:1211 - INFO - Waiting for SSH to come up on all nodes...
+<br />
+2012-10-04 17:07:00,254 PID: 23118 cluster.py:664 - DEBUG - existing nodes: {u'i-a5a334d8': &lt;Node: master (i-a5a334d8)&gt;}
+<br />
+2012-10-04 17:07:00,254 PID: 23118 cluster.py:667 - DEBUG - updating existing node i-a5a334d8 in self._nodes
+<br />
+2012-10-04 17:07:00,254 PID: 23118 cluster.py:680 - DEBUG - returning self._nodes = [&lt;Node: master (i-a5a334d8)&gt;]
+<br />
+2012-10-04 17:07:00,349 PID: 23118 __init__.py:75 - DEBUG - loading private key /home/ec2-user/.ssh/STAR_KEY
+<br />
+2012-10-04 17:07:00,349 PID: 23118 __init__.py:82 - DEBUG - specified key does not end in either rsa or dsa, trying both
+<br />
+2012-10-04 17:07:00,350 PID: 23118 __init__.py:167 - DEBUG - Using private key /home/ec2-user/.ssh/STAR_KEY (rsa)
+<br />
+2012-10-04 17:07:00,351 PID: 23118 __init__.py:97 - DEBUG - connecting to host ec2-23-20-80-59.compute-1.amazonaws.com on port 22 as user root
+<br />
+2012-10-04 17:07:33,958 PID: 23118 cluster.py:664 - DEBUG - existing nodes: {u'i-a5a334d8': &lt;Node: master (i-a5a334d8)&gt;}
+<br />
+2012-10-04 17:07:33,959 PID: 23118 cluster.py:667 - DEBUG - updating existing node i-a5a334d8 in self._nodes
+<br />
+2012-10-04 17:07:33,959 PID: 23118 cluster.py:680 - DEBUG - returning self._nodes = [&lt;Node: master (i-a5a334d8)&gt;]
+<br />
+2012-10-04 17:07:34,039 PID: 23118 __init__.py:97 - DEBUG - connecting to host ec2-23-20-80-59.compute-1.amazonaws.com on port 22 as user root
+<br />
+2012-10-04 17:08:04,156 PID: 23118 cluster.py:664 - DEBUG - existing nodes: {u'i-a5a334d8': &lt;Node: master (i-a5a334d8)&gt;}
+<br />
+2012-10-04 17:08:04,157 PID: 23118 cluster.py:667 - DEBUG - updating existing node i-a5a334d8 in self._nodes
+<br />
+2012-10-04 17:08:04,157 PID: 23118 cluster.py:680 - DEBUG - returning self._nodes = [&lt;Node: master (i-a5a334d8)&gt;]
+<br />
+2012-10-04 17:08:04,229 PID: 23118 __init__.py:97 - DEBUG - connecting to host ec2-23-20-80-59.compute-1.amazonaws.com on port 22 as user root
+<br />
+2012-10-04 17:08:05,196 PID: 23118 __init__.py:186 - DEBUG - creating sftp connection
+<br />
+2012-10-04 17:08:06,213 PID: 23118 utils.py:93 - INFO - Waiting for cluster to come up took 1.634 mins
+<br />
+2012-10-04 17:08:06,214 PID: 23118 cluster.py:1454 - INFO - The master node is ec2-23-20-80-59.compute-1.amazonaws.com
+<br />
+2012-10-04 17:08:06,215 PID: 23118 cluster.py:1455 - INFO - Setting up the cluster...
+<br />
+2012-10-04 17:08:06,377 PID: 23118 cluster.py:664 - DEBUG - existing nodes: {u'i-a5a334d8': &lt;Node: master (i-a5a334d8)&gt;}
+<br />
+2012-10-04 17:08:06,378 PID: 23118 cluster.py:667 - DEBUG - updating existing node i-a5a334d8 in self._nodes
+<br />
+2012-10-04 17:08:06,378 PID: 23118 cluster.py:672 - DEBUG - adding node i-e9ae3994 to self._nodes list
+<br />
+2012-10-04 17:08:07,510 PID: 23118 cluster.py:680 - DEBUG - returning self._nodes = [&lt;Node: master (i-a5a334d8)&gt;, &lt;Node: node001 (i-e9ae3994)&gt;]
+<br />
+2012-10-04 17:08:07,511 PID: 23118 clustersetup.py:90 - INFO - Configuring hostnames...
+<br />
+2012-10-04 17:08:07,516 PID: 23118 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+<br />
+2012-10-04 17:08:07,517 PID: 23118 __init__.py:75 - DEBUG - loading private key /home/ec2-user/.ssh/STAR_KEY
+<br />
+2012-10-04 17:08:07,517 PID: 23118 __init__.py:82 - DEBUG - specified key does not end in either rsa or dsa, trying both
+<br />
+2012-10-04 17:08:07,519 PID: 23118 __init__.py:167 - DEBUG - Using private key /home/ec2-user/.ssh/STAR_KEY (rsa)
+<br />
+2012-10-04 17:08:07,520 PID: 23118 __init__.py:186 - DEBUG - creating sftp connection
+<br />
+2012-10-04 17:08:07,520 PID: 23118 __init__.py:97 - DEBUG - connecting to host  on port 22 as user root
+<br />
+2012-10-04 17:08:08,517 PID: 23118 threadpool.py:123 - INFO - Shutting down threads...
+<br />
+2012-10-04 17:08:08,518 PID: 23118 threadpool.py:135 - DEBUG - unfinished_tasks = 20
+<br />
+2012-10-04 17:08:09,520 PID: 23118 cli.py:266 - DEBUG - error occurred in job (id=node001): failed to connect to host  on port 22
+<br />
+Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File &quot;/usr/lib/python2.6/site-packages/StarCluster-0.93.3-py2.6.egg/starcluster/threadpool.py&quot;, line 31, in run
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;job.run()
+<br />
+&nbsp;&nbsp;File &quot;/usr/lib/python2.6/site-packages/StarCluster-0.93.3-py2.6.egg/starcluster/threadpool.py&quot;, line 58, in run
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;r = self.method(*self.args, **self.kwargs)
+<br />
+&nbsp;&nbsp;File &quot;/usr/lib/python2.6/site-packages/StarCluster-0.93.3-py2.6.egg/starcluster/node.py&quot;, line 696, in set_hostname
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;hostname_file = self.ssh.remote_file(&quot;/etc/hostname&quot;, &quot;w&quot;)
+<br />
+&nbsp;&nbsp;File &quot;/usr/lib/python2.6/site-packages/StarCluster-0.93.3-py2.6.egg/starcluster/sshutils/__init__.py&quot;, line 296, in remote_file
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;rfile = self.sftp.open(file, mode)
+<br />
+&nbsp;&nbsp;File &quot;/usr/lib/python2.6/site-packages/StarCluster-0.93.3-py2.6.egg/starcluster/sshutils/__init__.py&quot;, line 187, in sftp
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self._sftp = ssh.SFTPClient.from_transport(self.transport)
+<br />
+&nbsp;&nbsp;File &quot;/usr/lib/python2.6/site-packages/StarCluster-0.93.3-py2.6.egg/starcluster/sshutils/__init__.py&quot;, line 136, in transport
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;port=self._port, timeout=self._timeout)
+<br />
+&nbsp;&nbsp;File &quot;/usr/lib/python2.6/site-packages/StarCluster-0.93.3-py2.6.egg/starcluster/sshutils/__init__.py&quot;, line 103, in connect
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;raise exception.SSHConnectionError(host, port)
+<br />
+SSHConnectionError: failed to connect to host  on port 22
+<br />
+<br />---------- SYSTEM INFO ----------
+<br />
+StarCluster: 0.93.3
+<br />
+Python: 2.6.8 (unknown, Jun 29 2012, 06:50:56)  [GCC 4.4.6 20110731 (Red Hat 4.4.6-3)]
+<br />
+Platform: Linux-3.2.21-1.32.6.amzn1.x86_64-x86_64-with-glibc2.2.5
+<br />
+boto: 2.3.0
+<br />
+ssh: 1.7.13
+<br />
+Crypto: 2.6
+<br />
+jinja2: 2.6
+<br />
+decorator: 3.3.1
+<br />
+<br />Thank you,
+<br />
+-Joe
+<br />
+<br />joe_shpungin_at_merck.com
+<br />
+<br /><br /><br />Notice:  This e-mail message, together with any attachments, contains
+<br />
+information of Merck &amp; Co., Inc. (One Merck Drive, Whitehouse Station,
+<br />
+New Jersey, USA 08889), and/or its affiliates Direct contact information
+<br />
+for affiliates is available at 
+<br />
+<a href="http://www.merck.com/contact/contacts.html">http://www.merck.com/contact/contacts.html</a>) that may be confidential,
+<br />
+proprietary copyrighted and/or legally privileged. It is intended solely
+<br />
+for the use of the individual or entity named on this message. If you are
+<br />
+not the intended recipient, and have received this message in error,
+<br />
+please notify us immediately by reply e-mail and then delete it from 
+<br />
+your system.
+<br />
+<span id="received"><dfn>Received on</dfn> Thu Oct 04 2012 - 13:25:41 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1416.html#start1416">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1417.html" title="Next message in the list">Steve Heistand: "bug report"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1415.html" title="Previous message in the list">Thadeus Burgess: "Bug with config file for AWS"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1416" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1416" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1416" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1416" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

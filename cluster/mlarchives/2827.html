@@ -1,0 +1,287 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Mike Cariaso ((no email))" />
+<meta name="Subject" content="Re:  Updating public AMIs to have Ubuntu 14.04? Or how to install starcluster on AWS AMI?" />
+<title>starcluster.mbox.out: Re:  Updating public AMIs to have Ubuntu 14.04? Or how to install starcluster on AWS AMI?</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Re:  Updating public AMIs to have Ubuntu 14.04? Or how to install starcluster on AWS AMI?</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Re:  Updating public AMIs to have Ubuntu 14.04? Or how to install starcluster on AWS AMI?</h1>
+<!-- received="Thu Aug 25 00:15:03 2016" -->
+<!-- isoreceived="20160825041503" -->
+<!-- sent="Thu, 25 Aug 2016 04:14:57 +0000" -->
+<!-- isosent="20160825041457" -->
+<!-- name="Mike Cariaso" -->
+<!-- email="(no email)" -->
+<!-- subject="Re:  Updating public AMIs to have Ubuntu 14.04? Or how to install starcluster on AWS AMI?" -->
+<!-- id="1472098495551.89918_at_keygene.com" -->
+<!-- charset="iso-8859-1" -->
+<!-- inreplyto="CALkg49y=L-skt39NeJPatan6q60Cor3tL4wO5OhUmVbig+pV_w_at_mail.gmail.com" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2827.html#start2827" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2827.html#options2">top</a>, <a href="2827.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2828.html" accesskey="d" title="Vasisht Tadigotla: &quot;Re:  Updating public AMIs to have Ubuntu 14.04? Or how to install starcluster on AWS AMI?&quot;">Next message</a> ]
+[ <a href="2826.html" title="Mike Cariaso: &quot;Re:  workers go idle until a new worker is added ... solved&quot;">Previous message</a> ]
+[ <a href="2753.html" title="Avner May: &quot;Re:  Updating public AMIs to have Ubuntu 14.04? Or how to install starcluster on AWS AMI?&quot;">In reply to</a> ]
+<!-- unextthread="start" -->
+[ <a href="2828.html" accesskey="t" title="Vasisht Tadigotla: &quot;Re:  Updating public AMIs to have Ubuntu 14.04? Or how to install starcluster on AWS AMI?&quot;">Next in thread</a> ]
+ [ <a href="2827.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2827" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2827" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2827" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2827" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Mike Cariaso &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 25 Aug 2016 04:14:57 +0000</span><br />
+</address>
+<br />
+<a href="https://github.com/datacratic/StarCluster/issues/56">https://github.com/datacratic/StarCluster/issues/56</a>
+<br />
+<br /><br />My immediate need is ubuntu14 or 16 amis in non-us-east-1 regions, and I'm sure I'm not the only one. The current situation with broken ubuntu13 amis still present in listpublic is definitely suboptimal.
+<br />
+<br />So I'm thinking about introducing a new command into starcluster which will allow it to make it's own amis. This might also allow you to 'bake' an ami after all of your plugin installs have completed, to reduce setup time for new worker nodes.
+<br />
+<br />it would largely follow the steps from
+<br />
+<a href="2545.html">/cluster/mlarchives/2545.html</a>
+<br />
+and would probably have a command line interface similar to
+<br />
+<br />starcluster makeami --baseami ami-ed82e39e
+<br />
+<br />obviously a new command is a more dramatic change than a new plugin. So before I jump in I thought I'd see if others would weigh in.
+<br />
+<br />Is it useful? or perhaps impractical for reasons I'm overlooking?
+<br />
+<br /><br /><br />Michael Cariaso
+<br />
+&lt;mailto:michael.cariaso_at_keygene.com&gt;
+<br />
+Bioinformatician&lt;<a href="http://www.keygene.com">http://www.keygene.com</a>&gt;
+<br />
+________________________________
+<br />
+From: starcluster-bounces_at_mit.edu &lt;starcluster-bounces_at_mit.edu&gt; on behalf of Avner May &lt;avnermay_at_cs&#46;<!--nospam-->columbia.edu&gt;
+<br />
+Sent: Saturday, January 30, 2016 1:58 AM
+<br />
+To: Ed Gray
+<br />
+Cc: starcluster_at_mit.edu; Don Morton
+<br />
+Subject: Re: [StarCluster] Updating public AMIs to have Ubuntu 14.04? Or how to install starcluster on AWS AMI?
+<br />
+<br />I just wanted to give one final request for there being public Ubuntu 14.04 StarCluster AMIs (EBS and HVM-EBS), which are listed in the output of the &quot;starcluster listpublic&quot;, so that other people don't go through the painful experience I had to go through.
+<br />
+<br />What is the process for adding a new public AMI to StarCluster?
+<br />
+<br />Sergio Mafra has pointed out to me that ami-38b99850 is available and has StarCluster installed on Ubuntu 14.04.
+<br />
+<br />On Thu, Jan 28, 2016 at 9:34 PM, Ed Gray &lt;gray_ed_at_hotmail.com&lt;mailto:gray_ed_at_hotmail.com&gt;&gt; wrote:
+<br />
+Having worked with Jennifer, I can tell you she's a star.
+<br />
+<br /><br /><br />Sent from my Smartphone; please forgive any spelling and grammar mishaps.
+<br />
+<br /><br />-------- Original message --------
+<br />
+From: Avner May &lt;avnermay_at_cs.columbia.edu&lt;mailto:avnermay_at_cs.columbia.edu&gt;&gt;
+<br />
+Date: 01/28/2016 6:13 PM (GMT-05:00)
+<br />
+To: Don Morton &lt;don.morton_at_borealscicomp.com&lt;mailto:don.morton_at_borealscicomp.com&gt;&gt;, Jennifer Staab &lt;jstaab_at_cs&#46;<!--nospam-->unc.edu&lt;mailto:jstaab_at_cs&#46;<!--nospam-->unc.edu&gt;&gt;
+<br />
+Cc: starcluster_at_mit.edu&lt;mailto:starcluster_at_mit.edu&gt;
+<br />
+Subject: Re: [StarCluster] Updating public AMIs to have Ubuntu 14.04? Or how to install starcluster on AWS AMI?
+<br />
+<br />Hi all,
+<br />
+<br />I have carefully followed Jennifer Staab's instructions here&lt;<a href="2545.html">/cluster/mlarchives/2545.html</a>&gt;, and things are working great (*** THANK YOU SO MUCH JENNIFER!! ***).  One small hiccup I ran into is that at that link, one of the commands is long and is split into 2 lines ('apt-get install nfs-kernel-server nfs-common rpcbind libgssglue1 libnfsidmap2 libtirpc1 -y&quot;) -- if this is copy-pasted as 2 lines, it will fail quietly when instance is launched, and it eventually leads to an error starting NFS on the master (see error message below).
+<br />
+<br />I also followed the instructions here&lt;<a href="https://github.com/BVLC/caffe/wiki/Install-Caffe-on-EC2-from-scratch-(Ubuntu,-CUDA-7,-cuDNN">https://github.com/BVLC/caffe/wiki/Install-Caffe-on-EC2-from-scratch-(Ubuntu,-CUDA-7,-cuDNN</a>)&gt; in order to install NVIDIA drivers and CUDA (though I installed the latest versions, not the ones included in that post).
+<br />
+<br />I would recommend including a modified version of Jennifer's instructions directly linked from the primary StarCluster website in order to explain how to set-up a non-StarCluster AMI to work with StarCluster.  This is super valuable information.
+<br />
+<br />Now everything is working!!!
+<br />
+Avner
+<br />
+<br />========================
+<br />
+Starting NFS server on master
+<br />
+!!! ERROR - Error occured while running plugin 'starcluster.clustersetup.DefaultClusterSetup':
+<br />
+!!! ERROR - remote command 'source /etc/profile &amp;&amp; /etc/init.d/nfs
+<br />
+!!! ERROR - start' failed with status 127:
+<br />
+!!! ERROR - bash: /etc/init.d/nfs: No such file or directory
+<br />
+<br />On Thu, Jan 28, 2016 at 3:01 PM, Don Morton &lt;don.morton_at_borealscicomp.com&lt;mailto:don.morton_at_borealscicomp.com&gt;&gt; wrote:
+<br />
+Hello,
+<br />
+<br />I faced this same issue a few months ago, and somehow succeeded after bumping into lots of walls (most of it based on my own ignorance).  I haven't done anything with this since, and these notes are extremely rough (hopefully I didn't cuss too much!), but you are welcome to use what you need.  Maybe someone will have the time to make something more formal, but I'm afraid it won't be me for some time now.
+<br />
+<br />All the best,
+<br />
+<br />Don
+<br />
+<br /><pre>
+---
+Don Morton, Owner/Manager
+Boreal Scientific Computing LLC
+Fairbanks, Alaska USA
+<a href="http://www.borealscicomp.com/">http://www.borealscicomp.com/</a>
+<a href="http://www.borealscicomp.com/Miscellaneous/MortonBio/">http://www.borealscicomp.com/Miscellaneous/MortonBio/</a>
+On Thu, Jan 28, 2016 at 7:42 PM, Avner May &lt;avnermay_at_cs.columbia.edu&lt;mailto:avnermay_at_cs.columbia.edu&gt;&gt; wrote:
+I see that this has already been asked several times: <a href="2690.html">/cluster/mlarchives/2690.html</a>, <a href="2545.html">/cluster/mlarchives/2545.html</a>, <a href="https://www.youtube.com/watch?v=2RBupgpi_ec">https://www.youtube.com/watch?v=2RBupgpi_ec</a>, etc.
+Which of these guides should I use?  Why hasn't an Ubuntu 14.04 AMI been made public by the StarCluster development team yet?  Are there plans to do this?  Meanwhile, could someone make their AMI public?
+It seems there is widespread interest in updated AMIs (EBS and HVM-EBS versions).
+Thanks so much,
+Avner
+On Thu, Jan 28, 2016 at 2:30 PM, Avner May &lt;avnermay_at_cs.columbia.edu&lt;mailto:avnermay_at_cs.columbia.edu&gt;&gt; wrote:
+Hi,
+My goal is to have a StarCluster AMI with Ubuntu 14.04, CUDA 7.5, and the latest NVIDIA drivers (I want to use g2.2xlarge instance type).
+I have noticed that the public StarCluster AMIs are pretty outdated, with the most up-to-date AMIs using Ubuntu 13.04, which has already reached its &quot;end of life&lt;<a href="http://fridge.ubuntu.com/2014/01/28/ubuntu-13-04-raring-ringtail-end-of-life-reached-on-january-27-2014/">http://fridge.ubuntu.com/2014/01/28/ubuntu-13-04-raring-ringtail-end-of-life-reached-on-january-27-2014/</a>&gt;&quot;.  Could an Ubuntu 14.04 + 64-bit + HVM-EBS public AMI be created, with CUDA 7.5 and the latest NVIDIA driver&lt;<a href="http://www.nvidia.com/download/driverResults.aspx/97645/en-us">http://www.nvidia.com/download/driverResults.aspx/97645/en-us</a>&gt; installed?  This would be incredibly useful.  I am having a very hard time upgrading ami-6b211202 for my needs (I have run into issues updating ubuntu, as well as installing NVIDIA drivers and CUDA).
+Here&lt;<a href="http://tleyden.github.io/blog/2014/10/25/cuda-6-dot-5-on-aws-gpu-instance-running-ubuntu-14-dot-04/">http://tleyden.github.io/blog/2014/10/25/cuda-6-dot-5-on-aws-gpu-instance-running-ubuntu-14-dot-04/</a>&gt; are instructions on how to install NVIDIA drivers and CUDA on Ubuntu 14.04 AMI (ami-9eaa1cf6).  So another option which would satisfy my needs would be if you simply gave me instructions on how to install StarCluster on this AMI.
+Any advice on the easiest way to get a working StarCluster AMI, with an up to date version of Ubuntu, would be great.
+Thanks!
+Avner
+_______________________________________________
+StarCluster mailing list
+StarCluster_at_mit.edu&lt;mailto:StarCluster_at_mit.edu&gt;
+<a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</pre>
+<span id="received"><dfn>Received on</dfn> Thu Aug 25 2016 - 00:15:03 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2827.html#start2827">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2828.html" title="Next message in the list">Vasisht Tadigotla: "Re:  Updating public AMIs to have Ubuntu 14.04? Or how to install starcluster on AWS AMI?"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2826.html" title="Previous message in the list">Mike Cariaso: "Re:  workers go idle until a new worker is added ... solved"</a></li>
+<li><dfn>In reply to</dfn>: <a href="2753.html" title="Message to which this message replies">Avner May: "Re:  Updating public AMIs to have Ubuntu 14.04? Or how to install starcluster on AWS AMI?"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="2828.html" title="Next message in this discussion thread">Vasisht Tadigotla: "Re:  Updating public AMIs to have Ubuntu 14.04? Or how to install starcluster on AWS AMI?"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="2828.html" title="Message sent in reply to this message">Vasisht Tadigotla: "Re:  Updating public AMIs to have Ubuntu 14.04? Or how to install starcluster on AWS AMI?"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2827" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2827" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2827" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2827" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

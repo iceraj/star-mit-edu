@@ -1,0 +1,227 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Rajat Banerjee ((no email))" />
+<meta name="Subject" content="Re:  how does the loadbalancer know how much to bid for a node" />
+<title>starcluster.mbox.out: Re:  how does the loadbalancer know how much to bid for a node</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Re:  how does the loadbalancer know how much to bid for a node</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Re:  how does the loadbalancer know how much to bid for a node</h1>
+<!-- received="Wed Oct 31 13:16:08 2012" -->
+<!-- isoreceived="20121031171608" -->
+<!-- sent="Wed, 31 Oct 2012 13:15:13 -0400" -->
+<!-- isosent="20121031171513" -->
+<!-- name="Rajat Banerjee" -->
+<!-- email="(no email)" -->
+<!-- subject="Re:  how does the loadbalancer know how much to bid for a node" -->
+<!-- id="CAAEsPucdfD7tWW2WirWuF0R76=fnOPeLC8pv0NSD9MSdXp0bpw_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- inreplyto=" how does the loadbalancer know how much to bid for a node" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1481.html#start1481" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1481.html#options2">top</a>, <a href="1481.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1482.html" accesskey="d" title="Ryan Golhar: &quot;Spot price history does not agree with AWS&quot;">Next message</a> ]
+[ <a href="1480.html" title="Bruce Hoff: &quot;how does the loadbalancer know how much to bid for a node&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="1495.html" accesskey="t" title="Justin Riley: &quot;Re:  how does the loadbalancer know how much to bid for a node&quot;">Next in thread</a> ]
+ [ <a href="1481.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1481" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1481" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1481" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1481" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Rajat Banerjee &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Wed, 31 Oct 2012 13:15:13 -0400</span><br />
+</address>
+<br />
+---------- Forwarded message ----------
+<br />
+<br /><em class="quotelev1">&gt; From: Bruce Hoff &lt;bruce.hoff_at_sagebase.org&gt;
+</em><br />
+<em class="quotelev1">&gt; To: starcluster_at_mit.edu
+</em><br />
+<em class="quotelev1">&gt; Cc:
+</em><br />
+<em class="quotelev1">&gt; Date: Tue, 30 Oct 2012 09:46:11 -0700
+</em><br />
+<em class="quotelev1">&gt; Subject: [StarCluster] how does the loadbalancer know how much to bid for
+</em><br />
+<em class="quotelev1">&gt; a node
+</em><br />
+<em class="quotelev1">&gt; Hi:
+</em><br />
+<em class="quotelev1">&gt; When using spot instances and the load balancer, how the load balancer
+</em><br />
+<em class="quotelev1">&gt; decide how much to bid when adding a new node?
+</em><br />
+<em class="quotelev1">&gt; Thanks,
+</em><br />
+<em class="quotelev1">&gt; Bruce Hoff
+</em><br />
+<em class="quotelev1">&gt; Sage Bionetworks
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<br />Hi Bruce,
+<br />
+The loadbalancer uses cluster.add_nodes to add new nodes. I remember from
+<br />
+testing that it used to use the same price that you set for bids when the
+<br />
+cluster was created. Things have changed, but it looks like (in cluster.py)
+<br />
+add_nodes still uses the bid price that you specified when creating the
+<br />
+cluster.
+<br />
+<br />The source is in:
+<br />
+<a href="https://github.com/jtriley/StarCluster/blob/develop/starcluster/cluster.py">https://github.com/jtriley/StarCluster/blob/develop/starcluster/cluster.py</a>,
+<br />
+search for add_nodes
+<br />
+<br />Best,
+<br />
+Rajat Banerjee
+<br />
+<br /><br /><em class="quotelev1">&gt; _______________________________________________
+</em><br />
+<em class="quotelev1">&gt; StarCluster mailing list
+</em><br />
+<em class="quotelev1">&gt; StarCluster_at_mit.edu
+</em><br />
+<em class="quotelev1">&gt; <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<span id="received"><dfn>Received on</dfn> Wed Oct 31 2012 - 13:16:08 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1481.html#start1481">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1482.html" title="Next message in the list">Ryan Golhar: "Spot price history does not agree with AWS"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1480.html" title="Previous message in the list">Bruce Hoff: "how does the loadbalancer know how much to bid for a node"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1495.html" title="Next message in this discussion thread">Justin Riley: "Re:  how does the loadbalancer know how much to bid for a node"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1495.html" title="Message sent in reply to this message">Justin Riley: "Re:  how does the loadbalancer know how much to bid for a node"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1481" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1481" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1481" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1481" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

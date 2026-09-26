@@ -1,0 +1,256 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Daniel Polhamus ((no email))" />
+<meta name="Subject" content="Addnode SGE problem" />
+<title>starcluster.mbox.out: Addnode SGE problem</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Addnode SGE problem</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Addnode SGE problem</h1>
+<!-- received="Mon Nov 26 13:55:39 2012" -->
+<!-- isoreceived="20121126185539" -->
+<!-- sent="Mon, 26 Nov 2012 13:55:17 -0500" -->
+<!-- isosent="20121126185517" -->
+<!-- name="Daniel Polhamus" -->
+<!-- email="(no email)" -->
+<!-- subject="Addnode SGE problem" -->
+<!-- id="CAGJuTd8G5qyn67fVU4BGayj-kM4BoB0qDV7iSxJ7H5JHa+oF0w_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1513.html#start1513" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1513.html#options2">top</a>, <a href="1513.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1514.html" accesskey="d" title="Ron Chen: &quot;Re:  Addnode SGE problem&quot;">Next message</a> ]
+[ <a href="1512.html" title="Justin Riley: &quot;Re:  StarCluster Article in this month&#0039;s Linux Magazine&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="1514.html" accesskey="t" title="Ron Chen: &quot;Re:  Addnode SGE problem&quot;">Next in thread</a> ]
+ [ <a href="1513.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1513" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1513" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1513" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1513" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Daniel Polhamus &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Mon, 26 Nov 2012 13:55:17 -0500</span><br />
+</address>
+<br />
+Hi all,
+<br />
+<br />I've run into a problem with &quot;addnode&quot; that I'm having a difficult time
+<br />
+diagnosing.   Using the development version of starcluster, when I issue a
+<br />
+starcluster addnode, the nodes added in the resulting cluster are unusable
+<br />
+-- they result in SGE errors.  Jobs run on the master node, but any nodes
+<br />
+I've added are broken.  If, however, I start the cluster with multiple
+<br />
+nodes then resulting nodes are all usable (so it's not a user code issue).
+<br />
+&nbsp;I have a hunch that this is due to the fact that we have several users
+<br />
+working under the same account (as different AWS IAM users) and we are not
+<br />
+all on the same StarCluster version.  To be clear, we are all on varying
+<br />
+stages of the developmental version (0.9999).  Where do I begin debugging
+<br />
+this?  The hostfile seems to be set up correctly (see output below).
+<br />
+<br />Thanks,
+<br />
+Dan
+<br />
+<br />danp_at_master:~$ cat /etc/hosts
+<br />
+127.0.0.1 localhost
+<br />
+<br /># The following lines are desirable for IPv6 capable hosts
+<br />
+::1 ip6-localhost ip6-loopback
+<br />
+fe00::0 ip6-localnet
+<br />
+ff00::0 ip6-mcastprefix
+<br />
+ff02::1 ip6-allnodes
+<br />
+ff02::2 ip6-allrouters
+<br />
+ff02::3 ip6-allhosts
+<br />
+10.196.149.155 master
+<br />
+10.226.219.58 node001
+<br />
+<br />And here's what the errors look like:
+<br />
+<br />danp_at_master:~$ qstat -f
+<br />
+queuename                      qtype resv/used/tot. load_avg arch
+<br />
+&nbsp;states
+<br />
+---------------------------------------------------------------------------------
+<br />
+all.q_at_master                   BIP   0/0/8          1.29     lx24-amd64
+<br />
+---------------------------------------------------------------------------------
+<br />
+all.q_at_node001                  BIP   0/0/8          0.70     lx24-amd64
+<br />
+<br />############################################################################
+<br />
+&nbsp;- PENDING JOBS - PENDING JOBS - PENDING JOBS - PENDING JOBS - PENDING JOBS
+<br />
+############################################################################
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 0.55500 postList   danp         Eqw   11/26/2012 16:54:38     1
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3 0.55500 postList   danp         Eqw   11/26/2012 16:54:39     1
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5 0.55500 postList   danp         Eqw   11/26/2012 16:54:39     1
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7 0.55500 postList   danp         Eqw   11/26/2012 16:54:39     1
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8 0.55500 postList   danp         Eqw   11/26/2012 16:54:40     1
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9 0.55500 postList   danp         Eqw   11/26/2012 16:54:40     1
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10 0.55500 postList   danp         Eqw   11/26/2012 16:54:40     1
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11 0.55500 postList   danp         Eqw   11/26/2012 16:54:40     1
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13 0.55500 postList   danp         Eqw   11/26/2012 16:54:40     1
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15 0.55500 postList   danp         Eqw   11/26/2012 16:54:41     1
+<br />
+<span id="received"><dfn>Received on</dfn> Mon Nov 26 2012 - 13:55:39 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1513.html#start1513">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1514.html" title="Next message in the list">Ron Chen: "Re:  Addnode SGE problem"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1512.html" title="Previous message in the list">Justin Riley: "Re:  StarCluster Article in this month&#0039;s Linux Magazine"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1514.html" title="Next message in this discussion thread">Ron Chen: "Re:  Addnode SGE problem"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1514.html" title="Message sent in reply to this message">Ron Chen: "Re:  Addnode SGE problem"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1513" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1513" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1513" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1513" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

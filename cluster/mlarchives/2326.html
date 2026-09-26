@@ -1,0 +1,276 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Jacob barhak ((no email))" />
+<meta name="Subject" content="Re:  Adding New NFS Volumes to Cluster" />
+<title>starcluster.mbox.out: Re:  Adding New NFS Volumes to Cluster</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Re:  Adding New NFS Volumes to Cluster</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Re:  Adding New NFS Volumes to Cluster</h1>
+<!-- received="Thu Aug 28 03:49:42 2014" -->
+<!-- isoreceived="20140828074942" -->
+<!-- sent="Thu, 28 Aug 2014 02:49:37 -0500" -->
+<!-- isosent="20140828074937" -->
+<!-- name="Jacob barhak" -->
+<!-- email="(no email)" -->
+<!-- subject="Re:  Adding New NFS Volumes to Cluster" -->
+<!-- id="06ED4BE5-A0E3-428E-851D-04A0F6B22140_at_gmail.com" -->
+<!-- charset="utf-8" -->
+<!-- inreplyto="53FE96D7.3010103_at_cs.unc.edu" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2326.html#start2326" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2326.html#options2">top</a>, <a href="2326.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2327.html" accesskey="d" title="Sergio Mafra: &quot;Re:  Tagging Cluster nodes instances with EC2 Tags&quot;">Next message</a> ]
+[ <a href="2325.html" title="Jennifer Staab: &quot;Re:  Adding New NFS Volumes to Cluster&quot;">Previous message</a> ]
+[ <a href="2325.html" title="Jennifer Staab: &quot;Re:  Adding New NFS Volumes to Cluster&quot;">In reply to</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2326" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2326" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2326" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2326" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Jacob barhak &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 28 Aug 2014 02:49:37 -0500</span><br />
+</address>
+<br />
+Hi Dave,
+<br />
+<br />There is a plugin to help define NFS share. I believe it defines NFS sharing for newly added nodes. Yet I think your cluster has to start with this. 
+<br />
+<br />Here is a link to a discussion defining this plugin:
+<br />
+<br /><a href="https://github.com/jtriley/StarCluster/issues/44">https://github.com/jtriley/StarCluster/issues/44</a>
+<br />
+<br />However, I am not sure this is what you are looking for. 
+<br />
+<br />I am using this in my system and happy with it. 
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Jacob
+<br />
+<br /><br />Sent from my iPhone
+<br />
+<br />On Aug 27, 2014, at 9:41 PM, Jennifer Staab &lt;jstaab_at_cs.unc.edu&gt; wrote:
+<br />
+<br /><em class="quotelev1">&gt; I going to assume are using NFS for volumes mounted on the master node of your cluster, the answer is different if you are using NFS between your cluster and an EC2 outside your cluster but within the same VPC.
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; You should be able to use the config file to set the volumes you want mounted and call them in your cluster template.  Noting that you can only have one cluster with that mounted volume at any one time.  If your volume is mounted to another cluster (running or not), it cannot be mounted to the new cluster you create (thought this might be the issue you are having).
+</em><br />
+<em class="quotelev1">&gt; ######## CONFIG WILL HAVE SOMETHING LIKE ###########
+</em><br />
+<em class="quotelev1">&gt; [cluster YourClusterTemplate]
+</em><br />
+<em class="quotelev1">&gt; VOLUMES = YourVolume
+</em><br />
+<em class="quotelev1">&gt; # Sections starting with &quot;volume&quot; define your EBS volumes
+</em><br />
+<em class="quotelev1">&gt; [volume YourVolume]
+</em><br />
+<em class="quotelev1">&gt; VOLUME_ID = vol-xxxxxxxxx
+</em><br />
+<em class="quotelev1">&gt; MOUNT_PATH = /YourMountPath
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Now if you have a running cluster and you want to mount other volumes that are seen by all nodes on that cluster there is a way to do this, but it requires you have the &quot;crossmnt&quot; option specified in &quot;/etc/exports&quot; for &quot;/home&quot; and/or &quot;/YourMountPath&quot;.  I edited my version of Starcluster so that the &quot;crossmnt&quot; option was automatically set so that I could mount underneath the volumes that were mounted via starcluster config. 
+</em><br />
+<em class="quotelev1">&gt; LIKE /etc/exports:
+</em><br />
+<em class="quotelev1">&gt; /home YourCluster(async,no_root_squash,no_subtree_check,rw,crossmnt)
+</em><br />
+<em class="quotelev1">&gt; /YourMountPath YourCluster(async,no_root_squash,no_subtree_check,rw,crossmnt)
+</em><br />
+<em class="quotelev1">&gt; /opt/sge6 YourCluster(async,no_root_squash,no_subtree_check,rw)
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Then you can simply use the AWS console to attach your new volume to the running Master node.  Next login to the the Master node and use the &quot;mount&quot; command to mount the newly attached volume underneath an already mounted volume LIKE &quot;mount /dev/xvdXX/ home/NewVolume&quot;  OR  &quot;mount /dev/xvdXX /YourMountPath/NewVolume&quot;.  This trick only works if you have &quot;crossmnt&quot; option set in /etc/exports.  If you edit /etc/exports to add &quot;crossmnt&quot; option you will have to run &quot;exportfs -r&quot; or restart NFS on Master node to reload /etc/exports file. The command &quot;lsblk&quot; should show you the new volumes all mounted.  Admittedly I haven't personally tried to mount under /home -- I just suggested       it should work since StarCluster software automatically shares /home among all nodes of the cluster.  One hard fast AWS rule is that an EBS volume can only be mounted to one EC2 at a time, this is why the EBS volume is attached and mounted to the Master node, and NFS is used to allow the volume to be seen by all nodes of the cluster.
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Hope this helps,
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; -Jennifer
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; On 8/27/14 7:26 PM, Dave Lin wrote:
+</em><br />
+<em class="quotelev2">&gt;&gt; I was trying to figure out the best way to add new volumes (NFS mounted) to a running cluster.
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; I searched through the archives and found this open feature request <a href="https://github.com/jtriley/StarCluster/issues/333">https://github.com/jtriley/StarCluster/issues/333</a>
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 1) Is there a suggested process or plugin for doing this?
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 2) One way I've been doing this is to just modify the config, terminate and restart the cluster. When I tried to             restart the cluster after modifying the config, the new volumes didn't seem to get mounted. Is the restart supposed to read the config again?
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; Thanks in advance,
+</em><br />
+<em class="quotelev2">&gt;&gt; Dave
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; _______________________________________________
+</em><br />
+<em class="quotelev2">&gt;&gt; StarCluster mailing list
+</em><br />
+<em class="quotelev2">&gt;&gt; StarCluster_at_mit.edu
+</em><br />
+<em class="quotelev2">&gt;&gt; <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; _______________________________________________
+</em><br />
+<em class="quotelev1">&gt; StarCluster mailing list
+</em><br />
+<em class="quotelev1">&gt; StarCluster_at_mit.edu
+</em><br />
+<em class="quotelev1">&gt; <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<span id="received"><dfn>Received on</dfn> Thu Aug 28 2014 - 03:49:42 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2326.html#start2326">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2327.html" title="Next message in the list">Sergio Mafra: "Re:  Tagging Cluster nodes instances with EC2 Tags"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2325.html" title="Previous message in the list">Jennifer Staab: "Re:  Adding New NFS Volumes to Cluster"</a></li>
+<li><dfn>In reply to</dfn>: <a href="2325.html" title="Message to which this message replies">Jennifer Staab: "Re:  Adding New NFS Volumes to Cluster"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2326" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2326" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2326" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2326" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

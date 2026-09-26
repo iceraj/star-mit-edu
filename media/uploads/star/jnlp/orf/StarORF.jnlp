@@ -1,0 +1,21 @@
+<jnlp spec="1.0+" codebase="http://star.mit.edu/media/uploads/star/jar/orf" href="http://star.mit.edu/media/uploads/star/jnlp/orf/StarORF.jnlp">
+  <information>
+    <title>StarORF</title>
+    <vendor>STAR Project</vendor>
+    <homepage href="http://star.mit.edu/orf"/>
+    <description>StarORF facilitates the identification of the protein(s) encoded within a DNA sequence. Using StarORF, the DNA sequence is first transcribed into RNA and then translated into all the potential ORFs (Open Reading Frame) encoded within each of the six translation frames (3 in the forward direction and 3 in the reverse direction). This allows students to indentify the translation frame that results in the longest protein coding sequence.
+    </description>
+    <offline-allowed/>
+  </information>
+  <security>
+    <all-permissions/>
+  </security>
+  <resources>
+    <j2se initial-heap-size="128m" max-heap-size="256m" version="1.6+ 1.5+" java-vm-args="" />
+    <jar href="StarORF.jar" download="eager" main="true"/>
+    <property name="com.apple.macos.useScreenMenuBar" value="false"/>
+
+  </resources>
+  <application-desc main-class="star.orf.app.Main" name="StarORF" width="1024" height="768">
+  </application-desc>
+</jnlp>

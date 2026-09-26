@@ -1,0 +1,318 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Manuel J. Torres ((no email))" />
+<meta name="Subject" content="Tophat run on a 2-node cluster" />
+<title>starcluster.mbox.out: Tophat run on a 2-node cluster</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Tophat run on a 2-node cluster</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Tophat run on a 2-node cluster</h1>
+<!-- received="Fri Aug  2 16:51:18 2013" -->
+<!-- isoreceived="20130802205118" -->
+<!-- sent="Fri, 2 Aug 2013 13:51:16 -0700" -->
+<!-- isosent="20130802205116" -->
+<!-- name="Manuel J. Torres" -->
+<!-- email="(no email)" -->
+<!-- subject="Tophat run on a 2-node cluster" -->
+<!-- id="CAAGWsdw05TNThWJYPpm+_kpFsiPd=g7zVu73XnXQoZ5B-bcyhw_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1807.html#start1807" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1807.html#options2">top</a>, <a href="1807.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1808.html" accesskey="d" title="Jacob Barhak: &quot;Re:  Tophat run on a 2-node cluster&quot;">Next message</a> ]
+[ <a href="1806.html" title="Hyungro Lee: &quot;Re:  Plan for Window Azure Virtual Machines?&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="1808.html" accesskey="t" title="Jacob Barhak: &quot;Re:  Tophat run on a 2-node cluster&quot;">Next in thread</a> ]
+ [ <a href="1807.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1807" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1807" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1807" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1807" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Manuel J. Torres &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Fri, 2 Aug 2013 13:51:16 -0700</span><br />
+</address>
+<br />
+I am trying to run tophat software mapping ~38 Gb of RNA-seq reads in fastq
+<br />
+format to a reference genome on a 2-node cluster with the following
+<br />
+properties:
+<br />
+NODE_IMAGE_ID = ami-999d49f0
+<br />
+NODE_INSTANCE_TYPE = c1.xlarge
+<br />
+<br />Question: How many CPUs are there on this type of cluster?
+<br />
+<br />Here is a df -h listing of my cluster:
+<br />
+root_at_master:~# df -h
+<br />
+Filesystem            Size  Used Avail Use% Mounted on
+<br />
+/dev/xvda1            9.9G  9.9G     0 100% /
+<br />
+udev                  3.4G  4.0K  3.4G   1% /dev
+<br />
+tmpfs                 1.4G  184K  1.4G   1% /run
+<br />
+none                  5.0M     0  5.0M   0% /run/lock
+<br />
+none                  3.5G     0  3.5G   0% /run/shm
+<br />
+/dev/xvdb1            414G  199M  393G   1% /mnt
+<br />
+/dev/xvdz              99G   96G     0 100% /home/large-data
+<br />
+/dev/xvdy              20G  5.3G   14G  29% /home/genomic-data
+<br />
+<br />I created a third volume for the output that does not appear in this list
+<br />
+but is listed in my config file and which I determined I can read and write
+<br />
+to. I wrote the output files to this larger empty volume.
+<br />
+<br />I can't get tophat to run to completion. It appears to be generating
+<br />
+truncated intermediate files. Here is the tophat output:
+<br />
+<br />[2013-08-01 17:34:19] Beginning TopHat run (v2.0.9)
+<br />
+-----------------------------------------------
+<br />
+[2013-08-01 17:34:19] Checking for Bowtie
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bowtie version:        2.1.0.0
+<br />
+[2013-08-01 17:34:21] Checking for Samtools
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Samtools version:        0.1.19.0
+<br />
+[2013-08-01 17:34:21] Checking for Bowtie index files (genome)..
+<br />
+[2013-08-01 17:34:21] Checking for reference FASTA file
+<br />
+[2013-08-01 17:34:21] Generating SAM header for
+<br />
+/home/genomic-data/data/Nemve1.allmasked
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;format:          fastq
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;quality scale:   phred33 (default)
+<br />
+[2013-08-01 17:34:27] Reading known junctions from GTF file
+<br />
+[2013-08-01 17:36:56] Preparing reads
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;left reads: min. length=50, max. length=50, 165174922 kept reads
+<br />
+(113024 discarded)
+<br />
+[2013-08-01 18:24:07] Building transcriptome data files..
+<br />
+[2013-08-01 18:26:43] Building Bowtie index from Nemve1.allmasked.fa
+<br />
+[2013-08-01 18:29:01] Mapping left_kept_reads to transcriptome
+<br />
+Nemve1.allmasked with Bowtie2
+<br />
+[2013-08-02 07:34:40] Resuming TopHat pipeline with unmapped reads
+<br />
+[bam_header_read] EOF marker is absent. The input is probably truncated.
+<br />
+[bam_header_read] EOF marker is absent. The input is probably truncated.
+<br />
+[2013-08-02 07:34:41] Mapping left_kept_reads.m2g_um to genome
+<br />
+Nemve1.allmasked with Bowtie2
+<br />
+[main_samview] truncated file.
+<br />
+[main_samview] truncated file.
+<br />
+[bam_header_read] EOF marker is absent. The input is probably truncated.
+<br />
+[bam_header_read] invalid BAM binary header (this is not a BAM file).
+<br />
+[main_samview] fail to read the header from
+<br />
+&quot;/home/results-data/top-results-8-01-2013/topout/tmp/left_kept_reads.m2g\
+<br />
+_um_unmapped.bam&quot;.
+<br />
+[2013-08-02 07:34:54] Retrieving sequences for splices
+<br />
+[2013-08-02 07:35:16] Indexing splices
+<br />
+Warning: Empty fasta file:
+<br />
+'/home/results-data/top-results-8-01-2013/topout/tmp/segment_juncs.fa'
+<br />
+Warning: All fasta inputs were empty
+<br />
+Error: Encountered internal Bowtie 2 exception (#1)
+<br />
+Command: /home/genomic-data/bin/bowtie2-2.1.0/bowtie2-build
+<br />
+/home/results-data/top-results-8-01-2013/topout/tmp/segm\
+<br />
+ent_juncs.fa
+<br />
+/home/results-data/top-results-8-01-2013/topout/tmp/segment_juncs
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[FAILED]
+<br />
+Error: Splice sequence indexing failed with err =1
+<br />
+<br />Questions:
+<br />
+<br />Am I running out of memory?
+<br />
+<br />How much RAM does the AMI have and can I make that larger?
+<br />
+<br />No matter what configuration starcluster I define, I can't seem to make my
+<br />
+root directory larger that 10Gb and it appears to full.
+<br />
+<br />Can I make the root directory larger that 10GB?
+<br />
+<br />Thanks!
+<br />
+<br /><pre>
+-- 
+Manuel J Torres, PhD
+219 Brannan Street Unit 6G
+San Francisco, CA 94107
+VOICE: 415-656-9548
+</pre>
+<span id="received"><dfn>Received on</dfn> Fri Aug 02 2013 - 16:51:18 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1807.html#start1807">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1808.html" title="Next message in the list">Jacob Barhak: "Re:  Tophat run on a 2-node cluster"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1806.html" title="Previous message in the list">Hyungro Lee: "Re:  Plan for Window Azure Virtual Machines?"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1808.html" title="Next message in this discussion thread">Jacob Barhak: "Re:  Tophat run on a 2-node cluster"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1808.html" title="Message sent in reply to this message">Jacob Barhak: "Re:  Tophat run on a 2-node cluster"</a></li>
+<li><dfn>Reply</dfn>: <a href="1810.html" title="Message sent in reply to this message">Rayson Ho: "Re:  Tophat run on a 2-node cluster"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1807" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1807" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1807" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1807" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

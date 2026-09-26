@@ -1,0 +1,220 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="David Mrva ((no email))" />
+<meta name="Subject" content="minimal cost with loadbalance" />
+<title>starcluster.mbox.out: minimal cost with loadbalance</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">minimal cost with loadbalance</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>minimal cost with loadbalance</h1>
+<!-- received="Thu May 29 03:10:51 2014" -->
+<!-- isoreceived="20140529071051" -->
+<!-- sent="Thu, 29 May 2014 08:10:46 +0100" -->
+<!-- isosent="20140529071046" -->
+<!-- name="David Mrva" -->
+<!-- email="(no email)" -->
+<!-- subject="minimal cost with loadbalance" -->
+<!-- id="5386DD76.9020607_at_cantabresearch.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2228.html#start2228" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2228.html#options2">top</a>, <a href="2228.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2229.html" accesskey="d" title="Rayson Ho: &quot;Re:  minimal cost with loadbalance&quot;">Next message</a> ]
+[ <a href="2227.html" title="Cedar McKay: &quot;SGE failed to start with certain hostnames&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="2229.html" accesskey="t" title="Rayson Ho: &quot;Re:  minimal cost with loadbalance&quot;">Next in thread</a> ]
+ [ <a href="2228.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2228" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2228" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2228" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2228" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: David Mrva &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 29 May 2014 08:10:46 +0100</span><br />
+</address>
+<br />
+Hello,
+<br />
+<br />I stared using StarCluster with Amazon spot instances. I expect that the 
+<br />
+workload of my application will fluctuate a lot and I aim to minimise 
+<br />
+the cost of running the spot instances. StarCluster's loadbalancer seems 
+<br />
+to go some way in this direction. It adds more spot instances when the 
+<br />
+SGE queue is busy and removes unused nodes. The removal of the nodes 
+<br />
+interacts with SGE's strategy for assigning jobs to queues. SGE chooses 
+<br />
+the node with the lowest load average to assign a job to. If there are 
+<br />
+more nodes in the cluster than are necessary to execute the jobs, this 
+<br />
+strategy will result in spreading the jobs that need to be executed 
+<br />
+across as many nodes as possible. This behaviour reduces the chances of 
+<br />
+some of the nodes staying unused and potentially being removed by the 
+<br />
+load balancer.
+<br />
+<br />I'd like to configure StarCluster in such a way that SGE jobs go to node 
+<br />
+A for as long as there are slots available on it and they go to node B 
+<br />
+only if there is no vacant slot on node A. For example, on a cluster 
+<br />
+with nodes A and B and 8 slots on each node if there are 4 slots being 
+<br />
+used on node A and 4 more jobs arrive to SGE, I'd like all 4 of these 
+<br />
+new jobs to go node A. Using the &quot;orte&quot; parallel environment with 
+<br />
+&quot;fill_up&quot; allocation strategy does not achieve this. For the above 
+<br />
+example, using the &quot;fill_up&quot; allocation strategy will pick node B 
+<br />
+(lowest load average node) and assign all 4 new jobs to it, resulting in 
+<br />
+nodes A and B running 4 jobs each instead of A running 8 jobs and B none.
+<br />
+<br />How can I use StarCluster's built-in load balancer to minimise the cost 
+<br />
+of running spot instances by minimising the number unused CPUs in the 
+<br />
+way described above?
+<br />
+<br />Many thanks,
+<br />
+David
+<br />
+<span id="received"><dfn>Received on</dfn> Thu May 29 2014 - 03:10:51 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2228.html#start2228">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2229.html" title="Next message in the list">Rayson Ho: "Re:  minimal cost with loadbalance"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2227.html" title="Previous message in the list">Cedar McKay: "SGE failed to start with certain hostnames"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="2229.html" title="Next message in this discussion thread">Rayson Ho: "Re:  minimal cost with loadbalance"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="2229.html" title="Message sent in reply to this message">Rayson Ho: "Re:  minimal cost with loadbalance"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2228" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2228" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2228" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2228" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

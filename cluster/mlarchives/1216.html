@@ -1,0 +1,278 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Paul Pottorff ((no email))" />
+<meta name="Subject" content="Crash Report" />
+<title>starcluster.mbox.out: Crash Report</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Crash Report</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Crash Report</h1>
+<!-- received="Mon May 21 03:32:25 2012" -->
+<!-- isoreceived="20120521073225" -->
+<!-- sent="Mon, 21 May 2012 00:32:23 -0700" -->
+<!-- isosent="20120521073223" -->
+<!-- name="Paul Pottorff" -->
+<!-- email="(no email)" -->
+<!-- subject="Crash Report" -->
+<!-- id="5801A8FC-57A7-42BD-B468-ADA83C41B020_at_gmail.com" -->
+<!-- charset="US-ASCII" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1216.html#start1216" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1216.html#options2">top</a>, <a href="1216.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1217.html" accesskey="d" title="Antonio Gonz&#0225;lez Pe&#0241;a: &quot;Fwd: StarCluster comments&quot;">Next message</a> ]
+[ <a href="1215.html" title="CB: &quot;Re:  newbie problems&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="1223.html" accesskey="t" title="Justin Riley: &quot;Re:  Crash Report&quot;">Next in thread</a> ]
+ [ <a href="1216.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1216" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1216" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1216" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1216" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Paul Pottorff &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Mon, 21 May 2012 00:32:23 -0700</span><br />
+</address>
+<br />
+---------- CRASH DETAILS ----------
+<br />
+COMMAND: starcluster start myclustername
+<br />
+2012-05-21 00:29:00,984 PID: 25891 config.py:551 - DEBUG - Loading config
+<br />
+2012-05-21 00:29:00,984 PID: 25891 config.py:118 - DEBUG - Loading file: /var/root/.starcluster/config
+<br />
+2012-05-21 00:29:00,990 PID: 25891 awsutils.py:54 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'proxy_user': None, 'proxy_pass': None, 'proxy_port': None, 'proxy': None, 'is_secure': True, 'path': '/', 'region': RegionInfo:eu-west-1, 'port': None}
+<br />
+2012-05-21 00:29:02,291 PID: 25891 start.py:176 - INFO - Using default cluster template: smallcluster
+<br />
+2012-05-21 00:29:02,292 PID: 25891 cluster.py:1539 - INFO - Validating cluster template settings...
+<br />
+2012-05-21 00:29:04,030 PID: 25891 cluster.py:926 - DEBUG - Launch map: node001 (ami: ami-ab447bdf, type: m1.small)...
+<br />
+2012-05-21 00:29:04,030 PID: 25891 cluster.py:926 - DEBUG - Launch map: node002 (ami: ami-ab447bdf, type: m1.small)...
+<br />
+2012-05-21 00:29:04,030 PID: 25891 cluster.py:926 - DEBUG - Launch map: node003 (ami: ami-ab447bdf, type: m1.small)...
+<br />
+2012-05-21 00:29:04,031 PID: 25891 cluster.py:1555 - INFO - Cluster template settings are valid
+<br />
+2012-05-21 00:29:04,031 PID: 25891 cluster.py:1427 - INFO - Starting cluster...
+<br />
+2012-05-21 00:29:04,031 PID: 25891 cluster.py:952 - INFO - Launching a 4-node cluster...
+<br />
+2012-05-21 00:29:04,032 PID: 25891 cluster.py:926 - DEBUG - Launch map: node001 (ami: ami-ab447bdf, type: m1.small)...
+<br />
+2012-05-21 00:29:04,032 PID: 25891 cluster.py:926 - DEBUG - Launch map: node002 (ami: ami-ab447bdf, type: m1.small)...
+<br />
+2012-05-21 00:29:04,032 PID: 25891 cluster.py:926 - DEBUG - Launch map: node003 (ami: ami-ab447bdf, type: m1.small)...
+<br />
+2012-05-21 00:29:04,032 PID: 25891 cluster.py:979 - DEBUG - Launching master (ami: ami-ab447bdf, type: m1.small)
+<br />
+2012-05-21 00:29:04,032 PID: 25891 cluster.py:979 - DEBUG - Launching node001 (ami: ami-ab447bdf, type: m1.small)
+<br />
+2012-05-21 00:29:04,033 PID: 25891 cluster.py:979 - DEBUG - Launching node002 (ami: ami-ab447bdf, type: m1.small)
+<br />
+2012-05-21 00:29:04,033 PID: 25891 cluster.py:979 - DEBUG - Launching node003 (ami: ami-ab447bdf, type: m1.small)
+<br />
+2012-05-21 00:29:04,282 PID: 25891 awsutils.py:165 - INFO - Creating security group _at_sc-myclustername...
+<br />
+2012-05-21 00:29:05,213 PID: 25891 cli.py:287 - DEBUG - Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File &quot;/Library/Python/2.7/site-packages/StarCluster-0.93.3-py2.7.egg/starcluster/cli.py&quot;, line 255, in main
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;sc.execute(args)
+<br />
+&nbsp;&nbsp;File &quot;/Library/Python/2.7/site-packages/StarCluster-0.93.3-py2.7.egg/starcluster/commands/start.py&quot;, line 194, in execute
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;validate_running=validate_running)
+<br />
+&nbsp;&nbsp;File &quot;/Library/Python/2.7/site-packages/StarCluster-0.93.3-py2.7.egg/starcluster/cluster.py&quot;, line 1414, in start
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;return self._start(create=create, create_only=create_only)
+<br />
+&nbsp;&nbsp;File &quot;&lt;string&gt;&quot;, line 2, in _start
+<br />
+&nbsp;&nbsp;File &quot;/Library/Python/2.7/site-packages/StarCluster-0.93.3-py2.7.egg/starcluster/utils.py&quot;, line 87, in wrap_f
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;res = func(*arg, **kargs)
+<br />
+&nbsp;&nbsp;File &quot;/Library/Python/2.7/site-packages/StarCluster-0.93.3-py2.7.egg/starcluster/cluster.py&quot;, line 1429, in _start
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self.create_cluster()
+<br />
+&nbsp;&nbsp;File &quot;/Library/Python/2.7/site-packages/StarCluster-0.93.3-py2.7.egg/starcluster/cluster.py&quot;, line 958, in create_cluster
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self._create_flat_rate_cluster()
+<br />
+&nbsp;&nbsp;File &quot;/Library/Python/2.7/site-packages/StarCluster-0.93.3-py2.7.egg/starcluster/cluster.py&quot;, line 982, in _create_flat_rate_cluster
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;force_flat=True)[0]
+<br />
+&nbsp;&nbsp;File &quot;/Library/Python/2.7/site-packages/StarCluster-0.93.3-py2.7.egg/starcluster/cluster.py&quot;, line 751, in create_nodes
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;cluster_sg = self.cluster_group.name
+<br />
+&nbsp;&nbsp;File &quot;/Library/Python/2.7/site-packages/StarCluster-0.93.3-py2.7.egg/starcluster/cluster.py&quot;, line 614, in cluster_group
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;auth_group_traffic=True)
+<br />
+&nbsp;&nbsp;File &quot;/Library/Python/2.7/site-packages/StarCluster-0.93.3-py2.7.egg/starcluster/awsutils.py&quot;, line 212, in get_or_create_group
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;auth_group_traffic)
+<br />
+&nbsp;&nbsp;File &quot;/Library/Python/2.7/site-packages/StarCluster-0.93.3-py2.7.egg/starcluster/awsutils.py&quot;, line 172, in create_group
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;src_group=self.get_group_or_none(name))
+<br />
+&nbsp;&nbsp;File &quot;/Library/Python/2.7/site-packages/boto-2.3.0-py2.7.egg/boto/ec2/securitygroup.py&quot;, line 158, in authorize
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;src_group_group_id = src_group.group_id
+<br />
+AttributeError: 'SecurityGroup' object has no attribute 'group_id'
+<br />
+<br />---------- SYSTEM INFO ----------
+<br />
+StarCluster: 0.93.3
+<br />
+Python: 2.7.1 (r271:86832, Jul 31 2011, 19:30:53)  [GCC 4.2.1 (Based on Apple Inc. build 5658) (LLVM build 2335.15.00)]
+<br />
+Platform: Darwin-11.4.0-x86_64-i386-64bit
+<br />
+boto: 2.3.0
+<br />
+ssh: 1.7.13
+<br />
+Crypto: 2.5
+<br />
+jinja2: 2.6
+<br />
+decorator: 3.3.1
+<br />
+<span id="received"><dfn>Received on</dfn> Mon May 21 2012 - 03:32:25 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1216.html#start1216">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1217.html" title="Next message in the list">Antonio Gonz&#0225;lez Pe&#0241;a: "Fwd: StarCluster comments"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1215.html" title="Previous message in the list">CB: "Re:  newbie problems"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1223.html" title="Next message in this discussion thread">Justin Riley: "Re:  Crash Report"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1223.html" title="Message sent in reply to this message">Justin Riley: "Re:  Crash Report"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1216" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1216" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1216" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1216" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

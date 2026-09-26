@@ -1,0 +1,224 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Michael Shamberger ((no email))" />
+<meta name="Subject" content="(no subject)" />
+<title>starcluster.mbox.out: (no subject)</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">(no subject)</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>(no subject)</h1>
+<!-- received="Wed Dec 11 06:05:01 2013" -->
+<!-- isoreceived="20131211110501" -->
+<!-- sent="Wed, 11 Dec 2013 13:05:00 +0200" -->
+<!-- isosent="20131211110500" -->
+<!-- name="Michael Shamberger" -->
+<!-- email="(no email)" -->
+<!-- subject="(no subject)" -->
+<!-- id="CAC5-9wxksNkudCOLzQAJwUuWAuzHLjnWB8G_UmWDY8sExVUvnQ_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1975.html#start1975" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1975.html#options2">top</a>, <a href="1975.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1976.html" accesskey="d" title="Sergio Mafra: &quot;(no subject)&quot;">Next message</a> ]
+[ <a href="1974.html" title="Jennifer Staab: &quot;StarCluster Development VPC-Starclusters - possible bug relating to &#0034;Tag Value exceeds 255 characters&#0034;....&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="1982.html" accesskey="t" title="Jacob Barhak: &quot;Re:  (no subject)&quot;">Next in thread</a> ]
+ [ <a href="1975.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1975" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1975" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1975" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1975" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Michael Shamberger &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Wed, 11 Dec 2013 13:05:00 +0200</span><br />
+</address>
+<br />
+Hi,
+<br />
+<br />To introduce myself, I am a University of Cincinnati engineering graduate
+<br />
+and will start my masters at Georgia Tech in HPC in the Spring after 15
+<br />
+years of IT work.
+<br />
+<br />I am trying to see if there is interest in the following capabilities for
+<br />
+StarCluster.
+<br />
+<br />- User interface - I am planning to open source a django user interface for
+<br />
+StarCluster in early January.  It will have a python based API and also
+<br />
+provide the capability of dynamically launching web facing applications
+<br />
+with starcluster providing the compute behind them.
+<br />
+<br />- Google Compute Engine - If you are not aware, GCE has launched a
+<br />
+competitor service to Amazon (
+<br />
+<a href="http://www.theregister.co.uk/2013/12/03/google_compute_engine_launches/">http://www.theregister.co.uk/2013/12/03/google_compute_engine_launches/</a>).
+<br />
+&nbsp;The offering is interesting because they charge by the minute after ten
+<br />
+minutes intead of 1 hour and reviews say instances come up faster.  This
+<br />
+could potentially make your workload cheaper then even Amazon spot pricing.
+<br />
+&nbsp;I would like to hear opinions/ideas on the best way of enabling GCE to be
+<br />
+a backend cloud option to StarCluster.  A fork of the boto package could do
+<br />
+the job.  There was already a rejected pull request last year to add GCE
+<br />
+capability to boto.
+<br />
+<br />- private cloud - Run StarCluster bare metal on own hardware with
+<br />
+cloudburst capability.
+<br />
+<br />- Software plugins - I am developing docker based MKL compiled software
+<br />
+plugins for various HPC software stacks (SciPy, R, Bioperl, OpenFoam, etc)
+<br />
+to run on top of grid workers and also plan to release those as open
+<br />
+source.   These packages can be notoriusly hard to compile and install
+<br />
+correctly.
+<br />
+<br />Please reply to this email or send mail to me directly.
+<br />
+<br />Thanks,
+<br />
+Michael Shamberger
+<br />
+<span id="received"><dfn>Received on</dfn> Wed Dec 11 2013 - 06:05:01 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1975.html#start1975">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1976.html" title="Next message in the list">Sergio Mafra: "(no subject)"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1974.html" title="Previous message in the list">Jennifer Staab: "StarCluster Development VPC-Starclusters - possible bug relating to &#0034;Tag Value exceeds 255 characters&#0034;...."</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1982.html" title="Next message in this discussion thread">Jacob Barhak: "Re:  (no subject)"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1982.html" title="Message sent in reply to this message">Jacob Barhak: "Re:  (no subject)"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1975" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1975" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1975" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1975" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

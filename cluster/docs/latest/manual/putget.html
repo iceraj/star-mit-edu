@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Copying Data to and from a Cluster &mdash; StarCluster 0.95.6 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/pylons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/issuetracker.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.95.6',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="StarCluster 0.95.6 documentation" href="../index.html" />
+    <link rel="up" title="StarCluster User Manual" href="index.html" />
+    <link rel="next" title="Using the Cluster" href="getting_started.html" />
+    <link rel="prev" title="Running Remote Commands from Command Line" href="runcommands.html" />
+<link rel="stylesheet" href="../_static/nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="../_static/neuton.css" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="../_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+<link rel="shortcut icon" href="../_static/starcluster.ico"/>
+
+  </head>
+  <body>
+<div class="header-small">
+	
+	<div class="logo-small">
+		<a href="../index.html">
+      		<img class="logo" src="../_static/logo-small.png" alt="Logo"/>
+		</a>
+  	</div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="getting_started.html" title="Using the Cluster"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="runcommands.html" title="Running Remote Commands from Command Line"
+             accesskey="P">previous</a> |</li>
+    	<li><a href="../index.html">Home</a> &raquo;</li>
+          <li><a href="../contents.html" >Master Table of Contents</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">StarCluster User Manual</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="copying-data-to-and-from-a-cluster">
+<h1>Copying Data to and from a Cluster<a class="headerlink" href="putget.html#copying-data-to-and-from-a-cluster" title="Permalink to this headline">¶</a></h1>
+<p>StarCluster now supports conveniently copying data to and from a running
+cluster via the new <tt class="docutils literal"><span class="pre">put</span></tt> and <tt class="docutils literal"><span class="pre">get</span></tt> commands. These commands provide the
+same functionality as the <cite>scp</cite> command from OpenSSH only without the need to
+specify SSH keypairs or EC2 dns names.</p>
+<div class="section" id="copying-data-to-a-cluster-put">
+<h2>Copying Data to a Cluster (put)<a class="headerlink" href="putget.html#copying-data-to-a-cluster-put" title="Permalink to this headline">¶</a></h2>
+<p>To copy data from your local computer to a cluster on Amazon use the <tt class="docutils literal"><span class="pre">put</span></tt>
+command. Recursion will be handled automatically if necessary. By default the
+<tt class="docutils literal"><span class="pre">put</span></tt> command will operate on the <cite>master</cite> node as the <cite>root</cite> user:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ starcluster put mycluster /path/to/file/or/dir /path/on/remote/server
+</pre></div>
+</div>
+<p>To copy files as a different cluster user, use the <tt class="docutils literal"><span class="pre">--user</span></tt> (<tt class="docutils literal"><span class="pre">-u</span></tt>) option:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ starcluster put mycluster --user myuser /local/path /remote/path
+</pre></div>
+</div>
+<p>To copy files to a different cluster node, use the <tt class="docutils literal"><span class="pre">--node</span></tt> (<tt class="docutils literal"><span class="pre">-n</span></tt>) option:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ starcluster put mycluster --node node001 /local/path /remote/path
+</pre></div>
+</div>
+</div>
+<div class="section" id="copying-data-from-a-cluster-get">
+<h2>Copying Data from a Cluster (get)<a class="headerlink" href="putget.html#copying-data-from-a-cluster-get" title="Permalink to this headline">¶</a></h2>
+<p>To copy data from a cluster on Amazon to your local computer use the <tt class="docutils literal"><span class="pre">get</span></tt>
+command. Recursion will be handled automatically if necessary. By default the
+<tt class="docutils literal"><span class="pre">get</span></tt> command will operate on the master node as the <em>root</em> user:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ starcluster get mycluster /path/on/remote/server /path/to/file/or/dir
+</pre></div>
+</div>
+<p>To copy files as a different cluster user, use the <tt class="docutils literal"><span class="pre">--user</span></tt> (<tt class="docutils literal"><span class="pre">-u</span></tt>) option:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ starcluster get mycluster --user myuser /remote/path /local/path
+</pre></div>
+</div>
+<p>To copy files from a different cluster node, use the <tt class="docutils literal"><span class="pre">--node</span></tt> (<tt class="docutils literal"><span class="pre">-n</span></tt>)
+option:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ starcluster get mycluster --node node001 /remote/path /local/path
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="putget.html">Copying Data to and from a Cluster</a><ul>
+<li><a class="reference internal" href="putget.html#copying-data-to-a-cluster-put">Copying Data to a Cluster (put)</a></li>
+<li><a class="reference internal" href="putget.html#copying-data-from-a-cluster-get">Copying Data from a Cluster (get)</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="runcommands.html"
+                        title="previous chapter">Running Remote Commands from Command Line</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="getting_started.html"
+                        title="next chapter">Using the Cluster</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="getting_started.html" title="Using the Cluster"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="runcommands.html" title="Running Remote Commands from Command Line"
+             >previous</a> |</li>
+    	<li><a href="../index.html">Home</a> &raquo;</li>
+          <li><a href="../contents.html" >Master Table of Contents</a> &raquo;</li>
+          <li><a href="index.html" >StarCluster User Manual</a> &raquo;</li> 
+      </ul>
+    </div>
+
+
+    <div class="footer">
+        &copy; Copyright 2011, Software Tools for Academics and Researchers.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+    </script>
+
+  </body>
+</html>

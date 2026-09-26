@@ -1,0 +1,240 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="David Johnston ((no email))" />
+<meta name="Subject" content="Plugin for mounting disks properly and easily" />
+<title>starcluster.mbox.out: Plugin for mounting disks properly and easily</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Plugin for mounting disks properly and easily</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Plugin for mounting disks properly and easily</h1>
+<!-- received="Tue May 27 10:46:02 2014" -->
+<!-- isoreceived="20140527144602" -->
+<!-- sent="Tue, 27 May 2014 10:46:00 -0400" -->
+<!-- isosent="20140527144600" -->
+<!-- name="David Johnston" -->
+<!-- email="(no email)" -->
+<!-- subject="Plugin for mounting disks properly and easily" -->
+<!-- id="CADB4cG9zXcGMLbOn2k6MFqSpMCOjbt+5uTMc2nV9a=2eF6GBPA_at_mail.gmail.com" -->
+<!-- charset="UTF-8" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2224.html#start2224" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2224.html#options2">top</a>, <a href="2224.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2225.html" accesskey="d" title="Ed Gray: &quot;Re:  Plugin for mounting disks properly and easily&quot;">Next message</a> ]
+[ <a href="2223.html" title="Torstein Fjermestad: &quot;Re:  Max spot instance count exceeded&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="2225.html" accesskey="t" title="Ed Gray: &quot;Re:  Plugin for mounting disks properly and easily&quot;">Next in thread</a> ]
+ [ <a href="2224.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2224" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2224" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2224" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2224" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: David Johnston &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Tue, 27 May 2014 10:46:00 -0400</span><br />
+</address>
+<br />
+Hi,
+<br />
+I just started using star cluster. It's fantastic.
+<br />
+<br />One issue I am seeing though is that there is some difficulty getting disks
+<br />
+up and mounted in a reasonable place. I was wondering if anyone has written
+<br />
+a plugin for handling this. I have some work-arounds in terms of a quick
+<br />
+and dirty plugin but I don't know how general purpose it would be.
+<br />
+<br />What I would like is the following:
+<br />
+<br />I want to use EBS volumes for everything except for scratch space as I want
+<br />
+to be able to shutdown (to save money) and bring back up just as if it were
+<br />
+non-virtual hardware even with spot instances. I want it to survive (no
+<br />
+persisted data loss) having my spot instances being seized due to a spot
+<br />
+price surge. I believe this is possible. I am wrong?
+<br />
+<br />I would like /home NFS cross-mounted EBS.
+<br />
+<br />I'd like a &quot;restart&quot; command to find the right EBS volumes and mount them
+<br />
+in the usual places. In the case of a fresh &quot;start&quot;, I'd like it to create
+<br />
+new EBS volumes. I believe the current EBS volume attachment functionality
+<br />
+(in config file), assumes that they already exists and that you know their
+<br />
+id.
+<br />
+<br />I believe that when you change instance types from say r3.2xlarge to
+<br />
+m3.xlarge, the storage devices (/dev/xdvv etc) change names so this
+<br />
+requires some knowledge of what the devices will be names for each
+<br />
+instance.
+<br />
+<br />Also, I want to avoid over-mounting a device on a directory with files and
+<br />
+subdirectories inside.
+<br />
+<br />I can probably do all of this with a DIY solution but I figured everyone
+<br />
+must be dealing with similar issues. Is anyone working on a general plugin
+<br />
+for this?
+<br />
+<br />I can imagine a simple plugin (similar to an stab file) that looks like
+<br />
+this in the config file
+<br />
+[volumesetup]
+<br />
+/home 100GB cross
+<br />
+/data 100GB cross
+<br />
+/hdfs1 200GB separate
+<br />
+/hdfs2 200GB separate
+<br />
+<br />with the remaining local storage being automatically assigned to /scratch1
+<br />
+/scratch2 etc depending on the number of partitions.
+<br />
+<br />Anyone have any ideas of suggestions?
+<br />
+Dave
+<br />
+<span id="received"><dfn>Received on</dfn> Tue May 27 2014 - 10:46:02 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2224.html#start2224">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2225.html" title="Next message in the list">Ed Gray: "Re:  Plugin for mounting disks properly and easily"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2223.html" title="Previous message in the list">Torstein Fjermestad: "Re:  Max spot instance count exceeded"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="2225.html" title="Next message in this discussion thread">Ed Gray: "Re:  Plugin for mounting disks properly and easily"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="2225.html" title="Message sent in reply to this message">Ed Gray: "Re:  Plugin for mounting disks properly and easily"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2224" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2224" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2224" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2224" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

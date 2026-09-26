@@ -1,0 +1,195 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Lyn Gerner ((no email))" />
+<meta name="Subject" content="Placement group disruption" />
+<title>starcluster.mbox.out: Placement group disruption</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Placement group disruption</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Placement group disruption</h1>
+<!-- received="Sat Nov  5 02:06:22 2016" -->
+<!-- isoreceived="20161105060622" -->
+<!-- sent="Fri, 4 Nov 2016 20:06:20 -1000" -->
+<!-- isosent="20161105060620" -->
+<!-- name="Lyn Gerner" -->
+<!-- email="(no email)" -->
+<!-- subject="Placement group disruption" -->
+<!-- id="CAD3e3FYYYFAVb71jGVVB04AiK9zbkmydc_-=Sxh-LopoW8TVUA_at_mail.gmail.com" -->
+<!-- charset="US-ASCII" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2837.html#start2837" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2837.html#options2">top</a>, <a href="2837.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2838.html" accesskey="d" title="Lyn Gerner: &quot;Re:  Placement group disruption&quot;">Next message</a> ]
+[ <a href="2836.html" title="Paolo Orsini: &quot;Re:  Does anyone on the starcluster mailing list works on biological, medical, or population modeling?&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="2838.html" accesskey="t" title="Lyn Gerner: &quot;Re:  Placement group disruption&quot;">Next in thread</a> ]
+ [ <a href="2837.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2837" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2837" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2837" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2837" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Lyn Gerner &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Fri, 4 Nov 2016 20:06:20 -1000</span><br />
+</address>
+<br />
+Hi All,
+<br />
+<br />I have an existing cluster that has a master and a node001 up; they were
+<br />
+launched with *no* placement group, over a week ago.  Now it seems
+<br />
+something has changed in the availability zone, becauseI'm trying to grow
+<br />
+that cluster, and any new addnode attempt is accompanied by the creation of
+<br />
+a placement group. The addnode subsequently gets an unhandled exception
+<br />
+before ever reaching SSH-able status. (Crash report attached.)
+<br />
+<br />Has anybody else seen and resolved this? I see the placement group-related
+<br />
+code in cluster.py, but I'd certainly appreciate not having to reinvent the
+<br />
+wheel, or any insights.
+<br />
+<br />Thanks,
+<br />
+Lyn
+<br />
+<br /><br />
+<br /><div>
+<ul>
+<li>text/plain attachment: <a href="att-2837/crash-report-12025.txt">crash-report-12025.txt</a></li>
+</ul>
+<!-- attachment="crash-report-12025.txt" -->
+</div>
+<span id="received"><dfn>Received on</dfn> Sat Nov 05 2016 - 02:06:22 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2837.html#start2837">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2838.html" title="Next message in the list">Lyn Gerner: "Re:  Placement group disruption"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2836.html" title="Previous message in the list">Paolo Orsini: "Re:  Does anyone on the starcluster mailing list works on biological, medical, or population modeling?"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="2838.html" title="Next message in this discussion thread">Lyn Gerner: "Re:  Placement group disruption"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="2838.html" title="Message sent in reply to this message">Lyn Gerner: "Re:  Placement group disruption"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2837" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2837" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2837" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2837" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

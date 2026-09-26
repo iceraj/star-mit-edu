@@ -1,0 +1,339 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Bob Tolbert ((no email))" />
+<meta name="Subject" content="Re:  Adding users to the cluster" />
+<title>starcluster.mbox.out: Re:  Adding users to the cluster</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Re:  Adding users to the cluster</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Re:  Adding users to the cluster</h1>
+<!-- received="Tue Jan 24 15:31:22 2012" -->
+<!-- isoreceived="20120124203122" -->
+<!-- sent="Tue, 24 Jan 2012 12:31:18 -0800" -->
+<!-- isosent="20120124203118" -->
+<!-- name="Bob Tolbert" -->
+<!-- email="(no email)" -->
+<!-- subject="Re:  Adding users to the cluster" -->
+<!-- id="BB3CCF2D3D6B094D96588383620C5F3EADAB70D3B8_at_EXVMBX018-11.exch018.msoutlookonline.net" -->
+<!-- charset="iso-8859-1" -->
+<!-- inreplyto="1326738442.62995.YahooMailNeo_at_web30606.mail.mud.yahoo.com" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1006.html#start1006" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1006.html#options2">top</a>, <a href="1006.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1007.html" accesskey="d" title="Rayson Ho: &quot;Re:  Adding users to the cluster&quot;">Next message</a> ]
+[ <a href="1005.html" title="Paolo Di Tommaso: &quot;Error creating volume&quot;">Previous message</a> ]
+[ <a href="0987.html" title="Rayson Ho: &quot;Re:  Adding users to the cluster&quot;">In reply to</a> ]
+<!-- unextthread="start" -->
+[ <a href="1007.html" accesskey="t" title="Rayson Ho: &quot;Re:  Adding users to the cluster&quot;">Next in thread</a> ]
+ [ <a href="1006.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1006" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1006" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1006" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1006" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Bob Tolbert &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Tue, 24 Jan 2012 12:31:18 -0800</span><br />
+</address>
+<br />
+Hi,
+<br />
+<br />Thanks for the bug fix for addnode. I was suffering that without realizing what was going on. 
+<br />
+<br />So is this USERLIST feature in 0.93.1? 
+<br />
+<br />Bob
+<br />
+<br />-----Original Message-----
+<br />
+From: starcluster-bounces_at_mit.edu [mailto:starcluster-bounces_at_mit&#46;<!--nospam-->edu] On Behalf Of Rayson Ho
+<br />
+Sent: Monday, January 16, 2012 11:27 AM
+<br />
+To: Caius Howcroft
+<br />
+Cc: starcluster_at_mit.edu
+<br />
+Subject: Re: [StarCluster] Adding users to the cluster
+<br />
+<br />Caius,
+<br />
+<br />Let us know how you want StarCluster to setup users for you automatically.
+<br />
+<br />I am modifying &amp; extending StarCluster to automatically run the Grid Engine testsuite for the Open Grid Scheduler release builds. Our testsuite requires the cluster to have multiple users, so instead of manually setting up instances to run the testsuite everytime we release something, I am going to fully automate the whole process - and with that we don't even need to buy machines that sit here idle most of the time for the build process.
+<br />
+<br />Anyway, enough background. I added a new config option, &quot;USERLIST&quot;, to specify the list of users to be created by StarCluster when it bootstraps the cluster. For example in the config file:
+<br />
+<br />USERLIST = rayson,ana
+<br />
+<br /><br />2/2 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Creating cluster user: rayson (uid: 1002, gid: 1002)
+</em><br />
+2/2 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Creating cluster user: ana (uid: 1003, gid: 1003)
+</em><br />
+<br />rayson_at_node001:~$ qstat -u &quot;*&quot;
+<br />
+job-ID  prior   name       user         state submit/start at     queue                          slots ja-task-ID
+<br />
+-----------------------------------------------------------------------------------------------------------------
+<br />
+     17 0.55500 sleep      rayson       qw    01/13/2012 02:39:18                                    1
+<br />
+     18 0.55500 sleep      rayson       qw    01/13/2012 02:39:18                                    1
+<br />
+     19 0.55500 sleep      rayson       qw    01/13/2012 02:39:19                                    1
+<br />
+     20 0.55500 sleep      ana          qw    01/13/2012 02:39:25                                    1
+<br />
+     21 0.55500 sleep      ana          qw    01/13/2012 02:39:26                                    1
+<br />
+     22 0.55500 sleep      ana          qw    01/13/2012 02:39:26                                    1
+<br />
+     23 0.55500 sleep      ana          qw    01/13/2012 02:39:26                                    1
+<br />
+     24 0.55500 sleep      ana          qw    01/13/2012 02:39:27                                    1
+<br />
+     25 0.55500 sleep      ana          qw    01/13/2012 02:39:27                                    1
+<br />
+     26 0.55500 sleep      ana          qw    01/13/2012 02:39:27                                    1
+<br />
+     27 0.55500 sleep      ana          qw    01/13/2012 02:39:27                                    1
+<br />
+     28 0.55500 sleep      ana          qw    01/13/2012 02:39:28                                    1
+<br />
+     29 0.55500 sleep      ana          qw    01/13/2012 02:39:28                                    1
+<br />
+<br />But then, the users created don't have direct access to the cluster from outside of SC.
+<br />
+To provide direct user login, we can do what Justin mentioned in his previous email...
+<br />
+<br />So let us know how you want your users to log onto the cluster, and we will see if it makes sense to add the authentication method into StarCluster.
+<br />
+<br />Rayson
+<br />
+<br />=================================
+<br />
+Open Grid Scheduler / Grid Engine
+<br />
+<a href="http://gridscheduler.sourceforge.net/">http://gridscheduler.sourceforge.net/</a>
+<br />
+<br />Scalable Grid Engine Support Program
+<br />
+<a href="http://www.scalablelogic.com/">http://www.scalablelogic.com/</a>
+<br />
+<br /><br /><br />----- Original Message -----
+<br />
+From: Justin Riley &lt;jtriley_at_mit.edu&gt;
+<br />
+To: Caius Howcroft &lt;caius.howcroft_at_gmail.com&gt;
+<br />
+Cc: starcluster_at_mit.edu
+<br />
+Sent: Friday, January 13, 2012 4:58 PM
+<br />
+Subject: Re: [StarCluster] Adding users to the cluster
+<br />
+<br />-----BEGIN PGP SIGNED MESSAGE-----
+<br />
+Hash: SHA1
+<br />
+<br />Hi Caius,
+<br />
+<br />Currently there is no mechanism to create multiple users on the cluster, however, it's not all that difficult to do via a StarCluster plugin[1].
+<br />
+<br />As Rayson kindly pointed out to me, this is something that comes up from time to time so I'm considering building it into StarCluster, however, I'm not sure whether it would be built into the &quot;core&quot; or delivered as a plugin...
+<br />
+<br />Before I get into details how do you expect to give users access to these accounts? Would you want to pass around usernames and passwords or would you want to have SSH keys generated that you could hand to all users (or both)?
+<br />
+<br />~Justin
+<br />
+<br />On 01/12/2012 02:53 PM, Caius Howcroft wrote:
+<br />
+<em class="quotelev1">&gt; Hi
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; I'm playing with the idea of using start cluster for a multi-user 
+</em><br />
+<em class="quotelev1">&gt; cluster. I want to allow people to log directly into the head node and 
+</em><br />
+<em class="quotelev1">&gt; launch jobs, play with data etc.. As we have several users we have to 
+</em><br />
+<em class="quotelev1">&gt; give each one an account on the machine, whats the best way of doing 
+</em><br />
+<em class="quotelev1">&gt; this, doing a &quot;adduser&quot; on an imagehost then creating a new image?
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Cheers
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Caius _______________________________________________ StarCluster 
+</em><br />
+<em class="quotelev1">&gt; mailing list StarCluster_at_mit.edu 
+</em><br />
+<em class="quotelev1">&gt; <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<br />-----BEGIN PGP SIGNATURE-----
+<br />
+Version: GnuPG v2.0.17 (GNU/Linux)
+<br />
+Comment: Using GnuPG with Mozilla - <a href="http://enigmail.mozdev.org/">http://enigmail.mozdev.org/</a>
+<br />
+<br />iEYEARECAAYFAk8QqQIACgkQ4llAkMfDcrkfAACdGb3Q9XeOwFkVjcDA53z1Ii2e
+<br />
+9wcAn1VePMX6z4b752zKZbs5XF0N+EH9
+<br />
+=hOif
+<br />
+-----END PGP SIGNATURE-----
+<br />
+_______________________________________________
+<br />
+StarCluster mailing list
+<br />
+StarCluster_at_mit.edu
+<br />
+<a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+<br />
+<br /><br />_______________________________________________
+<br />
+StarCluster mailing list
+<br />
+StarCluster_at_mit.edu
+<br />
+<a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+<br />
+<span id="received"><dfn>Received on</dfn> Tue Jan 24 2012 - 15:31:22 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1006.html#start1006">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1007.html" title="Next message in the list">Rayson Ho: "Re:  Adding users to the cluster"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1005.html" title="Previous message in the list">Paolo Di Tommaso: "Error creating volume"</a></li>
+<li><dfn>In reply to</dfn>: <a href="0987.html" title="Message to which this message replies">Rayson Ho: "Re:  Adding users to the cluster"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1007.html" title="Next message in this discussion thread">Rayson Ho: "Re:  Adding users to the cluster"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1007.html" title="Message sent in reply to this message">Rayson Ho: "Re:  Adding users to the cluster"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1006" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1006" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1006" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1006" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

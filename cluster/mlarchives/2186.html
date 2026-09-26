@@ -1,0 +1,234 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Torstein Fjermestad ((no email))" />
+<meta name="Subject" content="Parallelization of MPI application with Star Cluster" />
+<title>starcluster.mbox.out: Parallelization of MPI application with Star Cluster</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Parallelization of MPI application with Star Cluster</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Parallelization of MPI application with Star Cluster</h1>
+<!-- received="Thu May  8 13:30:17 2014" -->
+<!-- isoreceived="20140508173017" -->
+<!-- sent="Thu, 8 May 2014 19:30:15 +0200" -->
+<!-- isosent="20140508173015" -->
+<!-- name="Torstein Fjermestad" -->
+<!-- email="(no email)" -->
+<!-- subject="Parallelization of MPI application with Star Cluster" -->
+<!-- id="CAAZdUw+K5kHZNXkpbug16Y_JYKupnQBjVdyWgQCFBnhfwB9ACQ_at_mail.gmail.com" -->
+<!-- charset="UTF-8" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2186.html#start2186" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2186.html#options2">top</a>, <a href="2186.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2187.html" accesskey="d" title="Cedar McKay: &quot;Fast shared or local storage?&quot;">Next message</a> ]
+[ <a href="2185.html" title="Torstein Fjermestad: &quot;Re:  Error when I try to resize a volume&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="2189.html" accesskey="t" title="Rayson Ho: &quot;Re:  Parallelization of MPI application with Star Cluster&quot;">Next in thread</a> ]
+ [ <a href="2186.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2186" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2186" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2186" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2186" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Torstein Fjermestad &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 8 May 2014 19:30:15 +0200</span><br />
+</address>
+<br />
+Dear all,
+<br />
+<br />I am planning to use Star Cluster to run Quantum Espresso (
+<br />
+<a href="http://www.quantum-espresso.org/">http://www.quantum-espresso.org/</a>) calculations. For those who are not
+<br />
+familiar with Quantum Espresso; it is a code to run quantum mechanical
+<br />
+calculations on materials. In order for these types of calculations to
+<br />
+achieve good scaling with respect to the number of CPU, fast communication
+<br />
+hardware is necessary.
+<br />
+<br />For this reason, I configured a cluster based on the HVM-EBS image:
+<br />
+<br />[1] ami-ca4abfbd eu-west-1 starcluster-base-ubuntu-13.04-x86_64-hvm
+<br />
+(HVM-EBS)
+<br />
+<br />Then I followed the instructions on this site
+<br />
+<br /><a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/enhanced-networking.html#test-enhanced-networking">http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/enhanced-networking.html#test-enhanced-networking</a>
+<br />
+<br />to check that &quot;enhanced networking&quot; was indeed enabled. Running the
+<br />
+suggested commands gave me the same output as in the examples.  This
+<br />
+certainly indicated that &quot;enhanced networking&quot; is enabled in the image.
+<br />
+<br />On this image I installed Quantum Espresso (by use of apt-get install) and
+<br />
+I generated a new modified image from which I generated the final cluster.
+<br />
+<br />On this cluster, I carried out some parallelization tests by running the
+<br />
+same Quantum Espresso calculation on different number of CPUs. I present
+<br />
+the results below:
+<br />
+<br />&nbsp;&nbsp;# proc CPU time wall time  4
+<br />
+4m23.98s 5m 0.10s  8 2m46.25s 2m49.30s  16 1m40.98s 4m 2.82s  32 0m57.70s
+<br />
+3m36.15s
+<br />
+Except from the test ran with 8 CPUs, the wall time is significantly longer
+<br />
+than the CPU time. This is usually an indication of a slow communication
+<br />
+between the CPUs/nodes.
+<br />
+<br />My question is therefore whether there is a way to check the communication
+<br />
+speed between the nodes / CPUs.
+<br />
+<br />The large difference between the CPU time and wall time may also be caused
+<br />
+by an incorrect configuration of the cluster. Is there something I have
+<br />
+done wrong / forgotten?
+<br />
+<br />Does anyone have suggestions on how I can fix this parallelization issue?
+<br />
+<br />Thanks in advance for your help.
+<br />
+<br />Regards,
+<br />
+Torstein Fjermestad
+<br />
+<span id="received"><dfn>Received on</dfn> Thu May 08 2014 - 13:30:17 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2186.html#start2186">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2187.html" title="Next message in the list">Cedar McKay: "Fast shared or local storage?"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2185.html" title="Previous message in the list">Torstein Fjermestad: "Re:  Error when I try to resize a volume"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="2189.html" title="Next message in this discussion thread">Rayson Ho: "Re:  Parallelization of MPI application with Star Cluster"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="2189.html" title="Message sent in reply to this message">Rayson Ho: "Re:  Parallelization of MPI application with Star Cluster"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2186" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2186" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2186" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2186" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

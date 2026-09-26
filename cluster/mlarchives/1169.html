@@ -1,0 +1,315 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Chi Chan ((no email))" />
+<meta name="Subject" content="Running GPU jobs with Open Grid Scheduler (Was: CG1 plus StarCluster Questions)" />
+<title>starcluster.mbox.out: Running GPU jobs with Open Grid Scheduler (Was: CG1 plus StarCluster Questions)</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Running GPU jobs with Open Grid Scheduler (Was: CG1 plus StarCluster Questions)</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Running GPU jobs with Open Grid Scheduler (Was: CG1 plus StarCluster Questions)</h1>
+<!-- received="Fri May 11 21:45:38 2012" -->
+<!-- isoreceived="20120512014538" -->
+<!-- sent="Fri, 11 May 2012 21:45:35 -0400" -->
+<!-- isosent="20120512014535" -->
+<!-- name="Chi Chan" -->
+<!-- email="(no email)" -->
+<!-- subject="Running GPU jobs with Open Grid Scheduler (Was: CG1 plus StarCluster Questions)" -->
+<!-- id="CAKssKOivGWKQg4R3jbU0YxAEA3d6r5-nXfGKbc+EDK_tjmBH2g_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1169.html#start1169" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1169.html#options2">top</a>, <a href="1169.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1170.html" accesskey="d" title="Scott Le Grand: &quot;Re:  CG1 plus StarCluster Questions&quot;">Next message</a> ]
+[ <a href="1168.html" title="Rayson Ho: &quot;Re:  CG1 plus StarCluster Questions&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1169" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1169" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1169" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1169" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Chi Chan &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Fri, 11 May 2012 21:45:35 -0400</span><br />
+</address>
+<br />
+Also when you run qsub to submit a job, you will need to include the
+<br />
+&quot;-l&quot; flag to request for a GPU device.
+<br />
+<br />For example, to request for 1 GPU device for the job you will need:
+<br />
+qsub -l gpu=1 name_of_my_gpu_app.
+<br />
+<br />--Chi
+<br />
+<br /><br /><br />On Fri, May 11, 2012 at 5:45 PM, Rayson Ho &lt;raysonlogin_at_yahoo.com&gt; wrote:
+<br />
+<em class="quotelev1">&gt; Hi Scott,
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; You can set up a consumable resource to track usage of GPUs:
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; <a href="http://gridscheduler.sourceforge.net/howto/consumable.html">http://gridscheduler.sourceforge.net/howto/consumable.html</a>
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; And we also have a load sensor that monitors the GPU devices:
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; <a href="https://gridscheduler.svn.sourceforge.net/svnroot/gridscheduler/trunk/source/dist/gpu/gpu_sensor.c">https://gridscheduler.svn.sourceforge.net/svnroot/gridscheduler/trunk/source/dist/gpu/gpu_sensor.c</a>
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; If you want to use the (2nd - ie. dynamic) method, then you will need to set
+</em><br />
+<em class="quotelev1">&gt; it up by following this HOWTO:
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; <a href="http://gridscheduler.sourceforge.net/howto/loadsensor.html">http://gridscheduler.sourceforge.net/howto/loadsensor.html</a>
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; The first method of using a consumable resource works best if you don't run
+</em><br />
+<em class="quotelev1">&gt; GPU
+</em><br />
+<em class="quotelev1">&gt; programs outside of Open Grid Scheduler/Grid Engine.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Also note that in the next release of StarCluster GPU support will be
+</em><br />
+<em class="quotelev1">&gt; enhanced.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Rayson
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; =================================
+</em><br />
+<em class="quotelev1">&gt; Open Grid Scheduler / Grid Engine
+</em><br />
+<em class="quotelev1">&gt; <a href="http://gridscheduler.sourceforge.net/">http://gridscheduler.sourceforge.net/</a>
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Scalable Grid Engine Support Program
+</em><br />
+<em class="quotelev1">&gt; <a href="http://www.scalablelogic.com/">http://www.scalablelogic.com/</a>
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; ________________________________
+</em><br />
+<em class="quotelev1">&gt; From: Scott Le Grand &lt;varelse2005_at_gmail.com&gt;
+</em><br />
+<em class="quotelev1">&gt; To: starcluster_at_mit.edu
+</em><br />
+<em class="quotelev1">&gt; Sent: Friday, May 11, 2012 5:25 PM
+</em><br />
+<em class="quotelev1">&gt; Subject: [StarCluster] CG1 plus StarCluster Questions
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Hey guys, I'm really impressed with StarCluster and I've used it to create
+</em><br />
+<em class="quotelev1">&gt; clusters ranging from 2 to 70 instances...
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; I've also customized it to use CUDA 4.2 and 295.41, the latest toolkit and
+</em><br />
+<em class="quotelev1">&gt; driver, because my code has GTX 680 support and I don't want to have to
+</em><br />
+<em class="quotelev1">&gt; comment it out just to build it (and 4.1 had a horrendous perf regression).
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Anyway, 2 questions, one of which I think you already answered:
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; 1. I'd like to setup a custom AMI that by default has configured 2 GPUs as a
+</em><br />
+<em class="quotelev1">&gt; consumable resource.  I already have code to utilize exclusive mode and
+</em><br />
+<em class="quotelev1">&gt; choose whichever GPU isn't in use in my app, but that all falls down because
+</em><br />
+<em class="quotelev1">&gt; the queueing system is based on CPU cores rather than GPU count.  How would
+</em><br />
+<em class="quotelev1">&gt; I set this up once so I can save the customized AMI and never have to do it
+</em><br />
+<em class="quotelev1">&gt; again?
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; 2. I'm also seeing the .ssh directories disappear on restart.  But I'll look
+</em><br />
+<em class="quotelev1">&gt; at your solution as I've just been restarting the whole cluster up to now.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; _______________________________________________
+</em><br />
+<em class="quotelev1">&gt; StarCluster mailing list
+</em><br />
+<em class="quotelev1">&gt; StarCluster_at_mit.edu
+</em><br />
+<em class="quotelev1">&gt; <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; _______________________________________________
+</em><br />
+<em class="quotelev1">&gt; StarCluster mailing list
+</em><br />
+<em class="quotelev1">&gt; StarCluster_at_mit.edu
+</em><br />
+<em class="quotelev1">&gt; <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<span id="received"><dfn>Received on</dfn> Fri May 11 2012 - 21:45:38 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1169.html#start1169">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1170.html" title="Next message in the list">Scott Le Grand: "Re:  CG1 plus StarCluster Questions"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1168.html" title="Previous message in the list">Rayson Ho: "Re:  CG1 plus StarCluster Questions"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1169" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1169" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1169" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1169" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

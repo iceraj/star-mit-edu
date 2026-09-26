@@ -1,0 +1,210 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="David Erickson ((no email))" />
+<meta name="Subject" content="Minimum Python version?" />
+<title>starcluster.mbox.out: Minimum Python version?</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Minimum Python version?</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Minimum Python version?</h1>
+<!-- received="Fri Feb 24 19:42:43 2012" -->
+<!-- isoreceived="20120225004243" -->
+<!-- sent="Fri, 24 Feb 2012 16:41:47 -0800" -->
+<!-- isosent="20120225004147" -->
+<!-- name="David Erickson" -->
+<!-- email="(no email)" -->
+<!-- subject="Minimum Python version?" -->
+<!-- id="4F482E4B.9050005_at_stanford.edu" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1082.html#start1082" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1082.html#options2">top</a>, <a href="1082.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1083.html" accesskey="d" title="Justin Riley: &quot;Re:  Minimum Python version?&quot;">Next message</a> ]
+[ <a href="1081.html" title="Justin Riley: &quot;Re:  sge submit host question&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="1083.html" accesskey="t" title="Justin Riley: &quot;Re:  Minimum Python version?&quot;">Next in thread</a> ]
+ [ <a href="1082.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1082" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1082" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1082" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1082" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: David Erickson &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Fri, 24 Feb 2012 16:41:47 -0800</span><br />
+</address>
+<br />
+Just tried StarCluster on Python 2.5.2, it easy installed fine but is 
+<br />
+throwing errors when I try to ssh to my cluster:
+<br />
+<br /><em class="quotelev1"> &gt; starcluster sshmaster cluster
+</em><br />
+StarCluster - (<a href="http://web.mit.edu/starcluster">http://web.mit.edu/starcluster</a>) (v. 0.93.1)
+<br />
+Software Tools for Academics and Researchers (STAR)
+<br />
+Please submit bug reports to starcluster_at_mit.edu
+<br />
+<br />Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;&nbsp;File 
+<br />
+&quot;/usr/lib/python2.5/site-packages/StarCluster-0.93.1-py2.5.egg/starcluster/logger.py&quot;, 
+<br />
+line 83, in emit
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self._emit_textwrap(record)
+<br />
+&nbsp;&nbsp;&nbsp;File 
+<br />
+&quot;/usr/lib/python2.5/site-packages/StarCluster-0.93.1-py2.5.egg/starcluster/logger.py&quot;, 
+<br />
+line 60, in _emit_textwrap
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lines.extend(self._wrap(line))
+<br />
+&nbsp;&nbsp;&nbsp;File 
+<br />
+&quot;/usr/lib/python2.5/site-packages/StarCluster-0.93.1-py2.5.egg/starcluster/logger.py&quot;, 
+<br />
+line 54, in _wrap
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;drop_whitespace=True, break_on_hyphens=False)
+<br />
+&nbsp;&nbsp;&nbsp;File &quot;/usr/lib/python2.5/textwrap.py&quot;, line 302, in wrap
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;w = TextWrapper(width=width, **kwargs)
+<br />
+TypeError: __init__() got an unexpected keyword argument 'break_on_hyphens'
+<br />
+<br />-D
+<br />
+<span id="received"><dfn>Received on</dfn> Fri Feb 24 2012 - 19:42:43 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1082.html#start1082">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1083.html" title="Next message in the list">Justin Riley: "Re:  Minimum Python version?"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1081.html" title="Previous message in the list">Justin Riley: "Re:  sge submit host question"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1083.html" title="Next message in this discussion thread">Justin Riley: "Re:  Minimum Python version?"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1083.html" title="Message sent in reply to this message">Justin Riley: "Re:  Minimum Python version?"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1082" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1082" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1082" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1082" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

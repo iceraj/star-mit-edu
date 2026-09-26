@@ -1,0 +1,280 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Andrew Rech ((no email))" />
+<meta name="Subject" content="Cannot foricly terminate cluster" />
+<title>starcluster.mbox.out: Cannot foricly terminate cluster</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Cannot foricly terminate cluster</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Cannot foricly terminate cluster</h1>
+<!-- received="Tue Jun 28 23:49:01 2016" -->
+<!-- isoreceived="20160629034901" -->
+<!-- sent="Wed, 29 Jun 2016 03:48:48 +0000" -->
+<!-- isosent="20160629034848" -->
+<!-- name="Andrew Rech" -->
+<!-- email="(no email)" -->
+<!-- subject="Cannot foricly terminate cluster" -->
+<!-- id="CAH6e1y3vCoQKdocVx4eYbxMc06sMarXJ=k8ij+oasoRwhYgw0A_at_mail.gmail.com" -->
+<!-- charset="UTF-8" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2819.html#start2819" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2819.html#options2">top</a>, <a href="2819.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2820.html" accesskey="d" title="Andrew Rech: &quot;Re:  Cannot foricly terminate cluster&quot;">Next message</a> ]
+[ <a href="2818.html" title="Ryan G: &quot;Re:  Increase /tmp space&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="2820.html" accesskey="t" title="Andrew Rech: &quot;Re:  Cannot foricly terminate cluster&quot;">Next in thread</a> ]
+ [ <a href="2819.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2819" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2819" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2819" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2819" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Andrew Rech &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Wed, 29 Jun 2016 03:48:48 +0000</span><br />
+</address>
+<br />
+Hello,
+<br />
+<br />I receive the following error when attempting to listclusters or forcibly
+<br />
+terminate a cluster. I have manually removed the instances and security
+<br />
+group using the AWS console, however I am not sure how to manually remove
+<br />
+this cluster listing from Starcluster so I can continue normally?
+<br />
+<br />Thank you,
+<br />
+Andrew
+<br />
+<br />2016-06-28 23:47:11,637 !!! ERROR - Unhandled exception occured
+<br />
+Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/cli.py&quot;,
+<br />
+line 275, in main
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;sc.execute(args)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/commands/listclusters.py&quot;,
+<br />
+line 36, in execute
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;show_ssh_status=self.opts.show_ssh_status)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/cluster.py&quot;,
+<br />
+line 315, in list_clusters
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;load_volumes=False, require_keys=False)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/cluster.py&quot;,
+<br />
+line 74, in get_cluster
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self.cfg.get_key(cl.master_node.key_name)\
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/cluster.py&quot;,
+<br />
+line 884, in master_node
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;for node in self.nodes:
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/cluster.py&quot;,
+<br />
+line 945, in nodes
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;if n.is_master():
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/node.py&quot;,
+<br />
+line 1021, in is_master
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;return self.alias.find(&quot;master&quot;) != -1
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/node.py&quot;,
+<br />
+line 160, in alias
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;alias = self.get_aliases(self.ami_launch_index)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/node.py&quot;,
+<br />
+line 140, in get_aliases
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;aliasestxt = self.user_data.get(static.UD_ALIASES_FNAME, '')
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/node.py&quot;,
+<br />
+line 129, in user_data
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self._user_data = userdata.unbundle_userdata(raw)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/userdata.py&quot;,
+<br />
+line 197, in unbundle_userdata
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;tf = get_tar_from_userdata(string)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/site-packages/StarCluster-0.9999-py2.7.egg/starcluster/userdata.py&quot;,
+<br />
+line 156, in get_tar_from_userdata
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;b64str = r.search(string).groups()[0]
+<br />
+AttributeError: 'NoneType' object has no attribute 'groups'
+<br />
+<span id="received"><dfn>Received on</dfn> Tue Jun 28 2016 - 23:49:01 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2819.html#start2819">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2820.html" title="Next message in the list">Andrew Rech: "Re:  Cannot foricly terminate cluster"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2818.html" title="Previous message in the list">Ryan G: "Re:  Increase /tmp space"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="2820.html" title="Next message in this discussion thread">Andrew Rech: "Re:  Cannot foricly terminate cluster"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="2820.html" title="Message sent in reply to this message">Andrew Rech: "Re:  Cannot foricly terminate cluster"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2819" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2819" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2819" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2819" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

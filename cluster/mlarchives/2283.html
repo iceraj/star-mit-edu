@@ -1,0 +1,461 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="ronen artzi ((no email))" />
+<meta name="Subject" content="Re:  adding parameters to create_volume function - encryption" />
+<title>starcluster.mbox.out: Re:  adding parameters to create_volume function - encryption</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Re:  adding parameters to create_volume function - encryption</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Re:  adding parameters to create_volume function - encryption</h1>
+<!-- received="Thu Jul  3 01:56:01 2014" -->
+<!-- isoreceived="20140703055601" -->
+<!-- sent="Thu, 3 Jul 2014 01:55:38 -0400" -->
+<!-- isosent="20140703055538" -->
+<!-- name="ronen artzi" -->
+<!-- email="(no email)" -->
+<!-- subject="Re:  adding parameters to create_volume function - encryption" -->
+<!-- id="CAJekz2QkWzJJKRYSXCsiahgCkKwTZS+-bYf1j_4=eLdJ1qZ8bg_at_mail.gmail.com" -->
+<!-- charset="UTF-8" -->
+<!-- inreplyto="CAHwLALOncS8SwSkHKZrWovDMTbNUuHpEbgJpqWxTpWBmefCsOw_at_mail.gmail.com" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2283.html#start2283" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2283.html#options2">top</a>, <a href="2283.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2284.html" accesskey="d" title="Rayson Ho: &quot;Re:  adding parameters to create_volume function - encryption&quot;">Next message</a> ]
+[ <a href="2282.html" title="Rayson Ho: &quot;Re:  adding parameters to create_volume function - encryption&quot;">Previous message</a> ]
+[ <a href="2282.html" title="Rayson Ho: &quot;Re:  adding parameters to create_volume function - encryption&quot;">In reply to</a> ]
+<!-- unextthread="start" -->
+[ <a href="2284.html" accesskey="t" title="Rayson Ho: &quot;Re:  adding parameters to create_volume function - encryption&quot;">Next in thread</a> ]
+ [ <a href="2283.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2283" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2283" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2283" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2283" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: ronen artzi &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 3 Jul 2014 01:55:38 -0400</span><br />
+</address>
+<br />
+Thank you so much!!
+<br />
+<br />All I needed was that pointer to the actual create_volume that was called
+<br />
+the problem is solved not sure how I missed that path.
+<br />
+<br />I had changed awsutils.py to the following and it works for me:
+<br />
+<br />def create_volume(self, size, zone, snapshot_id=None , encrypt =False):
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return self.conn.create_volume(size, zone, snapshot_id,
+<br />
+encrypted=encrypt)
+<br />
+<br />I have a GlusterFS plugin that create encrypted EBS that are used as
+<br />
+GlusterFS brick.
+<br />
+<br />This one does not solve (?) the protocol encryption ( hence the encryption
+<br />
+on the fly challenge but provide encryption at rest ).
+<br />
+<br /><br /><br /><br />On Wed, Jul 2, 2014 at 11:58 PM, Rayson Ho &lt;raysonlogin_at_gmail.com&gt; wrote:
+<br />
+<br /><em class="quotelev1">&gt; Hmm, I was not very clear in my previous email...
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; create_volume() called in volume.py is defined in the StarCluster's
+</em><br />
+<em class="quotelev1">&gt; EasyAWS class (awsutils.py). So if you want to pass encypted=True to boto's
+</em><br />
+<em class="quotelev1">&gt; create_volume(), you will need to add the extra parameter in awsutils.py:
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;     def create_volume(self, size, zone, snapshot_id=None):
+</em><br />
+<em class="quotelev1">&gt;         ...
+</em><br />
+<em class="quotelev1">&gt;         return self.conn.create_volume(size, zone, snapshot_id,
+</em><br />
+<em class="quotelev1">&gt; encypted=True)
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; So you just need to work your way up the call chain so that you can
+</em><br />
+<em class="quotelev1">&gt; determine the value passed in by the user from the command line.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; (When your code is general purpose enough to be included in the
+</em><br />
+<em class="quotelev1">&gt; StarCluster repo, create a pull request in github.)
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Rayson
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; ==================================================
+</em><br />
+<em class="quotelev1">&gt; Open Grid Scheduler - The Official Open Source Grid Engine
+</em><br />
+<em class="quotelev1">&gt; <a href="http://gridscheduler.sourceforge.net/">http://gridscheduler.sourceforge.net/</a>
+</em><br />
+<em class="quotelev1">&gt; <a href="http://gridscheduler.sourceforge.net/GridEngine/GridEngineCloud.html">http://gridscheduler.sourceforge.net/GridEngine/GridEngineCloud.html</a>
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; On Wed, Jul 2, 2014 at 11:07 PM, ronen artzi &lt;ronen.artzi_at_gmail.com&gt;
+</em><br />
+<em class="quotelev1">&gt; wrote:
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; Thanks Rayson for your prompt response.
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;  I am running on the &quot;Cluster Launcher/controller&quot; node with Boto 2.30.0
+</em><br />
+<em class="quotelev2">&gt;&gt; installed.
+</em><br />
+<em class="quotelev2">&gt;&gt; in my code I am using (encrypt is the option I am getting from the user :
+</em><br />
+<em class="quotelev2">&gt;&gt; True/False):
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;                 log.info(&quot;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;   Creating new Volume with
+</em><br />
+<em class="quotelev2">&gt;&gt; encrypt option : %s&quot; % encrypt)
+</em><br />
+<em class="quotelev2">&gt;&gt;                 vol = self.ec2.create_volume(size, zone,
+</em><br />
+<em class="quotelev2">&gt;&gt; None,None,None,encrypt,None)
+</em><br />
+<em class="quotelev2">&gt;&gt;                 log.info(&quot;New volume id: %s&quot; % vol.id)
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; The error I am getting :
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;  File &quot;/home/ubuntu/.starcluster/plugins/glusterfsencrypt.py&quot;, line 110,
+</em><br />
+<em class="quotelev2">&gt;&gt; in run
+</em><br />
+<em class="quotelev2">&gt;&gt;     volume = self._create_ec2_volume(self.name, self.ebs_size, zone ,
+</em><br />
+<em class="quotelev2">&gt;&gt; self.encrypt)
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; File &quot;/home/ubuntu/.starcluster/plugins/glusterfsencrypt.py&quot;, line 363,
+</em><br />
+<em class="quotelev2">&gt;&gt; in _create_ec2_volume
+</em><br />
+<em class="quotelev2">&gt;&gt;     vol = self.ec2.create_volume(size, zone, None,None,None,encrypt)
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; TypeError: create_volume() takes at most 4 arguments (8 given)
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; On another note : when I am calling the create_function with
+</em><br />
+<em class="quotelev2">&gt;&gt; encypted=encrypt
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; i am getting :
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; vol = self.ec2.create_volume(size, zone, None,encrypted=encrypt)
+</em><br />
+<em class="quotelev2">&gt;&gt; TypeError: create_volume() got an unexpected keyword argument 'encrypted'
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; On Wed, Jul 2, 2014 at 6:35 PM, Rayson Ho &lt;raysonlogin_at_gmail.com&gt; wrote:
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; StarCluster only needs the first 3 function parameters, thus it relies
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; on the default parameters for boto's create_volume() function. If all you
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; want is to pass in the encrypted boolean, then you can add encrypted=True
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; to the list of parameters for create_volume().
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; For you code to be general purpose enough to be included, you will need
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; to add logic so that is does not always pass the encrypted=True bool into
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; the function all the time, and instead read the user's choice from the
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; command line (see createvolume.py).
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Rayson
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; ==================================================
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Open Grid Scheduler - The Official Open Source Grid Engine
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; <a href="http://gridscheduler.sourceforge.net/">http://gridscheduler.sourceforge.net/</a>
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; <a href="http://gridscheduler.sourceforge.net/GridEngine/GridEngineCloud.html">http://gridscheduler.sourceforge.net/GridEngine/GridEngineCloud.html</a>
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; On Wed, Jul 2, 2014 at 5:42 PM, ronen artzi &lt;ronen.artzi_at_gmail.com&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; wrote:
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; Hello,
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; I am trying to extend  a   glusterfs plugin we have , and would like to
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; introduce the options of encrypting the ESB bricks.
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; I'd like to be able to use the full parameter list coming with ec2 fro
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; volume creation :
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; create_volume(*size*, *zone*, *snapshot=None*, *volume_type=None*,
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; *iops=None*, *encrypted=False*, *dry_run=False*)
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; Being very new to the starcluster code base I am not sure what areas
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; are dealign with such volume creation.
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; it seems that under star cluster python packages area , volume.py
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; support only the first 4 parameters.
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; Any insights here are appreciated.
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; --
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt;  Ronen
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; _______________________________________________
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; StarCluster mailing list
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; StarCluster_at_mit.edu
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt; <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev4">&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt; --
+</em><br />
+<em class="quotelev2">&gt;&gt;    - Ronen
+</em><br />
+<em class="quotelev2">&gt;&gt;     Cell: +1-508-308-2417
+</em><br />
+<em class="quotelev2">&gt;&gt;     My profiles: [image: LinkedIn]
+</em><br />
+<em class="quotelev2">&gt;&gt; &lt;<a href="http://www.linkedin.com/pub/ronen-artzi/0/30/4b9">http://www.linkedin.com/pub/ronen-artzi/0/30/4b9</a>&gt; [image: Tungle.me]
+</em><br />
+<em class="quotelev2">&gt;&gt; &lt;<a href="http://tungle.me/ronenartzi">http://tungle.me/ronenartzi</a>&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev2">&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<br /><br /><pre>
+-- 
+   - Ronen
+    Cell: +1-508-308-2417
+    My profiles: [image: LinkedIn]
+&lt;<a href="http://www.linkedin.com/pub/ronen-artzi/0/30/4b9">http://www.linkedin.com/pub/ronen-artzi/0/30/4b9</a>&gt; [image: Tungle.me]
+&lt;<a href="http://tungle.me/ronenartzi">http://tungle.me/ronenartzi</a>&gt;
+</pre>
+<span id="received"><dfn>Received on</dfn> Thu Jul 03 2014 - 01:56:01 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2283.html#start2283">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2284.html" title="Next message in the list">Rayson Ho: "Re:  adding parameters to create_volume function - encryption"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2282.html" title="Previous message in the list">Rayson Ho: "Re:  adding parameters to create_volume function - encryption"</a></li>
+<li><dfn>In reply to</dfn>: <a href="2282.html" title="Message to which this message replies">Rayson Ho: "Re:  adding parameters to create_volume function - encryption"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="2284.html" title="Next message in this discussion thread">Rayson Ho: "Re:  adding parameters to create_volume function - encryption"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="2284.html" title="Message sent in reply to this message">Rayson Ho: "Re:  adding parameters to create_volume function - encryption"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2283" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2283" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2283" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2283" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

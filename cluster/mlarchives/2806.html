@@ -1,0 +1,207 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Shlomit Afgin ((no email))" />
+<meta name="Subject" content="Instance Types list" />
+<title>starcluster.mbox.out: Instance Types list</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Instance Types list</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Instance Types list</h1>
+<!-- received="Mon Jun  6 07:16:30 2016" -->
+<!-- isoreceived="20160606111630" -->
+<!-- sent="Mon, 6 Jun 2016 11:15:55 +0000" -->
+<!-- isosent="20160606111555" -->
+<!-- name="Shlomit Afgin" -->
+<!-- email="(no email)" -->
+<!-- subject="Instance Types list" -->
+<!-- id="00E9F42E-3C46-417A-8D9C-FA95A1766CFD_at_weizmann.ac.il" -->
+<!-- charset="UTF-8" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2806.html#start2806" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2806.html#options2">top</a>, <a href="2806.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2807.html" accesskey="d" title="MacMullan IV, Hugh: &quot;Re:  Instance Types list&quot;">Next message</a> ]
+[ <a href="2805.html" title="Shlomit Afgin: &quot;Re:  ldap user with starcluster&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="2807.html" accesskey="t" title="MacMullan IV, Hugh: &quot;Re:  Instance Types list&quot;">Next in thread</a> ]
+ [ <a href="2806.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2806" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2806" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2806" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2806" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Shlomit Afgin &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Mon, 6 Jun 2016 11:15:55 +0000</span><br />
+</address>
+<br />
+Hi,
+<br />
+<br />When I tried to run 'starcluster start …’  with unsupported type, I get the error:
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;!!! ERROR - Cluster settings are not valid:
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;!!! ERROR - Incompatible node_image_id and node_instance_type:
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;!!! ERROR - Image ‘ami-xxxxx' is a hardware virtual machine (HVM)
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;!!! ERROR - image and cannot be used with instance type 't1.micro'.
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;!!! ERROR - 
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;!!! ERROR - HVM images require one of the following HVM instance types:
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;!!! ERROR - cc1.4xlarge, cc2.8xlarge, g2.2xlarge, cg1.4xlarge,
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;!!! ERROR - cr1.8xlarge, i2.xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge,
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;!!! ERROR - r3.large, r3.xlarge, r3.2xlarge, r3.4xlarge, r3.8xlarge,
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;!!! ERROR - t2.micro, t2.small, t2.medium, hi1.4xlarge, hs1.8xlarge,
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;!!! ERROR - m3.medium, m3.large, m3.xlarge, m3.2xlarge, c3.large,
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;!!! ERROR - c3.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge
+<br />
+<br />How can I get a list of supported instance type  by HVM to avoid this error?
+<br />
+Is there any command that can give those results?
+<br />
+<br />Thanks a lot!
+<br />
+Shlomit.
+<br />
+<br /><br /><br /><br /><br />
+<br /><div>
+<ul>
+<li>application/pkcs7-signature attachment: <a href="/cluster/mlarchives/att-2806/smime.p7s">smime.p7s</a></li>
+</ul>
+<!-- attachment="smime.p7s" -->
+</div>
+<span id="received"><dfn>Received on</dfn> Mon Jun 06 2016 - 07:16:30 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2806.html#start2806">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2807.html" title="Next message in the list">MacMullan IV, Hugh: "Re:  Instance Types list"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2805.html" title="Previous message in the list">Shlomit Afgin: "Re:  ldap user with starcluster"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="2807.html" title="Next message in this discussion thread">MacMullan IV, Hugh: "Re:  Instance Types list"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="2807.html" title="Message sent in reply to this message">MacMullan IV, Hugh: "Re:  Instance Types list"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2806" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2806" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2806" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2806" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

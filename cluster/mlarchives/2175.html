@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="David Stuebe ((no email))" />
+<meta name="Subject" content="set_keepalive" />
+<title>starcluster.mbox.out: set_keepalive</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">set_keepalive</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>set_keepalive</h1>
+<!-- received="Fri Apr 25 11:19:30 2014" -->
+<!-- isoreceived="20140425151930" -->
+<!-- sent="Fri, 25 Apr 2014 15:19:16 +0000" -->
+<!-- isosent="20140425151916" -->
+<!-- name="David Stuebe" -->
+<!-- email="(no email)" -->
+<!-- subject="set_keepalive" -->
+<!-- id="CF7FF52F.4761E%dstuebe_at_asascience.com" -->
+<!-- charset="Windows-1252" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2175.html#start2175" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2175.html#options2">top</a>, <a href="2175.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2176.html" accesskey="d" title="Justin Riley: &quot;StarCluster 0.95.5 Released!&quot;">Next message</a> ]
+[ <a href="2174.html" title="MacMullan, Hugh: &quot;Re:  Simple Web interface for StarCluster&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2175" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2175" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2175" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2175" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: David Stuebe &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Fri, 25 Apr 2014 15:19:16 +0000</span><br />
+</address>
+<br />
+Hi Starcluster
+<br />
+<br />I have been building some plugins that take a while to run because they are building and installing large libraries. As a result I have seen issues with ssh terminating my connection while the process is still running. Which seems to return exit code 1, although the process continues on the cluster.
+<br />
+<br />For my custom plugins I added the following line to apply a keep alive to the ssh transport.
+<br />
+<br />def run(self, nodes, master, user, user_shell, volumes):
+<br />
+…
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for node in nodes:
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;node.ssh.transport.set_keepalive(30)
+<br />
+…
+<br />
+<br />This can be done this way, but you might consider adding it somewhere in starcluster, probably in the connect method of SSHClient:
+<br />
+<a href="https://github.com/jtriley/StarCluster/blob/develop/starcluster/sshutils.py#L100">https://github.com/jtriley/StarCluster/blob/develop/starcluster/sshutils.py#L100</a>
+<br />
+<br /><br />Here are the methods form paramiko:
+<br />
+<a href="https://github.com/paramiko/paramiko/blob/master/paramiko/packet.py#L175">https://github.com/paramiko/paramiko/blob/master/paramiko/packet.py#L175</a>
+<br />
+<a href="https://github.com/paramiko/paramiko/blob/master/paramiko/transport.py#L762">https://github.com/paramiko/paramiko/blob/master/paramiko/transport.py#L762</a>
+<br />
+<br /><br />Another step that would help is to add a longer disconnect to the default /etc/ssh/sshd_config in the cluster ami.
+<br />
+<br />For instance I have used one of my plugins to set:
+<br />
+ClientAliveInterval 600
+<br />
+ClientAliveCountMax 3
+<br />
+<br />That should keep ssh connections open for half an hour.
+<br />
+<br />David Stuebe
+<br />
+Scientist &amp; Software Engineer
+<br />
+<br />55 Village Square Drive
+<br />
+South Kingstown, RI 02879-8248
+<br />
+<br />Tel: +1 (401) 789-6224
+<br />
+Email: David.Stuebe_at_rpsgroup.com&lt;mailto:David.Stuebe_at_rpsgroup.com&gt;
+<br />
+www: asascience.com&lt;<a href="http://www.asascience.com/">http://www.asascience.com/</a>&gt; | rpsgroup.com&lt;<a href="http://www.rpsgroup.com/">http://www.rpsgroup.com/</a>&gt;
+<br />
+<br />A member of the RPS Group plc
+<br />
+<span id="received"><dfn>Received on</dfn> Fri Apr 25 2014 - 11:19:30 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2175.html#start2175">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2176.html" title="Next message in the list">Justin Riley: "StarCluster 0.95.5 Released!"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2174.html" title="Previous message in the list">MacMullan, Hugh: "Re:  Simple Web interface for StarCluster"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2175" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2175" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2175" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2175" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

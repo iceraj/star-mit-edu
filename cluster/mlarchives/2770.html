@@ -1,0 +1,268 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Cedar McKay ((no email))" />
+<meta name="Subject" content="Re:  Local master node" />
+<title>starcluster.mbox.out: Re:  Local master node</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Re:  Local master node</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Re:  Local master node</h1>
+<!-- received="Thu Mar 17 13:05:04 2016" -->
+<!-- isoreceived="20160317170504" -->
+<!-- sent="Thu, 17 Mar 2016 10:04:56 -0700" -->
+<!-- isosent="20160317170456" -->
+<!-- name="Cedar McKay" -->
+<!-- email="(no email)" -->
+<!-- subject="Re:  Local master node" -->
+<!-- id="3D4871A3-5883-4081-B56D-FF00563C7C91_at_uw.edu" -->
+<!-- charset="utf-8" -->
+<!-- inreplyto="CAOx0r9TXqNAx+tDxRHXamwpYH0Wq7oSetw07QqEioWeCvdshHw_at_mail.gmail.com" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2770.html#start2770" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2770.html#options2">top</a>, <a href="2770.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2771.html" accesskey="d" title="Ryan G: &quot;Is StarCluster still under active development?&quot;">Next message</a> ]
+[ <a href="2769.html" title="Vasisht Reddy T.: &quot;Re:  Local master node&quot;">Previous message</a> ]
+[ <a href="2768.html" title="Adrian Draghici: &quot;Re:  Local master node&quot;">In reply to</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2770" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2770" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2770" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2770" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Cedar McKay &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 17 Mar 2016 10:04:56 -0700</span><br />
+</address>
+<br />
+Or you can leave it running, and it will cost you about $1 for a week. I really think you are making it too complicated. But that’s the last I’ll say on this topic. 
+<br />
+best,
+<br />
+Cedar
+<br />
+<br /><br /><br /><em class="quotelev1">&gt; On Mar 17, 2016, at 9:29 AM, Adrian Draghici &lt;draghici.adrian.b_at_gmail.com&gt; wrote:
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Hi,
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Thanks for the answers!
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; I'm not sure I understand how the intermediate node could be shut down though? Assume the following scenario where all nodes are in EC2:
+</em><br />
+<em class="quotelev1">&gt; 	• A is the intermediate node with the new AMI, receiving and executing commands like &quot;starcluster start testcluster&quot; etc.
+</em><br />
+<em class="quotelev1">&gt; 	• B is the master node spawned by the cluster
+</em><br />
+<em class="quotelev1">&gt; 	• C, D, E are slave nodes
+</em><br />
+<em class="quotelev1">&gt; Surely A would need to be alive until the end since the cluster needs to be turned off from it?
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; On Thu, Mar 17, 2016 at 3:08 PM MacMullan IV, Hugh &lt;hughmac_at_wharton.upenn.edu&gt; wrote:
+</em><br />
+<em class="quotelev1">&gt; I agree: you can shut that node down while the cluster is running, too.
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; -----Original Message-----
+</em><br />
+<em class="quotelev1">&gt; From: starcluster-bounces_at_mit.edu [mailto:starcluster-bounces_at_mit&#46;<!--nospam-->edu] On Behalf Of Cedar McKay
+</em><br />
+<em class="quotelev1">&gt; Sent: Thursday, March 17, 2016 11:00 AM
+</em><br />
+<em class="quotelev1">&gt; To: Adrian Draghici &lt;draghici.adrian.b_at_gmail.com&gt;
+</em><br />
+<em class="quotelev1">&gt; Cc: starcluster_at_mit.edu
+</em><br />
+<em class="quotelev1">&gt; Subject: Re: [StarCluster] Local master node
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; A t2.nano costs  about 2/3 of a penny per hour. In my opinion it's not worth doing any extra engineering effort to avoid that cost.
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Best,
+</em><br />
+<em class="quotelev1">&gt; Cedar
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt; &gt; On Mar 17, 2016, at 7:45 AM, Adrian Draghici &lt;draghici.adrian.b_at_gmail.com&gt; wrote:
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev2">&gt; &gt; Hi all,
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev2">&gt; &gt; I’m currently trying to find a way to start and manage a Starcluster fleet from machines where installing Starcluster itself is not an option.
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev2">&gt; &gt; One way of doing this could be snapshotting the standard AMI with the Starcluster tool installed and then manually bring up an instance from this snapshot. The newly brought up instance will now be a coordinator node that can take commands to manage a cluster. However, I would need this node to also be the master in order to avoid having the overhead of one extra box.
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev2">&gt; &gt; Is there any option for allowing the machine starting the cluster to also be the master (assuming it’s also in EC2)?
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev2">&gt; &gt; I’ve seen slight variations of this question asked before here, but with no definitive answer. I would also really appreciate any other ideas on how to solve this!
+</em><br />
+<em class="quotelev2">&gt; &gt;
+</em><br />
+<em class="quotelev2">&gt; &gt; Thanks,
+</em><br />
+<em class="quotelev2">&gt; &gt; Adrian
+</em><br />
+<em class="quotelev2">&gt; &gt; _______________________________________________
+</em><br />
+<em class="quotelev2">&gt; &gt; StarCluster mailing list
+</em><br />
+<em class="quotelev2">&gt; &gt; StarCluster_at_mit.edu
+</em><br />
+<em class="quotelev2">&gt; &gt; <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; _______________________________________________
+</em><br />
+<em class="quotelev1">&gt; StarCluster mailing list
+</em><br />
+<em class="quotelev1">&gt; StarCluster_at_mit.edu
+</em><br />
+<em class="quotelev1">&gt; <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<span id="received"><dfn>Received on</dfn> Thu Mar 17 2016 - 13:05:04 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2770.html#start2770">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2771.html" title="Next message in the list">Ryan G: "Is StarCluster still under active development?"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2769.html" title="Previous message in the list">Vasisht Reddy T.: "Re:  Local master node"</a></li>
+<li><dfn>In reply to</dfn>: <a href="2768.html" title="Message to which this message replies">Adrian Draghici: "Re:  Local master node"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2770" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2770" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2770" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2770" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

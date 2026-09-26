@@ -1,0 +1,648 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Justin Riley ((no email))" />
+<meta name="Subject" content="Re: [Starcluster] starcluster fails to mount /home with NFS" />
+<title>starcluster.mbox.out: Re: [Starcluster] starcluster fails to mount /home with NFS</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Re: [Starcluster] starcluster fails to mount /home with NFS</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Re: [Starcluster] starcluster fails to mount /home with NFS</h1>
+<!-- received="Fri Apr 16 13:07:00 2010" -->
+<!-- isoreceived="20100416170700" -->
+<!-- sent="Fri, 16 Apr 2010 13:06:58 -0400" -->
+<!-- isosent="20100416170658" -->
+<!-- name="Justin Riley" -->
+<!-- email="(no email)" -->
+<!-- subject="Re: [Starcluster] starcluster fails to mount /home with NFS" -->
+<!-- id="4BC89932.7060107_at_mit.edu" -->
+<!-- charset="ISO-8859-1" -->
+<!-- inreplyto="4BC882E6.60901_at_mit.edu" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="0164.html#start164" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="0164.html#options2">top</a>, <a href="0164.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="0165.html" accesskey="d" title="Damian Eads: &quot;[Starcluster] cluster start-up hangs when starting Sun Grid Engine&quot;">Next message</a> ]
+[ <a href="0163.html" title="Justin Riley: &quot;Re: [Starcluster] (no subject)&quot;">Previous message</a> ]
+[ <a href="0161.html" title="Justin Riley: &quot;Re: [Starcluster] starcluster fails to mount /home with NFS&quot;">In reply to</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg164" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg164" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg164" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg164" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Justin Riley &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Fri, 16 Apr 2010 13:06:58 -0400</span><br />
+</address>
+<br />
+-----BEGIN PGP SIGNED MESSAGE-----
+<br />
+Hash: SHA1
+<br />
+<br />Hi Gabriel,
+<br />
+<br />I just tested my new, not yet released, StarCluster Ubuntu 9.10 karmic
+<br />
+AMIs and it works with c1.xlarge just fine.
+<br />
+<br />Unfortunately this AMI will not work with the current version of
+<br />
+StarCluster on pypi given that it uses the latest Sun Grid Engine which
+<br />
+has slightly different config parameters.
+<br />
+<br />However, if you want to use the github code which I'm hoping to release
+<br />
+next week anyway, this should work for you. The current work-in-progress
+<br />
+docs for the next release are here:
+<br />
+<br /><a href="http://web.mit.edu/stardev/cluster/docs">http://web.mit.edu/stardev/cluster/docs</a>
+<br />
+<br />Let me know if you want to give this a try. I'm going to make those new
+<br />
+9.10 karmic AMIs available today after some testing.
+<br />
+<br />~Justin
+<br />
+<br />On 04/16/2010 11:31 AM, Justin Riley wrote:
+<br />
+<em class="quotelev1">&gt; Hi Gabriel,
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; I'm also able to reproduce your troubles with NFS on c1.xlarge. I'm
+</em><br />
+<em class="quotelev1">&gt; guessing you've tested the smallest 64bit instance available as well and
+</em><br />
+<em class="quotelev1">&gt; it has the same problem?
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Unfortunately I haven't been able to get to the bottom of this just yet.
+</em><br />
+<em class="quotelev1">&gt; The RPC error is not very common and I think this may have something to
+</em><br />
+<em class="quotelev1">&gt; do with the kernel but I'm not really sure.
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; I'll keep you posted with what I discover. I have a feeling I'll need to
+</em><br />
+<em class="quotelev1">&gt; release a new 64bit ami because of this but we'll see.
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; ~Justin
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; On 04/16/2010 09:00 AM, Gabriel Hoffman wrote:
+</em><br />
+<em class="quotelev2">&gt;&gt; Justin,
+</em><br />
+<em class="quotelev2">&gt;&gt;     On the master I get:
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; root_at_domU-12-31-39-0E-3E-11:~#  /etc/init.d/portmap status
+</em><br />
+<em class="quotelev2">&gt;&gt;  * portmap is running
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; root_at_domU-12-31-39-0E-3E-11:~# pgrep portmap -lf
+</em><br />
+<em class="quotelev2">&gt;&gt; 916 /sbin/portmap
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; On a node I get:
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; root_at_domU-12-31-39-00-13-C2:~#  /etc/init.d/portmap status
+</em><br />
+<em class="quotelev2">&gt;&gt;  * portmap is running
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; root_at_domU-12-31-39-00-13-C2:~# pgrep portmap -lf
+</em><br />
+<em class="quotelev2">&gt;&gt; 843 /sbin/portmap
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; This NFS problem happens repeatedly so I haven't been able to use Amazon
+</em><br />
+<em class="quotelev2">&gt;&gt; for my qsub jobs.  Early on it worked ok on a 2 node cluster, but I
+</em><br />
+<em class="quotelev2">&gt;&gt; tried to scale up and it fails every time now.  During the course of
+</em><br />
+<em class="quotelev2">&gt;&gt; trying to diagnose the problem I changed my security group settings,
+</em><br />
+<em class="quotelev2">&gt;&gt; although it seems that starcluster would occasionally reset them. 
+</em><br />
+<em class="quotelev2">&gt;&gt; Currently I have:
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; All
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; tcp
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 0
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 65535
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 0.0.0.0/0
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; --
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; Remove
+</em><br />
+<em class="quotelev2">&gt;&gt; All
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; tcp
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 0
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 65535
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; default group
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; Remove
+</em><br />
+<em class="quotelev2">&gt;&gt; All
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; udp
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 0
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 65535
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 0.0.0.0/0
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; --
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; Remove
+</em><br />
+<em class="quotelev2">&gt;&gt; All
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; udp
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 0
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 65535
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; default group
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; Remove
+</em><br />
+<em class="quotelev2">&gt;&gt; SSH
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; tcp
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 22
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 22
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; 0.0.0.0/0
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; Thanks for your help,
+</em><br />
+<em class="quotelev2">&gt;&gt; Gabriel
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; On 04/15/2010 05:39 PM, Justin Riley wrote:
+</em><br />
+<em class="quotelev2">&gt;&gt; Hi Gabriel,
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; Thanks for joining the list and sorry to hear you're having issues using
+</em><br />
+<em class="quotelev2">&gt;&gt; StarCluster.
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; This looks like a problem with portmap starting. Could you check if
+</em><br />
+<em class="quotelev2">&gt;&gt; portmap is running on the nodes?
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; Try something like:
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; $ /etc/init.d/portmap status
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; and
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; $ pgrep portmap -lf
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; I'm testing now with the ami-a19e71c8 image and c1.xlarge instances to
+</em><br />
+<em class="quotelev2">&gt;&gt; see if I can reproduce your issue.
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; Has this happened to you more than once?
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; ~Justin
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; On 04/15/2010 04:56 PM, Gabriel Hoffman wrote:
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; I am using starcluster to launch 3 c1.xlarge instances using 
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; ami-a19e71c8.  starcluster -s works fine and does not generate any 
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; errors and my EBS is correctly mounted on /home in the master.  My 
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; problem is that starcluster does not correctly mount this on the nodes 
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; using NFS.  When I try to mount manually, I get the following error:
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; root_at_domU-12-31-39-0F-6D-D1:/home# mount /home
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; mount.nfs: mount to NFS server 
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; 'domU-12-31-39-0F-6C-F1.compute-1.internal' failed: RPC Error: Program 
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; not registered
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; This also fails with m1.large and ami-a19e71c8.  However, the NFS works 
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; fine when I use m1.small instances with ami-8f9e71e6.
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; Any ideas about how to get starcluster to use NFS correctly with c1.xlarge?
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; Here is my .starclustercfg:
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; [section aws]
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; ---
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; [section ssh]
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; ---
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; [section cluster]
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; # cluster size
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; CLUSTER_SIZE = 3
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; # create the following user on the cluster
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; CLUSTER_USER = sgeadmin
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; # optionally specify shell (defaults to bash)
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; # options: bash, zsh, csh, ksh, tcsh
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; CLUSTER_SHELL = bash
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; # AMI for master node. Defaults to NODE_IMAGE_ID if not specified
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; # The base i386 StarCluster AMI is ami-8f9e71e6
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; # The base x86_64 StarCluster AMI is ami-a19e71c8
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; MASTER_IMAGE_ID = ami-a19e71c8
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; # AMI for worker nodes. Also used for the master node if MASTER_IMAGE_ID 
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; is not specified
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; # The base i386 StarCluster AMI is ami-8f9e71e6
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; # The base x86_64 StarCluster AMI is ami-a19e71c8
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; NODE_IMAGE_ID = ami-a19e71c8
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; # instance type
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; INSTANCE_TYPE = c1.xlarge
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; # availability zone
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; AVAILABILITY_ZONE = us-east-1a
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; [section ebs]
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; # NOTE: this section is optional, uncomment to use
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; # attach volume to /home on master node
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; ATTACH_VOLUME = vol-598b2130
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; VOLUME_DEVICE = /dev/sdj
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt; VOLUME_PARTITION = /dev/sdj1
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt;
+</em><br />
+<em class="quotelev1">&gt;&gt;&gt;&gt;&gt;     
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; -- 
+</em><br />
+<em class="quotelev2">&gt;&gt; Gabriel Hoffman
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev2">&gt;&gt; PhD Candidate
+</em><br />
+<em class="quotelev2">&gt;&gt; Genetics and Development
+</em><br />
+<em class="quotelev2">&gt;&gt; Cornell University
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+_______________________________________________
+<br />
+Starcluster mailing list
+<br />
+Starcluster_at_mit.edu
+<br />
+<a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+<br />
+<br />-----BEGIN PGP SIGNATURE-----
+<br />
+Version: GnuPG v2.0.14 (GNU/Linux)
+<br />
+Comment: Using GnuPG with Mozilla - <a href="http://enigmail.mozdev.org/">http://enigmail.mozdev.org/</a>
+<br />
+<br />iEYEARECAAYFAkvImTIACgkQ4llAkMfDcrnG+wCgjA6KD1FixiX4MiTj9q+XsrLl
+<br />
+D5AAnR0UIalIrCAqAZ8sA5KXGwvM33mK
+<br />
+=B/Dq
+<br />
+-----END PGP SIGNATURE-----
+<br />
+<span id="received"><dfn>Received on</dfn> Fri Apr 16 2010 - 13:07:00 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="0164.html#start164">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="0165.html" title="Next message in the list">Damian Eads: "[Starcluster] cluster start-up hangs when starting Sun Grid Engine"</a></li>
+<li><dfn>Previous message</dfn>: <a href="0163.html" title="Previous message in the list">Justin Riley: "Re: [Starcluster] (no subject)"</a></li>
+<li><dfn>In reply to</dfn>: <a href="0161.html" title="Message to which this message replies">Justin Riley: "Re: [Starcluster] starcluster fails to mount /home with NFS"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg164" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg164" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg164" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg164" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

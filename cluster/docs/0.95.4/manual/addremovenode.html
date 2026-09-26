@@ -1,0 +1,304 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Adding and Removing Nodes &mdash; StarCluster 0.95.4 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/pylons.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/issuetracker.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.95.4',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="StarCluster 0.95.4 documentation" href="../index.html" />
+    <link rel="up" title="StarCluster User Manual" href="index.html" />
+    <link rel="next" title="Elastic Load Balancer" href="load_balancer.html" />
+    <link rel="prev" title="Plugin System" href="plugins.html" />
+<link rel="stylesheet" href="../_static/nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="../_static/neuton.css" type="text/css" media="screen" charset="utf-8" />
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="../_static/ie6.css" type="text/css" media="screen" charset="utf-8" />
+<![endif]-->
+<link rel="shortcut icon" href="../_static/starcluster.ico"/>
+
+  </head>
+  <body>
+<div class="header-small">
+	
+	<div class="logo-small">
+		<a href="../index.html">
+      		<img class="logo" src="../_static/logo-small.png" alt="Logo"/>
+		</a>
+  	</div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="load_balancer.html" title="Elastic Load Balancer"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="plugins.html" title="Plugin System"
+             accesskey="P">previous</a> |</li>
+    	<li><a href="../index.html">Home</a> &raquo;</li>
+          <li><a href="../contents.html" >Master Table of Contents</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">StarCluster User Manual</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="adding-and-removing-nodes">
+<h1>Adding and Removing Nodes<a class="headerlink" href="addremovenode.html#adding-and-removing-nodes" title="Permalink to this headline">¶</a></h1>
+<p>StarCluster has support for manually shrinking and expanding the size of your
+cluster based on your resource needs. For example, you might start out with
+10-nodes and realize that you only really need 5 or the reverse case where you
+start 5 nodes and find out you need 10. In these cases you can use
+StarCluster&#8217;s <tt class="docutils literal"><span class="pre">addnode</span></tt> and <tt class="docutils literal"><span class="pre">removenode</span></tt> commands to scale the size of your
+cluster to your needs.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The examples below assume we have a 1-node cluster running called
+<em>mycluster</em>.</p>
+</div>
+<div class="section" id="adding-nodes">
+<h2>Adding Nodes<a class="headerlink" href="addremovenode.html#adding-nodes" title="Permalink to this headline">¶</a></h2>
+<p>To add nodes to a running cluster use the <tt class="docutils literal"><span class="pre">addnode</span></tt> command. This command takes
+a <em>cluster tag</em> as an argument and will automatically add a new node to the
+cluster:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ starcluster addnode mycluster
+StarCluster - (/cluster)
+Software Tools for Academics and Researchers (STAR)
+Please submit bug reports to starcluster@mit.edu
+
+&gt;&gt;&gt; Launching node(s): node001
+&gt;&gt;&gt; Waiting for node(s) to come up... (updating every 30s)
+&gt;&gt;&gt; Waiting for open spot requests to become active...
+2/2 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%
+&gt;&gt;&gt; Waiting for all nodes to be in a &#39;running&#39; state...
+2/2 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%
+&gt;&gt;&gt; Waiting for SSH to come up on all nodes...
+2/2 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%
+&gt;&gt;&gt; Configuring hostnames...
+1/1 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%
+&gt;&gt;&gt; Configuring /etc/hosts on each node
+2/2 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%
+&gt;&gt;&gt; Configuring NFS...
+&gt;&gt;&gt; Mounting shares for node node001
+1/1 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%
+&gt;&gt;&gt; Configuring scratch space for user: myuser
+1/1 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 100%
+&gt;&gt;&gt; Configuring passwordless ssh for root
+&gt;&gt;&gt; Using existing key: /root/.ssh/id_rsa
+&gt;&gt;&gt; Configuring passwordless ssh for myuser
+&gt;&gt;&gt; Using existing key: /home/myuser/.ssh/id_rsa
+&gt;&gt;&gt; Adding node001 to SGE
+</pre></div>
+</div>
+<p>The <tt class="docutils literal"><span class="pre">addnode</span></tt> command auto-generates an alias for the new node(s). In the
+above example <cite>mycluster</cite> is a single node cluster. In this case <tt class="docutils literal"><span class="pre">addnode</span></tt>
+automatically added a new node and gave it an alias of <em>node001</em>. If we added
+additional nodes they would be named <em>node002</em>, <em>node003</em>, and so on.</p>
+<p>If you&#8217;d rather manually specify an alias for the new node(s) use the <tt class="docutils literal"><span class="pre">--alias</span>
+<span class="pre">(-a)</span></tt> option:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ starcluster addnode -a mynewnode mycluster
+</pre></div>
+</div>
+<p>It is also possible to add multiple nodes using the <tt class="docutils literal"><span class="pre">--num-nodes</span> <span class="pre">(-n)</span></tt>
+option:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ starcluster addnode -n 5 mycluster
+</pre></div>
+</div>
+<p>The above command will add five additional nodes to <cite>mycluster</cite> auto-generating
+the node aliases. To specify aliases for all five nodes simply specify a comma
+separated list to the <tt class="docutils literal"><span class="pre">-a</span></tt> option:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ starcluster addnode -n 5 -a n1,n2,n3,n4,n5 mycluster
+</pre></div>
+</div>
+<p>Once the <tt class="docutils literal"><span class="pre">addnode</span></tt> command has completed successfully the new nodes will show
+up in the output of the <tt class="docutils literal"><span class="pre">listclusters</span></tt> command:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ starcluster listclusters mycluster
+</pre></div>
+</div>
+<p>You can login directly to a new node by alias:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ starcluster sshnode mycluster mynewnode
+</pre></div>
+</div>
+<p>The <tt class="docutils literal"><span class="pre">addnode</span></tt> command has additional options for customizing the new node&#8217;s
+instance type, AMI, spot bid, and more. See the help menu for a detailed list
+of all available options:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ starcluster addnode --help
+</pre></div>
+</div>
+<div class="section" id="re-adding-a-node">
+<h3>Re-adding a Node<a class="headerlink" href="addremovenode.html#re-adding-a-node" title="Permalink to this headline">¶</a></h3>
+<p>If you&#8217;ve previously attempted to add a node and it failed due to a plugin
+error or other bug or if you used the <tt class="docutils literal"><span class="pre">removenode</span></tt> command with the <tt class="docutils literal"><span class="pre">-k</span></tt>
+option and wish to re-add the node to the cluster without launching a new
+instance you can use the <tt class="docutils literal"><span class="pre">-x</span></tt> option:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ starcluster addnode -x -a node001 mycluster
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <tt class="docutils literal"><span class="pre">-x</span></tt> option requires the <tt class="docutils literal"><span class="pre">-a</span></tt> option</p>
+</div>
+<p>This will attempt to add or re-add <cite>node001</cite> to mycluster using the existing
+instance rather than launching a new instance. If no instance exists with the
+alias specified by the <tt class="docutils literal"><span class="pre">-a</span></tt> option an error is reported. You can also do this
+for multiple nodes:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ starcluster addnode -x -a mynode1,mynode2,mynode3 mycluster
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="removing-nodes">
+<h2>Removing Nodes<a class="headerlink" href="addremovenode.html#removing-nodes" title="Permalink to this headline">¶</a></h2>
+<p>To remove nodes from an existing cluster use the <tt class="docutils literal"><span class="pre">removenode</span></tt> command. This
+command takes at least two arguments: the <em>cluster tag</em> representing the
+cluster you want to remove nodes from and a node <em>alias</em>:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ starcluster removenode mycluster node001
+StarCluster - (/cluster)
+Software Tools for Academics and Researchers (STAR)
+Please submit bug reports to starcluster@mit.edu
+
+&gt;&gt;&gt; Removing node node001 (i-8bec7ce5)...
+&gt;&gt;&gt; Removing node001 from SGE
+&gt;&gt;&gt; Removing node001 from known_hosts files
+&gt;&gt;&gt; Removing node001 from /etc/hosts
+&gt;&gt;&gt; Removing node001 from NFS
+&gt;&gt;&gt; Canceling spot request sir-3567ba14
+&gt;&gt;&gt; Terminating node: node001 (i-8bec7ce5)
+</pre></div>
+</div>
+<p>The above command removes <cite>node001</cite> from <cite>mycluster</cite> by removing the node from
+the Sun Grid Engine queuing system, from each node&#8217;s ssh known_hosts files,
+from each node&#8217;s /etc/hosts file, and from all NFS shares. If you&#8217;re using
+plugins with your cluster they will be called to remove the node. Once the node
+has been removed from the cluster the node is terminated. If the node is a spot
+instance, as it is in the above example, the spot instance request will also be
+cancelled.</p>
+<p>You can also remove multiple nodes by providing a list of aliases:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ starcluster removenode mycluster node001 node002 node003
+</pre></div>
+</div>
+<div class="section" id="remove-without-terminating">
+<h3>Remove Without Terminating<a class="headerlink" href="addremovenode.html#remove-without-terminating" title="Permalink to this headline">¶</a></h3>
+<p>If you&#8217;d rather not terminate the node(s) after removing from the cluster to
+test plugins, for example, use the <tt class="docutils literal"><span class="pre">--keep-instance</span> <span class="pre">(-k)</span></tt> option:</p>
+<div class="highlight-python"><div class="highlight"><pre>$ starcluster removenode -k mycluster node001 node002 node003
+</pre></div>
+</div>
+<p>This will remove the nodes from the cluster but leave the instances
+running. This can be useful, for example, when testing on_add_node methods
+in a StarCluster plugin.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="addremovenode.html">Adding and Removing Nodes</a><ul>
+<li><a class="reference internal" href="addremovenode.html#adding-nodes">Adding Nodes</a><ul>
+<li><a class="reference internal" href="addremovenode.html#re-adding-a-node">Re-adding a Node</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="addremovenode.html#removing-nodes">Removing Nodes</a><ul>
+<li><a class="reference internal" href="addremovenode.html#remove-without-terminating">Remove Without Terminating</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="plugins.html"
+                        title="previous chapter">Plugin System</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="load_balancer.html"
+                        title="next chapter">Elastic Load Balancer</a></p>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="load_balancer.html" title="Elastic Load Balancer"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="plugins.html" title="Plugin System"
+             >previous</a> |</li>
+    	<li><a href="../index.html">Home</a> &raquo;</li>
+          <li><a href="../contents.html" >Master Table of Contents</a> &raquo;</li>
+          <li><a href="index.html" >StarCluster User Manual</a> &raquo;</li> 
+      </ul>
+    </div>
+
+
+    <div class="footer">
+        &copy; Copyright 2011, Software Tools for Academics and Researchers.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.1.
+    </div>
+
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+    </script>
+
+  </body>
+</html>

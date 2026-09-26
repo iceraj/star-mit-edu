@@ -1,0 +1,13 @@
+# Wget saved query-parameter variants as literal filenames. Static hosts use
+# these values as URL query strings, so they are served from the canonical
+# query-free paths instead; keep the crawler artifacts out of Git.
+/feedback.html[?]project=StarOrf&source=web.tmp.html
+/feedback.html[?]project=StarHPC&source=web.tmp.html
+/feedback.html[?]project=StarHydro&source=web.tmp.html
+/feedback.html[?]project=StarMolsim&source=web.tmp.html
+/feedback.html[?]project=StarGenetics&source=web.tmp.html
+/feedback.html[?]project=StarBiochem&source=web.tmp.html
+/cluster/docs/latest/search.html[?]q=ebs-backed&check_keywords=yes&area=default.tmp.html
+/cluster/docs/latest/plugins/sge.html[?]highlight=master.tmp.html
+/cluster/docs/latest/manual/runcommands.html[?]highlight=sshmaster.tmp.html
+/cluster/docs/latest/manual/plugins.html[?]highlight=shell.tmp.html

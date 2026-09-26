@@ -1,0 +1,222 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Ron Chen ((no email))" />
+<meta name="Subject" content="Re:  StarCluster in Amazon GovCloud" />
+<title>starcluster.mbox.out: Re:  StarCluster in Amazon GovCloud</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Re:  StarCluster in Amazon GovCloud</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Re:  StarCluster in Amazon GovCloud</h1>
+<!-- received="Fri Feb 22 00:24:38 2013" -->
+<!-- isoreceived="20130222052438" -->
+<!-- sent="Thu, 21 Feb 2013 21:24:36 -0800 (PST)" -->
+<!-- isosent="20130222052436" -->
+<!-- name="Ron Chen" -->
+<!-- email="(no email)" -->
+<!-- subject="Re:  StarCluster in Amazon GovCloud" -->
+<!-- id="1361510676.17750.YahooMailNeo_at_web161503.mail.bf1.yahoo.com" -->
+<!-- charset="iso-8859-1" -->
+<!-- inreplyto="OF39313B3A.B3011567-ON88257B19.00782A96-88257B19.00793415_at_notes.aero.org" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1670.html#start1670" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1670.html#options2">top</a>, <a href="1670.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1671.html" accesskey="d" title="Ramon Linan - Navteca: &quot;Oops! Looks like you&#0039;ve found a bug in StarCluster&quot;">Next message</a> ]
+[ <a href="1669.html" title="Suresh M Singh: &quot;StarCluster in Amazon GovCloud&quot;">Previous message</a> ]
+[ <a href="1669.html" title="Suresh M Singh: &quot;StarCluster in Amazon GovCloud&quot;">In reply to</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1670" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1670" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1670" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1670" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Ron Chen &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 21 Feb 2013 21:24:36 -0800 (PST)</span><br />
+</address>
+<br />
+AWS does not provide doc online, but I don't think 1 way communication would work with TCP/IP. May be there is a firewall of some kind in GovCloud?
+<br />
+<br />Is VPC really a requirement? StarCluster still has issues with VPC, see: <a href="https://github.com/jtriley/StarCluster/issues/21">https://github.com/jtriley/StarCluster/issues/21</a>
+<br />
+<br />If VPC is not needed, does starting StarCluster in a small instance in GovCloud work?
+<br />
+<br /> -Ron
+<br />
+<br />************************************************************************
+<br />
+Open Grid Scheduler - the official open source Grid Engine: <a href="http://gridscheduler.sourceforge.net/">http://gridscheduler.sourceforge.net/</a>
+<br />
+<br /><br /><br /><br /><br /><br />________________________________
+<br />
+From: Suresh M Singh &lt;Suresh.M.Singh_at_aero.org&gt;
+<br />
+To: starcluster_at_mit.edu 
+<br />
+Sent: Thursday, February 21, 2013 5:03 PM
+<br />
+Subject: [StarCluster] StarCluster in Amazon GovCloud
+<br />
+<br /><br />Hello, 
+<br />
+<br />  I am a new user of Amazon US
+<br />
+GovCloud. I installed StarCluster and trying to use it to create a Cluster
+<br />
+in GovCloud. Recently, our company has installed VPC to GovCloud. I entered
+<br />
+all Amazon provided access key. account number into config file. But when
+<br />
+I try to use &quot;starcluster createkey&quot; or any other command, I
+<br />
+do not get any response back. I have heard that GovCloud allows only 1
+<br />
+way communication (from company to GovCloud) but not other direction. Could
+<br />
+someone let me know what port numbers to which direction need to be opened
+<br />
+in VPN/VPC to have starcluster working? 
+<br />
+<br />Any info to resolve this issue would
+<br />
+be appreciated. 
+<br />
+<br />Thanks, 
+<br />
+<br />Suresh Singh 
+<br />
+Aerospace Corporation, CA 
+<br />
+<br />_______________________________________________
+<br />
+StarCluster mailing list
+<br />
+StarCluster_at_mit.edu
+<br />
+<a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+<br />
+<span id="received"><dfn>Received on</dfn> Fri Feb 22 2013 - 00:24:38 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1670.html#start1670">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1671.html" title="Next message in the list">Ramon Linan - Navteca: "Oops! Looks like you&#0039;ve found a bug in StarCluster"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1669.html" title="Previous message in the list">Suresh M Singh: "StarCluster in Amazon GovCloud"</a></li>
+<li><dfn>In reply to</dfn>: <a href="1669.html" title="Message to which this message replies">Suresh M Singh: "StarCluster in Amazon GovCloud"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1670" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1670" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1670" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1670" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

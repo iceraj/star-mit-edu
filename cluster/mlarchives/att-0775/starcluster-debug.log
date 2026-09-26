@@ -1,0 +1,62 @@
+config.py:281 - DEBUG - Loading config
+config.py:99 - DEBUG - Loading file: /Users/jschug/.starcluster/config
+cli.py:213 - INFO - Using default cluster template: rumcluster
+awsutils.py:47 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'path': '/', 'region': None, 'port': None, 'is_secure': True}
+cli.py:228 - INFO - Validating cluster template settings...
+awsutils.py:47 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'path': '/', 'region': None, 'port': None, 'is_secure': True}
+cli.py:230 - INFO - Cluster template settings are valid
+cluster.py:677 - INFO - Starting cluster...
+cluster.py:578 - INFO - Launching a 3-node cluster...
+cluster.py:583 - INFO - Launching master node...
+cluster.py:584 - INFO - Master AMI: ami-8e1fece7
+awsutils.py:108 - INFO - Creating security group @sc-RUMcluster...
+cluster.py:605 - INFO - Launching worker nodes...
+cluster.py:606 - INFO - Node AMI: ami-8e1fece7
+cluster.py:681 - Level 21 - Waiting for cluster to start...
+cluster.py:532 - DEBUG - refreshing instance i-3bfc795a
+cluster.py:532 - DEBUG - refreshing instance i-3ffc795e
+cluster.py:532 - DEBUG - refreshing instance i-01fc7960
+cluster.py:687 - INFO - The master node is ec2-174-129-162-184.compute-1.amazonaws.com
+cluster.py:692 - INFO - Setting up the cluster...
+cluster.py:532 - DEBUG - refreshing instance i-3bfc795a
+cluster.py:532 - DEBUG - refreshing instance i-3ffc795e
+cluster.py:532 - DEBUG - refreshing instance i-01fc7960
+ssh.py:71 - DEBUG - private key specified
+ssh.py:106 - INFO - Using private key /Users/jschug/awskey.pem.rsa (rsa)
+cli.py:1098 - DEBUG - Traceback (most recent call last):
+  File "build/bdist.macosx-10.6-universal/egg/starcluster/cli.py", line 1075, in main
+    sc.execute(args)
+  File "build/bdist.macosx-10.6-universal/egg/starcluster/cli.py", line 239, in execute
+    scluster.start(create=not self.opts.no_create)
+  File "build/bdist.macosx-10.6-universal/egg/starcluster/utils.py", line 27, in wrapper
+    res = func(*arg, **kargs)
+  File "build/bdist.macosx-10.6-universal/egg/starcluster/cluster.py", line 696, in start
+    self.volumes
+  File "build/bdist.macosx-10.6-universal/egg/starcluster/clustersetup.py", line 335, in run
+    self._setup_cluster_user()
+  File "build/bdist.macosx-10.6-universal/egg/starcluster/clustersetup.py", line 53, in _setup_cluster_user
+    if mconn.path_exists(home_folder):
+  File "build/bdist.macosx-10.6-universal/egg/starcluster/ssh.py", line 137, in path_exists
+    self._sftp_connect()
+  File "build/bdist.macosx-10.6-universal/egg/starcluster/ssh.py", line 123, in _sftp_connect
+    self._sftp = paramiko.SFTPClient.from_transport(self._transport)
+  File "build/bdist.macosx-10.6-universal/egg/paramiko/sftp_client.py", line 106, in from_transport
+    return cls(chan)
+  File "build/bdist.macosx-10.6-universal/egg/paramiko/sftp_client.py", line 87, in __init__
+    server_version = self._send_version()
+  File "build/bdist.macosx-10.6-universal/egg/paramiko/sftp.py", line 108, in _send_version
+    t, data = self._read_packet()
+  File "build/bdist.macosx-10.6-universal/egg/paramiko/sftp.py", line 179, in _read_packet
+    raise SFTPError('Garbage packet received')
+SFTPError: Garbage packet received
+
+cli.py:1100 - ERROR - Oops! Looks like you've found a bug in StarCluster
+cli.py:1101 - ERROR - Debug file written to: /tmp/starcluster-debug.log
+cli.py:1102 - ERROR - Please submit this file, minus any private information,
+cli.py:1103 - ERROR - to starcluster@mit.edu
+ssh.py:344 - DEBUG - __del__ called
+config.py:281 - DEBUG - Loading config
+config.py:99 - DEBUG - Loading file: /Users/jschug/.starcluster/config
+awsutils.py:47 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'path': '/', 'region': None, 'port': None, 'is_secure': True}
+awsutils.py:47 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'path': '/', 'region': None, 'port': None, 'is_secure': True}
+

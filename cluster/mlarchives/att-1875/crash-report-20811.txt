@@ -1,0 +1,54 @@
+---------- SYSTEM INFO ----------
+StarCluster: 0.94
+Python: 2.6.6 (r266:84292, Feb 22 2013, 00:00:18)  [GCC 4.4.7 20120313 (Red Hat 4.4.7-3)]
+Platform: Linux-2.6.32-358.el6.x86_64-x86_64-with-centos-6.4-Final
+boto: 2.13.0
+paramiko: 1.11.0
+Crypto: 2.6
+
+---------- CRASH DETAILS ----------
+Command: starcluster start mycluster
+
+2013-09-17 06:56:26,860 PID: 20811 config.py:567 - DEBUG - Loading config
+2013-09-17 06:56:26,860 PID: 20811 config.py:138 - DEBUG - Loading file: /root/.starcluster/config
+2013-09-17 06:56:26,863 PID: 20811 awsutils.py:74 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'proxy_user': None, 'proxy_pass': None, 'proxy_port': None, 'proxy': None, 'is_secure': True, 'path': '/', 'region': None, 'validate_certs': True, 'port': None}
+2013-09-17 06:56:27,701 PID: 20811 start.py:197 - INFO - Using default cluster template: microcluster
+2013-09-17 06:56:27,702 PID: 20811 cluster.py:1646 - INFO - Validating cluster template settings...
+2013-09-17 06:56:30,444 PID: 20811 cluster.py:980 - DEBUG - Launch map: node001 (ami: ami-765b3e1f, type: t1.micro)...
+2013-09-17 06:56:30,444 PID: 20811 cluster.py:980 - DEBUG - Launch map: node001 (ami: ami-765b3e1f, type: t1.micro)...
+2013-09-17 06:56:30,447 PID: 20811 cluster.py:800 - DEBUG - Userdata size in KB: 0.57
+2013-09-17 06:56:30,447 PID: 20811 cluster.py:1663 - INFO - Cluster template settings are valid
+2013-09-17 06:56:30,447 PID: 20811 cluster.py:1484 - INFO - Starting cluster...
+2013-09-17 06:56:30,447 PID: 20811 cluster.py:1006 - INFO - Launching a 2-node cluster...
+2013-09-17 06:56:30,447 PID: 20811 cluster.py:980 - DEBUG - Launch map: node001 (ami: ami-765b3e1f, type: t1.micro)...
+2013-09-17 06:56:30,448 PID: 20811 cluster.py:1033 - DEBUG - Launching master (ami: ami-765b3e1f, type: t1.micro)
+2013-09-17 06:56:30,448 PID: 20811 cluster.py:1033 - DEBUG - Launching node001 (ami: ami-765b3e1f, type: t1.micro)
+2013-09-17 06:56:30,813 PID: 20811 awsutils.py:245 - INFO - Creating security group @sc-mycluster...
+2013-09-17 06:56:32,103 PID: 20811 cli.py:307 - ERROR - Unhandled exception occured
+Traceback (most recent call last):
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.94-py2.6.egg/starcluster/cli.py", line 274, in main
+    sc.execute(args)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.94-py2.6.egg/starcluster/commands/start.py", line 215, in execute
+    validate_running=validate_running)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.94-py2.6.egg/starcluster/cluster.py", line 1471, in start
+    return self._start(create=create, create_only=create_only)
+  File "<string>", line 2, in _start
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.94-py2.6.egg/starcluster/utils.py", line 111, in wrap_f
+    res = func(*arg, **kargs)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.94-py2.6.egg/starcluster/cluster.py", line 1486, in _start
+    self.create_cluster()
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.94-py2.6.egg/starcluster/cluster.py", line 1012, in create_cluster
+    self._create_flat_rate_cluster()
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.94-py2.6.egg/starcluster/cluster.py", line 1036, in _create_flat_rate_cluster
+    force_flat=True)[0]
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.94-py2.6.egg/starcluster/cluster.py", line 815, in create_nodes
+    cluster_sg = self.cluster_group.name
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.94-py2.6.egg/starcluster/cluster.py", line 638, in cluster_group
+    auth_group_traffic=True)
+  File "/usr/lib/python2.6/site-packages/StarCluster-0.94-py2.6.egg/starcluster/awsutils.py", line 252, in create_group
+    sg.authorize('tcp', ssh_port, ssh_port, static.WORLD_CIDRIP)
+  File "/usr/lib/python2.6/site-packages/boto-2.13.0-py2.6.egg/boto/ec2/securitygroup.py", line 207, in authorize
+    src_group_group_id, dry_run=dry_run)
+  File "/usr/lib/python2.6/site-packages/boto-2.13.0-py2.6.egg/boto/ec2/securitygroup.py", line 115, in add_rule
+    dry_run=dry_run
+TypeError: add_grant() got an unexpected keyword argument 'dry_run'

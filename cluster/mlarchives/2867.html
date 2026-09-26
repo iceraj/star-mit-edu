@@ -1,0 +1,207 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Lyn Gerner ((no email))" />
+<meta name="Subject" content="c5 instance types FYI" />
+<title>starcluster.mbox.out: c5 instance types FYI</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">c5 instance types FYI</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>c5 instance types FYI</h1>
+<!-- received="Mon Apr  2 14:16:23 2018" -->
+<!-- isoreceived="20180402181623" -->
+<!-- sent="Mon, 2 Apr 2018 11:10:56 -0700" -->
+<!-- isosent="20180402181056" -->
+<!-- name="Lyn Gerner" -->
+<!-- email="(no email)" -->
+<!-- subject="c5 instance types FYI" -->
+<!-- id="CAD3e3Fb5r34CaxDzaSWU2dYNm9c=EJddfqz14dTdnXoa8FTqpQ_at_mail.gmail.com" -->
+<!-- charset="UTF-8" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2867.html#start2867" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2867.html#options2">top</a>, <a href="2867.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2868.html" accesskey="d" title="Sergio Mafra: &quot;StarCluster base AMI converted to C5 instance type&quot;">Next message</a> ]
+[ <a href="2866.html" title="Steve Darnell: &quot;Re:  Updates&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2867" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2867" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2867" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2867" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Lyn Gerner &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Mon, 2 Apr 2018 11:10:56 -0700</span><br />
+</address>
+<br />
+Hi All,
+<br />
+<br />For any of you who are considering modifying starcluster to use the c5 (or
+<br />
+m5) instance types, I'll just highlight some caveats that are already out
+<br />
+there in the vastness of AWS's info:
+<br />
+<br />There are no SSD drives available in these instance types, in case you have
+<br />
+been configuring them as extra storage (e.g., for localscratch or swap).
+<br />
+Also, block devices are now presented as NVMe devices. I happen to have
+<br />
+several EBS volumes in my /etc/fstab for my compute host AMIs, so cluster
+<br />
+launch was hanging because the compute hosts were being brought up in
+<br />
+emergency mode (which was viewable only after many minutes of waiting, thru
+<br />
+the &quot;Get system log&quot; option in the AWS console).
+<br />
+<br />The device name mapping is described somewhat vaguely here
+<br />
+&lt;<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nvme-ebs-volumes.html">https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nvme-ebs-volumes.html</a>&gt;.
+<br />
+<br />The specifics fstab changes that worked for me: I updated /dev/sdb to
+<br />
+/dev/nvme1n1, and /dev/sdc to /dev/nvme2n1. (You can edit your fstab on a
+<br />
+c3 (or c4) imagehost per the above, and save the AMI.) Once you've modified
+<br />
+starcluster static.py to include the new instance types and reinstalled,
+<br />
+your launch should succeed.
+<br />
+<br />(Note also that your image must also be configured to support ENA, and your
+<br />
+OS must also have ENA support enable, as described here
+<br />
+&lt;<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/enhanced-networking-ena.html">https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/enhanced-networking-ena.html</a>&gt;
+<br />
+.)
+<br />
+<br />Fyi,
+<br />
+Lyn
+<br />
+<span id="received"><dfn>Received on</dfn> Mon Apr 02 2018 - 14:16:23 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2867.html#start2867">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2868.html" title="Next message in the list">Sergio Mafra: "StarCluster base AMI converted to C5 instance type"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2866.html" title="Previous message in the list">Steve Darnell: "Re:  Updates"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2867" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2867" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2867" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2867" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

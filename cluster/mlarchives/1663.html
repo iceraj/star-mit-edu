@@ -1,0 +1,207 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="MacMullan, Hugh ((no email))" />
+<meta name="Subject" content="StarCluster VPCdev Branch?" />
+<title>starcluster.mbox.out: StarCluster VPCdev Branch?</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">StarCluster VPCdev Branch?</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>StarCluster VPCdev Branch?</h1>
+<!-- received="Tue Feb 19 14:39:06 2013" -->
+<!-- isoreceived="20130219193906" -->
+<!-- sent="Tue, 19 Feb 2013 19:39:02 +0000" -->
+<!-- isosent="20130219193902" -->
+<!-- name="MacMullan, Hugh" -->
+<!-- email="(no email)" -->
+<!-- subject="StarCluster VPCdev Branch?" -->
+<!-- id="C35D2A9F0F1DBE47832D25035CA02DABCB941E_at_GENO3.wharton.upenn.edu" -->
+<!-- charset="us-ascii" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1663.html#start1663" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1663.html#options2">top</a>, <a href="1663.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1664.html" accesskey="d" title="St. Clair Newbern IV: &quot;New StarCluster GPU/Cluster Compute AMI Available&quot;">Next message</a> ]
+[ <a href="1662.html" title="Ron Chen: &quot;Re:  SGE email notification service&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1663" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1663" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1663" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1663" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: MacMullan, Hugh &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Tue, 19 Feb 2013 19:39:02 +0000</span><br />
+</address>
+<br />
+Hi Folks:
+<br />
+<br />Thought I'd poke the &quot;StarCluster in a VPC&quot; piece (vpcdev) mentioned in issue 21 (<a href="https://github.com/jtriley/StarCluster/issues/21">https://github.com/jtriley/StarCluster/issues/21</a>) and a few e-mails over the past year. I just tried the vpcdev branch (after setting up a simple VPC) and got:
+<br />
+<br />starcluster start test01
+<br />
+StarCluster - (<a href="http://web.mit.edu/starcluster">http://web.mit.edu/starcluster</a>) (v. 0.9999)
+<br />
+Software Tools for Academics and Researchers (STAR)
+<br />
+Please submit bug reports to starcluster_at_mit.edu
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Using default cluster template: test01
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Validating cluster template settings...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Cluster template settings are valid
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Starting cluster...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Launching a 5-node cluster...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Creating security group sc-test01...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Opening tcp port range 22-22 for CIDR 128.91.88.0/22
+</em><br />
+!!! ERROR - InvalidParameterValue: Invalid value 'sc-test01' for groupName. You may not reference Amazon VPC security groups by name. Please use the corresponding id for this operation.
+<br />
+<br />I am using a pretty vanilla config, adding:
+<br />
+VPC_ID=vpc-XXXXXXXX
+<br />
+SUBNET_ID=subnet-XXXXXXXX
+<br />
+<br />Before continuing to poke this on my own:
+<br />
+<br />*         anyone already using this successfully?
+<br />
+<br />*         am I missing something obvious?
+<br />
+<br />*         anyone still working on this?
+<br />
+<br />I wish I had the skills to dive in and get this working myself. It looks pretty straightforward (this particular error anyway: need to use the id, not the name of the SG), so I just might poke around, but I thought I'd query the crowd in case there's a better way (than me stumbling around in python ;)).
+<br />
+<br />Thanks for any thoughts on VPC/StarCluster!
+<br />
+<br />-Hugh
+<br />
+<span id="received"><dfn>Received on</dfn> Tue Feb 19 2013 - 14:39:06 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1663.html#start1663">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1664.html" title="Next message in the list">St. Clair Newbern IV: "New StarCluster GPU/Cluster Compute AMI Available"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1662.html" title="Previous message in the list">Ron Chen: "Re:  SGE email notification service"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1663" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1663" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1663" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1663" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

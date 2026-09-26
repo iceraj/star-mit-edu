@@ -1,0 +1,217 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="David Koppstein ((no email))" />
+<meta name="Subject" content="queue list doesn't match /etc/hosts?" />
+<title>starcluster.mbox.out: queue list doesn't match /etc/hosts?</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">queue list doesn't match /etc/hosts?</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>queue list doesn't match /etc/hosts?</h1>
+<!-- received="Fri Jun 26 13:21:39 2015" -->
+<!-- isoreceived="20150626172139" -->
+<!-- sent="Fri, 26 Jun 2015 17:20:41 +0000" -->
+<!-- isosent="20150626172041" -->
+<!-- name="David Koppstein" -->
+<!-- email="(no email)" -->
+<!-- subject="queue list doesn't match /etc/hosts?" -->
+<!-- id="CACdQESLujFM9X3V+E8KmSXUUD8yxOa8fRH9JRaVfCmbW43mqVw_at_mail.gmail.com" -->
+<!-- charset="UTF-8" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2663.html#start2663" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2663.html#options2">top</a>, <a href="2663.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2664.html" accesskey="d" title="James Ching: &quot;Re:  executing plugins before enabling/adding to queue&quot;">Next message</a> ]
+[ <a href="2662.html" title="Rajat Banerjee: &quot;Handy new AWS feature -- log your network traffic&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2663" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2663" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2663" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2663" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: David Koppstein &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Fri, 26 Jun 2015 17:20:41 +0000</span><br />
+</address>
+<br />
+Hi,
+<br />
+<br />I recently noticed that my instance of starcluster stopped submitting jobs.
+<br />
+I had disabled jobs on the master node using `/opt/sge6/bin/linux-x64/qmod
+<br />
+-d all.q_at_master`, but the jobs were submitting to other nodes fine until
+<br />
+recently.
+<br />
+<br />Interestingly, my output of `qstat -f`:
+<br />
+<br />queuename                      qtype resv/used/tot. load_avg arch
+<br />
+&nbsp;states
+<br />
+---------------------------------------------------------------------------------
+<br />
+all.q_at_master                   BIP   0/0/8          1.01     linux-x64     d
+<br />
+<br />So there's only one queue available (which is disabled). However, in
+<br />
+/etc/hosts, I see
+<br />
+<br />10.0.0.85 master
+<br />
+10.0.0.80 node018
+<br />
+10.0.0.124 node025
+<br />
+10.0.0.139 node039
+<br />
+<br />So for some reason, the queues for these other nodes aren't registered even
+<br />
+though the nodes exist and are associated with starcluster when I do, for
+<br />
+example, `starcluster listclusters`:
+<br />
+<br />Cluster nodes:
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;master running i-3d8a8cc2 52.7.83.124
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;node018 running i-4331d5bd 52.0.84.150
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;node025 running i-e9e10717 52.6.226.185
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;node039 running i-e11afc1f 54.175.131.15
+<br />
+Total nodes: 4
+<br />
+<br />I'm also running a load balancer on the cluster if that's relevant. Have
+<br />
+any of you seen this or know what might cause this?
+<br />
+<br />Cheers,
+<br />
+David
+<br />
+<span id="received"><dfn>Received on</dfn> Fri Jun 26 2015 - 13:21:39 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2663.html#start2663">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2664.html" title="Next message in the list">James Ching: "Re:  executing plugins before enabling/adding to queue"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2662.html" title="Previous message in the list">Rajat Banerjee: "Handy new AWS feature -- log your network traffic"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2663" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2663" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2663" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2663" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

@@ -1,0 +1,348 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Sergio Mafra ((no email))" />
+<meta name="Subject" content="StarCluster LoadBalancer" />
+<title>starcluster.mbox.out: StarCluster LoadBalancer</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">StarCluster LoadBalancer</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>StarCluster LoadBalancer</h1>
+<!-- received="Wed Jan 23 08:39:58 2013" -->
+<!-- isoreceived="20130123133958" -->
+<!-- sent="Wed, 23 Jan 2013 11:39:56 -0200" -->
+<!-- isosent="20130123133956" -->
+<!-- name="Sergio Mafra" -->
+<!-- email="(no email)" -->
+<!-- subject="StarCluster LoadBalancer" -->
+<!-- id="CALxTZg5Fc7q+z3zYjXPCHdPETNUWK0PA3YektySriUv3B_UDwA_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1614.html#start1614" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1614.html#options2">top</a>, <a href="1614.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1615.html" accesskey="d" title="Adam: &quot;Re:  StarCluster LoadBalancer&quot;">Next message</a> ]
+[ <a href="1613.html" title="Olivier Grisel: &quot;Re:  Spot cluster - head node as spot instance&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="1615.html" accesskey="t" title="Adam: &quot;Re:  StarCluster LoadBalancer&quot;">Next in thread</a> ]
+ [ <a href="1614.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1614" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1614" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1614" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1614" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Sergio Mafra &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Wed, 23 Jan 2013 11:39:56 -0200</span><br />
+</address>
+<br />
+Hi fellows,
+<br />
+<br />Started to test the SC´s LoadBalancer but something is not working well.
+<br />
+The LoadBalancer tells me that there´s no jobs in the OGE´s queue.
+<br />
+Here comes all history:
+<br />
+<br />1-Launched a 5-node cluster (Ubuntu HVM) cc1.x4large
+<br />
+-&gt; Used mpich2 plugin (mpich2 v1.4.1 native)
+<br />
+<br />2- Submitted an application job to OGE (mympiapp):
+<br />
+$ qsub -N Newaveinth -b y -pe orte 80 -cwd mpiexec -n 80 mympiapp
+<br />
+<br />3- Checked the queue:
+<br />
+<br />job-ID  prior   name       user         state submit/start at     queue
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;slots ja-task-ID
+<br />
+-----------------------------------------------------------------------------------------------------------------
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 0.55500 Newaveinth sgeadmin     r     01/23/2013 13:29:48
+<br />
+all.q_at_master                      80
+<br />
+sgeadmin_at_master:~/pmo0113$ qstat -f
+<br />
+queuename                      qtype resv/used/tot. load_avg arch
+<br />
+&nbsp;states
+<br />
+---------------------------------------------------------------------------------
+<br />
+all.q_at_master                   BIP   0/16/16        3.06     linux-x64
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 0.55500 Newaveinth sgeadmin     r     01/23/2013 13:29:48    16
+<br />
+---------------------------------------------------------------------------------
+<br />
+all.q_at_node001                  BIP   0/16/16        2.87     linux-x64
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 0.55500 Newaveinth sgeadmin     r     01/23/2013 13:29:48    16
+<br />
+---------------------------------------------------------------------------------
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BIP   0/16/16        2.74     linux-x64
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 0.55500 Newaveinth sgeadmin     r     01/23/2013 13:29:48    16
+<br />
+---------------------------------------------------------------------------------
+<br />
+all.q_at_node003                  BIP   0/16/16        2.86     linux-x64
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 0.55500 Newaveinth sgeadmin     r     01/23/2013 13:29:48    16
+<br />
+---------------------------------------------------------------------------------
+<br />
+all.q_at_node004                  BIP   0/16/16        2.11     linux-x64
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2 0.55500 Newaveinth sgeadmin     r     01/23/2013 13:29:48    16
+<br />
+<br />4- Tried to Load Balance the cluster launcedd with 5 nodes
+<br />
+<br />ubuntu_at_ip-10-112-98-159:~$ starcluster loadbalance mycluster --max_nodes=6
+<br />
+StarCluster - (<a href="http://web.mit.edu/starcluster">http://web.mit.edu/starcluster</a>) (v. 0.93.3)
+<br />
+Software Tools for Academics and Researchers (STAR)
+<br />
+Please submit bug reports to starcluster_at_mit.edu
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Starting load balancer (Use ctrl-c to exit)
+</em><br />
+Maximum cluster size: 6
+<br />
+Minimum cluster size: 1
+<br />
+Cluster growth rate: 1 nodes/iteration
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Loading full job history
+</em><br />
+Execution hosts: 5
+<br />
+Queued jobs: 0
+<br />
+Avg job duration: 1699 secs
+<br />
+Avg job wait time: 8 secs
+<br />
+Last cluster modification time: 2013-01-23 13:32:33
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Cluster was modified less than 180 seconds ago
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for cluster to stabilize...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Sleeping...(looping again in 60 secs)
+</em><br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Loading full job history
+</em><br />
+Execution hosts: 5
+<br />
+Queued jobs: 0 (&lt;-- Jobs equals a 0 ???)
+<br />
+Avg job duration: 1699 secs
+<br />
+Avg job wait time: 8 secs
+<br />
+Last cluster modification time: 2013-01-23 13:32:33
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Cluster was modified less than 180 seconds ago
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for cluster to stabilize...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Sleeping...(looping again in 60 secs)
+</em><br />
+<br />^C (&lt;-- Ctrl-C and a lot of messages...)
+<br />
+Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File &quot;/usr/local/bin/starcluster&quot;, line 9, in &lt;module&gt;
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;load_entry_point('StarCluster==0.93.3', 'console_scripts',
+<br />
+'starcluster')()
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.93.3-py2.7.egg/starcluster/cli.py&quot;,
+<br />
+line 312, in main
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;StarClusterCLI().main()
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.93.3-py2.7.egg/starcluster/cli.py&quot;,
+<br />
+line 255, in main
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;sc.execute(args)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.93.3-py2.7.egg/starcluster/commands/loadbalance.py&quot;,
+<br />
+line 90, in execute
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;lb.run(cluster)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/StarCluster-0.93.3-py2.7.egg/starcluster/balancers/sge/__init__.py&quot;,
+<br />
+line 619, in run
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;time.sleep(self.polling_interval)
+<br />
+KeyboardInterrupt
+<br />
+Exception in thread Thread-1 (most likely raised during interpreter
+<br />
+shutdown):
+<br />
+Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File &quot;/usr/lib/python2.7/threading.py&quot;, line 552, in __bootstrap_inner
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/local/lib/python2.7/dist-packages/ssh-1.7.13-py2.7.egg/ssh/transport.py&quot;,
+<br />
+line 1602, in run
+<br />
+&lt;type 'exceptions.AttributeError'&gt;: 'NoneType' object has no attribute
+<br />
+'error'_at_node002
+<br />
+<br />All the best,
+<br />
+<br />Sergio
+<br />
+<span id="received"><dfn>Received on</dfn> Wed Jan 23 2013 - 08:39:58 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1614.html#start1614">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1615.html" title="Next message in the list">Adam: "Re:  StarCluster LoadBalancer"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1613.html" title="Previous message in the list">Olivier Grisel: "Re:  Spot cluster - head node as spot instance"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1615.html" title="Next message in this discussion thread">Adam: "Re:  StarCluster LoadBalancer"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1615.html" title="Message sent in reply to this message">Adam: "Re:  StarCluster LoadBalancer"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1614" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1614" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1614" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1614" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

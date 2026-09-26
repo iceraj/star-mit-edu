@@ -1,0 +1,296 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Don Morton ((no email))" />
+<meta name="Subject" content="Unable to mount EBS volume to instance when starting" />
+<title>starcluster.mbox.out: Unable to mount EBS volume to instance when starting</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Unable to mount EBS volume to instance when starting</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Unable to mount EBS volume to instance when starting</h1>
+<!-- received="Tue Oct 20 11:10:46 2015" -->
+<!-- isoreceived="20151020151046" -->
+<!-- sent="Tue, 20 Oct 2015 15:10:43 +0000" -->
+<!-- isosent="20151020151043" -->
+<!-- name="Don Morton" -->
+<!-- email="(no email)" -->
+<!-- subject="Unable to mount EBS volume to instance when starting" -->
+<!-- id="CACy7Z3+Ew3gjB01+1oFJqstDoX8JH6sbZXiHC6LMOg7baOETtw_at_mail.gmail.com" -->
+<!-- charset="UTF-8" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2721.html#start2721" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2721.html#options2">top</a>, <a href="2721.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2722.html" accesskey="d" title="Don Morton: &quot;Re:  Unable to mount EBS volume to instance when starting&quot;">Next message</a> ]
+[ <a href="2720.html" title="Lior Zimmerman: &quot;Re:  Adding a volume to an existing cluster&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="2722.html" accesskey="t" title="Don Morton: &quot;Re:  Unable to mount EBS volume to instance when starting&quot;">Next in thread</a> ]
+ [ <a href="2721.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2721" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2721" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2721" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2721" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Don Morton &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Tue, 20 Oct 2015 15:10:43 +0000</span><br />
+</address>
+<br />
+Hello,
+<br />
+<br />I'm new to Star Cluster, and it's not clear to me if this is the
+<br />
+appropriate forum to post &quot;new dummy&quot; questions.  If not, please accept my
+<br />
+apologies.
+<br />
+<br />First, let me thank you for the great effort that has gone into this
+<br />
+project.  Wow.  I've built my own MPI clusters from scratch in EC2, and boy
+<br />
+was that tedious.  This is amazing.  I also tried cfncluster, but so far
+<br />
+that appears a bit too restrictive in terms of building a custom AMI that I
+<br />
+can use over and over again (but I might be misreading the docs there).
+<br />
+<br />My problem at hand - try as I may, I keep failing at mounting an EBS volume
+<br />
+to my cluster.  I have a few theories I can explore via the inefficient
+<br />
+&quot;trial and error&quot; approach, but I feel like my issue is probably so
+<br />
+fundamental that someone will easily be able to point me in the right
+<br />
+direction.
+<br />
+<br />The instance:
+<br />
+<br />id: i-b6fdea70
+<br />
+dns_name: N/A
+<br />
+private_dns_name: ip-172-31-25-191.us-west-2.compute.internal
+<br />
+state: stopped (User initiated (2015-10-20 02:23:53 GMT))
+<br />
+public_ip: N/A
+<br />
+private_ip: 172.31.25.191
+<br />
+vpc: vpc-7f99af17
+<br />
+subnet: subnet-7199af19
+<br />
+zone: us-west-2a
+<br />
+ami: ami-80bedfb0
+<br />
+virtualization: hvm
+<br />
+type: m3.large
+<br />
+groups: _at_sc-wrfcluster
+<br />
+keypair: starclusterkey
+<br />
+uptime: N/A
+<br />
+tags: alias=node001, Name=node001
+<br />
+<br /><br />The volume (yes, same availability zone):
+<br />
+<br />volume_id: vol-f1942530
+<br />
+size: 20GB
+<br />
+status: available
+<br />
+availability_zone: us-west-2a
+<br />
+create_time: 2015-10-20 02:07:20
+<br />
+tags: Name=WRFClusterPrograms
+<br />
+<br /><br />Relevant excerpts of ~/.starcluster/config:
+<br />
+<br />AWS_REGION_NAME = us-west-2
+<br />
+AWS_REGION_HOST = ec2.us-west-2.amazonaws.com
+<br />
+<br />[cluster smallcluster]
+<br />
+# ami-80bedfb0 us-west-2 starcluster-base-ubuntu-13.04-x86_64-hvm (HVM-EBS)
+<br />
+NODE_IMAGE_ID = ami-80bedfb0
+<br />
+NODE_INSTANCE_TYPE = m3.large
+<br />
+VOLUMES = wrfprogs
+<br />
+<br />[volume wrfprogs]
+<br />
+VOLUME_ID = vol-f1942530
+<br />
+MOUNT_PATH = /wrfprogs
+<br />
+<br /><br />---------------------------------------------------------------------
+<br />
+<br />Right now, some things I will try by trial and error, but I don't &quot;think&quot;
+<br />
+they will resolve issues
+<br />
+<br />1) My AVAILABILITY_ZONE is commented out in config, maybe I should hard
+<br />
+code in my us-west-2a, but both the instance and volume are already in there
+<br />
+<br />2) Maybe I should manually create the mount point /wrfprogs in my master
+<br />
+and try again.  Doubtful - the examples you provide don't suggest this is
+<br />
+necessary
+<br />
+<br />3) In the config file, list the volume BEFORE listing the cluster specs.
+<br />
+Again, doubtful it will make a difference.
+<br />
+<br />Thank you for any insight.
+<br />
+<br />Best,
+<br />
+<br />Don
+<br />
+<br /><br /><pre>
+---
+Don Morton, Owner/Manager
+Boreal Scientific Computing LLC
+Fairbanks, Alaska USA
+<a href="http://www.borealscicomp.com/">http://www.borealscicomp.com/</a>
+<a href="http://www.borealscicomp.com/Miscellaneous/MortonBio/">http://www.borealscicomp.com/Miscellaneous/MortonBio/</a>
+</pre>
+<span id="received"><dfn>Received on</dfn> Tue Oct 20 2015 - 11:10:46 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2721.html#start2721">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2722.html" title="Next message in the list">Don Morton: "Re:  Unable to mount EBS volume to instance when starting"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2720.html" title="Previous message in the list">Lior Zimmerman: "Re:  Adding a volume to an existing cluster"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="2722.html" title="Next message in this discussion thread">Don Morton: "Re:  Unable to mount EBS volume to instance when starting"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="2722.html" title="Message sent in reply to this message">Don Morton: "Re:  Unable to mount EBS volume to instance when starting"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2721" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2721" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2721" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2721" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Andrea La Rizza ((no email))" />
+<meta name="Subject" content="EXECUTE STARCLUSTER FROM JAVA CODE" />
+<title>starcluster.mbox.out: EXECUTE STARCLUSTER FROM JAVA CODE</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">EXECUTE STARCLUSTER FROM JAVA CODE</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>EXECUTE STARCLUSTER FROM JAVA CODE</h1>
+<!-- received="Mon Apr 27 10:36:20 2015" -->
+<!-- isoreceived="20150427143620" -->
+<!-- sent="Mon, 27 Apr 2015 16:36:15 +0200" -->
+<!-- isosent="20150427143615" -->
+<!-- name="Andrea La Rizza" -->
+<!-- email="(no email)" -->
+<!-- subject="EXECUTE STARCLUSTER FROM JAVA CODE" -->
+<!-- id="553E495F.9020706_at_alef.it" -->
+<!-- charset="iso-8859-15" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2622.html#start2622" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2622.html#options2">top</a>, <a href="2622.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2623.html" accesskey="d" title="Jason Gallant: &quot;Waiting for SSH to Come Up on All Nodes...&quot;">Next message</a> ]
+[ <a href="2621.html" title="Devin Boyer: &quot;Re:  NFS Mount from &#0034;External&#0034; Machine to Cluster&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="2625.html" accesskey="t" title="Steve Darnell: &quot;Re:  EXECUTE STARCLUSTER FROM JAVA CODE&quot;">Next in thread</a> ]
+ [ <a href="2622.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2622" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2622" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2622" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2622" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Andrea La Rizza &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Mon, 27 Apr 2015 16:36:15 +0200</span><br />
+</address>
+<br />
+Hi All,
+<br />
+I'm creating a complex project, and what I want to do is to launch the 
+<br />
+command &quot;starclster start my custer&quot; by pressing a button in a java 
+<br />
+swing interface.
+<br />
+I have created a script called run with the command inside, and what I 
+<br />
+do in my java cose is:
+<br />
+<br />String[] cmd = new String[2];
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cmd[0] = &quot;sh&quot;;
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cmd[1] = &quot;run&quot;;
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// create runtime to execute external command
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Runtime rt = Runtime.getRuntime();
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Process pr = rt.exec(&quot;/path/to/script/run&quot;);
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Process pr = rt.exec(cmd);
+<br />
+<br />If I run the script from shall it works, i i press the button nothing 
+<br />
+happens. Is there someone that have done something similar? Thanks.
+<br />
+<span id="received"><dfn>Received on</dfn> Mon Apr 27 2015 - 10:36:20 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2622.html#start2622">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2623.html" title="Next message in the list">Jason Gallant: "Waiting for SSH to Come Up on All Nodes..."</a></li>
+<li><dfn>Previous message</dfn>: <a href="2621.html" title="Previous message in the list">Devin Boyer: "Re:  NFS Mount from &#0034;External&#0034; Machine to Cluster"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="2625.html" title="Next message in this discussion thread">Steve Darnell: "Re:  EXECUTE STARCLUSTER FROM JAVA CODE"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="2625.html" title="Message sent in reply to this message">Steve Darnell: "Re:  EXECUTE STARCLUSTER FROM JAVA CODE"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2622" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2622" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2622" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2622" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

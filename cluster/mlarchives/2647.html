@@ -1,0 +1,750 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Jennifer Staab ((no email))" />
+<meta name="Subject" content="Re:  NFS Help !!!!" />
+<title>starcluster.mbox.out: Re:  NFS Help !!!!</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Re:  NFS Help !!!!</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Re:  NFS Help !!!!</h1>
+<!-- received="Fri Jun  5 14:58:35 2015" -->
+<!-- isoreceived="20150605185835" -->
+<!-- sent="Fri, 5 Jun 2015 14:58:30 -0400" -->
+<!-- isosent="20150605185830" -->
+<!-- name="Jennifer Staab" -->
+<!-- email="(no email)" -->
+<!-- subject="Re:  NFS Help !!!!" -->
+<!-- id="CABiDiYuE7pnd12SSneCFLRY3=KrmUJRMqXUfCZ9Tb=yrZWTLaA_at_mail.gmail.com" -->
+<!-- charset="UTF-8" -->
+<!-- inreplyto="6cb4f43ae9614f42946abec7168c53b3_at_EPBYMINSA0001.epam.com" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2647.html#start2647" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2647.html#options2">top</a>, <a href="2647.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2648.html" accesskey="d" title="David Koppstein: &quot;load balancer stopped working?&quot;">Next message</a> ]
+[ <a href="2646.html" title="Jennifer Staab: &quot;Re:  NFS Help !!!!&quot;">Previous message</a> ]
+[ <a href="2646.html" title="Jennifer Staab: &quot;Re:  NFS Help !!!!&quot;">Maybe in reply to</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2647" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2647" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2647" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2647" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Jennifer Staab &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Fri, 5 Jun 2015 14:58:30 -0400</span><br />
+</address>
+<br />
+Glad it worked with the new volume.  Could be there is some issue with the
+<br />
+data you have on the volume and not Starcluster itself. If you get the same
+<br />
+error when you copy the data over to the new volume and try to mount the
+<br />
+volume with Starcluster, I would guess this is the source of your issues.
+<br />
+<br />If you google your error message (like here
+<br />
+&lt;<a href="https://www.google.com/webhp?sourceid=chrome-instant&amp;ion=1&amp;espv=2&amp;ie=UTF-8#q=ls%3A+cannot+access+biodata%3A+Too+many+levels+of+symbolic+links">https://www.google.com/webhp?sourceid=chrome-instant&amp;ion=1&amp;espv=2&amp;ie=UTF-8#q=ls%3A+cannot+access+biodata%3A+Too+many+levels+of+symbolic+links</a>&gt;),
+<br />
+you might be able to figure out what the issue is with the data you have on
+<br />
+the volume.  Seems like it might be as simple as having a circular symbolic
+<br />
+link some how created/discovered when NFS attempts to mount the volumes on
+<br />
+the client / worker nodes.
+<br />
+<br />Good Luck!
+<br />
+-Jennifer
+<br />
+<br />On Fri, Jun 5, 2015 at 2:33 PM, Andrey Evtikhov &lt;Andrey_Evtikhov_at_epam.com&gt;
+<br />
+wrote:
+<br />
+<br /><em class="quotelev1">&gt;  Thank you , Jennifer !
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Built from scratch Volume seems OK  - with NO and WITH starclsuter .
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Just need to copy data over J
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; What troubled me – on master everything  looked normal…..
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; All good now when I made new volume ….
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; root_at_node001:/geodata# mkdir TESTFROMCLENT
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; root_at_node001:/geodata# ls -l
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; total 32
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; drwx------ 2 root root 16384 Jun  5 17:47 lost+found
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; drwxr-xr-x 2 root root  4096 Jun  5 17:48 TEST4CHEVRON
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; drwxr-xr-x 2 root root  4096 Jun  5 17:48 TEST4CHEVRON2
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; drwxr-xr-x 2 root root  4096 Jun  5 17:48 TEST4CHEVRON3
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; drwxr-xr-x 2 root root  4096 Jun  5 17:51 TESTFROMCLENT
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; root_at_node001:/geodata# exit
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; logout
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Connection to node001 closed.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; root_at_master:/geodata# ls -l
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; total 32
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; drwx------ 2 root root 16384 Jun  5 17:47 lost+found
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; drwxr-xr-x 2 root root  4096 Jun  5 17:48 TEST4CHEVRON
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; drwxr-xr-x 2 root root  4096 Jun  5 17:48 TEST4CHEVRON2
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; drwxr-xr-x 2 root root  4096 Jun  5 17:48 TEST4CHEVRON3
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; drwxr-xr-x 2 root root  4096 Jun  5 17:51 TESTFROMCLENT
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; *Andrey Evtikhov*
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; *Lead Software Maintenance Engineer*
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; *Email: *andrey_evtikhov_at_epam.com
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; *Saint-Petersburg,* *Russia *(GMT+3)   *epam.com &lt;<a href="http://www.epam.com">http://www.epam.com</a>&gt;*
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; CONFIDENTIALITY CAUTION AND DISCLAIMER
+</em><br />
+<em class="quotelev1">&gt; This message is intended only for the use of the individual(s) or
+</em><br />
+<em class="quotelev1">&gt; entity(ies) to which it is addressed and contains information that is
+</em><br />
+<em class="quotelev1">&gt; legally privileged and confidential. If you are not the intended recipient,
+</em><br />
+<em class="quotelev1">&gt; or the person responsible for delivering the message to the intended
+</em><br />
+<em class="quotelev1">&gt; recipient, you are hereby notified that any dissemination, distribution or
+</em><br />
+<em class="quotelev1">&gt; copying of this communication is strictly prohibited. All unintended
+</em><br />
+<em class="quotelev1">&gt; recipients are obliged to delete this message and destroy any printed
+</em><br />
+<em class="quotelev1">&gt; copies.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; *From:* Jennifer Staab [mailto:jstaab_at_cs.unc.edu]
+</em><br />
+<em class="quotelev1">&gt; *Sent:* Friday, June 5, 2015 6:48 PM
+</em><br />
+<em class="quotelev1">&gt; *To:* Andrey Evtikhov
+</em><br />
+<em class="quotelev1">&gt; *Cc:* starcluster_at_mit.edu
+</em><br />
+<em class="quotelev1">&gt; *Subject:* Re: [StarCluster] NFS Help !!!!
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Something doesn't seem right with how you are mounting your volumes.  If
+</em><br />
+<em class="quotelev1">&gt; you are mounting a volume make sure that volume exists in your AWS system
+</em><br />
+<em class="quotelev1">&gt; and is unattached to any EC2's.  Next make sure the mount point let's say
+</em><br />
+<em class="quotelev1">&gt; it's called /MyData exists as an empty directory on both Master and Worker
+</em><br />
+<em class="quotelev1">&gt; AMIs. Make certain your OS is up-to-date on all AMIs (workers and master).
+</em><br />
+<em class="quotelev1">&gt; Also make sure your volumes and EC2's are in the same availability zone.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Try this, create an empty volume, attach to the EC2 that's based upon your
+</em><br />
+<em class="quotelev1">&gt; Master Node AMI. Then mount it to that Master Node EC2 (not using
+</em><br />
+<em class="quotelev1">&gt; Starcluster) -- make sure it mounts successfully and you can write some
+</em><br />
+<em class="quotelev1">&gt; temporary text files to it.  Next unmount it and unattach it from the EC2.
+</em><br />
+<em class="quotelev1">&gt; Once it is unmounted and unattached create a new cluster and see if you can
+</em><br />
+<em class="quotelev1">&gt; get that cluster to successfully NFS that volume between Master &amp; Workers.
+</em><br />
+<em class="quotelev1">&gt; If you can get that volume to mount and NFS successfully between Master and
+</em><br />
+<em class="quotelev1">&gt; Workers, then it is likely something about the volumes themselves and/or
+</em><br />
+<em class="quotelev1">&gt; how you are mounting them that's causing the problem.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; If you can't get that empty volume to NFS between Master &amp; Workers -- then
+</em><br />
+<em class="quotelev1">&gt; it is likely something regarding NFS or the OS you have running on the
+</em><br />
+<em class="quotelev1">&gt; AMIs. Make sure you are using up-to-date OS and software and that your
+</em><br />
+<em class="quotelev1">&gt; mount points are empty directories. Also don't mount under an existing
+</em><br />
+<em class="quotelev1">&gt; mount point unless you are using crossmnt option in /etc/exports.
+</em><br />
+<em class="quotelev1">&gt; Starcluster doesn't use the crossmnt option -- I altered my version of
+</em><br />
+<em class="quotelev1">&gt; Starcluster as to allow crossmnt option - but it isn't a native feature.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Next I would try running NFS on an EC2 based upon the Master node AMI with
+</em><br />
+<em class="quotelev1">&gt; that empty volume mounted and seeing if you can successfully NFS that
+</em><br />
+<em class="quotelev1">&gt; volume with an EC2 based upon your Worker Node. My guess is if you can set
+</em><br />
+<em class="quotelev1">&gt; NFS up successfully without running Starcluster -- in the process you will
+</em><br />
+<em class="quotelev1">&gt; likely see where the NFS problem is.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Good Luck!
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; -Jennifer
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; On Fri, Jun 5, 2015 at 9:28 AM, Andrey Evtikhov &lt;Andrey_Evtikhov_at_epam.com&gt;
+</em><br />
+<em class="quotelev1">&gt; wrote:
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;  Really need help with this issue – just created new cluster – still the
+</em><br />
+<em class="quotelev1">&gt; same mess – everything nice on master and complete mess on NFS client:
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Except – /home ! Home mounted Ok !
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; root_at_node001:/geodata# ls -l
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; ls: cannot access biodata: Too many levels of symbolic links
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; ls: cannot access geodata: Too many levels of symbolic links
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; in config :
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; VOLUMES = geodata, biodata
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; [volume geodata]
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; VOLUME_ID = vol-17feadfc
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; MOUNT_PATH = /geodata
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; [volume biodata]
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; VOLUME_ID = vol-f3fdae18
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; MOUNT_PATH = /biodata
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; It is how it looks on client /biodata
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; total 8
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; d????????? ? ?    ?       ?            ? biodata
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; d????????? ? ?    ?       ?            ? geodata
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; drwxr-xr-x 4 root root 4096 Jun  5 13:11 home
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; drwxr-xr-x 4 root root 4096 Jun  5 13:11 opt
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; *Andrey Evtikhov*
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; *Lead Software Maintenance Engineer*
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; *Email: *andrey_evtikhov_at_epam.com
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; *Saint-Petersburg,* *Russia *(GMT+3)   *epam.com &lt;<a href="http://www.epam.com">http://www.epam.com</a>&gt;*
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; CONFIDENTIALITY CAUTION AND DISCLAIMER
+</em><br />
+<em class="quotelev1">&gt; This message is intended only for the use of the individual(s) or
+</em><br />
+<em class="quotelev1">&gt; entity(ies) to which it is addressed and contains information that is
+</em><br />
+<em class="quotelev1">&gt; legally privileged and confidential. If you are not the intended recipient,
+</em><br />
+<em class="quotelev1">&gt; or the person responsible for delivering the message to the intended
+</em><br />
+<em class="quotelev1">&gt; recipient, you are hereby notified that any dissemination, distribution or
+</em><br />
+<em class="quotelev1">&gt; copying of this communication is strictly prohibited. All unintended
+</em><br />
+<em class="quotelev1">&gt; recipients are obliged to delete this message and destroy any printed
+</em><br />
+<em class="quotelev1">&gt; copies.
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; *From:* Andrey Evtikhov
+</em><br />
+<em class="quotelev1">&gt; *Sent:* Tuesday, June 2, 2015 9:20 PM
+</em><br />
+<em class="quotelev1">&gt; *To:* 'starcluster_at_mit.edu'
+</em><br />
+<em class="quotelev1">&gt; *Subject:* Cannot mount properly /home over NFS
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Cannot mount properly /home
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; VOLUMES = mycompany-data
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; [volume mycompany-data]
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; VOLUME_ID = vol-xxxxxxx
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; MOUNT_PATH = /home
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; Master seems to be OK  , but nodes has mounted home inside home !
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; root_at_prod-sc-triad-node001:/home# cd /home
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; root_at_prod-sc-triad-node001:/home# ls -l
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; ls: cannot access home: Too many levels of symbolic links
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; total 4
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; d????????? ? ?    ?       ?            ? home
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; drwxr-xr-x 4 root root 4096 Apr 30 17:55 opt
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; *Andrey Evtikhov*
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt; _______________________________________________
+</em><br />
+<em class="quotelev1">&gt; StarCluster mailing list
+</em><br />
+<em class="quotelev1">&gt; StarCluster_at_mit.edu
+</em><br />
+<em class="quotelev1">&gt; <a href="http://mailman.mit.edu/mailman/listinfo/starcluster">http://mailman.mit.edu/mailman/listinfo/starcluster</a>
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<em class="quotelev1">&gt;
+</em><br />
+<span id="received"><dfn>Received on</dfn> Fri Jun 05 2015 - 14:58:35 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2647.html#start2647">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2648.html" title="Next message in the list">David Koppstein: "load balancer stopped working?"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2646.html" title="Previous message in the list">Jennifer Staab: "Re:  NFS Help !!!!"</a></li>
+<li><dfn>Maybe in reply to</dfn>: <a href="2646.html" title="Message to which this message replies">Jennifer Staab: "Re:  NFS Help !!!!"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2647" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2647" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2647" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2647" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

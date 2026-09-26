@@ -1,0 +1,269 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Ryan Golhar ((no email))" />
+<meta name="Subject" content="starcluster Failed to add new host but continues addings hosts when using loadbalance" />
+<title>starcluster.mbox.out: starcluster Failed to add new host but continues addings hosts when using loadbalance</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">starcluster Failed to add new host but continues addings hosts when using loadbalance</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>starcluster Failed to add new host but continues addings hosts when using loadbalance</h1>
+<!-- received="Thu Jul 18 10:13:23 2013" -->
+<!-- isoreceived="20130718141323" -->
+<!-- sent="Thu, 18 Jul 2013 10:13:21 -0400" -->
+<!-- isosent="20130718141321" -->
+<!-- name="Ryan Golhar" -->
+<!-- email="(no email)" -->
+<!-- subject="starcluster Failed to add new host but continues addings hosts when using loadbalance" -->
+<!-- id="CAFbjocj9WAnqic40CPBqcD7_UZLVqLsa7p1s-_3e2dKny_jUCg_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1776.html#start1776" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1776.html#options2">top</a>, <a href="1776.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1777.html" accesskey="d" title="Sergio Mafra: &quot;(no subject)&quot;">Next message</a> ]
+[ <a href="1775.html" title="Rayson Ho: &quot;Re:  Plan for Window Azure Virtual Machines?&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1776" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1776" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1776" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1776" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Ryan Golhar &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 18 Jul 2013 10:13:21 -0400</span><br />
+</address>
+<br />
+Hi all - I'm running starcluster loadbalance, and noticed when it runs into
+<br />
+a problem adding a node, it ignores the problem and continues adding nodes
+<br />
+which also fail...ie the node get started by never added to the SGE grid.
+<br />
+&nbsp;Perhaps a check that all was successful would be in order prior to adding
+<br />
+more nodes:
+<br />
+<br />/opt/sge6
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Mounting all NFS export path(s) on 1 worker node(s)
+</em><br />
+1/1 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Setting up NFS took 0.018 mins
+</em><br />
+!!! ERROR - Error occured while running plugin
+<br />
+'starcluster.plugins.sge.SGEPlugin':
+<br />
+!!! ERROR - Failed to add new host
+<br />
+Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/balancers/sge/__init__.py&quot;,
+<br />
+line 685, in _eval_add_node
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self._cluster.add_nodes(need_to_add)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/cluster.py&quot;,
+<br />
+line 892, in add_nodes
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self.run_plugins(method_name=&quot;on_add_node&quot;, node=node)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/cluster.py&quot;,
+<br />
+line 1527, in run_plugins
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self.run_plugin(plug, method_name=method_name, node=node)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/cluster.py&quot;,
+<br />
+line 1552, in run_plugin
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;func(*args)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/plugins/sge.py&quot;,
+<br />
+line 145, in on_add_node
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self._add_to_sge(node)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/plugins/sge.py&quot;,
+<br />
+line 30, in _add_to_sge
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self._inst_sge(node, exec_host=True)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/plugins/sge.py&quot;,
+<br />
+line 69, in _inst_sge
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;node.ssh.execute(inst_sge, silent=True, only_printable=True)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/usr/lib/python2.6/site-packages/StarCluster-0.9999-py2.6.egg/starcluster/sshutils/__init__.py&quot;,
+<br />
+line 538, in execute
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;msg, command, exit_status, out_str)
+<br />
+RemoteCommandFailed: remote command 'source /etc/profile &amp;&amp; cd /opt/sge6 &amp;&amp;
+<br />
+TERM=rxvt ./inst_sge -x -noremote -auto ./ec2_sge.conf' failed with status
+<br />
+1:
+<br />
+Reading configuration from file ./ec2_sge.conf
+<br />
+[H[2J
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Sleeping...(looping again in 60 secs)
+</em><br />
+<br />Execution hosts: 20
+<br />
+Queued jobs: 37
+<br />
+Oldest queued job: 2013-07-04 13:46:50
+<br />
+<span id="received"><dfn>Received on</dfn> Thu Jul 18 2013 - 10:13:23 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1776.html#start1776">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1777.html" title="Next message in the list">Sergio Mafra: "(no subject)"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1775.html" title="Previous message in the list">Rayson Ho: "Re:  Plan for Window Azure Virtual Machines?"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1776" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1776" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1776" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1776" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Colby Taperts ((no email))" />
+<meta name="Subject" content="Live load balancing node AMI Swapping" />
+<title>starcluster.mbox.out: Live load balancing node AMI Swapping</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Live load balancing node AMI Swapping</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Live load balancing node AMI Swapping</h1>
+<!-- received="Wed Oct 25 12:32:52 2017" -->
+<!-- isoreceived="20171025163252" -->
+<!-- sent="Wed, 25 Oct 2017 11:32:07 -0500" -->
+<!-- isosent="20171025163207" -->
+<!-- name="Colby Taperts" -->
+<!-- email="(no email)" -->
+<!-- subject="Live load balancing node AMI Swapping" -->
+<!-- id="CAKAFj9k3W8xiKkC_HH01e4a2YwQdeRuhoaT4XyHq0hiTbFFmkQ_at_mail.gmail.com" -->
+<!-- charset="UTF-8" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2858.html#start2858" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2858.html#options2">top</a>, <a href="2858.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2859.html" accesskey="d" title="Rajat Banerjee: &quot;Re:  Live load balancing node AMI Swapping&quot;">Next message</a> ]
+[ <a href="2857.html" title="&#51060;&#51652;&#50689;: &quot;r3 instance SSD mounting&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="2859.html" accesskey="t" title="Rajat Banerjee: &quot;Re:  Live load balancing node AMI Swapping&quot;">Next in thread</a> ]
+ [ <a href="2858.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2858" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2858" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2858" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2858" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Colby Taperts &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Wed, 25 Oct 2017 11:32:07 -0500</span><br />
+</address>
+<br />
+Hello,
+<br />
+<br />Would it be possible to change the node AMI after the StarCluster is up?
+<br />
+<br />for example, use the below setup to initialize the StarCluster
+<br />
+<br />master_image_id = ami-0330d16a
+<br />
+master_instance_type = m1.small
+<br />
+node_image_id = ami-0330d16a
+<br />
+node_instance_type = m1.small
+<br />
+<br /><br />then change the config to:
+<br />
+<br />master_image_id = ami-0330d16a
+<br />
+master_instance_type = m1.small
+<br />
+node_image_id = ami-0111111 # New AMI name
+<br />
+node_instance_type = m1.small
+<br />
+<br />Start `starcluster loadbalance starcluster-name`
+<br />
+<br />and have the new node AMI created when a node is needed
+<br />
+<br />Or would I need to destroy the cluster if I need to set up the new AMI?
+<br />
+<br />Thanks so much!
+<br />
+-Colby Taperts
+<br />
+<span id="received"><dfn>Received on</dfn> Wed Oct 25 2017 - 12:32:52 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2858.html#start2858">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2859.html" title="Next message in the list">Rajat Banerjee: "Re:  Live load balancing node AMI Swapping"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2857.html" title="Previous message in the list">&#51060;&#51652;&#50689;: "r3 instance SSD mounting"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="2859.html" title="Next message in this discussion thread">Rajat Banerjee: "Re:  Live load balancing node AMI Swapping"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="2859.html" title="Message sent in reply to this message">Rajat Banerjee: "Re:  Live load balancing node AMI Swapping"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2858" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2858" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2858" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2858" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

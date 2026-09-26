@@ -1,0 +1,227 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="David Johnston ((no email))" />
+<meta name="Subject" content="Meta-configuration options" />
+<title>starcluster.mbox.out: Meta-configuration options</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Meta-configuration options</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Meta-configuration options</h1>
+<!-- received="Tue May 27 11:50:39 2014" -->
+<!-- isoreceived="20140527155039" -->
+<!-- sent="Tue, 27 May 2014 11:50:38 -0400" -->
+<!-- isosent="20140527155038" -->
+<!-- name="David Johnston" -->
+<!-- email="(no email)" -->
+<!-- subject="Meta-configuration options" -->
+<!-- id="CADB4cG9wMkeM5DwiRWPQ6hcmbrvuXoAaqt7ODpAGavC=jRU-3w_at_mail.gmail.com" -->
+<!-- charset="UTF-8" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2226.html#start2226" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2226.html#options2">top</a>, <a href="2226.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2227.html" accesskey="d" title="Cedar McKay: &quot;SGE failed to start with certain hostnames&quot;">Next message</a> ]
+[ <a href="2225.html" title="Ed Gray: &quot;Re:  Plugin for mounting disks properly and easily&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2226" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2226" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2226" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2226" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: David Johnston &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Tue, 27 May 2014 11:50:38 -0400</span><br />
+</address>
+<br />
+The config file is pretty good at allowing for generality. However, I am
+<br />
+thinking about how I would do it if I needed a script to change these
+<br />
+parameters.
+<br />
+<br />I see a few ways of doing this. Maybe there are more. I am wondering if
+<br />
+there is a commended way and I am sure it may depend.
+<br />
+<br />1) Some things can be done easily enough by manually changing a few things
+<br />
+by hand. For example, add another cluster type to config file once and then
+<br />
+a script can pick the right one automatically. Certainly works fine for
+<br />
+some things.
+<br />
+<br />2) I believe the star cluster shell script allows for some over-rides at
+<br />
+command line.
+<br />
+<br />3) You can write a plugin and run it by script after creation. This
+<br />
+probably gives you the most freedom. The only issue I see is that you lose
+<br />
+the nice feature that the config file can simply be copied somewhere and
+<br />
+used to document how the cluster was created and how it can be recreated in
+<br />
+the future. I guess this could be handled by writing the plugin to read a
+<br />
+config file of it's own and save this with the other. Using plugins seems
+<br />
+to require you to learn more of the underlying star cluster code.
+<br />
+<br />4) Make config file templates that has variables in the file like
+<br />
+{{NUMBER_OF_NODES}} and then use something like jinja2 or mako template
+<br />
+engines to render a new config file from these via script. I started along
+<br />
+this route before I learned about the nice INCLUDE variable in [global] to
+<br />
+separate out sensitive things like credentials.
+<br />
+<br />One benefit of template engines like mako, is that they give you a lot of
+<br />
+power. You can write conditionals and loops right into the template. Not
+<br />
+sure if there are real use cases for this but thought I would mention it.
+<br />
+It might be useful if you wanted to make a different configuration option
+<br />
+always turn on when you are in one region or have more than some number of
+<br />
+nodes etc.
+<br />
+<br />There are other things like hacking the starcluster code but I'd rather not
+<br />
+do that because it makes upgrading difficult. That's what configuration
+<br />
+schemes are for.
+<br />
+<br />Anyone want to comment about which they use the most.
+<br />
+Dave
+<br />
+<span id="received"><dfn>Received on</dfn> Tue May 27 2014 - 11:50:39 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2226.html#start2226">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2227.html" title="Next message in the list">Cedar McKay: "SGE failed to start with certain hostnames"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2225.html" title="Previous message in the list">Ed Gray: "Re:  Plugin for mounting disks properly and easily"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2226" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2226" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2226" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2226" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

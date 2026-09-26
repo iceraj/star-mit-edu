@@ -1,0 +1,184 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Xu, Guorong ((no email))" />
+<meta name="Subject" content="EBS volumes and copy file error" />
+<title>starcluster.mbox.out: EBS volumes and copy file error</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">EBS volumes and copy file error</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>EBS volumes and copy file error</h1>
+<!-- received="Fri Mar 22 14:22:18 2013" -->
+<!-- isoreceived="20130322182218" -->
+<!-- sent="Fri, 22 Mar 2013 18:22:18 -0000" -->
+<!-- isosent="20130322182218" -->
+<!-- name="Xu, Guorong" -->
+<!-- email="(no email)" -->
+<!-- subject="EBS volumes and copy file error" -->
+<!-- id="5468785830CE6A428621B6599A198FAA1388222D_at_BHDASVEXML2.bhcs.pvt" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1702.html#start1702" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1702.html#options2">top</a>, <a href="1702.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1703.html" accesskey="d" title="Sylvain Foisy Ph. D.: &quot;Mounting an external NFS server on a starcluster&quot;">Next message</a> ]
+[ <a href="1701.html" title="David Durham: &quot;Starcluster Crash Report&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1702" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1702" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1702" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1702" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Xu, Guorong &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Fri, 22 Mar 2013 18:22:18 -0000</span><br />
+</address>
+<br />
+Hi Starcluster developers,
+<br />
+<br />I am a new user of the Starcluster. And I found your software is very useful and it is amazing!
+<br />
+<br />By reading your manual and I created a SGE cluster with 4 nodes on Amazon cloud successfully. However, I met some problems when I tried to access my data on EBS volumes from master node.
+<br />
+I can see my attached volume on master node, but I cannot see the data on that volume. From the command &quot;df -h&quot;, I found the size of that volume is less than original size.
+<br />
+That means my data should be on that volume. When I tried to configure that volume in the file &quot;.starcluster/config&quot;, then I start my cluster. I got the error message that the volume id cannot be found.
+<br />
+I am sure the volume id is correct, but I don't know why starCluster cannot find it.
+<br />
+<br />Then I tried to use the command &quot;starcluster put&quot; to copy my data from EBS volume to master node. But it reported an internet connection error during the file transferring (80~90%).
+<br />
+Do you have any idea about these issues?
+<br />
+<br />Your response would be greatly appreciated!
+<br />
+<br />Guorong
+<br />
+<pre>
+--
+**********************************************************************
+This e-mail may contain confidential and/or privileged information. This information is intended only for the use of the individual(s) and entity(ies) to whom it is addressed. If you are the intended recipient, further disclosures are prohibited without proper authorization. If you are not the intended recipient (or have received this e-mail in error) please notify the sender immediately and destroy this e-mail. Any unauthorized copying, disclosure or distribution of the material in this e-mail is strictly forbidden and possibly a violation of federal or state law and regulations. Baylor Health Care System, its subsidiaries, and affiliates hereby claim all applicable privileges related to this information.
+</pre>
+<span id="received"><dfn>Received on</dfn> Fri Mar 22 2013 - 14:22:18 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1702.html#start1702">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1703.html" title="Next message in the list">Sylvain Foisy Ph. D.: "Mounting an external NFS server on a starcluster"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1701.html" title="Previous message in the list">David Durham: "Starcluster Crash Report"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1702" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1702" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1702" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1702" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Chris Diehl ((no email))" />
+<meta name="Subject" content="Port Forwarding Plugin" />
+<title>starcluster.mbox.out: Port Forwarding Plugin</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">Port Forwarding Plugin</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>Port Forwarding Plugin</h1>
+<!-- received="Thu Jun 21 10:36:44 2012" -->
+<!-- isoreceived="20120621143644" -->
+<!-- sent="Thu, 21 Jun 2012 10:36:22 -0400" -->
+<!-- isosent="20120621143622" -->
+<!-- name="Chris Diehl" -->
+<!-- email="(no email)" -->
+<!-- subject="Port Forwarding Plugin" -->
+<!-- id="CABYryNC+TnRf8sCJvHKLg0t9XTCOQvioCoiR+9+4nFSRV8t_0w_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1296.html#start1296" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1296.html#options2">top</a>, <a href="1296.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1297.html" accesskey="d" title="Sergio Mafra: &quot;Re:  Little question&quot;">Next message</a> ]
+[ <a href="1295.html" title="Rayson Ho: &quot;Re:  add additional queue at launch&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="1340.html" accesskey="t" title="Justin Riley: &quot;Re:  Port Forwarding Plugin&quot;">Next in thread</a> ]
+ [ <a href="1296.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1296" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1296" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1296" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1296" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Chris Diehl &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 21 Jun 2012 10:36:22 -0400</span><br />
+</address>
+<br />
+Hi All,
+<br />
+<br />I wrote a plugin yesterday to do port forwarding from a specified port on
+<br />
+the master to all of the nodes. The goal is to have a DB such as Mongo
+<br />
+running on the master and available on the specified port on all the nodes.
+<br />
+<br />For whatever reason, when the cluster is firing up, the process grinds to a
+<br />
+halt when it is running this plugin.
+<br />
+<br />Any thoughts on what might be the cause? I've tried it both with a port
+<br />
+value passed in and specified in the code. I can execute the ssh command
+<br />
+below successfully on the nodes. I used nmap to check if I was using a port
+<br />
+that I should not be. Everything seems good but clearly something is not
+<br />
+working as intended.
+<br />
+<br />Thanks, Chris
+<br />
+<br />from starcluster.clustersetup import ClusterSetup
+<br />
+from starcluster.logger import log
+<br />
+<br />class MongoPortForwarding(ClusterSetup):
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, port):
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.port = port
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log.debug(&quot;port = %s&quot; % port)
+<br />
+<br />&nbsp;&nbsp;&nbsp;&nbsp;def run(self, nodes, master, user, user_shell, volumes):
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log.info(&quot;Number of nodes: %d&quot; % len(nodes))
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for node in nodes:
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if node != master:
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;log.info(&quot;Setting up port forwarding for node %s.&quot; %
+<br />
+node.alias)
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#node.ssh.execute(&quot;ssh -f -N -L %s:localhost:%s root_at_master&quot;
+<br />
+% (self.port,self.port))
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;node.ssh.execute(&quot;ssh -f -N -L 1234:localhost:1234
+<br />
+root_at_master&quot;)
+<br />
+<span id="received"><dfn>Received on</dfn> Thu Jun 21 2012 - 10:36:44 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1296.html#start1296">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1297.html" title="Next message in the list">Sergio Mafra: "Re:  Little question"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1295.html" title="Previous message in the list">Rayson Ho: "Re:  add additional queue at launch"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1340.html" title="Next message in this discussion thread">Justin Riley: "Re:  Port Forwarding Plugin"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1340.html" title="Message sent in reply to this message">Justin Riley: "Re:  Port Forwarding Plugin"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1296" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1296" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1296" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1296" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Wei Tao ((no email))" />
+<meta name="Subject" content="starcluster sge plugin error" />
+<title>starcluster.mbox.out: starcluster sge plugin error</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">starcluster sge plugin error</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>starcluster sge plugin error</h1>
+<!-- received="Wed May 30 10:08:42 2012" -->
+<!-- isoreceived="20120530140842" -->
+<!-- sent="Wed, 30 May 2012 10:08:37 -0400" -->
+<!-- isosent="20120530140837" -->
+<!-- name="Wei Tao" -->
+<!-- email="(no email)" -->
+<!-- subject="starcluster sge plugin error" -->
+<!-- id="CALbUUf1-TzshUYd62DdnLjNDSrr_2y1A-KjoDy8rZosgjZ9NGw_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1239.html#start1239" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1239.html#options2">top</a>, <a href="1239.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1240.html" accesskey="d" title="Sergio Mafra: &quot;MIT StarCluster cluster admin web site?&quot;">Next message</a> ]
+[ <a href="1238.html" title="Rayson Ho: &quot;Re:  Parallel filesystems&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="1241.html" accesskey="t" title="Wei Tao: &quot;Re:  starcluster sge plugin error&quot;">Next in thread</a> ]
+ [ <a href="1239.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1239" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1239" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1239" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1239" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Wei Tao &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Wed, 30 May 2012 10:08:37 -0400</span><br />
+</address>
+<br />
+Hi,
+<br />
+<br />I tried to use sge plugin for my cluster to disable master as an execution
+<br />
+host. I edited my starcluster config file according to the online manual.
+<br />
+When I start the cluster, I got the following error during the start up
+<br />
+process. Any suggestions how to resolve this? Thanks!
+<br />
+<br /><br /><em class="quotelev3">&gt;&gt;&gt; Setting up NFS took 0.075 mins
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring passwordless ssh for root
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring passwordless ssh for sgeadmin
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Shutting down threads...
+</em><br />
+20/20 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring SGE...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring NFS exports path(s):
+</em><br />
+/opt/sge6
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Mounting all NFS export path(s) on 6 worker node(s)
+</em><br />
+6/6 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Setting up NFS took 0.018 mins
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Removing previous SGE installation...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Installing Sun Grid Engine...
+</em><br />
+6/6 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Creating SGE parallel environment 'orte'
+</em><br />
+7/7 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Adding parallel environment 'orte' to queue 'all.q'
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Shutting down threads...
+</em><br />
+20/20 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Running plugin sge
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring SGE...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring NFS exports path(s):
+</em><br />
+/opt/sge6
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Mounting all NFS export path(s) on 6 worker node(s)
+</em><br />
+6/6 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Setting up NFS took 0.018 mins
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Removing previous SGE installation...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Installing Sun Grid Engine...
+</em><br />
+!!! ERROR - command 'cd /opt/sge6 &amp;&amp; TERM=rxvt ./inst_sge -m -noremote
+<br />
+-auto ./ec2_sge.conf' failed with status 1
+<br />
+6/6 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Updating SGE parallel environment 'orte'
+</em><br />
+7/7 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Adding parallel environment 'orte' to queue 'all.q'
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Shutting down threads...
+</em><br />
+20/20 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Configuring cluster took 6.185 mins
+</em><br />
+<br /><br /><pre>
+-- 
+Wei Tao, Ph.D.
+TSI Biocomputing LLC
+617-564-0934
+This e-mail and any files transmitted with it may contain privileged and
+confidential information and are intended solely for the use of the
+individual or entity to which they are addressed. If you are not the
+intended recipient or the person responsible for delivering the e-mail to
+the intended recipient, you are hereby notified that any dissemination or
+copying of this e-mail or any of its attachment(s) is strictly prohibited.
+If you have received this e-mail in error, please immediately notify the
+sending individual or entity by e-mail and permanently delete the original
+e-mail and attachment(s) from your computer system. Thank you for your
+cooperation.
+</pre>
+<span id="received"><dfn>Received on</dfn> Wed May 30 2012 - 10:08:42 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1239.html#start1239">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1240.html" title="Next message in the list">Sergio Mafra: "MIT StarCluster cluster admin web site?"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1238.html" title="Previous message in the list">Rayson Ho: "Re:  Parallel filesystems"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1241.html" title="Next message in this discussion thread">Wei Tao: "Re:  starcluster sge plugin error"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1241.html" title="Message sent in reply to this message">Wei Tao: "Re:  starcluster sge plugin error"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1239" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1239" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1239" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1239" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

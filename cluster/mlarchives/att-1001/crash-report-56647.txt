@@ -1,0 +1,134 @@
+---------- CRASH DETAILS ----------
+COMMAND: starcluster start rnamap
+2012-01-24 14:27:02,846 PID: 56647 config.py:551 - DEBUG - Loading config
+2012-01-24 14:27:02,847 PID: 56647 config.py:118 - DEBUG - Loading file: /Users/ptommaso/.starcluster/config
+2012-01-24 14:27:02,850 PID: 56647 awsutils.py:54 - DEBUG - creating self._conn w/ connection_authenticator kwargs = {'proxy_user': None, 'proxy_pass': None, 'proxy_port': None, 'proxy': None, 'is_secure': True, 'path': '/', 'region': None, 'port': None}
+2012-01-24 14:27:03,514 PID: 56647 start.py:176 - INFO - Using default cluster template: def-cluster
+2012-01-24 14:27:03,515 PID: 56647 cluster.py:1515 - INFO - Validating cluster template settings...
+2012-01-24 14:27:04,650 PID: 56647 cluster.py:909 - DEBUG - Launch map: node001 (ami: ami-353af75c, type: m1.large)...
+2012-01-24 14:27:04,651 PID: 56647 cluster.py:1530 - INFO - Cluster template settings are valid
+2012-01-24 14:27:04,651 PID: 56647 cluster.py:1406 - INFO - Starting cluster...
+2012-01-24 14:27:04,651 PID: 56647 cluster.py:935 - INFO - Launching a 2-node cluster...
+2012-01-24 14:27:04,652 PID: 56647 cluster.py:909 - DEBUG - Launch map: node001 (ami: ami-353af75c, type: m1.large)...
+2012-01-24 14:27:04,652 PID: 56647 cluster.py:962 - DEBUG - Launching master (ami: ami-353af75c, type: m1.large)
+2012-01-24 14:27:04,652 PID: 56647 cluster.py:962 - DEBUG - Launching node001 (ami: ami-353af75c, type: m1.large)
+2012-01-24 14:27:04,924 PID: 56647 awsutils.py:165 - INFO - Creating security group @sc-rnamap...
+2012-01-24 14:27:08,610 PID: 56647 cluster.py:773 - INFO - Reservation:r-bfebf6de
+2012-01-24 14:27:08,611 PID: 56647 cluster.py:1218 - INFO - Waiting for cluster to come up... (updating every 22s)
+2012-01-24 14:27:09,228 PID: 56647 cluster.py:665 - DEBUG - existing nodes: {}
+2012-01-24 14:27:09,229 PID: 56647 cluster.py:673 - DEBUG - adding node i-35cf2450 to self._nodes list
+2012-01-24 14:27:10,086 PID: 56647 cluster.py:673 - DEBUG - adding node i-37cf2452 to self._nodes list
+2012-01-24 14:27:10,931 PID: 56647 cluster.py:681 - DEBUG - returning self._nodes = [<Node: master (i-35cf2450)>, <Node: node001 (i-37cf2452)>]
+2012-01-24 14:27:10,932 PID: 56647 cluster.py:1176 - INFO - Waiting for all nodes to be in a 'running' state...
+2012-01-24 14:27:11,218 PID: 56647 cluster.py:665 - DEBUG - existing nodes: {u'i-37cf2452': <Node: node001 (i-37cf2452)>, u'i-35cf2450': <Node: master (i-35cf2450)>}
+2012-01-24 14:27:11,219 PID: 56647 cluster.py:668 - DEBUG - updating existing node i-35cf2450 in self._nodes
+2012-01-24 14:27:11,219 PID: 56647 cluster.py:668 - DEBUG - updating existing node i-37cf2452 in self._nodes
+2012-01-24 14:27:11,219 PID: 56647 cluster.py:681 - DEBUG - returning self._nodes = [<Node: master (i-35cf2450)>, <Node: node001 (i-37cf2452)>]
+2012-01-24 14:27:33,497 PID: 56647 cluster.py:665 - DEBUG - existing nodes: {u'i-37cf2452': <Node: node001 (i-37cf2452)>, u'i-35cf2450': <Node: master (i-35cf2450)>}
+2012-01-24 14:27:33,497 PID: 56647 cluster.py:668 - DEBUG - updating existing node i-35cf2450 in self._nodes
+2012-01-24 14:27:33,498 PID: 56647 cluster.py:668 - DEBUG - updating existing node i-37cf2452 in self._nodes
+2012-01-24 14:27:33,498 PID: 56647 cluster.py:681 - DEBUG - returning self._nodes = [<Node: master (i-35cf2450)>, <Node: node001 (i-37cf2452)>]
+2012-01-24 14:27:55,779 PID: 56647 cluster.py:665 - DEBUG - existing nodes: {u'i-37cf2452': <Node: node001 (i-37cf2452)>, u'i-35cf2450': <Node: master (i-35cf2450)>}
+2012-01-24 14:27:55,780 PID: 56647 cluster.py:668 - DEBUG - updating existing node i-35cf2450 in self._nodes
+2012-01-24 14:27:55,780 PID: 56647 cluster.py:668 - DEBUG - updating existing node i-37cf2452 in self._nodes
+2012-01-24 14:27:55,780 PID: 56647 cluster.py:681 - DEBUG - returning self._nodes = [<Node: master (i-35cf2450)>, <Node: node001 (i-37cf2452)>]
+2012-01-24 14:28:18,091 PID: 56647 cluster.py:665 - DEBUG - existing nodes: {u'i-37cf2452': <Node: node001 (i-37cf2452)>, u'i-35cf2450': <Node: master (i-35cf2450)>}
+2012-01-24 14:28:18,091 PID: 56647 cluster.py:668 - DEBUG - updating existing node i-35cf2450 in self._nodes
+2012-01-24 14:28:18,092 PID: 56647 cluster.py:668 - DEBUG - updating existing node i-37cf2452 in self._nodes
+2012-01-24 14:28:18,092 PID: 56647 cluster.py:681 - DEBUG - returning self._nodes = [<Node: master (i-35cf2450)>, <Node: node001 (i-37cf2452)>]
+2012-01-24 14:28:18,092 PID: 56647 cluster.py:1194 - INFO - Waiting for SSH to come up on all nodes...
+2012-01-24 14:28:18,371 PID: 56647 cluster.py:665 - DEBUG - existing nodes: {u'i-37cf2452': <Node: node001 (i-37cf2452)>, u'i-35cf2450': <Node: master (i-35cf2450)>}
+2012-01-24 14:28:18,371 PID: 56647 cluster.py:668 - DEBUG - updating existing node i-35cf2450 in self._nodes
+2012-01-24 14:28:18,371 PID: 56647 cluster.py:668 - DEBUG - updating existing node i-37cf2452 in self._nodes
+2012-01-24 14:28:18,372 PID: 56647 cluster.py:681 - DEBUG - returning self._nodes = [<Node: master (i-35cf2450)>, <Node: node001 (i-37cf2452)>]
+2012-01-24 14:28:18,655 PID: 56647 ssh.py:75 - DEBUG - loading private key /Users/ptommaso/.ssh/maquito.pem
+2012-01-24 14:28:18,656 PID: 56647 ssh.py:82 - DEBUG - specified key does not end in either rsa or dsa, trying both
+2012-01-24 14:28:18,657 PID: 56647 ssh.py:160 - DEBUG - Using private key /Users/ptommaso/.ssh/maquito.pem (rsa)
+2012-01-24 14:28:18,657 PID: 56647 ssh.py:97 - DEBUG - connecting to host ec2-50-19-31-19.compute-1.amazonaws.com on port 22 as user root
+2012-01-24 14:28:19,249 PID: 56647 ssh.py:75 - DEBUG - loading private key /Users/ptommaso/.ssh/maquito.pem
+2012-01-24 14:28:19,250 PID: 56647 ssh.py:82 - DEBUG - specified key does not end in either rsa or dsa, trying both
+2012-01-24 14:28:19,251 PID: 56647 ssh.py:160 - DEBUG - Using private key /Users/ptommaso/.ssh/maquito.pem (rsa)
+2012-01-24 14:28:19,251 PID: 56647 ssh.py:97 - DEBUG - connecting to host ec2-107-20-37-72.compute-1.amazonaws.com on port 22 as user root
+2012-01-24 14:28:41,823 PID: 56647 cluster.py:665 - DEBUG - existing nodes: {u'i-37cf2452': <Node: node001 (i-37cf2452)>, u'i-35cf2450': <Node: master (i-35cf2450)>}
+2012-01-24 14:28:41,823 PID: 56647 cluster.py:668 - DEBUG - updating existing node i-35cf2450 in self._nodes
+2012-01-24 14:28:41,823 PID: 56647 cluster.py:668 - DEBUG - updating existing node i-37cf2452 in self._nodes
+2012-01-24 14:28:41,823 PID: 56647 cluster.py:681 - DEBUG - returning self._nodes = [<Node: master (i-35cf2450)>, <Node: node001 (i-37cf2452)>]
+2012-01-24 14:28:42,096 PID: 56647 ssh.py:97 - DEBUG - connecting to host ec2-50-19-31-19.compute-1.amazonaws.com on port 22 as user root
+2012-01-24 14:28:42,494 PID: 56647 ssh.py:97 - DEBUG - connecting to host ec2-107-20-37-72.compute-1.amazonaws.com on port 22 as user root
+2012-01-24 14:29:04,995 PID: 56647 cluster.py:665 - DEBUG - existing nodes: {u'i-37cf2452': <Node: node001 (i-37cf2452)>, u'i-35cf2450': <Node: master (i-35cf2450)>}
+2012-01-24 14:29:04,995 PID: 56647 cluster.py:668 - DEBUG - updating existing node i-35cf2450 in self._nodes
+2012-01-24 14:29:04,996 PID: 56647 cluster.py:668 - DEBUG - updating existing node i-37cf2452 in self._nodes
+2012-01-24 14:29:04,996 PID: 56647 cluster.py:681 - DEBUG - returning self._nodes = [<Node: master (i-35cf2450)>, <Node: node001 (i-37cf2452)>]
+2012-01-24 14:29:05,351 PID: 56647 ssh.py:97 - DEBUG - connecting to host ec2-50-19-31-19.compute-1.amazonaws.com on port 22 as user root
+2012-01-24 14:29:05,870 PID: 56647 ssh.py:97 - DEBUG - connecting to host ec2-107-20-37-72.compute-1.amazonaws.com on port 22 as user root
+2012-01-24 14:29:30,510 PID: 56647 cluster.py:665 - DEBUG - existing nodes: {u'i-37cf2452': <Node: node001 (i-37cf2452)>, u'i-35cf2450': <Node: master (i-35cf2450)>}
+2012-01-24 14:29:30,510 PID: 56647 cluster.py:668 - DEBUG - updating existing node i-35cf2450 in self._nodes
+2012-01-24 14:29:30,511 PID: 56647 cluster.py:668 - DEBUG - updating existing node i-37cf2452 in self._nodes
+2012-01-24 14:29:30,511 PID: 56647 cluster.py:681 - DEBUG - returning self._nodes = [<Node: master (i-35cf2450)>, <Node: node001 (i-37cf2452)>]
+2012-01-24 14:29:30,812 PID: 56647 ssh.py:97 - DEBUG - connecting to host ec2-50-19-31-19.compute-1.amazonaws.com on port 22 as user root
+2012-01-24 14:29:33,225 PID: 56647 utils.py:89 - INFO - Waiting for cluster to come up took 2.410 mins
+2012-01-24 14:29:33,225 PID: 56647 cluster.py:1433 - INFO - The master node is ec2-50-19-31-19.compute-1.amazonaws.com
+2012-01-24 14:29:33,226 PID: 56647 cluster.py:1434 - INFO - Setting up the cluster...
+2012-01-24 14:29:33,521 PID: 56647 cluster.py:665 - DEBUG - existing nodes: {u'i-37cf2452': <Node: node001 (i-37cf2452)>, u'i-35cf2450': <Node: master (i-35cf2450)>}
+2012-01-24 14:29:33,521 PID: 56647 cluster.py:668 - DEBUG - updating existing node i-35cf2450 in self._nodes
+2012-01-24 14:29:33,522 PID: 56647 cluster.py:668 - DEBUG - updating existing node i-37cf2452 in self._nodes
+2012-01-24 14:29:33,522 PID: 56647 cluster.py:681 - DEBUG - returning self._nodes = [<Node: master (i-35cf2450)>, <Node: node001 (i-37cf2452)>]
+2012-01-24 14:29:33,522 PID: 56647 clustersetup.py:94 - INFO - Configuring hostnames...
+2012-01-24 14:29:33,528 PID: 56647 ssh.py:179 - DEBUG - creating sftp connection
+2012-01-24 14:29:33,528 PID: 56647 ssh.py:179 - DEBUG - creating sftp connection
+2012-01-24 14:29:33,528 PID: 56647 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-01-24 14:29:34,530 PID: 56647 threadpool.py:123 - INFO - Shutting down threads...
+2012-01-24 14:29:34,534 PID: 56647 threadpool.py:135 - DEBUG - unfinished_tasks = 2
+2012-01-24 14:29:35,535 PID: 56647 cli.py:266 - DEBUG - error occurred in job (id=node001): Garbage packet received
+Traceback (most recent call last):
+  File "/Library/Python/2.6/site-packages/StarCluster-0.93.1-py2.6.egg/starcluster/threadpool.py", line 31, in run
+    job.run()
+  File "/Library/Python/2.6/site-packages/StarCluster-0.93.1-py2.6.egg/starcluster/threadpool.py", line 58, in run
+    r = self.method(*self.args, **self.kwargs)
+  File "/Library/Python/2.6/site-packages/StarCluster-0.93.1-py2.6.egg/starcluster/node.py", line 678, in set_hostname
+    hostname_file = self.ssh.remote_file("/etc/hostname", "w")
+  File "/Library/Python/2.6/site-packages/StarCluster-0.93.1-py2.6.egg/starcluster/ssh.py", line 290, in remote_file
+    rfile = self.sftp.open(file, mode)
+  File "/Library/Python/2.6/site-packages/StarCluster-0.93.1-py2.6.egg/starcluster/ssh.py", line 180, in sftp
+    self._sftp = paramiko.SFTPClient.from_transport(self.transport)
+  File "build/bdist.macosx-10.6-universal/egg/paramiko/sftp_client.py", line 106, in from_transport
+    return cls(chan)
+  File "build/bdist.macosx-10.6-universal/egg/paramiko/sftp_client.py", line 87, in __init__
+    server_version = self._send_version()
+  File "build/bdist.macosx-10.6-universal/egg/paramiko/sftp.py", line 108, in _send_version
+    t, data = self._read_packet()
+  File "build/bdist.macosx-10.6-universal/egg/paramiko/sftp.py", line 179, in _read_packet
+    raise SFTPError('Garbage packet received')
+SFTPError: Garbage packet received
+
+error occurred in job (id=master): Garbage packet received
+Traceback (most recent call last):
+  File "/Library/Python/2.6/site-packages/StarCluster-0.93.1-py2.6.egg/starcluster/threadpool.py", line 31, in run
+    job.run()
+  File "/Library/Python/2.6/site-packages/StarCluster-0.93.1-py2.6.egg/starcluster/threadpool.py", line 58, in run
+    r = self.method(*self.args, **self.kwargs)
+  File "/Library/Python/2.6/site-packages/StarCluster-0.93.1-py2.6.egg/starcluster/node.py", line 678, in set_hostname
+    hostname_file = self.ssh.remote_file("/etc/hostname", "w")
+  File "/Library/Python/2.6/site-packages/StarCluster-0.93.1-py2.6.egg/starcluster/ssh.py", line 290, in remote_file
+    rfile = self.sftp.open(file, mode)
+  File "/Library/Python/2.6/site-packages/StarCluster-0.93.1-py2.6.egg/starcluster/ssh.py", line 180, in sftp
+    self._sftp = paramiko.SFTPClient.from_transport(self.transport)
+  File "build/bdist.macosx-10.6-universal/egg/paramiko/sftp_client.py", line 106, in from_transport
+    return cls(chan)
+  File "build/bdist.macosx-10.6-universal/egg/paramiko/sftp_client.py", line 87, in __init__
+    server_version = self._send_version()
+  File "build/bdist.macosx-10.6-universal/egg/paramiko/sftp.py", line 108, in _send_version
+    t, data = self._read_packet()
+  File "build/bdist.macosx-10.6-universal/egg/paramiko/sftp.py", line 179, in _read_packet
+    raise SFTPError('Garbage packet received')
+SFTPError: Garbage packet received
+
+---------- SYSTEM INFO ----------
+StarCluster: 0.93.1
+Python: 2.6.1 (r261:67515, Aug  2 2010, 20:10:18)  [GCC 4.2.1 (Apple Inc. build 5646)]
+Platform: Darwin-10.8.0-x86_64-i386-64bit
+boto: 2.0
+paramiko: 1.7.7.1 (George)
+Crypto: 2.3
+jinja2: 2.5.5
+decorator: 3.3.1

@@ -1,0 +1,384 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Lyn Gerner ((no email))" />
+<meta name="Subject" content="ELB: Failing to Add Spot-Bid Instances" />
+<title>starcluster.mbox.out: ELB: Failing to Add Spot-Bid Instances</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">ELB: Failing to Add Spot-Bid Instances</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>ELB: Failing to Add Spot-Bid Instances</h1>
+<!-- received="Thu Mar  7 14:16:05 2013" -->
+<!-- isoreceived="20130307191605" -->
+<!-- sent="Thu, 7 Mar 2013 11:16:03 -0800" -->
+<!-- isosent="20130307191603" -->
+<!-- name="Lyn Gerner" -->
+<!-- email="(no email)" -->
+<!-- subject="ELB: Failing to Add Spot-Bid Instances" -->
+<!-- id="CAD3e3FY1ecAKRT2PphJezg-pcqeRfO0WRzByQbhtJYfgQ4SX0g_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1691.html#start1691" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1691.html#options2">top</a>, <a href="1691.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1692.html" accesskey="d" title="Lyn Gerner: &quot;Re:  ELB: Failing to Add Spot-Bid Instances&quot;">Next message</a> ]
+[ <a href="1690.html" title="Ian Davis: &quot;&#0039;starcluster help start&#0039; causes a crash&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="1692.html" accesskey="t" title="Lyn Gerner: &quot;Re:  ELB: Failing to Add Spot-Bid Instances&quot;">Next in thread</a> ]
+ [ <a href="1691.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1691" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1691" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1691" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1691" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Lyn Gerner &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 7 Mar 2013 11:16:03 -0800</span><br />
+</address>
+<br />
+Hi All,
+<br />
+<br />I am experimenting with StarCluster loadbalancing of SGE using spot-priced
+<br />
+instances.
+<br />
+<br />After the wait time threshold is exceeded, starcluster puts in a new spot
+<br />
+instance request, and when it becomes available and SSHable, it then errors
+<br />
+out as it tries to add the node to the cluster.  Since the first
+<br />
+spot-instance fails to join, after stabilization, it tries to add another
+<br />
+node, with the same error result:
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Loading full job history
+</em><br />
+Execution hosts: 2
+<br />
+Queued jobs: 18
+<br />
+Oldest queued job: 2013-03-07 18:18:54
+<br />
+Avg job duration: 252 secs
+<br />
+Avg job wait time: 7 secs
+<br />
+Last cluster modification time: 2013-03-07 18:03:11
+<br />
+<em class="quotelev3">&gt;&gt;&gt; A job has been waiting for 454 sec, longer than max 300
+</em><br />
+*** WARNING - Adding 1 nodes at 2013-03-07 18:26:32.471812
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Launching node(s): node002
+</em><br />
+SpotInstanceRequest:sir-4763a012
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for node(s) to come up... (updating every 30s)
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for all nodes to be in a 'running' state...
+</em><br />
+2/2 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for SSH to come up on all nodes...
+</em><br />
+2/2 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for cluster to come up took 0.017 mins
+</em><br />
+!!! ERROR - Failed to add new host
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Sleeping...(looping again in 60 secs)
+</em><br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Waiting for all nodes to come up...
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for all nodes to come up...
+</em><br />
+&lt;snip&gt;...
+<br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Loading full job history
+</em><br />
+Execution hosts: 2
+<br />
+Queued jobs: 17
+<br />
+Oldest queued job: 2013-03-07 18:20:48
+<br />
+Avg job duration: 282 secs
+<br />
+Avg job wait time: 252 secs
+<br />
+Last cluster modification time: 2013-03-07 18:03:11
+<br />
+<em class="quotelev3">&gt;&gt;&gt; A job has been waiting for 798 sec, longer than max 300
+</em><br />
+*** WARNING - Adding 1 nodes at 2013-03-07 18:34:10.519812
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Launching node(s): node003
+</em><br />
+SpotInstanceRequest:sir-02a87c11
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for node(s) to come up... (updating every 30s)
+</em><br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for all nodes to be in a 'running' state...
+</em><br />
+3/3 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for SSH to come up on all nodes...
+</em><br />
+3/3 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+<br />
+100%
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Waiting for cluster to come up took 0.021 mins
+</em><br />
+!!! ERROR - Failed to add new host
+<br />
+<em class="quotelev3">&gt;&gt;&gt; Sleeping...(looping again in 60 secs)
+</em><br />
+<br /><em class="quotelev3">&gt;&gt;&gt; Waiting for all nodes to come up...
+</em><br />
+...
+<br />
+<br />/etc/host on the master confirms the nodes haven't joined:
+<br />
+<br />[prod_at_master scripts]$ cat /etc/hosts
+<br />
+127.0.0.1   localhost localhost.localdomain localhost4
+<br />
+localhost4.localdomain4
+<br />
+::1         localhost localhost.localdomain localhost6
+<br />
+localhost6.localdomain6
+<br />
+10.76.35.21 master
+<br />
+10.119.19.94 node001
+<br />
+<br />Unfortunately, the extra nodes are up and being charged by AWS, but are not
+<br />
+doing the cluster's work.
+<br />
+<br />And starcluster listclusters shows the cluster w/all four nodes:
+<br />
+<br />-----------------------------
+<br />
+e1d (security group: _at_sc-e1d)
+<br />
+-----------------------------
+<br />
+Launch time: 2013-03-07 09:50:57
+<br />
+Uptime: 0 days, 00:48:50
+<br />
+Zone: us-east-1d
+<br />
+Keypair: lapuserkey
+<br />
+EBS volumes:
+<br />
+&nbsp;&nbsp;&nbsp;&lt;snip&gt; ...
+<br />
+Spot requests: 3 active
+<br />
+Cluster nodes:
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;master running i-f8ad948b ec2-50-17-99-136.compute-1.amazonaws.com
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;node001 running i-c4a79eb7
+<br />
+ec2-50-17-178-183.compute-1.amazonaws.com(spot sir-88e00c14)
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;node002 running i-7a437b09
+<br />
+ec2-54-234-178-59.compute-1.amazonaws.com(spot sir-4763a012)
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;node003 running i-f82a128b
+<br />
+ec2-23-20-158-195.compute-1.amazonaws.com(spot sir-02a87c11)
+<br />
+Total nodes: 4
+<br />
+<br />Here is the debug log's relevant info; same error mode for the next attempt
+<br />
+to add node003:
+<br />
+<br />2013-03-07 10:26:34,302 PID: 94806 __init__.py:680 - ERROR - Failed to add
+<br />
+new host
+<br />
+2013-03-07 10:26:34,308 PID: 94806 __init__.py:681 - DEBUG - Traceback
+<br />
+(most recent call last):
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Library/Python/2.7/site-packages/StarCluster-0.93.3-py2.7.egg/starcluster/balancers/sge/__init__.py&quot;,
+<br />
+line 675, in _eval_add_node
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;self._cluster.add_nodes(need_to_add)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Library/Python/2.7/site-packages/StarCluster-0.93.3-py2.7.egg/starcluster/cluster.py&quot;,
+<br />
+line 838, in add_nodes
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;node = self.get_node_by_alias(alias)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Library/Python/2.7/site-packages/StarCluster-0.93.3-py2.7.egg/starcluster/cluster.py&quot;,
+<br />
+line 707, in get_node_by_alias
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;raise exception.InstanceDoesNotExist(alias, label='node')
+<br />
+InstanceDoesNotExist: node 'node002' does not exist
+<br />
+<br />Is there a place in the node adding functionality where I could
+<br />
+productively add a delay so there's no further action til after the
+<br />
+hostname has been added to /etc/hosts, to try to overcome this failure?
+<br />
+I'll appreciate any feedback.
+<br />
+<br />Thanks,
+<br />
+Lyn
+<br />
+<span id="received"><dfn>Received on</dfn> Thu Mar 07 2013 - 14:16:05 EST</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1691.html#start1691">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1692.html" title="Next message in the list">Lyn Gerner: "Re:  ELB: Failing to Add Spot-Bid Instances"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1690.html" title="Previous message in the list">Ian Davis: "&#0039;starcluster help start&#0039; causes a crash"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1692.html" title="Next message in this discussion thread">Lyn Gerner: "Re:  ELB: Failing to Add Spot-Bid Instances"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1692.html" title="Message sent in reply to this message">Lyn Gerner: "Re:  ELB: Failing to Add Spot-Bid Instances"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1691" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1691" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1691" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1691" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

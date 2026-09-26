@@ -1,0 +1,188 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Cedar McKay ((no email))" />
+<meta name="Subject" content="USERDATA_SCRIPTS not running with addnode" />
+<title>starcluster.mbox.out: USERDATA_SCRIPTS not running with addnode</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">USERDATA_SCRIPTS not running with addnode</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>USERDATA_SCRIPTS not running with addnode</h1>
+<!-- received="Wed May 14 19:30:45 2014" -->
+<!-- isoreceived="20140514233045" -->
+<!-- sent="Wed, 14 May 2014 16:30:41 -0700" -->
+<!-- isosent="20140514233041" -->
+<!-- name="Cedar McKay" -->
+<!-- email="(no email)" -->
+<!-- subject="USERDATA_SCRIPTS not running with addnode" -->
+<!-- id="AC00E9D0-BD32-4FA1-A77C-A3287C13BB78_at_uw.edu" -->
+<!-- charset="us-ascii" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2208.html#start2208" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2208.html#options2">top</a>, <a href="2208.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2209.html" accesskey="d" title="Steve Darnell: &quot;Re:  USERDATA_SCRIPTS not running with addnode&quot;">Next message</a> ]
+[ <a href="2207.html" title="MacMullan, Hugh: &quot;Re:  Fast shared or local storage? (Cedar McKay)&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="2209.html" accesskey="t" title="Steve Darnell: &quot;Re:  USERDATA_SCRIPTS not running with addnode&quot;">Next in thread</a> ]
+ [ <a href="2208.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2208" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2208" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2208" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2208" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Cedar McKay &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Wed, 14 May 2014 16:30:41 -0700</span><br />
+</address>
+<br />
+Sorry to bump myself, but this is really the biggest difficulty I'm having with starcluster at the moment. It makes it difficult to use the addnode function, and even harder (impossible)  to use the Elastic Load Balancer.
+<br />
+<br />As a general question, is there a place other than the USERDATA_SCRIPTS that I could use to execute scripts on each node's boot? I'm thinking of /etc/init.d on the boot image, or something like that, but I've been reluctant to modify areas where I suspect some starcluster magic might be happening.
+<br />
+<br /><br /><br /><br /><em class="quotelev1">&gt; Hello all.
+</em><br />
+<em class="quotelev1">&gt; I'm using the USERDATA_SCRIPTS setting to run a script on cluster start. It is mounting an s3fs volume if that matters, though I've also tested it with simply touching a file. As an aside, is there a better place to mount a volume? I didn't dare touch fstab because I figured it might be generate/changed by starcluster depending on the cluster config. 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; In any case, it works as expected when starting a cluster, but if I use addnode, the new nodes don't execute the script. Is this a bug, or behavior that I can change? It seems to me that new nodes should be started in the exact same way as other nodes.
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Thanks!
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; Cedar
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<em class="quotelev1">&gt; 
+</em><br />
+<span id="received"><dfn>Received on</dfn> Wed May 14 2014 - 19:30:45 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2208.html#start2208">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2209.html" title="Next message in the list">Steve Darnell: "Re:  USERDATA_SCRIPTS not running with addnode"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2207.html" title="Previous message in the list">MacMullan, Hugh: "Re:  Fast shared or local storage? (Cedar McKay)"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="2209.html" title="Next message in this discussion thread">Steve Darnell: "Re:  USERDATA_SCRIPTS not running with addnode"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="2209.html" title="Message sent in reply to this message">Steve Darnell: "Re:  USERDATA_SCRIPTS not running with addnode"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2208" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2208" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2208" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2208" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

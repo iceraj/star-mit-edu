@@ -1,0 +1,205 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Boris Fain ((no email))" />
+<meta name="Subject" content="createusers" />
+<title>starcluster.mbox.out: createusers</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">createusers</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>createusers</h1>
+<!-- received="Thu Jul  9 22:32:23 2015" -->
+<!-- isoreceived="20150710023223" -->
+<!-- sent="Thu, 9 Jul 2015 19:32:20 -0700" -->
+<!-- isosent="20150710023220" -->
+<!-- name="Boris Fain" -->
+<!-- email="(no email)" -->
+<!-- subject="createusers" -->
+<!-- id="CAOxi5U7DNzj26s-FcHQecHNQ0eqMn3aeO=2_sMfR=2ikand-PA_at_mail.gmail.com" -->
+<!-- charset="UTF-8" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="2685.html#start2685" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="2685.html#options2">top</a>, <a href="2685.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="2686.html" accesskey="d" title="Boris Fain: &quot;Re:  StarCluster Digest, Vol 71, Issue 8&quot;">Next message</a> ]
+[ <a href="2684.html" title="Boris Fain: &quot;Re:  StarCluster Digest, Vol 59, Issue 6&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2685" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2685" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2685" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2685" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Boris Fain &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Thu, 9 Jul 2015 19:32:20 -0700</span><br />
+</address>
+<br />
+Hi -
+<br />
+<br />Thank you very much for a great package!
+<br />
+<br />I am having problems adding users to the cluster:
+<br />
+<br />boris_at_MacBook-Pro:~$ starcluster runplugin createusers md_cluster
+<br />
+StarCluster - (<a href="/cluster/">/cluster</a>) (v. 0.95.6)
+<br />
+Software Tools for Academics and Researchers (STAR)
+<br />
+Please submit bug reports to starcluster_at_mit.edu
+<br />
+<br />!!! ERROR - Plugin &quot;createusers&quot; not found in config
+<br />
+<br />and in the plugins directory in the config file I have:
+<br />
+<br />[plugin createusers]
+<br />
+&nbsp;SETUP_CLASS = starcluster.plugins.users.CreateUsers
+<br />
+&nbsp;# # NUM_USERS = 5
+<br />
+&nbsp;usernames = boris, illarionov, kurnikov, leonidp, tatianap
+<br />
+&nbsp;DOWNLOAD_KEYS = True
+<br />
+&nbsp;download_keys_dir = /Users/boris/Work/strela/starcluster_ec2
+<br />
+<br /># # you can also comment out NUM_USERS and specify exact usernames, e.g.
+<br />
+<br />and, also, in the md_cluster definition:
+<br />
+<br />PLUGINS = sge, pkginstaller, createusers
+<br />
+<br />Any help much appreciated.
+<br />
+<br /><br />P.S. create volume does not find the default ami in us-west-2a but I just
+<br />
+did this manually.
+<br />
+<br /><pre>
+-- 
+b.
+</pre>
+<span id="received"><dfn>Received on</dfn> Thu Jul 09 2015 - 22:32:23 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="2685.html#start2685">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="2686.html" title="Next message in the list">Boris Fain: "Re:  StarCluster Digest, Vol 71, Issue 8"</a></li>
+<li><dfn>Previous message</dfn>: <a href="2684.html" title="Previous message in the list">Boris Fain: "Re:  StarCluster Digest, Vol 59, Issue 6"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg2685" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg2685" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg2685" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg2685" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

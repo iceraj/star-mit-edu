@@ -1,0 +1,216 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Mark Stock ((no email))" />
+<meta name="Subject" content="FC16 installation problems fixed" />
+<title>starcluster.mbox.out: FC16 installation problems fixed</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">FC16 installation problems fixed</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>FC16 installation problems fixed</h1>
+<!-- received="Tue Jun 19 13:00:30 2012" -->
+<!-- isoreceived="20120619170030" -->
+<!-- sent="Tue, 19 Jun 2012 13:00:28 -0400 (EDT)" -->
+<!-- isosent="20120619170028" -->
+<!-- name="Mark Stock" -->
+<!-- email="(no email)" -->
+<!-- subject="FC16 installation problems fixed" -->
+<!-- id="Pine.LNX.4.64.1206191247150.21768_at_joust.gpcc.itd.umich.edu" -->
+<!-- charset="US-ASCII" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1291.html#start1291" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1291.html#options2">top</a>, <a href="1291.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1292.html" accesskey="d" title="Donald McAllaster: &quot;Automatically add/remove new cluster to/from existing RDS security group&quot;">Next message</a> ]
+[ <a href="1290.html" title="Joydeep Sen Sarma: &quot;shout out to StarCluster&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+[ <a href="1347.html" accesskey="t" title="Justin Riley: &quot;Re:  FC16 installation problems fixed&quot;">Next in thread</a> ]
+ [ <a href="1291.html#replies">Replies</a> ]
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1291" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1291" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1291" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1291" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Mark Stock &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Tue, 19 Jun 2012 13:00:28 -0400 (EDT)</span><br />
+</address>
+<br />
+Here is some information I learned when installing StarCluster 
+<br />
+for the first time. I am posting it here to benefit any other new 
+<br />
+users who aren't able to find help for these problems.
+<br />
+<br />I am running Fedora 16 and installing StarCluster-0.93.3 using 
+<br />
+the instructions on 
+<br />
+<a href="http://web.mit.edu/star/cluster/docs/latest/installation.html">http://web.mit.edu/star/cluster/docs/latest/installation.html</a>
+<br />
+<br />% sudo yum install gmp-devel
+<br />
+<br />...
+<br />
+warning: GMP or MPIR library not found; Not building 
+<br />
+Crypto.PublicKey._fastmath.
+<br />
+<br />This is solved with
+<br />
+<br />% sudo python setup.py install
+<br />
+<br />Then, the following error shows up:
+<br />
+<br />Processing pycrypto-2.6.tar.gz
+<br />
+Running pycrypto-2.6/setup.py -q bdist_egg --dist-dir 
+<br />
+/tmp/easy_install-BtQN0_/pycrypto-2.6/egg-dist-tmp-Mghnk3
+<br />
+src/_fastmath.c:31:20: fatal error: Python.h: No such file or 
+<br />
+directory
+<br />
+compilation terminated.
+<br />
+error: Setup script exited with error: command 'gcc' failed with 
+<br />
+exit status 1
+<br />
+<br />And this can be solved with
+<br />
+<br />% sudo yum install python-devel
+<br />
+<br />These packages are not standard Fedora, and I haven't ever needed 
+<br />
+them despite developing scientific software for over a decade.
+<br />
+<br />Mark
+<br />
+<span id="received"><dfn>Received on</dfn> Tue Jun 19 2012 - 13:00:30 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1291.html#start1291">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1292.html" title="Next message in the list">Donald McAllaster: "Automatically add/remove new cluster to/from existing RDS security group"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1290.html" title="Previous message in the list">Joydeep Sen Sarma: "shout out to StarCluster"</a></li>
+<!-- lnextthread="start" -->
+<li><dfn>Next in thread</dfn>: <a href="1347.html" title="Next message in this discussion thread">Justin Riley: "Re:  FC16 installation problems fixed"</a></li>
+<li><a name="replies" id="replies"></a>
+<dfn>Reply</dfn>: <a href="1347.html" title="Message sent in reply to this message">Justin Riley: "Re:  FC16 installation problems fixed"</a></li>
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1291" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1291" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1291" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1291" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta name="description" content="StarCluster Mailing List Archive">
+<meta name="keywords" content="StarCluster mailing list archive, starcluster, ec2, aws, Email Archives">
+<meta name="Author" content="Hyokun Yun ((no email))" />
+<meta name="Subject" content="starcluster crash report" />
+<title>starcluster.mbox.out: starcluster crash report</title>
+<link rev="made" href="mailto:">
+<link rel="stylesheet" href="pylons.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="pygments.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="nobile.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="neuton.css" type="text/css" media="screen" charset="utf-8" />
+<link rel="stylesheet" href="modal/css/basic.css" type="text/css" media="screen" charset="utf-8" />
+</head>
+
+<!--<h1 align="center">starcluster crash report</h1>-->
+<div class="header-small">
+        <div class="logo-small">
+                <a href="index.html">StarCluster - Mailing List Archive</a>
+        </div>
+</div>
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="date.html">Date</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="subject.html">Subject</a></li>
+      </ul>
+    </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+<div class="head">
+<h1>starcluster crash report</h1>
+<!-- received="Tue Aug 27 15:29:13 2013" -->
+<!-- isoreceived="20130827192913" -->
+<!-- sent="Tue, 27 Aug 2013 15:29:12 -0400" -->
+<!-- isosent="20130827192912" -->
+<!-- name="Hyokun Yun" -->
+<!-- email="(no email)" -->
+<!-- subject="starcluster crash report" -->
+<!-- id="CALO9H5w0bnk-w7BiVEL065pGszDkhdjjzgVKM-Ntp7tF9zzgHw_at_mail.gmail.com" -->
+<!-- charset="ISO-8859-1" -->
+<!-- expires="-1" -->
+<map id="navbar" name="navbar">
+<ul class="links">
+<li>
+<dfn>This message</dfn>:
+[ <a href="1839.html#start1839" name="options1" id="options1" tabindex="1">Message body</a> ]
+ [ More options (<a href="1839.html#options2">top</a>, <a href="1839.html#options3">bottom</a>) ]
+</li>
+<li>
+<dfn>Related messages</dfn>:
+<!-- unext="start" -->
+[ <a href="1840.html" accesskey="d" title="james pettengill: &quot;Loadbalancing error against ubuntu QIIME AMI&quot;">Next message</a> ]
+[ <a href="1838.html" title="Kai Li: &quot;bug?&quot;">Previous message</a> ]
+<!-- unextthread="start" -->
+<!-- ureply="end" -->
+</li>
+</ul>
+</map>
+<ul class="links">
+<li><a name="options2" id="options2"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1839" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1839" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1839" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1839" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</div>
+<!-- body="start" -->
+<div class="mail">
+<address class="headers">
+<span id="from">
+<dfn>From</dfn>: Hyokun Yun &lt;<em>no email</em>&gt;
+</span><br />
+<span id="date"><dfn>Date</dfn>: Tue, 27 Aug 2013 15:29:12 -0400</span><br />
+</address>
+<br />
+I would like to report a crash.
+<br />
+<br />I think the following error occurred since I was adding a new instance on
+<br />
+my account using the web interface.  I was creating 2-node cluster with
+<br />
+starcluster, and the last node in the log (node i-931901fb) is that node
+<br />
+which should not be a member of this cluster.
+<br />
+<br />---------- SYSTEM INFO ----------
+<br />
+StarCluster: 0.94
+<br />
+Python: 2.7.2 (default, Oct 11 2012, 20:14:37)  [GCC 4.2.1 Compatible Apple
+<br />
+Clang 4.0 (tags/Apple/clang-418.0.60)]
+<br />
+Platform: Darwin-12.3.0-x86_64-i386-64bit
+<br />
+boto: 2.10.0
+<br />
+paramiko: 1.11.0
+<br />
+Crypto: 2.6
+<br />
+<br />---------- CRASH DETAILS ----------
+<br />
+Command: starcluster -c /Users/bikestra/.starcluster/vishy_config sshmaster
+<br />
+firstcluster
+<br />
+<br />2013-08-27 15:18:39,295 PID: 17339 config.py:567 - DEBUG - Loading config
+<br />
+2013-08-27 15:18:39,295 PID: 17339 config.py:138 - DEBUG - Loading file:
+<br />
+/Users/bikestra/.starcluster/vishy_config
+<br />
+2013-08-27 15:18:39,298 PID: 17339 awsutils.py:74 - DEBUG - creating
+<br />
+self._conn w/ connection_authenticator kwargs = {'proxy_user': None,
+<br />
+'proxy_pass': None, 'proxy_port': None, 'proxy': None, 'is_secure': True,
+<br />
+'path': '/', 'region': None, 'validate_certs': True, 'port': None}
+<br />
+2013-08-27 15:18:39,827 PID: 17339 cluster.py:710 - DEBUG - existing nodes:
+<br />
+{}
+<br />
+2013-08-27 15:18:39,827 PID: 17339 cluster.py:718 - DEBUG - adding node
+<br />
+i-a55dc4dc to self._nodes list
+<br />
+2013-08-27 15:18:39,827 PID: 17339 cluster.py:718 - DEBUG - adding node
+<br />
+i-7151c808 to self._nodes list
+<br />
+2013-08-27 15:18:39,828 PID: 17339 cluster.py:718 - DEBUG - adding node
+<br />
+i-931901fb to self._nodes list
+<br />
+2013-08-27 15:18:40,022 PID: 17339 cli.py:307 - ERROR - Unhandled exception
+<br />
+occured
+<br />
+Traceback (most recent call last):
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Library/Python/2.7/site-packages/StarCluster-0.94-py2.7.egg/starcluster/cli.py&quot;,
+<br />
+line 274, in main
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;sc.execute(args)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Library/Python/2.7/site-packages/StarCluster-0.94-py2.7.egg/starcluster/commands/sshmaster.py&quot;,
+<br />
+line 57, in execute
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;forward_agent=self.opts.forward_agent)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Library/Python/2.7/site-packages/StarCluster-0.94-py2.7.egg/starcluster/cluster.py&quot;,
+<br />
+line 134, in ssh_to_master
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;require_keys=True)
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Library/Python/2.7/site-packages/StarCluster-0.94-py2.7.egg/starcluster/cluster.py&quot;,
+<br />
+line 68, in get_cluster
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;cl.keyname = cl.keyname or cl.master_node.key_name
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Library/Python/2.7/site-packages/StarCluster-0.94-py2.7.egg/starcluster/cluster.py&quot;,
+<br />
+line 689, in master_node
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;for node in self.nodes:
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Library/Python/2.7/site-packages/StarCluster-0.94-py2.7.egg/starcluster/cluster.py&quot;,
+<br />
+line 720, in nodes
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;if n.is_master():
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Library/Python/2.7/site-packages/StarCluster-0.94-py2.7.egg/starcluster/node.py&quot;,
+<br />
+line 883, in is_master
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;return self.alias == &quot;master&quot;
+<br />
+&nbsp;&nbsp;File
+<br />
+&quot;/Library/Python/2.7/site-packages/StarCluster-0.94-py2.7.egg/starcluster/node.py&quot;,
+<br />
+line 139, in alias
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;aliases = aliasestxt.splitlines()[2:]
+<br />
+AttributeError: 'NoneType' object has no attribute 'splitlines'
+<br />
+<br /><br />Thanks,
+<br />
+Hyokun Yun
+<br />
+<span id="received"><dfn>Received on</dfn> Tue Aug 27 2013 - 15:29:13 EDT</span>
+</div>
+<!-- body="end" -->
+<div class="foot">
+<map id="navbarfoot" name="navbarfoot" title="Related messages">
+<ul class="links">
+<li><dfn>This message</dfn>: [ <a href="1839.html#start1839">Message body</a> ]</li>
+<!-- lnext="start" -->
+<li><dfn>Next message</dfn>: <a href="1840.html" title="Next message in the list">james pettengill: "Loadbalancing error against ubuntu QIIME AMI"</a></li>
+<li><dfn>Previous message</dfn>: <a href="1838.html" title="Previous message in the list">Kai Li: "bug?"</a></li>
+<!-- lnextthread="start" -->
+<!-- lreply="end" -->
+</ul>
+<ul class="links">
+<li><a name="options3" id="options3"></a><dfn>Contemporary messages sorted</dfn>: [ <a href="date.html#msg1839" title="Contemporary messages by date">by date</a> ] [ <a href="index.html#msg1839" title="Contemporary discussion threads">by thread</a> ] [ <a href="subject.html#msg1839" title="Contemporary messages by subject">by subject</a> ] [ <a href="author.html#msg1839" title="Contemporary messages by author">by author</a> ]</li>
+</ul>
+</map>
+</div>
+<!-- trailer="footer" -->
+<small><small>
+<em>This archive was generated by
+<a href="http://www.hypermail-project.org/">hypermail 2.3.0</a>.
+</em></small></small>
+</div>
+</div>
+</div>
+    <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <h3>Search:</h3>
+            <form id="searchForm" method="post">
+                <input id="s" type="text" />
+                <input type="submit" value="Go" id="submitButton" />
+            </form>
+            <h3>Sort all by:</h3>
+            <p><a href="date.html">Date</a></p>
+            <p><a href="summary.html">Month</a></p>
+            <p><a href="thread.html">Thread</a></p>
+            <p><a href="author.html">Author</a></p>
+            <p><a href="subject.html">Subject</a></p>
+        </div>
+    </div>
+<div class="clearer"></div>
+</div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <b>Sort all by: </b>
+        <li><a href="subject.html">Subject</a></li>
+        <li><a href="author.html">Author</a>, </li>
+        <li><a href="thread.html">Thread</a>, </li>
+        <li><a href="summary.html">Month</a>, </li>
+        <li><a href="date.html">Date</a>, </li>
+      </ul>
+    </div>
+
+<div class="clearer"></div>
+<div class="footer">
+<a href="../../index.html">Software Tools for Academics and Researchers</a>
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    //]]>
+    </script><script type="text/javascript">
+//<![CDATA[
+    try{
+        var pageTracker = _gat._getTracker("UA-1048253-4");
+        pageTracker._trackPageview();
+    } catch(err) {}
+    //]]>
+</script>
+<script src="jquery.min.js"></script>
+<script src="jquery.simplemodal.js"></script>
+<script src="search.js"></script>
+</body>
+</html>
