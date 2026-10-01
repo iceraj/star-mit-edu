@@ -5,9 +5,6 @@
   <head>
     <meta content="text/html; charset=utf-8" http-equiv=
     "content-type" />
-    <meta content=
-    "0;url=../media/uploads/star/jnlp/biochem/StarBiochem.jnlp"
-    http-equiv="refresh" />
     <title>
       STAR: Biochem - Start StarBiochem
     </title>
@@ -26,6 +23,33 @@
                    FILE_SUFFIX: '.html',
                    HAS_SOURCE:  false
                 };
+    //]]>
+    </script>
+    <script src="https://cjrtnc.leaningtech.com/4.3/loader.js"
+    type="text/javascript">
+</script>
+    <script src="../media/uploads/star/scripts/cheerpj_launcher.js"
+    type="text/javascript">
+</script>
+    <script type="text/javascript">
+//<![CDATA[
+    starRunInBrowser({
+      name: "StarBiochem",
+      mainClass: "app.StarBiochemMain",
+      jarDir: "/media/uploads/star/jar/biochem2/",
+      jars: [
+        "biochem.jar",
+        "Jmol.jar",
+        "substance.jar",
+        "PackedSamples.jar",
+        "axis.jar",
+        "commons-discovery-0.2.jar",
+        "jaxrpc.jar",
+        "commons-logging-1.0.4.jar",
+        "saaj.jar",
+        "wsdl4j-1.5.1.jar"
+      ]
+    });
     //]]>
     </script>
     <script type="text/javascript">
@@ -154,10 +178,24 @@
               Thank you for trying StarBiochem!
             </p>
             <p>
-              If StarBiochemdoes not start please <a href=
-              "../media/uploads/star/jnlp/biochem/StarBiochem.jnlp"
-              title="Start StarBiochem (Version 2.3)">click
-              here</a>.
+              It runs in this page using <a href="https://cheerpj.com/"
+              title="CheerpJ">CheerpJ</a>, a Java runtime for the
+              browser; no Java installation is needed. The first start
+              downloads the application and may take a minute.
+            </p>
+            <p id="cheerpj-status">
+              Loading StarBiochem&hellip;
+            </p>
+            <div id="cheerpj-container" style=
+            "width: 100%; height: 768px; border: 1px solid #ccc;">
+            </div>
+            <h2>
+              Desktop Java (Web Start)
+            </h2>
+            <p>
+              To run StarBiochem with a local Java installation
+              instead, <a href="../media/uploads/star/jnlp/biochem/StarBiochem.jnlp"
+              title="Start StarBiochem (Version 2.3)">download the JNLP launcher</a>.
             </p>
             <p>
               If you receive an error message and StarBiochem fails
@@ -171,9 +209,9 @@
               "http://www.java.com/en/download/manual.jsp?locale=en&amp;host=www.java.com"
               title="Download Java">Java web site</a>
             </p>
-            <h2>
-              Starting
-            </h2>
+            <h3>
+              Starting with Web Start
+            </h3>
             <p>
               Your browser may prompt you to open JNLP application,
               please click <strong>Open with Web Start

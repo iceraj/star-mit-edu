@@ -6,7 +6,7 @@ The source owner has authorized this full-site archive for republication. See [`
 
 ## Viewing the archive
 
-Open `index.html` from a local static web server or static hosting service. StarGenetics (`genetics/runapp.html`) runs in the browser through CheerpJ; the server must support HTTP Range requests (`python3 scripts/serve_with_range.py 8000 .` locally). Some other legacy Java/Web Start programs, authenticated services, feedback flows, and other server-backed interactions cannot run from static files. External services remain external.
+Open `index.html` from a local static web server or static hosting service. StarGenetics, StarBiochem, and StarORF (their `runapp*.html` pages) run in the browser through CheerpJ; the server must support HTTP Range requests (`python3 scripts/serve_with_range.py 8000 .` locally). Some other legacy Java/Web Start programs, authenticated services, feedback flows, and other server-backed interactions cannot run from static files. External services remain external.
 
 ## Deployment
 

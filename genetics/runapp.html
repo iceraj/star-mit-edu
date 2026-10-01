@@ -28,11 +28,16 @@
     <script src="https://cjrtnc.leaningtech.com/4.3/loader.js"
     type="text/javascript">
 </script>
+    <script src="../media/uploads/star/scripts/cheerpj_launcher.js"
+    type="text/javascript">
+</script>
     <script type="text/javascript">
 //<![CDATA[
-    (function () {
-      var JAR_DIR = "/app/media/uploads/star/jar/genetics2/";
-      var JARS = [
+    starRunInBrowser({
+      name: "StarGenetics",
+      mainClass: "star.genetics.Main",
+      jarDir: "/media/uploads/star/jar/genetics2/",
+      jars: [
         "StarGenetics2.jar",
         // Same as the Web Start JAR, with static short fields made
         // non-final; see scripts/patch_poi_for_cheerpj.py.
@@ -42,29 +47,8 @@
         "jetty-all-7.6.12.v20130726.jar",
         "servlet-api-2.5.jar",
         "json.jar"
-      ];
-
-      async function startStarGenetics() {
-        var status = document.getElementById("cheerpj-status");
-        try {
-          await cheerpjInit();
-          cheerpjCreateDisplay(-1, -1,
-            document.getElementById("cheerpj-container"));
-          status.textContent = "StarGenetics is starting\u2026";
-          var classpath = JARS.map(function (jar) {
-            return JAR_DIR + jar;
-          }).join(":");
-          var exit = cheerpjRunMain("star.genetics.Main", classpath);
-          status.hidden = true;
-          await exit;
-        } catch (e) {
-          status.textContent = "StarGenetics could not start in this " +
-            "browser (" + e + "). Use the Web Start launcher below.";
-        }
-      }
-
-      window.addEventListener("load", startStarGenetics);
-    })();
+      ]
+    });
     //]]>
     </script>
     <script type="text/javascript">
