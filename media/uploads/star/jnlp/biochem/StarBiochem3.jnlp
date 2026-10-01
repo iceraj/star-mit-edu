@@ -1,0 +1,31 @@
+<jnlp spec="1.0+" codebase="http://starapp.mit.edu/star/media/uploads/star/jar/biochem3" href="http://web.mit.edu/star/media/uploads/star/jnlp/biochem/StarBiochem3.jnlp">
+  <information>
+    <title>Star Biochem Beta</title>
+    <vendor>STAR Project</vendor>
+    <homepage href="http://web.mit.edu/star/biochem/"/>
+
+    <description>StarBiochem is a 3D protein viewer that allows students to learn key concepts in structural biology in an interactive manner. This software allows for the visualization and manipulation of many of the Protein Data Bank (http://www.rcsb.org/) molecules in a 3D environment.</description>
+    <description kind="short">StarBiochem is a 3D protein viewer that allows students to learn key concepts in structural biology in an interactive manner.</description>
+    <icon href="/star/media/uploads/project_logos/biochem_new_logo.png"/>
+    <offline-allowed/>
+  </information>
+  <security>
+    <all-permissions/>
+  </security>
+  <resources>
+    <j2se initial-heap-size="384m" max-heap-size="999m" version="1.6+ 1.5+" java-vm-args="-verbose" />
+    <jar href="biochem.jar" main="true"/>
+    <jar href="Jmol.jar"/>
+    <jar href="substance.jar"/>
+    <jar href="PackedSamples.jar"/>
+    <jar href="axis.jar"/>
+    <jar href="commons-discovery-0.2.jar"/>
+    <jar href="jaxrpc.jar"/>
+    <jar href="commons-logging-1.0.4.jar"/>
+    <jar href="saaj.jar"/>
+    <jar href="wsdl4j-1.5.1.jar"/>
+  </resources>
+  <application-desc main-class="app.StarBiochemMain" name="StarBiochem" width="1000" height="700">
+  </application-desc>
+<offline-allowed/>
+</jnlp>
