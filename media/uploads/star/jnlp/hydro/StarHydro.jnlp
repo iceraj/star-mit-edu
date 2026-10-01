@@ -1,0 +1,45 @@
+<jnlp spec="1.0+" codebase="http://star.mit.edu/star/media/uploads/star/jar/hydro" href="http://web.mit.edu/star/media/uploads/star/jnlp/hydro/StarHydro.jnlp">
+  <information>
+    <title>Star Hydro</title>
+    <vendor>STAR Project</vendor>
+    <homepage href="http://web.mit.edu/star/hydro"/>
+    <shortcut online='true'>
+    <desktop/>
+    </shortcut>
+
+    <description>STAR Hydro</description>
+    <offline-allowed/>
+  </information>
+  <security>
+    <all-permissions/>
+  </security>
+  <resources>
+    <j2se initial-heap-size="384m" max-heap-size="999m" version="1.6+ 1.5+" java-vm-args="" />
+    <jar href="StarHydro_r.jar" download="eager" main="false"/>
+    <jar href="StarHydro_r2.jar" download="eager" main="false"/>
+    <jar href="jfreechart-1.0.2.jar" download="eager" main="false"/>
+    <jar href="jcommon-1.0.5.jar" download="eager" main="false"/>
+    <jar href="swingx-0.8.0.jar" download="eager" main="false"/>
+    <jar href="forms-1.1.0.jar" download="eager" main="false"/>
+    <jar href="jlfgr-1_0.jar" download="eager" main="false"/>
+    <jar href="miglayout15-swing.jar" download="eager" main="false"/>
+    <jar href="swing-worker.jar" download="eager" main="false"/>
+    <jar href="substance.jar" download="eager" main="false"/>
+    <jar href="apache-ant-compress.jar" download="eager" main="false"/>
+    <jar href="PluginCommons.jar" download="eager" main="false"/>
+    <jar href="SignalSystem.jar" download="eager" main="false"/>
+    <jar href="poi-3.0.2-FINAL-20080204.jar" download="eager" main="false"/>
+
+<extension href="http://download.java.net/media/java3d/webstart/early-access/java3d-1.5.2-exp.jnlp"/>
+<!-- <extension href="http://starexhibit.mit.edu/star/java3d/1.5.2/java3d-latest.jnlp"/> -->
+<property name="j3d.rend" value="ogl"/>
+<property name="sun.java2d.noddraw" value="true"/> 
+<property name="sun.java2d.d3d" value="false"/>
+<property name="j3d.renderLock" value="true"/>
+<property name="j3d.allowSoleUser" value="true"/>
+  </resources>
+  <application-desc main-class="app.Main" name="StarHydro" width="1024" height="768">
+	<argument>OpenStarHydro2</argument>
+  </application-desc>
+<offline-allowed/>
+</jnlp>
