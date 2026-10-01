@@ -1,4 +1,4 @@
-<jnlp spec="1.0+" codebase="http://star.mit.edu/media/uploads/star/jar/biochem2" href="http://star.mit.edu/media/uploads/star/jnlp/biochem/StarBiochem.jnlp">
+<jnlp spec="1.0+" codebase="https://star-mit-edu.pages.dev/media/uploads/star/jar/biochem2/" href="https://star-mit-edu.pages.dev/media/uploads/star/jnlp/biochem/StarBiochem.jnlp">
   <information>
     <title>Star Biochem</title>
     <vendor>STAR Project</vendor>
