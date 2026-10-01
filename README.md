@@ -11,3 +11,4 @@ Open `index.html` from a local static web server or static hosting service. Some
 ## Deployment
 
 The planned staging hostname is `star.bugaco.com`. The `star.mit.edu` hostname is a separate, conditional DNS change and may only be configured by an authorized MIT domain administrator after staging and TLS checks pass.
+
