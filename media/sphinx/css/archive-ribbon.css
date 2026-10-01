@@ -1,0 +1,32 @@
+.archive-ribbon-corner {
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  right: 0;
+  width: 260px;
+  height: 205px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+@media (min-width: 1441px) {
+  .archive-ribbon-corner {
+    right: calc((100vw - 1440px) / 2);
+  }
+}
+
+.archive-ribbon {
+  position: absolute;
+  top: 60px;
+  right: -90px;
+  width: 330px;
+  height: 60px;
+  box-sizing: border-box;
+  transform: rotate(45deg);
+  border-top: 3px solid #aeb6be;
+  border-bottom: 3px solid #aeb6be;
+  background: #155fa0;
+  color: #ffffff;
+  font: 700 24pt/54px Arial, Helvetica, sans-serif;
+  text-align: center;
+}
