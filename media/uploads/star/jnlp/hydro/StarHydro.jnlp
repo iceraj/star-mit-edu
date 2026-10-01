@@ -1,4 +1,4 @@
-<jnlp spec="1.0+" codebase="http://star.mit.edu/star/media/uploads/star/jar/hydro" href="http://web.mit.edu/star/media/uploads/star/jnlp/hydro/StarHydro.jnlp">
+<jnlp spec="1.0+" codebase="https://star-mit-edu.pages.dev/media/uploads/star/jar/hydro/" href="https://star-mit-edu.pages.dev/media/uploads/star/jnlp/hydro/StarHydro.jnlp">
   <information>
     <title>Star Hydro</title>
     <vendor>STAR Project</vendor>

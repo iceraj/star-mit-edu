@@ -1,4 +1,4 @@
-<jnlp spec="1.0+" codebase="http://starapp.mit.edu/star/media/uploads/star/jar/hydro" href="http://starapp.mit.edu/star/media/uploads/star/jnlp/hydro/StarHydro_beta.jnlp">
+<jnlp spec="1.0+" codebase="https://star-mit-edu.pages.dev/media/uploads/star/jar/hydro/" href="https://star-mit-edu.pages.dev/media/uploads/star/jnlp/hydro/StarHydro_beta.jnlp">
   <information>
     <title>Star Hydro - beta</title>
     <vendor>STAR Project</vendor>
