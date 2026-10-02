@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv=
+    "content-type" />
+    <title>
+      STAR - Visitor Map
+    </title>
+      <link href="/media/sphinx/css/archive-ribbon.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+  <script type="text/javascript">
+
+      function initialize() {
+            if (GBrowserIsCompatible()) {
+	            var map = new GMap2(document.getElementById("map_canvas"));
+	            map.setCenter(new GLatLng(37.4419, -122.1419), 13);
+	            map.setUIToDefault();
+          }
+     }
+
+    </script>
+    <body onLoad='initialize()'>
+    <div class="archive-ribbon-corner">
+      <div class="archive-ribbon">Archive</div>
+    </div>
+              <script src="http://maps.google.com/maps?file=api&v=2&key=ABQIAAAAZPWz6TtOlQ7CWQE9GEhOlxS_0coEi0wuoo2bxrGtjDqsb5ZU7xQN89F0J3BVp65uVV3crl5tLpspSw"
+              type="text/javascript">
+      </script> 
+      <div id="map_canvas" style="width: 500px; height: 500px"></div>
+
+      </body>
+      </html>

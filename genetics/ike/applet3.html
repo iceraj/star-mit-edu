@@ -1,0 +1,76 @@
+<html>
+	<link href="/media/sphinx/css/archive-ribbon.css" media="screen" rel="stylesheet" type="text/css" />
+<body>
+    <div class="archive-ribbon-corner">
+      <div class="archive-ribbon">Archive</div>
+    </div>
+		<h1> test </h1>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script src=
+		"http://www.java.com/js/deployJava.js"></script>
+
+	<div style='border:1px solid'>
+	<script>
+    <!-- applet id can be used to get a reference to the applet object -->
+    var attributes = { id:'mathApplet', width:1024, height:768, jnlp_href: 'http://starapp.mit.edu/star/media/uploads/star/jnlp/genetics/StarGenetics3_applet.jnlp'} ;
+    var parameters = {jnlp_href: 'http://starapp.mit.edu/star/media/uploads/star/jnlp/genetics/StarGenetics3_applet.jnlp', image:'funny-futurama-gif-humor-lol-Favim.com-297366.gif', boxcolor:'red', boxborder:'true', centerimage:'true' };
+    //    deployJava.runApplet(attributes, parameters, '1.6');
+    </script>
+    <applet id='mathApplet' width=1024 height=768 code='star.genetics.v2.ui.Applet.class' 
+    	codebase='http://starapp-r1.mit.edu/star/media/uploads/star/jar/genetics3_applet'
+	archive='StarGenetics3_applet.jar, poi-3.2-FINAL-20081019.jar, miglayout15-swing.jar, cos.jar,json.jar'></applet>
+		</div>
+		<input type='button' id='start_applet' value='Run'>
+		<input type='button' id='save' value='Save'>
+		<input type='text' id='out' value='click save to save'>
+		<input type='button' id='work' value='Work'>
+		<img id='myimage'>
+		<textarea id='mytext'></textarea>
+		<script>
+			$(function() {
+				$('#start_applet').click(function() {
+					var div = $(a).parent(); div.html( div.html());
+				});
+				var restart_applet = function() {
+					var a = document.getElementById('mathApplet');
+					if( a && a.isStarted )
+					{
+						if( a.isStarted() == 'started' )
+						{
+							var div = $(a).parent(); div.html( div.html());
+							return;
+						}
+					}
+					setTimeout( restart_applet, 500 );
+				};
+				if( navigator.platform == 'MacIntel' ) 
+				{
+					//setTimeout( restart_applet , 750 ) ;
+				}
+				$('#save').click(function() {
+					var out = $('#out');
+					var a = document.getElementById('mathApplet');
+					if( a )
+					{
+						$('#out').attr('value',a.state());
+					}
+
+				});
+				$('#work').click(function() {
+					token_id = Math.random();
+					a = document.getElementById('mathApplet');
+					a.executeCommand("{'command':'register','authenticate':{},'token':'"+token_id+"','url':'http://starapp.mit.edu/star/media/uploads/genetics/stargenetics_tutorial_1.sgz'}")
+					strains = JSON.parse( a.executeCommand("{'authenticate':{},'token':'"+token_id+"','command':'liststrains','creatures':[]}"));
+					strain_id = strains.strains[0].id;
+					creatures = JSON.parse( a.executeCommand("{'authenticate':{},'token':'"+token_id+"','command':'describecreature','creatures':[{'id':'"+strain_id+"'}]}") ) ;
+					data = creatures.creatures[0].image;
+					$('#myimage')[0].src=data;
+					$('#mytext')[0].innerHTML=JSON.stringify(creatures.creatures[0].properties);
+				});
+			});
+
+    </script>
+
+    </body>
+
+</html>

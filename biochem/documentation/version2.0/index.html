@@ -1,0 +1,1641 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv=
+    "content-type" />
+    <title>
+      STAR: Biochem - User Manual Version 2.0
+    </title>
+    <link href=
+    "../../../media/sphinx/css/neuton_nobile_pygments.css" media=
+    "screen" rel="stylesheet" type="text/css" />
+    <link href="../../../media/sphinx/css/pylons.css" media=
+    "screen" rel="stylesheet" type="text/css" />
+    <link href=
+    "../../../media/css/projectscroll_and_breadcrumb.css" media=
+    "screen" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+//<![CDATA[
+                var DOCUMENTATION_OPTIONS = {
+                   URL_ROOT:    '',
+                   VERSION:     '',
+                   COLLAPSE_INDEX: false,
+                   FILE_SUFFIX: '.html',
+                   HAS_SOURCE:  false
+                };
+    //]]>
+    </script>
+    <script type="text/javascript">
+//<![CDATA[
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1048253-4']);
+
+    _gaq.push(['_setDomainName', '.mit.edu']);
+
+    _gaq.push(['_setAllowLinker', true]);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    //]]>
+    </script>
+  </head>
+  <body>
+    <div class="archive-ribbon-corner">
+      <div class="archive-ribbon">Archive</div>
+    </div>
+    <div class="header-small">
+      <div class="logo-small">
+        <div class="logo-text">
+          <a href="../../index.html">StarBiochem</a>
+        </div>
+        <div class="project_scroll">
+          <a href="../../../index.html"><img alt="Star" src=
+          "../../../media/uploads/project_logos/home_logo.png"
+          title="Star" /></a>
+          <p>
+            Home
+          </p>
+        </div>
+        <div class="project_scroll">
+          <a href="../../index.html"><img alt="Biochem" src=
+          "../../../media/uploads/project_logos/biochem_new_logo.png"
+          title="Biochem" /></a>
+          <p>
+            Biochem
+          </p>
+        </div>
+        <div class="project_scroll">
+          <a href="../../../CellBio/index.html"><img alt="CellBio"
+          src=
+          "../../../media/uploads/project_logos/starcellbio_icon_rgb_lg.png"
+          title="CellBio" /></a>
+          <p>
+            CellBio
+          </p>
+        </div>
+        <div class="project_scroll">
+          <a href="../../../genetics/index.html"><img alt=
+          "Genetics" src=
+          "../../../media/uploads/project_logos/genetics_fly_logo.png"
+          title="Genetics" /></a>
+          <p>
+            Genetics
+          </p>
+        </div>
+        <div class="project_scroll">
+          <a href="../../../orf/index.html"><img alt="Orf" src=
+          "../../../media/uploads/project_logos/orf.png" title=
+          "Orf" /></a>
+          <p>
+            Orf
+          </p>
+        </div>
+        <div class="project_scroll">
+          <a href="../../../hydro/index.html"><img alt="Hydro" src=
+          "../../../media/uploads/project_logos/hydro_icon.png"
+          title="Hydro" /></a>
+          <p>
+            Hydro
+          </p>
+        </div>
+        <div class="project_scroll">
+          <a href="../../../molsim/index.html"><img alt="Molsim"
+          src="../../../media/uploads/project_logos/molsim_v2.PNG"
+          title="Molsim" /></a>
+          <p>
+            Molsim
+          </p>
+        </div>
+        <div class="project_scroll">
+          <a href="../../../cluster/index.html"><img alt="Cluster"
+          src=
+          "../../../media/uploads/project_logos/starcluster_logo.png"
+          title="Cluster" /></a>
+          <p>
+            Cluster
+          </p>
+        </div>
+        <div class="project_scroll">
+          <a href="../../../hpc/index.html"><img alt="Hpc" src=
+          "../../../media/uploads/project_logos/hpc_new.png" title=
+          "Hpc" /></a>
+          <p>
+            Hpc
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="related">
+      <h3>
+        star Breadcrumb
+      </h3>
+      <ul>
+        <li>
+          <a href="../../../index.html">star</a> <span>&gt;</span>
+        </li>
+        <li>
+          <a href="../../index.html">biochem</a> <span>&gt;</span>
+          <em>User Manual Version 2.0</em>
+        </li>
+      </ul>
+    </div>
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            <h1>
+              <a id="top" name="top"></a>StarBiochem User Manual
+              (Version 2.0)<br />
+            </h1>
+            <hr />
+            <ol>
+              <li>
+                <a href="#welcome">Welcome to StarBiochem</a>
+              </li>
+              <li>
+                <a href="#opening">Opening StarBiochem</a>
+              </li>
+              <li>
+                <a href="#ataglance">StarBiochem at a glance</a>
+              </li>
+              <li>
+                <a href="#loading">Loading a protein structure</a>
+              </li>
+              <li>
+                <a href="#manipulating">Manipulating the default
+                view</a>
+              </li>
+              <li>
+                <a href="#visualizing">Visualizing atoms and
+                bonds</a>
+              </li>
+              <li>
+                <a href="#displaying">Displaying molecular
+                structures</a>
+              </li>
+              <li>
+                <a href="#additional">Additonal Features</a>
+              </li>
+            </ol>
+            <h1>
+              <a id="welcome" name="welcome"></a>Welcome to
+              StarBiochem 2.0
+            </h1>
+            <p>
+              StarBiochem is a 3D protein viewer. StarBiochem runs
+              on standard Linux, Windows and Mac computers.
+            </p>
+            <p>
+              <a href="#top">Return to top</a>
+            </p>
+            <h1>
+              <a id="opening" name="opening"></a>Opening
+              StarBiochem 2.0
+            </h1>
+            <p>
+              To get started with StarBiochem:
+            </p>
+            <ol>
+              <li>
+                <p>
+                  Navigate to <a href=
+                  "../../version_2.0/index.html">http://web.mit.edu/star/biochem/version_2.0</a>
+                </p>
+              </li>
+              <li>
+                <p>
+                  Click on the <span style="color: #ff0000;">Start
+                  <span style="color: #333333;">button to launch
+                  the StarBiochem application.</span></span>
+                </p>
+              </li>
+              <li>Click <span style="color: #ff0000;">Trust
+              <span style="color: #333333;">when a prompt appears
+              asking if you trust the certificate.</span></span>
+              </li>
+            </ol>
+            <p>
+              <a href="#top">Return to top</a>
+            </p>
+            <h1>
+              <span style="color: #ff0000;"><span style=
+              "color: #333333;"><a id="ataglance" name=
+              "ataglance"></a>StarBiochem at a glance</span></span>
+            </h1>
+            <p>
+              <span style="color: #ff0000;"><span style=
+              "color: #333333;">This is the view you will see when
+              you open StarBiochem.<br /></span></span>
+            </p>
+            <p>
+              <img alt="StarBiochem Getting Started Screenshot"
+              height="537" src=
+              "../../../media/uploads/biochem/images/version_2-0/starbiochem_splashscreen_view_v2-0.png"
+              title="StarBiochem Getting Started Screenshot" width=
+              "900" />
+            </p>
+            <p>
+              <a href="#top">Return to top</a>
+            </p>
+            <h1>
+              <a id="loading" name="loading"></a>Loading a protein
+              structure
+            </h1>
+            <p>
+              StarBiochem enables the visualization of molecules
+              encoded within the Protein Data Bank (PDB) files. PDB
+              files are named by a four-character ID such as
+              “1GXX”. You may load files directly from the PDB, the
+              <span style="color: #ff0000;">Samples</span> menu or
+              open files stored locally on your computer.
+            </p>
+            <ol>
+              <li>
+                <p>
+                  Click on <span style="color: #ff0000;">Import
+                  -&gt; RCSB (Protein Data Bank)</span><span style=
+                  "color: #ff0000;"><span style=
+                  "color: #333333;"><span style=
+                  "color: #000000;">.</span><br /></span></span>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <span style="color: #ff0000;"><span style=
+                  "color: #333333;">Enter the four-character ID of
+                  a PBD file (eg. 3D9S), click <span style=
+                  "color: #ff0000;">Open</span>.<br />
+                  <br />
+                  <img alt="Search Protein Data Bank" height="117"
+                  src=
+                  "../../../media/uploads/biochem/images/version_2-0/starbiochem_pdb_search_v2-0.png"
+                  title="Search Protein Data Bank" width=
+                  "367" /></span></span> <span style=
+                  "color: #ff0000;"><span style=
+                  "color: #333333;"><br /></span></span>
+                </p>
+              </li>
+              <li>
+                <p>
+                  When the search results appear, choose the
+                  desired PDB file and click <span style=
+                  "color: #ff0000;">Open<span style=
+                  "color: #000000;">.<br /></span><br />
+                  <img alt="Results of Protein Data Bank Search"
+                  height="279" src=
+                  "../../../media/uploads/biochem/images/version_2-0/starbiochem_pdb_search_results_v2-0.png"
+                  title="Results of Protein Data Bank Search"
+                  width="367" /><br /></span>
+                </p>
+              </li>
+            </ol>
+            <ul>
+              <li>
+                <p>
+                  Alternatively, select a PDB file from list found
+                  in the <span style=
+                  "color: #ff0000;">Samples</span> menu.
+                </p>
+              </li>
+              <li>To load a PDB file stored locally on your
+              computer, click on <span style="color: #ff0000;">File
+              -&gt; Open</span> and select the desired file.
+              <span style="color: #ff0000;"><span style=
+              "color: #333333;"><br /></span></span>
+              </li>
+            </ul>
+            <p>
+              Upon opening a PDB file in StarBiochem, you will see
+              a 3D model of the protein in the viewer.
+            </p>
+            <h1>
+              <img alt="StarBiochem Default View" height="561" src=
+              "../../../media/uploads/biochem/images/version_2-0/starbiochem_default_view_v2-0.png.png"
+              title="StarBiochem Default View" width="900" />
+            </h1>
+            <p>
+              <strong>Note:<br /></strong>Each tab contains
+              <span style="color: #ff0000;">Automatic</span> and
+              <span style="color: #ff0000;">Manual</span> options
+              which allow you to choose when the changes made are
+              applied to the image.
+            </p>
+            <ul>
+              <li>
+                <span style="color: #ff0000;">Automatic</span>
+                immediately applies selection, size or translucency
+                changes.
+              </li>
+              <li>
+                <span style="color: #ff0000;">Manual</span> allows
+                you to make mutiple changes before clicking the
+                <span style="color: #ff0000;">Apply</span> button.
+                This is usually helpful when isolating a specific
+                portion of a structure or making mutiple changes to
+                a large structure which may require more time to
+                render.
+              </li>
+            </ul>
+            <p>
+              When multiple PBD files are open, they can be closed
+              individually or all at once by <span style=
+              "color: #000000;">clicking</span> on <span style=
+              "color: #ff0000;">File -&gt; Close<span style=
+              "color: #000000;">, or</span> <span style=
+              "color: #333333;"><span style="color: #ff0000;">File
+              -&gt; Close All <span style=
+              "color: #000000;">respectively.</span></span></span></span>
+            </p>
+            <p>
+              <a href="#top">Return to top</a>
+            </p>
+            <h1>
+              <a id="manipulating" name=
+              "manipulating"></a>Manipulating the default view.
+            </h1>
+            <p>
+              To change the view of the structure:
+            </p>
+            <p>
+              <img alt="Change the view of structure" height="243"
+              src=
+              "../../../media/uploads/biochem/images/version_2-0/starbiochem_viewing_instructions_v2-0.png"
+              title="Change Structure View" width="832" />
+            </p>
+            <p>
+              <a href="#top">Return to top</a>
+            </p>
+            <h1>
+              <a id="visualizing" name=
+              "visualizing"></a>Visualizing atoms and bonds
+            </h1>
+            <p>
+              There are two different 3D models that are used by
+              most protein 3D viewers, including StarBiochem, to
+              visually represent the structure of molecules:
+            </p>
+            <p>
+              <strong>ball-and-stick model:</strong> the atom's
+              nucleus is drawn as a ball and covalent bonds
+              connection atoms are drawn as lines.
+            </p>
+            <ul>
+              <li>
+                <span style=
+                "text-decoration: underline;">Advantage:</span>
+                allows a better view of how atoms bond together.
+              </li>
+            </ul>
+            <p>
+              <strong>space-filled model:</strong> atoms are drawn
+              as spheres, whose size represent the physical space
+              an atom occupies (the nucleus plus its surrounding
+              electrons, also called van der Waals radius).
+            </p>
+            <ul>
+              <li>
+                <span style=
+                "text-decoration: underline;">Advantage:</span>
+                allows for a more accurat representation of the
+                size of atoms and molecules.
+              </li>
+            </ul>
+            <p>
+              You can switch from the
+              <strong>ball-and-stick</strong> model to the
+              <strong>space-filled</strong> model in StarBiochem by
+              increasing the size render of the atoms in the
+              structure.
+            </p>
+            <ul>
+              <li>
+                <span style="color: #000000;">Click</span> on the
+                <span style="color: #ff0000;">Primary</span> tab.
+                By default the atom size is 20% which represents
+                the <strong>ball-and-stick</strong> model. Move the
+                <span style="color: #ff0000;">Atoms</span> size
+                slider completely to the right, 100%, to switch to
+                the <strong>space-filled</strong> model.
+              </li>
+            </ul>
+            <p>
+              <img alt="Space Fill View StarBiochem" height="561"
+              src=
+              "../../../media/uploads/biochem/images/version_2-0/starbiochem_spacefilled_view_v2-0.png"
+              title="Space Fill View StarBiochem" width="900" />
+            </p>
+            <p>
+              <strong>The default coloring scheme for atoms is as
+              follows:</strong> <strong><span style=
+              "color: #808080;"><br /></span></strong>
+            </p>
+            <ul>
+              <li>
+                <strong><span style="color: #808080;">Carbon (C)
+                atoms grey spheres<br /></span></strong>
+              </li>
+              <li>
+                <strong><span style="color: #808080;"><span style=
+                "color: #ff0000;">Oxygen (O) red
+                spheres<br /></span></span></strong>
+              </li>
+              <li>
+                <strong><span style="color: #808080;"><span style=
+                "color: #ff0000;"><span style=
+                "color: #3366ff;">Nitrogen (N) blue
+                spheres<br /></span></span></span></strong>
+              </li>
+              <li>
+                <strong><span style="color: #808080;"><span style=
+                "color: #ff0000;"><span style=
+                "color: #ff9900;">Sulfur (S) yellow
+                spheres<br /></span></span></span></strong>
+              </li>
+            </ul>
+            <p>
+              <span style="color: #808080;"><span style=
+              "color: #ff0000;"><span style=
+              "color: #ff9900;"><span style=
+              "color: #333333;"><span style=
+              "color: #3366ff;"><span style=
+              "color: #333333;">(Hydrogen atoms are shown as white
+              though they are rarely
+              depicted)<br /></span></span></span></span></span></span>
+            </p>
+            <p>
+              <a href="#top">Return to top</a>
+            </p>
+            <h1>
+              <span style="color: #808080;"><span style=
+              "color: #ff0000;"><span style=
+              "color: #ff9900;"><span style=
+              "color: #333333;"><span style=
+              "color: #3366ff;"><span style=
+              "color: #333333;"><a id="displaying" name=
+              "displaying"></a>Displaying molecular
+              structure</span></span></span></span></span></span>
+            </h1>
+            <p>
+              The <strong>primary structure</strong> of a protein
+              lists the amino acids that make up a protein’s
+              sequence or the nucleotides that make up a DNA
+              segment, but does not describe their corresponding
+              shape. The <strong>secondary structure</strong> of a
+              protein refers to how stretches of amino acids within
+              a protein chain are arranged in space in
+              characteristic patterns such as helices, sheets, and
+              coils. The <strong>tertiary structure</strong>
+              describes the folded shape of a protein chain and is
+              determined by characteristic properties of the amino
+              acid residues, such as acidic, basic, polar, and
+              non-polar. The <strong>quaternary structure</strong>
+              indicates the relationship between the chains of a
+              molecule.
+            </p>
+            <p>
+              <strong>Displaying primary structures:</strong>
+            </p>
+            <ul>
+              <li>Click on the <span style=
+              "color: #ff0000;">Primary <span style=
+              "color: #333333;">tab.</span></span>
+              </li>
+            </ul>
+            <p>
+              <img alt="Primary Structures" height="743" src=
+              "../../../media/uploads/biochem/images/version_2-0/starbiochem_primary_view_v2-0.png"
+              title="Primary Structures" width="572" />
+            </p>
+            <ul>
+              <li>
+                <span style="color: #ff0000;"><span style=
+                "color: #333333;">This view shows a numbered list
+                of amino acids and options for viewing the backbone
+                and sidechain. By default all of the amino acids
+                are selected.<br /></span></span>
+              </li>
+              <li>
+                <span style="color: #ff0000;"><span style=
+                "color: #333333;">Amino acids consist of two parts,
+                backbone and sidechain. Unchecking the box beside
+                backbone or sidechain allows changes to apply only
+                the part that is checked.<br /></span></span>
+              </li>
+            </ul>
+            <p>
+              <span style="color: #808080;"><span style=
+              "color: #ff0000;"><span style=
+              "color: #ff9900;"><span style=
+              "color: #333333;"><span style=
+              "color: #3366ff;"><span style=
+              "color: #333333;"><strong>Displaying secondary
+              structures:</strong></span></span></span></span></span></span>
+            </p>
+            <ul>
+              <li>Click on the <span style=
+              "color: #ff0000;">Secondary <span style=
+              "color: #333333;">tab</span></span>.
+              </li>
+            </ul>
+            <p>
+              <img alt="Secondary Structures" height="561" src=
+              "../../../media/uploads/biochem/images/version_2-0/starbiochem_secondary_view_v2-0.png"
+              title="Secondary Structures" width="900" />
+            </p>
+            <ul>
+              <li>This view shows a numbered list of the helices,
+              sheets and/or coils with their amino acids. By
+              default the structures size is set to zero.
+              </li>
+              <li>To display the secondary structures move the
+              <span style="color: #ff0000;">Size</span> slider to
+              the right to increase the size of the structure(s).
+              Check or uncheck the box beside each structure as
+              needed.
+              </li>
+            </ul>
+            <p>
+              <strong>Displaying tertiary structures:</strong>
+            </p>
+            <ul>
+              <li>Click on the <span style=
+              "color: #ff0000;">Tertiary <span style=
+              "color: #333333;">tab</span></span>.
+              </li>
+            </ul>
+            <p>
+              <strong><img alt="Tertiary Structures" height="561"
+              src=
+              "../../../media/uploads/biochem/images/version_2-0/starbiochem_tertiary_view_v2-0.png"
+              title="Tertiary Structures" width=
+              "900" /><br /></strong>
+            </p>
+            <ul>
+              <li>
+                <span style="color: #ff0000;"><span style=
+                "color: #333333;">This view shows a numbered list
+                of amino acids. The default view will mirror
+                the</span></span> <span style=
+                "color: #ff0000;"><span style=
+                "color: #333333;">selections and sizes from
+                the</span></span> <span style=
+                "color: #ff0000;"><span style=
+                "color: #333333;"><span style=
+                "color: #ff0000;">Primary</span> tab.</span></span>
+              </li>
+              <li>To display the residue colors click on the
+              buttons beside the amino types, e.g. <span style=
+              "color: #ff0000;">polar</span>, <span style=
+              "color: #ff0000;">nonpolar</span>, etc.
+              </li>
+              <li>Click on the <span style=
+              "color: #ff0000;">default coloring</span> button to
+              return to the default coloring scheme.
+              </li>
+            </ul>
+            <p>
+              <strong>Displaying quaternary structures:</strong>
+            </p>
+            <ul>
+              <li>Click on the <span style=
+              "color: #ff0000;">Quaternary</span> tab.
+              </li>
+            </ul>
+            <p>
+              <img alt="Quaternary Structures" height="561" src=
+              "../../../media/uploads/biochem/images/version_2-0/starbiochem_quaternary_view_v2-0.png"
+              title="Quaternary Structures" width="900" />
+            </p>
+            <ul>
+              <li>
+                <span style="color: #ff0000;"><span style=
+                "color: #333333;">This view will list the
+                quarternary chains which</span></span> <span style=
+                "color: #ff0000;"><span style="color: #333333;">are
+                alphabetically or numerically identified (e.g.
+                chain A, chain B)</span></span><span style=
+                "color: #ff0000;"><span style=
+                "color: #333333;">.</span></span> <span style=
+                "color: #ff0000;"><span style="color: #333333;">By
+                default the surfaces' size is set to
+                zero.<br /></span></span>
+              </li>
+              <li>
+                <span style="color: #ff0000;"><span style=
+                "color: #333333;">To display the quarternary
+                structures (chains) increase the size by moving the
+                size slider to right.</span></span>
+              </li>
+            </ul>
+            <p>
+              <strong>Displaying nucleic acids:</strong>
+            </p>
+            <p>
+              Click on the <span style="color: #ff0000;">Nucleic
+              Acids</span> tab.
+            </p>
+            <p>
+              <img alt="Nucleic Acids" height="561" src=
+              "../../../media/uploads/biochem/images/version_2-0/starbiochem_nucleic_acids_view_v2-0.png"
+              title="Nucleic Acids" width="900" />
+            </p>
+            <ul>
+              <li>This view will show a list of the nucleic acids
+              and options for selecting some or all of the nucliec
+              structures (<span style=
+              "color: #ff0000;">bases</span>, <span style=
+              "color: #ff0000;">phosphates</span>, or
+                <span style="color: #ff0000;">sugars</span>).
+              </li>
+            </ul>
+            <p>
+              <a href="#top">Return to top</a>
+            </p>
+            <h1>
+              <span style="color: #808080;"><span style=
+              "color: #ff0000;"><span style=
+              "color: #ff9900;"><span style=
+              "color: #333333;"><span style=
+              "color: #3366ff;"><span style=
+              "color: #333333;"><a name=
+              "Selecting atoms and structures"></a>Selecting Atoms
+              and
+              Structures</span></span></span></span></span></span>
+            </h1>
+            <p>
+              StarBiochem allows for selection of individual or
+              groups of atoms and structures.
+            </p>
+            <p>
+              <strong>Selecting Sequences (Primary, Secondary and
+              Tertiary):</strong>
+            </p>
+            <ul>
+              <li>To select a single item in the sequence list
+              simply <span style="color: #000000;">click</span> on
+              it.
+              </li>
+              <li>To select multiple items individually,
+              <span style="color: #000000;">click</span> on the
+              first item, press <span style=
+              "color: #ff0000;">Ctrl</span> (PC/Linux) or
+              <span style="color: #ff0000;">Apple</span> (Mac) and
+              click on the remaining sequences desired.
+              </li>
+              <li>To select multiple amino acids as a group click
+              on the first amino acid, press <span style=
+              "color: #ff0000;">Shift</span> and click on the last
+              amno acid.
+              </li>
+              <li>To select multiple groups of amino acids, click
+              on the first amino acid, press <span style=
+              "color: #ff0000;">Shift</span> and click on the last
+              amino acid in the first group. Then press
+                <span style="color: #ff0000;">Ctrl</span>
+                (PC/Linux) or <span style=
+                "color: #ff0000;">Apple</span> (Mac) and click on
+                the first amino acid of the next group, press
+                <span style="color: #ff0000;">Ctrl</span>
+                (PC/Linux) or <span style=
+                "color: #ff0000;">Apple</span> (Mac)<span style=
+                "color: #ff0000;">+Shift</span> and click on the
+                last amino acid of the group.
+              </li>
+            </ul>
+            <p>
+              <strong>Selecting Quaternary Sequences:</strong>
+            </p>
+            <ul>
+              <li>
+                <span style="color: #ff0000;">Click</span> on a
+                list entry to select a particular chain in the
+                viewer. The <span style=
+                "color: #ff0000;">Quaternary</span> tab does not
+                allow partial chain selections.
+              </li>
+              <li>To select multiple chains, press <span style=
+              "color: #ff0000;">Ctrl</span> while clicking on each
+              chain.
+              </li>
+              <li>Adjust the size slider under <span style=
+              "color: #ff0000;">Surfaces</span> to change the
+              amount of surface shown.
+              </li>
+              <li>Move the translucency slider to the right under
+              <span style="color: #ff0000;">Surfaces</span> to
+              reveal the amino acids beneath the surfaces.
+              </li>
+            </ul>
+            <h1>
+              <a id="additional" name="additional"></a>Additional
+              Features
+            </h1>
+            <p>
+              <strong>Displaying water atoms</strong>
+            </p>
+            <p>
+              Some proteins have the addition of a <span style=
+              "color: #ff0000;">Water</span> tab. Select this tab
+              to see the oxygens that make up water molecules
+              within the protein (hydrogens rarely defined).
+            </p>
+            <p>
+              <img alt="Water" height="606" src=
+              "../../../media/uploads/biochem/images/version_2-0/starbiochem_water_view_v2-0.png"
+              title="Water" width="900" />
+            </p>
+            <p>
+              <strong>Displaying hetero atoms</strong><br />
+              Some proteins have the addition of a <span style=
+              "color: #ff0000;">Hetero Atoms</span> tab. Select
+              this to view any hetero atoms within the protein and
+              change their size in the viewer.
+            </p>
+            <p>
+              <img alt="Hetero Atoms" height="561" src=
+              "../../../media/uploads/biochem/images/version_2-0/starbiochem_hetero_view_v2-0.png.png"
+              title="Hetero Atoms" width="900" />
+            </p>
+            <p>
+              <strong><br /></strong>
+            </p>
+            <p>
+              <a href="#top">Return to top</a>
+            </p>
+            <div id="_mcePaste" style=
+            "position: absolute; left: -10000px; top: 0px; width: 1px; height: 1px; overflow: hidden;">
+            <h1>
+                Contents (Version 2)<br />
+              </h1>
+              <hr />
+              <ol>
+                <li>
+                  <a href=
+                  "../version2.html#welcome">Welcome
+                  to StarBiochem</a>
+                </li>
+                <li>
+                  <a href=
+                  "../version2.html#opening">Opening
+                  StarBiochem</a>
+                </li>
+                <li>
+                  <a href=
+                  "../version2.html#ataglance">StarBiochem
+                  at a glance</a>
+                </li>
+                <li>
+                  <a href=
+                  "../version2.html#loading">Loading
+                  a protein structure</a>
+                </li>
+                <li>
+                  <a href=
+                  "../version2.html#manipulating">
+                  Manipulating the default view</a>
+                </li>
+                <li>
+                  <a href=
+                  "../version2.html#visualizing">Visualizing
+                  atoms and bonds</a>
+                </li>
+                <li>
+                  <a href=
+                  "../version2.html#displaying">Displaying
+                  molecular structures</a>
+                </li>
+                <li>
+                  <a href=
+                  "../version2.html#additional">Additonal
+                  Features</a>
+                </li>
+              </ol>
+              <h1>
+                <a id="welcome" name="welcome"></a>Welcome to
+                StarBiochem
+              </h1>
+              <p>
+                StarBiochem is a 3D protein viewer. StarBiochem
+                runs on standard Linux, Windows and Mac computers.
+              </p>
+              <p>
+                <a href=
+                "../version2.html#top">Return to
+                top</a>
+              </p>
+              <h1>
+                <a id="opening" name="opening"></a>Opening
+                StarBiochem
+              </h1>
+              <p>
+                To get started with StarBiochem:
+              </p>
+              <ol>
+                <li>
+                  <p>
+                    Navigate to <a href=
+                    "http://web.mit.edu/star/biochem/">http://web.mit.edu/star/biochem</a>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Click on the <span style=
+                    "color: #ff0000;">Start <span style=
+                    "color: #333333;">button to launch the
+                    StarBiochem application.</span></span>
+                  </p>
+                </li>
+                <li>Click <span style="color: #ff0000;">Trust
+                <span style="color: #333333;">when a prompt appears
+                asking if you trust the certificate.</span></span>
+                </li>
+              </ol>
+              <p>
+                <a href=
+                "../version2.html#top">Return to
+                top</a>
+              </p>
+              <h1>
+                <span style="color: #ff0000;"><span style=
+                "color: #333333;"><a id="ataglance" name=
+                "ataglance"></a>StarBiochem at a
+                glance</span></span>
+              </h1>
+              <p>
+                <span style="color: #ff0000;"><span style=
+                "color: #333333;">This is the view you will see
+                when you open StarBiochem.<br /></span></span>
+              </p>
+              <p>
+                <img alt="StarBiochem Getting Started Screenshot"
+                height="574" src=
+                "../../../media/uploads/biochem/images/screenshot_starbiochem.png"
+                title="StarBiochem Getting Started Screenshot"
+                width="820" />
+              </p>
+              <p>
+                <a href=
+                "../version2.html#top">Return to
+                top</a>
+              </p>
+              <h1>
+                <a id="loading" name="loading"></a>Loading a
+                protein structure
+              </h1>
+              <p>
+                StarBiochem enables the visualization of molecules
+                encoded within the Protein Data Bank (PDB) files.
+                PDB files are named by a four-character ID such as
+                “1GXX”. You may load files directly from the PDB,
+                the <span style="color: #ff0000;">Samples</span>
+                menu or open files stored locally on your computer.
+              </p>
+              <ol>
+                <li>
+                  <p>
+                    Click on <span style="color: #ff0000;">Import
+                    -&gt; RCSB (Protein Data
+                    Bank)</span><span style=
+                    "color: #ff0000;"><span style=
+                    "color: #333333;"><span style=
+                    "color: #000000;">.</span><br /></span></span>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    <span style="color: #ff0000;"><span style=
+                    "color: #333333;">Enter the four-character ID
+                    of a PBD file (eg. 3D9S), click <span style=
+                    "color: #ff0000;">Open</span>.<br />
+                    <br />
+                    <img alt="Search Protein Data Bank" height=
+                    "118" src=
+                    "../../../media/uploads/biochem/images/search_protein_data_bank.png"
+                    title="Search Protein Data Bank" width=
+                    "324" /></span></span> <span style=
+                    "color: #ff0000;"><span style=
+                    "color: #333333;"><br /></span></span>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    When the search results appear, choose the
+                    desired PDB file and click <span style=
+                    "color: #ff0000;">Open<span style=
+                    "color: #000000;">.<br /></span><br />
+                    <img alt="Results of Protein Data Bank Search"
+                    height="280" src=
+                    "../../../media/uploads/biochem/images/search_results_protein_data_bank.png"
+                    title="Results of Protein Data Bank Search"
+                    width="324" /><br /></span>
+                  </p>
+                </li>
+              </ol>
+              <ul>
+                <li>
+                  <p>
+                    Alternatively, select a PDB file from list
+                    found in the <span style=
+                    "color: #ff0000;">Samples</span> menu.
+                  </p>
+                </li>
+                <li>To load a PDB file stored locally on your
+                computer, click on <span style=
+                "color: #ff0000;">File -&gt; Open</span> and select
+                the desired file. <span style=
+                "color: #ff0000;"><span style=
+                "color: #333333;"><br /></span></span>
+                </li>
+              </ul>
+              <p>
+                Upon opening a PDB file in StarBiochem, you will
+                see a 3D model of the protein in the viewer.
+              </p>
+              <h1>
+                <img alt="StarBiochem Default View" height="561"
+                src=
+                "../../../media/uploads/biochem/images/3d_model_on_open.png"
+                title="StarBiochem Default View" width="900" />
+              </h1>
+              <p>
+                <strong>Note:<br /></strong>Each tab contains
+                <span style="color: #ff0000;">Automatic</span> and
+                <span style="color: #ff0000;">Manual</span> options
+                which allow you to choose when the changes made are
+                applied to the image.
+              </p>
+              <ul>
+                <li>
+                  <span style="color: #ff0000;">Automatic</span>
+                  immediately applies selection, size or
+                  translucency changes.
+                </li>
+                <li>
+                  <span style="color: #ff0000;">Manual</span>
+                  allows you to make mutiple changes before
+                  clicking the <span style=
+                  "color: #ff0000;">Apply</span> button. This is
+                  usually helpful when isolating a specific portion
+                  of a structure or making mutiple changes to a
+                  large structure which may require more time to
+                  render.
+                </li>
+              </ul>
+              <p>
+                When multiple PBD files are open, they can be
+                closed individually or all at once by <span style=
+                "color: #000000;">clicking</span> on <span style=
+                "color: #ff0000;">File -&gt; Close<span style=
+                "color: #000000;">, or</span> <span style=
+                "color: #333333;"><span style=
+                "color: #ff0000;">File -&gt; Close All <span style=
+                "color: #000000;">respectively.</span></span></span></span>
+              </p>
+              <p>
+                <a href=
+                "../version2.html#top">Return to
+                top</a>
+              </p>
+              <h1>
+                <a id="manipulating" name=
+                "manipulating"></a>Manipulating the default view.
+              </h1>
+              <p>
+                To change the view of the structure:
+              </p>
+              <p>
+                <img alt="Change the view of structure" height=
+                "243" src=
+                "../../../media/uploads/biochem/images/change_structure_view.png"
+                title="Change Structure View" width="832" />
+              </p>
+              <p>
+                <a href=
+                "../version2.html#top">Return to
+                top</a>
+              </p>
+              <h1>
+                <a id="visualizing" name=
+                "visualizing"></a>Visualizing atoms and bonds
+              </h1>
+              <p>
+                There are two different 3D models that are used by
+                most protein 3D viewers, including StarBiochem, to
+                visually represent the structure of molecules:
+              </p>
+              <p>
+                <strong>ball-and-stick model:</strong> the atom's
+                nucleus is drawn as a ball and covalent bonds
+                connection atoms are drawn as lines.
+              </p>
+              <ul>
+                <li>
+                  <span style=
+                  "text-decoration: underline;">Advantage:</span>
+                  allows a better view of how atoms bond together.
+                </li>
+              </ul>
+              <p>
+                <strong>space-filled model:</strong> atoms are
+                drawn as spheres, whose size represent the physical
+                space an atom occupies (the nucleus plus its
+                surrounding electrons, also called van der Waals
+                radius).
+              </p>
+              <ul>
+                <li>
+                  <span style=
+                  "text-decoration: underline;">Advantage:</span>
+                  allows for a more accurat representation of the
+                  size of atoms and molecules.
+                </li>
+              </ul>
+              <p>
+                You can switch from the
+                <strong>ball-and-stick</strong> model to the
+                <strong>space-filled</strong> model in StarBiochem
+                by increasing the size render of the atoms in the
+                structure.
+              </p>
+              <ul>
+                <li>
+                  <span style="color: #000000;">Click</span> on the
+                  <span style="color: #ff0000;">Primary</span> tab.
+                  By default the atom size is 20% which represents
+                  the <strong>ball-and-stick</strong> model. Move
+                  the <span style="color: #ff0000;">Atoms</span>
+                  size slider completely to the right, 100%, to
+                  switch to the <strong>space-filled</strong>
+                  model.
+                </li>
+              </ul>
+              <p>
+                <img alt="Space Fill View StarBiochem" height="561"
+                src=
+                "../../../media/uploads/biochem/images/structure_space_fill.png"
+                title="Space Fill View StarBiochem" width="900" />
+              </p>
+              <p>
+                <strong>The default coloring scheme for atoms is as
+                follows:</strong> <strong><span style=
+                "color: #808080;"><br /></span></strong>
+              </p>
+              <ul>
+                <li>
+                  <strong><span style="color: #808080;">Carbon (C)
+                  atoms grey spheres<br /></span></strong>
+                </li>
+                <li>
+                  <strong><span style=
+                  "color: #808080;"><span style="color: #ff0000;">Oxygen
+                  (O) red spheres<br /></span></span></strong>
+                </li>
+                <li>
+                  <strong><span style=
+                  "color: #808080;"><span style="color: #ff0000;"><span style="color: #3366ff;">
+                  Nitrogen (N) blue
+                  spheres<br /></span></span></span></strong>
+                </li>
+                <li>
+                  <strong><span style=
+                  "color: #808080;"><span style="color: #ff0000;"><span style="color: #ff9900;">
+                  Sulfur (S) yellow
+                  spheres<br /></span></span></span></strong>
+                </li>
+              </ul>
+              <p>
+                <span style="color: #808080;"><span style=
+                "color: #ff0000;"><span style=
+                "color: #ff9900;"><span style=
+                "color: #333333;"><span style=
+                "color: #3366ff;"><span style=
+                "color: #333333;">(Hydrogen atoms are shown as
+                white though they are rarely
+                depicted)<br /></span></span></span></span></span></span>
+              </p>
+              <p>
+                <a href=
+                "../version2.html#top">Return to
+                top</a>
+              </p>
+              <h1>
+                <span style="color: #808080;"><span style=
+                "color: #ff0000;"><span style=
+                "color: #ff9900;"><span style=
+                "color: #333333;"><span style=
+                "color: #3366ff;"><span style=
+                "color: #333333;"><a id="displaying" name=
+                "displaying"></a>Displaying molecular
+                structure</span></span></span></span></span></span>
+              </h1>
+              <p>
+                The <strong>primary structure</strong> of a protein
+                lists the amino acids that make up a protein’s
+                sequence or the nucleotides that make up a DNA
+                segment, but does not describe their corresponding
+                shape. The <strong>secondary structure</strong> of
+                a protein refers to how stretches of amino acids
+                within a protein chain are arranged in space in
+                characteristic patterns such as helices, sheets,
+                and coils. The <strong>tertiary structure</strong>
+                describes the folded shape of a protein chain and
+                is determined by characteristic properties of the
+                amino acid residues, such as acidic, basic, polar,
+                and non-polar. The <strong>quaternary
+                structure</strong> indicates the relationship
+                between the chains of a molecule.
+              </p>
+              <p>
+                <strong>Displaying primary structures:</strong>
+              </p>
+              <ul>
+                <li>Click on the <span style=
+                "color: #ff0000;">Primary <span style=
+                "color: #333333;">tab.</span></span>
+                </li>
+              </ul>
+              <p>
+                <img alt="Primary Structures" height="743" src=
+                "../../../media/uploads/biochem/images/structure_primary.png"
+                title="Primary Structures" width="572" />
+              </p>
+              <ul>
+                <li>
+                  <span style="color: #ff0000;"><span style=
+                  "color: #333333;">This view shows a numbered list
+                  of amino acids and options for viewing the
+                  backbone and sidechain. By default all of the
+                  amino acids are selected.<br /></span></span>
+                </li>
+                <li>
+                  <span style="color: #ff0000;"><span style=
+                  "color: #333333;">Amino acids consist of two
+                  parts, backbone and sidechain. Unchecking the box
+                  beside backbone or sidechain allows changes to
+                  apply only the part that is
+                  checked.<br /></span></span>
+                </li>
+              </ul>
+              <p>
+                <span style="color: #808080;"><span style=
+                "color: #ff0000;"><span style=
+                "color: #ff9900;"><span style=
+                "color: #333333;"><span style=
+                "color: #3366ff;"><span style=
+                "color: #333333;"><strong>Displaying secondary
+                structures:</strong></span></span></span></span></span></span>
+              </p>
+              <ul>
+                <li>Click on the <span style=
+                "color: #ff0000;">Secondary <span style=
+                "color: #333333;">tab</span></span>.
+                </li>
+              </ul>
+              <p>
+                <img alt="Secondary Structures" height="561" src=
+                "../../../media/uploads/biochem/images/structure_secondary.png"
+                title="Secondary Structures" width="900" />
+              </p>
+              <ul>
+                <li>This view shows a numbered list of the helices,
+                sheets and/or coils with their amino acids. By
+                default the structures size is set to zero.
+                </li>
+                <li>To display the secondary structures move the
+                <span style="color: #ff0000;">Size</span> slider to
+                the right to increase the size of the structure(s).
+                Check or uncheck the box beside each structure as
+                needed.
+                </li>
+              </ul>
+              <p>
+                <strong>Displaying tertiary structures:</strong>
+              </p>
+              <ul>
+                <li>Click on the <span style=
+                "color: #ff0000;">Tertiary <span style=
+                "color: #333333;">tab</span></span>.
+                </li>
+              </ul>
+              <p>
+                <strong><img alt="Tertiary Structures" height="561"
+                src=
+                "../../../media/uploads/biochem/images/structure_tertiary.png"
+                title="Tertiary Structures" width=
+                "900" /><br /></strong>
+              </p>
+              <ul>
+                <li>
+                  <span style="color: #ff0000;"><span style=
+                  "color: #333333;">This view shows a numbered list
+                  of amino acids. The default view will mirror
+                  the</span></span> <span style=
+                  "color: #ff0000;"><span style=
+                  "color: #333333;">selections and sizes from
+                  the</span></span> <span style=
+                  "color: #ff0000;"><span style=
+                  "color: #333333;"><span style=
+                  "color: #ff0000;">Primary</span>
+                  tab.</span></span>
+                </li>
+                <li>To display the residue colors click on the
+                buttons beside the amino types, e.g. <span style=
+                "color: #ff0000;">polar</span>, <span style=
+                "color: #ff0000;">nonpolar</span>, etc.
+                </li>
+                <li>Click on the <span style=
+                "color: #ff0000;">default coloring</span> button to
+                return to the default coloring scheme.
+                </li>
+              </ul>
+              <p>
+                <strong>Displaying quaternary structures:</strong>
+              </p>
+              <ul>
+                <li>Click on the <span style=
+                "color: #ff0000;">Quaternary</span> tab.
+                </li>
+              </ul>
+              <p>
+                <img alt="Quaternary Structures" height="561" src=
+                "../../../media/uploads/biochem/images/structure_quaternary.png"
+                title="Quaternary Structures" width="900" />
+              </p>
+              <ul>
+                <li>
+                  <span style="color: #ff0000;"><span style=
+                  "color: #333333;">This view will list the
+                  quarternary chains which</span></span>
+                  <span style="color: #ff0000;"><span style=
+                  "color: #333333;">are alphabetically or
+                  numerically identified (e.g. chain A, chain
+                  B)</span></span><span style=
+                  "color: #ff0000;"><span style=
+                  "color: #333333;">.</span></span> <span style=
+                  "color: #ff0000;"><span style=
+                  "color: #333333;">By default the surfaces' size
+                  is set to zero.<br /></span></span>
+                </li>
+                <li>
+                  <span style="color: #ff0000;"><span style=
+                  "color: #333333;">To display the quarternary
+                  structures (chains) increase the size by moving
+                  the size slider to right.</span></span>
+                </li>
+              </ul>
+              <p>
+                <strong>Displaying nucleic acids:</strong>
+              </p>
+              <p>
+                Click on the <span style="color: #ff0000;">Nucleic
+                Acids</span> tab.
+              </p>
+              <p>
+                <img alt="Nucleic Acids" height="561" src=
+                "../../../media/uploads/biochem/images/structure_nucleic.png"
+                title="Nucleic Acids" width="900" />
+              </p>
+              <ul>
+                <li>This view will show a list of the nucleic acids
+                and options for selecting some or all of the
+                nucliec structures (<span style=
+                "color: #ff0000;">bases</span>, <span style=
+                "color: #ff0000;">phosphates</span>, or
+                  <span style="color: #ff0000;">sugars</span>).
+                </li>
+              </ul>
+              <p>
+                <a href=
+                "../version2.html#top">Return to
+                top</a>
+              </p>
+              <h1>
+                <span style="color: #808080;"><span style=
+                "color: #ff0000;"><span style=
+                "color: #ff9900;"><span style=
+                "color: #333333;"><span style=
+                "color: #3366ff;"><span style=
+                "color: #333333;"><a name=
+                "Selecting atoms and structures"></a>Selecting
+                Atoms and
+                Structures</span></span></span></span></span></span>
+              </h1>
+              <p>
+                StarBiochem allows for selection of individual or
+                groups of atoms and structures.
+              </p>
+              <p>
+                <strong>Selecting Sequences (Primary, Secondary and
+                Tertiary):</strong>
+              </p>
+              <ul>
+                <li>To select a single item in the sequence list
+                simply <span style="color: #000000;">click</span>
+                on it.
+                </li>
+                <li>To select multiple items individually,
+                <span style="color: #000000;">click</span> on the
+                first item, press <span style=
+                "color: #ff0000;">Ctrl</span> (PC/Linux) or
+                <span style="color: #ff0000;">Apple</span> (Mac)
+                and click on the remaining sequences desired.
+                </li>
+                <li>To select multiple amino acids as a group click
+                on the first amino acid, press <span style=
+                "color: #ff0000;">Shift</span> and click on the
+                last amno acid.
+                </li>
+                <li>To select multiple groups of amino acids, click
+                on the first amino acid, press <span style=
+                "color: #ff0000;">Shift</span> and click on the
+                last amino acid in the first group. Then press
+                <span style="color: #ff0000;">Ctrl</span>
+                (PC/Linux) or <span style=
+                "color: #ff0000;">Apple</span> (Mac) and click on
+                the first amino acid of the next group, press
+                <span style="color: #ff0000;">Ctrl</span>
+                (PC/Linux) or <span style=
+                "color: #ff0000;">Apple</span> (Mac)<span style=
+                "color: #ff0000;">+Shift</span> and click on the
+                last amino acid of the group.
+                </li>
+              </ul>
+              <p>
+                <strong>Selecting Quaternary Sequences:</strong>
+              </p>
+              <ul>
+                <li>
+                  <span style="color: #ff0000;">Click</span> on a
+                  list entry to select a particular chain in the
+                  viewer. The <span style=
+                  "color: #ff0000;">Quaternary</span> tab does not
+                  allow partial chain selections.
+                </li>
+                <li>To select multiple chains, press <span style=
+                "color: #ff0000;">Ctrl</span> while clicking on
+                each chain.
+                </li>
+                <li>Adjust the size slider under <span style=
+                "color: #ff0000;">Surfaces</span> to change the
+                amount of surface shown.
+                </li>
+                <li>Move the translucency slider to the right under
+                <span style="color: #ff0000;">Surfaces</span> to
+                reveal the amino acids beneath the surfaces.
+                </li>
+              </ul>
+              <h1>
+                <a id="additional" name="additional"></a>Additional
+                Features
+              </h1>
+              <p>
+                <strong>Displaying water atoms</strong>
+              </p>
+              <p>
+                Some proteins have the addition of a <span style=
+                "color: #ff0000;">Water</span> tab. Select this tab
+                to see the oxygens that make up water molecules
+                within the protein (hydrogens rarely defined).
+              </p>
+              <p>
+                <img alt="Water" height="606" src=
+                "../../../media/uploads/biochem/images/structure_water.png"
+                title="Water" width="900" />
+              </p>
+              <p>
+                <strong>Displaying hetero atoms</strong><br />
+                Some proteins have the addition of a <span style=
+                "color: #ff0000;">Hetero Atoms</span> tab. Select
+                this to view any hetero atoms within the protein
+                and change their size in the viewer.
+              </p>
+              <p>
+                <img alt="Hetero Atoms" height="561" src=
+                "../../../media/uploads/biochem/images/structure_hetero.png"
+                title="Hetero Atoms" width="900" />
+              </p>
+              <p>
+                <strong><br /></strong>
+              </p>
+              <p>
+                <a href=
+                "../version2.html#top">Return to
+                top</a>
+              </p>
+              <p>
+                <strong><br /></strong>
+              </p>
+              <div class="grid_3">
+                <div class="box">
+                  <h2>
+                    URL Browser
+                  </h2>
+                  <ol>
+                    <li>
+                      <a href=
+                      "../../index.html">star/biochem/index.html</a>
+                    </li>
+                    <li>
+                      <a href=
+                      "../../screenshots.html">star/biochem/screenshots.html</a>
+                    </li>
+                    <li>
+                      <a href=
+                      "../../problemsets/index.html">
+                      star/biochem/problemsets/index.html</a>
+                    </li>
+                    <li>
+                      <a href=
+                      "../../videos/index.html">star/biochem/videos/index.html</a>
+                    </li>
+                    <li>
+                      <a href=
+                      "../index.html">star/biochem/documentation/index.html</a>
+                    </li>
+                    <li>
+                      <a href=
+                      "../version2.html">star/biochem/documentation/version2.html</a>
+                    </li>
+                    <li>
+                      <a href=
+                      "../../problemsets/version1.html">
+                      star/biochem/problemsets/version1.html</a>
+                    </li>
+                    <li>
+                      <a href=
+                      "../../problemsets/version2.html">
+                      star/biochem/problemsets/version2.html</a>
+                    </li>
+                    <li>
+                      <a href=
+                      "../../runapp.html">star/biochem/runapp.html</a>
+                    </li>
+                    <li>
+                      <a href=
+                      "../../runapp2.html">star/biochem/runapp2.html</a>
+                    </li>
+                    <li>
+                      <a href=
+                      "../../runapp_beta.html">star/biochem/runapp_beta.html</a>
+                    </li>
+                    <li>
+                      <a href=
+                      "../../jmol.html">star/biochem/jmol.html</a>
+                    </li>
+                    <li>
+                      <a href=
+                      "../../previous_versions/index.html">
+                      star/biochem/previous_versions/index.html</a>
+                    </li>
+                    <li>
+                      <a href=
+                      "../../version_2.0/index.html">
+                      star/biochem/version_2.0/index.html</a>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+              <div class="grid_16" id="site_info">
+                <div class="footer">
+                  <table border="0" style=
+                  "width: 699px; height: 30px;">
+                    <tbody>
+                      <tr>
+                        <td>
+                          <p>
+                            <a href="http://web.mit.edu/" title=
+                            "MIT Homepage"><img alt="MIT Logo"
+                            height="36" src=
+                            "../../../media/images/mit-logo-grey-white.gif"
+                            title="MIT Logo" width="62" /></a>
+                          </p>
+                        </td>
+                        <td>
+                          <p>
+                            <a href="http://oeit.mit.edu/" title=
+                            "OEIT Homepage">OEIT</a> | <a href=
+                            "http://whereis.mit.edu/?selection=NE48"
+                            title=
+                            "Building NE48 room 308">NE48-308</a> |
+                            <a href=
+                            "tel:+16172521981">617-252-1981</a> |
+                            <a>Contact Us</a><br />
+                            <a href="http://web.mit.edu/" title=
+                            "MIT Homepage">Massachusetts Institute
+                            of Technology</a> | <a href=
+                            "http://web.mit.edu/due" title=
+                            "DUE Homepage">Dean for Undergraduate
+                            Education</a>
+                          </p>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+          <p>
+            <a href="../../index.html">Home</a>
+          </p>
+          <p>
+            <a href="../index.html">User Manual</a>
+          </p>
+          <p>
+            <a href="../../videos/index.html">Video Tutorial</a>
+          </p>
+          <p>
+            <a href="../../screenshots.html">Screenshots</a>
+          </p>
+          <p>
+            <a href="../../problemsets/index.html">Sample
+            Exercises</a>
+          </p>
+          <p>
+            <a href="../../download/index.html">Download</a>
+          </p>
+          <p>
+            <a href="../../runapp_beta.html">Beta Version</a>
+          </p>
+          <p>
+            
+          </p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div><!--<div class="related wiki-nav">
+<h3>Navigation</h3>
+<ul>
+    <li><a href="/">Wiki Home</a></li> | 
+    
+        <li><a href="/star/newproject/create">Add Project</a></li> |
+    
+
+    
+        
+            <li><a href="/star/biochem/menu">Edit Menu</a></li> |
+        
+    
+
+    
+        <li><a href="/star/biochem/documentation/version2.0/index.html/edit">Edit Page</a></li> |
+        <li><a href="/star/biochem/documentation/version2.0/index.html/preview" target=_blank>Preview Page</a></li> |
+    
+
+    <li><a href="/publish">Publish</a></li> |
+    
+            <li><a href="/star/biochem/sitemap.xml">Sitemap</a></li> |
+    
+     
+    
+    <li><a href="/admin/">Admin Panel</a></li> |
+    <li><a href="/admin/filebrowser/browse/">File Browser</a></li>
+</ul>
+</div>
+-->
+    <div class="footer">
+      <table border="0" style="width: 100%; height: 30px;">
+        <tbody>
+          <tr>
+            <td style="width: 230px;">
+              <p>
+                <a href="http://web.mit.edu" title=
+                "MIT Homepage"><img alt="MIT Logo" height="36" src=
+                "../../../media/images/mit-logo-grey-white.gif"
+                title="MIT Logo" width="62" /></a>
+              </p>
+            </td>
+            <td style="width: 100%;">
+              <p style="text-align: center;">
+                <a href="http://oeit.mit.edu" title=
+                "OEIT Homepage">OEIT</a> | <a href=
+                "http://whereis.mit.edu/?selection=NE48" title=
+                "Building NE48 room 308">NE48-308</a> | <a href=
+                "tel:+16172521981">617-252-1981</a> | <a href=
+                "javascript:%20window.location.href='mail'%20+%20'to'%20+':%20'%20+%20'star'+%20String.fromCharCode(64)%20+%20'mit'%20+%20'.'%20+%20'edu'">
+                Contact Us</a><br />
+                <a href="http://web.mit.edu" title=
+                "MIT Homepage">Massachusetts Institute of
+                Technology</a> | <a href="http://odl.mit.edu"
+                title="DUE Homepage">Office of Digital Learning</a>
+              </p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div><script async="true" src=
+    "../../../media/uploads/star/scripts/on_every_page.js" type=
+    "text/javascript">
+</script>
+  </body>
+</html>

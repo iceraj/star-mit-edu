@@ -1,0 +1,495 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv=
+    "content-type" />
+    <title>
+      STAR: Hpc - Creating Your Own EC2 Cluster
+    </title>
+    <link href=
+    "../../../media/sphinx/css/neuton_nobile_pygments.css" media=
+    "screen" rel="stylesheet" type="text/css" />
+    <link href="../../../media/sphinx/css/pylons.css" media=
+    "screen" rel="stylesheet" type="text/css" />
+    <link href=
+    "../../../media/css/projectscroll_and_breadcrumb.css" media=
+    "screen" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+//<![CDATA[
+                var DOCUMENTATION_OPTIONS = {
+                   URL_ROOT:    '',
+                   VERSION:     '',
+                   COLLAPSE_INDEX: false,
+                   FILE_SUFFIX: '.html',
+                   HAS_SOURCE:  false
+                };
+    //]]>
+    </script>
+    <script type="text/javascript">
+//<![CDATA[
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1048253-4']);
+
+    _gaq.push(['_setDomainName', '.mit.edu']);
+
+    _gaq.push(['_setAllowLinker', true]);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    //]]>
+    </script>
+  </head>
+  <body>
+    <div class="archive-ribbon-corner">
+      <div class="archive-ribbon">Archive</div>
+    </div>
+    <div class="header-small">
+      <div class="logo-small">
+        <div class="logo-text">
+          <a href="../../index.html">StarHpc</a>
+        </div>
+        <div class="project_scroll">
+          <a href="../../../index.html"><img alt="Star" src=
+          "../../../media/uploads/project_logos/home_logo.png"
+          title="Star" /></a>
+          <p>
+            Home
+          </p>
+        </div>
+        <div class="project_scroll">
+          <a href="../../../biochem/index.html"><img alt="Biochem"
+          src=
+          "../../../media/uploads/project_logos/biochem_new_logo.png"
+          title="Biochem" /></a>
+          <p>
+            Biochem
+          </p>
+        </div>
+        <div class="project_scroll">
+          <a href="../../../CellBio/index.html"><img alt="CellBio"
+          src=
+          "../../../media/uploads/project_logos/starcellbio_icon_rgb_lg.png"
+          title="CellBio" /></a>
+          <p>
+            CellBio
+          </p>
+        </div>
+        <div class="project_scroll">
+          <a href="../../../genetics/index.html"><img alt=
+          "Genetics" src=
+          "../../../media/uploads/project_logos/genetics_fly_logo.png"
+          title="Genetics" /></a>
+          <p>
+            Genetics
+          </p>
+        </div>
+        <div class="project_scroll">
+          <a href="../../../orf/index.html"><img alt="Orf" src=
+          "../../../media/uploads/project_logos/orf.png" title=
+          "Orf" /></a>
+          <p>
+            Orf
+          </p>
+        </div>
+        <div class="project_scroll">
+          <a href="../../../hydro/index.html"><img alt="Hydro" src=
+          "../../../media/uploads/project_logos/hydro_icon.png"
+          title="Hydro" /></a>
+          <p>
+            Hydro
+          </p>
+        </div>
+        <div class="project_scroll">
+          <a href="../../../molsim/index.html"><img alt="Molsim"
+          src="../../../media/uploads/project_logos/molsim_v2.PNG"
+          title="Molsim" /></a>
+          <p>
+            Molsim
+          </p>
+        </div>
+        <div class="project_scroll">
+          <a href="../../../cluster/index.html"><img alt="Cluster"
+          src=
+          "../../../media/uploads/project_logos/starcluster_logo.png"
+          title="Cluster" /></a>
+          <p>
+            Cluster
+          </p>
+        </div>
+        <div class="project_scroll">
+          <a href="../../index.html"><img alt="Hpc" src=
+          "../../../media/uploads/project_logos/hpc_new.png" title=
+          "Hpc" /></a>
+          <p>
+            Hpc
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="related">
+      <h3>
+        star Breadcrumb
+      </h3>
+      <ul>
+        <li>
+          <a href="../../../index.html">star</a> <span>&gt;</span>
+        </li>
+        <li>
+          <a href="../../index.html">hpc</a> <span>&gt;</span>
+          <em>Creating Your Own EC2 Cluster</em>
+        </li>
+      </ul>
+    </div>
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            <h1>
+              Introduction
+            </h1>
+            <hr />
+            <p>
+              This <strong>tutorial</strong> will guide you through
+              the (very few!) steps needed to:
+            </p>
+            <ol>
+              <li>Setup your configuration tools (once and for all)
+              </li>
+              <li>Decide on a cluster size and build it on Amazon
+              </li>
+              <li>Log into the cluster and set up MPI
+              </li>
+              <li>Finish your work and shut down the cluster
+              </li>
+            </ol>
+            <h1>
+              Conventions
+            </h1>
+            <hr />
+            <p>
+              If I start a line with the following characters,
+              $&gt;, it means that I will be writing some code that
+              you should enter “as is” in a console or terminal on
+              your computer. (of course this syntax will be valid
+              only for Unix-like systems…)
+            </p>
+            <h1>
+              Pre-requisite Requirements
+            </h1>
+            <hr />
+            <p>
+              Throughout this tutorial, I assume that the reader
+              has already created an Amazon Web Services account
+              and by doing so has obtained all the necessary
+              credentials (AWS access key ID, AWS secret access
+              key, keyname, RSA private key, etc…) To create an
+              account and get all the necessary credentials, visit
+              :
+            </p>
+            <ul>
+              <li>
+                <a href="http://aws.amazon.com/">Amazon Web
+                Services (AWS)</a>
+              </li>
+            </ul>
+            <p>
+              To get started with Amazon Elastic Cloud Compute, and
+              in particular getting the Amazon toolkit, follow all
+              the instructions given here :
+            </p>
+            <ul>
+              <li>
+                <a href=
+                "http://docs.amazonwebservices.com/AWSEC2/2008-05-05/GettingStartedGuide/">
+                AWS - Getting Started Guide</a>
+              </li>
+            </ul>
+            <h1>
+              Instructions
+            </h1>
+            <hr />
+            <h5>
+              Setting up your configuration tools
+            </h5>
+            <ol>
+              <li>Download the archive: ec2-cluster-scripts-x.y.zip
+              from the following web page:<br />
+                <br />
+                <a href=
+                "http://starapp.mit.edu/star/hpc/downloads/index.html">
+                StarHPC Downloads</a><br />
+                <p>
+                  <span style=
+                  "font-size: x-small;"><strong>NOTE</strong>: x
+                  and y are two numbers signaling the version of
+                  the scripts.<br />
+                  <br /></span>
+                </p><br />
+              </li>
+              <li>Unzip this archive on your computer (for example
+              in an .ec2/ directory)<br />
+                <br />
+                <div style="border: 1px dashed; padding: 6px;">
+                  <span style=
+                  "font-family: andale mono,times;">$&gt; unzip
+                  ec2-cluster-scripts-x.y.zip</span>
+                </div><br />
+              </li>
+              <li>Move into the created directory<br />
+                <br />
+                <div style="border: 1px dashed; padding: 6px;">
+                  <span style=
+                  "font-family: andale mono,times;">$&gt; cd
+                  ec2-cluster-scripts-x.y/</span>
+                </div><br />
+              </li>
+              <li>Edit the EC2config.py file with your favorite
+              editor (vi, emacs, gedit, etc…):<br />
+                <br />
+                <div style="border: 1px dashed; padding: 6px;">
+                  <span style=
+                  "font-family: andale mono,times;">$&gt; vi
+                  EC2config.py</span>
+                </div><br />
+              </li>
+              <li>Fill in this file with your personal Amazon Web
+              Services account information (like the AWS access key
+              ID, AWS secret access key, AWS user ID which
+              corresponds to your account number, the keyname,
+              etc…).
+              </li>
+              <li>Save your changes and quit.
+              </li>
+            </ol>
+            <h5>
+              <br />
+              Choosing the size of your cluster and building it
+            </h5>
+            <ol>
+              <li>In order to choose the size for your cluster
+              (number of CPU's, memory size, storage capacity), you
+              will have to enter the type of instances that you
+              wish to boot on Amazon EC2 (m1.large, c1.large,
+              c1.xlarge) and the number of instances. This is
+              accomplished by selecting the INSTANCE_TYPE you want
+              and choosing the number of instances to boot by
+              assigning a number to DEFAULT_CLUSTER_SIZE in
+              EC2config.py.
+              </li>
+              <li>The next step is really trivial, since all you
+              have to do is to execute the following script (from
+              the ec2-cluster-scripts-x.y/ directory):<br />
+                <br />
+                <div style="border: 1px dashed; padding: 6px;">
+                  <span style=
+                  "font-family: andale mono,times;">$&gt;
+                  ./ec2-start-cluster.py</span>
+                </div>
+              </li>
+            </ol>
+            <h5>
+              Logging in and setting up MPI
+            </h5>
+            <ol>
+              <li>Once the cluster is up and running (you can check
+              that by refreshing ElasticFox if you installed that
+              extension into Firefox, or using $&gt;
+              ec2-describe-instances. This command line option
+              requires the Amazon toolkit.), execute the following
+              script:<br />
+                <div style="border: 1px dashed; padding: 6px;">
+                  <span style=
+                  "font-family: andale mono,times;">$&gt;
+                  ./ec2-mpi-config.py</span>
+                </div>
+              </li>
+              <li style="list-style: none">
+                <br />
+                <br />
+              </li>
+              <li>Wait until the script is finished, and then
+              execute this script:<br />
+                <br />
+                <div style="border: 1px dashed; padding: 6px;">
+                  <span style=
+                  "font-family: andale mono,times;">$&gt;
+                  ./ec2-login-master.py</span>
+                </div><br />
+              </li>
+              <li>Now you should be root on the Master node of your
+              new EC2 cluster! What you want is to become a simple
+              user, lamuser to be precise. To do this just
+              type:<br />
+                <br />
+                <div style="border: 1px dashed; padding: 6px;">
+                  <span style=
+                  "font-family: andale mono,times;">$&gt; su -
+                  lamuser</span>
+                </div>
+              </li>
+              <li>The final step is to launch lamMPI by
+              typing:<br />
+                <br />
+                <div style="border: 1px dashed; padding: 6px;">
+                  <span style=
+                  "font-family: andale mono,times;">$&gt; lamboot
+                  mpd.hosts</span>
+                </div>
+              </li>
+            </ol>
+            <h5>
+              How to run Quantum Espresso on your EC2 Cluster
+            </h5>
+            <ol>
+              <li>After MPI has been setup, you can run Quantum
+              Espresso jobs on your EC2 cluster. First make sure
+              you have prepared your input file correctly. Let us
+              imagine you named it test.in . The next thing to do
+              is to issue this command:<br />
+                <div style="border: 1px dashed; padding: 6px;">
+                  <span style=
+                  "font-family: andale mono,times;">$&gt; mpirun
+                  -np &lt;number_of_processors&gt;
+                  &lt;path_to_executable&gt; &lt; test.in &gt;
+                  test.out</span>
+                </div>
+              </li>
+              <li style="list-style: none">
+                <br />
+              </li>
+              <li>The above command will execute
+              &lt;path_to_executable&gt; (it could be pw.x for
+              example) running the code in parallel using
+              &lt;number_of_processors&gt; CPU's on the system
+              described in your input file test.in and will spit
+              the output to the file test.out.
+              </li>
+            </ol>
+            <h5>
+              Shutting down your cluster
+            </h5>
+            <ol>
+              <li>When you are finished with your work on your EC2
+              cluster, log out from the Master node by
+              typing:<br />
+                <br />
+                <div style="border: 1px dashed; padding: 6px;">
+                  <span style=
+                  "font-family: andale mono,times;">$&gt;
+                  logout</span>
+                </div>
+              </li>
+              <li style="list-style: none">
+                <br />
+              </li>
+              <li>Then on your Desktop computer (from which you
+              logged onto the EC2 cluster), type:<br />
+                <br />
+                <div style="border: 1px dashed; padding: 6px;">
+                  <span style=
+                  "font-family: andale mono,times;">$&gt;
+                  ./ec2-stop-cluster.py</span>
+                </div>
+              </li>
+            </ol>
+            <p>
+              And you're done! Now you can use the cluster as you
+              please (like running the Quantum Espresso package in
+              parallel!)
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+          <p>
+            <a href="../../index.html">Home</a>
+          </p>
+          <p>
+            <a href="../index.html">User Manual</a>
+          </p>
+          <p>
+            <a href="../standalone/index.html">Downloads</a>
+          </p>
+          <p>
+            <a href=
+            "../../troubleshooting/index.html">Troubleshooting</a>
+          </p>
+          <p>
+            
+          </p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div><!--<div class="related wiki-nav">
+<h3>Navigation</h3>
+<ul>
+    <li><a href="/">Wiki Home</a></li> | 
+    
+        <li><a href="/star/newproject/create">Add Project</a></li> |
+    
+
+    
+        
+            <li><a href="/star/hpc/menu">Edit Menu</a></li> |
+        
+    
+
+    
+        <li><a href="/star/hpc/documentation/ec2scripts/index.html/edit">Edit Page</a></li> |
+        <li><a href="/star/hpc/documentation/ec2scripts/index.html/preview" target=_blank>Preview Page</a></li> |
+    
+
+    <li><a href="/publish">Publish</a></li> |
+    
+            <li><a href="/star/hpc/sitemap.xml">Sitemap</a></li> |
+    
+     
+    
+    <li><a href="/admin/">Admin Panel</a></li> |
+    <li><a href="/admin/filebrowser/browse/">File Browser</a></li>
+</ul>
+</div>
+-->
+    <div class="footer">
+      <table border="0" style="width: 100%; height: 30px;">
+        <tbody>
+          <tr>
+            <td style="width: 230px;">
+              <p>
+                <a href="http://web.mit.edu" title=
+                "MIT Homepage"><img alt="MIT Logo" height="36" src=
+                "../../../media/images/mit-logo-grey-white.gif"
+                title="MIT Logo" width="62" /></a>
+              </p>
+            </td>
+            <td style="width: 100%;">
+              <p style="text-align: center;">
+                <a href="http://oeit.mit.edu" title=
+                "OEIT Homepage">OEIT</a> | <a href=
+                "http://whereis.mit.edu/?selection=NE48" title=
+                "Building NE48 room 308">NE48-308</a> | <a href=
+                "tel:+16172521981">617-252-1981</a> | <a href=
+                "javascript:%20window.location.href='mail'%20+%20'to'%20+':%20'%20+%20'star'+%20String.fromCharCode(64)%20+%20'mit'%20+%20'.'%20+%20'edu'">
+                Contact Us</a><br />
+                <a href="http://web.mit.edu" title=
+                "MIT Homepage">Massachusetts Institute of
+                Technology</a> | <a href="http://odl.mit.edu"
+                title="DUE Homepage">Office of Digital Learning</a>
+              </p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div><script async="true" src=
+    "../../../media/uploads/star/scripts/on_every_page.js" type=
+    "text/javascript">
+</script>
+  </body>
+</html>

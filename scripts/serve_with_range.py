@@ -39,6 +39,21 @@ class RangeHandler(SimpleHTTPRequestHandler):
         self.end_headers()
         return f
 
+    def send_error(self, code, message=None, explain=None):
+        # Like Cloudflare Pages: answer missing paths with the site's 404.html.
+        page = os.path.join(self.directory, "404.html")
+        if code != HTTPStatus.NOT_FOUND or not os.path.isfile(page):
+            return super().send_error(code, message, explain)
+        with open(page, "rb") as f:
+            body = f.read()
+        self._range = None
+        self.send_response(code)
+        self.send_header("Content-Type", "text/html; charset=utf-8")
+        self.send_header("Content-Length", str(len(body)))
+        self.end_headers()
+        if self.command != "HEAD":
+            self.wfile.write(body)
+
     def copyfile(self, source, outputfile):
         if getattr(self, "_range", None) is None:
             return super().copyfile(source, outputfile)

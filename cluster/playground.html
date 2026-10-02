@@ -1,0 +1,1651 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv=
+    "content-type" />
+    <title>
+      STAR: Cluster - playground test
+    </title>
+    <link href="../media/sphinx/css/neuton_nobile_pygments.css"
+    media="screen" rel="stylesheet" type="text/css" />
+    <link href="../media/sphinx/css/pylons.css" media="screen" rel=
+    "stylesheet" type="text/css" />
+    <link href="../media/css/projectscroll_and_breadcrumb.css"
+    media="screen" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+//<![CDATA[
+                var DOCUMENTATION_OPTIONS = {
+                   URL_ROOT:    '',
+                   VERSION:     '',
+                   COLLAPSE_INDEX: false,
+                   FILE_SUFFIX: '.html',
+                   HAS_SOURCE:  false
+                };
+    //]]>
+    </script>
+    <script type="text/javascript">
+//<![CDATA[
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1048253-4']);
+
+    _gaq.push(['_setDomainName', '.mit.edu']);
+
+    _gaq.push(['_setAllowLinker', true]);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    //]]>
+    </script>
+  </head>
+  <body>
+    <div class="archive-ribbon-corner">
+      <div class="archive-ribbon">Archive</div>
+    </div>
+    <div class="header-small">
+      <div class="logo-small">
+        <div class="logo-text">
+          <a href="index.html">StarCluster</a>
+        </div>
+        <div class="project_scroll">
+          <a href="../index.html"><img alt="Star" src=
+          "../media/uploads/project_logos/home_logo.png" title=
+          "Star" /></a>
+          <p>
+            Home
+          </p>
+        </div>
+        <div class="project_scroll">
+          <a href="../biochem/index.html"><img alt="Biochem" src=
+          "../media/uploads/project_logos/biochem_new_logo.png"
+          title="Biochem" /></a>
+          <p>
+            Biochem
+          </p>
+        </div>
+        <div class="project_scroll">
+          <a href="../CellBio/index.html"><img alt="CellBio" src=
+          "../media/uploads/project_logos/starcellbio_icon_rgb_lg.png"
+          title="CellBio" /></a>
+          <p>
+            CellBio
+          </p>
+        </div>
+        <div class="project_scroll">
+          <a href="../genetics/index.html"><img alt="Genetics" src=
+          "../media/uploads/project_logos/genetics_fly_logo.png"
+          title="Genetics" /></a>
+          <p>
+            Genetics
+          </p>
+        </div>
+        <div class="project_scroll">
+          <a href="../orf/index.html"><img alt="Orf" src=
+          "../media/uploads/project_logos/orf.png" title=
+          "Orf" /></a>
+          <p>
+            Orf
+          </p>
+        </div>
+        <div class="project_scroll">
+          <a href="../hydro/index.html"><img alt="Hydro" src=
+          "../media/uploads/project_logos/hydro_icon.png" title=
+          "Hydro" /></a>
+          <p>
+            Hydro
+          </p>
+        </div>
+        <div class="project_scroll">
+          <a href="../molsim/index.html"><img alt="Molsim" src=
+          "../media/uploads/project_logos/molsim_v2.PNG" title=
+          "Molsim" /></a>
+          <p>
+            Molsim
+          </p>
+        </div>
+        <div class="project_scroll">
+          <a href="index.html"><img alt="Cluster" src=
+          "../media/uploads/project_logos/starcluster_logo.png"
+          title="Cluster" /></a>
+          <p>
+            Cluster
+          </p>
+        </div>
+        <div class="project_scroll">
+          <a href="../hpc/index.html"><img alt="Hpc" src=
+          "../media/uploads/project_logos/hpc_new.png" title=
+          "Hpc" /></a>
+          <p>
+            Hpc
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="related">
+      <h3>
+        star Breadcrumb
+      </h3>
+      <ul>
+        <li>
+          <a href="../index.html">star</a> <span>&gt;</span>
+        </li>
+        <li>
+          <a href="index.html">cluster</a> <span>&gt;</span>
+          <em>playground test</em>
+        </li>
+      </ul>
+    </div>
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            <h1>
+              StarCluster AMIs for Amazon EC2
+            </h1>
+            <hr />
+            <script type="text/javascript">
+// <![CDATA[
+            var ON=function(region){
+            document.getElementById('select-a-region').style.display     = 'none';
+            document.getElementById('ami-comments').style.display        = 'block';
+            document.getElementById('tab-us-east-1').style.display       =
+            (region == 'us-east-1' ? 'block' : 'none');
+            document.getElementById('tab-us-west-1').style.display       =
+            (region == 'us-west-1' ? 'block' : 'none');
+            document.getElementById('tab-eu-west-1').style.display       =
+            (region == 'eu-west-1' ? 'block' : 'none');
+            document.getElementById('tab-ap-southeast-1').style.display       =
+            (region == 'ap-southeast-1' ? 'block' : 'none');
+            document.getElementById('tab-ap-northeast-1').style.display       =
+            (region == 'ap-northeast-1' ? 'block' : 'none');
+            }
+            // ]]>
+            </script>
+            <div id="select-a-region" style="display: block;">
+              <a href="javascript:void(0);" onclick=
+              "return ON('us-east-1')">us-east-1</a> | <a href=
+              "javascript:void(0);" onclick=
+              "return ON('us-west-1')">us-west-1</a> | <a href=
+              "javascript:void(0);" onclick=
+              "return ON('eu-west-1')">eu-west-1</a> | <a href=
+              "javascript:void(0);" onclick=
+              "return ON('ap-southeast-1')">ap-southeast-1</a> |
+              <a href="javascript:void(0);" onclick=
+              "return ON('ap-northeast-1')">ap-northeast-1<br /></a>
+              <table class="amis" style=
+              "width: 520px; height: 84px;">
+                <tbody>
+                  <tr>
+                    <th colspan="5"></th>
+                  </tr>
+                  <tr>
+                    <th></th>
+                    <th colspan="3">
+                      To view StarCluster AMIs available for Amazon
+                      EC2:<br />
+                      Click on a tab above to select an Amazon EC2
+                      region.
+                    </th>
+                    <th></th>
+                  </tr>
+                  <tr>
+                    <th colspan="5"></th>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- ###################################################################### -->
+            <div id="tab-us-east-1" style="display: none;">
+              us-east-1 | <a href="javascript:void(0);" onclick=
+              "return ON('us-west-1')">us-west-1</a> | <a href=
+              "javascript:void(0);" onclick=
+              "return ON('eu-west-1')">eu-west-1</a> | <a href=
+              "javascript:void(0);" onclick=
+              "return ON('ap-southeast-1')">ap-southeast-1</a> |
+              <a href="javascript:void(0);" onclick=
+              "return ON('ap-northeast-1')">ap-northeast-1</a>
+              <table class="amis" style="width: 520px;">
+                <tbody>
+                  <tr>
+                    <th class="first">
+                      OS Release
+                    </th>
+                    <th>
+                      32-bit
+                    </th>
+                    <th>
+                      64-bit
+                    </th>
+                  </tr>
+                  <tr>
+                    <td class="first">
+                      Ubuntu 10.04 LTS Lucid<br />
+                      instance-store
+                    </td>
+                    <td>
+                      <tt>ami-8cf913e5<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=us-east-1#launchAmi=ami-8cf913e5"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                    <td>
+                      <tt>ami-0af31963<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=us-east-1#launchAmi=ami-0af31963"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th colspan="5"></th>
+                  </tr>
+                  <tr>
+                    <td class="first">
+                      Ubuntu 8.04 LTS Hardy<br />
+                      EBS boot
+                    </td>
+                    <td>
+                      <tt>ami-ad9458c4<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=us-east-1#launchAmi=ami-ad9458c4"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                    <td>
+                      <tt>ami-b19458d8<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=us-east-1#launchAmi=ami-b19458d8"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="first">
+                      Ubuntu 8.04 LTS Hardy<br />
+                      instance-store
+                    </td>
+                    <td>
+                      <tt>ami-91579af8<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=us-east-1#launchAmi=ami-91579af8"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                    <td>
+                      <tt>ami-a5569bcc<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=us-east-1#launchAmi=ami-a5569bcc"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th colspan="5"></th>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="tab-us-west-1" style="display: none;">
+              <a href="javascript:void(0);" onclick=
+              "return ON('us-east-1');">us-east-1</a> | us-west-1 |
+              <a href="javascript:void(0);" onclick=
+              "return ON('eu-west-1');">eu-west-1</a> | <a href=
+              "javascript:void(0);" onclick=
+              "return ON('ap-southeast-1');">ap-southeast-1</a> |
+              <a href="javascript:void(0);" onclick=
+              "return ON('ap-northeast-1');">ap-northeast-1</a>
+              <table class="amis" style="width: 520px;">
+                <tbody>
+                  <tr>
+                    <th class="first">
+                      OS Release
+                    </th>
+                    <th>
+                      32-bit
+                    </th>
+                    <th>
+                      64-bit
+                    </th>
+                  </tr>
+                  <tr>
+                    <td class="first">
+                      Ubuntu 11.10 Oneiric<br />
+                      EBS boot
+                    </td>
+                    <td>
+                      <tt>ami-79772b3c<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=us-west-1#launchAmi=ami-79772b3c"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                    <td>
+                      <tt>ami-7b772b3e<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=us-west-1#launchAmi=ami-7b772b3e"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="first">
+                      Ubuntu 11.10 Oneiric<br />
+                      instance-store
+                    </td>
+                    <td>
+                      <tt>ami-a7762ae2<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=us-west-1#launchAmi=ami-a7762ae2"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                    <td>
+                      <tt>ami-4b772b0e<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=us-west-1#launchAmi=ami-4b772b0e"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th colspan="5"></th>
+                  </tr>
+                  <tr>
+                    <td class="first">
+                      Ubuntu 11.04 Natty<br />
+                      EBS boot
+                    </td>
+                    <td>
+                      <tt>ami-43580406<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=us-west-1#launchAmi=ami-43580406"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                    <td>
+                      <tt>ami-4d580408<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=us-west-1#launchAmi=ami-4d580408"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="first">
+                      Ubuntu 11.04 Natty<br />
+                      instance-store
+                    </td>
+                    <td>
+                      <tt>ami-e95f03ac<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=us-west-1#launchAmi=ami-e95f03ac"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                    <td>
+                      <tt>ami-a15f03e4<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=us-west-1#launchAmi=ami-a15f03e4"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th colspan="5"></th>
+                  </tr>
+                  <tr>
+                    <td class="first">
+                      Ubuntu 10.10 Maverick<br />
+                      EBS boot
+                    </td>
+                    <td>
+                      <tt>ami-21237f64<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=us-west-1#launchAmi=ami-21237f64"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                    <td>
+                      <tt>ami-23237f66<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=us-west-1#launchAmi=ami-23237f66"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="first">
+                      Ubuntu 10.10 Maverick<br />
+                      instance-store
+                    </td>
+                    <td>
+                      <tt>ami-69237f2c<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=us-west-1#launchAmi=ami-69237f2c"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                    <td>
+                      <tt>ami-11237f54<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=us-west-1#launchAmi=ami-11237f54"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th colspan="5"></th>
+                  </tr>
+                  <tr>
+                    <td class="first">
+                      Ubuntu 10.04 LTS Lucid<br />
+                      EBS boot
+                    </td>
+                    <td>
+                      <tt>ami-eb227eae<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=us-west-1#launchAmi=ami-eb227eae"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                    <td>
+                      <tt>ami-f5227eb0<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=us-west-1#launchAmi=ami-f5227eb0"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="first">
+                      Ubuntu 10.04 LTS Lucid<br />
+                      instance-store
+                    </td>
+                    <td>
+                      <tt>ami-d7227e92<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=us-west-1#launchAmi=ami-d7227e92"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                    <td>
+                      <tt>ami-ed227ea8<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=us-west-1#launchAmi=ami-ed227ea8"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th colspan="5"></th>
+                  </tr>
+                  <tr>
+                    <td class="first">
+                      Ubuntu 8.04 LTS Hardy<br />
+                      EBS boot
+                    </td>
+                    <td>
+                      <tt>ami-1f48145a<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=us-west-1#launchAmi=ami-1f48145a"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                    <td>
+                      <tt>ami-1948145c<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=us-west-1#launchAmi=ami-1948145c"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="first">
+                      Ubuntu 8.04 LTS Hardy<br />
+                      instance-store
+                    </td>
+                    <td>
+                      <tt>ami-0b59054e<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=us-west-1#launchAmi=ami-0b59054e"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                    <td>
+                      <tt>ami-c7590582<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=us-west-1#launchAmi=ami-c7590582"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th colspan="5"></th>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="tab-eu-west-1" style="display: none;">
+              <a href="javascript:void(0);" onclick=
+              "return ON('us-east-1');">us-east-1</a> | <a href=
+              "javascript:void(0);" onclick=
+              "return ON('us-west-1');">us-west-1</a> | eu-west-1 |
+              <a href="javascript:void(0);" onclick=
+              "return ON('ap-southeast-1');">ap-southeast-1</a> |
+              <a href="javascript:void(0);" onclick=
+              "return ON('ap-northeast-1');">ap-northeast-1</a>
+              <table class="amis" style="width: 520px;">
+                <tbody>
+                  <tr>
+                    <th class="first">
+                      OS Release
+                    </th>
+                    <th>
+                      32-bit
+                    </th>
+                    <th>
+                      64-bit
+                    </th>
+                  </tr>
+                  <tr>
+                    <td class="first">
+                      Ubuntu 11.10 Oneiric<br />
+                      EBS boot
+                    </td>
+                    <td>
+                      <tt>ami-65b28011<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=eu-west-1#launchAmi=ami-65b28011"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                    <td>
+                      <tt>ami-61b28015<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=eu-west-1#launchAmi=ami-61b28015"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="first">
+                      Ubuntu 11.10 Oneiric<br />
+                      instance-store
+                    </td>
+                    <td>
+                      <tt>ami-dfcdffab<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=eu-west-1#launchAmi=ami-dfcdffab"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                    <td>
+                      <tt>ami-75b28001<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=eu-west-1#launchAmi=ami-75b28001"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th colspan="5"></th>
+                  </tr>
+                  <tr>
+                    <td class="first">
+                      Ubuntu 11.04 Natty<br />
+                      EBS boot
+                    </td>
+                    <td>
+                      <tt>ami-a4f7c5d0<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=eu-west-1#launchAmi=ami-a4f7c5d0"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                    <td>
+                      <tt>ami-a6f7c5d2<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=eu-west-1#launchAmi=ami-a6f7c5d2"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="first">
+                      Ubuntu 11.04 Natty<br />
+                      instance-store
+                    </td>
+                    <td>
+                      <tt>ami-fef7c58a<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=eu-west-1#launchAmi=ami-fef7c58a"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                    <td>
+                      <tt>ami-c0f7c5b4<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=eu-west-1#launchAmi=ami-c0f7c5b4"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th colspan="5"></th>
+                  </tr>
+                  <tr>
+                    <td class="first">
+                      Ubuntu 10.10 Maverick<br />
+                      EBS boot
+                    </td>
+                    <td>
+                      <tt>ami-020f3d76<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=eu-west-1#launchAmi=ami-020f3d76"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                    <td>
+                      <tt>ami-0e0f3d7a<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=eu-west-1#launchAmi=ami-0e0f3d7a"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="first">
+                      Ubuntu 10.10 Maverick<br />
+                      instance-store
+                    </td>
+                    <td>
+                      <tt>ami-480f3d3c<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=eu-west-1#launchAmi=ami-480f3d3c"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                    <td>
+                      <tt>ami-1a0f3d6e<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=eu-west-1#launchAmi=ami-1a0f3d6e"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th colspan="5"></th>
+                  </tr>
+                  <tr>
+                    <td class="first">
+                      Ubuntu 10.04 LTS Lucid<br />
+                      EBS boot
+                    </td>
+                    <td>
+                      <tt>ami-c00e3cb4<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=eu-west-1#launchAmi=ami-c00e3cb4"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                    <td>
+                      <tt>ami-cc0e3cb8<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=eu-west-1#launchAmi=ami-cc0e3cb8"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="first">
+                      Ubuntu 10.04 LTS Lucid<br />
+                      instance-store
+                    </td>
+                    <td>
+                      <tt>ami-f60e3c82<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=eu-west-1#launchAmi=ami-f60e3c82"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                    <td>
+                      <tt>ami-ee0e3c9a<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=eu-west-1#launchAmi=ami-ee0e3c9a"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th colspan="5"></th>
+                  </tr>
+                  <tr>
+                    <td class="first">
+                      Ubuntu 8.04 LTS Hardy<br />
+                      EBS boot
+                    </td>
+                    <td>
+                      <tt>ami-07ecde73<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=eu-west-1#launchAmi=ami-07ecde73"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                    <td>
+                      <tt>ami-ffecde8b<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=eu-west-1#launchAmi=ami-ffecde8b"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="first">
+                      Ubuntu 8.04 LTS Hardy<br />
+                      instance-store
+                    </td>
+                    <td>
+                      <tt>ami-42f5c736<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=eu-west-1#launchAmi=ami-42f5c736"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                    <td>
+                      <tt>ami-00f5c774<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=eu-west-1#launchAmi=ami-00f5c774"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th colspan="5"></th>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="tab-ap-southeast-1" style="display: none;">
+              <a href="javascript:void(0);" onclick=
+              "return ON('us-east-1');">us-east-1</a> | <a href=
+              "javascript:void(0);" onclick=
+              "return ON('us-west-1');">us-west-1</a> | <a href=
+              "javascript:void(0);" onclick=
+              "return ON('eu-west-1');">eu-west-1</a> |
+              ap-southeast-1 | <a href="javascript:void(0);"
+              onclick=
+              "return ON('ap-northeast-1');">ap-northeast-1</a>
+              <table class="amis" style="width: 520px;">
+                <tbody>
+                  <tr>
+                    <th class="first">
+                      OS Release
+                    </th>
+                    <th>
+                      32-bit
+                    </th>
+                    <th>
+                      64-bit
+                    </th>
+                  </tr>
+                  <tr>
+                    <td class="first">
+                      Ubuntu 11.10 Oneiric<br />
+                      EBS boot
+                    </td>
+                    <td>
+                      <tt>ami-76057f24<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=ap-southeast-1#launchAmi=ami-76057f24"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                    <td>
+                      <tt>ami-7a057f28<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=ap-southeast-1#launchAmi=ami-7a057f28"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="first">
+                      Ubuntu 11.10 Oneiric<br />
+                      instance-store
+                    </td>
+                    <td>
+                      <tt>ami-82047ed0<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=ap-southeast-1#launchAmi=ami-82047ed0"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                    <td>
+                      <tt>ami-54057f06<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=ap-southeast-1#launchAmi=ami-54057f06"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th colspan="5"></th>
+                  </tr>
+                  <tr>
+                    <td class="first">
+                      Ubuntu 11.04 Natty<br />
+                      EBS boot
+                    </td>
+                    <td>
+                      <tt>ami-06255f54<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=ap-southeast-1#launchAmi=ami-06255f54"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                    <td>
+                      <tt>ami-04255f56<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=ap-southeast-1#launchAmi=ami-04255f56"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="first">
+                      Ubuntu 11.04 Natty<br />
+                      instance-store
+                    </td>
+                    <td>
+                      <tt>ami-72255f20<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=ap-southeast-1#launchAmi=ami-72255f20"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                    <td>
+                      <tt>ami-7a255f28<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=ap-southeast-1#launchAmi=ami-7a255f28"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th colspan="5"></th>
+                  </tr>
+                  <tr>
+                    <td class="first">
+                      Ubuntu 10.10 Maverick<br />
+                      EBS boot
+                    </td>
+                    <td>
+                      <tt>ami-58215b0a<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=ap-southeast-1#launchAmi=ami-58215b0a"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                    <td>
+                      <tt>ami-5e215b0c<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=ap-southeast-1#launchAmi=ami-5e215b0c"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="first">
+                      Ubuntu 10.10 Maverick<br />
+                      instance-store
+                    </td>
+                    <td>
+                      <tt>ami-52215b00<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=ap-southeast-1#launchAmi=ami-52215b00"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                    <td>
+                      <tt>ami-56215b04<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=ap-southeast-1#launchAmi=ami-56215b04"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th colspan="5"></th>
+                  </tr>
+                  <tr>
+                    <td class="first">
+                      Ubuntu 10.04 LTS Lucid<br />
+                      EBS boot
+                    </td>
+                    <td>
+                      <tt>ami-ea205ab8<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=ap-southeast-1#launchAmi=ami-ea205ab8"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                    <td>
+                      <tt>ami-e8205aba<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=ap-southeast-1#launchAmi=ami-e8205aba"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="first">
+                      Ubuntu 10.04 LTS Lucid<br />
+                      instance-store
+                    </td>
+                    <td>
+                      <tt>ami-d8205a8a<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=ap-southeast-1#launchAmi=ami-d8205a8a"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                    <td>
+                      <tt>ami-e0205ab2<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=ap-southeast-1#launchAmi=ami-e0205ab2"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th colspan="5"></th>
+                  </tr>
+                  <tr>
+                    <td class="first">
+                      Ubuntu 8.04 LTS Hardy<br />
+                      EBS boot
+                    </td>
+                    <td>
+                      <tt>ami-d0166c82<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=ap-southeast-1#launchAmi=ami-d0166c82"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                    <td>
+                      <tt>ami-d8166c8a<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=ap-southeast-1#launchAmi=ami-d8166c8a"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="first">
+                      Ubuntu 8.04 LTS Hardy<br />
+                      instance-store
+                    </td>
+                    <td>
+                      <tt>ami-521a6000<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=ap-southeast-1#launchAmi=ami-521a6000"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                    <td>
+                      <tt>ami-581a600a<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=ap-southeast-1#launchAmi=ami-581a600a"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th colspan="5"></th>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="tab-ap-northeast-1" style="display: none;">
+              <a href="javascript:void(0);" onclick=
+              "return ON('us-east-1');">us-east-1</a> | <a href=
+              "javascript:void(0);" onclick=
+              "return ON('us-west-1');">us-west-1</a> | <a href=
+              "javascript:void(0);" onclick=
+              "return ON('eu-west-1');">eu-west-1</a> | <a href=
+              "javascript:void(0);" onclick=
+              "return ON('ap-southeast-1');">ap-southeast-1</a> |
+              ap-northeast-1
+              <table class="amis" style="width: 520px;">
+                <tbody>
+                  <tr>
+                    <th class="first">
+                      OS Release
+                    </th>
+                    <th>
+                      32-bit
+                    </th>
+                    <th>
+                      64-bit
+                    </th>
+                  </tr>
+                  <tr>
+                    <td class="first">
+                      Ubuntu 11.10 Oneiric<br />
+                      EBS boot
+                    </td>
+                    <td>
+                      <tt>ami-2e90242f<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=ap-northeast-1#launchAmi=ami-2e90242f"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                    <td>
+                      <tt>ami-30902431<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=ap-northeast-1#launchAmi=ami-30902431"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="first">
+                      Ubuntu 11.10 Oneiric<br />
+                      instance-store
+                    </td>
+                    <td>
+                      <tt>ami-e49723e5<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=ap-northeast-1#launchAmi=ami-e49723e5"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                    <td>
+                      <tt>ami-fa9723fb<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=ap-northeast-1#launchAmi=ami-fa9723fb"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th colspan="5"></th>
+                  </tr>
+                  <tr>
+                    <td class="first">
+                      Ubuntu 11.04 Natty<br />
+                      EBS boot
+                    </td>
+                    <td>
+                      <tt>ami-00b10501<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=ap-northeast-1#launchAmi=ami-00b10501"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                    <td>
+                      <tt>ami-02b10503<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=ap-northeast-1#launchAmi=ami-02b10503"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="first">
+                      Ubuntu 11.04 Natty<br />
+                      instance-store
+                    </td>
+                    <td>
+                      <tt>ami-f0b004f1<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=ap-northeast-1#launchAmi=ami-f0b004f1"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                    <td>
+                      <tt>ami-fab004fb<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=ap-northeast-1#launchAmi=ami-fab004fb"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th colspan="5"></th>
+                  </tr>
+                  <tr>
+                    <td class="first">
+                      Ubuntu 10.10 Maverick<br />
+                      EBS boot
+                    </td>
+                    <td>
+                      <tt>ami-dab400db<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=ap-northeast-1#launchAmi=ami-dab400db"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                    <td>
+                      <tt>ami-dcb400dd<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=ap-northeast-1#launchAmi=ami-dcb400dd"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="first">
+                      Ubuntu 10.10 Maverick<br />
+                      instance-store
+                    </td>
+                    <td>
+                      <tt>ami-cab400cb<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=ap-northeast-1#launchAmi=ami-cab400cb"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                    <td>
+                      <tt>ami-d6b400d7<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=ap-northeast-1#launchAmi=ami-d6b400d7"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th colspan="5"></th>
+                  </tr>
+                  <tr>
+                    <td class="first">
+                      Ubuntu 10.04 LTS Lucid<br />
+                      EBS boot
+                    </td>
+                    <td>
+                      <tt>ami-78b40079<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=ap-northeast-1#launchAmi=ami-78b40079"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                    <td>
+                      <tt>ami-7ab4007b<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=ap-northeast-1#launchAmi=ami-7ab4007b"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="first">
+                      Ubuntu 10.04 LTS Lucid<br />
+                      instance-store
+                    </td>
+                    <td>
+                      <tt>ami-40b40041<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=ap-northeast-1#launchAmi=ami-40b40041"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                    <td>
+                      <tt>ami-58b40059<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=ap-northeast-1#launchAmi=ami-58b40059"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th colspan="5"></th>
+                  </tr>
+                  <tr>
+                    <td class="first">
+                      Ubuntu 8.04 LTS Hardy<br />
+                      EBS boot
+                    </td>
+                    <td>
+                      <tt>ami-b4a612b5<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=ap-northeast-1#launchAmi=ami-b4a612b5"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                    <td>
+                      <tt>ami-b6a612b7<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=ap-northeast-1#launchAmi=ami-b6a612b7"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="first">
+                      Ubuntu 8.04 LTS Hardy<br />
+                      instance-store
+                    </td>
+                    <td>
+                      <tt>ami-d6b105d7<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=ap-northeast-1#launchAmi=ami-d6b105d7"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                    <td>
+                      <tt>ami-02b20603<a href=
+                      "https://console.aws.amazon.com/ec2/home?region=ap-northeast-1#launchAmi=ami-02b20603"
+                      target="_blank" title=
+                      "Launch EC2 Instance on AWS Console"><img alt=""
+                      height="15" src=
+                      "../media/uploads/cluster/aws-launch-13x15.png"
+                      style="vertical-align: text-bottom;" width=
+                      "13" /></a></tt>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th colspan="5"></th>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div id="ami-comments" style="display: none;">
+              <p>
+                <a href="http://aws.amazon.com/ec2">Amazon Elastic
+                Compute Cloud (EC2)]</a> provides self-serve,
+                on-demand servers where you pay for the capacity
+                you use. The Ubuntu images listed above are
+                publicly available for use by the EC2 community.
+              </p>
+              <p>
+                sponsor of Ubuntu. AMIs listed as "Alestic" are
+                published by <a href="http://www.anvilon.com">Eric
+                Hammond</a>.
+              </p>
+              <p>
+                Each row indicates the ssh account which should be
+                used to access a
+              </p>
+              <p>
+                The "<strong>EBS boot</strong>" AMIs use the
+                corresponding image in volume instead of ephemeral
+                storage.
+              </p>
+              <p>
+                The "<strong>HVM</strong>" AMIs are only usable
+                with Amazon EC2's "cluster compute" instance types.
+              </p>Note: The Debian AMIs published years ago under
+              the Alestic name are still available on EC2, but are
+              out of date, not upgradable, no longer recommended,
+              and no longer supported. Check here for some Debian
+              AMIs being created by the community: <a href=
+              "http://wiki.debian.org/Cloud/AmazonEC2Image">http://wiki.debian.org/Cloud/AmazonEC2Image</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+          <p>
+            <a href="index.html">Home</a>
+          </p>
+          <p>
+            <a href="about.html">@MIT</a>
+          </p>
+          <p>
+            <a href="features.html">Features</a>
+          </p>
+          <p>
+            <a href="downloads.html">Download</a>
+          </p>
+          <p>
+            <a href="download_amis.html">Download AMIs</a>
+          </p>
+          <p>
+            <a href="docs/latest/index.html">Documentation</a>
+          </p>
+          <p>
+            <a href="mailinglist.html">Mailing List</a>
+          </p>
+          <p>
+            <a href="bugsandfeatures.html">Bugs and Feature
+            Requests</a>
+          </p>
+          <p>
+            <a href=
+            "https://github.com/jtriley/StarCluster/wiki">Wiki</a>
+          </p>
+          <p>
+            
+          </p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div><!--<div class="related wiki-nav">
+<h3>Navigation</h3>
+<ul>
+    <li><a href="/">Wiki Home</a></li> | 
+    
+        <li><a href="/star/newproject/create">Add Project</a></li> |
+    
+
+    
+        
+            <li><a href="/star/cluster/menu">Edit Menu</a></li> |
+        
+    
+
+    
+        <li><a href="/star/cluster/playground.html/edit">Edit Page</a></li> |
+        <li><a href="/star/cluster/playground.html/preview" target=_blank>Preview Page</a></li> |
+    
+
+    <li><a href="/publish">Publish</a></li> |
+    
+            <li><a href="/star/cluster/sitemap.xml">Sitemap</a></li> |
+    
+     
+    
+    <li><a href="/admin/">Admin Panel</a></li> |
+    <li><a href="/admin/filebrowser/browse/">File Browser</a></li>
+</ul>
+</div>
+-->
+    <div class="footer">
+      <table border="0" style="width: 100%; height: 30px;">
+        <tbody>
+          <tr>
+            <td style="width: 230px;">
+              <p>
+                <a href="http://web.mit.edu" title=
+                "MIT Homepage"><img alt="MIT Logo" height="36" src=
+                "../media/images/mit-logo-grey-white.gif" title=
+                "MIT Logo" width="62" /></a>
+              </p>
+            </td>
+            <td style="width: 100%;">
+              <p style="text-align: center;">
+                <a href="http://oeit.mit.edu" title=
+                "OEIT Homepage">OEIT</a> | <a href=
+                "http://whereis.mit.edu/?selection=NE48" title=
+                "Building NE48 room 308">NE48-308</a> | <a href=
+                "tel:+16172521981">617-252-1981</a> | <a href=
+                "javascript:%20window.location.href='mail'%20+%20'to'%20+':%20'%20+%20'star'+%20String.fromCharCode(64)%20+%20'mit'%20+%20'.'%20+%20'edu'">
+                Contact Us</a><br />
+                <a href="http://web.mit.edu" title=
+                "MIT Homepage">Massachusetts Institute of
+                Technology</a> | <a href="http://odl.mit.edu"
+                title="DUE Homepage">Office of Digital Learning</a>
+              </p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div><script async="true" src=
+    "../media/uploads/star/scripts/on_every_page.js" type=
+    "text/javascript">
+</script>
+  </body>
+</html>
