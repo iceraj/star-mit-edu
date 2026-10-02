@@ -1,0 +1,35 @@
+div.breadcrumbs a:link, div.breadcrumbs a:visited {
+    color:#FFF;
+    text-decoration:none;
+}
+
+div.breadcrumbs {
+    font-size:13px;
+    margin:20px;
+    padding:0;
+    overflow:hidden;
+    margin:0;
+    padding:0;
+    height:2.5em;
+    line-height:30px;
+    background: #333;
+    color:#FFF;
+    /*changes spacing between grids*/
+    margin-bottom:5px;
+}
+
+div.breadcrumbs a, div.breadcrumbs em, div.breadcrumbs span {
+    float:left;
+    overflow:hidden;
+    height:30px;
+    padding:0 8px;
+    /*font-style:normal;*/
+}
+
+div.breadcrumbs span {
+    background:url(../images/breadcrumb/bg-breadcrumb.png) no-repeat left center;
+    overflow:hidden;
+    padding:0 0 0 10px;
+    width:0px;
+    opacity:0.1;
+}

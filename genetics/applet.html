@@ -1,0 +1,59 @@
+<html>
+	<link href="/media/sphinx/css/archive-ribbon.css" media="screen" rel="stylesheet" type="text/css" />
+<body>
+    <div class="archive-ribbon-corner">
+      <div class="archive-ribbon">Archive</div>
+    </div>
+		<h1> test </h1>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script src=
+		"http://www.java.com/js/deployJava.js"></script>
+
+	<div style='border:1px solid'>
+	<script>
+    <!-- applet id can be used to get a reference to the applet object -->
+    var attributes = { id:'mathApplet', width:1024, height:768, jnlp_href: 'http://starapp.mit.edu/star/media/uploads/star/jnlp/genetics/StarGenetics3_applet.jnlp'} ;
+    var parameters = {jnlp_href: 'http://starapp.mit.edu/star/media/uploads/star/jnlp/genetics/StarGenetics3_applet.jnlp', image:'funny-futurama-gif-humor-lol-Favim.com-297366.gif', boxcolor:'red', boxborder:'true', centerimage:'true' };
+    deployJava.runApplet(attributes, parameters, '1.6');
+    </script>
+		</div>
+		<input type='button' id='start_applet' value='Run'>
+		<input type='button' id='save' value='Save'>
+		<input type='text' id='out' value='click save to save'>
+		<script>
+			$(function() {
+				$('#start_applet').click(function() {
+					var div = $(a).parent(); div.html( div.html());
+				});
+				var restart_applet = function() {
+					var a = document.getElementById('mathApplet');
+					if( a && a.isStarted )
+					{
+						if( a.isStarted() == 'started' )
+						{
+							var div = $(a).parent(); div.html( div.html());
+							return;
+						}
+					}
+					setTimeout( restart_applet, 500 );
+				};
+				if( navigator.platform == 'MacIntel' ) 
+				{
+					setTimeout( restart_applet , 750 ) ;
+				}
+				$('#save').click(function() {
+					var out = $('#out');
+					var a = document.getElementById('mathApplet');
+					if( a )
+					{
+						$('#out').attr('value',a.state());
+					}
+
+				});
+			});
+
+    </script>
+
+    </body>
+
+</html>

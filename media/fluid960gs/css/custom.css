@@ -1,0 +1,110 @@
+div.branding {
+	font-weight:normal;
+	/*font-size:3em;*/
+	text-align:left;
+	background:#aaa;
+	padding:.7em 1em;
+	margin-bottom:0;
+}
+
+/* table
+----------------------------------------------- */
+.branding table {
+	border:0px;
+}
+.branding thead th {
+	border-bottom:0px solid #888;
+}
+.branding thead th.table-head {
+	border:0px solid #555;
+}
+.branding tbody th, .branding tbody td {
+	border-top:0px solid #bbb;
+	border-bottom:0px solid #bbb;
+	background:#aaa;
+}
+.branding tfoot th, .branding tfoot td {
+	border-top:0px solid #666;
+}
+.branding tfoot tr.total th, .branding tfoot tr.total td {
+	border-top:0px double #666;
+}
+
+div.footer {
+	/*font-weight:normal;*/
+	font-size:10px;
+	text-align:left;
+	background:#666;
+	/*changes spacing between grids*/
+	margin-bottom:5px;
+	padding:10px 10px 1px 10px;
+}
+
+/* table
+----------------------------------------------- */
+.footer table {
+	border:0px;
+}
+.footer thead th {
+	border-bottom:0px solid #888;
+}
+.footer thead th.table-head {
+	border:0px solid #555;
+}
+.footer tbody th, .footer tbody td {
+	border-top:0px solid #bbb;
+	border-bottom:0px solid #bbb;
+	background:#666;
+}
+.footer tfoot th, .footer tfoot td {
+	border-top:0px solid #666;
+}
+.footer tfoot tr.total th, .footer tfoot tr.total td {
+	border-top:0px double #666;
+}
+
+/*#accordion table {*/
+    /*margin-bottom: 30px;*/
+/*}*/
+
+
+/* Image and List Padding */
+
+
+ol, ul {
+    margin-bottom: 30px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+ol li img, ul li img {
+    margin: 10px 0 10px 0;
+}
+
+ol li ul li {
+    margin: 0 0 0 0;
+}
+
+
+/* Headers */
+
+#accordion h1 {
+    margin: 5px 0 0 0;
+}
+
+#accordion h3, h5 {
+    margin: 25px 0 0 0;
+}
+
+hr {
+    margin-bottom:5px;
+}
+
+
+/* Paragraphs */
+
+/*#accordion p {*/
+    /*margin: 10px 0 40px 0; */
+/*}*/

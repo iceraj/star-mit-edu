@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		  <style>
+			  .block {
+				     background-color: blue;
+				        width: 150px;
+					   height: 70px;
+					      margin: 10px;
+					      }</style>
+				        <script src="http://code.jquery.com/jquery-latest.js"></script>
+				    <link href="/media/sphinx/css/archive-ribbon.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+				<body>
+    <div class="archive-ribbon-corner">
+      <div class="archive-ribbon">Archive</div>
+    </div>
+					  
+					<button id="go">&raquo; Run</button>
+
+					<div class="block"></div>
+
+					<script>
+						$.getScript("http://127.0.0.1:4997/StarHydro/IsUp", function() {
+//	$.getScript("http://www.bugaco.com/blank.js", function() {
+		alert( 'here') ;
+		$("#go").click(function(){
+			alert( 'clicked' ) ;
+								      $(".block").html( 'hello' ) ;
+										    });
+										    });
+									    </script>
+
+								    </body>
+							    </html>

@@ -1,0 +1,97 @@
+    //<![CDATA[
+	var map = null ;
+	var geocoder = null ;
+	var lat,lng ;
+
+	function closeWindow()
+	{
+		window.close() ;
+	}
+
+    function load() {
+      if (GBrowserIsCompatible()) {
+        map = new GMap2(document.getElementById("map"));
+        map.setCenter(new GLatLng(42.3623343, -71.0906638),1);
+	map.addControl(new GLargeMapControl());
+//        map.addControl(new GMapTypeControl());
+//        map.setMapType(G_HYBRID_MAP);
+//	GEvent.addListener( map , "dblclick" , dblClick ) ;
+	geocoder = new GClientGeocoder();
+	addPoints( map );
+      }
+    }
+
+    function showAddress(address) {
+      if (geocoder) {
+        geocoder.getLatLng(
+          address,
+          function(point) {
+            if (!point) {
+              alert(address + " not found");
+            } else {
+              map.setCenter(point, 13);
+              var marker = new GMarker(point);
+              map.addOverlay(marker);
+              marker.openInfoWindowHtml(address);
+            }
+          }
+        );
+      }
+    }
+
+// Creates a marker at the given point with the number of visits
+        function CreateMarker(point, town, visits)
+        {
+          var iconMarker = new GIcon();
+          iconMarker.iconSize = new GSize(24, 24);
+          iconMarker.iconAnchor = new GPoint(5, 32);
+          iconMarker.infoWindowAnchor = new GPoint(20, 10);
+          if (visits < 51)
+            iconNumber = 50;
+          else if (visits < 101)
+            iconNumber = 100;
+          else if (visits < 201)
+            iconNumber = 200;
+          else if (visits < 301)
+            iconNumber = 300;
+          else if (visits < 401)
+            iconNumber = 400;
+          else if (visits < 501)
+            iconNumber = 500;
+          else if (visits < 801)
+            iconNumber = 800;
+          else if (visits < 1001)
+            iconNumber = 1000;
+          else if (visits < 2001)
+            iconNumber = 2000;
+          else if (visits < 4001)
+            iconNumber = 4000;
+          else if (visits < 8001)
+            iconNumber = 8000;
+          else if (visits < 16001)
+            iconNumber = 16000;
+          else if (visits < 32001)
+            iconNumber = 32000;
+          else if (visits < 64001)
+            iconNumber = 64000;
+          else if (visits < 128001)
+            iconNumber = 128000;
+          else
+            iconNumber = 256000;
+          //iconMarker.image = "http://www.mobilgistix.com/web-services/Google_Analytics/images/marker-" + iconNumber + ".png";
+	  iconMarker.image = "http://web.mit.edu/star/hydro/icon.png" ;
+//          var marker = new GMarker(point, iconMarker);
+          var marker = new GMarker(point, GIcon.G_DEFAULT_ICON );
+
+          GEvent.addListener(marker, "click", function()
+          {
+            marker.openInfoWindowHtml("Town: <b>" + town + "</b>");
+          });
+          return marker;
+        }
+
+	function addPoints( map )
+	{
+	}
+
+load();

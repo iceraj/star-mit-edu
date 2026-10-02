@@ -1,0 +1,97 @@
+#scroller-container{
+    background: #AAAAAA; 
+    /*color: #000; */
+    /*border: solid 1px #545454;*/
+    border: 0px;
+    /*width: 100%;*/
+}
+
+.scroller
+{
+    /*position: relative;*/
+    /*width: 730px;*/
+    height: 150px;
+}
+
+.scroller h3
+{
+    color: #333333;
+    font-size: 1em;    
+    display: inline;
+    top: 400%;
+    width: 100px;
+    text-align: center;
+    position: absolute;
+}
+
+.scroller_wrapper
+{
+    position:relative;
+    height: 130px;
+    /*width: 475px;*/
+    white-space: nowrap;
+    /*margin-left: 60px;*/
+    overflow: hidden;
+    /*background: #C0C0C0 url('../images/bg.png');*/
+    padding: 20px 10px 0 5px;
+    /*text-align: center; [> Project icon centering <]*/
+}
+
+.scroller-item
+{
+    display: inline;
+    margin: 0 5px 0 5px; /* Spacing between project icons */
+    /*margin: 0 15px 0 15px; [> Spacing between project icons <]*/
+    width: 100px;
+    position: relative;
+}
+
+.scroller-item img
+{
+    border:none;
+    margin: 0;
+    padding: 0;
+    width: 100px;
+    height: 100px;
+}
+
+.scroller-item h1,h2,h3{ 
+    margin:0;
+    padding:0
+}
+
+.scroller-item a {
+    color: #333333;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+.scroller-item a:visited, a:active {
+    color: #333333;
+}
+
+.scroller-item a:hover {
+    color: #333333;
+    text-decoration: underline;
+}
+
+.scrollbar-hor{
+    /*background-color: #d2e8ff;*/
+    background: url(../images/styledscrollbar/scroller_bg.png) repeat;
+    height: 17px;
+    /*width: 200px;*/
+    width: 100%;
+    /*border: solid 1px #545454;*/
+    float:left;
+    display: none;
+}
+
+.handle-hor{
+    position:absolute; 
+    width:181px; 
+    height:19px; 
+    background: url(../images/styledscrollbar/scroller_handle.png) no-repeat;
+    cursor:pointer; 
+    z-index:5; 
+}
